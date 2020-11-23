@@ -1,0 +1,308 @@
+<section xml:id="sec_localrecip">
+  <title>Overview of local class field theory</title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        Milne, I.1; Neukirch, V.1.
+      </p>
+    </paragraphs>
+    <p>
+      We will spend the next few chapters establishing
+      <em>local class field theory</em>,
+      a classification of the abelian extensions of a local field.
+      This will serve two purposes.
+      On one hand,
+      the results of local class field theory can be used to assist in the proofs of the global theorems,
+      as we saw with Kronecker-Weber.
+      On the other hand,
+      they also give us a model set of proofs which we will attempt to emulate in the global case.
+    </p>
+    <p>
+      Recall that the term
+      <q>local field</q>
+      refers to a finite extension either of the field of <m>p</m>-adic numbers <m>\QQ_p</m> or of the field of power series <m>\FF_q((t))</m>.
+      I'm going to abuse language and ignore the second case,
+      although all but a few things I'll say go through in the second case,
+      and I'll try to flag those when they come up.
+      (One big one:
+      a lot of extensions have to be assumed to be separable for things to work right.)
+    </p>
+  </introduction>
+  <subsection>
+    <title>The local reciprocity law</title>
+    <p>
+      The main theorem of local class field theory is the following.
+      For <m>K</m> a local field,
+      let <m>K^{\ab}</m> be the maximal abelian extension of <m>K</m>.
+    </p>
+    <theorem xml:id="T_local_reciprocity">
+      <title>Local Reciprocity Law</title>
+      <statement>
+        <p>
+          Let <m>K</m> be a local field.
+          Then there is a unique map
+          <m>\phi_K: K^* \to \Gal(K^{\ab}/K)</m> satisfying the following conditions:
+          <ol>
+            <li>
+              <p>
+                for any generator <m>\pi</m> of the maximal ideal of
+                <m>\gotho_K</m> and any finite unramified extension <m>L</m> of <m>K</m>,
+                <m>\phi_K(\pi)</m> acts on <m>L</m> as the Frobenius automorphism;
+              </p>
+            </li>
+            <li>
+              <p>
+                for any finite abelian extension <m>L</m> of <m>K</m>,
+                the group of norms <m>\Norm_{L/K} L^*</m> is in the kernel of <m>\phi_K</m>,
+                and the induced map <m>K^*/\Norm_{L/K} L^* \to \Gal(L/K)</m> is an isomorphism.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The map <m>\phi_K</m> is variously called the
+      <em>local reciprocity map</em>
+      or the <em>norm residue symbol</em>.
+      Using the local Kronecker-Weber theorem
+      (<xref ref="T_local_Kronecker-Weber">Theorem</xref>),
+      this can be explicitly verified for <m>K=\QQ_p</m>
+      (see exercises).
+    </p>
+    <p>
+      The local reciprocity law is an analogue of the Artin reprocity law for number fields.
+      We also get an analogue of the existence of class fields.
+    </p>
+    <theorem xml:id="T_local_existence">
+      <title>Local existence theorem</title>
+      <statement>
+        <p>
+          For every finite
+          (not necessarily abelian)
+          extension <m>L</m> of <m>K</m>,
+          <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m> of finite index.
+          Conversely, for every (open) subgroup <m>U</m> of <m>K^*</m> of finite index,
+          there exists a finite abelian extension <m>L</m> of <m>K</m> such that <m>U = \Norm_{L/K} L^*</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The condition
+      <q>open</q>
+      is only needed in the function field case;
+      for <m>K</m> a finite extension of <m>\QQ_p</m>,
+      one can show that every subgroup of <m>K^*</m> of finite index is open.
+    </p>
+    <p>
+      The local existence theorem says that if we start with a nonabelian extension <m>L</m>,
+      then <m>\Norm_{L/K} L^*</m> is also the group of norms of an abelian extension.
+      Which one?
+    </p>
+    <theorem xml:id="T_norm_limitation">
+      <title>Norm limitation theorem</title>
+      <statement>
+        <p>
+          Let <m>M</m> be the maximal abelian subextension of <m>L/K</m>.
+          Then <m>\Norm_{L/K} L^* = \Norm_{M/K} M^*</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Aside: for each uniformizer
+      (generator of the maximal ideal)
+      <m>\pi</m> of <m>K</m>,
+      let <m>K_\pi</m> be the composite of all finite abelian extensions <m>L</m> such that <m>\pi \in \Norm_{L/K} L^*</m>.
+      Then the local reciprocity map implies that <m>K^{\ab} = K_\pi \cdot K^{\unr}</m>.
+      It turns out that <m>K_\pi</m> can be explicitly constructed as the extension of <m>K</m> by certain elements,
+      thus giving a generalization of local Kronecker-Weber to arbitrary local fields!
+      These elements come from Lubin-Tate formal groups,
+      which we will not discuss further.
+    </p>
+    <p>
+      Note that for <m>L/K</m> a finite extension of local fields, the map
+      <me>
+        K^*/\Norm_{L/K} L^* \to \Gal(L/K) = G
+      </me>
+      obtained by combining the local reciprocity law with the norm limitation theorem is in fact an isomorphism of
+      <m>G = G^{\ab} = H^{-2}_T(G, \ZZ)</m> with <m>K^*/\Norm_{L/K} L^* = H^0_T(G, L^*)</m>.
+      We will in fact show something stronger,
+      from which we will deduce both the local reciprocity law and the norm limitation theorem.
+    </p>
+    <theorem xml:id="T_cup_product_isomorphism">
+      <statement>
+        <p>
+          For any finite Galois extension <m>L/K</m> of local fields with Galois group <m>G</m>,
+          there is a canonical isomorphism <m>H^i_T(G, \ZZ) \to H^{i+2}_T(G, L^*)</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      In fact, this map can be written in terms of the cup product in group cohomology,
+      which we have not defined
+      (and will not).
+    </p>
+  </subsection>
+  <subsection>
+    <title>The local invariant map</title>
+    <p>
+      One way to deduce the local reciprocity law
+      (the one we will carry out first)
+      is to first prove the following.
+    </p>
+    <theorem xml:id="T_Brauer_group_identification">
+      <statement>
+        <p>
+          For any local field <m>K</m>,
+          there exist canonical isomorphisms
+          <me>
+            <mrow>H^2(\Gal(K^{\unr}/K), (K^{\unr})^*) \to H^2(\Gal(\overline{K}/K), \overline{K}^*)</mrow>
+            <mrow>\inv_K: H^2(\Gal(\overline{K}/K), \overline{K}^*) \to \QQ/\ZZ.</mrow>
+          </me>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The first map is an inflation homomorphism;
+      the second map in this theorem is called the
+      <em>local invariant map</em>.
+      More precisely,
+      for <m>L/K</m> finite of degree <m>n</m>, we have an isomorphism
+      <me>
+        \inv_{L/K}: H^2(\Gal(L/K), L^*) \to \frac{1}{n}\ZZ/\ZZ
+      </me>,
+      and these isomorphisms are compatible with inflation.
+      (In particular,
+      we don't need to prove the first isomorphism separately.
+      But that can be done, by considerations involving the Brauer group;
+      see below.)
+    </p>
+    <p>
+      To use this to prove <xref ref="T_cup_product_isomorphism">Theorem</xref>
+      and hence the local reciprocity law and the norm limitation theorem,
+      we employ the following theorem of Tate,
+      which we will prove a bit later
+      (see <xref ref="T_tate_thm2">Theorem</xref>).
+    </p>
+    <theorem xml:id="T_tate_thm1">
+      <statement>
+        <p>
+          Let <m>G</m> be a finite group and <m>M</m> a <m>G</m>-module.
+          Suppose that for each subgroup <m>H</m> of <m>G</m>
+          (including <m>H=G</m>),
+          <m>H^1(H,M) = 0</m> and <m>H^2(H,M)</m> is cyclic of order <m>\#H</m>.
+          Then there exist isomorphisms <m>H^i_T(G, \ZZ) \to H^{i+2}_T(G, M)</m> for all <m>i</m>;
+          these are canonical once you fix a choice of a generator of <m>H^2(G,M)</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      In general, for any field <m>K</m>,
+      the group <m>H^2(\Gal(\overline{K}/K), \overline{K}^*)</m> is called the
+      <em>Brauer group</em> of <m>K</m>.
+      It is an important invariant of <m>K</m>;
+      it can be realized also in terms of certain noncommutative algebras over <m>K</m>
+      (central simple algebras).
+      I won't pursue this connection further,
+      nor study many of the interesting properties and applications of Brauer groups.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Abstract class field theory</title>
+    <p>
+      Having derived local class field theory once,
+      we will do it again a slightly different way.
+      In the course of proving the above results,
+      we will have calculated that if <m>L/K</m> is a cyclic extension of local fields, that
+      <me>
+        \#H^0_T(\Gal(L/K), L^*) = [L:K], \qquad \#H^{-1}_T(\Gal(L/K), L^*) =1
+      </me>.
+    </p>
+    <p>
+      It turns out that this alone is enough number-theoretic input to prove local class field theory!
+      More precisely,
+      given a field <m>K</m> with <m>G = \Gal(\overline{K}/K)</m>,
+      a continuous <m>G</m>-module <m>A</m>,
+      a surjective continuous homomorphism <m>d: G \to \widehat{\ZZ}</m>,
+      and a homomorphism <m>v: A^G \to \widehat{\ZZ}</m> satisfying suitable conditions,
+      we will show that for every finite extension <m>L</m> of <m>K</m> there is a canonical isomorphism <m>\Gal(L/K)^{\ab} \to A_L \to \Norm_{L/K} A_K</m>,
+      where <m>A_K</m> and <m>A_L</m> denote the <m>\Gal(\overline{K}/K)</m> and
+      <m>\Gal(\overline{K}/L)</m>-invariants of <m>A</m>.
+      In particular,
+      these conditions will hold for <m>K</m> a local field,
+      <m>A = \overline{K}^*</m>,
+      <m>d</m> the map <m>\Gal(\overline{K}/K) \to \Gal(K^{\unr}/K)</m>,
+      and <m>v: \Gal(K^*) \to \ZZ \to \widehat{\ZZ}</m> the valuation.
+    </p>
+    <p>
+      This is the precise sense in which we will use local class field theory as a model for global class field theory.
+      After we complete local class field theory,
+      our next goal will be to construct an analogous module <m>A</m> in the global case which is
+      <q>complete enough</q>
+      that its <m>H^0_T</m> and <m>H^{-1}_T</m> will not be too big;
+      the result will be the idele class group.
+      (One main difference is that in the global case,
+      the analogue of <m>v</m> will really take values in
+      <m>\widehat{\ZZ}</m>, not just <m>\ZZ</m>.)
+    </p>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <ol>
+      <li>
+        <p>
+          For <m>K = \QQ_p</m>,
+          the local reciprocity map plus the local Kronecker-Weber theorem give a canonical map <m>\QQ_p^* \to \Gal(\QQ_p^{\ab}/\QQ_p) \cong \widehat{\ZZ}</m>.
+          What is the map?
+          From the answer,
+          you should be able to turn things around and deduce local Kronecker-Weber from local reciprocity.
+        </p>
+      </li>
+      <li>
+        <p>
+          For <m>K = \QQ_p</m>, take <m>\pi = p</m>.
+          Determine <m>K_\pi</m>, again using local Kronecker-Weber.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that for any finite extension <m>L/K</m> of finite extensions of <m>\QQ_p</m>,
+          <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m>.
+          (Hint: show that already <m>\Norm_{L/K} K^*</m> is open!
+          The corresponding statement in positive characteristic is more subtle.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that for any finite extension <m>L/K</m> of finite separable extensions of <m>\FF_p((t))</m>,
+          <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m>.
+          (Hint: reduce to the case of a cyclic extension of prime degree.
+          If the degree is prime to <m>p</m>,
+          you may imitate the previous exercise;
+          otherwise, that approach fails because
+          <m>\Norm_{L/K} K^*</m> lands inside the subfield <m>K^p</m>,
+          but you can use this to your advantage to make an explicit calculation.)
+        </p>
+      </li>
+      <li>
+        <p>
+          A <em>quaternion algebra</em> over a field <m>K</m> is a central simple algebra over <m>K</m> of dimension 4.
+          If <m>K</m> is not of characteristic 2, any such algebra has the form
+          <me>
+            K \oplus Ki \oplus Kj \oplus Kk, \qquad i^2 = a, j^2 = b, ij = -ji = k
+          </me>
+          for some <m>a,b \in K^*</m>.
+          (For example, the case <m>K = \RR</m>,
+          <m>a=b=-1</m> gives the standard Hamilton quaternions.)
+          A quaternion algebra is <em>split</em>
+          if it is isomorphic to the ring of
+          <m>2 \times 2</m> matrices over <m>K</m>.
+          Give a direct proof of the following consequence of <xref ref="T_Brauer_group_identification">Theorem</xref>:
+          if <m>K</m> is a local field,
+          then any two quaternion algebras which are not split are isomorphic to each other.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

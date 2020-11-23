@@ -1,0 +1,144 @@
+<section xml:id="sec_adeles-rel">
+  <title>Ad&#xe8;les and id&#xe8;les in field extensions</title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        Neukirch, Section VI.1 and VI.2.
+      </p>
+    </paragraphs>
+  </introduction>
+  <subsection>
+    <title>Ad&#xe8;les in Field Extensions</title>
+    <p>
+      If <m>L/K</m> is an extension of number fields,
+      we get an embedding <m>\AA_K \hookrightarrow \AA_L</m> as follows:
+      given <m>\alpha \in \AA_K</m>,
+      each place <m>w</m> of <m>L</m> restricts to a place <m>v</m> of <m>K</m>,
+      so set the <m>w</m>-component of the image of <m>\alpha</m> to <m>\alpha_v</m>.
+      This embedding induces an inclusion
+      <m>I_K \hookrightarrow I_L</m> of id&#xe8;le groups as well.
+    </p>
+    <p>
+      If <m>L/K</m> is Galois with Galois group <m>G</m>,
+      then <m>G</m> acts naturally on <m>\AA_L</m> and <m>I_L</m>;
+      more generally, if <m>g \in \Gal(\overline{K}/K)</m>,
+      then <m>g</m> maps <m>L</m> to some other extension <m>L^g</m> of <m>K</m>,
+      and <m>G</m> induces isomorphisms of <m>\AA_L</m> with
+      <m>\AA_{L^g}</m> and of <m>I_L</m> with <m>I_{L^g}</m>.
+      Namely, if <m>(\alpha_v)_v</m> is an id&#xe8;le over <m>L</m> and <m>g \in G</m>,
+      then <m>g</m> maps the completion <m>L_v</m> of <m>L</m> to a completion <m>L_{v^g}</m> of <m>L^g</m>.
+      (Remember, a place <m>v</m> corresponds to an absolute value <m>|\cdot|_v</m> on <m>L</m>;
+      the absolute value <m>|\cdot|_{v^g}</m> on <m>L^g</m> is given by <m>|a^g|_{v^g}| = |a|_v</m>.)
+      As you might expect,
+      this action is compatible with the embeddings of <m>L</m> in <m>I_L</m> and <m>L^g</m> in <m>I_{L^g}</m>,
+      so it induces an isomorphism
+      <m>C_L \to C_{L^g}</m> of id&#xe8;le class groups.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Aside</title>
+    <p>
+      Neukirch points out that you can regard <m>\AA_L</m> as the tensor product <m>\AA_K \otimes_K L</m>;
+      in particular,
+      this is a good way to see the Galois action on <m>\AA_L</m>.
+      Details are left to the reader.
+    </p>
+    <p>
+      We can define trace and norm maps as well:
+      <me>
+        \Trace_{\AA_L/\AA_K}(x) = \sum_g x^g, \qquad \Norm_{I_L/I_K}(x) = \prod_g x^g
+      </me>
+      where <m>g</m> runs over coset representatives of
+      <m>\Gal(\overline{K}/L)</m> in <m>\Gal(\overline{K}/K)</m>,
+      the sum and product taking places in the ad&#xe8;le and id&#xe8;le rings of the Galois closure of <m>L</m> over <m>K</m>.
+      In particular, if <m>L/K</m> is Galois,
+      <m>g</m> simply runs over <m>\Gal(L/K)</m>.
+    </p>
+    <p>
+      In terms of components, these definitions translate as
+      <me>
+        <mrow>(\Trace_{\AA_L/\AA_K}(\alpha))_{v} \amp = \sum_{w | v} \Trace_{L_w/K_v}(\alpha_w)</mrow>
+        <mrow>(\Norm_{I_L/I_K}(\alpha))_{v} \amp = \prod_{w | v} \Norm_{L_w/K_v}(\alpha_w).</mrow>
+      </me>
+    </p>
+    <p>
+      The trace and norm do what you expect on principal ad&#xe8;les/id&#xe8;les.
+      In particular,
+      the norm descends to a map <m>\Norm_{L/K}: C_L \to C_K</m>.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Aside</title>
+    <p>
+      You can also define the trace of an ad&#xe8;le
+      <m>\alpha \in \AA_L</m> as the trace of addition by <m>\alpha</m> as an endomorphism of the <m>\AA_K</m>-module <m>\AA_L</m>,
+      and the norm of an id&#xe8;le
+      <m>\alpha \in I_L</m> as the determinant of multiplication by <m>\alpha</m> as an automorphism of the <m>\AA_K</m>-module <m>\AA_L</m>.
+      (Yes, the action is on the <em>ad&#xe8;les</em> in both cases.
+      Remember, id&#xe8;les should be thought of as automorphisms of the ad&#xe8;les,
+      not as elements of the ad&#xe8;le ring,
+      in order to topologize them correctly.)
+    </p>
+    <p>
+      If <m>L/K</m> is a Galois extension,
+      then <m>\Gal(L/K)</m> acts on <m>\AA_L</m> and <m>I_L</m> fixing <m>\AA_K</m> and <m>I_K</m>,
+      respectively, and we have the following.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          If <m>L/K</m> is a Galois extension with Galois group <m>G</m>,
+          then <m>\AA_L^G = \AA_K</m> and <m>I_L^G = I_K</m>.
+        </p>
+      </statement>
+    </proposition>
+    <proof>
+      <p>
+        If <m>v</m> is a place of <m>K</m>,
+        then for each place <m>w</m> of <m>K</m> above <m>v</m>,
+        the decomposition group <m>G_w</m> of <m>w</m> is isomorphic to <m>\Gal(L_w/K_v)</m>.
+        So if <m>(\alpha)</m> is an ad&#xe8;le or id&#xe8;le which is <m>G</m>-invariant,
+        then <m>\alpha_w</m> is <m>\Gal(L_w/K_v)</m>-invariant for each <m>w</m>,
+        so belongs to <m>K_v</m>.
+        Moreover, <m>G</m> acts transitively on the places <m>w</m> above <m>v</m>,
+        so <m>\alpha_w = \alpha_{w'}</m> for any two places <m>w,
+        w'</m> above <m>v</m>.
+        Thus <m>(\alpha)</m> is an ad&#xe8;le or id&#xe8;le over <m>K</m>.
+      </p>
+    </proof>
+    <p>
+      This has the following nice consequence for the id&#xe8;le class group,
+      a fact which is quite definitely not true for the ideal class group:
+      the map <m>\Cl_K \to \Cl_L^G</m> is neither injective nor surjective in general.
+      This is our first hint of why the id&#xe8;le class group will be a more convenient target for a reciprocity map than the ideal class group.
+    </p>
+    <proposition>
+      <title>Galois descent</title>
+      <statement>
+        <p>
+          If <m>L/K</m> is a Galois extension with Galois group <m>G</m>,
+          then <m>G</m> acts on <m>C_L</m>,
+          and the <m>G</m>-invariant elements are precisely <m>C_K</m>.
+        </p>
+      </statement>
+    </proposition>
+    <proof>
+      <p>
+        We start with an exact sequence
+        <me>
+          1 \to L^* \to I_L \to C_L \to 1
+        </me>
+        of <m>G</m>-modules.
+        Taking <m>G</m>-invariants, we get a long exact sequence
+        <me>
+          1 \to (L^*)^G = K^* \to (I_L)^G = I_K \to C_L^G \to H^1(G, L^*)
+        </me>,
+        and the last term is 1 by Theorem 90
+        (<xref ref="L_theorem_90">Lemma</xref>).
+        So we again have a short exact sequence,
+        and <m>C_L^G \cong I_K/K^* = C_K</m>.
+      </p>
+    </proof>
+  </subsection>
+</section>

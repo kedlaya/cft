@@ -1,0 +1,182 @@
+<section xml:id="sec_zeta">
+  <title>Zeta functions and the Chebotarev density theorem</title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        Lang, <em>Algebraic Number Theory</em>, Chapter VIII for starters;
+        see also Milne, Chapter VI and Neukirch, Chapter VII. For advanced reading,
+        see Tate's thesis
+        (last chapter of Cassels-Frohlich),
+        but wait until we introduce the adeles.
+      </p>
+    </paragraphs>
+    <p>
+      Although this is supposed to be a course on algebraic number theory,
+      the following analytic discussion is so fundamental that we must at least allude to it here.
+    </p>
+    <p>
+      Let <m>K</m> be a number field.
+      The <em>Dedekind zeta function</em>
+      <m>\zeta_K(s)</m> is a function on the complex plane given,
+      for <m>\Real(s) > 1</m>, by the absolutely convergent product and sum
+      <me>
+        \zeta_K(s) = \prod_\gothp (1 - \Norm(\gothp)^{-s})^{-1} = \zeta_K(s) = \sum_{\gotha} \Norm(\gotha)^{-s}
+      </me>,
+      where in the sum <m>\gotha</m> runs over the nonzero ideals of <m>\gotho_K</m>.
+    </p>
+    <p>
+      A fundamental fact about the zeta function is the following.
+      We omit the proof.
+    </p>
+    <theorem xml:id="T_meromorphic_continuation">
+      <statement>
+        <p>
+          The function <m>\zeta_K(s)</m> extends to a meromorphic function on <m>\CC</m> whose only pole is a simple pole at <m>s=1</m> of residue <m>1</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The case <m>K=\QQ</m> is of course the famous Riemann zeta function.
+      There is also a functional equation relating the values of <m>\zeta_K</m> at <m>s</m> and <m>1-s</m>,
+      and an extended Riemann hypothesis: aside from
+      <q>trivial</q>
+      zeros along the negative real axis,
+      the zeroes of <m>\zeta_K</m> all have real part <m>1/2</m>.
+    </p>
+    <p>
+      More generally,
+      let <m>\gothm</m> be a formal product of places of <m>K</m>,
+      and let <m>\chi_\gothm: \Cl^\gothm(K) \to \CC^*</m> be a character of the ray class group of conductor <m>\gothm</m>.
+      Extend <m>\chi_\gothm</m> to a function on all ideals of <m>K</m> by declaring its value to be 0 on ideals not coprime to <m>\gothm</m>.
+      Then we define the <m>L</m>-function
+      <me>
+        L(s, \chi_\gothm) = \prod_{\gothp \not| \gothm} (1 - \chi(\gothp) \Norm(\gothp)^{-s})^{-1} = \sum_{(\gotha, \gothm) = 1} \chi(\gotha) \Norm(\gotha)^{-s}
+      </me>.
+    </p>
+    <p>
+      Then we have another basic fact whose proof we also omit.
+    </p>
+    <theorem xml:id="T_analytic_continuation">
+      <statement>
+        <p>
+          If <m>\chi_\gothm</m> is not trivial,
+          then <m>L(s, \chi_\gothm)</m> extends to an analytic function on <m>\CC</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      If <m>\chi_\gothm</m> is trivial,
+      then <m>L(s, \chi_\gothm)</m> is just the Dedekind zeta function with the Euler factors for primes dividing <m>\gothm</m> removed,
+      so it still has a pole at <m>s=1</m>.
+    </p>
+    <theorem xml:id="T_nonvanishing_of_L">
+      <statement>
+        <p>
+          If <m>\chi_\gothm</m> is not the trivial character,
+          then <m>L(1, \chi_\gothm) \neq 0</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      This is already a nontrivial,
+      but important result over <m>\QQ</m>.
+      It implies Dirichlet's famous theorem that there are infinitely many primes in arithmetic progression,
+      by implying that for any nontrivial <m>\chi_\gothm</m>,
+      <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> remains bounded as <m>s \to \infty</m>.
+      In fact, we say that a set of primes <m>S</m> in a number field <m>K</m> has Dirichlet density <m>d</m> if
+      <me>
+        \lim_{s \to 1^+} \frac{\sum_{\gothp \in S} \Norm(\gothp)^{-s}}{\log \frac{1}{s-1}} = d
+      </me>.
+    </p>
+    <p>
+      Then the fact implies that the Dirichlet density of the set of primes congruent to <m>a</m> modulo <m>m</m>
+      (assuming <m>a</m> is coprime to <m>m</m>)
+      is <m>1/\phi(m)</m>.
+    </p>
+    <p>
+      The fact also implies that for any number field <m>K</m> and any formal product of places <m>\gothm</m>,
+      there are infinitely many primes in each class of the ray class group of conductor <m>\gothm</m>,
+      the set of such primes having Dirichlet density <m>1/\#\Cl^\gothm(K)</m>.
+      (Proof: see exercises.)
+    </p>
+    <p>
+      Finally, we point out a result of class field theory that also applies to nonabelian extensions.
+      Recall that if <m>L/K</m> is any Galois extension of number fields with Galois group <m>G</m>,
+      <m>\gothp</m> is a prime of <m>K</m>,
+      and <m>\gothq</m> is a prime above <m>\gothp</m> which is unramified,
+      then there is a well-defined Frobenius associated to <m>\gothq</m> (it's the element <m>g</m> of the decomposition group
+      <m>G_{\gothq}</m> such that <m>x^g \equiv x^{\#(\gotho_K/\gothp)} \pmod{\gothq}</m>);
+      but as a function of <m>\gothp</m>,
+      this Frobenius is only well-defined up to conjugation in <m>G</m>.
+    </p>
+    <theorem>
+      <title>Chebotarev Density Theorem</title>
+      <statement>
+        <p>
+          Let <m>L/K</m> be an arbitrary Galois extension of number fields,
+          with Galois group <m>G</m>.
+          Then for any <m>g \in G</m>,
+          there exist infinitely many primes <m>\gothp</m> of <m>K</m> such that there is a prime <m>\gothq</m> of <m>L</m> above <m>\gothp</m> with Frobenius <m>g</m>.
+          In fact, the Dirichlet density of such primes <m>\gothp</m> is the order of the conjugacy class of <m>G</m> divided by <m>\#G</m>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        This follows from everything we have said so far,
+        plus Artin reciprocity, in case <m>L/K</m> is abelian.
+        In the general case, let <m>f</m> be the order of <m>g</m>,
+        and let <m>K'</m> be the fixed field of <m>g</m>;
+        then we know that the set of primes of <m>K'</m> with Frobenius
+        <m>g \in \Gal(L/K') \subset G</m> has Dirichlet density <m>1/f</m>.
+        The same is true if we restrict to primes of absolute degree 1
+        (see exercises).
+      </p>
+      <p>
+        Let <m>Z</m> be the centralizer of <m>g</m> in <m>G</m>;
+        that is, <m>Z = \{z \in G: zg = gz\}</m>.
+        Then for each prime of <m>K</m>
+        (of absolute degree 1)
+        with Frobenius in the conjugacy class of <m>g</m>,
+        there are <m>\#Z/f</m> primes of <m>K'</m> above it
+        (also of absolute degree 1)
+        with Frobenius <m>g</m>.
+        (Say <m>\gothp</m> is such a prime and <m>\gothq</m> is a prime of <m>L</m> above <m>\gothp</m> with Frobenius <m>g</m>.
+        Then for <m>h \in G</m>,
+        the Frobenius of <m>\gothq^h</m> is <m>hgh^{-1}</m>,
+        so the number of primes <m>\gothq</m> with Frobenius <m>g</m> is <m>\#Z</m>.
+        But each prime of <m>L'</m> below one of these is actually below <m>f</m> of them.)
+        Thus the density of primes of <m>K</m> with Frobenius in the conjugacy class of <m>g</m> is <m>(1/f)(1/(\#Z/f)) = 1/\#Z</m>.
+        To conclude,
+        note that the order of the conjugacy class of <m>G</m> is <m>\#G/\#Z</m>.
+      </p>
+    </proof>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <ol>
+      <li>
+        <p>
+          Show that the Dirichlet density of the set of all primes of a number field is 1.
+        </p>
+      </li>
+      <li>
+        <p>
+          Show that in any number field,
+          the Dirichlet density of the set of primes <m>\gothp</m> of absolute degree greater than 1 is zero.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>\gothm</m> be a formal product of places of the number field <m>K</m>.
+          Using <xref ref="T_meromorphic_continuation">Theorems</xref>,
+          <xref ref="T_analytic_continuation"></xref>,
+          and <xref ref="T_nonvanishing_of_L"></xref>,
+          prove that the set of primes of <m>K</m> lying in any specified class of the ray class group of conductor <m>\gothm</m> is <m>1/\#\Cl^\gothm(K)</m>. (Hint:
+          combine the quantities <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> to cancel out all but one class.)
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

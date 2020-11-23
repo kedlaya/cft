@@ -1,0 +1,423 @@
+<section xml:id="sec_adeles">
+  <title>Ad&#xe8;les and id&#xe8;les</title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        Milne, Section V.4; Neukirch, Section VI.1 and VI.2; Lang,
+        <em>Algebraic Number Theory</em>, Chapter VII.
+      </p>
+    </paragraphs>
+    <p>
+      The <m>p</m>-adic numbers, and more general local fields,
+      were introduced into number theory as a way to translate local facts about number fields (i.e., facts concerning a single prime ideal) into statements of a topological flavor.
+      To prove the statements of class field theory,
+      we need an analogous global construction.
+      To this end,
+      we construct a topological object that includes all of the completions of a number field,
+      including both the archimedean and nonarchimedean ones.
+      This object will be the ring of ad&#xe8;les,
+      and it will lead us to the right target group for use in the abstract class field theory we have just set up.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Spelling note</title>
+    <p>
+      There is a lack of consensus regarding the presence or absence of accents in the words
+      <em>ad&#xe8;le</em> and <em>id&#xe8;le</em>.
+      The term <em>id&#xe8;le</em> is thought to be a contraction of
+      <q>ideal element</q>; it makes its first appearance,
+      with the accent, in Chevalley's 1940 paper
+      <q>La th&#xe8;orie du corps de classes.</q>
+      The term <em>ad&#xe8;le</em> appeared in the 1950s, possibly as a contraction of
+      <q>additive id&#xe8;le</q>; it appears to have been suggested by Weil as a replacement for Tate's term
+      <q>valuation vector</q>
+      and Chevalley's term
+      <q>repartition</q>. Based on this history, we have opted for the accented spellings here.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Jargon watch</title>
+    <p>
+      By a <em>place</em> of a number field <m>K</m>,
+      we mean either an archimedean completion
+      <m>K \hookrightarrow \RR</m> or <m>K \hookrightarrow \CC</m>
+      (an <em>infinite place</em>),
+      or a <m>\gothp</m>-adic completion
+      <m>K \hookrightarrow K_\gothp</m> for some nonzero prime ideal <m>\gothp</m> of <m>\gotho_K</m> (a
+      <em>finite place</em>). (Note:
+      there is only one place for each pair of complex embeddings of <m>K</m>.) Each place corresponds to an equivalence class of absolute values on <m>K</m>;
+      if <m>v</m> is a place,
+      we write <m>K_v</m> for the corresponding completion,
+      which is either <m>\RR</m>,
+      <m>\CC</m>, or <m>K_\gothp</m> for some prime <m>\gothp</m>.
+    </p>
+  </subsection>
+  <subsection>
+    <title>The ad&#xe8;les</title>
+    <p>
+      The basic idea is that we want some sort of
+      <q>global completion</q>
+      of a number field <m>K</m>.
+      In fact, we already know one way to complete <m>\ZZ</m>,
+      namely its profinite completion <m>\widehat{\ZZ} = \prod_p \ZZ_p</m>.
+      But we really want something containing <m>\QQ</m>.
+      We define the <em>ring of finite ad&#xe8;les</em>
+      <m>\AA^{\fin}_\QQ</m> as any of the following isomorphic objects:
+      <ul>
+        <li>
+          <p>
+            the tensor product <m>\widehat{\ZZ} \otimes_{\ZZ} \QQ</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            the direct limit of <m>\frac{1}{n} \widehat{\ZZ}</m> over all nonzero integers <m>n</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            the <em>restricted direct product</em>
+            <m>\sideset{}{'_p}\prod \QQ_p</m>,
+            where we only allow tuples <m>(\alpha_p)</m> for which
+            <m>\alpha_p \in \ZZ_p</m> for almost all <m>p</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      For symmetry, we really should allow <em>all</em> places,
+      not just the finite places.
+      So we also define the <em>ring of ad&#xe8;les</em>
+      over <m>\QQ</m> as <m>\AA_{\QQ} = \RR \times \AA^{\fin}_{\QQ}</m>.
+      Then <m>\AA_{\QQ}</m> is a locally compact topological ring with a canonical embedding <m>\QQ \hookrightarrow \AA_{\QQ}</m>.
+    </p>
+    <p>
+      Now for a general number field <m>K</m>.
+      The profinite completion <m>\widehat{\gotho_K}</m> is canonically isomorphic to <m>\prod_{\gothp} \gotho_{K_{\gothp}}</m>,
+      so we define the <em>ring of finite ad&#xe8;les</em>
+      <m>\AA^{\fin}_{K}</m> as any of the following isomorphic objects:
+      <ul>
+        <li>
+          <p>
+            the tensor product <m>\widehat{\gotho_K} \otimes_{\gotho_K} K</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            the direct limit of <m>\frac{1}{\alpha} \widehat{\gotho_K}</m> over all nonzero <m>\alpha \in \gotho_K</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            the <em>restricted direct product</em>
+            <m>\sideset{}{'_p}\prod K_{\gothp}</m>,
+            where we only allow tuples <m>(\alpha_p)</m> for which
+            <m>\alpha_p \in \gotho_{K_{\gothp}}</m> for almost all <m>\gothp</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      The ring of ad&#xe8;les <m>\AA_K</m> is the product of
+      <m>\AA^{\fin}_K</m> with each archimedean completion.
+      (That's one copy of <m>\RR</m> for each real embedding and one copy of <m>\CC</m> for each conjugate pair of complex embeddings.)
+    </p>
+    <p>
+      One has a natural norm on the ring of ad&#xe8;les,
+      because one has a natural norm on each completion:
+      <me>
+        |(\alpha_v)_v| = \prod_v |\alpha_v|_v
+      </me>.
+    </p>
+    <p>
+      One should normalize these in the following way:
+      for <m>v</m> real,
+      take <m>|\cdot|_v</m> to be the usual absolute value.
+      For <m>v</m> complex, take
+      <m>|\cdot|_v</m> to be the <em>square</em>
+      of the usual absolute value.
+      (That means the result is not an absolute value,
+      in that it doesn't satisfy the triangle inequality.
+      Sorry.)
+      For <m>v</m> nonarchimedean corresponding to a prime above <m>p</m>,
+      normalize so that <m>|p|_v = p^{-1}</m>.
+    </p>
+    <p>
+      Again, there is a natural embedding of <m>K</m> into <m>\AA_K</m> because there is such an embedding for each completion.
+      With the normalization as above,
+      one has the product formula:
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          If <m>\alpha \in K</m>, then <m>|\alpha| = 1</m>.
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      In particular, <m>K</m> is <em>discrete</em> in <m>\AA_K</m>
+      (the difference between two elements of <m>K</m> cannot be simultaneously small in all embeddings).
+      This is a generalization/analogue of the fact that
+      <m>\gotho_K</m> is discrete in Minkowski space
+      (the product of the archimedean completions).
+    </p>
+    <p>
+      For any finite set <m>S</m> of places, let <m>\AA_S</m> (resp.
+      <m>\AA^{\fin}_S</m>) be the subring of <m>\AA_K</m> (resp.
+      <m>\AA^{\fin}_K</m>) consisting of those ad&#xe8;les which are integral at all finite places not contained in <m>S</m>.
+      Then we have the following result,
+      which is essentially the Chinese remainder theorem.
+    </p>
+    <proposition xml:id="P_adelic_CRT">
+      <statement>
+        <p>
+          For any finite set <m>S</m> of places,
+          <m>K + \AA_S^{\fin} = \AA_K^{\fin}</m> and <m>K + \AA_S = \AA_K</m>.
+        </p>
+      </statement>
+    </proposition>
+    <corollary>
+      <statement>
+        <p>
+          The quotient group <m>\AA_K/K</m> is compact.
+        </p>
+      </statement>
+    </corollary>
+    <proof>
+      <p>
+        Choose a compact subset <m>T</m> of the Minkowski space <m>M</m> containing a fundamental domain for the lattice <m>\gotho_K</m>.
+        Then every element of <m>M \times \AA^{\fin}_K</m> is congruent modulo
+        <m>\gotho_K</m> to an element of <m>T \times \AA^{\fin}_K</m>.
+        By the proposition, the compact set
+        <m>T \times \AA^{\fin}_K</m> surjects onto <m>\AA_K/K</m>,
+        so the latter is also compact.
+      </p>
+    </proof>
+  </subsection>
+  <subsection>
+    <title>Alternate description: restricted products of topological groups</title>
+    <p>
+      Let <m>G_1, G_2, \dots</m> be a sequence of locally compact topological groups and let <m>H_i</m> be a compact subgroup of <m>G_i</m>.
+      The <em>restricted product</em>
+      <m>G</m> of the pairs <m>(G_i, H_i)</m> is the set of tuples <m>(g_i)_{i=1}^\infty</m> such that
+      <m>g_i \in H_i</m> for all but finitely many indices <m>i</m>.
+      For each set <m>S</m>,
+      this product contains the subgroup <m>G_S</m> of tuples <m>(g_i)</m> such that
+      <m>g_i \in H_i</m> for <m>i \notin S</m>,
+      and indeed <m>G</m> is the direct limit of the <m>G_S</m>.
+      We make <m>G</m> into a topological group by giving each <m>G_S</m> the product topology and saying that
+      <m>U \subset G</m> is open if its intersection with each <m>G_S</m> is open there.
+    </p>
+    <p>
+      In this language,
+      the additive group of ad&#xe8;les over <m>\QQ</m> is simply the restricted product of the pairs
+      <m>(\RR, \RR)</m> and <m>(\QQ_p, \ZZ_p)</m> for each <m>p</m>,
+      and likewise over a number field.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Id&#xe8;les and the id&#xe8;le class group</title>
+    <p>
+      An <em>id&#xe8;le</em> is a unit in the ring <m>\AA_K</m>.
+      In other words, it is a tuple <m>(\alpha_v)</m>,
+      one element of <m>K_v^*</m> for each place <m>v</m> of <m>K</m>,
+      such that <m>\alpha_v \in \gotho_{K_v}^*</m> for all but finitely many finite places <m>v</m>.
+      Let <m>I_K</m> denote the group of id&#xe8;les of <m>K</m> (sometimes thought of as <m>\GL_1(\AA_K)</m>).
+      This group is the restricted product of the pairs <m>(\RR^*, \RR^*)</m>,
+      <m>(\CC^*, \CC^*)</m>, and <m>(K_{\gothp}^*, \gotho_{\gothp}^*)</m>.
+    </p>
+    <p>
+      For example, for each element <m>\beta \in K</m>,
+      we get an ad&#xe8;le in which <m>\alpha_v = \beta</m> for all <m>v</m>;
+      this ad&#xe8;le is an id&#xe8;le if <m>\beta \neq 0</m>.
+      We call these the <em>principal ad&#xe8;les</em>
+      and <em>principal id&#xe8;les</em>,
+      and define the <em>id&#xe8;le class group</em>
+      of <m>K</m> as the quotient
+      <m>C_K = I_K/K^*</m> of the id&#xe8;les by the principal id&#xe8;les.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Warning</title>
+    <p>
+      While the embedding of the id&#xe8;les into the ad&#xe8;les is continuous,
+      the restricted product topology on id&#xe8;les does not coincide with the subspace topology for the embedding!
+      For example,
+      the set of id&#xe8;les whose component at each finite prime <m>\gothp</m> is in <m>\gotho_{\gothp}^*</m> is open,
+      but not an intersection of the id&#xe8;le group with an open subset of the ad&#xe8;les.
+      See the exercises for one way to fix this,
+      and the last part of this section for another.
+    </p>
+    <p>
+      There is a homomorphism from <m>I_K</m> to the group of fractional ideals of <m>K</m>:
+      <me>
+        (\alpha_\nu)_\nu \mapsto \prod_{\gothp} \gothp^{v_{\gothp}(\alpha_\gothp)}
+      </me>,
+      which is continuous for the discrete topology on the group of fractional ideals.
+      The principal id&#xe8;le corresponding to
+      <m>\alpha \in K</m> maps to the principal ideal generated by <m>\alpha</m>.
+      Thus we have a surjection <m>C_K \to \Cl(K)</m>.
+    </p>
+    <p>
+      Since the norm is trivial on <m>K^*</m>,
+      we get a well-defined norm map <m>|\cdot|: C_K \to \RR^*_+</m>.
+      Let <m>C_K^0</m> be the kernel of the norm map;
+      then <m>C_K^0</m> also surjects onto <m>\Cl(K)</m>. (The surjection onto <m>\Cl(K)</m> ignores the infinite places,
+      so you can adjust there to force norm 1.)
+    </p>
+    <proposition xml:id="P_idele_group_compact">
+      <statement>
+        <p>
+          The group <m>C_K^0</m> is compact.
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      This innocuous-looking fact actually implies two key theorems of algebraic number theory:
+      <ol>
+        <li>
+          <p>
+            The class group of <m>K</m> is finite.
+          </p>
+        </li>
+        <li>
+          <p>
+            The group of units of <m>K</m> has rank <m>r+s-1</m>,
+            where <m>r</m> and <m>s</m> are the number of real and complex places,
+            respectively.
+            More generally,
+            if <m>S</m> is a finite set of places containing the archimedean places,
+            the group of <m>S</m>-units of <m>K</m>
+            (elements of <m>K</m> which have valuation 0 at each finite place not contained in <m>S</m>)
+            has rank <m>\#(S)-1</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      In fact, (a) is immediate:
+      <m>C_K^0</m> is compact and it surjects onto <m>\Cl(K)</m>,
+      so the latter must also be compact for the discrete topology,
+      i.e., it must be finite. (In fact,
+      <m>\Cl(K)</m> is isomorphic to the group of connected components of <m>C_K^0</m>.) To see (b),
+      let <m>I_S</m> be the group of id&#xe8;les which are units outside <m>S</m>,
+      and define the map <m>\log: I_S \to \RR^{\#(S)}</m> by taking log of the absolute value of the norm of each component in <m>S</m>.
+      By the product formula,
+      this maps into the sum-of-coefficients-zero hyperplane <m>H</m> in <m>\RR^{\#(S)}</m>,
+      and the image of the group <m>K_S^*</m> of <m>S</m>-units is discrete therein.
+      (Restricting an element of <m>K_S^*</m> to a bounded subset of <m>H</m> bounds all of its absolute values,
+      so this follows from the discreteness of <m>K</m> in <m>\AA_K</m>.)
+      Let <m>W</m> be the span in <m>H</m> of the image of <m>K_S^*</m>;
+      then we get a continuous homomorphism
+      <m>C_K^0 \to H/W</m> whose image generates <m>H/W</m>.
+      But its image is compact;
+      this is a contradiction unless <m>H/W</m> is the zero vector space.
+      Thus <m>K_S^*</m> must be a lattice in <m>H</m>,
+      so it has rank <m>\dim H = \#S - 1</m>.
+    </p>
+    <proof>
+      <p>
+        The inverse images of any two positive real numbers under the norm map are homeomorphic.
+        So rather than prove that the inverse image of 0 is compact,
+        we'll prove that the inverse image of some <m>\rho > 0</m> is compact.
+        Namely, we choose <m>\rho>c</m>,
+        where <m>c</m> has the property that any id&#xe8;le of norm
+        <m>\rho > c</m> is congruent modulo <m>K^*</m> to an id&#xe8;le whose components all have norms in <m>[1, \rho]</m>.
+        (The existence of <m>c</m> is left as an exercise.)
+      </p>
+      <p>
+        The set of id&#xe8;les with each component having norm in <m>[1, \rho]</m> is the product of
+        <q>annuli</q>
+        in the archimedean places and finitely many of the nonarchimedean places,
+        and the group of units in the rest.
+        (Most of the nonarchimedean places don't have any valuations between 1 and <m>\rho</m>.)
+        This is a compact set,
+        the set of id&#xe8;les therein of norm <m>\rho</m> is a closed subset and so is also compact,
+        and the latter set surjects onto <m>C_K^0</m>, so that's compact too.
+      </p>
+    </proof>
+    <p>
+      One more comment worth making:
+      what are the open subgroups of <m>I_K</m>?
+      In fact, for each formal product <m>\gothm</m> of places,
+      one gets an open subgroup of id&#xe8;les <m>(\alpha_v)_v</m> such that:
+      <ol>
+        <li>
+          <p>
+            if <m>v</m> is a real place occurring in <m>\gothm</m>,
+            then <m>\alpha_v > 0</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            if <m>v</m> is a finite place corresponding to the prime <m>\gothp</m>,
+            occurring to the power <m>e</m>,
+            then <m>\alpha_v \equiv 1 \pmod{\gothp^e}</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Moreover, every open subgroup contains one of these.
+      Thus using the surjection <m>C_K \mapsto \Cl(K)</m>,
+      we get a bijection between open subgroups of <m>C_K</m> and generalized ideal class groups!
+    </p>
+  </subsection>
+  <subsection>
+    <title>A presentation of <m>\AA_\QQ</m></title>
+    <p>
+      In the special case <m>K = \QQ</m>,
+      the id&#xe8;le class group has a nice presentation.
+      Namely, given an arbitrary id&#xe8;le in <m>I_\QQ</m>,
+      there is a unique positive rational with the same norms at the finite places.
+      Thus
+      <me>
+        I_\QQ \cong \RR^* \times \prod_p \ZZ_p^*
+      </me>.
+    </p>
+    <p>
+      This definitely does not generalize:
+      as noted above,
+      the id&#xe8;le class group has multiple connected components when the class number is bigger than 1.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Aside: beyond class field theory</title>
+    <p>
+      You can think of the id&#xe8;le group as <m>\GL_1(\AA_K)</m>.
+      In that case,
+      class field theory will become a correspondence between one-dimensional representations of
+      <m>\Gal(\overline{K}/K)</m> and certain representations of <m>\GL_1(\AA_K)</m>.
+      This is the form in which class field theory generalizes to the nonabelian case:
+      the Langlands program predicts a correspondence between <m>n</m>-dimensional representations of
+      <m>\Gal(\overline{K}/K)</m> and certain representations of <m>\GL_n(\AA_K)</m>.
+      In fact, with <m>K</m> replaced by the function field of a curve over a finite field,
+      this prediction is a deep theorem of L. Lafforgue
+      (based on work of Drinfeld).
+    </p>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <ol>
+      <li>
+        <p>
+          Prove <xref ref="P_adelic_CRT">Proposition</xref>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Show that the restricted direct product topology on <m>I_K</m> is the subspace topology for the embedding into
+          <m>\AA_K \times \AA_K</m> given by the map <m>x \mapsto (x,x^{-1})</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Complete the proof of <xref ref="P_idele_group_compact">Proposition</xref>
+          by establishing the existence of the constant <m>c</m>.
+          (Hint: see Lang, Section V.1, Theorem 0.)
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

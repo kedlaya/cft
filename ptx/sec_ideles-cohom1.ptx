@@ -1,0 +1,317 @@
+<section xml:id="sec_ideles-cohom1">
+  <title>Cohomology of the id&#xe8;les I: the
+  <q>First Inequality</q>
+  </title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        Milne VII.2-VII.4; Neukirch VI.3;
+        but see below about Neukirch.
+      </p>
+    </paragraphs>
+    <p>
+      By analogy with local class field theory,
+      we want to prove that for <m>K,L</m> number fields and
+      <m>C_K, C_L</m> their id&#xe8;le class groups,
+      <me>
+        H^1(\Gal(L/K), C_L) = 1, \qquad H^2(\Gal(L/K), C_L) = \ZZ/[L:K]\ZZ
+      </me>.
+    </p>
+    <p>
+      In this chapter,
+      we'll look at the special case <m>L/K</m> cyclic, and prove that
+      <me>
+        \#H^0_T(\Gal(L/K), C_L)/\#H^1_T(\Gal(L/K), C_L) = [L:K]
+      </me>.
+    </p>
+    <p>
+      That is, the Herbrand quotient of <m>C_L</m> is <m>[L:K]</m>.
+      As we'll see,
+      this will end up reducing to looking at units in a real vector space,
+      much as in the proof of Dirichlet's units theorem.
+    </p>
+    <p>
+      This will imply the
+      <q>First Inequality</q>.
+    </p>
+    <theorem xml:id="T_first_inequality">
+      <statement>
+        <p>
+          For <m>L/K</m> a cyclic extension of number fields,
+          <me>
+            \#H^0_T(\Gal(L/K), C_L) \geq [L:K]
+          </me>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      The
+      <q>Second Inequality</q>
+      will be the reverse, which will be a bit more subtle
+      (see <xref ref="T_first_and_second_inequality">Theorem</xref>).
+    </p>
+  </introduction>
+  <subsection>
+    <title>Some basic observations</title>
+    <p>
+      But first, some general observations.
+      Put <m>G = \Gal(L/K)</m>.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          For each <m>i>0</m>, <m>H^i(G, I_L) = \oplus_v H^i(G_v, L_v^*)</m>.
+          For each <m>i</m>, <m>H^i_T(G, I_L) = \oplus_v H^i_T(G_v, L_v^*)</m>.
+        </p>
+      </statement>
+    </proposition>
+    <proof>
+      <p>
+        For any finite set <m>S</m> of places of <m>K</m> containing all infinite places and all ramified primes,
+        let <m>I_{L,S}</m> be the set of id\<sq>eles with a unit at each component other than at the places dividing any places in <m>S</m>.
+        Note that <m>I_{L,S}</m> is stable under <m>G</m>
+        (because we defined it in terms of places of <m>K</m>,
+        not <m>L</m>).
+        By definition,
+        <m>I_L</m> is the direct limit of the <m>I_{L,S}</m> over all <m>S</m>,
+        so <m>H^i(G,I_L)</m> is the direct limit of the <m>H^i(G, I_{L,S})</m>.
+        The latter is the product of
+        <m>H^i(G, \prod_{w|v} L_w^*)</m> over all <m>v \in S</m> and
+        <m>H^i(G, \prod_{w|v} \gotho_{L_w}^*)</m> over all <m>v \notin S</m>,
+        but the latter is trivial because <m>v \notin S</m> cannot ramify.
+        By Shapiro</sq>s lemma
+        (<xref ref="L_Shapiro">Lemma</xref>),
+        <m>H^i(G, \prod_{w|v} L_w^*) = H^i(G_v, L_w^*)</m>, so we have what we want.
+        The argument for Tate groups is analogous.
+      </p>
+    </proof>
+    <p>
+      Notice what this says for <m>i=0</m> on the Tate groups:
+      an id&#xe8;le is a norm if and only if each component is a norm.
+      Obvious, perhaps, but useful.
+    </p>
+    <p>
+      In particular,
+      <me>
+        H^1(G, I_L) = 0, \qquad H^2(G, I_L) = \bigoplus_v \frac{1}{[L_w:K_v]} \ZZ/\ZZ
+      </me>.
+    </p>
+    <p>
+      One other observation:
+      if <m>S</m> contains all infinite places and all ramified places, then
+      <me>
+        \Norm_{L/K} I_{L,S} = \prod_{v \in S} U_v \times \prod_{v \notin S} \gotho_{K_v}^*
+      </me>
+      where <m>U_v</m> is open in <m>K_v^*</m>.
+      The group on the right is open in <m>I_K</m>,
+      so <m>\Norm_{L/K} I_K</m> is open.
+    </p>
+    <p>
+      By quotienting down to <m>C_K</m>,
+      we see that <m>\Norm_{L/K} C_K</m> is open.
+      In fact, the snake lemma on the diagram
+    </p>
+    <image source="images/245b3f82dd0d641fecca92c1b5f084252015ab51.png"/>
+    <p>
+      implies that the quotient <m>I_K/(K^* \times \Norm_{L/K} I_L)</m> is isomorphic to <m>C_K</m>.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Cohomology of the units</title>
+    <p>
+      Remember, we're going to be assuming
+      <m>G = \Gal(L/K)</m> is cyclic until further notice,
+      so that we may use periodicity of the Tate groups,
+      and the Herbrand quotient.
+    </p>
+    <p>
+      First of all,
+      working with <m>I_L</m> all at once is a bit unwieldy;
+      we'd rather work with <m>I_{L,S}</m> for some finite set <m>S</m>.
+      In fact, we can choose <m>S</m> to make our lives easier:
+      we choose <m>S</m> containing all infinite places,
+      and all ramified primes, and perhaps some extra primes so that
+      <me>
+        I_L = I_{L,S} L^*
+      </me>.
+    </p>
+    <p>
+      This is possible because the ideal class group of <m>L</m> is finite,
+      so it is generated by some finite set of primes,
+      which we introduce into <m>S</m>;
+      then I can move a generator of any other prime to some stuff in <m>S</m> times units.
+      (This argument can also be used to prove that <m>C^0_L</m> is compact,
+      but then one doesn't recover the finiteness of the ideal class group as a corollary.)
+    </p>
+    <p>
+      Put <m>L_S = L^* \cap I_{L,S}</m>;
+      that is, <m>L_S</m> is the group of <m>S</m>-units in <m>L</m>.
+      From the exact sequence
+      <me>
+        1 \to L_S \to I_{L,S} \to I_{L,S}/L_S = C_L \to 1
+      </me>
+      we have, in case <m>L/K</m> is cyclic,
+      an equality of Herbrand quotients
+      <me>
+        h(C_L) = h(I_{L,S})/h(L_S)
+      </me>.
+    </p>
+    <p>
+      From the computation of <m>H^i(G, I_{L,S})</m>,
+      it's easy to read off its Herbrand quotient:
+      <me>
+        h(I_{L,S}) = \prod_{v \in S} \#H^0_T(G_v, L_w^*)= \prod_{v \in S} [L_w:K_v]
+      </me>.
+    </p>
+    <p>
+      So to get <m>h(C_L) = [L:K]</m>, we need
+      <me>
+        h(L_S) = \frac{1}{[L:K]} \prod_{v \in S} [L_w:K_v]
+      </me>.
+    </p>
+    <p>
+      This will in fact be true even if we only assume <m>S</m> contains all infinite places,
+      as we now check.
+    </p>
+    <p>
+      Let <m>T</m> be the set of places of <m>L</m> dividing the places of <m>S</m>.
+      Let <m>V</m> be the real vector space consisting of one copy of <m>\RR</m> for each place in <m>T</m>.
+      Define the map <m>L_S \to V</m> by sending
+      <me>
+        \alpha \to \prod_w \log |\alpha|_w
+      </me>,
+      with the caveat that the norm at a complex place is the <em>square</em>
+      of the usual absolute value;
+      the kernel of this map consists solely of roots of unity
+      (by Kronecker's theorem:
+      any algebraic integer whose conjugates in <m>\CC</m> all have norm 1 is a root of unity).
+      Let <m>M</m> be the quotient of <m>L_S</m> by the group of roots of unity;
+      since the latter is finite, <m>h(M) = h(L_S)</m>.
+      Let <m>H \subset V</m> be the hyperplane of vectors with sum of coordinates 0;
+      by the product formula, <m>M</m> maps into <m>H</m>.
+      As noted earlier,
+      in fact <m>M</m> is a discrete subgroup of <m>H</m> of rank equal to the dimension of <m>H</m>;
+      that is, <m>M</m> is a lattice in <m>H</m>.
+      Moreover, we have an action of <m>G</m> on <m>V</m> compatible with the embedding of <m>M</m>;
+      namely, <m>G</m> acts on the places in <m>T</m>,
+      so acts on <m>V</m> by permuting the coordinates.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Caveat</title>
+    <p>
+      There seems to be an error in Neukirch's derivation at this point.
+      Namely, his Lemma VI.3.4 is only proved assuming that <m>G</m> acts transitively on the coordinates of <m>V</m>;
+      but in the above situation, this is not the case:
+      <m>G</m> permutes the places above any given place <m>v</m> of <m>K</m> but those are separate orbits.
+      So we'll follow Milne instead.
+    </p>
+    <p>
+      We can write down two natural lattices in <m>V</m>.
+      One of them is the lattice generated by <m>M</m> together with the all-ones vector,
+      on which <m>G</m> acts trivially.
+      As a <m>G</m>-module,
+      the Herbrand quotient of that lattice is <m>h(M) h(\ZZ) = [L:K] h(M)</m>.
+      The other is the lattice <m>M'</m> in which,
+      in the given coordinate system,
+      each element has integral coordinates.
+      To compute its Herbrand quotient,
+      notice that the projection of this lattice onto the coordinates corresponding to the places <m>w</m> above some <m>v</m> form a copy of <m>\Ind^G_{G_v} \ZZ</m>.
+      Thus
+      <me>
+        h(G, M') = \prod_v h(G, \Ind^G_{G_v} \ZZ) = \prod_v h(G_v, \ZZ) = \prod_v \#G_v = \prod_v [L_w:K_v]
+      </me>.
+    </p>
+    <p>
+      So all that remains is to prove the following.
+    </p>
+    <lemma>
+      <statement>
+        <p>
+          Let <m>V</m> be a real vector space on which a finite group <m>G</m> acts linearly,
+          and let <m>L_1</m> and <m>L_2</m> be <m>G</m>-stable lattices in <m>V</m> for which <m>h(L_1)</m> and <m>h(L_2)</m> are both defined.
+          Then <m>h(L_1) = h(L_2)</m>.
+        </p>
+      </statement>
+    </lemma>
+    <p>
+      In fact, one can show that if one of the Herbrand quotients is defined,
+      so is the other.
+    </p>
+    <proof>
+      <p>
+        We first show that <m>L_1 \otimes_{\ZZ} \QQ</m> and
+        <m>L_2 \otimes_{\ZZ} \QQ</m> are isomorphic as <m>\QQ[G]</m>-modules.
+        We are given that <m>L_1 \otimes_{\ZZ} \RR</m> and
+        <m>L_2 \otimes_{\ZZ} \RR</m> are isomorphic as <m>\RR[G]</m>-modules.
+        That is, the real vector space <m>W = \Hom_{\RR}(L_1 \otimes_{\ZZ} \RR, L_2 \otimes_{\ZZ} \RR)</m>,
+        on which <m>G</m> acts by the formula <m>T^g(x) = T(x^{g^{-1}})^g</m>,
+        contains an invariant vector which,
+        as a linear transformation, is invertible.
+        Now <m>W</m> can also be written as
+        <me>
+          \Hom_{\ZZ}(L_1, L_2) \otimes_{\ZZ} \RR;
+        </me>
+        that is, <m>\Hom_{\ZZ}(L_1, L_2)</m> sits inside as a sublattice.
+        The fact that <m>W</m> has an invariant vector says that a certain set of linear equations has a nonzero solution over <m>\RR</m>,
+        namely the equations that express the fact that the action of <m>G</m> leaves the vector invariant.
+        But those equations have coefficients in <m>\QQ</m>,
+        so there must already be invariant vectors over <m>\QQ</m>.
+        Moreover, if we fix an isomorphism
+        (not <m>G</m>-equivariant)
+        between <m>L_2 \otimes_{\ZZ} \RR</m> and <m>L_1 \otimes_{\ZZ} \RR</m>,
+        we can compose this with any element of <m>W</m> to get a map from <m>L_1</m> to itself,
+        which has a determinant;
+        and by hypothesis,
+        there is some invariant vector of <m>W</m> whose determinant is nonzero.
+        Thus the determinant doesn't vanish identically on the set of invariant vectors in <m>W</m>,
+        so it also doesn't vanish identically on the set of invariant vectors in <m>\Hom_{\ZZ}(L_1, L_2) \otimes_{\ZZ} \QQ</m>.
+      </p>
+      <p>
+        Thus there is a <m>G</m>-equivariant isomorphism between
+        <m>L_1 \otimes_{\ZZ} \QQ</m> and <m>L_2 \otimes_{\ZZ} \QQ</m>;
+        that is, <m>L_1</m> is isomorphic to a sublattice of <m>L_2</m>.
+        Since a lattice has the same Herbrand quotient as any sublattice
+        (the quotient is finite, so its Herbrand quotient is 1),
+        that means <m>h(L_1) = h(L_2)</m>.
+      </p>
+    </proof>
+  </subsection>
+  <subsection>
+    <title>Aside: splitting of primes</title>
+    <p>
+      As a consequence of the First Inequality,
+      we record the following fact which is <em>a posteriori</em>
+      an immediate consequence of the adelic reciprocity law,
+      but which will be needed in the course of the proofs. (See Neukirch, Corollary VI.3.8 for more details).
+    </p>
+    <corollary xml:id="C_split_completely">
+      <statement>
+        <p>
+          For any nontrivial extension <m>L/K</m> of number fields,
+          there are infinitely many primes of <m>K</m> which do not split completely in <m>L</m>.
+        </p>
+      </statement>
+    </corollary>
+    <proof>
+      <p>
+        Suppose first that <m>L/K</m> is of prime order.
+        Then if all but finitely many primes split completely,
+        we can put the remaining primes into <m>S</m> and deduce that <m>C_K = \Norm_{L/K} C_L</m>,
+        whereas the above calculation forces <m>H^0_T(\Gal(L/K), C_L) \geq [L:K]</m>,
+        contradiction.
+      </p>
+      <p>
+        In the general case, let <m>M</m> be the Galois closure of <m>L/K</m>;
+        then a prime of <m>K</m> splits completely in <m>L</m> if and only if it splits completely in <m>M</m>.
+        Since <m>\Gal(M/K)</m> is a nontrivial finite group,
+        it contains a cyclic subgroup of prime order;
+        let <m>N</m> be the fixed field of this subgroup.
+        By the previous paragraph,
+        there are infinitely many prime ideals of <m>N</m> which do not split completely in <m>M</m>,
+        proving the original result.
+      </p>
+    </proof>
+  </subsection>
+</section>

@@ -1,0 +1,272 @@
+<section xml:id="sec_localkronweb">
+  <title>The local Kronecker-Weber theorem</title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        Washington, <em>Introduction to Cyclotomic Fields</em>, Chapter 14.
+      </p>
+    </paragraphs>
+    <p>
+      We now prove the local Kronecker-Weber theorem
+      (<xref ref="T_local_Kronecker-Weber1">Theorem</xref>),
+      modulo some steps which will be left as exercises.
+      As shown previously,
+      this will imply the original Kronecker-Weber theorem.
+    </p>
+    <theorem xml:id="T_local_Kronecker-Weber2">
+      <title>Local Kronecker-Weber</title>
+      <statement>
+        <p>
+          If <m>K/\QQ_p</m> is a finite abelian extension,
+          then <m>K \subseteq \QQ_p(\zeta_n)</m> for some positive integer <m>n</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Since <m>\Gal(K/\QQ_p)</m> decomposes into a product of cyclic groups of prime-power order,
+      by the structure theorem for finite abelian groups we may write <m>K</m> as the compositum of extensions of <m>\QQ_p</m> whose Galois groups are cyclic of prime-power order.
+      In other words,
+      it suffices to prove local Kronecker-Weber under the assumption that
+      <m>\Gal(K/\QQ_p) \cong \ZZ/q^r \ZZ</m> for some prime <m>q</m> and some positive integer <m>r</m>.
+    </p>
+    <p>
+      We first recall the following facts from the theory of local fields (e.g., see Neukirch II.7).
+    </p>
+    <lemma xml:id="lem_unram">
+      <statement>
+        <p>
+          Let <m>L/K</m> be an unramified extension of finite extensions of <m>\QQ_p</m>.
+          Then <m>L = K(\zeta_{q-1})</m>,
+          where <m>q</m> is the cardinality of the residue field of <m>L</m>.
+        </p>
+      </statement>
+    </lemma>
+    <lemma xml:id="lem_tame">
+      <statement>
+        <p>
+          Let <m>L/K</m> be a totally and tamely ramified extension of finite extensions of <m>\QQ_p</m> of degree <m>e</m>.
+          (Recall that tamely ramified means that <m>p</m> does not divide <m>e</m>.)
+          Then there exists a generator <m>\pi</m> of the maximal ideal of the valuation ring of <m>K</m> such that <m>L = K(\pi^{1/e})</m>.
+        </p>
+      </statement>
+    </lemma>
+    <p>
+      We also recall one similarly easy but possible less familiar fact,
+      whose proof we leave as an exercise.
+    </p>
+    <lemma xml:id="lem_zetap">
+      <statement>
+        <p>
+          The fields <m>\QQ_p((-p)^{1/(p-1)})</m> and <m>\QQ_p(\zeta_p)</m> are equal.
+        </p>
+      </statement>
+    </lemma>
+    <p>
+      We now proceed to the proof of the local Kronecker-Weber theorem.
+    </p>
+    <p>
+      <em>Case 1: <m>q \neq p</m>.</em>
+    </p>
+    <p>
+      Let <m>L</m> be the maximal unramified subextension of <m>K</m>.
+      By <xref ref="lem_unram">Lemma</xref>,
+      <m>L = \QQ_p(\zeta_n)</m> for some <m>n</m>.
+      Let <m>e = [K:L]</m>.
+      Since <m>e</m> is a power of <m>q</m>,
+      <m>e</m> is not divisible by <m>p</m>,
+      so <m>K</m> is totally and tamely ramified over <m>L</m>.
+      Thus by <xref ref="lem_tame">Lemma</xref>,
+      there exists <m>\pi \in L</m> generating the maximal ideal of
+      <m>\gotho_L</m> such that <m>K = L(\pi^{1/e})</m>.
+      Since <m>L/\QQ_p</m> is unramified,
+      <m>p</m> also generates the maximal ideal of <m>\gotho_L</m>,
+      so we can write <m>\pi = -pu</m> for some unit <m>u \in \gotho_L^*</m>.
+      Now <m>L(u^{1/e})/L</m> is unramified since <m>e</m> is prime to <m>p</m> and <m>u</m> is a unit.
+      In particular,
+      <m>L(u^{1/e})/\QQ_p</m> is unramified, hence abelian.
+      Then <m>K(u^{1/e})/\QQ_p</m> is the compositum of the two abelian extensions <m>K/\QQ_p</m> and
+      <m>L(u^{1/e})/\QQ_p</m>, so it's also abelian.
+      Hence any subextension is abelian,
+      in particular <m>\QQ_p((-p)^{1/e})/\QQ_p</m>.
+    </p>
+    <p>
+      For <m>\QQ_p((-p)^{1/e})/\QQ_p</m> to be Galois,
+      it must contain the <m>e</m>-th roots of unity
+      (since it must contain all of the <m>e</m>-th roots of <m>-p</m>,
+      and we can divide one by another to get an <m>e</m>-th root of unity).
+      But <m>\QQ_p((-p)^{1/e})/\QQ_p</m> is totally ramified,
+      whereas <m>\QQ_p(\zeta_e)/\QQ_p</m> is unramified.
+      This is a contradiction unless
+      <m>\QQ_p(\zeta_e)</m> is actually equal to <m>\QQ_p</m>,
+      which only happens if <m>e|(p-1)</m> (since the residue field <m>\FF_p</m> of <m>\QQ_p</m> contains only <m>(p-1)</m>-st roots of unity).
+    </p>
+    <p>
+      Now <m>K \subseteq L((-p)^{1/e}, u^{1/e})</m> as noted above.
+      But on one hand, <m>L(u^{1/e})</m> is unramified over <m>L</m>,
+      so <m>L(u^{1/e}) = L(\zeta_m)</m> for some <m>m</m>;
+      on the other hand, because <m>e|(p-1)</m>,
+      we have <m>\QQ_p((-p)^{1/e}) \subseteq \QQ_p((-p)^{1/(p-1)}) = \QQ_p(\zeta_p)</m> by <xref ref="lem_zetap">Lemma</xref>.
+      Putting it all together,
+      <me>
+        K \subseteq L((-p)^{1/e}, u^{1/e}) \subseteq \QQ_p(\zeta_n, \zeta_p, \zeta_m) \subseteq \QQ_p(\zeta_{mnp})
+      </me>.
+    </p>
+    <p>
+      <em>Case 2: <m>q = p \neq 2</m>.</em>
+    </p>
+    <p>
+      Suppose <m>\Gal(K/\QQ_p) \cong \ZZ/p^r\ZZ</m>.
+      We can use roots of unity to construct two other extensions of <m>\QQ_p</m> with this Galois group.
+      Namely, <m>\QQ_{p}(\zeta_{p^{p^r}-1})/\QQ_p</m> is unramified of degree <m>p^r</m>,
+      and automatically has cyclic Galois group;
+      meanwhile, the index <m>p-1</m> subfield of
+      <m>\QQ_p(\zeta_{p^{r+1}})</m> is totally ramified with Galois group <m>\ZZ/p^r\ZZ</m>.
+      By assumption,
+      <m>K</m> is not contained in the compositum of these two fields,
+      so for some <m>s>0</m>,
+      <me>
+        \Gal(K(\zeta_{p^{p^r}-1}, \zeta_{p^{r+1}})/\QQ_p) \cong (\ZZ/p^r\ZZ)^2 \times \ZZ/p^s \ZZ \times \ZZ/(p-1)\ZZ
+      </me>.
+    </p>
+    <p>
+      This group admits <m>(\ZZ/p\ZZ)^3</m> as a quotient,
+      so we have an extension of <m>\QQ_p</m> with Galois group <m>(\ZZ/p\ZZ)^3</m>.
+      It thus suffices to prove the following lemma.
+    </p>
+    <lemma xml:id="lem_three">
+      <statement>
+        <p>
+          For <m>p \neq 2</m>,
+          there is no extension of <m>\QQ_p</m> with Galois group <m>(\ZZ/p\ZZ)^3</m>.
+        </p>
+      </statement>
+    </lemma>
+    <proof>
+      <p>
+        For convenience, put <m>\pi = \zeta_p - 1</m>.
+        Then <m>\pi</m> is a uniformizer of <m>\QQ_p(\zeta_p)</m>.
+      </p>
+      <p>
+        If <m>\Gal(K/\QQ_p) \cong (\ZZ/p\ZZ)^3</m>,
+        then <m>\Gal(K(\zeta_p)/\QQ_p(\zeta_p)) \cong (\ZZ/p\ZZ)^3</m> as well,
+        and <m>K(\zeta_p)</m> is abelian over <m>\QQ_p</m> with Galois group <m>(\ZZ/p\ZZ)^* \times (\ZZ/p\ZZ)^3</m>.
+        Applying Kummer theory to <m>K(\zeta_p)/\QQ_p(\zeta_p)</m> produces a subgroup <m>B \subseteq \QQ_p(\zeta_p)^*/(\QQ_p(\zeta_p)^*)^p</m> isomorphic to
+        <m>(\ZZ/p\ZZ)^3</m> such that <m>K(\zeta_p) = \QQ_p(\zeta_p, B^{1/p})</m>.
+        Let <m>\omega: \Gal(\QQ_p(\zeta_p)/\QQ_p) \to (\ZZ/p\ZZ)^*</m> be the canonical map;
+        since <m>\QQ_p(\zeta_p, b^{1/p}) \subseteq K(\zeta_p)</m> is also abelian over <m>\QQ_p</m>,
+        by <xref ref="L_Kummer_Galois_criterion">Lemma</xref>,
+        <me>
+          b^g/b^{\omega(g)} \in (\QQ_p(\zeta_p)^*)^p \qquad (\forall b \in B, g \in \Gal(\QQ_p(\zeta_p)/\QQ_p))
+        </me>.
+      </p>
+      <p>
+        Recall the structure of <m>\QQ_p(\zeta_p)^*</m>:
+        the maximal ideal of <m>\ZZ_p[\zeta_p]</m> is generated by <m>\pi</m>,
+        while each unit of <m>\ZZ_p[\zeta_p]</m> is congruent to a <m>(p-1)</m>-st root of unity modulo <m>\pi</m>, and so
+        <me>
+          \QQ_p(\zeta_p)^* = \pi^\ZZ \times (\zeta_{p-1})^\ZZ \times U_1
+        </me>,
+        where <m>U_1</m> denotes the set of units of
+        <m>\ZZ_p[\zeta_p]</m> congruent to 1 modulo <m>\pi</m>.
+        Correspondingly,
+        <me>
+          (\QQ_p(\zeta_p)^*)^p = \pi^{p\ZZ} \times (\zeta_{p-1})^{p\ZZ} \times U_1^p
+        </me>.
+      </p>
+      <p>
+        Now choose a representative
+        <m>a \in L^*</m> of some nonzero element of <m>B</m>;
+        without loss of generality,
+        we may assume <m>a = \pi^m u</m> for some
+        <m>m \in \ZZ</m> and <m>u \in U_1</m>.
+        Then
+        <me>
+          \frac{a^g}{a^{\omega(g)}} = \frac{(\zeta_p^{\omega(g)}-1)^m}{\pi^{m\omega(g)}} \frac{u^g}{u^{\omega(g)}};
+        </me>
+        but <m>v_\pi(\pi) = v_\pi(\zeta_p^{\omega(g)}-1) = 1</m>.
+        Thus the valuation of the right hand side is <m>m(1-\omega(g))</m>,
+        which can only be a multiple of <m>p</m> for all <m>g</m> if
+        <m>m \equiv 0 \pmod{p}</m>. (Notice we just used that <m>p</m> is odd!) That is,
+        we could have taken <m>m=0</m> and <m>a = u \in U_1</m>.
+      </p>
+      <p>
+        As for <m>u^g/u^{\omega(g)}</m>,
+        note that <m>U_1^p</m> is precisely the set of units congruent to 1 modulo <m>\pi^{p+1}</m>
+        (see exercises).
+        Since <m>\zeta_p = 1 + \pi + O(\pi^2)</m>,
+        we can write <m>u = \zeta_p^b(1 + c\pi^d + O(\pi^{d+1}))</m>,
+        with <m>c \in \ZZ</m> and <m>d \geq 2</m>.
+        Since <m>\pi^g/\pi \equiv \omega(g) \pmod{\pi}</m>, we get
+        <me>
+          u^g = \zeta_p^{b\omega(g)} (1 + c \omega(g)^d \pi^d + O(\pi^{d+1})),  u^{\omega(g)} = \zeta_p^{b\omega(g)} (1 + c \omega(g) \pi^d + O(\pi^{d+1}))
+        </me>.
+      </p>
+      <p>
+        But these two have to be congruent modulo <m>\pi^{p+1}</m>.
+        Thus either <m>d \geq p+1</m> or <m>d \equiv 1 \pmod{p-1}</m>,
+        the latter only occurring for <m>d=p</m>.
+      </p>
+      <p>
+        What this means is that the set of possible <m>u</m> is generated by <m>\zeta_p</m> and by <m>1 + \pi^p</m>.
+        But these only generate a subgroup of
+        <m>U_1/U_1^p</m> isomorphic to <m>(\ZZ/p\ZZ)^2</m>,
+        whereas <m>B \cong (\ZZ/p\ZZ)^3</m>.
+        Contradiction.
+      </p>
+    </proof>
+    <p>
+      <em>Case 3: <m>p=q=2</m>.</em> This case is similar to the previous case,
+      but a bit messier,
+      because <m>\QQ_2</m> does admit an extension with Galois group <m>(\ZZ/2\ZZ)^3</m>.
+      We defer this case to the exercises.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Exercises</title>
+    <ol>
+      <li>
+        <p>
+          Prove <xref ref="lem_zetap">Lemma</xref>. (Hint:
+          prove that <m>(\zeta_p-1)^{p-1}/p - 1</m> belongs to the maximal ideal of <m>\ZZ_p[\zeta_p]</m>.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that (in the notation of <xref ref="lem_three">Lemma</xref>) <m>U_1^p</m> is the set of units congruent to 1 modulo <m>\pi^{p+1}</m>. (Hint:
+          in one direction,
+          write <m>u \in U_1</m> as a power of <m>\zeta_p</m> times a unit congruent to 1 modulo <m>\pi^2</m>.
+          In the other direction, use the binomial series for <m>(1+x)^{1/p}</m>.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that for any <m>r>0</m>,
+          there is an extension of <m>\QQ_2</m> with Galois group
+          <m>\ZZ/2\ZZ \times (\ZZ/2^r\ZZ)^2</m> contained in <m>\QQ_2(\zeta_n)</m> for some <m>n>0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose that <m>K/\QQ_2</m> is a
+          <m>\ZZ/2^r\ZZ</m>-extension not contained in <m>\QQ_2(\zeta_n)</m> for any <m>n>0</m>.
+          Prove that there exists an extension of <m>\QQ_2</m> with Galois group
+          <m>(\ZZ/2\ZZ)^4</m> or <m>(\ZZ/4\ZZ)^3</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that there is no extension of <m>\QQ_2</m> with Galois group <m>(\ZZ/2\ZZ)^4</m>.
+          (Hint: use Kummer theory.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that there is no extension of <m>\QQ_2</m> with Galois group <m>(\ZZ/4\ZZ)^3</m>. (Hint:
+          reduce to showing that there exists no extension of <m>\QQ_2</m> containing
+          <m>\QQ_2(\sqrt{-1})</m> with Galois group <m>\ZZ/4\ZZ</m>.)
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

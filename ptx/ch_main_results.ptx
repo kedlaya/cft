@@ -1,0 +1,8 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_main_results">
+  <title>The main results</title>
+  <xi:include  href="sec_ideles-cohom1.ptx"/>
+  <xi:include  href="sec_ideles-cohom2.ptx"/>
+  <xi:include  href="sec_abstr-recip.ptx"/>
+  <xi:include  href="sec_existence.ptx"/>
+  <xi:include  href="sec_connection.ptx"/>
+</chapter>
