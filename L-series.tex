@@ -1,0 +1,709 @@
+\documentclass{amsart}
+
+\usepackage{amssymb}
+
+\def\ZZ{{\mathbb Z}}
+\def\QQ{{\mathbb Q}}
+\def\RR{{\mathbb R}}
+\def\CC{{\mathbb C}}
+\def\PP{{\mathbb P}}
+
+\def\mf{\mathfrak}
+
+\def\oalpha{\overline{\alpha}}
+\def\obeta{\overline{\beta}}
+
+\def\rhotilde{{\tilde{\rho}}}
+\def\rhohat{{\hat{\rho}}}
+
+\def\un{\mathrm{un}}
+
+\def\CC{\mathbb{C}}   %% complex number
+\def\RR{\mathbb{R}}   %% real numbers
+\def\ZZ{\mathbb{Z}}
+\def\NN{\mathbb{N}}
+\def\GG{\mathbb{G}}
+\def\GLnC{\textbf{GL}_n \left( \mathbb{C} \right)}  %% general linear group
+\def\GL1C{\textbf{GL}_1 \left( \mathbb{C} \right)}  %% general linear group
+\def\GL{\textbf{GL}}
+\def\TnC{\textbf{B}_n \left( \mathbb{C} \right)}    %% upper triangular invertible matrices
+\def\tnC{\textbf{b}_n \left( \mathbb{C} \right)}    %% upper triangular matrices
+\def\UnC{\textbf{U}_n \left( \mathbb{C} \right)}    %% unipotent matrices
+\def\unC{\textbf{u}_n \left( \mathbb{C} \right)}    %% Lie alg. of unipotent matrices
+\def\DnC{\textbf{D}_n \left( \mathbb{C} \right)}    %% diagonal matrices
+\def\dnC{\textbf{d}_n \left( \mathbb{C} \right)}    %% Lie alg. of diagonal matrices
+\def\MnC{\textbf{M}_n \left( \mathbb{C} \right)}    %% matrices
+\def\p1Mx{\pi_1 \left( M, x \right)}
+\def\ker{\textbf{ker }}
+\def\exp{\textrm{exp}}
+\def\Cl{\textnormal{Cl}}
+\def\bI{\textbf{I}}
+\def\bP{\textbf{P}}
+\def\bN{\textbf{N}}
+
+\newcommand\im{\operatorname{im}}
+\newcommand\Id{\operatorname{Id}}
+\newcommand\ad{\operatorname{ad}}
+\newcommand\Ad{\operatorname{Ad}}
+\newcommand\Tor{\operatorname{Tor}}
+\newcommand\coker{\operatorname{coker}}
+\newcommand\rank{\operatorname{rank}}
+\newcommand\Spec{\operatorname{Spec}}
+\newcommand\Hom{\operatorname{Hom}}
+\newcommand\Homcts{\operatorname{Hom_{\mathrm{cts}}}}
+\newcommand\End{\operatorname{End}}
+\newcommand\Ext{\operatorname{Ext}}
+\newcommand\Aut{\operatorname{Aut}}
+\newcommand\Res{\operatorname{Res}}
+\newcommand\Vol{\operatorname{Vol}}
+
+\def\Re{\textnormal{Re}}
+\def\Im{\textnormal{Im}}
+
+
+%%%%%%%%%%%%%%%%% environments %%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{bigtheorem}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{postulate}[theorem]{Postulate}
+%\newtheorem{para}[theorem]{}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{notation}[theorem]{Notation}
+%\newtheorem{question}[theorem]{Question}
+%\newtheorem{variant}[theorem]{Variant}
+
+\begin{document}
+
+\title{Zeta Functions and $L$-series for a Number Field}
+
+\author{Carl Miller}
+
+\maketitle
+
+\section{Introduction}
+
+Every number field $K$ has an associated zeta function
+$\zeta_K(z)$, whose analytic properties are closely tied to number
+theoretic information about $K$. Zeta functions are also a subset
+of a larger class of analytic functions called $L$-series, which
+come from one-dimensional representations of subgroups of the
+ideal class group.  These functions are useful for proving many
+results in class field theory.
+
+We are concerned specifically with generalized Dirichlet
+$L$-series, which are associated to the ray class group of $K$
+for a chosen modulus $\mf{m}$. We will define an $L$-series and
+prove convergence for $\Re(z) > 1$.  Since we are primarily
+interested in the values of the $L$-series near $z=1$, we will
+need to show that the $L$-series has an analytic continuation to a
+neighborhood of $1$.  Our proof of the continuation relies on an
+important theorem about the distribution of norms in a
+generalized ideal class.  In Section \ref{distribution} we will
+give a summary proof of this theorem, referring the reader to
+Lang for some technical lemmas. Then, as an example application,
+we use $L$-series to prove a result in class field theory known
+as the Universal Norm Index Inequality.
+
+\section{Notation and Definitions}
+
+Throughout, let $K/\QQ$ be a number field, let $A$ denote its
+ring of integers, and let $\bI$ and $\bP$ denote the group of
+fractional ideals of $K$ and principal fractional ideals of $K$,
+respectively.  Let $\mf{m} = \mf{m}_0 \mf{m}_\infty$ be a formal
+product of places of $K$, with $\mf{m}_0$ the finite part and
+$\mf{m}_\infty$ the infinite part.  If $v \mid \mf{m}_\infty$ is
+a valuation, let $\sigma_v : K \to k_v$ denote the corresponding
+embedding, with $k_v = \RR$ or $\CC$.  For convenience we will
+write $x \equiv 1 \mod \mf{m}$ to mean that
+\[
+x \equiv 1 \mod \mf{p}^m
+\]
+for all $\mf{p}^m \mid \mf{m}_0$, and
+\[
+\sigma_v(x) > 0
+\]
+for all real $v \mid \mf{m}_\infty$.  Let $\bI^\mf{m}$ denote the
+group of fractional ideals that are coprime to $\mf{m}_0$, let
+$\bP^\mf{m} \subseteq \bI^\mf{m}$ denote the subgroup generated
+by principal ideals $(x)$ with $x \equiv 1 \mod \mf{m}$, and let
+$\Cl_\mf{m}(K) = \bI^\mf{m} / \bP^\mf{m}$ denote the ray class
+group of $\mf{m}$. If $J \subseteq A$ is an ideal, let $\bN (J)$
+denote the norm of $J$.
+
+\section{Dirichlet Characters}
+
+Let $\Xi_\mf{m}$ be the group of complex characters $\chi :
+\Cl_\mf{m}(K) \to \CC^*$.  We note a few properties of this
+group.  Recall that the ray class group is always finite (see
+\cite{ANF}, pp. 112).
+
+\begin{proposition}
+The order of $\Xi_\mf{m}$ is the same as the order of the group
+$\Cl_\mf{m}(K)$.
+\end{proposition}
+\begin{proof}
+Write $\Cl_\mf{m}(K)$ as a direct product of finite cyclic groups,
+\[
+\Cl_\mf{m}(K) \cong \ZZ/n_1 \ZZ \times \ldots \times \ZZ / n_r \ZZ
+\]
+and let $g_i \in \Cl_\mf{m}(K)$ be their respective generators.  A
+character $\chi$ is determined by the independent choice of
+mappings of each $g_i$ to an $n_i$-th root of unity.  There are
+$n_1n_2\cdots n_r = \left| \Cl_\mf{m}(K) \right|$ possible
+choices.
+\end{proof}
+
+\begin{proposition}
+\label{nontriv} Let $\chi_0 \in \Xi_\mf{m}$ denote the trivial
+character. Any character $\chi : \Cl_\mf{m}(K) \to \CC^*$
+satisfies
+\[
+\sum_{g \in \Cl_\mf{m}(K)} \chi(g) = \left\{ \begin{array}{cl}
+\left| \Cl_\mf{m}(K) \right| & \textnormal{ if } \chi = \chi_0, \\
+0 & \textnormal{ if } \chi \neq \chi_0.
+\end{array} \right.
+\]
+\end{proposition}
+\begin{proof}
+Note that for any $h \in \Cl_\mf{m}(K)$,
+\[
+\sum_{g \in \Cl_\mf{m}(K)} \chi(g) = \sum_{gh \in \Cl_\mf{m}(K)}
+\chi(gh) = \chi(h) \sum_{g \in \Cl_\mf{m}(K)} \chi(g).
+\]
+So either $\sum_{g \in \Cl_\mf{m}(K)} \chi(g) = 0$, or $\chi(h) =
+1$ for all $h \in \Cl_\mf{m}(K)$, and hence $\sum_{g \in
+\Cl_\mf{m}(K)} = \left| \Cl_\mf{m}(K) \right|$, as desired.
+\end{proof}
+
+By a similar trick, we have
+
+\begin{proposition}
+\label{sumchar} For any ideal class $g \in \Cl_\mf{m}(K)$,
+\[
+\sum_{\chi \in \Xi_\mf{m}} \chi(g) = \left\{
+\begin{array}{cl} \left| \Xi_\mf{m} \right| =
+\left| \Cl_\mf{m}(K) \right| & \textnormal{ if } g = \bP^\mf{m}, \\
+0 & \textnormal{ otherwise.}
+\end{array} \right.  \qed
+\]
+\end{proposition}
+
+
+\section{Zeta Functions and L-series}
+\label{defs}
+
+For a generalized Dirichlet character $\chi : \Cl_\mf{m}(K) \to
+\CC^*$, the $L$-series $L_\mf{m}(z, \chi)$ is given by
+\[
+L_\mf{m}(z, \chi) = \sum_{(J, \mf{m}) = 1}
+\frac{\chi(J)}{\bN(J)^z}
+\]
+where the sum is over integral ideals $J$ that are coprime to
+$\mf{m}$. Note that if $\mf{m} = 1$ and $\chi: \Cl(K) \to \CC^*$
+is trivial, we obtain the zeta function of the number field $K$:
+\[
+\zeta_K(z) = \sum_{J \subseteq A} \frac{1}{\bN(J)^z}.
+\]
+It will be useful when working with $L$-series to refer to the
+zeta function of an ideal class $\mf{J} \in \Cl_\mf{m} (K)$,
+given by
+\[
+\zeta(z, \mf{J}) = \sum_{J \in \mf{J}} \frac{1}{\bN(J)^z}.
+\]
+Note that
+\[
+L_\mf{m}(z, \chi) = \sum_{\mf{J} \in \Cl_\mf{m} (K)} \chi(\mf{J})
+\zeta(z, \mf{J}).
+\]
+We show first that these series converge when $\Re(z)
+> 1$. Note that for $p$ prime, the number of ideals $\mf{p}$
+satisfying $\bN(\mf{p}) = p$ is less than or equal to $d = [K :
+\QQ]$, and secondly, the number of prime factors (counted with
+multiplicity) for a given $n$ is less than or equal to $\log_2
+n$.  Combining these facts shows that the number of ideals $J$
+satisfying $\bN (J) = n$ is less than or equal to $(\log_2 n)^d$.
+Thus all the series above are dominated (in absolute value) by
+\[
+\sum_{n=1}^\infty \frac{(\log_2 n)^d}{n^{\Re(z)}},
+\]
+which converges provided that $\Re(z) > 1$.
+
+The following product form of the $L$-series will be useful in
+later proofs.
+\begin{proposition} For $z \in \CC$ with $\Re(z) > 1$,
+\[
+L_\mf{m} (z, \chi) = \prod_{\mf{p} \nmid \mf{m}} \frac{1}{1 -
+\frac{\chi( \mf{p} )}{\bN (\mf{p})^z}}.
+\]
+\end{proposition}
+\begin{proof}
+Taking the formal logarithm of the series gives
+\[
+\sum_{\mf{p} \nmid \mf{m}} \sum_{n=1}^\infty
+\frac{\chi(\mf{p})^n}{n \bN(\mf{p})^{nz}}
+\]
+which is dominated by
+\[
+\sum_{p \in \NN} \sum_{n=1}^\infty \frac{d}{n p^{nz}} < \sum_{m
+\in \NN} \frac{d}{m^z},
+\]
+and this converges for $\Re(z) > 1$.  Thus we may safely expand
+and multiply out the series:
+\begin{eqnarray*}
+\prod_{\mf{p} \nmid \mf{m}} \frac{1}{1 - \frac{\chi( \mf{p}
+)}{\bN (\mf{p})^z}} & = & \prod_{\mf{p} \nmid \mf{m}} \left(1 +
+\frac{\chi( \mf{p} )}{\bN (\mf{p})^z} + \frac{\chi( \mf{p}
+)^2}{\bN (\mf{p})^{2z}} + \cdots \right) \\
+\end{eqnarray*}
+The function $\chi( \cdot) / \bN(\cdot)^z$ is multiplicative, thus
+\begin{eqnarray*}
+\prod_{\mf{p} \nmid \mf{m}} \left(1 + \frac{\chi( \mf{p} )}{\bN
+(\mf{p})^z} + \frac{\chi( \mf{p} )^2}{\bN (\mf{p})^{2z}} + \cdots
+\right) = \sum_{(J,\mf{m}) = 1} \frac{\chi(J)}{\bN(J)^z}
+\end{eqnarray*}
+as desired.
+\end{proof}
+
+Already we have seen a connection between the $L$-series and the
+number theoretic properties of $K$: the multiplicative expression
+for $L_\mf{m} (z, \chi)$ is immediately equivalent to unique
+factorization for ideals in $A$.
+
+\section{The Riemann Zeta Function}
+
+\label{riemann}
+
+We have seen that the series for $L_\mf{m} (z, \chi)$ converges
+to an analytic function for $\Re(z) > 1$.  However since we are
+interested in the values of $L_\mf{m} (z, \chi)$ near $z = 1$, we
+need to prove the existence of a larger analytic continuation. We
+begin by considering the Riemann zeta function,
+\[
+\zeta_\QQ(z) = \sum_{p \in \NN} \frac{1}{p^z}.
+\]
+The convergence theorem for the Riemann zeta function will be
+useful as an intermediate step in proving a similar theorem for
+general $L$-series.
+\begin{theorem}
+There exists an analytic continuation of $\zeta_\QQ(z)$ to the
+domain $\{ z : \Re(z) > 0, z \neq 1 \}$.
+\end{theorem}
+\begin{proof}
+Consider the alternating series
+\[
+\zeta_2(z) = 1 - \frac{1}{2^z} + \frac{1}{3^z} - \frac{1}{4^z} +
+\ldots .
+\]
+Let $\sigma = \Re(z)$; suppose $\sigma > 0$.  Then
+\begin{eqnarray*}
+\left| \zeta_2(z) \right| & = & \left | z \int_1^2
+\frac{ds}{s^{z+1}} + z \int_3^4 \frac{ds}{s^{z+1}} + z \int_5^6
+\frac{ds}{s^{z+1}} + \ldots \right| \\
+& \leq & \frac{|z|}{1^{\sigma + 1}} + \frac{|z|}{3^{\sigma + 1}} +
+\frac{|z|}{5^{\sigma + 1}} + \ldots
+\end{eqnarray*}
+which is convergent.  Thus $\zeta_2(z)$ is analytic on $\{ z :
+\Re(z) > 0 \}$.  Now note that
+\[
+\zeta_\QQ(z) - \left( \frac{2}{2^z} \right) \zeta_\QQ(z) =
+\zeta_2(z),
+\]
+for $\Re(z) > 1$, hence the formula
+\[
+\zeta_\QQ(z) = \left( 1 - \frac{1}{2^{z-1}} \right)^{-1}
+\zeta_2(z)
+\]
+gives an analytic continuation of $\zeta_\QQ(z)$ to the region
+$\{ z : \Re(z) > 0 \}$ minus the zeroes of the function $\left( 1
+- 1/2^{z-1} \right)$.  We can take care of all but one of these
+exceptional points by considering another alternating zeta series,
+\[
+\zeta_3(z) = \sum_{n=1}^\infty \left( \frac{1}{(3n + 1)^z} +
+\frac{1}{(3n + 2)^z} - \frac{2}{(3n + 3)^z} \right).
+\]
+By similar reasoning as above, $\zeta_3(z)$ converges for $\Re(z)
+> 0$, and
+\[
+\zeta_\QQ(z) = \left( 1 - \frac{1}{3^{z-1}} \right)^{-1}
+\zeta_3(z)
+\]
+Thus we have an analytic continuation of $\zeta_\QQ(z)$ to $\{ z
+: \Re(z) > 0 \}$ excluding the zeroes of $\left( 1 - 1/3^{z-1}
+\right)$. Now suppose $z$ is a zero of both $\left( 1 - 1/2^{z-1}
+\right)$ and $\left(1 - 1/3^{z-1} \right)$.  Then $2^{z-1} =
+3^{z-1} = 1$, hence $z = 1 + \theta i$ and
+\[
+\theta \log 2 \equiv \theta \log 3 \equiv 0 \mod 2 \pi
+\]
+But $\log 2 / \log 3$ is irrational, so $\theta = 0$.  Thus $z =
+1$ is the only excluded point.
+\end{proof}
+\begin{proposition}
+The zeta function $\zeta_\QQ(z)$ has a simple pole at $z = 1$
+with residue $1$.
+\end{proposition}
+\begin{proof}
+Using the expression from the last proof,
+\[
+\zeta_\QQ(z) = \left(1 - \frac{1}{2^{z-1}} \right)^{-1}
+\zeta_2(z).
+\]
+Now $\zeta_2(1)$ is the power series expression for $\log 2$,
+while the residue of $\left(1 - 1/2^{z-1} \right)^{-1}$ at $1$ is
+$1 / \log 2$.  Thus $\Res_{z = 1} \zeta_\QQ(z) = 1$.
+\end{proof}
+In fact any zeta function may be extended to $\CC - \{ 1 \}$, but
+it is not necessary for us to prove that here (see
+\cite{neukirch}, Ch. VII).  All ``nontrivial'' zeroes of the
+Riemann zeta function lie in the strip $\{ z: 0 \leq z \leq 1 \}
+\subseteq \CC$, so what we have proved above is sufficient to
+state the famous Riemann hypothesis.
+\begin{conjecture}
+All nontrivial zeroes of $\zeta_\QQ (z)$ lie on the line $\{ z :
+\Re(z) = 1/2 \}$.
+\end{conjecture}
+
+\section{The Distribution of Norms in an Ideal Class}
+
+\label{distribution}
+
+Let $\mf{J} \in \Cl_\mf{m}(K)$ be an ideal class. In order to
+evaluate the zeta function $\zeta(z, \mf{J})$, we need an
+asymptotic estimate for the function
+\[
+j(\mf{J}, t) = \left| \left\{ J \in \mf{J} : J \subseteq A, \bN(J)
+\leq t \right\} \right|.
+\]
+Choose an (integral) ideal $B$ from the inverse class
+$\mf{J}^{-1}$. The one-to-one map $J \mapsto JB$ takes an integral
+ideal in $\mf{J}$ to a principal ideal; the image of this map is
+precisely the set of ideals in $P^\mf{m}$ that are generated by
+elements of $B$.  Also, $\bN(J) \leq t$ if and only if $\bN(JB)
+\leq t\bN(B)$.  So it suffices to count the number of ideals $(x)
+\in P^\mf{m}$ such that $x \in B$ and $\bN(x) \leq t \bN(B)$.
+
+To put this another way:
+\begin{lemma}
+\label{anotherway} The function $j(\mf{J}, t)$ is equal to the
+number of elements $x \in B$ satisfying
+\[
+x \equiv 1 \mod \mf{m} \quad \quad \textnormal{and} \quad \quad
+\bN(x) \leq t\bN(B)
+\]
+modulo the unit group $U^\mf{m}$.  $\qed$
+\end{lemma}
+
+We will describe a geometric interpretation for the set of such
+elements. Let $S_\infty$ denote the set of infinite primes of $K$.
+The embeddings $\left\{ \sigma_v \right\}_{v \in S_\infty}$ give
+an embedding
+\[
+K \to \prod_{v \in S_\infty} k_v \cong \RR^n.
+\]
+The vector space $\prod_{v \in S_\infty} k_v$ has a norm
+\[
+\bN(\mathbf{x}) = \prod_{v \in S_\infty} v(x_v)^{N_v}
+\]
+(here $N_v$ denotes the multiplicity of $v$ in $\mf{m}_\infty$).
+Thus we define the unit ball $B^1 \subseteq \prod_{v \in S_\infty}
+k_v$. Note that the image of an ideal under this map is a lattice.
+
+We wish to make use of the following idea: if a region $D
+\subseteq \RR^n$ is sufficiently nice, then we can estimate its
+volume to an arbitrary degree of accuracy by counting lattice
+points inside $D$ for sufficiently fine lattices.  This is made
+precise in the theorem below.
+\begin{theorem}
+\label{lattice} Suppose $D \subseteq \RR^n$ is a subset whose
+boundary is $(n-1)$-Lipshitz parametrizable, and suppose $L
+\subseteq \RR^n$ is a lattice with fundamental parallelotope
+$P$.  Let $\lambda(t, D, L)$ be the number of lattice points in
+$tD$.  Then
+\[
+\lambda(t, D, L) = \frac{\Vol (D)}{\Vol (P)} t^n + O(t^{n-1}).
+\]
+\end{theorem}
+\begin{proof}
+See \cite{lang}, pp. 128.
+\end{proof}
+We will show that $j(\mf{J}, t)$ is equal to $\lambda(t, D, L)$
+for appropriately chosen $D$ and $L$.  First note that the group
+of units $U^\mf{m}$ acts on $\prod_{v \in S_\infty} k_v$ via
+$u(\mathbf{x}) = (q(u) \cdot \mathbf{x})$.  This action becomes
+fixed-point free if we restrict to the subset
+\[
+Q(S_\infty) = \left\{ (q_v)_{v \in S_\infty} : q_v \neq 0
+\textnormal{ for all } v \textnormal{, and } q_v > 0 \textnormal{
+for real } v \mid \mf{m}_\infty \right\}.
+\]
+Let $V \subseteq U^\mf{m}$ be a maximal free subgroup.
+\begin{lemma}
+There exists a fundamental domain $F \subseteq \RR^n$ for the
+action of $V$ on $Q(S_\infty)$ such that $tF = F$ for all $t
+> 0$.  Also, $F \cap B^1$ has $(N-1)$-parametrizable boundary.
+\end{lemma}
+\begin{proof}
+See \cite{lang}, pp. 131.
+\end{proof}
+
+Now let $D = F \cap B^1$ and let $L \subseteq \RR^n$ be the image
+of the $B \mf{m}_0$.
+
+Choose (by the Chinese Remainder Theorem) an element $y \in B$
+such that $y \equiv 1 \mod \mf{m}_0$. Consider the translated
+lattice $y + L$. Every element of $(y + L) \cap F$ is the image of
+an element $x \in B$ such that $(x) \in \bP^\mf{m}$ (recall Lemma
+\ref{anotherway}).  Conversely, every such principal ideal $(x)$
+has exactly $\left| U^\mf{m} / V \right|$ representatives in $(y +
+L) \cap F$, since $F$ is a fundamental domain for the action $V
+\subseteq U^\mf{m}$. Let $w_\mf{m} = \left| U^\mf{m} / V \right|$
+(this is the number of roots of unity of $K$, which is finite).
+We have
+\begin{eqnarray*}
+w_{\mf{m}} j( \mf{J}, t^n ) & = & \left| \left\{ \mathbf{x} \in
+\RR^n : x \in F, \bN(x) \leq \bN(B) t^n \right\} \right| \\
+& = & \lambda(t \bN(B), D, y + L).
+\end{eqnarray*}
+The translation by $y$ is asymptotically irrelevant; by Theorem
+\ref{lattice},
+\[
+w_\mf{m} j( \mf{J}, t^n ) = \frac{\bN(B)\Vol (D)}{\Vol (P)} t^n +
+O(t^{n-1}).
+\]
+where $P$ denotes the fundamental parallelotope of $L$.
+Therefore,
+\[
+j( \mf{J}, t) = \frac{\bN(B)\Vol (D)}{w_\mf{m} \Vol (P)} t +
+O(t^{1-1/n}).
+\]
+Now, the volume of the fundamental parallelotope corresponding to
+$B$ is linearly related to the norm of $B$ (see \cite{lang}, pp.
+115):
+\[
+\frac{\bN(B)}{\Vol (P)} = \frac{2^r}{\sqrt{\left| D_K \right|}}
+\]
+where $r$ is the number of complex primes of $K$ and $D_K$ is the
+discriminant of $K$.  Thus let
+\[
+\rho_\mf{m} = \frac{\bN(B)\Vol (D)}{w_\mf{m} \Vol (P)} = \frac{2^r
+\Vol(D)}{w_\mf{m} \sqrt{\left| D_K \right|}}.
+\]
+We have proven
+\begin{theorem}
+\label{asymp} There exist constants $\rho_\mf{m}$ and $n > 1$ such
+that for any $\mf{J} \in \Cl_\mf{m} (K)$, the function $j(\mf{J},
+t) = \left| \left\{ J \in \mf{J} : \bN(J) \leq t \right\}
+\right|$ satisfies
+\[
+j(\mf{J}, t) = \rho_m t + O(t^{1 - 1/n}).
+\]
+\end{theorem}
+
+Thus we see that the distribution of the norm function on an
+ideal class is asymptotically linear, and moreover, the linear
+coefficient is the same for any ideal class in $\Cl_m(K)$.
+
+We note that there is a nice formula for $\Vol(D)$ in terms of the
+invariants of the number field $K$ (but we won't need to prove
+that here). This leads to a formula for the residue of
+$\zeta_K(z)$ at $1$ called the Class Number Formula (see
+\cite{neukirch}, pp. 467).
+
+\section{L-series Convergence}
+
+Consider the ideal class zeta function,
+\[
+\zeta( z, \mf{J}) = \sum_{J \in \mf{J}} \frac{1}{\bN(J)^z}.
+\]
+Let $a_m = \left| \left\{ J \in \mf{J} : \bN(J) = m \right\}
+\right|$.  We have
+\[
+\zeta(z, \mf{J}) = \sum_{m=1}^\infty \frac{a_m}{m^z},
+\]
+and by Theorem \ref{asymp},
+\[
+\sum_{m = 1}^t a_m = \rho_\mf{m}t + O(t^{1 - 1/n}).
+\]
+We will demonstrate an analytic continuation of $\zeta(z,
+\mf{J})$ via comparison with the Riemann zeta function.  Let $s_t
+= \sum_{m=1}^t (a_m  - \rho_\mf{m})$. Observe:
+\begin{eqnarray*}
+\left| \sum_{m=1}^t \frac{a_m - \rho_\mf{m}}{m^z} \right| & = &
+\left| \sum_{m=1}^t \frac{s_m}{m^z} - \sum_{m=0}^{t-1}
+\frac{s_m}{(m+1)^z} \right| \\
+& = & \left| \frac{s_t}{t^z} + \sum_{m=1}^{t-1} s_m \left(
+\frac{1}{m^z} - \frac{1}{(m+1)^z} \right) \right| \\
+& \leq & \left| \frac{s_t}{t^z} \right| + \left| \sum_{m=1}^{t-1}
+s_mz \int_m^{m+1}
+\frac{ds}{s^{z+1}} \right| \\
+& \leq & \left| \frac{s_t}{t^z} \right| + \sum_{m=1}^{t-1}
+\frac{\left| s_mz \right| }{m^{1 - 1/n}} \int_m^{m+1}
+\frac{ds}{\left| s^{z + 1/n} \right| }  \\
+\end{eqnarray*}
+Let $\sigma = \Re(z)$ and suppose $\sigma > 1 - 1/n$.  $s_t =
+O(t^{1 - 1/n})$, so let $C$ be an upper bound for $ \left| s_t /
+t^{1 - 1/n} \right|$.  We have
+\begin{eqnarray*}
+\left| \sum_{m=1}^t \frac{a_m - \rho_\mf{m}}{m^z} \right| & = & C+
+C |z|  \sum_{m=1}^{t-1} \int_m^{m+1}
+\frac{ds}{s^{\delta + 1/n}} \\
+& = & C + C |z| \int_1^t \frac{ds}{s^{\delta + 1/n}}
+\end{eqnarray*}
+which is bounded.  Thus,
+\[
+\sum_{m=1}^t \frac{a_m - \rho_\mf{m}}{m^z}
+\]
+converges to an analytic function for $\Re(z) > 1 - 1/n$.  Using
+the results of Section \ref{riemann},
+\[
+\zeta(z, \mf{J}) = \left( \sum_{m=1}^t \frac{a_m -
+\rho_\mf{m}}{m^z} \right) + \rho_\mf{m} \zeta_\QQ(z)
+\]
+is analytic on $\{ z: \Re(z) > 1 - 1/n \}$, except at $z=1$ where
+it has a pole with residue $\rho_\mf{m}$.  The zeta function for
+the number field $K$ satisfies
+\[
+\zeta_K(z) = \sum_{\mf{J} \in \Cl(K)} \zeta(z, \mf{J}),
+\]
+thus $\zeta_K(z)$ is analytic on $\{ z: \Re(z) > 1 - 1/n \}$
+except for a pole at $1$ with residue $\rho_1 \left| \Cl(K)
+\right|$.  Finally, if $\chi: \Cl_\mf{m} \to \CC^*$ is a
+nontrivial character, then
+\begin{eqnarray*}
+L_\mf{m}(z, \chi) & = & \sum_{\mf{J} \in \Cl(K)} \chi( \mf{J} )
+\zeta(z, \mf{J}) \\
+& = & \sum_{\mf{J} \in \Cl(K)} \chi(\mf{J}) \left( \sum_{m=1}^t
+\frac{a_m(\mf{J}) - \rho_\mf{m}}{m^z} \right) + \left(
+\sum_{\mf{J} \in \Cl(K)}
+ \chi(\mf{J}) \right) \rho_\mf{m} \zeta_\QQ(z) \\
+& = & \sum_{\mf{J} \in \Cl(K)} \chi(\mf{J}) \left( \sum_{m=1}^t
+\frac{a_m(\mf{J}) - \rho_\mf{m}}{m^z} \right)
+\end{eqnarray*}
+using Proposition \ref{nontriv}.  Thus $L_\mf{m}(z, \chi)$ is
+analytic on all of the region $\{ z: \Re(z) > 1 - 1/n \}$.
+
+\section{The Universal Norm Index Inequality}
+
+An inequality that is useful in class field theory can be proven
+from the information about $\zeta_K(z)$ and $L_\mf{m}(z, \chi)$
+near $z=1$ that we developed above. We will need some asymptotic
+notation: for analytic functions $f$ and $g$, write $f \sim g
+\quad (z \to 1)$ to mean that $f/g$ can be continued analytically
+to $1$. Write $f \precsim g \quad (z \to 1)$ and $f \succsim g
+\quad (z \to 1)$ to mean that $f/g$ is bounded above near $1$,
+and bounded below near $1$, respectively.  Recall the series for
+the logarithm of $L_\mf{m}$:
+\[
+L_\mf{m}(z, \chi) = \exp \left( \sum_{\mf{p} \nmid \mf{m}} \sum_m
+\frac{\chi(\mf{p})^m}{m \bN(\mf{p})^{mz}} \right).
+\]
+The sum of the second- and higher-order terms in the series
+converges for $z$ near $1$, thus
+\[
+L_\mf{m}(z, \chi) \sim \exp \left( \sum_{\mf{p} \nmid \mf{m}}
+\frac{\chi(\mf{p})}{\bN(\mf{p})^z} \right) \quad (z \to 1).
+\]
+
+Now, suppose $L/K$ is a Galois extension, and $B \subseteq L$ the
+ring of integers. Let $\mf{N}_L^\mf{m} \subseteq K$ be the group
+of norms of fractional ideals in $L$ that are coprime to $\mf{m}$.
+We are interested in the subgroup of the ray class group,
+\[
+\bP^\mf{m} \subseteq \mf{N}^\mf{m}_L \bP^\mf{m} \subseteq
+\bI^\mf{m}.
+\]
+\begin{theorem}
+If $\mf{m}$ is divisible by all the ramified primes of $L/K$, then
+\[
+(\bI^\mf{m} : \bP^\mf{m} \mf{N}^\mf{m}_L ) \leq [L : K].
+\]
+(The degree $(\bI^\mf{m} : \bP^\mf{m} \mf{N}^\mf{m}_L )$ is called
+the norm index of $K$.)
+\end{theorem}
+
+\begin{proof}
+Write $H = \bP^\mf{m} \mf{N}^\mf{m}_L$ for convenience.  Consider
+the product
+\[
+\prod_{\chi: \bI^\mf{m} / H \to \CC^*} L_\mf{m}(z, \chi).
+\]
+Recall that $L_\mf{m}(z, \chi)$ is analytic at $1$ unless $\chi$
+is trivial, in which case $L_\mf{m}(z, \chi)$ has a simple pole
+at $1$.  Thus,
+\[
+\frac{1}{z-1} \succsim \prod_{\chi} L_\mf{m}(z, \chi)  \quad (z
+\to 1).
+\]
+Replacing $L_\mf{m}(z,\chi)$ with the approximation given above,
+\begin{eqnarray*}
+\frac{1}{z-1} & \succsim &  \exp\left( \sum_\chi \sum_{\mf{p}
+\nmid \mf{m}} \frac{\chi(\mf{p})}{\bN(\mf{p})^z} \right) \\
+& = & \exp\left[ \sum_{\mf{J} \in \bI^\mf{m} / H} \left( \sum_\chi
+\chi(\mf{J}) \right) \sum_{\mf{p} \in \mf{J}}
+\frac{1}{\bN(\mf{p})^z} \right] \\
+& = & \exp\left[ (\bI^\mf{m} : H) \sum_{\mf{p} \in H}
+\frac{1}{\bN(\mf{p})^z} \right]
+\end{eqnarray*}
+by Proposition \ref{sumchar}.
+
+
+%Let $S(L/K)$ be the set of primes of $K$ that split completely in
+%$L$.  Note that a prime $\mf{p}$ in $K$ splits completely in $L$
+%if and only if it is a norm of a prime in $L$ and it is
+%unramified.  Thus $S(L/K) \subseteq H$. So,
+%\begin{eqnarray*}
+%\frac{1}{z-1} & \succsim & \exp\left( (I^\mf{m} : H) \sum_{\mf{p}
+%\in H} \frac{1}{\bN(\mf{p})^z} \right) \\
+%& \succsim & \exp\left( (I^\mf{m} : H) \sum_{\mf{p} \in S(L/K)}
+%\frac{1}{\bN(\mf{p})^z} \right) \\
+%\end{eqnarray*}
+Now, if $\mf{p}$ is a prime in $K$, and $\left\{ \mf{q}_i
+\right\}_{i=1}^k$ are the primes lying above $\mf{p}$ with
+residue field extension degrees $\deg \mf{q}_i$, then $\bN(\mf{q})
+= \bN(\mf{p})^{\deg \mf{q}_i}$, so
+\begin{eqnarray*}
+\sum_{j=1}^k \frac{1}{\bN(\mf{q}_j)^z} & = & \sum_{\deg \mf{q_j} =
+1} \frac{1}{\bN(\mf{p})^z} + \left\{ \textnormal{terms with exponent} \geq 2z \right\} \\
+& \leq & \frac{[L:K]}{\bN(\mf{p})^z} + \left\{ \textnormal{terms with exponent} \geq 2z \right\} \\
+\end{eqnarray*}
+And every prime $\mf{q}$ in $B$ lies over a prime in $H$ by
+definition.  Thus, by ignoring terms with exponent $\geq 2z$
+(which are asymptotically irrelevant near $z=1$) we find
+\begin{eqnarray*}
+\frac{1}{z-1} & \succsim & \exp\left( (\bI^\mf{m} : H)
+\sum_{\mf{p} \in H}
+\frac{1}{\bN(\mf{p})^z} \right) \\
+& \succsim & \exp\left( \frac{(\bI^\mf{m} : H)}{[L : K]}
+\sum_{\mf{q} \subseteq B}
+\frac{1}{\bN(\mf{q})^z} \right) \\
+& = & \zeta_L(z)^{\frac{(\bI^m : H)}{[L:K]}} \\
+& \succsim & \left(\frac{1}{z-1} \right)^{\frac{(\bI^m :
+H)}{[L:K]}}
+\end{eqnarray*}
+Thus $(\bI^m : H) \leq [L : K]$, as desired.
+\end{proof}
+
+\begin{thebibliography}{00}
+
+\bibitem{lang}
+S.~Lang: Algebraic Number Theory, Addison-Wesley, 1970.
+
+\bibitem{ANF}
+G.~Janusz: Algebraic Number Fields, Acadmic Press, Inc., 1973.
+
+\bibitem{neukirch}
+J.~Neukirch: Algebraic Number Theory, Springer-Verlag, 1999.
+
+\end{thebibliography}
+
+\end{document}

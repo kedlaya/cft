@@ -1,0 +1,368 @@
+%\documentclass[12pt]{article}
+%\usepackage{amsfonts, amsthm, amsmath}
+%\usepackage[all]{xy}
+%
+%\setlength{\textwidth}{6.5in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\textheight}{8.5in}
+%\setlength{\topmargin}{0in}
+%\setlength{\headheight}{0in}
+%\setlength{\headsep}{0in}
+%\setlength{\parskip}{0pt}
+%\setlength{\parindent}{20pt}
+%
+%\def\AA{\mathbb{A}}
+%\def\CC{\mathbb{C}}
+%\def\FF{\mathbb{F}}
+%\def\PP{\mathbb{P}}
+%\def\QQ{\mathbb{Q}}
+%\def\RR{\mathbb{R}}
+%\def\ZZ{\mathbb{Z}}
+%\def\gotha{\mathfrak{a}}
+%\def\gothb{\mathfrak{b}}
+%\def\gothm{\mathfrak{m}}
+%\def\gotho{\mathfrak{o}}
+%\def\gothp{\mathfrak{p}}
+%\def\gothq{\mathfrak{q}}
+%\DeclareMathOperator{\Cor}{Cor}
+%\DeclareMathOperator{\disc}{Disc}
+%\DeclareMathOperator{\Gal}{Gal}
+%\DeclareMathOperator{\GL}{GL}
+%\DeclareMathOperator{\Hom}{Hom}
+%\DeclareMathOperator{\Ind}{Ind}
+%\DeclareMathOperator{\Norm}{Norm}
+%\DeclareMathOperator{\Res}{Res}
+%\DeclareMathOperator{\Trace}{Trace}
+%\DeclareMathOperator{\Cl}{Cl}
+%
+%\def\head#1{\medskip \noindent \textbf{#1}.}
+%
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{prop}[theorem]{Proposition}
+%
+%\begin{document}
+%
+%\begin{center}
+%\bf
+%Math 254B, UC Berkeley, Spring 2002 (Kedlaya) \\
+%Cohomology of the id\`eles 2: The ``Second Inequality''
+%\end{center}
+
+\head{Reference} 
+Milne VII.5; Neukirch VI.4.
+
+\medskip
+In the previous chapter, we proved that for $L/K$ a cyclic extension of number fields,
+the Herbrand quotient $h(C_L)$ of the id\`ele class group of $L$ is equal
+to $[L:K]$. This time we'll prove the following.
+\begin{theorem} \label{T:first and second inequality}
+Let $L/K$ be a Galois extension of number fields, with Galois group $G$.
+Then:
+\begin{enumerate}
+\item[(a)] the group $I_K/(K^* \Norm_{L/K} I_L)$ is finite of order at most
+$[L:K]$;
+\item[(b)] the group $H^1(G, C_L)$ is trivial;
+\item[(c)] the group $H^2(G, C_L)$ is finite of order at most $[L:K]$.
+\end{enumerate}
+\end{theorem}
+By the first inequality, for $L/K$ cyclic, these three are equivalent and
+all imply that $H^2(G, C_L)$ has order exactly $[L:K]$. That would suffice
+to prove the class field axiom in Neukirch's abstract class field theory.
+
+There are two basic ways to prove this result: an analytic proof and
+an algebraic proof. Although the analytic proof is somewhat afield of
+what we have been doing (it requires some properties of zeta functions
+that we haven't discussed previously), it's somewhat simpler overall than the
+algebraic proof. So we'll sketch it first before proceeding to the algebraic
+proof.
+
+\head{The analytic proof}
+
+For the analytic proof, we need to recast the Second Inequality back into
+classical, ideal-theoretic language. Let $L/K$ be a finite Galois extension
+and $\gothm$ a formal product of places of $K$. Back when we defined
+generalized ideal class groups, we defined the group $I_{\gothm}$ of
+fractional ideals of $K$ coprime to $\gothm$ and $P_{\gothm}$ the group
+of principal ideals admitting a generator $\alpha$ such that 
+$\alpha \equiv 1 \pmod{\gothp^e}$ if the prime power $\gothp^e$ occurs
+in $\gothm$ for a finite prime $\gothp$, and $\tau(\alpha) > 0$ if 
+$\tau$ is the real embedding corresponding to a real place in $\gothm$.
+Also, let $J_{\gothm}$ be the group of fractional ideals of $L$
+coprime to $\gothm$. Then the Second Inequality states that
+\[
+\# I_{\gothm} / P_{\gothm} \Norm_{L/K} J_{\gothm} \leq [L:K].
+\]
+Note that we don't have to assume $\gothm$ is divisible by the ramified
+primes of $L/K$.
+
+We'll need the following special case of the Chebotarev density theorem,
+which fortunately we can prove without already having all of class field
+theory.
+\begin{prop}
+Let $L$ be a finite extension of $K$ and let $M/K$ be its Galois closure.
+Then the set $S$ of prime ideals of $K$ that split completely in $L$ has
+Dirichlet density $1/[M:K]$.
+\end{prop}
+\begin{proof}
+A prime of $K$ splits completely in $L$ if and only if it splits completely
+in $M$, so we may assume $L=M$ is Galois. Recall that the set $T$ of unramfied
+primes
+$\gothq$ of $L$ of absolute degree 1 has Dirichlet density 1;
+each such prime lies over an unramified prime $\gothp$ of $K$ of absolute
+degree 1 
+which splits completely in $L$.
+
+Now recall how the Dirichlet density works: the set $T$ having
+Dirichlet density 1 means that
+\[
+\sum_{\gothq \in T} \frac{1}{\Norm(\gothq)^s} \sim \frac{1}{s-1}
+\qquad s \searrow  1
+\]
+($s$ approaching 1 from above, that is). If we group the primes in $T$ by
+which prime of $S$ they lie over, then we get
+\[
+[L:K] \sum_{\gothp \in T} \frac{1}{\Norm(\gothp)^s} \sim \frac{1}{s-1}.
+\]
+That is, the Dirichlet density of $S$ is $1/[L:K]$.
+\end{proof}
+
+Now for the inequality. For $\chi: I_{\gothm}/P_{\gothm} \to \CC^*$ a
+character, we defined the L-function
+\[
+L(s, \chi) = \prod_{\gothp \not| \gothm} \frac{1}{1 - \chi(\gothp) 
+\Norm(\gothp)^{-s}}.
+\]
+We'll use some basic properties of this function which can be found in any standard algebraic number theory text.
+For starters,
+\[
+\log L(s, 1) \sim \log \zeta_K(s) \sim \log \frac{1}{s-1} \qquad
+s \searrow 1,
+\]
+while if $\chi$ is not the trivial
+character, $L(s, \chi)$ is holomorphic at $s=1$. If $L(s, \chi) =
+(s-1)^{m(\chi)} g(s)$ where $g$ is holomorphic and nonvanishing at
+$s=1$, then $m(\chi) \geq 0$, and
+\[
+\log L(s, \chi) \sim m(\chi) \log(s-1) = - m(\chi) \log \frac{1}{s-1}.
+\]
+Let $H$ be a subgroup of $I_{\gothm}$ containing $P_{\gothm}$.
+By finite Fourier analysis, or orthogonality of
+characters,
+\[
+\sum_{\chi: I_{\gothm}/H \to \CC^*} \log L(s, \chi) \sim
+\#(I_{\gothm}/H) \sum_{\gothp \in H} \frac{1}{\Norm(\gothp)^{-s}}.
+\]
+We conclude that the set of primes in $H$ has Dirichlet density
+\[
+\frac{1 - \sum_{\chi \neq 1} m(\chi)}{\#(I_{\gothm}/H)};
+\]
+this is $1/\#(I_{\gothm}/H)$ if the $m(\chi)$ are all zero, and 0 otherwise.
+
+We apply this with $H = P_{\gothm} \Norm_{L/K} J_{\gothm}$. This 
+in particular includes
+every prime of $K$ that splits completely, since such a prime is the norm
+of any prime of $L$ lying over it. Thus the set of primes in $H$ has
+Dirichlet density, on one hand, is at least $1/[L:K]$. On the other hand,
+this set has density either zero or $1/\#(I_{\gothm}/H)$. We conclude
+$\#I_{\gothm}/H \leq [L:K]$, as desired.
+
+\head{The algebraic proof}
+
+We now proceed to the algebraic proof of the Second Inequality.
+To prove the theorem in general, we can very quickly reduce to the
+case of $L/K$ not just cyclic, but cyclic of prime order. The reductions
+are similar to those we used to compute $H^2(L^*)$ in the local case.
+First of all, if we have the theorem for all solvable groups, then if
+$G$ is general and $H$ is a Sylow $p$-subgroup of $G$, then for any 
+$G$-module $M$,
+\[
+\Res: H^i_T(G, M) \to H^i_T(H, M)
+\]
+is injective on $p$-primary components (because $\Cor \circ \Res$
+is multiplication by $[G:H]$), so we can deduce the desired result.
+Thus it suffices to consider $L/K$ solvable. In that case, starting
+from the cyclic-of-prime-order case we can induct using the 
+inflation-restriction exact sequence (Corollary~\ref{C:inflation restriction h2}): if $K'/K$ is a subextension
+and $H = \Gal(L/K')$, then for $i=1,2$, 
+\[
+0 \to H^i(G/H, C_{K'}) \to H^i(G, C_L) \to H^i(H, C_L)
+\]
+(using the fact that $H^1(H, C_L) = 0$ by the induction hypothesis).
+Upshot: we need only consider $L/K$ cyclic of prime order $p$.
+
+One more reduction to make things simpler: we reduce to the case where
+$K$ contains a $p$-th root of unity. Let $K' = K(\zeta_p)$ and $L' =
+L(\zeta_p)$; then $K'$ and $L$ are linearly disjoint over $K$ (since
+their degrees are coprime), so $[L':K'] = [L:K] = p$ and the Galois groups
+of $L/K$ and $L'/K'$ are canonically isomorphic. To complete the reduction, it suffices to check
+that the homomorphism
+\[
+H^0_T(\Gal(L/K), C_L) \to H^0_T(\Gal(L'/K'), C_{L'})
+\]
+induced by the inclusion $C_L \to C_{L'}$ is injective. These groups
+are both killed by multiplication by $p$, since for $x \in C_K$,
+$\Norm_{L/K} (x) = x^p$. Thus multiplication by $d = [K':K]$, which divides
+$p-1$, is an isomorphism on these groups. If $x \in C_K$ maps to the
+identity in $H^0_T(\Gal(L'/K'), C_{L'})$, we can choose a representative
+of the same class as $x$ in $H^0_T(\Gal(L/K), C_L)$ of the form $y^d$;
+then $y$ also maps to the identity in $H^0_T(\Gal(L'/K'), C_{L'})$.
+That is, $y = \Norm_{L'/K'}(z')$ for some $z' \in C_{L'}$, and
+\[
+y^d = \Norm_{K'/K}(y) = \Norm_{L'/K}(z') \in \Norm_{L/K} C_L.
+\]
+Thus $x \in \Norm_{L/K} C_L$, so the homomorphism is injective.
+
+\head{The key case}
+
+To sum up: it suffices to prove the theorem for $K$ containing a $p$-th
+root of unity $\zeta_p$ and $L/K$ cyclic of order $p$. We now address
+this case.
+
+As in the proof of the First Inequality, we will use a set $S$ of places
+of $K$ containing the infinite places, the primes that ramify in $L$,
+and enough additional primes so that $I_K = I_{K,S} K^*$; we also include all places above $(p)$. Again, we
+put $K_S = I_{K,S} \cap K^*$. Also we write $s = \# S$.
+
+The plan is to explicitly produce a subgroup of $C_K$ of index $[L:K]$
+consisting of norms from $C_L$. We do this by using an auxiliary set of 
+places $T$ disjoint from $S$. For such $T$, we define
+\[
+J = \prod_{v \in S} (K_v^*)^p \times \prod_{v \in T} K_v^*
+\times \prod_{v \notin S \cup T} \gotho_{K_v}^*.
+\]
+Let $\Delta = (L^*)^p \cap K_S$. We will show that:
+\begin{enumerate}
+\item[(a)] $L = K(\Delta^{1/p})$;
+\item[(b)] we can choose a set $T$ of $s-1$ primes such that $\Delta$
+is the kernel of the map $K_S \to \prod_{v \in T} K_v^*/(K_v^*)^p$;
+\item[(c)] for such a set $T$, if we put $C_{K,S,T} = J K^*/K^*$,
+then
+\[
+\#C_K/C_{K,S,T} = [L:K] = p;
+\]
+\item[(d)]
+with the same notation, $C_{K,S,T} \subseteq \Norm_{L/K} C_L$.
+\end{enumerate}
+That will imply $\#C_K/\Norm_{L/K} C_L \leq p$, as desired.
+
+We first concentrate on (a).
+By Kummer theory, since $K$ contains a
+primitive $p$-th root of unity, we can write $L = K(D^{1/p})$ for
+$D = (L^*)^p \cap K^*$. Thus $K(\Delta^{1/p}) \subseteq L$ and
+since there is no room between $K$ and $L$ for an intermediate extension ($[L:K]$
+being prime),
+all that we have to check is that 
+$K(\Delta^{1/p}) \neq K$.
+Choose a single $x \in D$ such that $L = K(x^{1/p})$.
+For each $v \notin S$, the extension $K_v(x^{1/p})/K_v$ is unramified,
+so we can write $x$ as a unit times a $p$-th power, say
+$x = u_v y_v^p$. If we put $y_v = 1$ for $v \in S$, we can assemble the
+$y_v$ into an id\`ele $y$, which by $I_K = K^* I_{K,S}$ we can rewrite as
+$zw$ for $z \in K^*$ and $w \in I_{K,S}$. Now for $v \notin S$,
+$(x/z^p)_v = u_v/w_v^p \in \gotho_{K_v}^*$. Thus $x/z^p \in (L^*)^p \cap
+K_S \in \Delta$ but $x \notin (K^*)^p$. We conclude $L
+= K(\Delta^{1/p})$.
+
+Now we move to (b). Put $N = K(K_S^{1/p})$. By Kummer theory,
+\[
+\Gal(N/K) \cong \Hom(K_S/K_S^p, \ZZ/p\ZZ).
+\]
+By the generalization of Dirichlet's units theorem to $S$-units,
+$K_S$ modulo torsion is a free abelian group of rank $s-1$,
+and the torsion subgroup consists of roots of unity, so is cyclic
+of order divisible by $p$. Thus $K_S/K_S^p \cong (\ZZ/p\ZZ)^s$.
+Choose generators $g_1, \dots, g_{s-1}$ of 
+$\Gal(N/L)$; these correspond in $\Hom(K_S/K_S^p, \ZZ/p\ZZ)$
+to a set of homomorphisms whose common kernel is precisely
+$\Delta/K_S^p$. 
+
+So to establish (b), we need to find for each $g_i$
+a place $v_i$ such that the kernel of $g_i$ is the same as the kernel of
+$K_S \to K_{v_i}^*/(K_{v_i}^*)^p$. Let $N_i$ be the fixed field of $g_i$; 
+by the First Inequality (see Corollary~\ref{C:split completely}), there are infinitely
+many primes of $N_i$ that do not split in $N$. So we can choose
+a place $w_i$ of each $N_i$ such that their restrictions $v_i$ to $K$ are
+distinct, not contained in $S$, and don't divide $p$. 
+
+We claim $N_i$ is
+the maximal subextension of $N/K$ in which $v_i$ splits completely (a/k/a
+the \emph{decomposition field} of $v_i$). On one hand, $v_i$ does not split
+completely in $N$, so the decomposition field is no larger than $N_i$.
+On the other hand, the decomposition field is the fixed field of
+the decomposition group, which has exponent $p$ and is cyclic (since
+$v_i$ does not ramify in $N$). Thus it must have index $p$ in $N$,
+so must be $N_i$ itself.
+
+Thus $L = \cap N_i$ is the maximal subextension of $N$ in which all of
+the $v_i$ split completely. We conclude that for $x \in K_S$,
+$x$ belongs to $\Delta$ iff $K_{v_i}(x^{1/p}) = K_{v_i}$ for all $i$,
+which occurs iff $x \in K_{v_i}^p$. That is, $\Delta$ is precisely the
+kernel of the map $K_S \to \prod_i K_{v_i}^*/(K_{v_i}^*)^p$.
+In fact, under this map, $K_S$ actually maps to the units in
+$K_{v_i}^*$ for each $i$. This proves (b).
+
+Next, we verify (c), using the following lemma.
+\begin{lemma} \label{L:adelic intersection}
+$J \cap K^* = (K_{S \cup T})^p$.
+\end{lemma}
+\begin{proof}
+Clearly $K_{S \cup T}^p \subseteq J \cap K^*$; we have to work
+to show the other inclusion. Take $y \in J \cap K^*$ and
+$M = K(y^{1/p})$. We'll show that $\Norm_{M/K} C_M = C_K$; by the First
+Inequality, this will imply $M = K$, so $y \in (K^*)^p \cap J
+= (K_{S \cup T})^p$.
+
+Since $I_K = I_{K,S}K^*$, it is enough to choose $\alpha \in I_{K,S}$
+and show that $\alpha/x \in \Norm_{M/K} I_M$ for some $x \in K^*$.
+As noted above, the map
+\[
+K_S \to \prod_{v \in T} \gotho_{K_v}^*/(\gotho_{K_v}^*)^p
+\]
+is surjective, and $\#K_S/\Delta = p^{s-1}$. That's also the order of
+the product, so the map is actually an isomorphism. Thus we can find
+$x \in K_S$ so that $\alpha/x$ has component the $p$-th power of a unit
+of $K_v$
+at each $v \in T$. In particular, such a component is the norm of its
+$p$-th root, so $\alpha/x$ is a norm at each $v \in T$. For $v \in S$,
+we don't have anything to check: because $y$ is a $p$-th power at $v$,
+$M_w = K_v$. Finally, for $v \notin S \cup T$, $M_w/K_v$ is unramified,
+so any unit is a norm. Thus $\alpha/x$ is indeed a norm. We conclude
+$\Norm_{M/K} C_M = C_K$, so $M=K$ and $y \in K_{S\cup T}^p$,
+as desired.
+\end{proof}
+
+Given the lemma, we now have an exact sequence
+\[
+1 \to (I_{K,S\cup T} \cap K^*)/(J \cap K^*) 
+\to I_{K,S\cup T}/J \to
+I_{K,S \cup T}K^* / JK^* \to 1.
+\]
+We can rewrite $I_{K,S \cup T}K^*$ as simply $I_K$, so the group on the
+right is precisely $C_K/C_{K,S,T}$. By the lemma, the group on the left is
+$K_{S\cup T}^*/(K_{S \cup T}^*)^n$, which has order $p^{2s-1}$ because
+$K_{S\cup T}$ is free of rank $2s-2$ plus a cyclic group of order a multiple
+of $p$. The group in the middle is the product of $K_v^*/(K_v^*)^p$
+over all $v \in S$, and each of those has order $p^2$ (generated by
+$\zeta_p$ and a uniformizer of $K_v$). Adding it all up,
+we get $\#C_K/C_{K,S,T} = p$, proving (c).
+
+Finally, to check (d), it suffices to check that $J
+\subseteq \Norm_{L/K} I_L$, which we may check component by component.
+It's automatic for the places $v \notin S \cup T$, since those places
+are unramified, so every unit is a norm. For places $v \in S$, any element
+of $(K_v^*)^p$ is a norm from $K_v(K_v^{1/p})$ by local reciprocity, so also from $L_w$.
+Finally, for places $v \in T$, from the construction of $T$, we see
+that $\Delta \subseteq (K_v^*)^p$, so $L_w = K_v$, and so
+$K_v^*$ consists entirely of norms.
+
+\head{Aside} We get from this calculation that $H^{-1}_T(G, C_L) = 1$, so
+$H^0_T(G, L^*) \to H^0_T(G, C_L)$ is injective. That is,
+\[
+K^*/\Norm_{L/K} L^* \to \bigoplus_v K_v^*/\Norm_{L_w/K_v} L_w^*
+\]
+is injective. In other words, we have an interesting ``local-to-global''
+statement, namely Hasse's Norm Theorem: if $L/K$
+is cyclic, $x \in K^*$ is a norm if and only if it is locally a norm.
+
+%\end{document}

@@ -1,0 +1,188 @@
+%\documentclass[12pt]{article}
+%\usepackage{amsfonts, amsthm, amsmath}
+%
+%\setlength{\textwidth}{6.5in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\textheight}{8.5in}
+%\setlength{\topmargin}{0in}
+%\setlength{\headheight}{0in}
+%\setlength{\headsep}{0in}
+%\setlength{\parskip}{0pt}
+%\setlength{\parindent}{20pt}
+%
+%\def\AA{\mathbb{A}}
+%\def\CC{\mathbb{C}}
+%\def\FF{\mathbb{F}}
+%\def\NN{\mathbb{N}}
+%\def\PP{\mathbb{P}}
+%\def\QQ{\mathbb{Q}}
+%\def\RR{\mathbb{R}}
+%\def\ZZ{\mathbb{Z}}
+%\def\gotha{\mathfrak{a}}
+%\def\gothb{\mathfrak{b}}
+%\def\gothm{\mathfrak{m}}
+%\def\gotho{\mathfrak{o}}
+%\def\gothp{\mathfrak{p}}
+%\def\gothq{\mathfrak{q}}
+%\DeclareMathOperator{\ab}{ab}
+%\DeclareMathOperator{\disc}{Disc}
+%\DeclareMathOperator{\Gal}{Gal}
+%\DeclareMathOperator{\GL}{GL}
+%\DeclareMathOperator{\Hom}{Hom}
+%\DeclareMathOperator{\Norm}{Norm}
+%\DeclareMathOperator{\Trace}{Trace}
+%\DeclareMathOperator{\Cl}{Cl}
+%
+%\def\head#1{\medskip \noindent \textbf{#1}.}
+%
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{prop}[theorem]{Proposition}
+%
+%\begin{document}
+%
+%\begin{center}
+%\bf
+%Math 254B, UC Berkeley, Spring 2002 (Kedlaya) \\
+%The Adelic Reciprocity Law and Artin Reciprocity
+%\end{center}
+
+We now describe the setup by which we create a reciprocity law in
+global class field theory, imitating the ``abstract'' setup from local
+class field theory but using the id\`ele class group in place of the
+multiplicative group of the field. We then work out why the reciprocity
+law and existence theorem in the adelic setup imply Artin reciprocity
+and the existence theorem (and a bit more) in the classical language.
+
+\head{Convention note} We are going to fix an algebraic closure
+$\overline{\QQ}$ of $\QQ$, and regard ``number fields'' as finite
+subextensions of $\overline{\QQ}/\QQ$. That is, we are fixing the
+embeddings of number fields into $\overline{\QQ}$. We'll use these embeddings
+to decide how to embed one number field in another.
+
+\head{The adelic reciprocity law and existence theorem}
+
+Here are the adelic reciprocity law and existence theorem; notice that
+they look just like the local case except that the multiplicative group
+has been replaced by the id\`ele class group.
+\begin{theorem}[Adelic reciprocity law]
+There is a canonical map $r_K: C_K \to \Gal(K^{\ab}/K)$ which
+induces, for each finite extension $L/K$ of number fields, an
+isomorphism $r_{L/K}: C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}$.
+\end{theorem}
+\begin{theorem}[Adelic existence theorem] \label{T:adelic existence theorem1}
+For every number field $K$ and 
+every open subgroup $H$ of $C_K$ of finite index, there exists
+a finite (abelian) extension $L$ of $K$ such that
+$H = \Norm_{L/K} C_L$.
+\end{theorem}
+
+
+In fact, using local class field theory, we can construct the map that
+will end up being $r_K$. For starters, let $L/K$ be a finite abelian
+extension and $v$ a place of $K$. Put $G = \Gal(L/K)$, and let $G_v$ be
+the decomposition group of $v$, that is, the set of $g \in G$
+such that $v^g = v$. Then for any place $w$ above $v$,
+$G_v \cong \Gal(L_w/K_v)$, so we can view the local reciprocity map
+$K_v^* \to \Gal(L_w/K_v)$ as a map $r_{K,v}: K_v^* \to G$. That is, if $v$
+is a finite place. If $v = \CC$, then $\Gal(L_w/K_v)$ is trivial, so
+we just take $K_v^* \to G$ to be the identity map. If $v = \RR$, then we
+take $K_v^* = \RR^* \to \Gal(L_w/K_v) = \Gal(\CC/\RR)$ to be the map
+sending everything positive to the identity, and everything negative
+to complex conjugation.
+
+Now note that
+\[
+(\alpha_v) \mapsto \prod_v r_{K,v}(\alpha_v) 
+\]
+is well-defined on id\`eles: for $(\alpha_v)$ an id\`ele, $\alpha_v$ is
+a unit for almost all $v$ and $L_w/K_v$ is unramified for almost all
+$v$. For the (almost all) $v$ in both categories, $r_{K,v}$ maps
+$\alpha_v$ to the identity.
+
+The subtle part is the following. As noted below, before proving reciprocity,
+we'll only be able to check this for the map obtained from $r_{K,v}$ by
+projecting from $\Gal(K^{\ab}/K)$ to the torsion-free quotient of $\Gal(K(\zeta_\infty)/K)$, the Galois
+group of the maximal cyclotomic extension; in that case, we can reduce to
+$K=\QQ$ and do an explicit computation. The general case will actually only
+follow after the fact from the construction of global reciprocity!
+\begin{prop}
+The map $r_{K,v}$ is trivial on $K^*$.    
+\end{prop}
+Thus it induces a map $r_K: C_K \to \Gal(L/K)$ for each $L/K$ abelian,
+and in fact to $r_K: C_K \to \Gal(K^{\ab}/K)$ using the analogous
+compatibility for local reciprocity.
+
+Since each of the local reciprocity maps is continuous, so is the map $r_K$.
+That means the kernel of $r_K: C_K \to \Gal(L/K)$, for $L/K$ abelian,
+is an open subgroup of $C_K$. Now recall that the
+quotient of $C_K$ by any open subgroup of finite index is a generalized
+ideal class group. Thus $r_K$ is giving us a canonical isomorphism between
+$\Gal(L/K)$ and a generalized ideal class group; could this be anything
+but Artin reciprocity itself? 
+
+Indeed, let $U$ be the kernel of $r_K$,  let $\gothm$ be a conductor
+for the generalized ideal class group $C_K/U$, and let $\gothp$ be a
+prime of $K$ not dividing $\gothm$ and unramified in $L$. Then
+the id\`ele $\alpha = (1,1, \dots, \pi, \dots)$ with a uniformizer $\pi$
+of $\gotho_{K_\gothp}$ in the $\gothp$ component and ones elsewhere
+maps onto the class of $\gothp$ in $C_K/U$. On the other hand,
+$r_K(\alpha) = r_{K, \gothp}(\pi)$ is (because $L$ is unramified over $K$)
+precisely the Frobenius of $\gothp$. So indeed, $\gothp$ is being mapped
+to its Frobenius, so the map $C_K/U \to \Gal(L/K)$ is indeed Artin reciprocity.
+
+In fact, we discover from this a little bit more than we knew already about
+the Artin map. All we said before about the Artin map is that it factors
+through a generalized ideal class group, and that the conductor $\gothm$
+of that group is divisible precisely by the ramified primes (which
+we see from local reciprocity). In fact, we can now say \emph{exactly}
+what is in the kernel of the classical Artin map: it is generated by
+\begin{itemize}
+\item all principal ideals congruent to 1 modulo $\gothm$;
+\item norms of ideals of $L$ not divisible by any ramified primes.
+\end{itemize}
+
+
+\head{What needs to be done}
+
+Many of these steps will be analogous to the steps in local class field theory.
+\begin{itemize}
+\item 
+It would be natural to start by verifying
+that the map $r_K$ given above does indeed kill principal id\`eles,
+but this is too hard to do all at once (except for cyclotomic extensions, for which the explicit calculation is easy and an important input into the machine). Instead, we postpone this step all the way until the end; see below.
+\item Verify that for $L/K$ cyclic, the Herbrand quotient of
+$C_L$ as a $\Gal(L/K)$-module is $[L:K]$. In particular,
+that forces $\#H^0(\Gal(L/K), C_L) \geq [L:K]$ (the ``First Inequality'').
+\item
+For $L/K$ cyclic, determine that
+\[
+\#H^0(\Gal(L/K), C_L) = [L:K], \qquad \#H^1(\Gal(L/K), C_L) = 1
+\]
+(the ``Second Inequality''). This step is trivial in local CFT by
+Theorem 90, but is actually pretty subtle in the global case. We'll
+do it by reducing to the case where $K$ contains enough roots of unity,
+so that $L/K$ becomes a Kummer extension and we can compute everything
+explicitly. There is also an analytic proof given in Milne which I'll
+very briefly allude to.
+\item
+Check the conditions for abstract class field theory, using the setup described at the end of Chapter~\ref{chap:abstractcft}. In particular, the role of the unramified extensions in local class field theory will be played by certain cyclotomic extensions.
+This gives an ``abstract'' reciprocity map, not yet known to be related to Artin reciprocity.
+\item
+Prove the existence theorem, by showing that every open subgroup
+of $C_K$ contains a norm group. Again, we can enlarge $K$ in order
+to do this, so we can get into the realm of Kummer theory.
+\item
+Use the compatibility between the proofs of local and global class field theory to see that the ``abstract'' global reciprocity map restricts to the usual reciprocity map from local class field theory. This will finally imply that the abstract map coincides with the adelic Artin reciprocity map, and therefore yield the adelic reciprocity map. It is only at this point that we will deduce that the reciprocity map $r_K$ that we tried to define at the outset
+actually does kill principal id\`eles!
+
+\item
+We will also briefly sketch the approach taken in Milne, in which one uses Galois cohomology in place of abstract class field theory.
+ Specifically, one first checks that
+ $H^2(\Gal(L/K), C_L)$ is cyclic of order $[L:K]$ in certain ``unramified'' (i.e., cyclotomic) cases; as in the local case, one can then deduce this result in general by induction on degree. Using Tate's theorem (Theorem~\ref{T:tate thm1}),
+one gets a reciprocity map from $H^{-2}_T(\Gal(L/K), \ZZ) = \Gal(L/K)^{\ab}$
+to $H^0_T(\Gal(L/K), C_K/\Norm_{L/K} C_L)$, which again can be reconciled with local reciprocity to get the Artin reciprocity map. 
+\end{itemize}
+
+
+%\end{document}

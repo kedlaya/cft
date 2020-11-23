@@ -1,0 +1,118 @@
+
+\renewcommand{\baselinestretch}{1.25}
+
+% SET MARGINS
+
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textheight}{9in}
+\setlength{\topmargin}{-.5in}
+
+%\textwidth 16.5cm
+%\textheight 23cm
+%\topmargin -.35in
+%\oddsidemargin 0cm
+%\evensidemargin 0cm
+
+% ENTRYWISE GREATER THAN OR EQUAL TO, BUT NOT EQUAL TO (& L.T.)
+
+%\newcommand{\gneq}{\geq\not=}
+%\newcommand{\lneq}{\leq\not=}
+
+% TYPES OF THEOREMS KTL.
+
+\newcommand{\laba}[1]{\label{alg:#1}}                    %ALGORITHM
+\newcommand{\refa}[1]{\ref{alg:#1}}
+\newcommand{\labeq}[1]{\label{eq:#1}}                    %EQUATION
+\newcommand{\refeq}[1]{\ref{eq:#1}}
+\newcommand{\labd}[1]{\label{def:#1}}
+\newcommand{\refd}[1]{\ref{def:#1}}
+\newcommand{\labf}[1]{\label{fig:#1}}
+\newcommand{\reff}[1]{Figure~\ref{fig:#1}}
+\newcommand{\labn}[1]{\label{notation:#1}}
+\newcommand{\refn}[1]{\ref{notation:#1}}
+\newcommand{\labt}[1]{\label{thm:#1}}                    %THEOREM
+\newcommand{\reft}[1]{Theorem~\ref{thm:#1}}
+\newcommand{\labl}[1]{\label{lemma:#1}}                  %LEMMA
+\newcommand{\refl}[1]{Lemma~\ref{lemma:#1}}
+\newcommand{\labc}[1]{\label{coro:#1}}                   %COROLLARY
+\newcommand{\refc}[1]{Corollary~\ref{coro:#1}}
+\newcommand{\labp}[1]{\label{proposition:#1}}            %PROPOSITION
+\newcommand{\refp}[1]{Proposition~\ref{proposition:#1}}
+\newcommand{\refcj}[1]{\label{conject:#1}}               %CONJECTURE
+\newcommand{\labcj}[1]{Conjecture~\ref{conject:#1}}
+
+% HUH?
+
+%\newcommand{\mathbb}{\cal}
+%\newcommand{\text}{\mbox}
+%\newcommand{\operatorname}{\mbox}
+
+% MISCELLANEOUS STUFF
+
+\newcommand{\hamlos}{\begin{flushright}$\square$ \\[.25in] \end{flushright}}
+\newcommand{\Kappa}{{\cal K}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\by}{\times} %e.g. mxn
+\newcommand{\scal}[1]{\langle#1\rangle}
+\newcommand{\adjoint}{\star}
+\newcommand{\Tal}{\operatorname{Tal}}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\rnk}{\operatorname{rank}}
+\newcommand{\lnul}{\operatorname{lnul}}
+\newcommand{\rnul}{\operatorname{rnul}}
+\newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\Drin}{\operatorname{Drin}}
+
+% TYPES
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+% SHORTHAND
+
+\newcommand{\nno}[1]{{\R^{#1}_{\geq 0}}}          %non-neg. orthant in R^m
+\newcommand{\po}[1]{{\R^{#1}_+}}                  %pos. orthant in R^m
+%\renewcommand{\emptyset}{{\rm \O}}            %better emptyset sign
+\newcommand{\upto}[1]{1,~\ldots,#1}
+\newcommand{\uptoset}[1]{\{\upto{#1}\}}
+\newcommand{\uptob}[2]{\uptoset{#1}\setminus\{#2\}}
+\newcommand{\pf}{\noindent \emph{Proof} \vskip .10in} %BEGIN STATEMENT
+						      %OF PROOF
+\newcommand{\rpf}{\noindent ($\implies$)\ }         % (==>)
+\newcommand{\lpf}{\noindent ($\impliedby$)\ }       % (<==)
+\newcommand{\cd}{\Rightarrow\Leftarrow} %CONTRADICTION
+\newcommand{\bd}{{\bf d}}
+\newcommand{\bM}{{\bf M}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\D}{{\mathcal D}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\K}{{\mathbb K}}
+\newcommand{\M}{{\mathbb M}}
+\newcommand{\oo}{{\mathcal O}}
+\newcommand{\R}{{\mathbb R}}   %REAL NUMBERS
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\X}{{\mathbb X}}
+\newcommand{\Y}{{\mathbb Y}}
+\newcommand{\diag}{\operatorname{diag}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+%BEGIN AND END MATRICES
+
+\newcommand{\mb}{\left[ \begin{matrix}}
+\newcommand{\me}{\end{matrix} \right]}
+
+%BIBLIOGRAPHY
+
+\bibliographystyle{amsplain}

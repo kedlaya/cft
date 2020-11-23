@@ -1,0 +1,562 @@
+% NOTE: THIS IS THE "GOOD," FINAL VERSION OF THIS PAPER.
+
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb}
+\include{gg}
+
+\title{Carlitz Modules and the Function Field Analogue of Kronecker-Weber}
+\author{Li-Chung Chen}
+\date{May 6, 2002}
+
+\begin{document}
+\maketitle
+
+\begin{section}{Introduction}
+
+Hilbert's 9th problem asks for an explicit class field theory for all
+number fields.  This has proved difficult, and the only known cases are
+for $\Q$ (cyclotomic theory) and for imaginary quadratic number fields
+(the theory of complex multiplication).  However, the function field
+analogue has been solved, as independent work by L. Carlitz, D. Hayes, and
+V. Drinfeld has provided explicit construction of all abelian extensions
+of any global function field of positive characteristic.
+
+This paper focuses on Carlitz's function field analogues to cyclotomic
+number fields.  Using Carlitz modules, we will construct explicit abelian
+extensions of $\F(T)$, where $\F$ is a finite field, and we will state
+Hayes' result on the maximal abelian extensions of $\F(T)$.  Then we will
+briefly discuss Drinfeld's generalization for general global function
+fields.
+
+\end{section} %Introduction
+
+
+
+\begin{section}{Drinfeld Modules Over $\F(T)$}
+
+Let $\F$ be a finite field with $q = p^s$ elements, and set $A = \F[T]$
+and $k = \F(T)$.  For a commutative $k$-algebra $B$ (which we will later
+take to be the algebraic closure of $k$, $\bar{k}$), let
+$\tau: B \rightarrow B$ be given by $\tau(x) = x^q$.  Because $k$ has
+characeristic $p$, $(x+y)^p = x^p + y^p$ holds in $B$.  Repeated
+application of this equality shows that $\tau$ is additive.  In fact, a
+similar argument shows that any polynomial of the form
+$a_0x + a_1x^q + \ldots + a_rx^{q^r}$ acts additively on $B$.  The set of
+these polynomials forms a ring (under composition) that is identified with
+the ``twisted'' polynomial ring $k\langle\tau\rangle$, in which we have
+$\tau a = a^q\tau$ for all $a \in k$.  In other words, we will consider
+elements of $k\langle\tau\rangle$ to be polynomials that act on $B$, with
+$\tau \leftrightarrow x^q$ and $[1 \in k] \leftrightarrow x$.
+
+Now we can define a Drinfeld module over $k = \F(T)$:
+\begin{definition}
+A Drinfeld module for $A$ defined over $k$ is an $\F$-algebra homomorphism
+$\rho: A \rightarrow k\langle\tau\rangle$ such that
+\begin{enumerate}
+\item
+the constant term of $\rho_a$ is $a$ for all $a \in A$, and
+\item
+$\rho_a \notin k$ for at least one $a \in A$.
+\end{enumerate}
+\end{definition}
+This is called a module because any commutative $k$-algebra $B$ can be
+made into an $A$-module $B_\rho$ by defining
+$$a\cdot u = \rho_a(u) \text{ for all }a \in A, u \in B.$$
+
+In this special case where $A = \F[T]$, giving $\rho$ is the same as
+specifying $\rho_T$.  The first condition implies that the constant term
+of $\rho_T$ is $T$, and the converse clearly holds.  Now if $\rho_T \in k$,
+then $\rho$ would map into $k$.  Hence the second condition is equivalent
+to $\rho_T \notin k$.  Therefore, a Drinfeld module for $A$ over $k$ is
+given by specifying a nonconstant $\rho_T$ with constant term $T$.  We say
+that the $\emph{rank}$ of the Drinfeld module $\rho$ is $\deg(\rho_T)$.
+
+Consider the Drinfeld module given by $\rho_T = T + c_1\tau + c_2\tau^2 +
+\ldots + c_r\tau^r$, where $c_i \in k$ and $c_r \neq 0$.  This induces an
+$A$-module structure $\bar{k}_\rho$ on $\bar{k}$ as described above.  For
+nonzero $a \in A$, define the torsion submodule
+$$\Lambda_\rho[a] = \left\{\lambda \in \bar{k}:
+\rho_a(\lambda) = 0 \right\}.$$
+
+It is clear by induction that $\rho_{T^n}$ is a degree-$rn$ polynomial in
+$\tau$ with constant term $T^n$.  Hence for $a \in A$, $\rho_a$ has degree
+$r\deg(a)$ in $\tau$ (and degree $q^{r\deg(a)}$ in $x$) with constant term
+$a$.  But $\F\langle\tau\rangle$ corresponds to polynomials in $x$ whose
+monomials have degrees that are powers of $q$.  Thus the derivative of
+$\rho_a(x)$ is $a$ and $\rho_a(x)$ is separable.  Since $\Lambda_\rho[a]$
+is just the set of roots of $\rho_a(x)$, it has size $q^{r\deg(a)}$.  This
+information is sufficient to determine $\Lambda_\rho[a]$:
+
+\begin{theorem}\labt{rank}
+Let $\rho$ be a Drinfeld module of rank $r$.  Then for any nonzero
+$a \in A$, $\Lambda_\rho[a] \cong (A/aA)^r$ as $A$-modules (and hence
+as $(A/aA)$-modules because both sides are annihilated by $a$).
+\end{theorem}
+
+\pf
+First consider the case that $a = P^e$ is a prime power.  Since
+$\Lambda_\rho[a]$ is finite, by the structure theorem of modules over a
+PID, we obtain an $A$-module isomorphism
+$$\Lambda_\rho[P^e] \cong A/{Q_1}^{f_1}A \oplus A/{Q_2}^{f_2}A
+\oplus \ldots \oplus A/{Q_r}^{f_r}A$$ for some irreducible polynomials
+$Q_i$.  But $P^e$ annihilates $\Lambda_\rho[P^e]$, so it annihilates each
+$A/{Q_i}^{f_i}A$ and forces $Q_i/P \in \F^*$ (so we may assume $Q_i = P$)
+and $f_i \leq e$ for all $i$.
+
+Now note that $$\Lambda_\rho[P] = \left\{\lambda \in \Lambda_\rho[P^e]:
+\rho_P(\lambda) = 0 \right\}$$
+because any element annihilated by $P$ is also annihilated by $P^e$.  The
+left hand side has $q^{r\deg(P)}$ elements as determined earlier, and the
+right hand side has
+$|(A/PA)^t| = q^{t\deg(P)}$ elements.  Hence $t = r$.  This implies that
+$\Lambda_\rho[P^e]$ has $q^{f_1 + \ldots + f_r}$ elements.  But we already
+know that $\Lambda_\rho[P^e]$ has $q^{r\deg(P^e)} = q^{re\deg(P)}$ elements
+and that each $f_i \leq r$.  Hence $f_i = r$ for all $i$ and we are done
+with the prime power case.
+
+For the general case, let the prime decomposition of $a$ be $a =
+\alpha{P_1}^{e_1}{P_2}^{e_2}\ldots{P_t}^{e_t}$ (where $\alpha \in \F^*$).
+We claim that $\Lambda_\rho[a] = \oplus^t_{i=1} \Lambda_\rho[{P_i}^{e_i}]$.
+Clearly $\Lambda_\rho[{P_i}^{e_i}] \subset \Lambda_\rho[a]$ for all $i$.
+Let $a_i = \frac{a}{\alpha{P_i}^{e_i}}$.  Because the $a_i$'s have greatest
+common divisor 1,
+there exist $b_i \in A$ such that $\sum^t_{i=1} b_ia_i = 1$.
+Then for any $m \in \Lambda_\rho[a]$, $m = \sum^t_{i=1} b_i(a_im)$.  But
+$a_im \in \Lambda_\rho[{P_i}^{e_i}]$ because $P_i^{a_i}(a_im) =
+\alpha^{-1}am = 0$.  Thus $\Lambda_\rho[a] =
+\sum^t_{i=1} \Lambda_\rho[{P_i}^{e_i}]$.  Now if we have
+$c_i \in \Lambda_\rho[{P_i}^{e_i}]$ such that $\sum^t_{i=1} c_i = 0$, then
+$0 = a_j\sum^t_{i=1} c_i = a_jc_j$ because ${P_i}^{e_i}$ divides $a_j$
+whenever $i \neq j$.  But $a_j$ is a unit in $A/{P_j}^{e_j}A$ and
+$\Lambda_\rho[{p_j}^{e_j}]$ is an $(A/{P_j}^{e_j}A)$-module.  Thus
+$c_j = 0$ for all $j$ and $\Lambda_\rho[a] =
+\oplus^t_{i=1} \Lambda_\rho[{P_i}^{e_i}]$.
+
+Hence by the prime power case, we have
+$$\Lambda_\rho[a] = \oplus^t_{i=1} \Lambda_\rho[{P_i}^{e_i}]
+\cong \oplus^t_{i=1} (A/{P_i}^{e_i}A)^r \cong (A/aA)^r$$
+(using the Chinese remainder theorem).
+\hamlos
+
+Let $K_{\rho,a} = k(\Lambda_\rho[a])$.  It was noted above that
+$\Lambda_\rho[a]$ is the set of roots of a separable polynomial.  Hence
+$K_{\rho,a}/k$ is a Galois extension.  Because $\rho_a(x) \in k[x]$,
+$\rho_a(\lambda) = 0$ iff $\rho_a(\sigma\lambda) = 0$ for all
+$\sigma \in \Gal(K_{\rho,a}/k)$.  Thus $\rho$ maps $\Lambda_\rho[a]$ into
+itself bijectively.  But further, for any $b \in A$,
+$\lambda \in \Lambda_\rho[a]$, and $\sigma \in \Gal(K_{\rho,a}/k)$, we
+have $\sigma(\rho_b\lambda) = \rho_b(\sigma\lambda)$ because
+$\rho_b(x) \in k[x]$.  Thus $\sigma$ acts as an $A$-module automorphism on
+$\Lambda_\rho[a]$ and hence as an $A/aA$-module automorphism because $a$
+annihilates $\Lambda_\rho[a]$.  Therefore, we get a homomorphism
+$$\Gal(K_{\rho,a}/k) \rightarrow \Aut_{A/aA}(\Lambda_\rho[a]).$$
+
+Now if $\sigma \in \Gal(K_{\rho,a}/k)$ maps to the identity, then it fixes
+every element in $\Lambda_\rho[a]$.  But these elements generate
+$K_{\rho,a}$, so $\sigma$ must be the identity.  Therefore the above map
+is injective, and we have established this important fact:
+\begin{proposition}
+If $K_{\rho,a} = k(\Lambda_\rho[a])$, then $K_{\rho,a}/k$ is Galois and
+there is an injection
+$$\Gal(K_{\rho,a}/k) \rightarrow GL_r(A/aA).$$
+\end{proposition}
+
+\begin{corollary}\labc{abext}
+If $\rho$ has rank $1$, then $K_{\rho,a}/k$ is an abelian extension.
+\end{corollary}
+
+\pf
+This follow immediately because $GL_1(A/aA) = (A/aA)^*$ is abelian and
+$\Gal(K_{\rho,a}/k)$ is a subgroup of it.
+\hamlos
+
+Therefore, a Drinfeld module (on $\F[t]$ over $\F(t)$) given by $\rho_T =
+T + c\tau$ (where $c \in k^*$) produces many examples of abelian
+extensions of $\F(t)$.  We will be interested in the special case where
+$\rho$ is given by $\rho_T = T + \tau$.  In this case we denote $\rho$ as
+$C$ and call it a \emph{Carlitz module}.
+
+\end{section} %Drinfeld Modules Over $\F(T)$
+
+
+
+\begin{section}{Carlitz Modules and Their Induced Extensions}
+
+In this section, we will work solely with Carlitz modules and hence will
+abbreviate $\Lambda$ for $\Lambda_C = \Lambda_\rho$, $\Lambda_a$ for
+$\Lambda_C[a]$, and $K_a$ for $K_{C,a}$.  \refc{abext} shows that
+$\Gal(K_a/k)$ is a subgroup of $(A/aA)^*$ for $a \neq 0$.  We will show
+that $\Gal(K_a/k) \cong (A/aA)^*$, and along the way we will establish
+some properties of Carlitz modules.  We will see that $K_a$ is analogous
+to cyclotomic extensions of $\Q$.
+
+First some important remarks about the polynomial $C_a(x)$:
+\begin{lemma}\labl{polycoeffs}
+For nonzero $a \in A$ of degree $d$, $C_a(x)$ is of the form
+$$[a,0]x + [a,1]x^q + \ldots + [a,d]x^{q^d}$$
+with $[a,0] = a$, $[a,d] \neq 0$, and each $[a,i] \in A$.  If $a$ is
+monic, then $[a,d] = 1$.
+\end{lemma}
+
+\pf
+Reduce to the case $a = T^n$ and induct on $n$.  The base case works
+because $C_T = T + \tau$ is monic in $A\langle\tau\rangle$.  Note that
+this lemma fails for any other rank-1 Drinfeld module.
+\hamlos
+
+Recall that $\Lambda_a \cong A/aA$ as $A$-modules.  Hence it has
+$\Phi(a) = |(A/aA)^*|$ generators.  If $\lambda_a$ is a generator, then
+every $\lambda \in \Lambda_a$ is of the form $\phi_b(\lambda_a)$ for some
+$b \in A$.  But $\phi_b(x)$ is just a polynomial in $k[x]$, so
+$\lambda \in k(\lambda_a)$.  Therefore, $K_a = k(\Lambda_a) =
+k(\lambda_a)$.
+
+Let $\oo_a$ denote the integral closure of $A$ in $K_a$.
+The integral closure of $A$ in $k$ is $A$ because $A$ is factorial and
+hence integrally closed.  Thus $k$ and $A$ are analogous to $\Q$ and
+$\Z$, and $(K_a, \oo_a)$ is analogous to a rational cyclotomic field and
+its ring of integers.
+
+\begin{lemma}\labl{units}
+Suppose $\lambda_a \in \Lambda_a$ is a generator and $b \in A$ is
+relatively prime to $a$.  Then $C_b(\lambda_a)/\lambda_a$ is a unit in
+$\oo_a$.
+\end{lemma}
+
+\pf
+It is clear that if $a = \beta a'$ for $a'$ monic and $\beta \in \F^*$,
+then $\Lambda_{a'} = \Lambda_a$ and the other corresponding items are
+equal.  Thus we may assume that $a$ is monic.
+
+By \refl{polycoeffs}, $C_a(\lambda_a) = 0$ implies $\lambda_a \in \oo_a$.
+Further, $C_b(\lambda_a)/\lambda_a$ is a polynomial in $\lambda_a$ with
+coefficients in $A$, so it is also in $\oo_a$.  Thus it suffices to check
+that $\lambda_a/C_b(\lambda_a)$ is in $\oo_a$.
+
+Because $a$ and $b$ are relatively prime, there exist $f, g \in A$ such
+that $fb = 1 + ga$.  Then $C_fC_b = C_1 + C_gC_a$ and $C_f(C_b(\lambda_a))
+= \lambda_a + C_g(C_a(\lambda_a)) = \lambda_a$.  Hence
+$$\lambda_a/C_b(\lambda_a) = C_f(C_b(\lambda_a))/C_b(\lambda_a).$$
+Now $C_b(\lambda_a)$ is a root of $C_a(x)$ and is hence in $\oo_a$.  Thus
+similar to above, $C_f(C_b(\lambda_a))/C_b(\lambda_a)$ is a polynomial in
+$C_b(\lambda_a)$ with coefficients in $A$; thus $\lambda_a/C_b(\lambda_a)
+\in \oo_a$.
+\hamlos
+
+With the lemma, we can do the prime power case:
+\begin{proposition}\labp{primepower}
+Suppose $P \in A$ is monic irreducible and $e \geq 1$.  Then $K_{P^e}$ is
+totally ramified with ramification index $\Phi(P^e)$ at the prime $PA$,
+but is unramified at all other primes.  Hence
+$$[K_{P^e}:k] = \Phi(P^e) \text{ and } \Gal(K_{P^e}/k) \cong (A/P^eA)^*.$$
+Finally, the prime ideal above $PA$ is $(\lambda) = \lambda\oo_{P^e}$,
+where $\lambda$ is any generator of $\Lambda_{P^e}$.
+\end{proposition}
+
+\pf
+Let $\lambda$ be a generator of $\Lambda_{P^e}$.  It satisfies the monic
+polynomial $C_{P^e}(x) \in A[x]$ and is thus in $\oo_{P^e}$.  Because
+$A = \F[T]$ is a factorial integral domain, by Gauss' lemma the minimal
+polynomial $g(x)$ of $\lambda$ is a monic polynomial in $A[x]$.  Hence
+$C_{P^e}(x) = f(x)g(x)$ where $f(x) \in A[x]$.
+
+By \refl{polycoeffs}, the derivative of $C_{P^e}(x)$ is $P^e$.  Thus
+$P^e = C'_{P^e}(\lambda) = f(\lambda)g'(\lambda) + f'(\lambda)g(\lambda) =
+f(\lambda)g'(\lambda)$.  Because $\lambda$ is a generator, we showed above
+that $K_{P^e} = k(\lambda)$.  Hence $g'(\lambda)$ is contained in the
+different $\D$ of $\oo_{P^e}/A$.  Now because $f(x) \in A[x]$ and
+$\lambda \in \oo_{P^e}$, we see that $f(\lambda) \in \oo_{P^e}$.  Hence
+for any prime ideal $I \subset \oo_{P^e}$,
+\begin{eqnarray*}
+I \text{ ramifies over }k & \Longrightarrow & I|\D \\
+& \Longrightarrow & P^e = f(\lambda)g'(\lambda) \in g'(\lambda)\oo_{P^e}
+\subset \D \subset I \\
+& \Longrightarrow & P \subset I\cap A \\
+& \Longrightarrow & I \text{ is over } PA.
+\end{eqnarray*}
+Thus $PA$ is the only possible prime ideal in $A$ ramified in $\oo_{P^e}$.
+
+Let $d = \deg(P)$.  Because $\Lambda_{P^e} \cong A/P^eA$, we see that
+$\lambda$ is a generator of $\Lambda_{P^e}$ iff $C_{P^e}(\lambda) = 0$
+and $C_{P^{e-1}}(\lambda) \neq 0$.  Thus the $\Phi(P^e)$ generators are
+all the roots of
+\begin{eqnarray*}
+\frac{C_{P^e}(x)}{C_{P^{e-1}}(x)} & = &
+\frac{C_P(C_{P^{e-1}}(x))}{C_{P^{e-1}}(x)} \\
+& = & P + [P,1]C_{P^{e-1}}(x)^{q-1} + \ldots +
+[P,d]C_{P^{e-1}}(x)^{q^d-1}
+\end{eqnarray*}
+(using \refl{polycoeffs}).  Note that this polynomial has degree
+$q^{\deg(P^{e-1})}(q^d-1) = q^{d(e-1)}(q^d-1) = \Phi(P^e)$.  This
+polynomial and \refl{units} imply that
+$$P = \pm \prod_{\text{generator }\lambda} \lambda 
+= \lambda^{\Phi(P^e)} \times \text{ unit}.$$
+Hence $P\oo_{P^e} = (\lambda)^{\Phi(P^e)}$.
+
+Thus if $I \subset \oo_{P^e}$ is a prime above $PA$, then $I\mid\lambda$
+and $e(I/PA)$ is a multiple of $\Phi(P^e)$.  In particular, $[K_{p^e}:k]
+\geq e(I/PA) \geq \Phi(P^e)$.  However, since $K_{p^e} = k(\lambda)$ and
+$\lambda$ is a root of the degree-$\Phi(P^e)$ polynomial above, we must
+have $[K_{p^e}:k] \leq \Phi(P^e)$.  Therefore, we must have equalities and
+$[K_{p^e}:k] = e(I/PA) = \Phi(P^e)$.  Since $K_{p^e}/k$ is Galois, we
+have $efr = [K_{p^e}:k]$ and hence $f = r = 1$, i.e. $PA$ is totally
+ramified and there is only one prime above $PA$.  If $(\lambda)$ factors,
+then there would either be more than one prime above $PA$ or a larger
+ramification index.  Hence $(\lambda)$ is prime and is the only prime
+above $PA$.
+
+Lastly, we already know that $\Gal(K_{P^e}/K)$ is a subgroup of the group
+$(A/P^eA)^*$ of order $\Phi(P^e)$.  Because $\Gal(K_{P^e}/K)$ has order
+$\Phi(P^e)$, it must be the entire group.
+\hamlos
+
+The general case now follows fairly directly:
+\begin{theorem}
+Suppose $a = \alpha{P_1}^{e_1}{P_2}^{e_2}\ldots{P_t}^{e_t}$ is the prime
+decomposition of $a$, where each $P_i$ is monic.  Then $K_a$ is the
+compositum of the fields $K_{{P_i}^{e_i}}$.  The only ideals in $A$ that
+ramify in $\oo_a$ are the $P_iA$'s.  Furthermore, $[K_a:k] = \Phi(a)$,
+from which it follows that $$\Gal(K_a/k) \cong (A/aA)^*.$$
+\end{theorem}
+
+\pf
+Set $a_i = \frac{m}{\alpha{P_i}^{e_i}}$.  Let $\lambda_a$ be a generator
+of $\Lambda_a \cong A/aA$.  Then $\lambda_{{P_i}^{e_i}} =
+C_{a_i}(\lambda_a)$ is a generator of $\Lambda_{{P_i}^{e_i}} \cong
+a_i(A/aA)$.  Thus $K_{{P_i}^{e_i}} = k(\lambda_{{P_i}^{e_i}}) =
+k(C_{a_i}(\lambda_a)) \subset k(\lambda_a) = K_a$, and we have
+$\prod^t_{i=1} K_{{P_i}^{e_i}} \subset K_a$.
+
+Conversely, because the $a_i$'s have greatest common divisor 1, there
+exist polynomials $b_i \in A$ such that $\sum^t_{i=1}b_ia_i = 1$.  Thus
+$$\lambda_a = \sum^t_{i=1}C_{b_i}(C_{a_i}(\lambda_a)) =
+\sum^t_{i=1}C_{b_i}(\lambda_{{P_i}^{e_i}}) \in
+\prod^t_{i=1} K_{{P_i}^{e_i}}.$$
+Since $\lambda_a$ generates $K_a$, we have
+$\prod^t_{i=1} K_{{P_i}^{e_i}} = K_a$.
+
+Next, if $PA \subset A$ is a prime different from each $P_iA$, then by
+\refp{primepower} it is unramified in every $K_{{P_i}^{e_i}}$.  Hence it
+is also unramified in the compositum $K_a$.  Conversely, each $P_iA$ is
+ramified in $K_a$ because it is already ramified in $K_{{P_i}^{e_i}}$.
+
+Now we prove that $[K_a:k] = \Phi(a)$ by inducting on $t$.  The base case
+$t = 1$ is exactly \refp{primepower}.  If the result holds for $t-1$,
+then $[K_{a_t}:k] = \Phi(a_t)$.  But by the above and by
+\refp{primepower}, $P_tA$ is unramified in $K_{a_t}$ and totally ramified
+in $K_{{P_t}^{e_t}}$.  Hence $K_{a_t}$ and $K_{{P_t}^{e_t}}$ are linearly
+disjoint over $K$, and $$[K_a:k] = [K_{a_t}:k][K_{{P_t}^{e_t}}:k]
+= \Phi(a_t)\Phi({P_t}^{e_t}) = \Phi(a).$$
+Induction is complete.  So once again, because $\Gal(K_a/k)$ is a
+subgroup of $(A/aA)^*$ of the correct size, it must be the entire group.
+\hamlos
+
+\end{section} %Carlitz Modules and Their Induced Extensions
+
+
+
+\begin{section}{The Maximal Abelian Extension of $\F(t)$}
+
+From the preceding discussion, the compositum $k(\Lambda)$ of all the
+fields $K_a$ (for nonzero monic $a \in A$) is an abelian extension of $k$.
+Further, it is clear that $k(\Lambda) =
+\mathop{\varinjlim}_{a\neq 0} K_a$ and that $\Gal(k(\Lambda)/k) \cong
+\mathop{\varprojlim}_{a\neq 0} (A/aA)^*$, which is analogous to
+$\Gal(\Q(\lambda_{\infty})/\Q) \cong \mathop{\varprojlim}_m (\Z/m\Z)^*
+= {\widehat{\Z}}^*$ for number fields.
+
+To construct more abelian extensions, we substitute $1/T$ for $T$
+everywhere above and obtain new but isomorphic abelian extensions.  In
+particular, $K_{T^{n+1}}$ becomes what we call $k(\Lambda_{T^{-(n+1)}})$,
+whose Galois group over $k$ is still of order $\Phi(T^{n+1}) = q^n(q-1)$.
+Since $(q^n, q-1) = 1$, the Galois group decomposes uniquely into the
+product of groups of order $q^n$ and $q-1$.  Let $L_n$ be the fixed field
+of the order-$(q-1)$ subgroup.  Then $L_n/k$ is still an abelian
+extension.  Let $L_\infty = \prod^\infty_{n=1} L_n$.
+
+However, we have not yet obtained all the abelian extensions of $k$.  It
+can be shown that the constant fields (i.e. the intersection with the
+algebraic closure $\bar{\F}$) of $k(\Lambda)$ and $L_{\infty}$ are both
+$\F$.  In other words, $k(\Lambda)$ and $L_{\infty}$ are what are called
+\emph{geometric} extensions of $k$.  By extending the constant field, we
+obtain another abelian extension:
+
+\begin{proposition}
+$\Gal(\bar{\F}(T)/\F(T)) \cong \widehat{\Z}$.
+\end{proposition}
+
+\pf
+We claim that $\Gal(\bar{\F}(T)/\F(T)) \cong \Gal(\bar{\F}/\F)$.  Any
+element $\sigma \in \Gal(\bar{\F}/\F)$ extends to an element in
+$\Gal(\bar{\F}(T)/\F(T))$ by setting $\sigma(T) = T$.  Conversely,
+if $\sigma \in \Gal(\bar{\F}(T)/\F(T))$ and $x \in \bar{\F}$, then
+$x$ is algebraic over $\F$ (which is fixed by $\sigma$), so
+$\sigma(x)$ is also algebraic over $\F$ and $\sigma(x) \in \bar{\F}$.
+Thus $\sigma$ sends $\bar{\F}$ to itself, and $\sigma$ is the
+extension of an element of $\Gal(\bar{\F}/\F)$.
+
+Now $\F$ is a finite field of size $q$.  Hence
+$\bar{\F} \cong \varinjlim_d \F_{q^d}$ and
+$\Gal(\bar{\F}(T)/\F(T)) \cong \Gal(\bar{\F}/\F) \cong
+\varprojlim_d \Z/d\Z = \widehat{\Z}$.
+\hamlos
+
+Now we can state the function-field analogue of the Kronecker-Weber
+theorem:
+\begin{theorem}
+(Hayes) $k(\Lambda)$, $L_\infty$, and $\bar{\F}(T)$ are linearly
+disjoint over $k$ and generate the maximal abelian extension of $k$.
+\end{theorem}
+The proof uses class field theory and can be seen in [2] or [3].
+
+\end{section} %The Maximal Abelian Extension of $\F(t)$
+
+
+
+
+\begin{section}{Drinfeld Modules}
+
+Finally, we examine Drinfeld modules, the generalization of Carlitz
+modules over function fields other than $\F(t)$, and suggest how they
+relate to abelian extensions.  We begin with some preliminary setup and
+definitions.
+
+\begin{definition}
+A function field $k$ over $\F$ is an extension of $\F$ of transcendence
+degree $1$.
+\end{definition}
+\begin{definition}
+A prime of a function field $k/\F$ is a discrete valuation ring $R$
+with maximal ideal $P$ such that $\F \subset R \subset k$ and $R$ has
+quotient field $k$.  This prime is referred to as $P$, and the associated
+valuation is denoted $\ord_P(\cdot)$.
+\end{definition}
+
+Now let $\F = \F_q$ and let $k/\F$ be a function field with constant field
+$\F$.  Let $\infty$ be a fixed prime of $k$ and let $A$ be the ring of
+elements of $k$ whose only poles are at $\infty$ (i.e. have nonnegative
+valuations at all other primes).  Let $L$ be a field containing $\F$.  As
+before, regard $\tau$ as the map raising an element to the $q$th power,
+and let $L\langle\tau\rangle$ be the twisted polynomial ring with relation
+$\tau a = a^q\tau$ for $a \in L$.  Fix an $\F$-algebra homomorphism
+$\delta: A \rightarrow L$.  Then
+\begin{definition}
+A Drinfeld $A$-module over $L$ is an $\F$-algebra homomorphism
+$\rho: A \rightarrow L\langle\tau\rangle$ such that for all $a \in A$,
+the constant coefficient of $\rho_a$ is $\delta(a)$.  Also, we require
+that the image of $\rho$ not be contained in $L$.  The set of all such
+$\rho$ is denoted $\Drin_A(L)$.
+\end{definition}
+
+Similar to before, if $\Omega$ is an $L$-algebra, then a Drinfeld module
+makes $\Omega$ into an $A$-module $\Omega_\rho$ by setting
+$a\cdot u = \rho_a(u)$ for $a \in A$, $u \in \Omega$.  This construction
+applies to $M$, a fixed algebraically closed field extension of $L$.  Thus
+we can define the torsion submodule $M_\rho[a] = \left\{u \in M_\rho:
+\rho_a(u) = 0 \right\}$ as before.
+
+Note that the above definition is consistent with our prior definition of
+Drinfeld modules over $\F(T)$.  There $k = \F(T)$, $\infty$ is the prime at
+infinity, $A = \F[T]$, $L = k$, and $\delta$ is the inclusion.  There is
+something to check here, namely that $\F[T]$ is the set of elements whose
+only poles are at $\infty$.  Now by $\infty$ we mean the valuation where
+for polynomials $f,g\in \F[T]$, $\ord_\infty(f/g)$ is the highest exponent
+in $g$ minus the highest exponent in $f$.  It can be shown that the other
+primes of $k$ correspond to nonzero prime ideals $P \subset \F[T]$, with
+valuation $\ord_P(z)$ being the exponent of $P$ in the prime factorization
+of $z$.  Hence $\F[T]$ is indeed the set of elements regular at all the
+non-$\infty$ primes.
+
+In the case over $\F(T)$, giving a Drinfeld module is the same as setting
+$\rho_T$ to be a nonconstant polynomial with constant $T$.  The existence
+of Drinfeld modules in general is less clear, but it can be shown using
+analytic methods.  The construction is similar to the construction of
+elliptic curves over the complex numbers $\C$ by means of two-dimensional
+$\Z$-lattices and the associated Weierstrass ${\mathcal P}$-functions.
+
+Now in general $\delta$ need not be injective.  Let $Q = \ker(\delta)$.
+Then $Q$ is a prime ideal of $A$ because $A/Q$ is contained in the
+integral domain $L$.  We say that $Q$ is the \emph{$A$-characteristic of
+$L$}.  Then the following theorem defines the rank of a Drinfeld module:
+\begin{theorem}
+Let $\rho \in \Drin_A(L)$, let $Q$ be the $A$-characteristic of $L$, and
+let $M$ be an algebraically closed field containing $L$.  If $P \neq Q$
+is a nonzero prime ideal of $A$ and $e \geq 1$, then there exist a
+positive integer $r$ independent of $P$ and $e$ such that
+$$M_\rho[P^e] \cong (A/P^e)^r.$$
+If $Q \neq (0)$ and $e \geq 1$, then there exist an integer $h$,
+independent of $e$, such that
+$$M_\rho[Q^e] \cong (A/Q^e)^{r-h}.$$
+We say that $r$ and $h$ are the rank and height of $\rho$, respectively.
+\end{theorem}
+
+\begin{corollary}
+This definition of rank coincides with the previous definition over
+$\F(T)$.  
+\end{corollary}
+
+\pf
+Use \reft{rank}.
+\hamlos
+
+\begin{proposition}
+Let $r = \rnk(\rho)$.  Then for each $a \in A\setminus Q$, there is an
+injection $$\Gal(L(M_\rho[a])/L) \rightarrow GL_r(A/aA).$$
+\end{proposition}
+
+\pf
+This is analogous to the proof in the case of $\F(T)$.  Because
+$a \not\in \ker(\delta)$, the constant term of $\rho_a$ is nonzero.
+Hence for some polynomial $f(x) = c_0x + c_1x^q + \ldots + c_tx^{q^t}
+\in L[x]$ where $c_0 \neq 0$, we have $\rho_a(u) = f(u)$ for all
+$u \in M$.  Because $M$ is algebraically closed, $M_\rho[a]$ is just the
+set of roots of $f$, and $L(M_\rho[a])$ is $f$'s splitting field.  Now
+since $\F \subset L$, the characteristic of $L$ divides $q$ and
+$f'(x) = c_0 \in L^*$.  Thus $f$ is separable and $L(M_\rho[a])/L$ is
+Galois.
+
+By arguments similar to before, each $\rho \in \Gal(L(M_\rho[a])/L)$ acts
+on $M_\rho[a] \cong (A/aA)^r$ as an $A$-module (hence $(A/aA)$-module)
+isomorphism.  This defines a homomorphism \\
+$\Gal(L(M_\rho[a])/L) \rightarrow GL_r(A/aA)$ that is injective because
+$M_\rho[a]$ generates $L(M_\rho[a])$.
+\hamlos
+
+\begin{corollary}
+If $\rho$ is a rank-$1$ Drinfeld $A$-module over $L$ and $a \in A$ is not
+in the $A$-characteristic of $L$, then $L(M_\rho[a])/L$ is an abelian
+extension.
+\end{corollary}
+
+Thus we see that adjoining torsion points of a Drinfeld module creates
+abelian extensions.  This is the start of an explicit construction of
+the maximal abelian extension of a function field.  For more details,
+see [1] and [4].
+
+\end{section} %Drinfeld Modules
+
+
+
+\begin{thebibliography}{1000}
+
+\bibitem{drinfeld} V.G. Drinfeld.  Elliptic Modules (Russian), \textit{
+Math. Sbornik} {\bf 94} (1974), 597-627.  English translation: \textit{
+Math. USSR, Sbornik} {\bf 23} (1977), 159-170.
+
+\bibitem{hayes} D.R. Hayes.  A brief introduction to Drinfeld modules,
+in The Arithmetic of Function Fields (eds. D. Goss et al), Walter de
+Gruyter \& Co., New York-Berlin, 1992.
+
+\bibitem{hayes2} D.R. Hayes.  Explicit class field theory for rational
+function fields, \textit{Trans. Amer. Math. Soc.} {\bf 189} (1974), 77-91.
+
+\bibitem{hayes3} D.R. Hayes.  Explicit class field theory in global
+function fields, Studies in Algebra and Number Theory, \textit{Adv. Math.
+Supplementary Studies} {\bf 6} (1979), 173-217.
+
+\bibitem{rosen} M. Rosen.  Number Theory in Function Fields.
+Springer-Verlag, New York, 2002.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,169 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts, amsthm, amsmath}
+\usepackage[all]{xy}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textheight}{8.5in}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{20pt}
+
+\def\AA{\mathbb{A}}
+\def\CC{\mathbb{C}}
+\def\FF{\mathbb{F}}
+\def\PP{\mathbb{P}}
+\def\QQ{\mathbb{Q}}
+\def\RR{\mathbb{R}}
+\def\ZZ{\mathbb{Z}}
+\def\gotha{\mathfrak{a}}
+\def\gothb{\mathfrak{b}}
+\def\gothm{\mathfrak{m}}
+\def\gotho{\mathfrak{o}}
+\def\gothp{\mathfrak{p}}
+\def\gothq{\mathfrak{q}}
+\def\gothr{\mathfrak{r}}
+\DeclareMathOperator{\ab}{ab}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\disc}{Disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Norm}{Norm}
+\DeclareMathOperator{\Trace}{Trace}
+\DeclareMathOperator{\Cl}{Cl}
+
+\def\head#1{\medskip \noindent \textbf{#1}.}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{cor}[theorem]{Corollary}
+
+\begin{document}
+
+\begin{center}
+\bf
+Math 254B, UC Berkeley, Spring 2002 (Kedlaya) \\
+Solutions to Selected Exercises (updated 21 Feb)
+\end{center}
+
+\head{Local Kronecker-Weber}
+
+3. From the previous exercise we have constructed a cyclotomic extension $F$
+of $\QQ_2$ with $\Gal(F/\QQ_2) = \ZZ/2\ZZ \times (\ZZ/2^r\ZZ)^2$. If
+$K \not\subset F$, then let $KF$ be their compositum and $G =
+\Gal(KF/\QQ_2)$. Now:
+\begin{enumerate}
+\item[(a)] we have surjective but not injective maps
+$f: G \to \Gal(K/\QQ_2) = (\ZZ/2^r\ZZ)H$ and
+$h: G \to \Gal(F/\QQ_2) = \ZZ/2\ZZ \times (\ZZ/2^r \ZZ)^2 = J$;
+\item[(b)] the map $f \times h: G \to H \times J$
+is injective;
+\item[(c)] the map $h$ is \emph{not} injective (or else $KF=F$).
+\end{enumerate}
+If we write $G$ as a product 
+$\prod_i \ZZ/2^{e_i}\ZZ$, then there must be at least three factors 
+(since $G \to J$ is surjective) but at most four factors (since $G \to
+H \times J$ is injective), and each $e_i$ is at most $r$. In fact,
+at least two of the $e_i$ must equal $r$ (lift generators in $J$ of a
+subgroup isomorphic to $(\ZZ/2^r\ZZ)^2$ into $G$), and the other two
+cannot equal 0 and 1 (otherwise $h$ can't fail to be injective). So
+either the other two are both at least 1, in which case $G$ has a quotient
+isomorphic to $(\ZZ/2\ZZ)^4$, or one of them is at least 2, in which case
+$G$ has a quotient isomorphic to $(\ZZ/4\ZZ)^3$.
+
+5. If $\Gal(K/\QQ_2) = (\ZZ/4\ZZ)^3$, then $K$ must contain
+$L = \QQ_2(\sqrt{-1})$ or else $KL/\QQ_2$ contains a subextension isomorphic
+to $(\ZZ/2\ZZ)^4$, which we ruled out in the previous exercise. Now
+we have $\Gal(K/L) = (\ZZ/2\ZZ) \times (\ZZ/4\ZZ)^2$ sitting inside
+$\Gal(K/\QQ_2) = (\ZZ/4\ZZ)^3$; choose a subgroup of $\Gal(K/L)$ isomorphic
+to $(\ZZ/4\ZZ)^2$. Its fixed field $M$ satisfies $L \subset M$ and
+$\Gal(M/\QQ_2) = \ZZ/4\ZZ$.
+
+Suppose $M = \QQ_2(\sqrt{\alpha})$ for $\alpha = a + b \sqrt{-1} \in L$;
+then $\beta = a - b \sqrt{-1}$ must also
+have a square root in $M$ since $M/\QQ_2$ is Galois. Thus
+$\alpha \beta = a^2+b^2 \in \QQ_2^*$ has a square in $M$.
+
+Choose $r \in \ZZ$ so that $c = a2^r$ and $d = b2^r$
+are both in $\ZZ_2$ but not
+both in $2\ZZ_2$. If $a^2+b^2$ is not a square in $\QQ_2$, then
+$\QQ_2(\sqrt{a^2+b^2}) = \QQ_2(\sqrt{c^2+d^2})$
+is a quadratic subextension of $M$. But $M$ has only one quadratic
+subextension, namely $L$. Thus $\QQ_2(\sqrt{c^2+d^2}) = \QQ_2(\sqrt{-1})$;
+but this cannot be, because $c^2+d^2$ is either even, or congruent to 1
+mod 4. 
+
+Thus $a^2+b^2$ is a square in $\QQ_2$.
+Now let $\sigma$ be a generator of $\Gal(M/\QQ_2)$. If $\gamma \in M$
+is a square root of $\alpha$, then $\gamma^\sigma$ is a square root of
+$\alpha^\sigma = \beta$, so $\gamma \gamma^\sigma$ is a square root of
+$\alpha \beta$, and so must lie in $\QQ_2$. But $\gamma^{\sigma^2}
+= -\gamma$, so $(\gamma \gamma^\sigma)^\sigma = -\gamma \gamma^\sigma$,
+which is impossible if $\gamma \gamma^\sigma$ is in $\QQ_2$.
+Thus we have a contradiction in all cases.
+
+Alternate argument: write
+\[
+\sqrt{a \pm b \sqrt{-1}} =  \left(
+\sqrt{(a + \sqrt{a^2+b^2})/2} \pm 
+\sqrt{(a - \sqrt{a^2+b^2})/2} \right)^2.
+\]
+If $a^2+b^2$ is the square of $c \in \QQ_2$, that means $L$ contains 
+the additional quadratic subfield $\sqrt{(a+c)/2}$, contradiction.
+Or argue that $L$ must be totally ramified, otherwise the fixed field of
+the inertia group would be an additional quadratic subfield (since
+it must be an unramified extension, it can't be $\QQ_2(\sqrt{-1})$),
+so $\alpha$ has valuation 1/4 and $\alpha \beta$ has valuation 1/2,
+so it's not in $\QQ_2$.
+
+\head{The Hilbert Class Field}
+
+1. There is a subtle point that many of you may not have noticed: after
+determining which extensions $K(\sqrt{d})$ for $d \in \ZZ$ are unramified
+over $K$, you
+have to check that that there are no additional unramified extensions of $K$
+of the form $K(\sqrt{\alpha})$ for $\alpha \in \gotho_K \setminus \ZZ$; the
+argument is in some ways similar to that given for Local Kronecker-Weber
+5 above. If
+$K(\sqrt{\alpha})/K$ is unramified, then $(\alpha)$ is the square of a
+fractional ideal in $K$. (This follows from Artin reciprocity, but you can
+also see it directly: if $(\alpha)$ is divisible by an odd power of some
+prime, that prime must ramify in $K(\sqrt{\alpha})$. Or note that
+the discriminant of $K(\sqrt{\alpha})/K$ is equal to $(4\alpha)$ divided
+by the square of an ideal, by using the basis $1, \sqrt{\alpha}$.)
+Let $\beta = \overline{\alpha}$; then $\Norm(\alpha) = \alpha \beta$
+is the square of an ideal in $\QQ$, so it is a perfect square.
+
+In particular, $K(\sqrt{\alpha})$ is Galois over $K$, so its Galois
+group is either $\ZZ/4\ZZ$ or $(\ZZ/2\ZZ)^2$. If it were the former, we
+could choose a generator $\sigma$, apply it to a square root $\gamma$
+of $\alpha$ to get a square root of $\beta$, and then
+$\gamma \gamma^\sigma$ would be a square root of $\alpha \beta$, thus
+a rational number. But $\gamma^{\sigma^2} = -\gamma$ otherwise $\gamma$
+only has order 2, so $(\gamma \gamma^\sigma)^\sigma = -\gamma \gamma^\sigma$,
+contradiction.
+
+Thus $\Gal(K(\sqrt{\alpha}/\QQ) = \ZZ/2\ZZ \times \ZZ/2\ZZ$, and 
+$\Gal(K/\QQ)$ acts on this group. There must be a subgroup which is fixed
+by this action, corresponding to a subfield $L$ which is in fact Galois
+over $\QQ$, namely $L = \QQ(\sqrt{d})$ for some $d \in \QQ$. But now
+$K(\sqrt{\alpha}) = K(\sqrt{d})$, so indeed we don't get any extra
+unramified extension by adjoining square roots of non-rationals.
+
+Alternate argument: if $L/K$ is unramified,
+pick any prime $p$ of $\QQ$ which ramifies in $K$. Then $p$ is not totally
+ramified in $L$, so its inertia group is isomorphic to $\ZZ/2\ZZ$. But
+$p$ does not ramify in the fixed field of the inertia group, so that field
+is a quadratic field in $L$ other than $K$, forcing $\Gal(L/K) = \ZZ/2\ZZ
+\times \ZZ/2\ZZ$, and continue as above.
+
+\end{document}
+
+
