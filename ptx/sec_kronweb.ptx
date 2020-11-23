@@ -1,0 +1,266 @@
+<section xml:id="sec_kronweb">
+  <title>The Kronecker-Weber theorem</title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        Our approach follows Washington,
+        <em>Introduction to Cyclotomic Fields</em>, Chapter 14.
+        A variety of other methods can be found in other texts.
+      </p>
+    </paragraphs>
+  </introduction>
+  <subsection>
+    <title>Abelian extensions of <m>\QQ</m></title>
+    <p>
+      Though class field theory has its origins in the law of quadratic reciprocity discovered by Gauss,
+      its proper beginning is indicated by the Kronecker-Weber theorem,
+      first stated by Kronecker in 1853 and proved by Weber in 1886.
+      Although one could skip this theorem and deduce it as a consequence of more general results later on, I prefer to work through it explicitly.
+      It will provide a
+      <q>trailer</q>
+      for the rest of the course, giving us a preview of a number of key elements:
+      <ul>
+        <li>
+          <p>
+            reciprocity laws;
+          </p>
+        </li>
+        <li>
+          <p>
+            passage between local and global fields, using Galois theory;
+          </p>
+        </li>
+        <li>
+          <p>
+            group cohomology, and applications to classifying field extensions;
+          </p>
+        </li>
+        <li>
+          <p>
+            computations in local fields.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      An <em>abelian extension</em> of a field is a Galois extension with abelian Galois group.
+      An example of an abelian extension of <m>\QQ</m> is the cyclotomic field <m>\QQ(\zeta_n)</m>
+      (where <m>n</m> is a positive integer and <m>\zeta_n</m> is a primitive <m>n</m>-th root of unity),
+      whose Galois group is <m>(\ZZ/n\ZZ)^*</m>, or any subfield thereof.
+      Amazingly, there are no other examples!
+    </p>
+    <theorem xml:id="T_Kronecker-Weber">
+      <title>Kronecker-Weber</title>
+      <statement>
+        <p>
+          If <m>K/\QQ</m> is a finite abelian extension,
+          then <m>K \subseteq \QQ(\zeta_n)</m> for some positive integer <m>n</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      For example,
+      every quadratic extension of <m>\QQ</m> is contained in a cyclotomic field,
+      a fact known to Gauss.
+    </p>
+    <p>
+      The smallest <m>n</m> such that <m>K \subseteq \QQ(\zeta_n)</m> is called the
+      <em>conductor</em> of <m>K/\QQ</m>.
+      It plays an important role in the splitting behavior of primes of <m>\QQ</m> in <m>K</m>,
+      as we will see a bit later.
+    </p>
+    <p>
+      We will prove this theorem in the next few lectures.
+      Our approach will be to deduce it from a local analogue
+      (see <xref ref="T_local_Kronecker-Weber2">Theorem</xref>).
+    </p>
+    <theorem xml:id="T_local_Kronecker-Weber1">
+      <title>Local Kronecker-Weber</title>
+      <statement>
+        <p>
+          If <m>K/\QQ_p</m> is a finite abelian extension,
+          then <m>K \subseteq \QQ_p(\zeta_n)</m> for some <m>n</m>,
+          where <m>\zeta_n</m> is a primitive <m>n</m>-th root of unity.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Before proceeding,
+      it is worth noting explicitly a nice property of abelian extensions that we will exploit below.
+      Let <m>L/K</m> be a Galois extension with Galois group <m>G</m>,
+      let <m>\gothp</m> be a prime of <m>K</m>,
+      let <m>\gothq</m> be a prime of <m>L</m> over <m>\gothp</m>,
+      and let <m>G_{\gothq}</m> and
+      <m>I_{\gothq}</m> be the decomposition and inertia groups of <m>\gothq</m>,
+      respectively.
+      Then any other prime <m>\gothq'</m> over <m>\gothp</m> can be written as
+      <m>\gothq^g</m> for some <m>g \in G</m>,
+      and the decomposition and inertia groups of <m>\gothq'</m> are the conjugates
+      <m>g^{-1} G_{\gothq} g</m> and <m>g^{-1} I_{\gothq} g</m>,
+      respectively.
+      (Note: my Galois actions will always be right actions,
+      denoted by superscripts.)
+      If <m>L/K</m> is <em>abelian</em>, though,
+      these conjugations have no effect.
+      So it makes sense to talk about <em>the</em>
+      decomposition and inertia groups of <m>\gothp</m> itself!
+    </p>
+  </subsection>
+  <subsection>
+    <title>A reciprocity law</title>
+    <p>
+      Assuming the Kronecker-Weber theorem,
+      we can deduce strong results about the way primes of <m>\QQ</m> split in an abelian extension.
+      Suppose <m>K/\QQ</m> is abelian, with conductor <m>m</m>.
+      Then we get a surjective homomorphism
+      <me>
+        (\ZZ/m\ZZ)^* \cong \Gal(\QQ(\zeta_m)/\QQ) \to \Gal(K/\QQ)
+      </me>.
+    </p>
+    <p>
+      On the other hand, suppose <m>p</m> is a prime not dividing <m>m</m>,
+      so that <m>K/\QQ</m> is unramified above <m>p</m>.
+      As noted above,
+      there is a well-defined decomposition group <m>G_p \subseteq \Gal(K/\QQ)</m>.
+      Since there is no ramification above <m>p</m>,
+      the corresponding inertia group is trivial,
+      so <m>G_p</m> is generated by a Frobenius element <m>F_p</m>,
+      which modulo any prime above <m>p</m>,
+      acts as <m>x \mapsto x^p</m>.
+      We can formally extend the map
+      <m>p \mapsto F_p</m> to a homomorphism from <m>S_m</m>,
+      the subgroup of <m>\QQ</m> generated by all primes not dividing <m>m</m>,
+      to <m>\Gal(K/\QQ)</m>.
+      This is called the <em>Artin map</em> of <m>K/\QQ</m>.
+    </p>
+    <p>
+      The punchline is that the Artin map factors through the map <m>(\ZZ/m\ZZ)^* \to \Gal(K/\QQ)</m> we wrote down above!
+      Namely, note that the image of <m>r</m> under the latter map takes <m>\zeta_m</m> to <m>\zeta_m^r</m>.
+      For this image to be equal to <m>F_p</m>,
+      we must have <m>\zeta_m^r \equiv \zeta_m^p \pmod{\gothp}</m> for some prime <m>\gothp</m> of <m>K</m> above <m>p</m>.
+      But <m>\zeta_m^r (1 - \zeta_m^{r-p})</m> is only divisible by primes above <m>m</m>
+      (see exercises)
+      unless <m>r-p \equiv 0 \pmod{m}</m>.
+      Thus <m>F_p</m> must be equal to the image of <m>p</m> under the map <m>(\ZZ/m\ZZ)^* \to \Gal(K/\QQ)</m>.
+    </p>
+    <p>
+      The <em>Artin reciprocity law</em>
+      states that a similar phenomenon arises for any abelian extension of any number field;
+      that is, the Frobenius elements corresponding to various primes are governed by the way the primes
+      <q>reduce</q>
+      modulo some other quantity.
+      There are several complicating factors in the general case, though.
+      <ul>
+        <li>
+          <p>
+            Prime ideals in a general number field are not always principal,
+            so we can't always take a generator and reduce it modulo something.
+          </p>
+        </li>
+        <li>
+          <p>
+            There can be lots of units in a general number field,
+            so even when a prime ideal is principal,
+            it is unclear which generator to choose.
+          </p>
+        </li>
+        <li>
+          <p>
+            It is not known in general how to explicitly construct generators for all of the abelian extensions of a general number field.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Thus our approach will have to be a bit more indirect.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Reduction to the local case</title>
+    <p>
+      Our reduction of Kronecker-Weber to local Kronecker-Weber relies on a key result typically seen in a first course on algebraic number theory.
+      (See for instance Neukirch III.2.)
+    </p>
+    <theorem xml:id="T_Minkowski">
+      <title>Minkowski</title>
+      <statement>
+        <p>
+          There are no nontrivial extensions of <m>\QQ</m> which are unramified everywhere.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Using Minkowski's theorem,
+      let us deduce the Kronecker-Weber theorem from the local Kronecker-Weber theorem.
+    </p>
+    <proof>
+      <p>
+        For each prime <m>p</m> over which <m>K</m> ramifies,
+        pick a prime <m>\gothp</m> of <m>K</m> over <m>p</m>;
+        by local Kronecker-Weber
+        (<xref ref="T_local_Kronecker-Weber1">Theorem</xref>),
+        <m>K_{\gothp} \subseteq \QQ_p(\zeta_{n_p})</m> for some positive integer <m>n_p</m>.
+        Let <m>p^{e_p}</m> be the largest power of <m>p</m> dividing <m>n_p</m>,
+        and put <m>n = \prod_p p^{e_p}</m>.
+        (This is a finite product since only finitely many primes ramify in <m>K</m>.)
+      </p>
+      <p>
+        We will prove that <m>K \subseteq \QQ(\zeta_n)</m>,
+        by proving that <m>K(\zeta_n) = \QQ(\zeta_n)</m>.
+        Write <m>L = K(\zeta_n)</m> and let <m>I_p</m> be the inertia group of <m>p</m> in <m>L</m>.
+        If we let <m>U</m> be the maximal unramified subextension of
+        <m>L_\gothq</m> over <m>\QQ_p</m> for some prime <m>\gothq</m> over <m>p</m>,
+        then <m>L_\gothq = U(\zeta_{p^{e_p}})</m> and <m>I_p \cong \Gal(L_\gothq/U) \cong (\ZZ/p^{e_p}\ZZ)^*</m>.
+        Let <m>I</m> be the group generated by all of the <m>I_p</m>; then
+        <me>
+          |I| \leq \prod |I_p| = \prod \phi(p^{e_p}) = \phi(n) = [\QQ(\zeta_n):\QQ]
+        </me>.
+      </p>
+      <p>
+        On the other hand,
+        the fixed field of <m>I</m> is an everywhere unramified extension of <m>\QQ</m>,
+        which can only be <m>\QQ</m> itself by Minkowski's theorem.
+        That is, <m>I = \Gal(L/\QQ)</m>.
+        But then
+        <me>
+          [L:\QQ] = |I| \leq [\QQ(\zeta_n):\QQ]
+        </me>,
+        and <m>\QQ(\zeta_n) \subseteq L</m>,
+        so we must have <m>\QQ(\zeta_n) = L</m> and <m>K \subseteq \QQ(\zeta_n)</m>,
+        as desired.
+      </p>
+    </proof>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <ol>
+      <li>
+        <p>
+          For <m>m \in \ZZ</m> not a perfect square,
+          determine the conductor of <m>\QQ(\sqrt{m})</m>.
+          (Hint: first consider the case where <m>|m|</m> is prime.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Recover the law of quadratic reciprocity from the Artin reciprocity law,
+          using the fact that <m>\QQ(\sqrt{(-1)^{(p-1)/2} p})</m> has conductor <m>p</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that if <m>m,n</m> are coprime integers in <m>\ZZ</m>,
+          then <m>1 - \zeta_m</m> and <m>n</m> are coprime in <m>\ZZ[\zeta_m]</m>. (Hint:
+          look at the polynomial <m>(1-xx)^m-1</m> modulo a prime divisor of <m>n</m>.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that if <m>m</m> is not a prime power,
+          <m>1-\zeta_m</m> is a unit in <m>\ZZ[\zeta_m]</m>.
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

@@ -1,0 +1,393 @@
+<section xml:id="sec_connection">
+  <title>The connection with local reciprocity</title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        Milne VII.5; Neukirch VI.4.
+      </p>
+    </paragraphs>
+    <p>
+      So far, we've used abstract class field theory to construct reciprocity isomorphisms
+      <me>
+        r'_{L/K}: C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}
+      </me>
+      and to establish the adelic form of the existence theorem.
+      We also know that if <m>L/K</m> is a small cyclotomic extension,
+      then this map induces the usual Artin map.
+    </p>
+    <p>
+      This time, we'll verify that this map coincides with the product of the local reciprocity maps.
+      As noted earlier,
+      this is enough to recover the classical Artin reciprocity law and existence theorem.
+    </p>
+    <p>
+      I've also included a sketch of a Galois-cohomological approach to the reciprocity isomorphism
+      (as found in Milne),
+      using <m>H^2</m> and an explicit computation in local class field theory.
+      One of the sketchy points is that this computation requires a little of the Lubin-Tate construction,
+      which makes the local existence theorem rather explicit but will not be discussed herein.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Caveat</title>
+    <p>
+      This still does not follow Milne or Neukirch.
+    </p>
+    <p>
+      For any extension <m>L/K</m> of number fields,
+      we currently have the map <m>r_{L/K}: I_K \to \Gal(L/K)^{\ab}</m> formed as the product of the local reciprocity maps,
+      and the abstract reciprocity map <m>r'_{L/K}: I_K \to \Gal(L/K)^{\ab}</m>,
+      which actually factors through <m>C_K</m> and even through <m>C_K/\Norm_{L/K} C_L</m>.
+      We want to show that these agree.
+      Before doing so,
+      let's observe some consequences of that which we'll then use in the proof that they agree.
+    </p>
+    <p>
+      If <m>L/K</m> is abelian,
+      <m>v</m> is a place of <m>K</m> and <m>w</m> is a place of <m>L</m> above <m>v</m>,
+      then we have an injection <m>K_v^* \to I_K</m>,
+      which we then funnel through
+      <m>r'_{L/K}</m> to get a map into <m>\Gal(L/K)</m>.
+      The following properties would follow from knowing that <m>r = r'</m>,
+      but must be checked independently as part of the proof.
+    </p>
+    <lemma xml:id="L_reciprocity_corollaries">
+      <statement>
+        <p>
+          The following statements hold:
+          <ol>
+            <li>
+              <p>
+                the composite map <m>K_v^* \to \Gal(L/K)</m> actually maps into the decomposition group of <m>w</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                the subgroup <m>\Norm_{L_w/K_v} L_w^*</m> is contained in the kernel of <m>K_v^* \to \Gal(L/K)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </lemma>
+    <p>
+      In (ii), we would also know that
+      <q>contained in</q>
+      can be replaced by
+      <q>equal to</q>, but we won't try to check that independently.
+    </p>
+    <proof>
+      <p>
+        For (i), let <m>M</m> be the fixed field of the decomposition group of <m>w</m>;
+        then we have the compatibility
+      </p>
+      <image source="images/f577aa8489db4d9aff9d4edf0ee7e727aeb791df.png"/>
+      <p>
+        and the image of <m>K_v^* \to I_K</m> lands in
+        <m>\Norm_{M/K} I_M</m> because <m>v</m> splits completely in <m>M</m>.
+        So this image lies in the kernel of <m>\Gal(L/K) \to \Gal(M/K)</m>,
+        which is to say <m>\Gal(L/M)</m>,
+        the decomposition group of <m>w</m>.
+      </p>
+      <p>
+        For (ii), we need only check that
+        <m>\Norm_{L_w/K_v} L_w^*</m> is contained in the kernel of <m>K_v^* \to C_K/\Norm_{L/K} C_L</m>.
+        But <m>\Norm_{L_w/K_v} L_w^*</m> is already in the kernel of <m>K_v^* \to I_K/\Norm_{L/K} I_L</m>,
+        so we're all set.
+      </p>
+    </proof>
+    <p>
+      Our plan now is to attempt to recover the local reciprocity map from the maps <m>r'_{L/K}</m>.
+      To do this, we need some auxiliary global extensions,
+      provided by the Existence Theorem.
+    </p>
+    <lemma>
+      <statement>
+        <p>
+          Let <m>K</m> be a number field,
+          <m>v</m> a place of <m>K</m> and <m>M</m> a finite abelian extension of <m>K_v</m>.
+          Then there exists a finite abelian extension <m>L</m> of <m>K</m> such that for any place <m>w</m> of <m>L</m> above <m>v</m>,
+          <m>L_w</m> contains <m>M</m>.
+        </p>
+      </statement>
+    </lemma>
+    <proof>
+      <p>
+        This is easy if <m>v</m> is infinite:
+        if <m>v</m> is complex there is nothing to prove,
+        and if <m>v</m> is real then we may take <m>L = K(\sqrt{-1})</m>.
+        So assume hereafter that <m>v</m> is finite.
+      </p>
+      <p>
+        By the Existence Theorem
+        (<xref ref="T_adelic_existence_theorem2">Theorem</xref>)
+        and <xref ref="L_reciprocity_corollaries">Lemma</xref>(ii),
+        it suffices to produce an open subgroup <m>U</m> of <m>C_K</m> of finite index such that the preimage of <m>U</m> under
+        <m>K_v^* \to C_K</m> is contained in <m>N = \Norm_{M/K_v} M^*</m>.
+        Let <m>S</m> be the set of infinite places and <m>T = S \cup \{v\}</m>,
+        and let <m>G = K_T \cap N</m>.
+        Then one can choose an additional place <m>u</m>
+        (finite and distinct from <m>v</m>)
+        and an open subgroup <m>V</m> of
+        <m>\gotho_{K_u}^*</m> such that <m>V \cap K_T \subseteq G</m>.
+        Now put
+        <me>
+          W = N \times V \times \prod_{w \in S} K_w^* \times \prod_{w \notin S \cup \{u,v\}} \gotho_K^*
+        </me>
+        and <m>U = W K^*/K^*</m>.
+        If <m>\alpha_v \in K_v^*</m> maps into <m>U</m>,
+        then there exists <m>\beta \in K^*</m> such that <m>\alpha_v \beta \in W</m>.
+        That means first of all that
+        <m>\beta \in K_T</m> and then that <m>\beta \in V</m>,
+        so that <m>\beta \in G</m> and so also <m>\beta \in N</m>.
+        It also means that <m>\alpha_v \beta \in N</m>.
+        Thus <m>\alpha_v \in N</m>, as desired.
+      </p>
+    </proof>
+    <p>
+      For each place <m>v</m> of <m>K</m> and each abelian extension <m>M</m> of <m>K_v</m>,
+      we can now write down a map
+      <m>r'_{K,v}: K_v^* \to \Gal(M/K_v)</m> by choosing an abelian extension <m>L</m> such that
+      <m>M \subseteq L_w</m> for any place <m>w</m> of <m>L</m> above <m>v</m>,
+      letting <m>N</m> be the fixed field of the decomposition group of <m>w</m>,
+      and setting <m>r'_{K,v}</m> equal to the composition
+      <me>
+        K_v^* \stackrel{r'_{L/K}}{\to} \Gal(L/N) = \Gal(L_w/K_v) \to \Gal(M/K_v)
+      </me>.
+    </p>
+    <p>
+      By the same compatibility as above,
+      this doesn't change if we enlarge <m>L</m>.
+      Thus it doesn't depend on the choice of <m>L</m> at all! (Any two choices of <m>L</m> sit inside an abelian extension of <m>K</m>;
+      compare both with that bigger field.)
+    </p>
+    <p>
+      Again by the usual compatibilities,
+      these maps fit together to give a single map <m>r'_{K,v}: K_v^* \to \Gal(K_v^{\ab}/K_v)</m>.
+      This map has the following properties:
+      <ol>
+        <li>
+          <p>
+            For <m>M/K</m> unramified,
+            the induced map <m>K_v^* \to \Gal(M/K_v^*)</m> kills units and maps a uniformizer of <m>K_v</m> to the Frobenius automorphism.
+            Since that extension is generated by roots of unity,
+            we can check this using a suitable small cyclotomic extension of <m>K</m>,
+            on which <m>r'</m> may be computed explicitly.
+            We leave further details to the reader.
+          </p>
+        </li>
+        <li>
+          <p>
+            For any finite extension <m>M/K_v^*</m>,
+            <m>r'_{K,v}</m> induces an isomorphism
+            <me>
+              K_v^*/\Norm_{M/K_v} M^* \to \Gal(M/K_v^*)
+            </me>.
+            Note that <em>a priori</em> we only know that this map is injective,
+            but by the local reciprocity law the two groups have the same order,
+            so it's actually an isomorphism.
+            (For this and other reasons,
+            we do not get an independent proof of local class field theory by this process.)
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      But these properties <em>uniquely</em>
+      characterize the local reciprocity map!
+      We conclude that <m>r'_{K,v}</m> is the local reciprocity map for <m>K_v</m>,
+      and so <m>r_{L/K} = r'_{L/K}</m> and at long last Artin reciprocity
+      (and the classical existence theorem, and the whole lot)
+      follows.
+      Hooray!
+    </p>
+    <p>
+      It's worth repeating that only now do we know that the product <m>r_{L/K}</m> of the local reciprocity maps kills principal id&#xe8;les.
+      That fact, which relates local behavior for different primes in a highly global fashion,
+      is the basis of various <em>higher reciprocity laws</em>.
+      See Milne, Chapter VIII for details.
+    </p>
+  </subsection>
+  <subsection>
+    <title>An explicit computation in local CFT</title>
+    <p>
+      We sketch an alternate approach for comparing the
+      <q>abstract</q>
+      reciprocity map <m>r'_{L/K}</m> with the product <m>r_{L/K}</m> of the local reciprocity maps,
+      following Milne
+      (and Neukirch V.2).
+    </p>
+    <p>
+      We first verify that <m>r = r'</m> for cyclotomic extensions of <m>\QQ</m>,
+      using an explicit computation in local class field theory.
+      Namely, we compute that if we identify
+      <m>\Gal(\QQ(\zeta_{p^m})/\QQ)</m> with <m>(\ZZ/p^m\ZZ)^*</m>,
+      then the local reciprocity maps are given by
+      <me>
+        r_{\QQ_{\ell}(\zeta_{p^m})/\QQ_{\ell}}(a) = \begin{cases}\sign(a) \amp  \ell = \infty \\ \ell^{v_{\ell}}(a) \amp  \ell \neq \infty, p \\ u^{-1} \amp  \ell = p. \end{cases}
+      </me>
+    </p>
+    <p>
+      This is straightforward for <m>\ell = \infty</m>.
+      For <m>\ell \neq \infty,
+      p</m>, we have an unramified extension of local fields,
+      where we know the local reciprocity map takes a uniformizer to a Frobenius.
+      In this case the latter is simply <m>\ell</m>.
+    </p>
+    <p>
+      The hard work is in the case <m>\ell=p</m>.
+      For that computation one uses what amounts to a very special case of the Lubin-Tate construction of explicit class field theory for local fields,
+      using formal groups.
+      Put <m>K = \QQ_p</m>,
+      <m>\zeta = \zeta_{p^m}</m> and <m>L = \QQ_p(\zeta)</m>.
+    </p>
+    <p>
+      Suppose without loss of generality that <m>u</m> is a positive integer,
+      and let <m>\sigma \in \Gal(L/K)</m> be the automorphism corresponding to <m>u^{-1}</m>.
+      Since <m>L/K</m> is totally ramified at <m>p</m>,
+      we have <m>\Gal(L/K) \cong \Gal(L^{\unr}/K^{\unr})</m>,
+      and we can view <m>\sigma</m> as an element of <m>\Gal(L^{\unr}/K)</m>.
+      Let <m>\phi_L \in \Gal(L^{\unr}/L)</m> denote the Frobenius,
+      and put <m>\tau = \sigma \phi_L</m>.
+      Then <m>\tau</m> restricts to the Frobenius in
+      <m>\Gal(K^{\unr}/K)</m> and to <m>\sigma</m> in <m>\Gal(L/K)</m>.
+      By Neukirch's definition of the reciprocity map,
+      we may compute <m>r^{-1}_{L/K}(\sigma)</m> as <m>\Norm_{M/K} \pi_M</m>,
+      where <m>M</m> is the fixed field of <m>\tau</m> and <m>\pi_M</m> is a uniformizer.
+      We want that norm to be <m>u</m> times a norm from <m>L</m> to <m>K</m>, i.e.,
+      <me>
+        r^{-1}_{L/K}(\sigma) \in u \Norm_{L/K} L^*
+      </me>.
+    </p>
+    <p>
+      Define the polynomial
+      <me>
+        e(x) = x^p + upx
+      </me>
+      and put
+      <me>
+        P(x) = e^{(n-1)}(x)^{p-1} + pu
+      </me>,
+      where <m>e^{(k+1)}(x) = e(e^{(k)}(u))</m>.
+      Then <m>P(x)</m> satisfies Eisenstein's criterion,
+      so its splitting field over <m>\QQ_p</m> is totally ramified,
+      any root of <m>P</m> is a uniformizer,
+      and the norm of said uniformizer is <m>(-1)^{[L:K]} pu \in \Norm_{L/K} L^*</m>,
+      since <m>\Norm_{L/K}(\zeta-1) = (-1)^{[L:K]}(p)</m>.
+    </p>
+    <p>
+      The punch line is that the splitting field of <m>P(x)</m> is precisely <m>M</m>!
+      Here is where the Lubin-Tate construction comes to the rescue... and where I will stop this sketch.
+      See Neukirch V.2 and V.4 and/or Milne I.3.
+    </p>
+  </subsection>
+  <subsection>
+    <title>A bit about Brauer groups</title>
+    <p>
+      For background about Brauer groups,
+      see Milne, IV. We'll be following Milne VII.8 for now,
+      and omitting many details.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Put <m>L = K(\zeta_n)</m>.
+          Then <m>r_{L/K}: I_K \to \Gal(L/K)</m> maps all principal id&#xe8;les to the identity.
+        </p>
+      </statement>
+    </proposition>
+    <proof>
+      <p>
+        For <m>K = \QQ</m>, this follows from the previous section
+        (factor <m>n</m> into prime powers and apply the previous argument to each factor).
+        In general, we have a compatibility
+      </p>
+      <image source="images/8746fce4e4b5a371bebae370d3901e4d899cfd95.png"/>
+      <p>
+        and we know the bottom row kills principal id&#xe8;les and the right column is injective.
+        Thus the top row kills principal id&#xe8;les too.
+      </p>
+    </proof>
+    <p>
+      To make more progress, we need to bring in <m>H^2</m>,
+      as we did in local reciprocity.
+      (Unfortunately,
+      trying to compute <m>H^2</m> of the id\<sq>ele class group is a headache,
+      so we can</sq>t imitate the argument perfectly.)
+      Recall there that we saw that every element of <m>H^2(L/K)</m> could be
+      <q>brought in</q>
+      from a suitable unramified extension of <m>K</m>.
+      We have a similar situation here with
+      <q>unramified</q>
+      replaced by
+      <q>cyclotomic</q>.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>L/K</m> be any finite Galois extension of number fields.
+          Then for any element <m>x</m> of
+          <m>H^2(\Gal(L/K), L^*)</m>, there exists a cyclic,
+          cyclotomic extension <m>M</m> of <m>K</m> and an element <m>y</m> of
+          <m>H^2(\Gal(M/K), M^*)</m> such that <m>x</m> and <m>y</m> map to the same element of <m>H^2(\Gal(ML/K), ML^*)</m>.
+        </p>
+      </statement>
+    </proposition>
+    <proof>
+      <p>
+        Omitted.
+        See above references.
+      </p>
+    </proof>
+    <p>
+      Hereafter <m>L/K</m> is abelian.
+      From the exact sequence
+      <me>
+        0 \to L^* \to I_L \to C_L \to 0
+      </me>
+      we get a fragment
+      <me>
+        1 = H^1(\Gal(L/K), C_L) \to H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L)
+      </me>
+      so the map <m>H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L) = \oplus H^2(\Gal(L/K), I_L)</m> is injective.
+      Each factor in the direct sum is canonically a subgroup of <m>\QQ/\ZZ</m>,
+      so we get a sum map <m>H^2(\Gal(L/K), I_L) \to \QQ/\ZZ</m>.
+    </p>
+    <p>
+      It turns out
+      (see Milne, Lemma VII.8.5)
+      that for any map <m>\Gal(L/K) \to \QQ/\ZZ</m>,
+      there is a commuting diagram
+    </p>
+    <image source="images/acf5529622e010b0804e0e6a361e5d7d8df96e02.png"/>
+    <p>
+      If <m>L/K</m> is cyclic,
+      we may choose the map <m>\Gal(L/K) \to \QQ/\ZZ</m> to be injective,
+      and then the first vertical arrow will be surjective. (In fact,
+      it's <m>K^* \to K^*/\Norm_{L/K} L^* = H^0_T(L^*)</m> plus the periodicity isomorphism
+      <m>H^0_T(L^*) \to H^2_T(L^*)</m>.) Then the fact that <m>r_{L/K}</m> kills principal id&#xe8;les implies that the composite <m>H^2(L^*) \to \QQ/\ZZ</m> is the zero map.
+    </p>
+    <p>
+      Now if we know <m>H^2(\Gal(L/K), L^*) \to \QQ/\ZZ</m> vanishes for all cyclic extensions,
+      we know it in particular for cyclic cyclotomic extensions.
+      But then the previous proposition tells us that it also vanishes for any finite Galois extension!
+      Now we can use the diagram in reverse:
+      it tells us that for <m>a \in K^*</m>,
+      <m>r_{L/K}(a)</m> is killed by any homomorphism <m>\Gal(L/K) \to \QQ/\ZZ</m>.
+      Since <m>\Gal(L/K)</m> is an abelian group,
+      that implies <m>r_{L/K}(a)</m> is trivial.
+    </p>
+    <p>
+      To conclude,
+      we now have that <m>r_{L/K}</m> kills principal id\<sq>eles in general.
+      By construction, it also kills norms
+      (since it does so locally),
+      so it induces a surjection <m>C_K/\Norm_{L/K} C_L \to \Gal(L/K)</m>.
+      (Remember, the fact that it</sq>s surjective follows from the First Inequality.)
+      But the order of the first group is less than or equal to the order of the second by the Second Inequality.
+      So it's an isomorphism, and the reciprocity law is established.
+      Hooray again!
+    </p>
+  </subsection>
+</section>

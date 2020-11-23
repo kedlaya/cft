@@ -1,0 +1,240 @@
+<section xml:id="sec_abstr-recip">
+  <title>An
+  <q>abstract</q>
+  reciprocity map</title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        Milne VII.5; Neukirch VI.4, but only loosely.
+      </p>
+    </paragraphs>
+    <p>
+      In this chapter, we'll manufacture a canonical isomorphism
+      <m>\Gal(L/K)^{\ab} \to C_K/\Norm_{L/K} C_L</m> for any finite extension <m>L/K</m> of number fields,
+      where <m>C_K</m> and <m>C_L</m> are the corresponding id\<sq>ele class groups.
+      However, we won</sq>t yet know it agrees with our proposed reciprocity map,
+      which is the product of the local reciprocity maps.
+      We'll check that in the next chapter.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Cyclotomic extensions</title>
+    <p>
+      The cyclotomic extensions
+      (extensions by roots of unity)
+      of a number field play a role in class field theory analogous to the role played by the unramified extensions in local class field theory.
+      This makes it essential to make an explicit study of them for use in proving the main results.
+    </p>
+    <p>
+      First of all,
+      we should further articulate a distinction that has come up already.
+      The extension <m>\cup_n \QQ(\zeta_n)</m> of <m>\QQ</m> obtained by adjoining all roots of unity has Galois group <m>\widehat{\ZZ}^* = \prod_p \ZZ_p^*</m>.
+      That group has a lot of torsion,
+      since each <m>\ZZ_p^*</m> contains a torsion subgroup of order <m>p-1</m>
+      (or 2, if <m>p=2</m>).
+      If we take the fixed field for the torsion subgroup of <m>\ZZ^*</m>,
+      we get a slightly smaller extension,
+      which I'll call the <em>small cyclotomic</em>
+      extension of <m>\QQ</m> and denote <m>\QQ^{\smcy}</m>.
+      Its Galois group is <m>\prod_p \ZZ_p = \widehat{\ZZ}</m>.
+      For <m>K</m> a number field, define <m>K^{\smcy} = K \QQ^{\smcy}</m>;
+      then <m>\Gal(K^{\smcy}/K) \cong \widehat{\ZZ}</m> as well,
+      even if <m>K</m> contains some extra roots of unity.
+    </p>
+  </subsection>
+  <subsection>
+    <title>The reciprocity map via abstract CFT</title>
+    <p>
+      First of all, we choose an isomorphism of
+      <m>\Gal(\QQ^{\smcy}/\QQ)</m> with <m>\widehat{\ZZ}</m>;
+      our results are not going to depend on the choice.
+      That gives a continuous surjection
+      <me>
+        d: \Gal(\overline{\QQ}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ};
+      </me>
+      if we regard <m>\QQ^{\smcy}/\QQ</m> as the
+      <q>maximal unramified extension</q>
+      of <m>\QQ</m>,
+      we can define the ramification index <m>e_{L/K}</m> and inertia degree <m>f_{L/K}</m> for any extension of number fields,
+      by the rules
+      <me>
+        f_{L/K} = [L \cap \QQ^{\smcy}:K \cap \QQ^{\smcy}], \qquad e_{L/K} = \frac{[L:K]}{f_{L/K}}
+      </me>.
+    </p>
+    <p>
+      To use abstract class field theory to exhibit the reciprocity map,
+      we need a
+      <q>henselian valuation</q>
+      <m>v: C_{\QQ} \to \widehat{\ZZ}</m>,
+      i.e., a homomorphism satisfying:
+      <ol>
+        <li>
+          <p>
+            <m>v(C_{\QQ})</m> is a subgroup <m>Z</m> of
+            <m>\widehat{\ZZ}</m> containing <m>\ZZ</m> with
+            <m>Z/nZ \cong \ZZ/n\ZZ</m> for all positive integers <m>n</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>v(\Norm_{K/\QQ} C_K) = f_{K/\QQ} Z</m> for all finite extensions <m>K/\QQ</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Once we have that, our calculations from the preceding chapters
+      (<xref ref="T_first_inequality">Theorem</xref>,
+      <xref ref="T_first_and_second_inequality">Theorem</xref>)
+      imply that the class field axiom is satisfied:
+      for <m>L/K</m> cyclic,
+      <me>
+        \#H^0_T(\Gal(L/K), C_L) = [L:K], \qquad \#H^1_T(\Gal(L/K), C_L) = 1
+      </me>.
+    </p>
+    <p>
+      So then abstract class field theory will kick in.
+    </p>
+    <p>
+      We can make that valuation using Artin reciprocity for <m>\QQ(\zeta_n)/\QQ</m>.
+      Recall that there is a canonical surjection
+      <me>
+        I_n \to (\ZZ/n\ZZ)^* \cong \Gal(\QQ(\zeta_n)/\QQ):
+      </me>
+      for <m>p</m> not dividing <m>n</m>,
+      the ideal <m>(p)</m> goes to
+      <m>p \in (\ZZ/n\ZZ)^*</m> and then to the automorphism <m>\zeta_n \mapsto \zeta_n^p</m>,
+      which indeed does act as the <m>p</m>-th power map modulo any prime of <m>\QQ(\zeta_n)</m> above <m>p</m>.
+    </p>
+    <p>
+      That induces a homomorphism <m>I_{\QQ} \to (\ZZ/n\ZZ)^*</m> as follows:
+      given an id&#xe8;le <m>\alpha</m>,
+      pick <m>x \in \QQ^*</m> so that <m>\alpha_{\RR}/x > 0</m> and,
+      for each prime <m>p</m> with <m>p^e | n</m>,
+      <m>\alpha/x</m> has <m>p</m>-component congruent to 1 modulo <m>p^e</m>.
+      Then map <m>\alpha/x</m> to <m>(\ZZ/n\ZZ)^*</m> as follows:
+      <me>
+        \alpha/x \mapsto \prod_{\ell \not| n} \ell^{v_{\ell}(\alpha_{\ell}/x)}
+      </me>.
+    </p>
+    <p>
+      This gives a well-defined map:
+      if <m>y</m> is an alternate choice for <m>x</m>,
+      then <m>x/y \equiv 1 \pmod{n}</m> and <m>x/y > 0</m>,
+      so the product on the right side is precisely <m>x/y</m> itself,
+      and so is congruent to 1 in <m>(\ZZ/n\ZZ)^*</m>.
+    </p>
+    <p>
+      We now have maps <m>I_{\QQ} \to (\ZZ/n\ZZ)^*</m> which are easily seen to be compatible,
+      so by taking inverse limits we get <m>I_{\QQ} \to \widehat{\ZZ}^* \cong \Gal(\QQ^{\cyc}/\QQ)</m>.
+      We define <m>v</m> by channeling this map through the projection
+      <m>\Gal(\QQ^{\cyc}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ)</m> and then using our chosen isomorphism <m>\Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}</m>.
+    </p>
+    <p>
+      Another way to say this:
+      <m>I_{\QQ}</m> can be written as <m>\QQ^* \times \RR^* \times \widehat{\ZZ}^*</m>,
+      and the map to <m>\widehat{\ZZ}^*</m> is just projection onto the third factor!
+      In particular, the map factors through <m>C_\QQ</m>,
+      and property (i) above is straightforward.
+    </p>
+    <p>
+      To check (ii),
+      we need to do the same thing that we just did a bit more generally.
+      For <m>K</m> now a number field, define the map
+      <me>
+        I_n \to (\ZZ/n\ZZ)^* \supseteq \Gal(K(\zeta_n)/K)
+      </me>,
+      where now <m>I_n</m> is the group of fractional ideals of <m>K</m> coprime to <m>(n)</m>,
+      by sending a prime <m>\gothp</m> first to its absolute norm.
+      We then have to check that the result is always in the image of
+      <m>\Gal(K(\zeta_n)/K)</m>, but in fact it must be:
+      whatever the Frobenius of <m>\gothp</m> is,
+      it sends <m>\zeta_n</m> to a power of <m>\zeta_n</m> congruent to
+      <m>\zeta_n^{\Norm(\gothp)}</m> modulo <m>\gothp</m>.
+      Since <m>\gothp</m> is prime to <m>n</m>,
+      it's prime to the difference between any two powers of <m>\zeta_n</m>,
+      so the Frobenius of <m>\gothp</m> must in fact send <m>\zeta_n</m> to <m>\zeta_n^{\Norm(\gothp)}</m>.
+      This tells us first that the map above sends <m>I_n</m> to
+      <m>\Gal(K(\zeta_n)/K)</m> and second that it coincides with the Artin map.
+    </p>
+    <p>
+      From the First Inequality, we can deduce the following handy fact.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          For <m>L/K</m> a finite abelian extension of number fields,
+          the Artin map always surjects onto <m>\Gal(L/K)</m>.
+        </p>
+      </statement>
+    </proposition>
+    <proof>
+      <p>
+        If the Artin map only hit the subgroup <m>H</m> of <m>\Gal(L/K)</m>,
+        the fixed field <m>M</m> of <m>H</m> would have the property that all but finitely many primes of <m>M</m> split completely in <m>L</m>.
+        We've already seen that this contradicts the First Inequality
+        (<xref ref="C_split_completely">Corollary</xref>).
+      </p>
+    </proof>
+    <p>
+      In particular, the Artin map
+      <m>I_n \to \Gal(K(\zeta_n)/K)</m> we wrote down above is surjective.
+      Using that, we can verify (ii):
+      given a prime ideal <m>\gothp</m> of <m>K</m>,
+      the Artin map of <m>K(\zeta_n)/K</m> applied to it gives the same element of
+      <m>(\ZZ/n\ZZ)^*</m> as the Artin map of <m>\QQ</m> applied to <m>\Norm_{K/\QQ}(\gothp)</m>.
+      Meanwhile, the Artin map of
+      <m>K(\zeta_n)/K</m> surjects onto <m>\Gal(K(\zeta_n)/K)</m>,
+      which has index <m>[K \cap \QQ(\zeta_n):\QQ]</m> in <m>(\ZZ/n\ZZ)^*</m>.
+      This verifies
+      (ii).
+    </p>
+    <p>
+      Thus lo and behold,
+      we get from abstract class field theory a reciprocity isomorphism for any finite extension of number fields:
+      <me>
+        r'_{L/K}: C_K/\Norm_{L/K} C_L \stackrel{\sim}{\to} \Gal(L/K)^{\ab}
+      </me>.
+    </p>
+    <p>
+      These are compatible in the usual way,
+      so we get a map <m>r'_K: C_K \to \Gal(K^{\ab}/K)</m>.
+      Of course, we don't know what this map is,
+      so we can't yet use it to recover Artin reciprocity.
+      (That depended on the reciprocity map being the product of the local maps.)
+      But at least we deduce the norm limitation theorem.
+    </p>
+    <theorem xml:id="T_adelic_norm_limitation">
+      <statement>
+        <p>
+          If <m>L/K</m> is a finite extension of number fields and <m>M = L \cap K^{\ab}</m>,
+          then <m>\Norm_{L/K} C_L = \Norm_{M/K} C_M</m>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      We do know one thing about the map <m>r'_{L/K}</m>: for
+      <q>unramified</q>
+      extensions <m>L/K</m> (i.e., <m>L \subseteq K^{\smcy}</m>), the
+      <q>Frobenius</q>
+      in <m>\Gal(L/K)</m> maps to a
+      <q>uniformizer</q>
+      in <m>C_K</m>.
+      That is, the element of <m>\Gal(L/K)</m> coming from the element of
+      <m>\Gal(K^{\smcy}/K)</m> which maps to 1 under <m>d_K</m> is the element of <m>C_K</m> which maps to 1 under <m>v_K</m>.
+      But we made <m>v_K</m> simply by mapping <m>C_K</m> to
+      <m>\Gal(K^{\smcy}/K)</m> via the Artin map and then identifying the latter with
+      <m>\widehat{\ZZ}</m> by the same identification we used to make <m>d_K</m>.
+      Upshot: the choice of that identification drops out,
+      and the reciprocity map coincides with the Artin map that we wrote down earlier.
+    </p>
+    <p>
+      A bit later
+      (see <xref ref="sec_connection">Chapter</xref>),
+      we will check that <m>r'_{L/K}</m> agrees with the map that I called <m>r_{L/K}</m>,
+      namely the product of the local reciprocity maps.
+      Remember, I need this in order to recover Artin reciprocity in general.
+    </p>
+  </subsection>
+</section>

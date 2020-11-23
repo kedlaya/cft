@@ -1,0 +1,6 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_trailer">
+  <title>Trailer: Abelian extensions of the rationals</title>
+  <xi:include  href="sec_kronweb.ptx"/>
+  <xi:include  href="sec_Kummer_theory.ptx"/>
+  <xi:include  href="sec_localkronweb.ptx"/>
+</chapter>

@@ -1,0 +1,7 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_statements">
+  <title>The statements of class field theory</title>
+  <xi:include  href="sec_hilbert.ptx"/>
+  <xi:include  href="sec_artinrec.ptx"/>
+  <xi:include  href="sec_principal.ptx"/>
+  <xi:include  href="sec_zeta.ptx"/>
+</chapter>

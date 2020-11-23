@@ -1,0 +1,7 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_cohomology">
+  <title>Cohomology of groups</title>
+  <xi:include  href="sec_cohom1.ptx"/>
+  <xi:include  href="sec_cohom2.ptx"/>
+  <xi:include  href="sec_homology.ptx"/>
+  <xi:include  href="sec_profinite.ptx"/>
+</chapter>

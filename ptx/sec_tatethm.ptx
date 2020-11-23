@@ -1,0 +1,536 @@
+<section xml:id="sec_tatethm">
+  <title>Local class field theory via Tate's theorem</title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        Milne II.3, III.5.
+      </p>
+    </paragraphs>
+    <p>
+      For <m>L/K</m> a finite extension of local fields,
+      we have now computed that <m>H^1(L/K) = 0</m>
+      (<xref ref="L_theorem_90">Lemma</xref>)
+      and <m>H^2(L/K)</m> is cyclic of order <m>[L:K]</m>
+      (<xref ref="P_local_h2">Proposition</xref>).
+      In this chapter,
+      we use these ingredients to establish all of the statements of local class field theory.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Tate's theorem</title>
+    <p>
+      We first prove the theorem of Tate stated earlier
+      (<xref ref="T_tate_thm1">Theorem</xref>).
+    </p>
+    <theorem xml:id="T_tate_thm2">
+      <title>Tate</title>
+      <statement>
+        <p>
+          Let <m>G</m> be a finite (solvable) group and let <m>M</m> be a <m>G</m>-module.
+          Suppose that for all subgroups <m>H</m> of <m>G</m>
+          (including <m>G</m> itself),
+          <m>H^1(H,M)=0</m> and <m>H^2(H,M)</m> is cyclic of order <m>\#H</m>.
+          Then there are isomorphisms
+          <m>H^i_T(G, \ZZ) \to H^{i+2}_T(G, M)</m> which are canonical up to a choice of generator of <m>H^2(G, M)</m>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        Let <m>\gamma</m> be a generator of <m>H^2(G, M)</m>.
+        Since <m>\Cor \circ \Res = [G:H]</m>,
+        <m>\Res(\gamma)</m> generates <m>H^2(H,M)</m> for any <m>H</m>.
+        We start out by explicitly constructing a <m>G</m>-module containing <m>M</m> in which <m>\gamma</m> becomes a coboundary.
+      </p>
+      <p>
+        Choose a 2-cocycle <m>\phi: G^3 \to M</m> representing <m>\gamma</m>;
+        by the definition of a cocycle,
+        <me>
+          <mrow>\phi(g_0 g, g_1 g, g_2 g) = \phi(g_0, g_1, g_2)^g,</mrow>
+          <mrow>\phi(g_1, g_2, g_3) - \phi(g_0, g_2, g_3) + \phi(g_0, g_1, g_3) - \phi(g_0, g_1, g_2) = 0.</mrow>
+        </me>
+      </p>
+      <p>
+        Moreover, <m>\phi</m> is a coboundary if and only if it's of the form <m>d(\rho)</m>, that is,
+        <m>\phi(g_0, g_1, g_2) = \rho(g_1, g_2) - \rho(g_0, g_2) + \rho(g_0, g_1)</m>.
+        This <m>\rho</m> must itself be <m>G</m>-invariant:
+        <m>\rho(g_0, g_1)^g = \rho(g_0g, g_1g)</m>.
+        Thus <m>\phi</m> is a coboundary if <m>\phi(e, g, hg) = \rho(e,h)^g - \rho(e,hg) + \rho(e,g)</m>.
+      </p>
+      <p>
+        Let <m>M[\phi]</m> be the direct sum of <m>M</m> with the free abelian group with one generator <m>x_g</m> for each element <m>g</m> of
+        <m>G - \{e\}</m>, with the <m>G</m>-action
+        <me>
+          x_h^g = x_{hg} - x_g + \phi(e, g, hg)
+        </me>.
+      </p>
+      <p>
+        (The symbol <m>x_e</m> should be interpreted as
+        <m>\phi(e,e,e)</m>.) Using the cocycle property of <m>\phi</m>,
+        one may verify that this is indeed a <m>G</m>-action;
+        by construction, the cocycle <m>\phi</m> becomes zero in
+        <m>H^2(G, M[\phi])</m> by setting <m>\rho(e,g) = x_g</m>.
+        (Milne calls <m>M[\phi]</m> the
+        <em>splitting module</em> of <m>\phi</m>.)
+      </p>
+      <p>
+        The map <m>\alpha: M[\phi] \to \ZZ[G]</m> sending <m>M</m> to zero and <m>x_g</m> to <m>[g]-1</m> is a homomorphism of <m>G</m>-modules.
+        Actually it maps into the augmentation ideal <m>I_G</m>,
+        and the sequence
+        <me>
+          0 \to M \to M[\phi] \to I_G \to 0
+        </me>
+        is exact.
+        (Note that this is backwards from the usual exact sequence featuring <m>I_G</m> as a submodule,
+        which will appear again momentarily.)
+        For any subgroup <m>H</m> of <m>G</m>,
+        we can restrict to <m>H</m>-modules,
+        then take the long exact sequence:
+        <me>
+          0 = H^1(H,M) \to H^1(H, M[\phi]) \to H^1(H, I_G) \to H^2(H, M) \to H^2(H, M[\phi]) \to H^2(H, I_G)
+        </me>.
+      </p>
+      <p>
+        To make headway with this,
+        view <m>0 \to I_G \to \ZZ[G] \to \ZZ \to 0</m> as an exact sequence of <m>H</m>-modules.
+        Since <m>\ZZ[G]</m> is induced,
+        its Tate groups all vanish.
+        So we get a dimension shift:
+        <me>
+          H^1(H, I_G) \cong H^0_T(H, \ZZ) = \ZZ/(\#H)\ZZ
+        </me>.
+      </p>
+      <p>
+        Similarly, <m>H^2(H, I_G) \cong H^1(H, \ZZ) = 0</m>.
+        Also, the map <m>H^2(H, M) \to H^2(H, M[\phi])</m> is zero because we constructed this map so as to kill off the generator <m>\phi</m>.
+        Thus <m>H^2(H, M[\phi]) = 0</m> and <m>H^1(H, I_G) \to H^2(H,M)</m> is surjective.
+        But these groups are both finite of the same order!
+        So the map is also injective,
+        and <m>H^1(H, M[\phi])</m> is also zero.
+      </p>
+      <p>
+        Now apply <xref ref="L_tate_thm_lemma">Lemma</xref>
+        below to conclude that <m>H^i_T(G, M) = 0</m> for all <m>i</m>.
+        This allows us to use the four-term exact sequence
+        <me>
+          0 \to M \to M[\phi] \to \ZZ[G] \to \ZZ \to 0
+        </me>
+      </p>
+      <p>
+        (as in the proof of <xref ref="T_cyclic_group_periodicity">Theorem</xref>) to conclude that <m>H^i_T(G, \ZZ) \cong H^{i+2}_T(G, M)</m>.
+      </p>
+    </proof>
+    <p>
+      Note: we only need the results of this section for <m>G</m> solvable,
+      because in our desired application <m>G</m> is the Galois group of a finite extension of local fields.
+      But one can remove this restriction:
+      see the note after this lemma.
+    </p>
+    <lemma xml:id="L_tate_thm_lemma">
+      <statement>
+        <p>
+          Let <m>G</m> be a finite (solvable) group and <m>M</m> a <m>G</m>-module.
+          Suppose that <m>H^i(H,M) =0</m> for <m>i=1,2</m> and <m>H</m> any subgroup of <m>G</m>
+          (including <m>G</m> itself).
+          Then <m>H^i_T(G,M) = 0</m> for all <m>i \in \ZZ</m>.
+        </p>
+      </statement>
+    </lemma>
+    <proof>
+      <p>
+        For <m>G</m> cyclic, this follows by periodicity.
+        We prove the general result by induction on <m>\#G</m>.
+        Since <m>G</m> is solvable,
+        it has a proper subgroup <m>H</m> for which <m>G/H</m> is cyclic.
+        By the induction hypothesis, <m>H^i_T(H,M) = 0</m> for all <m>i</m>.
+        Thus by the inflation-restriction exact sequence (<xref ref="P_inflation_restriction">Proposition</xref>),
+        <me>
+          0 \to H^i(G/H, M^H) \to H^i(G, M) \to H^i(H, M)
+        </me>
+        is exact for all <m>i>0</m>.
+        The term on the end being zero,
+        we have <m>H^i(G/H, M^H) \cong H^i(G,M) = 0</m> for <m>i=1, 2</m>.
+        By periodicity
+        (<xref ref="T_cyclic_group_periodicity">Theorem</xref>),
+        <m>H^i_T(G/H, M^H) = 0</m> for all <m>i</m>,
+        so <m>H^i(G/H, M^H) = 0</m> for all <m>i>0</m>,
+        and <m>H^i(G,M) = 0</m> for <m>i>0</m>.
+        As for <m>H^0_T(G,M)</m>,
+        we have that <m>H^0_T(G/H, M^H) = 0</m>,
+        so for any <m>x \in M^G</m>,
+        there exists <m>y \in M^H</m> such that <m>\Norm_{G/H}(y) = x</m>.
+        Since <m>H^0_T(H,M) = 0</m>,
+        there exists <m>z \in M</m> such that <m>\Norm_{H}(z) = x</m>.
+        Now <m>\Norm_G(z) = \Norm_{G/H} \circ \Norm_H(z) = x</m>.
+        Thus <m>H^0_T(G,M) = 0</m>, as desired.
+      </p>
+      <p>
+        So far so good,
+        but we want to kill off the Tate groups with negative indices too,
+        so we do a dimension shift.
+        Make the exact sequence
+        <me>
+          0 \to N \to \Ind^G_1 M \to M \to 0
+        </me>
+        in which <m>m \otimes [g]</m> maps to <m>m^g</m>.
+        The term in the middle is acyclic,
+        so <m>H^{i+1}_T(H', N) \cong H^{i}_T(H', M)</m> for any subgroup <m>H'</m> of <m>G</m>.
+        In particular, <m>H^1(H', N) = H^2(H', N) = 0</m>,
+        so the above argument gives <m>H^i_T(G, N) = 0</m> for <m>i\geq 0</m>.
+        Now from <m>H^0_T(G, N) = 0</m> we get <m>H^{-1}_T(G, M) = 0</m>;
+        since the same argument applies to <m>N</m>,
+        we also get <m>H^{-2}_T(G, M) = 0</m> and so on.
+      </p>
+    </proof>
+    <p>
+      To go from the solvable case to the general case,
+      one shows that the <m>p</m>-primary component of
+      <m>H^i(G,M)</m> injects into <m>H^i(G_p, M)</m>,
+      where <m>G_p</m> is the <m>p</m>-Sylow subgroup.
+      (Apply <m>\Cor \circ \Res</m> from <m>G</m> to <m>G_p</m>;
+      the result is multiplication by <m>[G:H]</m> which is prime to <m>p</m>.)
+    </p>
+  </subsection>
+  <subsection>
+    <title>The results of local class field theory</title>
+    <p>
+      Let <m>L/K</m> be a finite Galois extension of local fields.
+      For any intermediate extension <m>M/K</m>,
+      we know that <m>H^1(L/M) = 0</m> and
+      <m>H^2(L/M)</m> is cyclic of order <m>[L:M]</m>.
+      We may thus apply <xref ref="T_tate_thm2">Theorem</xref>
+      with for <m>G = \Gal(L/K)</m>,
+      <m>M = L^*</m> to obtain isomorphisms <m>H^i_T(G, \ZZ) \to H^{i+2}_T(G,M)</m>,
+      thus proving <xref ref="T_cup_product_isomorphism">Theorem</xref>.
+      This yields a canonical isomorphism
+      <me>
+        K^*/\Norm_{L/K} L^* = H^0_T(L/K) \to  H^{-2}_T(\Gal(L/K), \ZZ) = \Gal(L/K)^{\ab}
+      </me>.
+    </p>
+    <p>
+      This establishes the existence of the local reciprocity map (<xref ref="T_local_reciprocity">Theorem</xref>;
+      note that part (a) follows from the explicit computations in <xref ref="sec_localcomp">Chapter</xref>) and the norm limitation theorem
+      (<xref ref="T_norm_limitation">Theorem</xref>),
+      modulo one subtlety:
+      if <m>M/K</m> is another finite Galois extension containing <m>L</m>,
+      we need to know that the diagram
+    </p>
+    <image source="images/ace43d03e16150652dc5876833bc324d5e0bf265.png"/>
+    <p>
+      commutes, so the maps <m>K^* \to \Gal(L/K)^{\ab}</m> fit together to give a map <m>K^* \to \Gal(K^{\sep}/K)^{\ab}</m>.
+      In other words, we need a commuting diagram
+    </p>
+    <image source="images/a414aab2c72760a20d449ce3f396cf7685595368.png"/>
+    <p>
+      This appears to be a gap in Milne's presentation.
+      To fix it, choose a 2-cocycle
+      <m>\phi_M: \Gal(M/K)^3 \to M^*</m> representing the preferred generator of <m>H^2(M/K)</m>;
+      then the upper horizontal arrow is a connecting homomorphism for the exact sequence
+      <me>
+        1 \to M^* \to M^*[\phi_M] \to I_{\Gal(M/K)} \to 1
+      </me>.
+    </p>
+    <p>
+      The lower horizontal arrow arises similarly from the exact sequence
+      <me>
+        1 \to L^* \to L^*[\phi_L] \to I_{\Gal(L/K)} \to 1
+      </me>,
+      where <m>\phi_L</m> represents a class whose inflation is <m>[G:H]</m> times the class represented by <m>\phi_M</m>.
+      Further details omitted.
+    </p>
+    <p>
+      In any case, it remains to prove the local existence theorem
+      (<xref ref="T_local_existence">Theorem</xref>).
+      We begin with a lemma,
+      in which we take advantage of Kummer theory to establish an easy case of the existence theorem.
+    </p>
+    <lemma xml:id="L_hilbert_symbol">
+      <statement>
+        <p>
+          Let <m>\ell</m> be a prime number.
+          Let <m>K</m> be a local field containing a primitive <m>\ell</m>-th root of unity.
+          Then <m>x \in K^*</m> is an <m>\ell</m>-th power in <m>K</m> if and only if belongs to
+          <m>\Norm_{L/K} L^*</m> for every cyclic extension <m>L</m> of <m>K</m> of degree <m>\ell</m>.
+        </p>
+      </statement>
+    </lemma>
+    <p>
+      The same statement holds even if <m>\ell</m> is not prime (exercise) and can be interpreted in terms of the
+      <em>Hilbert symbol</em>,
+      whose properties generalize quadratic reciprocity to higher powers;
+      see Milne, III.4.
+    </p>
+    <proof>
+      <p>
+        Let <m>M</m> be the compositum of all cyclic <m>\ell</m>-extensions of <m>K</m>.
+        The group <m>K^*/(K^*)^{\ell}</m> is finite (exercise),
+        and hence is isomorphic to
+        <m>(\ZZ/\ell \ZZ)^n</m> for some positive integer <m>n</m>.
+        By Kummer theory
+        (<xref ref="T_Kummer_reformulated">Theorem</xref>),
+        we also have <m>\Gal(M/K) \cong (\ZZ/\ell \ZZ)^n</m>.
+        By the local reciprocity law,
+        <m>K^*/\Norm_{M/K}M^* \cong (\ZZ/\ell \ZZ)^n</m>;
+        consequently,
+        on one hand <m>(K^*)^{\ell} \subseteq \Norm_{M/K}M^*</m>,
+        and on other hand these subgroups of <m>K^*</m> have the same index <m>\ell^n</m>.
+        They are thus equal, proving the claim.
+      </p>
+    </proof>
+    <p>
+      This allows to deduce a corollary of the existence theorem which is needed in its proof.
+    </p>
+    <corollary xml:id="C_universal_norms_divisible">
+      <statement>
+        <p>
+          Let <m>K</m> be a local field.
+          Then the intersection of the groups
+          <m>\Norm_{L/K} L^*</m> for all finite extensions <m>L</m> of <m>K</m> is the trivial group.
+        </p>
+      </statement>
+    </corollary>
+    <proof>
+      <p>
+        Let <m>D_K</m> be the intersection in question;
+        note that <m>D_K \subseteq U_K</m> by considering unramified extensions of <m>K</m>,
+        so <m>D_K</m> is in particular a compact topological group.
+        By <xref ref="L_hilbert_symbol">Lemma</xref>,
+        every element of <m>D_K</m> is an <m>\ell</m>-th power in <m>K</m> for every prime <m>\ell</m>;
+        it remains to check that one can find an <m>\ell</m>-th root which is also in <m>D_K</m>.
+        This would then imply that <m>D_K</m> is a divisible subgroup of <m>U_K</m>,
+        and hence the trivial group
+        (see exercises).
+      </p>
+      <p>
+        For <m>L/K</m> a finite extension,
+        it is true but not immediately clear that
+        <me>
+          \Norm_{L/K} D_L = D_K;
+        </me>
+        that is, for <m>x \in D_K</m>,
+        for each finite extension <m>M</m> of <m>K</m>,
+        <m>x = \Norm_{M/K}(z)</m> for some <m>z \in M</m>,
+        but may not be apparent that the elements
+        <m>y = \Norm_{M/L}(z)</m> can be chosen to be equal.
+        However, for a given <m>M</m>,
+        the set of such <m>y</m> is a nonempty compact subset of <m>U_L</m>,
+        and any finite intersection of these sets is nonempty
+        (since it contains the set corresponding to the compositum of the corresponding fields),
+        so the whole intersection is nonempty.
+      </p>
+      <p>
+        Let <m>\ell</m> be a prime number and choose <m>x \in D_K</m>.
+        For each finite extension <m>L</m> of <m>K</m> containing a primitive <m>\ell</m>-th root of unity,
+        let <m>E(L)</m> be the set of <m>\ell</m>-th roots of <m>x</m> in <m>K</m> which belong to <m>\Norm_{L/K} L^*</m>.
+        This set is finite
+        (it can contain at most <m>\ell</m> elements)
+        and nonempty:
+        we have <m>x = \Norm_{L/K}(y)</m> for some <m>y \in D_L</m>,
+        so <m>y</m> has an <m>\ell</m>-th root <m>z</m> in <m>L</m> and <m>\Norm_{L/K}(z) \in E(L)</m>.
+        Again by the finite intersection property,
+        we find an <m>\ell</m>-th root of <m>x</m> in <m>K</m> belonging to <m>D_K</m>,
+        completing the proof.
+      </p>
+    </proof>
+    <p>
+      Returning to the local existence theorem,
+      let <m>U</m> be an open subgroup of <m>K^*</m> of finite index;
+      we wish to find a finite abelian extension <m>L</m> of <m>K</m> such that <m>U = \Norm_{L/K}L^*</m>.
+      We note first that by the local reciprocity law,
+      it is enough to construct <m>L</m> so that <m>U</m> contains <m>\Norm_{L/K}L^*</m>:
+      in this case,
+      we will have <m>\Gal(L/K) \cong K^*/\Norm_{L/K}L^*</m>,
+      and then <m>U/\Norm_{L/K}L^*</m> will corresponding to
+      <m>\Gal(L/M)</m> for some intermediate extension <m>M/K</m> having the desired effect.
+      We note next that by the norm limitation theorem,
+      it suffices to produce <em>any</em>
+      finite extension <m>L/K</m>,
+      not necessarily abelian, such that <m>U</m> contains <m>\Norm_{L/K}L^*</m>.
+    </p>
+    <p>
+      Let <m>m\ZZ \subseteq \ZZ</m> be the image of <m>U</m> in <m>K^*/U_K \cong \ZZ</m>;
+      by choosing <m>L</m> to contain the unramified extension of <m>K</m> of degree <m>m</m>,
+      we may ensure that the image of
+      <m>\Norm_{L/K} L^*</m> in <m>K^*/U_K</m> is also contained in <m>m\ZZ</m>.
+      It thus remains to further ensure that
+      <me>
+        (\Norm_{L/K} L^*) \cap U_K \subseteq U \cap U_K
+      </me>.
+    </p>
+    <p>
+      Since <m>U_K</m> is compact,
+      each open subgroup <m>(\Norm_{L/K}L^*) \cap U_K</m> is also closed and hence compact.
+      By <xref ref="C_universal_norms_divisible">Corollary</xref>,
+      as <m>L/K</m> runs over all finite extensions of <m>K</m>,
+      the intersection of the groups <m>(\Norm_{L/K} L^*) \cap U_K</m> is trivial;
+      in particular, the intersection of the compact subsets
+      <me>
+        ((\Norm_{L/K} L^*) \cap U_K) \cap (U_K \setminus U)
+      </me>
+      of <m>U_K</m> is empty.
+      By the finite intersection property
+      (and taking a compositum),
+      there exists a single <m>L/K</m> for which <m>(\Norm_{L/K} L^*) \cap U_K \subseteq U \cap U_K</m>;
+      this completes the proof of <xref ref="T_local_existence">Theorem</xref>.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Making things explicit</title>
+    <p>
+      It is natural to ask whether the local reciprocity map can be described more explicitly.
+      In fact, given an explicit cocycle <m>\phi</m> generating <m>H^2(L/K)</m>,
+      we can trace through the arguments to get the local reciprocity map.
+      However, the argument is somewhat messy,
+      so I won't torture you with all of the details;
+      the point is simply to observe that everything we've done can be used for explicit computations.
+      (This observation is apparently due to Dwork.)
+      If you find this indigestible,
+      you may hold out until we hit abstract class field theory;
+      that point of view will give a different
+      (though of course related)
+      mechanism for computing the reciprocity map.
+    </p>
+    <p>
+      Put <m>G = \Gal(L/K)</m>.
+      First recall that <m>G^{\ab} = H^{-2}_T(G, \ZZ)</m> is isomorphic to <m>H^{-1}_T(G, I_G) = I_G/I_G^2</m>,
+      with <m>g \mapsto [g]-1</m>.
+      Next, use the exact sequence
+      <me>
+        0 \to M \to M[\phi] \to I_G \to 0
+      </me>
+      and apply the
+      <q>snaking</q>
+      construction: pull <m>[g]-1</m> back to <m>x_g \in M[\phi]</m>,
+      take the norm to get <m>\prod_h x_g^h = \prod_h (x_{gh} x_h^{-1} \phi(e,h,gh))</m>
+      (switching to multiplicative notation).
+      The <m>x_{gh}</m> and <m>x_h</m> term cancel out when you take the product,
+      so we get <m>\prod_h \phi(e, h, gh) \in L^*</m> as the inverse image of <m>g \in \Gal(L/K)</m>.
+    </p>
+    <p>
+      As noted above, one needs <m>\phi</m> to make this truly explicit;
+      one can get <m>\phi</m> using explicit generators of <m>L/K</m> if you have them.
+      For <m>K = \QQ_p</m>, one can use roots of unity;
+      for general <m>K</m>, one can use the Lubin-Tate construction.
+      In general, one can at least do the following,
+      imitating our proof that <m>H^2(L/K)</m> is cyclic of order <m>n</m>.
+      Let <m>M/K</m> be unramified of degree <m>n</m>;
+      then <m>H^2(M/K) \to H^2(ML/K)</m> is injective,
+      and its image lies in the image of <m>H^2(L/K) \to H^2(ML/K)</m>.
+    </p>
+    <p>
+      Now <m>H^2(M/K)</m> is isomorphic to <m>H^0_T(M/K) = K^*/\Norm_{M/K}M^*</m>,
+      which is generated by a uniformizer <m>\pi \in K</m>.
+      To explicate that isomorphism,
+      we recall generally how to construct the isomorphism
+      <m>H^0_T(G,M) \to H^2_T(G,M)</m> for <m>G</m> cyclic with a distinguished generator <m>g</m>.
+      Recall the exact sequence we used to produce the isomorphism in <xref ref="T_cyclic_group_periodicity">Theorem</xref>:
+      <me>
+        0 \to M \to M \otimes_{\ZZ} \ZZ[G] \to M \otimes_{\ZZ} \ZZ[G] \to M \to 0
+      </me>.
+    </p>
+    <p>
+      (Remember, <m>G</m> acts on both factors in <m>M \otimes_{\ZZ} \ZZ[G]</m>.
+      The first map is <m>m \mapsto \sum_{h \in G} m \otimes [h]</m>,
+      the second is <m>m \otimes [h] \mapsto m \otimes ([gh] - [h])</m>,
+      and the third is <m>[h] \mapsto 1</m>.) Let
+      <m>A = M \otimes_{\ZZ} I_G</m> be the kernel of the third arrow,
+      so <m>0 \to M \to M \otimes_{\ZZ} \ZZ[G] \to A \to 0</m> and <m>0 \to A \to M \otimes_{\ZZ} \ZZ[G] \to M \to 0</m> are exact.
+    </p>
+    <p>
+      Given <m>x \in H^0_T(M/K) = M^G/\Norm_G(M)</m>,
+      lift it to <m>x \otimes [1]</m>.
+      Now view this as a 0-cochain
+      <m>\phi_0: G \to M \otimes_{\ZZ} \ZZ[G]</m> given by <m>\phi_0(h) = x \otimes [h]</m>.
+      Apply <m>d</m> to get a 1-cocycle:
+      <me>
+        \phi_1(h_0, h_1) = \phi_0(h_1) - \phi_0(h_0) = x \otimes ([h_1]- [h_0])
+      </me>
+      which actually takes values in <m>A</m>.
+      Now snake again:
+      pull this back to a 1-cochain <m>\psi_1: G^2 \to M \otimes_{\ZZ} \ZZ[G]</m> given by
+      <me>
+        \psi_1(g^i, g^{i+j}) = x \otimes ([g^i] + [g^{i+1}] + \cdots + [g^{j-1}])
+      </me>
+      for <m>i,j=0, \dots, \#G-1</m>.
+      Apply <m>d</m> again: now we have a 2-cocycle
+      <m>\psi_2: G^3 \to M \otimes_{\ZZ} \ZZ[G]</m> given by (again for <m>i,j=0, \dots, \#G-1</m>)
+      <me>
+        <mrow>\psi_2(e, g^i, g^{i+j}) \amp = \psi_1(g^i, g^{i+j}) - \psi_1(e, g^{i+j}) + \psi_1(e, g^i)</mrow>
+        <mrow>\amp = x \otimes ([e] + \cdots + [g^{i-1}] + [g^i] + \cdots + [g^{i+j-1}] - [e] - \cdots - [g^{i+j-1}])</mrow>
+        <mrow>\amp = \begin{cases} 0 \amp  i+j \lt  \#G</mrow>
+        <mrow>-x \otimes ([e] + \cdots + [g^{\#G-1}]) \amp  i+j \geq \#G. \end{cases}</mrow>
+      </me>
+    </p>
+    <p>
+      This pulls back to a 2-cocycle <m>\phi_2: G^3 \to M</m> given by
+      <me>
+        \phi_2(e, g^i, g^{i+j}) = \begin{cases}0 \amp  i+j \lt  \#G \\ -x \amp  i+j \geq \#G. \end{cases}
+      </me>
+    </p>
+    <p>
+      If you prefer, you can shift by a coboundary to get <m>x</m> if
+      <m>i+j \lt \#G</m> and 0 if <m>i+j \geq \#G</m>.
+    </p>
+    <p>
+      Back to the desired computation.
+      Applying this to <m>\Gal(M/K)</m> acting on <m>M^*</m>,
+      with the canonical generator <m>g</m> equal to the Frobenius,
+      we get that <m>H^2(M/K)</m> is generated by a cocycle <m>\phi</m> with
+      <m>\phi(e, g^i, g^{i+j}) = \pi</m> if <m>i+j \lt  \#G</m> and 1 otherwise.
+      Now push this into <m>H^2(ML/K)</m>;
+      the general theory says the image comes from <m>H^2(L/K)</m>.
+      That is, for <m>h \in \Gal(ML/K)</m>,
+      let <m>f(h)</m> be the integer <m>i</m> such that <m>h</m> restricted to <m>\Gal(M/K)</m> equals <m>g^i</m>.
+      Then there exists a 1-cochain <m>\rho: \Gal(ML/K)^2 \to (ML)^*</m> such that
+      <m>\phi(e, h_1, h_2h_1) /(\rho(h_1, h_2h_1) \rho(e, h_2h_1)^{-1} \rho(e, h_1))</m> belongs to <m>L^*</m> and depends only on the images of <m>h_1, h_2</m> in <m>\Gal(M/K)</m>.
+      Putting <m>\sigma(h) = \rho(e, h)</m>, we thus have
+      <me>
+        \frac{\phi(e, h_1, h_2h_1) \sigma(h_2h_1)}{\sigma(h_2)^{h_1} \sigma(h_1)}
+      </me>
+      depends only on <m>h_1, h_2</m> modulo <m>\Gal(ML/L)</m>.
+    </p>
+    <p>
+      The upshot: once you compute such a <m>\sigma</m>
+      (which I won't describe how to do,
+      since it requires an explicit description of <m>L/K</m>),
+      to find the inverse image of <m>g \in \Gal(L/K)</m> under the Artin map,
+      choose a lift <m>g_1</m> of <m>g</m> into <m>\Gal(ML/K)</m>,
+      then compute
+      <me>
+        \prod_h \frac{\phi(e, h, gh) \sigma(gh)}{\sigma(g)^h \sigma(h)}
+      </me>
+      for <m>h</m> running over a set of lifts of the elements of
+      <m>\Gal(L/K)</m> into <m>\Gal(ML/K)</m>.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Exercises</title>
+    <ol>
+      <li>
+        <p>
+          Prove that for any local field <m>K</m> and any positive integer <m>n</m> not divisible by the characteristic of <m>K</m>,
+          the group <m>K^*/(K^*)^{n}</m> is finite.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that for any local field <m>K</m> of characteristic <m>0</m>,
+          the intersection of the groups <m>(K^*)^n</m> over all positive integers <m>n</m> is the trivial group.
+          (Hint: first get the intersection into <m>\gotho_K^*</m>,
+          then use prime-to-<m>p</m> exponents to get it into the 1-units,
+          then use powers of <m>p</m> to finish.
+          The last step is the only one which fails in characteristic <m>p</m>.)
+        </p>
+      </li>
+      <li>
+        <p>
+          Extend <xref ref="L_hilbert_symbol">Lemma</xref>
+          to the case where <m>\ell</m> is an arbitrary positive integer,
+          not necessarily prime.
+          (Hint: it may help to use the structure theorem for finite abelian groups.)
+        </p>
+      </li>
+    </ol>
+  </subsection>
+</section>

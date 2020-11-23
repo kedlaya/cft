@@ -1,0 +1,7 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_local">
+  <title>Local class field theory</title>
+  <xi:include  href="sec_localrecip.ptx"/>
+  <xi:include  href="sec_localcomp.ptx"/>
+  <xi:include  href="sec_tatethm.ptx"/>
+  <xi:include  href="sec_abstractcft.ptx"/>
+</chapter>
