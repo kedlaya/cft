@@ -156,10 +156,10 @@
         <p>
           For any local field <m>K</m>,
           there exist canonical isomorphisms
-          <me>
+          <md>
             <mrow>H^2(\Gal(K^{\unr}/K), (K^{\unr})^*) \to H^2(\Gal(\overline{K}/K), \overline{K}^*)</mrow>
             <mrow>\inv_K: H^2(\Gal(\overline{K}/K), \overline{K}^*) \to \QQ/\ZZ.</mrow>
-          </me>
+          </md>
         </p>
       </statement>
     </theorem>

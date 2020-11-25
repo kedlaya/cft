@@ -57,6 +57,7 @@
 \usetikzlibrary{shapes}
 \usetikzlibrary{through,intersections,decorations,shadows,fadings}
 \usepackage{pgfplots}
+\usepackage[all]{xy}
 </latex-image-preamble>
   </docinfo>
   <book>

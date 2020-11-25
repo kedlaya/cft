@@ -123,10 +123,10 @@
           let <m>M</m> be a <m>G</m>-module,
           and let <m>N</m> be an <m>H</m>-module.
           Then there are natural isomorphisms
-          <me>
+          <md>
             <mrow>\Hom_G(M, \Ind^G_H N) \amp \cong \Hom_H(M, N)</mrow>
             <mrow>\Hom_G(\Ind^G_H N, M) \amp \cong \Hom_H(N,M).</mrow>
-          </me>
+          </md>
         </p>
       </statement>
     </proposition>
@@ -280,13 +280,13 @@
       we can give a very simple description of <m>H^1(G,M)</m>.
       Namely, a 1-cochain <m>\phi: G^2 \to M</m> is determined by <m>\rho(g) = \phi(e, g)</m>,
       which by <m>G</m>-invariance satisfies the relation
-      <me>
+      <md>
         <mrow>0 \amp = (d_1\phi)(e, h, gh)</mrow>
         <mrow>\amp = \phi(h, gh) - \phi(e, gh) + \phi(e, h)</mrow>
         <mrow>\amp = (\phi^h)(h,gh) - \rho(gh) + \rho(h)</mrow>
         <mrow>\amp = \phi(e, g)^h - \rho(gh) + \rho(h)</mrow>
         <mrow>\amp = \rho(g)^h + \rho(h) - \rho(gh).</mrow>
-      </me>
+      </md>
     </p>
     <p>
       It is the coboundary of a 0-cochain <m>\psi: G \to M</m> if and only if
@@ -377,7 +377,16 @@
       <m>H^2(G,M)</m> if and only if one can find an arrow
       <m>E \to E'</m> making the following diagram commute:
     </p>
-    <image source="images/373229e474aa26d2b8766e9d5ac7017f5c0f596d.png"/>
+    <figure xml:id="fig-cohom2-1">
+    <image>
+    <latex-image>
+    \xymatrix{
+    1 \ar[r] &amp; M \ar^{\id}[d] \ar[r] &amp; E \ar[d] \ar[r] &amp; G \ar^{\id}[d] \ar[r] &amp; 1 \\
+    1 \ar[r] &amp; M \ar[r] &amp; E' \ar[r] &amp; G \ar[r] &amp; 1
+    }
+    </latex-image>
+    </image>
+    </figure>
     <p>
       Note that two sequences may not be isomorphic under this definition even if <m>E</m> and <m>E'</m> are abstractly isomorphic as groups.
       For example,

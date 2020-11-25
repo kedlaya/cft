@@ -538,7 +538,16 @@
         For reference, we record the following commutative diagram,
         for <m>L/K</m> a finite extension and <m>M</m> an intermediate field:
       </p>
-      <image source="images/9160926df3bc8fef7486fa8322cfd7633fc45e01.png"/>
+      <figure xml:id="fig-abstractcft-1">
+      <image>
+      <latex-image>
+      \xymatrix{
+      1 \ar[r] &amp; \Gal(L/M) \ar[r] \ar^{r_{L/M}}[d] &amp; \Gal(L/K) \ar[r] \ar^{r_{L/K}}[d] &amp; \Gal(M/K) \ar[r] \ar[d]^{r_{M/K}} &amp; 1 \\
+      &amp; A_M/\Norm_{L/M}A_L \ar^{\Norm_{M/K}}[r] &amp; A_K/\Norm_{L/K} A_L \ar[r] &amp; A_K / \Norm_{M/K} A_M \ar[r] &amp; 1
+      }
+      </latex-image>
+      </image>
+      </figure>
       <p>
         in which the rows are exact.
         We're going to do a lot of diagram-chasing on this picture.
@@ -565,7 +574,16 @@
         <m>r_{L/K}</m> is surjective.
         Also, we have a diagram
       </p>
-      <image source="images/dc708c7eac7a4a65020ef27c170ba4ab06227c20.png"/>
+      <figure xml:id="fig-abstractcft-2">
+      <image>
+      <latex-image>
+      \xymatrix{
+      \Gal(L/K)^{\ab} \ar^{r_{L/K}}[r] \ar[d] &amp; A_K / \Norm_{L/K} A_L \ar[d] \\
+      \Gal(M/K) \ar^{r_{M/K}}[r] &amp; A_K / \Norm_{M/K} A_M
+      }
+      </latex-image>
+      </image>
+      </figure>
       <p>
         in which the left vertical and bottom horizontal arrows are isomorphisms.
         Thus the composite <m>\Gal(L/K)^{\ab} \to A_K / \Norm_{M/K} A_M</m> is an isomorphism,

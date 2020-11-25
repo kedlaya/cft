@@ -48,7 +48,16 @@
       then an ideal of <m>L</m> is principal if and only if its image under the Artin map <m>I_L \to \Gal(M/L)</m> is trivial.
       So what we need is to find a map <m>V</m> such that
     </p>
-    <image source="images/795920dd5340311da8f17e64046caa5f520a36a8.png"/>
+      <figure xml:id="fig-principal-1">
+      <image xml:id="img-principal-1">
+      <latex-image>
+      \xymatrix{
+      \Cl(K) \ar[r] \ar[d] &amp; \Gal(L/K) \ar^{V}[d] \\
+      \Cl(L) \ar[r] &amp; \Gal(M/L)
+      }
+      </latex-image>
+      </image>
+      </figure>
     <p>
       commutes, then show that <m>V</m> is the zero map.
       (The horizontal arrows are the Artin maps.)
@@ -114,7 +123,16 @@
     <p>
       Now let's return to that diagram:
     </p>
-    <image source="images/9ed6097e380e5fded8b46d1c6e15073e6ecaa486.png"/>
+      <figure xml:id="fig-principal-2">
+      <image xml:id="img-principal-2">
+      <latex-image>
+      \xymatrix{
+      \Cl(K) \ar[r] \ar[d] &amp; \Gal(L/K) = \Gal(M/K)^{\ab} \ar^{V}[d] \\
+      \Cl(L) \ar[r] &amp; \Gal(M/L) = \Gal(M/L)^{\ab}
+      }
+      </latex-image>
+      </image>
+      </figure>
     <p>
       and show that the transfer map <m>V</m> does actually make this diagram commute;
       it's enough to check this when we stick a prime <m>\gothp</m> of <m>K</m> in at the top left.
@@ -209,7 +227,19 @@
         <p>
           With notation as in the previous exercise,
           prove that the following diagram commutes:
-          <image source="images/619cee855678e8de669a8d555c64d1573040f0c4.png"/> where <m>S</m> is given by <m>S(x) = x ([g_1] + \cdots + [g_n])</m>.
+          </p>
+      <figure xml:id="fig-principal-3">
+      <image xml:id="img-principal-3">
+      <latex-image>
+      \xymatrix{
+      G/G' \ar^{V}[r] \ar^{\delta}[d] &amp; H/H' \ar^{\delta}[d] \\
+      I_G/I_G^2 \ar^(.3){S}[r] &amp; (I_{H}+I_GI_{H})/I_GI_{H},
+      }
+      </latex-image>
+      </image>
+      </figure>
+          <p>
+          where <m>S</m> is given by <m>S(x) = x ([g_1] + \cdots + [g_n])</m>.
         </p>
       </li>
       <li>

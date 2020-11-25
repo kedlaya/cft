@@ -82,7 +82,16 @@
         For (i), let <m>M</m> be the fixed field of the decomposition group of <m>w</m>;
         then we have the compatibility
       </p>
-      <image source="images/f577aa8489db4d9aff9d4edf0ee7e727aeb791df.png"/>
+      <figure xml:id="fig-connection-1">
+      <image>
+      <latex-image>
+      \xymatrix{
+      \Gal(L/K) \ar[r] \ar[d] &amp; C_K/\Norm_{L/K} C_L \ar[d] \\
+      \Gal(M/K) \ar[r] &amp; C_K/\Norm_{M/K} C_M
+      }
+      </latex-image>
+      </image>
+      </figure>
       <p>
         and the image of <m>K_v^* \to I_K</m> lands in
         <m>\Norm_{M/K} I_M</m> because <m>v</m> splits completely in <m>M</m>.
@@ -303,7 +312,16 @@
         (factor <m>n</m> into prime powers and apply the previous argument to each factor).
         In general, we have a compatibility
       </p>
-      <image source="images/8746fce4e4b5a371bebae370d3901e4d899cfd95.png"/>
+      <figure xml:id="fig-connection-2">
+      <image>
+      <latex-image>
+      \xymatrix{
+      I_L \ar[r] \ar^{\Norm_{L_w/\QQ_p}}[d] &amp; \Gal(L_w(\zeta_n)/L_w) \ar[d]\\
+      I_{\QQ} \ar[r] &amp; \Gal(\QQ_p(\zeta_n)/\QQ_p)
+      }
+      </latex-image>
+      </image>
+      </figure>
       <p>
         and we know the bottom row kills principal id&#xe8;les and the right column is injective.
         Thus the top row kills principal id&#xe8;les too.
@@ -360,13 +378,22 @@
       that for any map <m>\Gal(L/K) \to \QQ/\ZZ</m>,
       there is a commuting diagram
     </p>
-    <image source="images/acf5529622e010b0804e0e6a361e5d7d8df96e02.png"/>
+      <figure xml:id="fig-connection-3">
+      <image>
+      <latex-image>
+      \xymatrix{
+      K^* \ar[r] \ar[d] &amp; I_K \ar^{r_{L/K}}[r] \ar[d] &amp;\Gal(L/K) \ar[d] \\
+      H^2(L^*) \ar[r] &amp; H^2(I_L) \ar[r] &amp; \QQ/\ZZ
+      }
+      </latex-image>
+      </image>
+      </figure>
     <p>
       If <m>L/K</m> is cyclic,
       we may choose the map <m>\Gal(L/K) \to \QQ/\ZZ</m> to be injective,
       and then the first vertical arrow will be surjective. (In fact,
       it's <m>K^* \to K^*/\Norm_{L/K} L^* = H^0_T(L^*)</m> plus the periodicity isomorphism
-      <m>H^0_T(L^*) \to H^2_T(L^*)</m>.) Then the fact that <m>r_{L/K}</m> kills principal id&#xe8;les implies that the composite <m>H^2(L^*) \to \QQ/\ZZ</m> is the zero map.
+      <m>H^0_T(L^*) \to H^2_T(L^*)</m>.) Then the fact that <m>r_{L/K}</m> kills principal id&amp;#xe8;les implies that the composite <m>H^2(L^*) \to \QQ/\ZZ</m> is the zero map.
     </p>
     <p>
       Now if we know <m>H^2(\Gal(L/K), L^*) \to \QQ/\ZZ</m> vanishes for all cyclic extensions,

@@ -117,7 +117,14 @@
       Given a homomorphism <m>f: M \to N</m> and a injective resolution <m>0 \to N \to J_0 \to J_1 \to \cdots</m>,
       there exists a commutative diagram
     </p>
-    <image source="images/11ff8ee35058b6dea9f9d05a4db0f0030e38ae90.png"/>
+    <figure xml:id="fig-cohom1-1">
+    <image xml:id="img-cohom1-1">
+    <latex-image>
+    \xymatrix{ 0 \ar[r] &amp; M \ar[r] \ar_f[d] &amp; I_0 \ar^{d_0}[r] \ar_{f_0}[d] &amp; I_1  \ar_{f_1}[d] \ar^{d_1}[r] &amp; I_2 \ar_{f_2}[d] \ar^{d_2}[r] &amp; \cdots \\
+    0 \ar[r] &amp; N \ar[r] &amp; J_0 \ar^{d_0}[r] &amp; J_1 \ar^{d_1}[r] &amp;  J_2 \ar^{d_2}[r] &amp; \cdots}
+    </latex-image>
+    </image>
+    </figure>
     <p>
       and likewise after taking <m>G</m>-invariants,
       so we get maps <m>H^i(f): H^i(G, M) \to H^i(G, N)</m>.
@@ -143,7 +150,14 @@
         Details left as an exercise. (Warning:
         the diagonal arrows in the diagram below don't commute!)
       </p>
-      <image source="images/f51bb4100b450bc8e4a74b04dea2c2580eb8986b.png"/>
+    <figure xml:id="fig-cohom1-2">
+    <image xml:id="img-cohom1-2">
+    <latex-image>
+    \xymatrix{ 0 \ar[r] &amp; M \ar[r] \ar_f[d] &amp; I_0 \ar^{d_0}[r] \ar_{f_0}[d] &amp; I_1  \ar_{g_0}[dl] \ar_{f_1}[d] \ar^{d_1}[r] &amp; \ar_{g_1}[dl] I_2 \ar_{f_2}[d] \ar^{d_2}[r] &amp; \cdots \\
+    0 \ar[r] &amp; N \ar[r] &amp; J_0 \ar^{d_0}[r] &amp; J_1 \ar^{d_1}[r] &amp;  J_2 \ar^{d_2}[r] &amp; \cdots}
+    </latex-image>
+    </image>
+    </figure>
     </proof>
     <p>
       In particular, if <m>M=N</m> and <m>f</m> is the identity,
@@ -157,10 +171,10 @@
       you'll recognize what comes next:
       given a short exact sequence <m>0 \to M' \to M \to M'' \to 0</m> of <m>G</m>-modules,
       there is a canonical long exact sequence
-      <me>
+      <md>
         <mrow>0 \to H^0(G, M') \to \cdots \to H^i(G, M'') \stackrel{\delta_i}{\to}</mrow>
         <mrow>\stackrel{\delta_i}{\to} H^{i+1}(G, M') \to H^{i+1}(G, M) \to H^{i+1}(G,M'') \to \cdots,</mrow>
-      </me>
+      </md>
       where the <m>\delta_i</m> are certain
       <q>connecting homomorphisms</q>
       (or
@@ -169,7 +183,7 @@
       if you've never seen it before,
       deduce it yourself from the Snake Lemma. (For the proof of the latter,
       engage in
-      <q>diagram chasing</q>, or see the movie <em>It's My Turn</em>.
+      <q>diagram chasing</q>, or see the movie <url href="https://www.youtube.com/watch?v=etbcKWEKnvg"><em>It's My Turn</em></url>.
       To define <m>\delta</m>: given <m>x \in \ker(f_2) \subseteq M_2</m>,
       lift <m>x</m> to <m>M_1</m>, push it into <m>N_1</m> by <m>f_1</m>,
       then check that the image has a preimage in <m>N_0</m>.
@@ -181,7 +195,16 @@
         <p>
           Given a commuting diagram
         </p>
-        <image source="images/02b0402f7a8901dfe143a0edc1703a91f13ae024.png"/>
+    <figure xml:id="fig-cohom1-3">
+    <image xml:id="img-cohom1-3">
+    <latex-image>
+    \xymatrix{
+    0 \ar[r] &amp; M_0 \ar[r] \ar^{f_0}[d] &amp; M_1 \ar[r] \ar^{f_1}[d] &amp; M_2 \ar[r] \ar^{f_2}[d] &amp; 0 \\
+    0 \ar[r] &amp; N_0 \ar[r] &amp; N_1 \ar[r] &amp; N_2 \ar[r] &amp; 0
+    }
+    </latex-image>
+    </image>
+    </figure>
         <p>
           in which the rows are exact,
           there is a canonical map <m>\delta: \ker(f_2) \to \coker(f_0)</m> such that the sequence

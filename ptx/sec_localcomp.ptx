@@ -118,12 +118,12 @@
     <p>
       Using the Herbrand quotient, we get <m>h(L^*) = h(U_L) h(L^*/U_L)</m>.
       The previous corollary says that <m>h(U_L) = 1</m>, and
-      <me>
+      <md>
         <mrow>h(L^*/U_L) \amp = h(\ZZ)</mrow>
         <mrow>\amp = \#H^0_T(\Gal(L/K), \ZZ)/\#H^1_T(\Gal(L/K), \ZZ)</mrow>
         <mrow>\amp = \#\Gal(L/K)^{\ab} / \#\Hom(\Gal(L/K), \ZZ)</mrow>
         <mrow>\amp = [L:K].</mrow>
-      </me>
+      </md>
     </p>
     <p>
       Since <m>H^1_T(\Gal(L/K), L^*)</m> is trivial,
@@ -304,7 +304,16 @@
         exact.
         We construct a commutative diagram
       </p>
-      <image source="images/dfdcb5f829028967a1a2da5a188c7424c6f803c8.png"/>
+      <figure xml:id="fig-localcomp-1">
+      <image>
+      <latex-image>
+      \xymatrix{
+      0 \ar[r] &amp; H^{r-1}(G/H, N^H) \ar^{\Inf}[r] \ar[d] &amp; H^{r-1}(G, N) \ar^{\Res}[r] \ar[d] &amp; H^{r-1}(H,N) \ar[d] \\
+      0 \ar[r] &amp; H^{r}(G/H, M^H) \ar^{\Inf}[r] &amp; H^{r}(G, M) \ar^{\Res}[r] &amp; H^{r}(H,M).
+      }
+      </latex-image>
+      </image>
+      </figure>
       <p>
         The second vertical arrow arises from the long exact sequence for <m>G</m>-cohomology;
         since <m>\Ind^G_{1} M</m> is an induced <m>G</m>-module,
@@ -378,7 +387,16 @@
       Let <m>M/K</m> be an unramified extension of degree <m>[L:K]</m>.
       Then we have a diagram
     </p>
-    <image source="images/bac5efec5ff265e03e133fda7f873ea5f0f945f6.png"/>
+      <figure xml:id="fig-localcomp-2">
+      <image>
+      <latex-image>
+      \xymatrix{
+      &amp; &amp; H^2(M/K) \ar[d]^{\Inf} \ar[rd] &amp;  \\
+      0 \ar[r] &amp; H^2(L/K) \ar^{\Inf}[r] &amp; H^2(ML/K) \ar^{\Res}[r] &amp; H^2(ML/L)
+      }
+      </latex-image>
+      </image>
+      </figure>
     <p>
       in which the bottom row is exact and the vertical arrows are injective,
       both by <xref ref="C_inflation_restriction_h2">Corollary</xref>.
@@ -395,7 +413,16 @@
       By using the same generators in both groups,
       we can make a commutative diagram
     </p>
-    <image source="images/5ee6a1559c757311718476233e59ea8d5daa8728.png"/>
+      <figure xml:id="fig-localcomp-3">
+      <image>
+      <latex-image>
+      \xymatrix{
+      H^0_T(M/K) \ar^{\Res}[r] \ar[d] &amp; H^0_T(M/U) \ar[r]  \ar[d] &amp; H^0_T(ML/L) \ar[d]  \\
+      H^2(M/K) \ar^{\Res}[r] &amp; H^2(M/U) \ar[r] &amp; H^2(ML/L)
+      }
+      </latex-image>
+      </image>
+      </figure>
     <p>
       in which the vertical arrows are isomorphisms.
       (Remember that extended functoriality for Tate groups starts in degree 0, yielding the first horizontal arrow.)

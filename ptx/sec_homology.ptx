@@ -142,7 +142,16 @@
       (as in the snake lemma)
       on the commutative diagram
     </p>
-    <image source="images/ecbde7165898ad328498a5a97e34edf35ebabe5d.png"/>
+      <figure xml:id="fig-homology-1">
+      <image>
+      <latex-image>
+      \xymatrix{
+      H_1(G, M'') \ar[r] \ar@{-->}[d] &amp; H_0(G, M') \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M) \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M'') \ar[r] \ar^{\Norm_G}[d] &amp; 0 \ar@{-->}[d] \\
+      0 \ar[r] &amp; H^0(G, M') \ar[r]  &amp; H^0(G, M) \ar[r] &amp;  H^0(G, M') \ar[r] &amp; H^1(G, M')
+      }
+      </latex-image>
+      </image>
+      </figure>
     <p>
       with exact rows
       (noting that the diagram remains commutative with the dashed arrows added).
@@ -201,10 +210,10 @@
         then there is a canonical isomorphism <m>H^{i+2}_T(G, A) \to H^i_T(G, D)</m>.
         To see this,
         apply the long exact sequence to the short exact sequences
-        <me>
+        <md>
           <mrow>0 \to A \to B \to B/\im(f) \to 0</mrow>
           <mrow>0 \to B/\ker(g) \to C \to D \to 0</mrow>
-        </me>
+        </md>
         to get
         <me>
           H^{i+2}(G, A) \cong H^{i+1}(G, B/\im(f)) = H^{i+1}(G, B/\ker(g)) \cong H^i(G,D)
@@ -215,7 +224,16 @@
       In particular, the long exact sequence of a short exact sequence
       <m>0 \to M' \to M \to M'' \to 0</m> of <m>G</m>-modules curls up into an exact hexagon:
     </p>
-    <image source="images/4aec25cefe12865a2dd9e0917afc77a03b9b5766.png"/>
+      <figure xml:id="fig-homology-2">
+      <image>
+      <latex-image>
+      \xymatrix{
+      H_1(G, M'') \ar[r] \ar@{-->}[d] &amp; H_0(G, M') \ar[r] \ar^{\Norm_G}[d] &amp;  H_0(G, M) \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M'') \ar[r] \ar^{\Norm_G}[d] &amp; 0 \ar@{-->}[d] \\
+      0 \ar[r] &amp; H^0(G, M') \ar[r]  &amp; H^0(G, M) \ar[r] &amp;  H^0(G, M') \ar[r] &amp; H^1(G, M')
+      }
+      </latex-image>
+      </image>
+      </figure>
     <p>
       If the groups <m>H^i_T(G, M)</m> are finite,
       we define the <em>Herbrand quotient</em>
@@ -258,10 +276,10 @@
       One special case is easy to work out:
       if <m>M</m> is finite, then <m>h(M) = 1</m>.
       To wit, the sequences
-      <me>
+      <md>
         <mrow>0 \to M^G \to M \to M \to M_G \to 0</mrow>
         <mrow>0 \to H^{-1}_T(G,M) \to M_G \stackrel{\Norm_G}{\to} M^G \to H^0_T(G,M) \to 0</mrow>
-      </me>
+      </md>
       are exact, where <m>M \to M</m> is the map <m>m \mapsto m^g - m</m>;
       thus <m>M_G</m> and <m>M^G</m> have the same order,
       as do <m>H^{-1}</m> and <m>H^0</m>.

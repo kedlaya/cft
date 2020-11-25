@@ -57,10 +57,10 @@
     </p>
     <p>
       In terms of components, these definitions translate as
-      <me>
+      <md>
         <mrow>(\Trace_{\AA_L/\AA_K}(\alpha))_{v} \amp = \sum_{w | v} \Trace_{L_w/K_v}(\alpha_w)</mrow>
         <mrow>(\Norm_{I_L/I_K}(\alpha))_{v} \amp = \prod_{w | v} \Norm_{L_w/K_v}(\alpha_w).</mrow>
-      </me>
+      </md>
     </p>
     <p>
       The trace and norm do what you expect on principal ad&#xe8;les/id&#xe8;les.

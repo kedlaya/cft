@@ -112,7 +112,16 @@
       we see that <m>\Norm_{L/K} C_K</m> is open.
       In fact, the snake lemma on the diagram
     </p>
-    <image source="images/245b3f82dd0d641fecca92c1b5f084252015ab51.png"/>
+      <figure xml:id="fig-ideles-cohom1-1">
+      <image>
+      <latex-image>
+      \xymatrix{
+      0 \ar[r] &amp; L^* \ar[r] \ar^{\Norm_{L/K}}[d] &amp; I_L \ar[r] \ar^{\Norm_{L/K}}[d] &amp; C_L \ar[r] \ar^{\Norm_{L/K}}[d] &amp; 0 \\
+      0 \ar[r] &amp; K^* \ar[r] &amp; I_K \ar[r] &amp; C_K \ar[r] &amp; 0
+      }
+      </latex-image>
+      </image>
+      </figure>
     <p>
       implies that the quotient <m>I_K/(K^* \times \Norm_{L/K} I_L)</m> is isomorphic to <m>C_K</m>.
     </p>

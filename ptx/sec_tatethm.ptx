@@ -46,10 +46,10 @@
       <p>
         Choose a 2-cocycle <m>\phi: G^3 \to M</m> representing <m>\gamma</m>;
         by the definition of a cocycle,
-        <me>
+        <md>
           <mrow>\phi(g_0 g, g_1 g, g_2 g) = \phi(g_0, g_1, g_2)^g,</mrow>
           <mrow>\phi(g_1, g_2, g_3) - \phi(g_0, g_2, g_3) + \phi(g_0, g_1, g_3) - \phi(g_0, g_1, g_2) = 0.</mrow>
-        </me>
+        </md>
       </p>
       <p>
         Moreover, <m>\phi</m> is a coboundary if and only if it's of the form <m>d(\rho)</m>, that is,
@@ -216,12 +216,30 @@
       if <m>M/K</m> is another finite Galois extension containing <m>L</m>,
       we need to know that the diagram
     </p>
-    <image source="images/ace43d03e16150652dc5876833bc324d5e0bf265.png"/>
+      <figure xml:id="fig-tatethm-1">
+      <image>
+      <latex-image>
+\xymatrix{
+K^*/\Norm_{M/K} M^* \ar[r] \ar[d]  &amp; \Gal(M/K)^{\ab} \ar[d] \\
+K^*/\Norm_{L/K} L^* \ar[r] &amp; \Gal(L/K)^{\ab}
+}
+      </latex-image>
+      </image>
+      </figure>
     <p>
       commutes, so the maps <m>K^* \to \Gal(L/K)^{\ab}</m> fit together to give a map <m>K^* \to \Gal(K^{\sep}/K)^{\ab}</m>.
       In other words, we need a commuting diagram
     </p>
-    <image source="images/a414aab2c72760a20d449ce3f396cf7685595368.png"/>
+      <figure xml:id="fig-tatethm-2">
+      <image>
+      <latex-image>
+\xymatrix{
+H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \ar[d] \\
+ H^0_T(\Gal(L/K), L^*) \ar[r]&amp; H^{-1}_T(\Gal(L/K), I_{\Gal(L/K)})
+}
+      </latex-image>
+      </image>
+      </figure>
     <p>
       This appears to be a gap in Milne's presentation.
       To fix it, choose a 2-cocycle
@@ -455,12 +473,12 @@
       for <m>i,j=0, \dots, \#G-1</m>.
       Apply <m>d</m> again: now we have a 2-cocycle
       <m>\psi_2: G^3 \to M \otimes_{\ZZ} \ZZ[G]</m> given by (again for <m>i,j=0, \dots, \#G-1</m>)
-      <me>
+      <md>
         <mrow>\psi_2(e, g^i, g^{i+j}) \amp = \psi_1(g^i, g^{i+j}) - \psi_1(e, g^{i+j}) + \psi_1(e, g^i)</mrow>
         <mrow>\amp = x \otimes ([e] + \cdots + [g^{i-1}] + [g^i] + \cdots + [g^{i+j-1}] - [e] - \cdots - [g^{i+j-1}])</mrow>
         <mrow>\amp = \begin{cases} 0 \amp  i+j \lt  \#G</mrow>
         <mrow>-x \otimes ([e] + \cdots + [g^{\#G-1}]) \amp  i+j \geq \#G. \end{cases}</mrow>
-      </me>
+      </md>
     </p>
     <p>
       This pulls back to a 2-cocycle <m>\phi_2: G^3 \to M</m> given by
