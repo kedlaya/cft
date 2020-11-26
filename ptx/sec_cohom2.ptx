@@ -11,7 +11,7 @@
       In the previous chapter,
       we associated to a finite group <m>G</m> and a (right) <m>G</m>-module <m>M</m> a sequence of abelian groups <m>H^i(G, M)</m>,
       called the cohomology groups of <m>M</m>.
-      (They're also called the <em>Galois cohomology</em>
+      (They're also called the <term>Galois cohomology</term>
       groups because in number theory,
       <m>G</m> will invariably be the Galois group of some extension of number fields,
       and <m>A</m> will be some object manufactured from this extension.)
@@ -34,7 +34,7 @@
     <p>
       Thus to compute cohomology,
       we are going to need an ample supply of acyclic <m>G</m>-modules.
-      We will get these using a process known as <em>induction</em>.
+      We will get these using a process known as <term>induction</term>.
       By way of motivation,
       we note first that if <m>G</m> is the trivial group,
       <em>every</em> <m>G</m>-module is acyclic:
@@ -45,7 +45,7 @@
     </p>
     <p>
       If <m>H</m> is a subgroup of <m>G</m> and <m>M</m> is an <m>H</m>-module,
-      we define the <em>induced</em> <m>G</m>-module associated to <m>M</m> to be <m>\Ind^G_H M = M \otimes_{\ZZ[H]} \ZZ[G]</m>.
+      we define the <term>induced</term> <m>G</m>-module associated to <m>M</m> to be <m>\Ind^G_H M = M \otimes_{\ZZ[H]} \ZZ[G]</m>.
       We may also identify <m>\Ind^G_H M</m> with the set of functions
       <m>\phi: G \to M</m> such that <m>\phi(gh) = \phi(g)^h</m> for <m>h \in H</m>,
       with the <m>G</m>-action on the latter being given by <m>\phi^g(g') = \phi(gg')</m>:
@@ -98,7 +98,7 @@
       </p>
     </proof>
     <p>
-      We say <m>M</m> is an <em>induced</em>
+      We say <m>M</m> is an <term>induced</term>
       <m>G</m>-module if it has the form
       <m>\Ind^G_{1} N</m> for some abelian group <m>N</m>,
       i.e., it can be written as <m>N \otimes_\ZZ \ZZ[G]</m>.
@@ -133,7 +133,7 @@
     <p>
       In other words,
       the restriction functor from <m>G</m>-modules to <m>H</m>-modules and the induction functor from <m>H</m>-modules to <m>G</m>-modules form a pair of
-      <em>adjoint functors</em> in both directions.
+      <term>adjoint functors</term> in both directions.
       This is rather unusual;
       it is far more common to have such a relationship in only one direction.
     </p>
@@ -226,7 +226,7 @@
       <p>
         Put <m>G = \Gal(L/K)</m>.
         The normal basis theorem
-        (see Lang, <em>Algebra</em> or Milne, Lemma II.1.24)
+        (see Lang, <pubtitle>Algebra</pubtitle> or Milne, Lemma II.1.24)
         states that there exists <m>\alpha \in L</m> whose conjugates form a basis of <m>L</m> as a <m>K</m>-vector space.
         This implies that <m>L \cong \Ind^{G}_{1} K</m>,
         so <m>L</m> is an induced <m>G</m>-module and so is acyclic.
@@ -268,9 +268,9 @@
       coincides with the cohomology groups <m>H^i(G, M)</m>.
       And now we have something we can actually compute! (Terminology:
       the elements of <m>N_i^G</m> in the kernel of <m>d_i</m> are called
-      <em>(homogeneous) <m>i</m>-cochains</em>;
+      <term>(homogeneous) <m>i</m>-cochains</term>;
       the ones in the image of <m>d_{i-1}</m> are called
-      <em><m>i</m>-coboundaries</em>.)
+      <term><m>i</m>-coboundaries</term>.)
     </p>
   </introduction>
   <subsection>
@@ -300,7 +300,7 @@
     </p>
     <p>
       We may also interpret <m>H^1(G,M)</m> as the set of isomorphism classes of
-      <em>principal homogeneous spaces</em> of <m>M</m>.
+      <term>principal homogeneous spaces</term> of <m>M</m>.
       Such objects are sets <m>A</m> with both a <m>G</m>-action and an <m>M</m>-action,
       subject to the following restrictions:
       <ol>
@@ -338,10 +338,10 @@
       elliptic curves defined over <m>K</m> which are <m>L</m>-isomorphic to <m>E</m>. (E.g.,
       <m>y^2 = x^3+x+1</m> versus <m>2y^2 = x^3 + x +1</m>,
       with <m>L = \QQ(\sqrt{2})</m>.) See Silverman,
-      <em>The Arithmetic of Elliptic Curves</em>,
+      <pubtitle>The Arithmetic of Elliptic Curves</pubtitle>,
       especially Chapter X, for all this and more fun with <m>H^1</m>,
-      including the infamous <em>Selmer group</em>
-      and <em>Tate-Shafarevich group</em>.
+      including the infamous <term>Selmer group</term>
+      and <term>Tate-Shafarevich group</term>.
     </p>
   </subsection>
   <subsection>
@@ -410,7 +410,7 @@
       Suppose we are given a homomorphism
       <m>\alpha: G' \to G</m> of groups and a homomorphism <m>\beta: M \to M'</m> of abelian groups
       (note that they go in opposite directions!).
-      We say these are <em>compatible</em>
+      We say these are <term>compatible</term>
       if <m>\beta(m^{\alpha(g)}) = \beta(m)^g</m> for all <m>g \in G</m> and <m>m \in M</m>.
       In this case,
       one gets canonical homomorphisms <m>H^i(G, M) \to H^i(G', M')</m>
@@ -437,7 +437,7 @@
             If <m>H</m> is a subgroup of <m>G</m>,
             <m>M</m> is a <m>G</m>-module,
             and <m>M'</m> is just <m>M</m> with all but the <m>H</m>-action forgotten,
-            we get the <em>restriction homomorphisms</em>
+            we get the <term>restriction homomorphisms</term>
             <me>
               \Res: H^i(G, M) \to H^i(H, M)
             </me>.
@@ -459,7 +459,7 @@
             <m>\Ind^G_H M \to M</m> taking <m>m \otimes [g]</m> to <m>m^g</m>.
             We then get maps <m>H^i(G, \Ind^G_H M) \to H^i(G,M)</m> which,
             together with the isomorphisms of Shapiro's lemma,
-            give what are called the <em>corestriction homomorphisms</em>:
+            give what are called the <term>corestriction homomorphisms</term>:
             <me>
               \Cor: H^i(H, M) \stackrel{\sim}{\to} H^i(G, \Ind^G_H M) \to H^i(G, M)
             </me>.
@@ -490,7 +490,7 @@
             let <m>\alpha</m> be the surjection <m>G \to G/H</m>,
             and let <m>\beta</m> be the injection <m>M^H \hookrightarrow M</m>.
             Note that <m>G/H</m> acts on <m>M^H</m>;
-            in this case, we get the <em>inflation homomorphisms</em>
+            in this case, we get the <term>inflation homomorphisms</term>
             <me>
               \Inf: H^i(G/H, M^H) \to H^i(G, M)
             </me>.

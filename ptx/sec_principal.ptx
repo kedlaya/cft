@@ -8,7 +8,7 @@
         (but you won't find the proofs I've omitted there either);
         Neukirch, section VI.7
         (see also IV.5);
-        Lang, <em>Algebraic Number Theory</em>, section XI.5.
+        Lang, <pubtitle>Algebraic Number Theory</pubtitle>, section XI.5.
       </p>
     </paragraphs>
     <p>
@@ -118,7 +118,7 @@
       </statement>
     </theorem>
     <definition>
-      The map <m>G^{\ab} \to H^{\ab}</m> is called the <em>transfer map</em>
+      The map <m>G^{\ab} \to H^{\ab}</m> is called the <term>transfer map</term>
       (in German,
       <q>Verlagerung</q>, hence the <m>V</m>).
     </definition>
@@ -211,7 +211,7 @@
           multiplied by putting <m>[g][h] = [gh]</m>)
           and let <m>I_G</m> be the ideal of sums
           <m>\sum n_g[g]</m> with <m>\sum n_g = 0</m>
-          (called the <em>augmentation ideal</em>;
+          (called the <term>augmentation ideal</term>;
           see <xref ref="sec_homology">Chapter</xref>).
           Let
           <me>

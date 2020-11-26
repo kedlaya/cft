@@ -5,7 +5,7 @@
       <title>Reference</title>
       <p>
         Milne, Section V.4; Neukirch, Section VI.1 and VI.2; Lang,
-        <em>Algebraic Number Theory</em>, Chapter VII.
+        <pubtitle>Algebraic Number Theory</pubtitle>, Chapter VII.
       </p>
     </paragraphs>
     <p>
@@ -62,7 +62,7 @@
       In fact, we already know one way to complete <m>\ZZ</m>,
       namely its profinite completion <m>\widehat{\ZZ} = \prod_p \ZZ_p</m>.
       But we really want something containing <m>\QQ</m>.
-      We define the <em>ring of finite ad&#xe8;les</em>
+      We define the <term>ring of finite ad&#xe8;les</term>
       <m>\AA^{\fin}_\QQ</m> as any of the following isomorphic objects:
       <ul>
         <li>

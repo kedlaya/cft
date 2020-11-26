@@ -9,7 +9,7 @@
     </paragraphs>
     <p>
       We will spend the next few chapters establishing
-      <em>local class field theory</em>,
+      <term>local class field theory</term>,
       a classification of the abelian extensions of a local field.
       This will serve two purposes.
       On one hand,
@@ -166,7 +166,7 @@
     <p>
       The first map is an inflation homomorphism;
       the second map in this theorem is called the
-      <em>local invariant map</em>.
+      <term>local invariant map</term>.
       More precisely,
       for <m>L/K</m> finite of degree <m>n</m>, we have an isomorphism
       <me>
@@ -200,7 +200,7 @@
     <p>
       In general, for any field <m>K</m>,
       the group <m>H^2(\Gal(\overline{K}/K), \overline{K}^*)</m> is called the
-      <em>Brauer group</em> of <m>K</m>.
+      <term>Brauer group</term> of <m>K</m>.
       It is an important invariant of <m>K</m>;
       it can be realized also in terms of certain noncommutative algebras over <m>K</m>
       (central simple algebras).
@@ -290,7 +290,7 @@
       </exercise>
       <exercise>
         <statement>
-          A <em>quaternion algebra</em> over a field <m>K</m> is a central simple algebra over <m>K</m> of dimension 4.
+          A <term>quaternion algebra</term> over a field <m>K</m> is a central simple algebra over <m>K</m> of dimension 4.
           If <m>K</m> is not of characteristic 2, any such algebra has the form
           <me>
             K \oplus Ki \oplus Kj \oplus Kk, \qquad i^2 = a, j^2 = b, ij = -ji = k
@@ -298,7 +298,7 @@
           for some <m>a,b \in K^*</m>.
           (For example, the case <m>K = \RR</m>,
           <m>a=b=-1</m> gives the standard Hamilton quaternions.)
-          A quaternion algebra is <em>split</em>
+          A quaternion algebra is <term>split</term>
           if it is isomorphic to the ring of
           <m>2 \times 2</m> matrices over <m>K</m>.
           Give a direct proof of the following consequence of <xref ref="T_Brauer_group_identification">Theorem</xref>:

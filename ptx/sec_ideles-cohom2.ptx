@@ -329,7 +329,7 @@
     </p>
     <p>
       We claim <m>N_i</m> is the maximal subextension of <m>N/K</m> in which <m>v_i</m> splits completely (a/k/a the
-      <em>decomposition field</em> of <m>v_i</m>).
+      <term>decomposition field</term> of <m>v_i</m>).
       On one hand, <m>v_i</m> does not split completely in <m>N</m>,
       so the decomposition field is no larger than <m>N_i</m>.
       On the other hand,

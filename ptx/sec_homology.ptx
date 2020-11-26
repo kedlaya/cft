@@ -6,7 +6,7 @@
       <p>
         Milne, II.2; for cyclic groups,
         also Neukirch, IV.7 and Lang,
-        <em>Algebraic Number Theory</em>, IX.1.
+        <pubtitle>Algebraic Number Theory</pubtitle>, IX.1.
       </p>
     </paragraphs>
   </introduction>
@@ -32,7 +32,7 @@
       In other words,
       <m>M_G</m> is the quotient of <m>M</m> by the submodule spanned by <m>m^g-m</m> for all <m>m \in M</m> and <m>g \in G</m>.
       In yet other words, <m>M_G = M/M I_G</m>,
-      where <m>I_G</m> is the <em>augmentation ideal</em>
+      where <m>I_G</m> is the <term>augmentation ideal</term>
       of the group algebra <m>\ZZ[G]</m>:
       <me>
         I_G = \left\{\sum_{g \in G} z_g[g]: \sum_g z_g = 0\right\}
@@ -42,7 +42,7 @@
       Or if you like, <m>M_G = M \otimes_{\ZZ[G]} \ZZ</m>.
       Since <m>M^G</m> is the group of <m>G</m>-invariants,
       we call <m>M_G</m> the group of
-      <em><m>G</m>-coinvariants</em>.
+      <term><m>G</m>-coinvariants</term>.
     </p>
     <p>
       The functor <m>M \to M^G</m> is right exact but not left exact:
@@ -236,7 +236,7 @@
       </figure>
     <p>
       If the groups <m>H^i_T(G, M)</m> are finite,
-      we define the <em>Herbrand quotient</em>
+      we define the <term>Herbrand quotient</term>
       <me>
         h(M) = \#H^0_T(G,M) / \#H^{-1}_T(G, M)
       </me>.

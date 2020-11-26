@@ -35,8 +35,8 @@
       (or 2, if <m>p=2</m>).
       If we take the fixed field for the torsion subgroup of <m>\ZZ^*</m>,
       we get a slightly smaller extension,
-      which I'll call the <em>small cyclotomic</em>
-      extension of <m>\QQ</m> and denote <m>\QQ^{\smcy}</m>.
+      which I'll call the <term>small cyclotomic extension</term>
+      of <m>\QQ</m> and denote <m>\QQ^{\smcy}</m>.
       Its Galois group is <m>\prod_p \ZZ_p = \widehat{\ZZ}</m>.
       For <m>K</m> a number field, define <m>K^{\smcy} = K \QQ^{\smcy}</m>;
       then <m>\Gal(K^{\smcy}/K) \cong \widehat{\ZZ}</m> as well,

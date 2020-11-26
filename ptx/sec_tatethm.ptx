@@ -72,7 +72,7 @@
         by construction, the cocycle <m>\phi</m> becomes zero in
         <m>H^2(G, M[\phi])</m> by setting <m>\rho(e,g) = x_g</m>.
         (Milne calls <m>M[\phi]</m> the
-        <em>splitting module</em> of <m>\phi</m>.)
+        <term>splitting module</term> of <m>\phi</m>.)
       </p>
       <p>
         The map <m>\alpha: M[\phi] \to \ZZ[G]</m> sending <m>M</m> to zero and <m>x_g</m> to <m>[g]-1</m> is a homomorphism of <m>G</m>-modules.
@@ -275,7 +275,7 @@ H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \a
     </lemma>
     <p>
       The same statement holds even if <m>\ell</m> is not prime (exercise) and can be interpreted in terms of the
-      <em>Hilbert symbol</em>,
+      <term>Hilbert symbol</term>,
       whose properties generalize quadratic reciprocity to higher powers;
       see Milne, III.4.
     </p>

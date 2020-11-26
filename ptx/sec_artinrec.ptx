@@ -176,7 +176,7 @@
     </p>
     <definition>
       Define the <term>conductor</term> of <m>L/K</m> to be the smallest formal product <m>\gothm</m> for which the conclusion of the Artin reciprocity law holds.
-      We say <m>L/K</m> is the <em>ray class field</em>
+      We say <m>L/K</m> is the <term>ray class field</term>
       corresponding to the product <m>\gothm</m> if <m>L/K</m> has conductor dividing <m>\gothm</m> and the map <m>I_K/I_K^\gothm \to \Gal(L/K)</m> is an isomorphism.
     </definition>
     <theorem>

@@ -52,11 +52,11 @@
       namely, we give them a topology.
     </p>
     <p>
-      A <em>profinite group</em> is a topological group which is Hausdorff and compact,
+      A <term>profinite group</term> is a topological group which is Hausdorff and compact,
       and which admits a basis of neighborhoods of the identity consisting of normal subgroups.
       More explicitly,
       a profinite group is a group <m>G</m> plus a collection of subgroups of <m>G</m> of finite index designated as
-      <em>open subgroups</em>,
+      <term>open subgroups</term>,
       such that the intersection of two open subgroups is open,
       but the intersection of all of the open subgroups is trivial.
       Profinite groups act a lot like finite groups;
@@ -154,9 +154,9 @@
       but one has to be a bit careful:
       these groups only make sense when you carry along the profinite topology.
       Thus if <m>G</m> is profinite,
-      by a <em><m>G</m>-module</em> we mean a topological abelian group <m>M</m> with a <em>continuous</em>
+      by a <term><m>G</m>-module</term> we mean a topological abelian group <m>M</m> with a <em>continuous</em>
       <m>G</m>-action <m>M \times G \to M</m>.
-      In particular, we say <m>M</m> is <em>discrete</em>
+      In particular, we say <m>M</m> is <term>discrete</term>
       if it has the discrete topology;
       that implies that the stabilizer of any element of <m>M</m> is open,
       and that <m>M</m> is the union of <m>M^H</m> over all open subgroups <m>H</m> of <m>G</m>.
@@ -228,13 +228,13 @@
           Let <m>A</m> be an abelian torsion group.
           Show that <m>\Hom(A, \QQ/\ZZ)</m> is a profinite group,
           if we take the open subgroups to be all subgroups of finite index.
-          This group is called the <em>Pontryagin dual</em> of <m>A</m>.
+          This group is called the <term>Pontryagin dual</term> of <m>A</m>.
         </statement>
       </exercise>
       <exercise>
         <statement>
           Neukirch exercise IV.2.4: a closed subgroup <m>H</m> of a profinite group <m>G</m> is called a
-          <em><m>p</m>-Sylow subgroup</em> of <m>G</m> if,
+          <term><m>p</m>-Sylow subgroup</term> of <m>G</m> if,
           for every open normal subgroup <m>N</m> of <m>G</m>,
           <m>HN/N</m> is a <m>p</m>-Sylow subgroup of <m>G/N</m>.
           Prove that:

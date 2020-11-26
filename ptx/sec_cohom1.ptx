@@ -5,7 +5,7 @@
       <title>Reference</title>
       <p>
         Milne, II.1.
-        See Serre, <em>Galois Cohomology</em>
+        See Serre, <pubtitle>Galois Cohomology</pubtitle>
         for a much more general presentation.
         (We will generalize ourselves from finite to profinite groups a bit later on.)
         Warning: some authors
@@ -146,7 +146,7 @@
         it turns out one can construct maps <m>g_i: I_{i+1} \to J_i</m>
         (and by convention <m>g_{-1} = 0</m>)
         such that <m>f_i = g_i \circ d_i + d_{i-1} \circ g_{i-1}</m>.
-        (Such a set of maps is called a <em>homotopy</em>.)
+        (Such a set of maps is called a <term>homotopy</term>.)
         Details left as an exercise. (Warning:
         the diagonal arrows in the diagram below don't commute!)
       </p>
@@ -183,7 +183,7 @@
       if you've never seen it before,
       deduce it yourself from the Snake Lemma. (For the proof of the latter,
       engage in
-      <q>diagram chasing</q>, or see the movie <url href="https://www.youtube.com/watch?v=etbcKWEKnvg"><em>It's My Turn</em></url>.
+      <q>diagram chasing</q>, or see the movie <url href="https://www.youtube.com/watch?v=etbcKWEKnvg"><pubtitle>It's My Turn</pubtitle></url>.
       To define <m>\delta</m>: given <m>x \in \ker(f_2) \subseteq M_2</m>,
       lift <m>x</m> to <m>M_1</m>, push it into <m>N_1</m> by <m>f_1</m>,
       then check that the image has a preimage in <m>N_0</m>.

@@ -55,16 +55,16 @@
     <p>
       We now make some constructions that, in our example,
       recover information about ramification of extensions of <m>k</m>.
-      For starters, define the <em>inertia group</em>
+      For starters, define the <term>inertia group</term>
       <m>I_k</m> as the kernel of <m>d</m>,
-      and define the <em>maximal unramified extension</em>
+      and define the <term>maximal unramified extension</term>
       <m>k^{\unr}</m> of <m>k</m> as the fixed field of <m>I_k</m>.
       More generally,
       for any field <m>L</m> between <m>k</m> and <m>\kbar</m>,
       put <m>G_L = \Gal(\kbar/L)</m>,
       put <m>I_L = G_L \cap I_k</m> and let
       <m>L^{\unr}</m> be the fixed field of <m>I_L</m>.
-      We say an extension <m>L/K</m> is <em>unramified</em>
+      We say an extension <m>L/K</m> is <term>unramified</term>
       if <m>L \subseteq K^{\unr}</m>.
       Note that this implies that <m>G_L</m> contains <m>I_K</m>,
       necessarily as a normal subgroup,
@@ -85,10 +85,10 @@
     </p>
     <p>
       Given a finite extension <m>L/K</m> of fields between <m>k</m> and <m>\kbar</m>,
-      define the <em>inertia degree</em>
-      (or <em>residue field degree</em>)
+      define the <term>inertia degree</term>
+      (or <term>residue field degree</term>)
       <m>f_{L/K} = [d(G_K):d(G_L)]</m> and the
-      <em>ramification degree</em>
+      <term>ramification degree</term>
       <m>e_{L/K} = [I_K:I_L]</m>.
       By design we have multiplicativity:
       <m>e_{M/K} = e_{M/L}e_{L/K}</m> and <m>f_{M/K} = f_{M/L}f_{L/K}</m>.
@@ -139,7 +139,7 @@
       <m>\Norm_{M/K} A_M</m> over all finite subextensions <m>M/K</m> of <m>L</m>.)
     </p>
     <p>
-      A <em>henselian valuation</em> of <m>A_k</m> with respect to <m>d</m> is a homomorphism <m>v: A_k \to \widehat{\ZZ}</m> such that:
+      A <term>henselian valuation</term> of <m>A_k</m> with respect to <m>d</m> is a homomorphism <m>v: A_k \to \widehat{\ZZ}</m> such that:
       <ol>
         <li>
           <p>
@@ -169,10 +169,10 @@
     </p>
     <p>
       For any field <m>K</m> between <m>k</m> and <m>\kbar</m>,
-      define the <em>unit subgroup</em>
+      define the <term>unit subgroup</term>
       <m>U_K</m> as the set of <m>u \in A_K</m> with <m>v_k(u) = 0</m>.
       If <m>K/k</m> is finite,
-      we say <m>\pi \in A_K</m> is a <em>uniformizer</em>
+      we say <m>\pi \in A_K</m> is a <term>uniformizer</term>
       for <m>K</m> if <m>v_K(\pi) = 1</m>.
     </p>
   </subsection>
@@ -192,7 +192,7 @@
     </p>
     <p>
       In Neukirch, this assumption is called the
-      <em>class field axiom</em>.
+      <term>class field axiom</term>.
       (Note that it's not enough just to check cyclic extensions of <m>k</m> itself.)
       Then we will prove the following theorem.
     </p>
@@ -415,7 +415,7 @@
       we have a semigroup homomorphism
       <m>r': H \to A_K/\Norm_{L/K}A_L</m> which kills <m>\Gal(L^{\unr}/L)</m>.
       Thus <m>r'</m> induces a homomorphism <m>r = r_{L/K}: \Gal(L/K) \to A_K/\Norm_{L/K}A_L</m>.
-      We call this the <em>reciprocity map</em>.
+      We call this the <term>reciprocity map</term>.
       Some straightforward functorialities are left to the reader,
       including the following.
     </p>
