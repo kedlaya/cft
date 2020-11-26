@@ -15,16 +15,16 @@
       Although this is supposed to be a course on algebraic number theory,
       the following analytic discussion is so fundamental that we must at least allude to it here.
     </p>
-    <p>
+    <definition>
       Let <m>K</m> be a number field.
-      The <em>Dedekind zeta function</em>
+      The <term>Dedekind zeta function</term>
       <m>\zeta_K(s)</m> is a function on the complex plane given,
       for <m>\Real(s) > 1</m>, by the absolutely convergent product and sum
       <me>
         \zeta_K(s) = \prod_\gothp (1 - \Norm(\gothp)^{-s})^{-1} = \zeta_K(s) = \sum_{\gotha} \Norm(\gotha)^{-s}
       </me>,
       where in the sum <m>\gotha</m> runs over the nonzero ideals of <m>\gotho_K</m>.
-    </p>
+    </definition>
     <p>
       A fundamental fact about the zeta function is the following.
       We omit the proof.
@@ -153,30 +153,30 @@
       </p>
     </proof>
   </introduction>
-  <subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
+      <exercise>
+        <statement>
           Show that the Dirichlet density of the set of all primes of a number field is 1.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Show that in any number field,
           the Dirichlet density of the set of primes <m>\gothp</m> of absolute degree greater than 1 is zero.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Let <m>\gothm</m> be a formal product of places of the number field <m>K</m>.
           Using <xref ref="T_meromorphic_continuation">Theorems</xref>,
           <xref ref="T_analytic_continuation"></xref>,
           and <xref ref="T_nonvanishing_of_L"></xref>,
-          prove that the set of primes of <m>K</m> lying in any specified class of the ray class group of conductor <m>\gothm</m> is <m>1/\#\Cl^\gothm(K)</m>. (Hint:
-          combine the quantities <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> to cancel out all but one class.)
-        </p>
-      </li>
-    </ol>
-  </subsection>
+          prove that the set of primes of <m>K</m> lying in any specified class of the ray class group of conductor <m>\gothm</m> is <m>1/\#\Cl^\gothm(K)</m>.
+        </statement>
+        <hint>
+          Combine the quantities <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> to cancel out all but one class.
+        </hint>
+      </exercise>
+  </exercises>
 </section>

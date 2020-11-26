@@ -64,10 +64,10 @@
     </theorem>
     <p>
       The map <m>\phi_K</m> is variously called the
-      <em>local reciprocity map</em>
-      or the <em>norm residue symbol</em>.
+      <term>local reciprocity map</term>
+      or the <term>norm residue symbol</term>.
       Using the local Kronecker-Weber theorem
-      (<xref ref="T_local_Kronecker-Weber">Theorem</xref>),
+      (<xref ref="T_local_Kronecker-Weber1">Theorem</xref>),
       this can be explicitly verified for <m>K=\QQ_p</m>
       (see exercises).
     </p>
@@ -247,46 +247,49 @@
       <m>\widehat{\ZZ}</m>, not just <m>\ZZ</m>.)
     </p>
   </subsection>
-  <subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
+      <exercise>
+        <statement>
           For <m>K = \QQ_p</m>,
           the local reciprocity map plus the local Kronecker-Weber theorem give a canonical map <m>\QQ_p^* \to \Gal(\QQ_p^{\ab}/\QQ_p) \cong \widehat{\ZZ}</m>.
           What is the map?
           From the answer,
           you should be able to turn things around and deduce local Kronecker-Weber from local reciprocity.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           For <m>K = \QQ_p</m>, take <m>\pi = p</m>.
           Determine <m>K_\pi</m>, again using local Kronecker-Weber.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Prove that for any finite extension <m>L/K</m> of finite extensions of <m>\QQ_p</m>,
           <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m>.
-          (Hint: show that already <m>\Norm_{L/K} K^*</m> is open!
-          The corresponding statement in positive characteristic is more subtle.)
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+        <hint>
+          Show that already <m>\Norm_{L/K} K^*</m> is open!
+          The corresponding statement in positive characteristic is more subtle.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
           Prove that for any finite extension <m>L/K</m> of finite separable extensions of <m>\FF_p((t))</m>,
           <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m>.
-          (Hint: reduce to the case of a cyclic extension of prime degree.
+        </statement>
+        <hint>
+          Reduce to the case of a cyclic extension of prime degree.
           If the degree is prime to <m>p</m>,
           you may imitate the previous exercise;
           otherwise, that approach fails because
           <m>\Norm_{L/K} K^*</m> lands inside the subfield <m>K^p</m>,
-          but you can use this to your advantage to make an explicit calculation.)
-        </p>
-      </li>
-      <li>
-        <p>
+          but you can use this to your advantage to make an explicit calculation.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
           A <em>quaternion algebra</em> over a field <m>K</m> is a central simple algebra over <m>K</m> of dimension 4.
           If <m>K</m> is not of characteristic 2, any such algebra has the form
           <me>
@@ -301,8 +304,7 @@
           Give a direct proof of the following consequence of <xref ref="T_Brauer_group_identification">Theorem</xref>:
           if <m>K</m> is a local field,
           then any two quaternion algebras which are not split are isomorphic to each other.
-        </p>
-      </li>
-    </ol>
-  </subsection>
+        </statement>
+      </exercise>
+  </exercises>
 </section>

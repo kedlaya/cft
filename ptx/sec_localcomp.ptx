@@ -474,21 +474,19 @@
       Next time, we'll use this map to obtain the local reciprocity map.
     </p>
   </subsection>
-  <subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
+      <exercise>
+        <statement>
           Give an elementary proof
           (without cohomology)
           that the norm map from one finite field to another is always surjective.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Give an example of a cyclic ramified extension <m>L/K</m> of local fields in which the groups <m>H^i_T(\Gal(L/K), U_L)</m> are nontrivial.
-        </p>
-      </li>
-    </ol>
-  </subsection>
+        </statement>
+      </exercise>
+  </exercises>
 </section>

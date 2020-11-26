@@ -501,23 +501,22 @@
       </ol>
     </p>
   </subsection>
-  <subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
+      <exercise>
+        <statement>
           Complete the proof of the correspondence between
           <m>H^1(G,M)</m> and principal homogeneous spaces.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           The set <m>H^2(G,M)</m> has the structure of an abelian group.
           Describe the corresponding structure on short exact sequences <m>0 \to M \to E \to G \to 0</m>.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Let <m>G = S_3</m>
           (the symmetric group on three letters),
           let <m>M = \ZZ^3</m> with the natural <m>G</m>-action permuting the factors,
@@ -527,18 +526,19 @@
           use the alternate interpretations given above,
           or use the exact sequence <m>0 \to N \to M \to M/N \to 0</m>.
           Better yet, use more than one method and make sure that you get the same answer.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           (Artin-Schreier) Let <m>L/K</m> be a
           <m>\ZZ/p\ZZ</m>-extension of fields of characteristic <m>p>0</m>.
           Prove that <m>L = K(\alpha)</m> for some <m>\alpha</m> such that <m>\alpha^p - \alpha \in K</m>.
-          (Hint: let <m>K^{\sep}</m> be a separable closure of <m>K</m> containing <m>L</m>,
+        </statement>
+        <hint>
+          Let <m>K^{\sep}</m> be a separable closure of <m>K</m> containing <m>L</m>,
           and consider the short exact sequence <m>0 \to \FF_p \to K^{\sep} \to K^{\sep} \to 0</m> in which the map
-          <m>K^{\sep} \to K^{\sep}</m> is given by <m>x \mapsto x^p - x</m>.)
-        </p>
-      </li>
-    </ol>
-  </subsection>
+          <m>K^{\sep} \to K^{\sep}</m> is given by <m>x \mapsto x^p - x</m>.
+        </hint>
+      </exercise>
+  </exercises>
 </section>

@@ -43,13 +43,15 @@
         </li>
       </ul>
     </p>
-    <p>
-      An <em>abelian extension</em> of a field is a Galois extension with abelian Galois group.
+    <definition xml:id="D_abelian_extension">
+    <p>    
+      An <term>abelian extension</term> of a field is a Galois extension with abelian Galois group.
       An example of an abelian extension of <m>\QQ</m> is the cyclotomic field <m>\QQ(\zeta_n)</m>
       (where <m>n</m> is a positive integer and <m>\zeta_n</m> is a primitive <m>n</m>-th root of unity),
       whose Galois group is <m>(\ZZ/n\ZZ)^*</m>, or any subfield thereof.
-      Amazingly, there are no other examples!
+      Amazingly, <xref ref="T_Kronecker-Weber">Theorem</xref> implies that there are no other examples!
     </p>
+    </definition>
     <theorem xml:id="T_Kronecker-Weber">
       <title>Kronecker-Weber</title>
       <statement>
@@ -64,14 +66,16 @@
       every quadratic extension of <m>\QQ</m> is contained in a cyclotomic field,
       a fact known to Gauss.
     </p>
+    <definition xml:id="D_conductor">
     <p>
       The smallest <m>n</m> such that <m>K \subseteq \QQ(\zeta_n)</m> is called the
-      <em>conductor</em> of <m>K/\QQ</m>.
+      <term>conductor</term> of <m>K/\QQ</m>.
       It plays an important role in the splitting behavior of primes of <m>\QQ</m> in <m>K</m>,
       as we will see a bit later.
     </p>
+    </definition>
     <p>
-      We will prove this theorem in the next few lectures.
+      We will prove <xref ref="T_Kronecker-Weber">Theorem</xref> in the next few lectures.
       Our approach will be to deduce it from a local analogue
       (see <xref ref="T_local_Kronecker-Weber2">Theorem</xref>).
     </p>
@@ -232,35 +236,37 @@
       </p>
     </proof>
   </subsection>
-  <subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
+      <exercise>
+        <statement>
           For <m>m \in \ZZ</m> not a perfect square,
           determine the conductor of <m>\QQ(\sqrt{m})</m>.
-          (Hint: first consider the case where <m>|m|</m> is prime.)
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+        <hint>
+          First consider the case where <m>|m|</m> is prime.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
           Recover the law of quadratic reciprocity from the Artin reciprocity law,
           using the fact that <m>\QQ(\sqrt{(-1)^{(p-1)/2} p})</m> has conductor <m>p</m>.
-        </p>
-      </li>
-      <li>
-        <p>
+         </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Prove that if <m>m,n</m> are coprime integers in <m>\ZZ</m>,
-          then <m>1 - \zeta_m</m> and <m>n</m> are coprime in <m>\ZZ[\zeta_m]</m>. (Hint:
-          look at the polynomial <m>(1-xx)^m-1</m> modulo a prime divisor of <m>n</m>.)
-        </p>
-      </li>
-      <li>
-        <p>
-          Prove that if <m>m</m> is not a prime power,
+          then <m>1 - \zeta_m</m> and <m>n</m> are coprime in <m>\ZZ[\zeta_m]</m>.
+        </statement>
+        <hint>
+          Look at the polynomial <m>(1-x)^m-1</m> modulo a prime divisor of <m>n</m>.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          Prove that if <m>m</m> is not a prime power, then
           <m>1-\zeta_m</m> is a unit in <m>\ZZ[\zeta_m]</m>.
-        </p>
-      </li>
-    </ol>
-  </subsection>
+         </statement>
+      </exercise>
+  </exercises>
 </section>

@@ -222,51 +222,57 @@
       We defer this case to the exercises.
     </p>
   </introduction>
-  <subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
-          Prove <xref ref="lem_zetap">Lemma</xref>. (Hint:
-          prove that <m>(\zeta_p-1)^{p-1}/p - 1</m> belongs to the maximal ideal of <m>\ZZ_p[\zeta_p]</m>.)
-        </p>
-      </li>
-      <li>
-        <p>
-          Prove that (in the notation of <xref ref="lem_three">Lemma</xref>) <m>U_1^p</m> is the set of units congruent to 1 modulo <m>\pi^{p+1}</m>. (Hint:
-          in one direction,
+      <exercise>
+        <statement>
+          Prove <xref ref="lem_zetap">Lemma</xref>.
+        </statement>
+        <hint>
+          Prove that <m>(\zeta_p-1)^{p-1}/p - 1</m> belongs to the maximal ideal of <m>\ZZ_p[\zeta_p]</m>.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          Prove that (in the notation of <xref ref="lem_three">Lemma</xref>) <m>U_1^p</m> is the set of units congruent to 1 modulo <m>\pi^{p+1}</m>.
+        </statement>
+        <hint>
+          In one direction,
           write <m>u \in U_1</m> as a power of <m>\zeta_p</m> times a unit congruent to 1 modulo <m>\pi^2</m>.
-          In the other direction, use the binomial series for <m>(1+x)^{1/p}</m>.)
-        </p>
-      </li>
-      <li>
-        <p>
+          In the other direction, use the binomial series for <m>(1+x)^{1/p}</m>.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
           Prove that for any <m>r>0</m>,
           there is an extension of <m>\QQ_2</m> with Galois group
           <m>\ZZ/2\ZZ \times (\ZZ/2^r\ZZ)^2</m> contained in <m>\QQ_2(\zeta_n)</m> for some <m>n>0</m>.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Suppose that <m>K/\QQ_2</m> is a
           <m>\ZZ/2^r\ZZ</m>-extension not contained in <m>\QQ_2(\zeta_n)</m> for any <m>n>0</m>.
           Prove that there exists an extension of <m>\QQ_2</m> with Galois group
           <m>(\ZZ/2\ZZ)^4</m> or <m>(\ZZ/4\ZZ)^3</m>.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Prove that there is no extension of <m>\QQ_2</m> with Galois group <m>(\ZZ/2\ZZ)^4</m>.
-          (Hint: use Kummer theory.)
-        </p>
-      </li>
-      <li>
-        <p>
-          Prove that there is no extension of <m>\QQ_2</m> with Galois group <m>(\ZZ/4\ZZ)^3</m>. (Hint:
-          reduce to showing that there exists no extension of <m>\QQ_2</m> containing
-          <m>\QQ_2(\sqrt{-1})</m> with Galois group <m>\ZZ/4\ZZ</m>.)
-        </p>
-      </li>
-    </ol>
-  </subsection>
+        </statement>
+        <hint>
+          Use Kummer theory.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          Prove that there is no extension of <m>\QQ_2</m> with Galois group <m>(\ZZ/4\ZZ)^3</m>.
+        </statement>
+        <hint>
+          Reduce to showing that there exists no extension of <m>\QQ_2</m> containing
+          <m>\QQ_2(\sqrt{-1})</m> with Galois group <m>\ZZ/4\ZZ</m>.
+        </hint>
+      </exercise>
+  </exercises>
 </section>

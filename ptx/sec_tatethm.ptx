@@ -522,33 +522,35 @@ H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \a
       <m>\Gal(L/K)</m> into <m>\Gal(ML/K)</m>.
     </p>
   </subsection>
-  <subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
+      <exercise>
+        <statement>
           Prove that for any local field <m>K</m> and any positive integer <m>n</m> not divisible by the characteristic of <m>K</m>,
           the group <m>K^*/(K^*)^{n}</m> is finite.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Prove that for any local field <m>K</m> of characteristic <m>0</m>,
           the intersection of the groups <m>(K^*)^n</m> over all positive integers <m>n</m> is the trivial group.
-          (Hint: first get the intersection into <m>\gotho_K^*</m>,
+        </statement>
+        <hint>
+          First get the intersection into <m>\gotho_K^*</m>,
           then use prime-to-<m>p</m> exponents to get it into the 1-units,
           then use powers of <m>p</m> to finish.
-          The last step is the only one which fails in characteristic <m>p</m>.)
-        </p>
-      </li>
-      <li>
-        <p>
+          The last step is the only one which fails in characteristic <m>p</m>.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
           Extend <xref ref="L_hilbert_symbol">Lemma</xref>
           to the case where <m>\ell</m> is an arbitrary positive integer,
           not necessarily prime.
-          (Hint: it may help to use the structure theorem for finite abelian groups.)
-        </p>
-      </li>
-    </ol>
-  </subsection>
+        </statement>
+        <hint>
+          It may help to use the structure theorem for finite abelian groups.
+        </hint>
+      </exercise>
+  </exercises>
 </section>

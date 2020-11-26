@@ -25,7 +25,7 @@
       only a small part of the theory will be relevant for class field theory.
       However, it doesn't make sense to learn that small part without knowing what it is a part of!
     </p>
-    <p>
+    <definition>
       Let <m>G</m> be a finite group and <m>A</m> an abelian group
       (itself not necessarily finite)
       with a right <m>G</m>-action,
@@ -34,23 +34,23 @@
       i.e., the image of the action of <m>g</m> on <m>m</m> is <m>m^g</m>.
       Alternatively,
       <m>A</m> can be viewed as a right module for the group algebra <m>\ZZ[G]</m>.
-      A <em>homomorphism</em> of <m>G</m>-modules
+      A <term>homomorphism</term> of <m>G</m>-modules
       <m>\phi: M \to N</m> is a homomorphism of abelian groups that is compatible with the <m>G</m>-actions:
       i.e., <m>\phi(m^g) = \phi(m)^g</m>.
       (For those keeping score,
       the category of <m>G</m>-modules is an abelian category.)
-    </p>
+    </definition>
     <p>
       We would like to define some invariants of the pair <m>(G, A)</m> that we can use to get information about <m>G</m> and <m>A</m>.
       We will use the general methodology of homological algebra to do this.
       Before doing so,
       though, we need a few lemmas about <m>G</m>-modules.
     </p>
-    <p>
-      A <m>G</m>-module <m>M</m> is <em>injective</em>
+    <definition>
+      A <m>G</m>-module <m>M</m> is <term>injective</term>
       if for every inclusion <m>A \subset B</m> of <m>G</m>-modules and every <m>G</m>-module homomorphism <m>\phi: A \to M</m>,
       there is a homomorphism <m>\psi: B \to M</m> that extends <m>\phi</m>.
-    </p>
+    </definition>
     <lemma xml:id="L_enough_injectives">
       <statement>
         <p>
@@ -66,7 +66,7 @@
     </proof>
     <p>
       In particular, any <m>G</m>-module <m>M</m> admits an
-      <em>injective resolution</em>: a complex
+      <term>injective resolution</term>: a complex
       <me>
         0 \to M \to I_0 \stackrel{d_0}{\to} I_1 \stackrel{d_1}{\to} I_2 \stackrel{d_2}{\to} \dots
       </me>
@@ -243,7 +243,7 @@
         </li>
         <li>
           <p>
-            We say <m>M</m> is <em>acyclic</em>
+            We say <m>M</m> is <term>acyclic</term>
             if <m>H^i(G,M) =0</m> for all <m>i>0</m>;
             so in particular, injective <m>G</m>-modules are acyclic.
             It turns out that we can replace the injective resolution in the definition by an acyclic resolution for the purposes of doing a computation;
@@ -257,46 +257,53 @@
       We'll remedy that next time by giving more concrete descriptions that one can actually compute with.
     </p>
   </subsection>
-  <subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
+      <exercise>
+        <statement>
           Let <m>G</m> be the one-element group.
           Show that a <m>G</m>-module (i.e., abelian group) is injective if and only if it is divisible,
           i.e., the map <m>x \mapsto nx</m> is surjective for any nonzero integer <m>n</m>.
-          (Hint: you'll need Zorn's lemma or equivalent in one direction.)
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+        <hint>
+          You'll need Zorn's lemma or equivalent in one direction.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
           Let <m>A</m> be an abelian group,
           regarded as a <m>G</m>-module for <m>G</m> the trivial group.
           Prove that <m>A</m> can be embedded in an injective <m>G</m>-module.
-        </p>
-      </li>
-      <li>
-        <p>
-          Prove <xref ref="L_enough_injectives">Lemma</xref>. (Hint:
-          for <m>M</m> a <m>G</m>-module,
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          Prove <xref ref="L_enough_injectives">Lemma</xref>.
+        </statement>
+        <hint>
+          For <m>M</m> a <m>G</m>-module,
           the previous exercises show that the underlying abelian group of <m>M</m> embeds into a divisible group <m>N</m>.
-          Now map <m>M</m> into <m>\Hom_{\ZZ}(\ZZ[G], N)</m> and check that the latter is an injective <m>G</m>-module.)
-        </p>
-      </li>
-      <li>
-        <p>
+          Now map <m>M</m> into <m>\Hom_{\ZZ}(\ZZ[G], N)</m> and check that the latter is an injective <m>G</m>-module.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
           Prove <xref ref="L_injective_resolutions_to_cohomology_maps">Lemma</xref>,
           following the sketch given.
-          (Hint: construct <m>g_i</m> given <m>f_{i-1}</m> and <m>g_{i-1}</m>,
-          using that the <m>J</m>'s are injective <m>G</m>-modules.)
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+        <hint>
+          Construct <m>g_i</m> given <m>f_{i-1}</m> and <m>g_{i-1}</m>,
+          using that the <m>J</m>'s are injective <m>G</m>-modules.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
           Prove that if <m>0 \to M \to M_0 \to M_1 \to \cdots</m> is an exact sequence of <m>G</m>-modules and each <m>M_i</m> is acyclic,
           then the cohomology groups of the complex
-          <m>0 \to M_0^G \to M_1^G \to \cdots</m> coincide with <m>H^i(G, M)</m>. (Hint:
-          construct the canonical long exact sequence from the exact sequence
+          <m>0 \to M_0^G \to M_1^G \to \cdots</m> coincide with <m>H^i(G, M)</m>.
+        </statement>
+        <hint>
+          Construct the canonical long exact sequence from the exact sequence
           <me>
             0 \to M \to M_0 \to M_0/M \to 0
           </me>,
@@ -306,8 +313,7 @@
           </me>
           is again exact.
           Don't forget to be careful about <m>H^1</m>!)
-        </p>
-      </li>
-    </ol>
-  </subsection>
+        </hint>
+      </exercise>
+  </exercises>
 </section>

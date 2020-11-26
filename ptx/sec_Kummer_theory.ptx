@@ -11,12 +11,16 @@
       </p>
     </paragraphs>
   </introduction>
-  <subsection xml:id="T_local_Kronecker-Weber">
+  <subsection>
+    <paragraphs>
     <title>Jargon watch</title>
+    <definition xml:id="D_G-extension">
     <p>
       If <m>G</m> is a group, a <em><m>G</m>-extension</em>
       of a field <m>K</m> is a Galois extension of <m>K</m> with Galois group <m>G</m>.
     </p>
+    </definition>
+    </paragraphs>
     <p>
       Before attempting to classify all abelian extensions of <m>\QQ_p</m>,
       we recall an older classification result.
@@ -47,14 +51,14 @@
       let me introduce some terminology which marks the tip of the iceberg of group cohomology,
       which we will see more of later.
     </p>
-    <p>
+    <definition>
       If <m>G</m> is a group and <m>M</m> is an abelian group on which <m>G</m> acts
       (written multiplicatively),
       one defines the group <m>H^1(G,M)</m> as the set of functions
       <m>f: G \to M</m> such that <m>f(gh) = f(g)^h f(h)</m>,
       modulo the set of such functions of the form
       <m>f(g) = x (x^g)^{-1}</m> for some <m>x \in M</m>.
-    </p>
+    </definition>
     <lemma xml:id="L_theorem_90">
       <title>
       <q>Theorem 90</q>
@@ -88,6 +92,9 @@
         Thus <m>f</m> is zero in <m>H^1(G,L^*)</m>.
       </p>
     </proof>
+    <p>
+    We now prove <xref ref="T_Kummer">Theorem</xref>.
+    </p>
     <proof>
       <p>
         On one hand, if <m>\alpha \in K^*</m> is such that
@@ -265,52 +272,65 @@
         <m>a^g/a^{\omega(g)} \in (L^*)^n</m>, as desired.
       </p>
     </proof>
-  </subsection>
-  <subsection>
+   </subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
+      <exercise>
+        <statement>
+          Let <m>n</m> be a positive integer, let <m>K</m> be a field of characteristic coprime to <m>n</m>,
+          choose <m>a \in K^*</m>, and put <m>L = K(a^{1/n})</m>. Prove that <m>[K(a^{1/n}):K]</m> divides <m>n</m>.
+        </statement>
+        <hint>
+          Reduce to the case where <m>n</m> is prime. If <m>\zeta_n \in K</m>, use Kummer theory; otherwise,
+          consider the Galois closure <m>K(a^{1/n}, \zeta_n)</m> of <m>L/K</m>.
+        </hint>
+      </exercise>       
+      <exercise>
+        <statement>
           Prove the linear independence of automorphisms:
           if <m>g_1, \dots,
           g_n</m> are distinct automorphisms of <m>L</m> over <m>K</m>,
           then there do not exist <m>x_1, \dots,
           x_n \in L</m> such that <m>x_1 y^{g_1} + \cdots + x_n y^{g_n} = 0</m> for all <m>y \in L</m>.
-          (Hint: suppose the contrary,
+        </statement>
+        <hint>
+          Suppose the contrary,
           choose a counterexample with <m>n</m> as small as possible,
           then make an even smaller counterexample.)
-        </p>
-      </li>
-      <li>
-        <p>
-          Prove the additive analogue of Theorem 90:
+        </hint>
+      </exercise>       
+      <exercise>
+        <statement>
+          Prove the additive analogue of <xref ref="L_theorem_90"></xref>:
           if <m>L/K</m> is a finite Galois extension with Galois group <m>G</m>,
           then <m>H^1(G, L) = 0</m>,
-          where the abelian group is now the additive group of <m>L</m>. (Hint:
-          by the normal basis theorem
+          where the abelian group is now the additive group of <m>L</m>.
+        </statement>
+        <hint>
+          By the normal basis theorem
           (see for example Lang, <em>Algebra</em>),
-          there exists <m>\alpha \in L</m> whose conjugates form a basis of <m>L</m> as a <m>K</m>-vector space.)
-        </p>
-      </li>
-      <li>
-        <p>
-          Prove the following extension of Theorem 90
-          (also due to Speiser).
+          there exists <m>\alpha \in L</m> whose conjugates form a basis of <m>L</m> as a <m>K</m>-vector space.
+        </hint>
+      </exercise>       
+      <exercise>
+        <statement>
+          Prove the following extension of <xref ref="L_theorem_90"></xref> (also due to Speiser).
           Let <m>L/K</m> be a finite Galois extension with Galois group <m>G</m>.
           Despite the fact that <m>H^1(G, \GL(n,L))</m> does not make sense as a group (because
           <m>\GL(n,L)</m> is not abelian), show nonetheless that
           <q><m>H^1(G, \GL(n,L))</m> is trivial</q>
           in the sense that every function <m>f: G \to \GL(n,L)</m> for which
           <m>f(gh) = f(g)^h f(h)</m> for all <m>g,h \in G</m> can be written as
-          <m>x (x^g)^{-1}</m> for some <m>x \in \GL(n,L)</m>. (Hint:
-          to imitate the proof in the case <m>n=1</m>,
+          <m>x (x^g)^{-1}</m> for some <m>x \in \GL(n,L)</m>.
+        </statement>
+        <hint>
+          To imitate the proof in the case <m>n=1</m>,
           one must find an <m>n \times n</m> matrix <m>x</m> over <m>L</m> such that
           <m>t = \sum_{g \in G} x^g f(g)</m> is not only nonzero but <em>invertible</em>.
           To establish this,
           note that the set of possible values of <m>t</m> on one hand is an <m>L</m>-vector space,
-          and on the other hand satisfies no nontrivial <m>L</m>-linear relation.)
-        </p>
-      </li>
-    </ol>
-  </subsection>
+          and on the other hand satisfies no nontrivial <m>L</m>-linear relation.
+        </hint>
+      </exercise>       
+  </exercises>
 </section>

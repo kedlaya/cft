@@ -207,33 +207,32 @@
       i.e., summing over elements of the group.)
     </p>
   </subsection>
-  <subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
+      <exercise>
+        <statement>
           Prove that every open subgroup of a profinite group contains an open normal subgroup.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           For any ring <m>R</m>, we denote by <m>\GL_n(R)</m> the group of
           <m>n \times n</m> matrices over <m>R</m> which are invertible
           (equivalently, whose determinant is a unit).
           Prove that <m>\GL_n(\widehat{\ZZ})</m> is a profinite group,
           and say as much as you can about its open subgroups.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Let <m>A</m> be an abelian torsion group.
           Show that <m>\Hom(A, \QQ/\ZZ)</m> is a profinite group,
           if we take the open subgroups to be all subgroups of finite index.
           This group is called the <em>Pontryagin dual</em> of <m>A</m>.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Neukirch exercise IV.2.4: a closed subgroup <m>H</m> of a profinite group <m>G</m> is called a
           <em><m>p</m>-Sylow subgroup</em> of <m>G</m> if,
           for every open normal subgroup <m>N</m> of <m>G</m>,
@@ -261,14 +260,13 @@
           </ol>
           You may use Sylow's theorem (that (a)-(c) hold for finite groups) without further comment.
           Warning: Sylow subgroups are usually not open.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Neukirch exercise IV.2.4: Compute the <m>p</m>-Sylow subgroups of <m>\widehat{\ZZ}</m>,
           of <m>\ZZ_p^*</m>, and of <m>\GL_2(\ZZ_p)</m>.
-        </p>
-      </li>
-    </ol>
-  </subsection>
+        </statement>
+      </exercise>
+  </exercises>
 </section>

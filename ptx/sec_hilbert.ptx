@@ -13,6 +13,8 @@
       This is quite definitely not true of other number fields;
       we begin with an example illustrating this.
     </p>
+    <example>
+    <title>An unramified extension of a number field</title>
     <p>
       In the number field <m>K = \QQ(\sqrt{-5})</m>,
       the ring of integers is <m>\ZZ[\sqrt{-5}]</m> and the ideal <m>(2)</m> factors as <m>\gothp^2</m>,
@@ -29,6 +31,7 @@
       (and not split)
       in <m>L</m>.
     </p>
+    </example>
     <p>
       We've now seen that <m>\QQ(\sqrt{-5})</m> admits both a nonprincipal ideal and an unramified abelian extension.
       It turns out these are not unrelated events.
@@ -53,7 +56,7 @@
       given by the Artin reciprocity law.
       We'll see this a bit later.
       The field <m>L</m> is called the
-      <em>Hilbert class field</em> of <m>K</m>.
+      <term>Hilbert class field</term> of <m>K</m>.
     </p>
     <p>
       Warning: there can be infinite unramified
@@ -69,23 +72,24 @@
       (See Cassels-Frohlich for more discussion.)
     </p>
   </introduction>
-  <subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
+      <exercise>
+        <statement>
           Let <m>K</m> be an imaginary quadratic extension of <m>\QQ</m> in which <m>t</m> finite primes ramify.
-          Asuming <xref ref="T_Hilbert_class_field">Theorem</xref>,
+          Assuming <xref ref="T_Hilbert_class_field">Theorem</xref>,
           prove that <m>\#(\Cl(K)/2\Cl(K)) = 2^{t-1}</m>;
-          this recovers a theorem of Gauss originally proved using binary quadratic forms. (Hint:
-          if an odd prime <m>p</m> ramifies in <m>K</m>,
+          this recovers a theorem of Gauss originally proved using binary quadratic forms.
+        </statement>
+        <hint>
+          If an odd prime <m>p</m> ramifies in <m>K</m>,
           show that <m>K(\sqrt{p^*})/K</m> is unramified for <m>p^* = (-1)^{(p-1)/2} p</m>;
           if 2 ramifies in <m>K</m>,
-          show that <m>K(p^*)/K</m> is unramified for one of <m>p^* = -1, 2, -2</m>.)
-        </p>
-      </li>
-      <li>
-        <p>
+          show that <m>K(p^*)/K</m> is unramified for one of <m>p^* = -1, 2, -2</m>.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
           Give an example, using a real quadratic field, to illustrate that:
           <ol>
             <li>
@@ -100,24 +104,46 @@
               </p>
             </li>
           </ol>
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Prove that Exercise<nbsp/>1 extends to real quadratic fields if one replaces the class group by the
-          <em>narrow class group</em>,
+          <term>narrow class group</term>,
           in which you only mod out by principal ideals having a totally positive generator.
-          This gives an example of a <em>ray class group</em>;
+          This gives an example of a <term>ray class group</term>;
           more on those in the next chapter.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           The field <m>\QQ(\sqrt{-23})</m> admits an ideal of order 3 in the class group and an unramified abelian extension of degree 3.
           Find both.
-          (Hint: the extension contains a cubic field of discriminant -23.)
-        </p>
-      </li>
-    </ol>
-  </subsection>
+        </statement>
+        <hint>
+          The extension contains a cubic field of discriminant -23.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          Let <m>L/K</m> be an extension of number fields admitting no nontrivial abelian subextension <m>M/K</m> which is everywhere
+          unramified (including at archimedean places). Assuming <xref ref="T_Hilbert_class_field">Theorem</xref>, prove
+          that the class number of <m>K</m> divides the class number of <m>L</m>.
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          A number field <m>K</m> is called a <term>CM field</term> if it is a totally complex quadratic extension of a totally real number field
+          <m>K_+</m>. Using the previous exercise, show that the class number of <m>K_+</m> divides the class number of <m>K</m>. The ratio is 
+          called the <term>relative class number</term>.
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+        Here is an easy way to generate nonabelian unramified extensions. 
+        Let <m>K</m> be a number field whose discriminant <m>D</m> is squarefree.
+        Prove that the Galois closure of <m>K</m> is unramified over all finite places of <m>\QQ(\sqrt{D})</m>.
+        </statement>
+      </exercise>
+  </exercises>
 </section>

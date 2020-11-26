@@ -678,14 +678,12 @@
       but not conversely.)
     </p>
   </subsection>
-  <subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
+      <exercise>
+        <statement>
           Prove <xref ref="P_abstract_functorialities">Proposition</xref>.
-        </p>
-      </li>
-    </ol>
-  </subsection>
+        </statement>
+      </exercise>
+  </exercises>
 </section>

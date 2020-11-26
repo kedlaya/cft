@@ -61,12 +61,15 @@
 </latex-image-preamble>
   </docinfo>
   <book>
-    <title>Notes on class field theory (updated 17 Mar 2017)</title>
+    <title>Notes on class field theory (updated 25 Nov 2020)</title>
     <frontmatter>
       <titlepage>
         <author>
           <personname>Kiran S. Kedlaya</personname>
         </author>
+        <p>
+        This document was generated using <url href="https://pretextbook.org/">PreTeXt</url>.
+        </p>
       </titlepage>
     </frontmatter>
     <xi:include href="./ch_trailer.ptx"/>

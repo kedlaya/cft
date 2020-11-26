@@ -39,13 +39,13 @@
   <subsection>
     <title>Jargon watch</title>
     <p>
-      By a <em>place</em> of a number field <m>K</m>,
+      By a <term>place</term> of a number field <m>K</m>,
       we mean either an archimedean completion
       <m>K \hookrightarrow \RR</m> or <m>K \hookrightarrow \CC</m>
-      (an <em>infinite place</em>),
+      (an <term>infinite place</term>),
       or a <m>\gothp</m>-adic completion
       <m>K \hookrightarrow K_\gothp</m> for some nonzero prime ideal <m>\gothp</m> of <m>\gotho_K</m> (a
-      <em>finite place</em>). (Note:
+      <term>finite place</term>). (Note:
       there is only one place for each pair of complex embeddings of <m>K</m>.) Each place corresponds to an equivalence class of absolute values on <m>K</m>;
       if <m>v</m> is a place,
       we write <m>K_v</m> for the corresponding completion,
@@ -77,7 +77,7 @@
         </li>
         <li>
           <p>
-            the <em>restricted direct product</em>
+            the <term>restricted direct product</term>
             <m>\sideset{}{'_p}\prod \QQ_p</m>,
             where we only allow tuples <m>(\alpha_p)</m> for which
             <m>\alpha_p \in \ZZ_p</m> for almost all <m>p</m>.
@@ -88,14 +88,14 @@
     <p>
       For symmetry, we really should allow <em>all</em> places,
       not just the finite places.
-      So we also define the <em>ring of ad&#xe8;les</em>
+      So we also define the <term>ring of ad&#xe8;les</term>
       over <m>\QQ</m> as <m>\AA_{\QQ} = \RR \times \AA^{\fin}_{\QQ}</m>.
       Then <m>\AA_{\QQ}</m> is a locally compact topological ring with a canonical embedding <m>\QQ \hookrightarrow \AA_{\QQ}</m>.
     </p>
     <p>
       Now for a general number field <m>K</m>.
       The profinite completion <m>\widehat{\gotho_K}</m> is canonically isomorphic to <m>\prod_{\gothp} \gotho_{K_{\gothp}}</m>,
-      so we define the <em>ring of finite ad&#xe8;les</em>
+      so we define the <term>ring of finite ad&#xe8;les</term>
       <m>\AA^{\fin}_{K}</m> as any of the following isomorphic objects:
       <ul>
         <li>
@@ -110,7 +110,7 @@
         </li>
         <li>
           <p>
-            the <em>restricted direct product</em>
+            the <term>restricted direct product</term>
             <m>\sideset{}{'_p}\prod K_{\gothp}</m>,
             where we only allow tuples <m>(\alpha_p)</m> for which
             <m>\alpha_p \in \gotho_{K_{\gothp}}</m> for almost all <m>\gothp</m>.
@@ -156,7 +156,7 @@
       </statement>
     </proposition>
     <p>
-      In particular, <m>K</m> is <em>discrete</em> in <m>\AA_K</m>
+      In particular, <m>K</m> is <term>discrete</term> in <m>\AA_K</m>
       (the difference between two elements of <m>K</m> cannot be simultaneously small in all embeddings).
       This is a generalization/analogue of the fact that
       <m>\gotho_K</m> is discrete in Minkowski space
@@ -199,7 +199,7 @@
     <title>Alternate description: restricted products of topological groups</title>
     <p>
       Let <m>G_1, G_2, \dots</m> be a sequence of locally compact topological groups and let <m>H_i</m> be a compact subgroup of <m>G_i</m>.
-      The <em>restricted product</em>
+      The <term>restricted product</term>
       <m>G</m> of the pairs <m>(G_i, H_i)</m> is the set of tuples <m>(g_i)_{i=1}^\infty</m> such that
       <m>g_i \in H_i</m> for all but finitely many indices <m>i</m>.
       For each set <m>S</m>,
@@ -219,7 +219,7 @@
   <subsection>
     <title>Id&#xe8;les and the id&#xe8;le class group</title>
     <p>
-      An <em>id&#xe8;le</em> is a unit in the ring <m>\AA_K</m>.
+      An <term>id&#xe8;le</term> is a unit in the ring <m>\AA_K</m>.
       In other words, it is a tuple <m>(\alpha_v)</m>,
       one element of <m>K_v^*</m> for each place <m>v</m> of <m>K</m>,
       such that <m>\alpha_v \in \gotho_{K_v}^*</m> for all but finitely many finite places <m>v</m>.
@@ -231,9 +231,9 @@
       For example, for each element <m>\beta \in K</m>,
       we get an ad&#xe8;le in which <m>\alpha_v = \beta</m> for all <m>v</m>;
       this ad&#xe8;le is an id&#xe8;le if <m>\beta \neq 0</m>.
-      We call these the <em>principal ad&#xe8;les</em>
-      and <em>principal id&#xe8;les</em>,
-      and define the <em>id&#xe8;le class group</em>
+      We call these the <term>principal ad&#xe8;les</term>
+      and <term>principal id&#xe8;les</term>,
+      and define the <term>id&#xe8;le class group</term>
       of <m>K</m> as the quotient
       <m>C_K = I_K/K^*</m> of the id&#xe8;les by the principal id&#xe8;les.
     </p>
@@ -397,27 +397,27 @@
       (based on work of Drinfeld).
     </p>
   </subsection>
-  <subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
+      <exercise>
+        <statement>
           Prove <xref ref="P_adelic_CRT">Proposition</xref>.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Show that the restricted direct product topology on <m>I_K</m> is the subspace topology for the embedding into
           <m>\AA_K \times \AA_K</m> given by the map <m>x \mapsto (x,x^{-1})</m>.
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Complete the proof of <xref ref="P_idele_group_compact">Proposition</xref>
           by establishing the existence of the constant <m>c</m>.
-          (Hint: see Lang, Section V.1, Theorem 0.)
-        </p>
-      </li>
-    </ol>
-  </subsection>
+        </statement>
+        <hint>
+          See Lang, Section V.1, Theorem 0.
+        </hint>
+      </exercise>
+  </exercises>
 </section>

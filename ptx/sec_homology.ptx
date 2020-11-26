@@ -50,8 +50,8 @@
       then <m>M'_G \to M_G \to M''_G \to 0</m> is exact but the map on the left is not injective.
       Again, we can fill in the exact sequence by defining homology groups.
     </p>
-    <p>
-      A <m>G</m>-module <m>M</m> is <em>projective</em>
+    <definition>
+      A <m>G</m>-module <m>M</m> is <term>projective</term>
       if for any surjection <m>N \to N'</m> of <m>G</m>-modules and any map <m>\phi: M \to N'</m>,
       there exists a map <m>\psi: M \to N</m> lifting <m>\phi</m>.
       This is the reverse notion to injective;
@@ -59,7 +59,7 @@
       For example,
       any <m>G</m>-module which is a free module over the ring <m>\ZZ[G]</m> is projective,
       e.g., <m>\ZZ[G]</m> itself!
-    </p>
+    </definition>
     <p>
       Given a projective resolution
       <m>\cdots \to P_1 \to P_0 \to M \to 0</m> of a <m>G</m>-module <m>M</m>
@@ -303,11 +303,10 @@
       we don't need any extra condition to get functoriality for <m>i \geq 0</m>.)
     </p>
   </subsection>
-  <subsection>
+  <exercises>
     <title>Exercises</title>
-    <ol>
-      <li>
-        <p>
+      <exercise>
+        <statement>
           The periodicity of the Tate groups for <m>G</m> cyclic means that there is a canonical
           (up to the choice of a generator of <m>G</m>)
           isomorphism between <m>H^{-1}_T(G, M)</m> and <m>H^1_T(G,M)</m>,
@@ -315,20 +314,21 @@
           What is this isomorphism explicitly?
           In other words, given an element of <m>\ker(\Norm_G)/MI_G</m>,
           what is the corresponding 1-cocycle?
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
           Put <m>K = \QQ_p(\sqrt{p})</m>.
           Compute the Herbrand quotient of <m>K^*</m> as a <m>G</m>-module for <m>G = \Gal(\QQ_p(\sqrt{p})/\QQ_p)</m>.
-          (Hint: use the exact sequence <m>1 \to \gotho_K^* \to K^* \to \ZZ \to 1</m>.)
-        </p>
-      </li>
-      <li>
-        <p>
+        </statement>
+        <hint>
+          Use the exact sequence <m>1 \to \gotho_K^* \to K^* \to \ZZ \to 1</m>.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
           Show that <m>\Res: H^{-2}_T(G, \ZZ) \to H^{-2}_T(H,\ZZ)</m> corresponds to the transfer (Verlagerung) map <m>G^{\ab} \to H^{\ab}</m>.
-        </p>
-      </li>
-    </ol>
-  </subsection>
+        </statement>
+      </exercise>
+  </exercises>
 </section>
