@@ -1,4 +1,4 @@
-<section xml:id="sec_zeta">
+﻿<section xml:id="sec_zeta">
   <title>Zeta functions and the Chebotarev density theorem</title>
   <introduction>
     <paragraphs>
@@ -110,7 +110,7 @@
       but as a function of <m>\gothp</m>,
       this Frobenius is only well-defined up to conjugation in <m>G</m>.
     </p>
-    <theorem>
+    <theorem xml:id="T_Chebotarev">
       <title>Chebotarev Density Theorem</title>
       <statement>
         <p>
@@ -176,6 +176,19 @@
         </statement>
         <hint>
           Combine the quantities <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> to cancel out all but one class.
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+        Let <m>L/K</m> be an extension of number fields. Suppose that for every prime <m>\gothp</m> of <m>K</m> which does not ramify in <m>L</m>,
+        all of the primes of <m>L</m> above <m>\gothp</m> have isomorphic residue fields. Using <xref ref="T_Chebotarev"></xref>, prove that <m>L/K</m> is Galois.
+        </statement>
+        <hint>
+        Let <m>M</m> be the Galois closure of <m>L/K</m>.
+        Put <m>G = \Gal(M/K)</m> and <m>H = \Gal(M/L)</m>.
+        For <m>\gothq</m> a prime of <m>M</m> with decomposition group <m>G_{\gothq}</m> lying above the prime <m>\gothp</m> of <m>K</m>, relate the orders of the
+        residue fields of the primes of <m>L</m> to the intersections of <m>G_{\gothq}</m> with the conjugates of <m>H</m> in <m>G</m>.
+        Use the fact that these conjugates have trivial intersection to deduce that <m>G_{\gothq}</m> must be trivial, and invoke <xref ref="T_Chebotarev"></xref> to conclude.
         </hint>
       </exercise>
   </exercises>

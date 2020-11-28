@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
   <docinfo>
 <macros>
@@ -61,7 +61,7 @@
 </latex-image-preamble>
   </docinfo>
   <book>
-    <title>Notes on class field theory (updated 25 Nov 2020)</title>
+    <title>Notes on class field theory (updated 27 Nov 2020)</title>
     <frontmatter>
       <titlepage>
         <author>

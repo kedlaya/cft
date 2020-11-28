@@ -7,6 +7,8 @@
         Washington, <pubtitle>Introduction to Cyclotomic Fields</pubtitle>, Chapter 14.
       </p>
     </paragraphs>
+  </introduction>
+  <subsection>
     <p>
       We now prove the local Kronecker-Weber theorem
       (<xref ref="T_local_Kronecker-Weber1">Theorem</xref>),
@@ -65,6 +67,7 @@
     <p>
       We now proceed to the proof of the local Kronecker-Weber theorem.
     </p>
+    <proof>
     <p>
       <em>Case 1: <m>q \neq p</m>.</em>
     </p>
@@ -221,7 +224,8 @@
       because <m>\QQ_2</m> does admit an extension with Galois group <m>(\ZZ/2\ZZ)^3</m>.
       We defer this case to the exercises.
     </p>
-  </introduction>
+    </proof>
+  </subsection>
   <exercises>
     <title>Exercises</title>
       <exercise>

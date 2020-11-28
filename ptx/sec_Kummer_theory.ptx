@@ -1,4 +1,4 @@
-<section xml:id="sec_Kummer_theory">
+﻿<section xml:id="sec_Kummer_theory">
   <title>Kummer theory</title>
   <introduction>
     <paragraphs>
@@ -22,10 +22,8 @@
     </definition>
     </paragraphs>
     <p>
-      Before attempting to classify all abelian extensions of <m>\QQ_p</m>,
-      we recall an older classification result.
-      This result will continue to be useful as we proceed to class field theory in general,
-      and the technique in its proof prefigures the role to be played by group cohomology down the line.
+      Before attempting to classify all abelian extensions of <m>\QQ_p</m>, we recall an older classification result.
+      This result will continue to be useful as we proceed to class field theory in general, and the technique in its proof prefigures the role to be played by group cohomology down the line.
       So watch carefully!
     </p>
     <p>
@@ -267,70 +265,83 @@
       </p>
       <p>
         Thus <m>g</m> and <m>h</m> commute if and only if <m>\langle h, a^g \rangle = \langle h, a^{\omega(g)}\rangle</m>,
-        if and only if
-        (by nondegeneracy)
-        <m>a^g/a^{\omega(g)} \in (L^*)^n</m>, as desired.
+        if and only if (by nondegeneracy) <m>a^g/a^{\omega(g)} \in (L^*)^n</m>, as desired.
       </p>
     </proof>
    </subsection>
   <exercises>
     <title>Exercises</title>
-      <exercise>
-        <statement>
-          Let <m>n</m> be a positive integer, let <m>K</m> be a field of characteristic coprime to <m>n</m>,
-          choose <m>a \in K^*</m>, and put <m>L = K(a^{1/n})</m>. Prove that <m>[K(a^{1/n}):K]</m> divides <m>n</m>.
-        </statement>
-        <hint>
-          Reduce to the case where <m>n</m> is prime. If <m>\zeta_n \in K</m>, use Kummer theory; otherwise,
-          consider the Galois closure <m>K(a^{1/n}, \zeta_n)</m> of <m>L/K</m>.
-        </hint>
-      </exercise>       
-      <exercise>
-        <statement>
-          Prove the linear independence of automorphisms:
-          if <m>g_1, \dots,
-          g_n</m> are distinct automorphisms of <m>L</m> over <m>K</m>,
-          then there do not exist <m>x_1, \dots,
-          x_n \in L</m> such that <m>x_1 y^{g_1} + \cdots + x_n y^{g_n} = 0</m> for all <m>y \in L</m>.
-        </statement>
-        <hint>
-          Suppose the contrary,
-          choose a counterexample with <m>n</m> as small as possible,
-          then make an even smaller counterexample.)
-        </hint>
-      </exercise>       
-      <exercise>
-        <statement>
-          Prove the additive analogue of <xref ref="L_theorem_90"></xref>:
-          if <m>L/K</m> is a finite Galois extension with Galois group <m>G</m>,
-          then <m>H^1(G, L) = 0</m>,
-          where the abelian group is now the additive group of <m>L</m>.
-        </statement>
-        <hint>
-          By the normal basis theorem
-          (see for example Lang, <pubtitle>Algebra</pubtitle>),
-          there exists <m>\alpha \in L</m> whose conjugates form a basis of <m>L</m> as a <m>K</m>-vector space.
-        </hint>
-      </exercise>       
-      <exercise>
-        <statement>
-          Prove the following extension of <xref ref="L_theorem_90"></xref> (also due to Speiser).
-          Let <m>L/K</m> be a finite Galois extension with Galois group <m>G</m>.
-          Despite the fact that <m>H^1(G, \GL(n,L))</m> does not make sense as a group (because
-          <m>\GL(n,L)</m> is not abelian), show nonetheless that
-          <q><m>H^1(G, \GL(n,L))</m> is trivial</q>
-          in the sense that every function <m>f: G \to \GL(n,L)</m> for which
-          <m>f(gh) = f(g)^h f(h)</m> for all <m>g,h \in G</m> can be written as
-          <m>x (x^g)^{-1}</m> for some <m>x \in \GL(n,L)</m>.
-        </statement>
-        <hint>
-          To imitate the proof in the case <m>n=1</m>,
-          one must find an <m>n \times n</m> matrix <m>x</m> over <m>L</m> such that
-          <m>t = \sum_{g \in G} x^g f(g)</m> is not only nonzero but <em>invertible</em>.
-          To establish this,
-          note that the set of possible values of <m>t</m> on one hand is an <m>L</m>-vector space,
-          and on the other hand satisfies no nontrivial <m>L</m>-linear relation.
-        </hint>
-      </exercise>       
+    <exercise>
+      <statement>
+        Let <m>n</m> be a positive integer, let <m>K</m> be a field of characteristic coprime to <m>n</m>,
+        choose <m>a \in K^*</m>, and put <m>L = K(a^{1/n})</m>. Prove that <m>[K(a^{1/n}):K]</m> divides <m>n</m>.
+      </statement>
+      <hint>
+        Reduce to the case where <m>n</m> is prime. If <m>\zeta_n \in K</m>, use Kummer theory; otherwise,
+        consider the Galois closure <m>K(a^{1/n}, \zeta_n)</m> of <m>L/K</m>.
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        With notation as in the previous exercise, prove that <m>[K(a^{1/n}):K] = n</m> if and only if
+        <m>a \notin (K^*)^p</m> for any prime divisor <m>p</m> of <m>n</m>.
+      </statement>
+      <hint>
+        Reduce to the case where <m>n</m> is a power of a prime <m>p</m>. 
+        The case <m>n=p</m> follows from the previous exercise.
+        By induction, the general case follows from the assertion that if <m>a \notin (K^*)^p</m>, then <m>a^{1/p} \notin (K(a^{1/p})^*)^p</m>,
+        which is equivalent to the case <m>n=p^2</m> of the original problem.
+        In this case, we only need to rule out the possibility that <m>K(a^{1/p^2}) = K(a^{1/p})</m>.
+        As in the previous exercise, we may reduce to the case <m>\zeta_p \in K</m>. If <m>a \notin (K(\zeta_{p^2})^*)^p</m>,
+        then we can further assume that <m>\zeta_{p^2} \in K</m> and argue using Kummer theory again;
+        otherwise, <m>K(a^{1/p}) = K(\zeta_{p^2})</m> and we can compare the Kummer parameters <m>a</m> and <m>\zeta_p</m> over <m>K</m>,
+        reducing to the case <m>a = \zeta_p</m> which we handle directly.
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        Prove the linear independence of automorphisms:
+        if <m>g_1, \dots, g_n</m> are distinct automorphisms of <m>L</m> over <m>K</m>,
+        then there do not exist <m>x_1, \dots, x_n \in L</m> such that <m>x_1 y^{g_1} + \cdots + x_n y^{g_n} = 0</m> for all <m>y \in L</m>.
+      </statement>
+      <hint>
+        Suppose the contrary,
+        choose a counterexample with <m>n</m> as small as possible,
+        then make an even smaller counterexample.
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        Prove the additive analogue of <xref ref="L_theorem_90"></xref>:
+        if <m>L/K</m> is a finite Galois extension with Galois group <m>G</m>,
+        then <m>H^1(G, L) = 0</m>,
+        where the abelian group is now the additive group of <m>L</m>.
+      </statement>
+      <hint>
+        By the normal basis theorem
+        (see for example Lang, <pubtitle>Algebra</pubtitle>),
+        there exists <m>\alpha \in L</m> whose conjugates form a basis of <m>L</m> as a <m>K</m>-vector space.
+      </hint>
+    </exercise> 
+    <exercise>
+      <statement>
+        Prove the following extension of <xref ref="L_theorem_90"></xref> (also due to Speiser).
+        Let <m>L/K</m> be a finite Galois extension with Galois group <m>G</m>.
+        Despite the fact that <m>H^1(G, \GL(n,L))</m> does not make sense as a group (because
+        <m>\GL(n,L)</m> is not abelian), show nonetheless that
+        <q><m>H^1(G, \GL(n,L))</m> is trivial</q>
+        in the sense that every function <m>f: G \to \GL(n,L)</m> for which
+        <m>f(gh) = f(g)^h f(h)</m> for all <m>g,h \in G</m> can be written as
+        <m>x (x^g)^{-1}</m> for some <m>x \in \GL(n,L)</m>.
+      </statement>
+      <hint>
+        To imitate the proof in the case <m>n=1</m>,
+        one must find an <m>n \times n</m> matrix <m>x</m> over <m>L</m> such that
+        <m>t = \sum_{g \in G} x^g f(g)</m> is not only nonzero but <em>invertible</em>.
+        To establish this,
+        note that the set of possible values of <m>t</m> on one hand is an <m>L</m>-vector space,
+        and on the other hand satisfies no nontrivial <m>L</m>-linear relation.
+      </hint>
+    </exercise>
   </exercises>
 </section>

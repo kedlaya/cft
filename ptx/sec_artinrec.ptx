@@ -88,6 +88,7 @@
       Before proceeding,
       we need to define the appropriate generalization of <m>(\ZZ/m\ZZ)^*</m> to number fields.
     </p>
+    <definition>
     <p>
       Recall that the ideal class group of <m>K</m> is defined as the group of fractional ideals modulo the subgroup of principal fractional ideals.
       Let <m>\gothm</m> be a formal product of places of <m>K</m>;
@@ -108,13 +109,12 @@
         </li>
       </ul>
       (There is no condition for complex places.) 
-    </p>
-    <definition>
       Then the
       <term>ray class group</term>
       <m>\Cl^\gothm(K)</m> is defined as the quotient <m>I_K^\gothm / P_K^\gothm</m>.
       A quotient of a ray class group is called a
       <term>generalized ideal class group</term>.
+    </p>
     </definition>
   </subsection>
   <subsection>

@@ -7,6 +7,8 @@
         Milne, Introduction; Neukirch, VI.6.
       </p>
     </paragraphs>
+  </introduction>
+  <subsection>
     <p>
       Recall that the field <m>\QQ</m> has no extensions which are everywhere unramified
       (<xref ref="T_Minkowski">Theorem</xref>).
@@ -71,7 +73,7 @@
       <m>[K_i:K_0]</m> can be unbounded.
       (See Cassels-Frohlich for more discussion.)
     </p>
-  </introduction>
+  </subsection>
   <exercises>
     <title>Exercises</title>
       <exercise>
@@ -141,7 +143,7 @@
       <exercise>
         <statement>
         Here is an easy way to generate nonabelian unramified extensions. 
-        Let <m>K</m> be a number field whose discriminant <m>D</m> is squarefree.
+        Let <m>K</m> be a number field of degree <m>n</m> with Galois group <m>S_n</m> whose discriminant <m>D</m> is squarefree.
         Prove that the Galois closure of <m>K</m> is unramified over all finite places of <m>\QQ(\sqrt{D})</m>.
         </statement>
       </exercise>
