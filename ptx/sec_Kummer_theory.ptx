@@ -4,23 +4,20 @@
     <paragraphs>
       <title>Reference</title>
       <p>
-        Serre, <pubtitle>Local Fields</pubtitle>, Chapter X; Neukirch section IV.3;
+        <xref ref="bib-Serre-LocalFields"/> Chapter X; <xref ref="bib-Neukirch"/> section IV.3;
         or just about any advanced algebra text (e.g., Lang's <pubtitle>Algebra</pubtitle>).
-        The last lemma is from Washington,
-        <pubtitle>Introduction to Cyclotomic Fields</pubtitle>, Chapter 14.
+        The last lemma is from <xref ref="bib-Washington"/>, Chapter 14.
       </p>
     </paragraphs>
   </introduction>
   <subsection>
-    <paragraphs>
-    <title>Jargon watch</title>
     <definition xml:id="D_G-extension">
+    <title>Jargon watch</title>
     <p>
       If <m>G</m> is a group, a <term><m>G</m>-extension</term>
       of a field <m>K</m> is a Galois extension of <m>K</m> with Galois group <m>G</m>.
     </p>
     </definition>
-    </paragraphs>
     <p>
       Before attempting to classify all abelian extensions of <m>\QQ_p</m>, we recall an older classification result.
       This result will continue to be useful as we proceed to class field theory in general, and the technique in its proof prefigures the role to be played by group cohomology down the line.
@@ -126,6 +123,8 @@
       (What we proved above was the case <m>r=1</m>,
       but the general case follows easily.)
       Another way is in terms of the absolute Galois group of <m>K</m>.
+    </p>
+    <definition>
       Define the <term>Kummer pairing</term>
       <me>
         \langle \cdot, \cdot \rangle: \Gal(\overline{K}/K) \times K^* \to \{1, \zeta_n, \dots, \zeta_n^{n-1} \}
@@ -138,7 +137,7 @@
       <m>y \zeta_n^k</m> for <m>k=0, \dots, n-1</m>,
       and <m>\zeta_n^\sigma = \zeta_n</m> by the assumption on <m>K</m>,
       so it drops out.
-    </p>
+    </definition>
     <theorem xml:id="T_Kummer_reformulated">
       <title>Kummer reformulated</title>
       <statement>

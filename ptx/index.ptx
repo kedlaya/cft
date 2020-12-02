@@ -45,6 +45,8 @@
 \DeclareMathOperator{\unr}{unr}
 \DeclareMathOperator{\Ver}{Ver}
 \newcommand{\head}[1]{  \textbf{#1}.}
+
+\renewcommand{\terminology}[1]{\emph{#1}}
 </macros>
 <latex-image-preamble>
 \usepackage{tikz}
@@ -61,7 +63,7 @@
 </latex-image-preamble>
   </docinfo>
   <book>
-    <title>Notes on class field theory (updated 27 Nov 2020)</title>
+    <title>Notes on class field theory</title>
     <frontmatter>
       <titlepage>
         <author>

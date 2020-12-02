@@ -1,3 +1,39 @@
-<references>
+﻿<references>
   <title>Bibliography</title>
+  <biblio xml:id="bib-Cassels-Frohlich">
+    J.W.S. Cassels and A. Fröhlich, <pubtitle>Algebraic Number Theory</pubtitle>.
+  </biblio>
+  <biblio xml:id="bib-Chevalley">
+    C. Chevalley, <articletitle>La thèorie du corps de classes</articletitle> (1940).
+  </biblio>
+  <biblio xml:id="bib-Frohlich-Taylor">
+    A. Fröhlich and M.J. Taylor, <pubtitle>Algebraic Number Theory</pubtitle>, Cambridge University Press, 1991.
+  </biblio>
+  <biblio xml:id="bib-Janusz">
+    G. Janusz, <pubtitle>Algebraic Number Fields</pubtitle>, American Mathematical Society, 1996.
+  </biblio>
+  <biblio xml:id="bib-Jarvis">
+    F. Jarvis, <pubtitle>Algebraic Number Fields</pubtitle>, Springer, Cham, 2014.
+  </biblio>
+  <biblio xml:id="bib-Lafforgue_L">
+    L. Lafforgue, <articletitle>Chtoucas de Drinfeld et correspondance de Langlands</articletitle>,
+    Inventiones Mathematicae 147 (2002), 1<ndash/>241.
+  </biblio>
+  <biblio xml:id="bib-Lang">
+    S. Lang, <pubtitle>Algebraic Number Theory</pubtitle>.
+  </biblio>
+  <biblio xml:id="bib-Milne-CFT">
+    J. Milne, <pubtitle>Class Field Theory</pubtitle>,
+    <url href="http://jmilne.org/math/CourseNotes/cft.html"/>, version 3.10.
+    We believe, but have not confirmed, that our references remain valid for more recent versions of this text.
+  </biblio>
+  <biblio xml:id="bib-Neukirch">
+    J. Neukirch, <pubtitle>Algebraic Number Theory</pubtitle>.
+  </biblio>
+  <biblio xml:id="bib-Serre-LocalFields">
+    J.-P. Serre, <pubtitle>Local Fields</pubtitle>.
+  </biblio>
+  <biblio xml:id="bib-Washington">
+    L. Washington, <pubtitle>Introduction to Cyclotomic Fields</pubtitle>.
+  </biblio>
 </references>

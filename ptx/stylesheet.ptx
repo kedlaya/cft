@@ -1,0 +1,22 @@
+﻿<?xml version='1.0'?>
+
+<!-- Conveniences for classes of similar elements -->
+<!DOCTYPE xsl:stylesheet [
+    <!ENTITY % entities SYSTEM "../entities.ent">
+    %entities;
+]>
+
+<!-- Identify as a stylesheet -->
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+>
+
+<!-- Override specific tenplates of the standard conversion -->
+<xsl:import href="../pretext-latex.xsl" />
+
+<!-- Intend output for rendering by pdflatex -->
+<xsl:output method="text" />
+
+
+</xsl:stylesheet>
+

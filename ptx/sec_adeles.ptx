@@ -1,11 +1,10 @@
-<section xml:id="sec_adeles">
+﻿<section xml:id="sec_adeles">
   <title>Ad&#xe8;les and id&#xe8;les</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
       <p>
-        Milne, Section V.4; Neukirch, Section VI.1 and VI.2; Lang,
-        <pubtitle>Algebraic Number Theory</pubtitle>, Chapter VII.
+        <xref ref="bib-Milne-CFT" />; <xref ref="bib-Neukirch" />, Section VI.1 and VI.2; <xref ref="bib-Lang" />, Chapter VII.
       </p>
     </paragraphs>
     <p>
@@ -19,26 +18,23 @@
       This object will be the ring of ad&#xe8;les,
       and it will lead us to the right target group for use in the abstract class field theory we have just set up.
     </p>
-  </introduction>
-  <subsection>
+    <remark>
     <title>Spelling note</title>
     <p>
       There is a lack of consensus regarding the presence or absence of accents in the words
       <em>ad&#xe8;le</em> and <em>id&#xe8;le</em>.
       The term <em>id&#xe8;le</em> is thought to be a contraction of
       <q>ideal element</q>; it makes its first appearance,
-      with the accent, in Chevalley's 1940 paper
-      <q>La th&#xe8;orie du corps de classes.</q>
+      with the accent, in Chevalley's 1940 paper <xref ref="bib-Chevalley" />.
       The term <em>ad&#xe8;le</em> appeared in the 1950s, possibly as a contraction of
       <q>additive id&#xe8;le</q>; it appears to have been suggested by Weil as a replacement for Tate's term
       <q>valuation vector</q>
       and Chevalley's term
       <q>repartition</q>. Based on this history, we have opted for the accented spellings here.
     </p>
-  </subsection>
-  <subsection>
+    </remark>
+    <definition>
     <title>Jargon watch</title>
-    <p>
       By a <term>place</term> of a number field <m>K</m>,
       we mean either an archimedean completion
       <m>K \hookrightarrow \RR</m> or <m>K \hookrightarrow \CC</m>
@@ -51,8 +47,8 @@
       we write <m>K_v</m> for the corresponding completion,
       which is either <m>\RR</m>,
       <m>\CC</m>, or <m>K_\gothp</m> for some prime <m>\gothp</m>.
-    </p>
-  </subsection>
+    </definition>
+  </introduction>
   <subsection>
     <title>The ad&#xe8;les</title>
     <p>
@@ -62,6 +58,9 @@
       In fact, we already know one way to complete <m>\ZZ</m>,
       namely its profinite completion <m>\widehat{\ZZ} = \prod_p \ZZ_p</m>.
       But we really want something containing <m>\QQ</m>.
+    </p>
+    <definition>
+      <p>
       We define the <term>ring of finite ad&#xe8;les</term>
       <m>\AA^{\fin}_\QQ</m> as any of the following isomorphic objects:
       <ul>
@@ -84,16 +83,19 @@
           </p>
         </li>
       </ul>
-    </p>
-    <p>
+      </p>
+      <p>
       For symmetry, we really should allow <em>all</em> places,
       not just the finite places.
       So we also define the <term>ring of ad&#xe8;les</term>
       over <m>\QQ</m> as <m>\AA_{\QQ} = \RR \times \AA^{\fin}_{\QQ}</m>.
       Then <m>\AA_{\QQ}</m> is a locally compact topological ring with a canonical embedding <m>\QQ \hookrightarrow \AA_{\QQ}</m>.
-    </p>
+      </p>
+    </definition>
     <p>
       Now for a general number field <m>K</m>.
+    </p>
+    <definition>
       The profinite completion <m>\widehat{\gotho_K}</m> is canonically isomorphic to <m>\prod_{\gothp} \gotho_{K_{\gothp}}</m>,
       so we define the <term>ring of finite ad&#xe8;les</term>
       <m>\AA^{\fin}_{K}</m> as any of the following isomorphic objects:
@@ -117,12 +119,12 @@
           </p>
         </li>
       </ul>
-    </p>
     <p>
       The ring of ad&#xe8;les <m>\AA_K</m> is the product of
       <m>\AA^{\fin}_K</m> with each archimedean completion.
       (That's one copy of <m>\RR</m> for each real embedding and one copy of <m>\CC</m> for each conjugate pair of complex embeddings.)
     </p>
+    </definition>
     <p>
       One has a natural norm on the ring of ad&#xe8;les,
       because one has a natural norm on each completion:
@@ -149,6 +151,7 @@
       one has the product formula:
     </p>
     <proposition>
+    <title>Product formula</title>
       <statement>
         <p>
           If <m>\alpha \in K</m>, then <m>|\alpha| = 1</m>.
@@ -197,7 +200,7 @@
   </subsection>
   <subsection>
     <title>Alternate description: restricted products of topological groups</title>
-    <p>
+    <definition>
       Let <m>G_1, G_2, \dots</m> be a sequence of locally compact topological groups and let <m>H_i</m> be a compact subgroup of <m>G_i</m>.
       The <term>restricted product</term>
       <m>G</m> of the pairs <m>(G_i, H_i)</m> is the set of tuples <m>(g_i)_{i=1}^\infty</m> such that
@@ -208,7 +211,7 @@
       and indeed <m>G</m> is the direct limit of the <m>G_S</m>.
       We make <m>G</m> into a topological group by giving each <m>G_S</m> the product topology and saying that
       <m>U \subset G</m> is open if its intersection with each <m>G_S</m> is open there.
-    </p>
+    </definition>
     <p>
       In this language,
       the additive group of ad&#xe8;les over <m>\QQ</m> is simply the restricted product of the pairs
@@ -218,7 +221,7 @@
   </subsection>
   <subsection>
     <title>Id&#xe8;les and the id&#xe8;le class group</title>
-    <p>
+    <definition>
       An <term>id&#xe8;le</term> is a unit in the ring <m>\AA_K</m>.
       In other words, it is a tuple <m>(\alpha_v)</m>,
       one element of <m>K_v^*</m> for each place <m>v</m> of <m>K</m>,
@@ -226,8 +229,8 @@
       Let <m>I_K</m> denote the group of id&#xe8;les of <m>K</m> (sometimes thought of as <m>\GL_1(\AA_K)</m>).
       This group is the restricted product of the pairs <m>(\RR^*, \RR^*)</m>,
       <m>(\CC^*, \CC^*)</m>, and <m>(K_{\gothp}^*, \gotho_{\gothp}^*)</m>.
-    </p>
-    <p>
+    </definition>
+    <definition>
       For example, for each element <m>\beta \in K</m>,
       we get an ad&#xe8;le in which <m>\alpha_v = \beta</m> for all <m>v</m>;
       this ad&#xe8;le is an id&#xe8;le if <m>\beta \neq 0</m>.
@@ -236,7 +239,7 @@
       and define the <term>id&#xe8;le class group</term>
       of <m>K</m> as the quotient
       <m>C_K = I_K/K^*</m> of the id&#xe8;les by the principal id&#xe8;les.
-    </p>
+    </definition>
   </subsection>
   <subsection>
     <title>Warning</title>
@@ -246,8 +249,7 @@
       For example,
       the set of id&#xe8;les whose component at each finite prime <m>\gothp</m> is in <m>\gotho_{\gothp}^*</m> is open,
       but not an intersection of the id&#xe8;le group with an open subset of the ad&#xe8;les.
-      See the exercises for one way to fix this,
-      and the last part of this section for another.
+      See the exercises for one way to fix this, and the last part of this section for another.
     </p>
     <p>
       There is a homomorphism from <m>I_K</m> to the group of fractional ideals of <m>K</m>:
@@ -393,15 +395,14 @@
       the Langlands program predicts a correspondence between <m>n</m>-dimensional representations of
       <m>\Gal(\overline{K}/K)</m> and certain representations of <m>\GL_n(\AA_K)</m>.
       In fact, with <m>K</m> replaced by the function field of a curve over a finite field,
-      this prediction is a deep theorem of L. Lafforgue
-      (based on work of Drinfeld).
+      this prediction is a deep theorem of L. Lafforgue <xref ref="bib-Lafforgue_L" />(based on work of Drinfeld).
     </p>
   </subsection>
   <exercises>
     <title>Exercises</title>
       <exercise>
         <statement>
-          Prove <xref ref="P_adelic_CRT">Proposition</xref>.
+          Prove <xref ref="P_adelic_CRT"></xref>.
         </statement>
       </exercise>
       <exercise>

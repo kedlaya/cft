@@ -1,10 +1,10 @@
-<section xml:id="sec_adeles-rel">
+﻿<section xml:id="sec_adeles-rel">
   <title>Ad&#xe8;les and id&#xe8;les in field extensions</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
       <p>
-        Neukirch, Section VI.1 and VI.2.
+      <xref ref="bib-Neukirch" />, Section VI.1 and VI.2.
       </p>
     </paragraphs>
   </introduction>

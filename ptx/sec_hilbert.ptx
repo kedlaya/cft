@@ -1,10 +1,10 @@
-<section xml:id="sec_hilbert">
+﻿<section xml:id="sec_hilbert">
   <title>The Hilbert class field</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
       <p>
-        Milne, Introduction; Neukirch, VI.6.
+      <xref ref="bib-Milne-CFT"/>, Introduction; <xref ref="bib-Neukirch"/>, VI.6.
       </p>
     </paragraphs>
   </introduction>
@@ -37,32 +37,31 @@
     <p>
       We've now seen that <m>\QQ(\sqrt{-5})</m> admits both a nonprincipal ideal and an unramified abelian extension.
       It turns out these are not unrelated events.
+    </p>
+    <definition>
       Caution: until further notice, the phrase
       <q><m>L/K</m> is unramified</q>
       will mean that <m>L/K</m> is unramified over all finite places in the usual sense,
       <em>and</em> that every real embedding of <m>K</m> extends to a real embedding of <m>L</m>.
       (Get used to this.
       The real and complex embeddings of a number field will be treated like primes consistently throughout this text.)
-    </p>
+    </definition>
     <theorem xml:id="T_Hilbert_class_field">
       <statement>
         <p>
           Let <m>L</m> be the maximal unramified abelian extension of a number field <m>K</m>.
           Then <m>L/K</m> is finite,
           and its Galois group is isomorphic to the ideal class group <m>\Cl(K)</m> of <m>K</m>.
+          The field <m>L</m> is called the <term>Hilbert class field</term> of <m>K</m>.
         </p>
       </statement>
     </theorem>
     <p>
-      In fact, there is a canonical isomorphism,
-      given by the Artin reciprocity law.
+      In fact, there is a canonical isomorphism, given by the Artin reciprocity law.
       We'll see this a bit later.
-      The field <m>L</m> is called the
-      <term>Hilbert class field</term> of <m>K</m>.
     </p>
     <p>
-      Warning: there can be infinite unramified
-      <em>nonabelian</em> extensions.
+      Warning: there can be infinite unramified <em>nonabelian</em> extensions.
       In fact, Golod and Shafarevich used unramified abelian extensions to construct these!
       Namely, starting from a number field <m>K = K_0</m>,
       let <m>K_1</m> be the Hilbert class field of <m>K_0</m>,
@@ -71,7 +70,7 @@
       Then <m>K_i</m> is an unramified but not necessarily abelian extension of <m>K_0</m>,
       and for a suitable choice of <m>K_0</m>,
       <m>[K_i:K_0]</m> can be unbounded.
-      (See Cassels-Frohlich for more discussion.)
+      (See <xref ref="bib-Cassels-Frohlich"/> for more discussion.)
     </p>
   </subsection>
   <exercises>

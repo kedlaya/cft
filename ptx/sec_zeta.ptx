@@ -187,7 +187,8 @@
         Let <m>M</m> be the Galois closure of <m>L/K</m>.
         Put <m>G = \Gal(M/K)</m> and <m>H = \Gal(M/L)</m>.
         For <m>\gothq</m> a prime of <m>M</m> with decomposition group <m>G_{\gothq}</m> lying above the prime <m>\gothp</m> of <m>K</m>, relate the orders of the
-        residue fields of the primes of <m>L</m> to the intersections of <m>G_{\gothq}</m> with the conjugates of <m>H</m> in <m>G</m>.
+        residue fields of the primes of <m>L</m> to the intersections of <m>G_{\gothq}</m> with the conjugates of <m>H</m> in <m>G</m>
+        (see <xref ref="R-decomposition-inertia"/>).
         Use the fact that these conjugates have trivial intersection to deduce that <m>G_{\gothq}</m> must be trivial, and invoke <xref ref="T_Chebotarev"></xref> to conclude.
         </hint>
       </exercise>

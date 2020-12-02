@@ -1,10 +1,10 @@
-<section xml:id="sec_localkronweb">
+﻿<section xml:id="sec_localkronweb">
   <title>The local Kronecker-Weber theorem</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
       <p>
-        Washington, <pubtitle>Introduction to Cyclotomic Fields</pubtitle>, Chapter 14.
+        <xref ref="bib-Washington"/>, Chapter 14.
       </p>
     </paragraphs>
   </introduction>
@@ -33,7 +33,7 @@
       <m>\Gal(K/\QQ_p) \cong \ZZ/q^r \ZZ</m> for some prime <m>q</m> and some positive integer <m>r</m>.
     </p>
     <p>
-      We first recall the following facts from the theory of local fields (e.g., see Neukirch II.7).
+      We first recall the following facts from the theory of local fields (e.g., see <xref ref="bib-Neukirch"/> II.7).
     </p>
     <lemma xml:id="lem_unram">
       <statement>

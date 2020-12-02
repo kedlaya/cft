@@ -1,4 +1,4 @@
-<preface>
+﻿<preface>
   <p>
     This text is a lightly edited version of the lecture notes of a course on class field theory (Math 254B) that I gave at
     UC Berkeley in the spring of 2002. To describe the scope of the course, I can do no better than to quote from the original syllabus:
@@ -20,10 +20,10 @@
   number fields and rings of integers; structure of the class and unit groups; splitting, ramification,
   and inertia of prime ideals under finite extensions; different and discriminant; basic properties of local fields.
   In fact, most of the students in Math 254B had attended such a course that I gave the previous
-  semester (Math 254A) based on chapters I, II, and III of Neukirch's <pubtitle>Algebraic Number Theory</pubtitle>; 
+  semester (Math 254A) based on chapters I, II, and III of Neukirch's book <xref ref="bib-Neukirch"/>; 
   for that reason, it was natural to use that book as a primary reference. 
   However, no special features of that presentation are assumed, so just about any graduate-level text on algebraic
-  number theory (e.g., Fr\"ohlich-Taylor, Janusz, Lang) should provide suitable background.
+  number theory (e.g., Fr\"ohlich-Taylor <xref ref="bib-Frohlich-Taylor"/>, Janusz <xref ref="bib-Janusz"/>, Jarvis, Lang <xref ref="bib-Lang"/>) should provide suitable background.
 </p>
 <p>
   After the course ended, I kept the lecture notes posted on my web site in their originally written, totally uncorrected state.
@@ -37,7 +37,7 @@
 </p>
 <p>
   I maintain very few claims of originality concerning the presentation of the material. 
-  Besides Neukirch, the main source of inspiration was <url href="http://jmilne.org/math/CourseNotes/cft.html">Milne's lecture notes on class field theory</url>, version 3.10 (note that a more recent version is available, but we have not verified that all references remain valid). These two sources are referenced simply as ``Neukirch'' and ``Milne,'' with additional references described more explicitly  as they occur.
+  Besides <xref ref="bib-Neukirch"/>, the main source of inspiration was Milne's lecture notes on class field theory<xref ref="bib-Milne-CFT"/>.
   The basic approach may be summarized as follows: I follow Milne's treatment of local class field theory using group cohomology, then follow Neukirch to  recast local class field theory in the style of Artin-Tate's class formations, then reuse the same framework to obtain global class field theory. 
 </p>
 <p>
@@ -46,8 +46,12 @@ This document is not yet in a final state; consequently, corrections and comment
 <acknowledgment>
 <p>
   Thanks to Zonglin Jiang, Justin Lacini, and Zongze Liu for their feedback on previous drafts.
-  Thanks also to Rob Beezer and David Farmer for their assistance with the conversion from <latex /> to was generated using <url href="https://pretextbook.org/"><pretext /></url>.
+  Thanks also to Rob Beezer and David Farmer for their assistance with the conversion from <latex/> to <url href="https://pretextbook.org/"><pretext /></url>,
+  which made it feasible to produce an HTML version.
 </p>
 </acknowledgment>
+<p>
+Last modified: <today/>.
+</p>
 </preface>
 

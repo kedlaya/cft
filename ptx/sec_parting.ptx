@@ -1,4 +1,4 @@
-<section xml:id="sec_parting">
+﻿<section xml:id="sec_parting">
   <title>Parting thoughts</title>
   <p>
     Class field theory is a vast expanse of mathematics,
@@ -125,7 +125,7 @@
       <li>
         <p>
           Class field theory for function fields used to produce curves over finite fields with unusually many points
-          (see the web site \url{http://manypoints.org} for references).
+          (see the web site <url xref="http://manypoints.org">manypoints.org</url> for references).
         </p>
       </li>
       <li>
@@ -166,8 +166,7 @@
     and on the other hand representations of
     <m>\GL_2(\AA_K)</m> corresponding to modular forms.
     In particular, it includes the
-    <q>modularity of elliptic curves</q>, proved by Breuil, Conrad, Diamond,
-    and Taylor following on the celebrated work of Wiles on Fermat's Last Theorem.
+    <q>modularity of elliptic curves</q>, proved by Breuil, Conrad, Diamond, and Taylor following on the celebrated work of Wiles and Taylor-Wiles on Fermat's Last Theorem.
   </p>
   <p>
     Various analogues of the Langlands correspondence have been worked out very recently:
