@@ -35,6 +35,7 @@
 \DeclareMathOperator{\Ind}{Ind}
 \DeclareMathOperator{\Inf}{Inf}
 \DeclareMathOperator{\inv}{inv}
+\DeclareMathOperator{\lcm}{lcm}
 \DeclareMathOperator{\Norm}{Norm}
 \DeclareMathOperator{\Real}{Re}
 \DeclareMathOperator{\Res}{Res}
