@@ -15,7 +15,7 @@
       This is quite definitely not true of other number fields;
       we begin with an example illustrating this.
     </p>
-    <example>
+    <example xml:id="ex-unramified">
     <title>An unramified extension of a number field</title>
     <p>
       In the number field <m>K = \QQ(\sqrt{-5})</m>,
@@ -57,21 +57,14 @@
       </statement>
     </theorem>
     <p>
-      In fact, there is a canonical isomorphism, given by the Artin reciprocity law.
-      We'll see this a bit later.
+      In fact, there is a canonical isomorphism, given by the Artin reciprocity law
+      (<xref ref="T-Artin-reciprocity"/>).
     </p>
-    <p>
-      Warning: there can be infinite unramified <em>nonabelian</em> extensions.
-      In fact, Golod and Shafarevich used unramified abelian extensions to construct these!
-      Namely, starting from a number field <m>K = K_0</m>,
-      let <m>K_1</m> be the Hilbert class field of <m>K_0</m>,
-      let <m>K_2</m> be the Hilbert class field of <m>K_1</m>,
-      and so on.
-      Then <m>K_i</m> is an unramified but not necessarily abelian extension of <m>K_0</m>,
-      and for a suitable choice of <m>K_0</m>,
-      <m>[K_i:K_0]</m> can be unbounded.
-      (See <xref ref="bib-Cassels-Frohlich"/> for more discussion.)
-    </p>
+    <remark>
+      While <xref ref="T_Hilbert_class_field"/> implies that an abelian unramified extension must be finite,
+      there can be infinite unramified <em>nonabelian</em> extensions.
+      See <xref ref="R-class-field-towers"/>.
+    </remark>
   </subsection>
   <exercises>
     <title>Exercises</title>
@@ -141,9 +134,9 @@
       </exercise>
       <exercise>
         <statement>
-        Here is an easy way to generate nonabelian unramified extensions. 
         Let <m>K</m> be a number field of degree <m>n</m> with Galois group <m>S_n</m> whose discriminant <m>D</m> is squarefree.
-        Prove that the Galois closure of <m>K</m> is unramified over all finite places of <m>\QQ(\sqrt{D})</m>.
+        Prove that the Galois closure of <m>K</m> is unramified over all finite places of <m>\QQ(\sqrt{D})</m>. This gives an ample supply
+        of everywhere unramified extensions (of various fields) which are nonabelian for <m>n > 3</m>.
         </statement>
       </exercise>
   </exercises>

@@ -1,29 +1,31 @@
 ﻿<section xml:id="sec_zeta">
-  <title>Zeta functions and the Chebotarev density theorem</title>
+  <title>Zeta functions and the Chebotar&#xeb;v density theorem</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
       <p>
-        Lang, <pubtitle>Algebraic Number Theory</pubtitle>, Chapter VIII for starters;
-        see also Milne, Chapter VI and Neukirch, Chapter VII. For advanced reading,
-        see Tate's thesis
-        (last chapter of Cassels-Frohlich),
-        but wait until we introduce the adeles.
+        <xref ref="bib-Lang"/>, Chapter VIII for starters;
+        see also <xref ref="bib-Milne-CFT"/>, Chapter VI and <xref ref="bib-Neukirch"/>, Chapter VII. For advanced reading,
+        see Tate's thesis (last chapter of <xref ref="bib-Cassels-Frohlich"/>),
+        but wait until we introduce the ad&#xe8;les (<xref ref="sec_adeles"/>).
       </p>
     </paragraphs>
+  </introduction>
+  <subsection>
+    <title>The Dedekind zeta function of a number field</title>
     <p>
       Although this is supposed to be a course on algebraic number theory,
       the following analytic discussion is so fundamental that we must at least allude to it here.
     </p>
     <definition>
       Let <m>K</m> be a number field.
-      The <term>Dedekind zeta function</term>
-      <m>\zeta_K(s)</m> is a function on the complex plane given,
+      The <term>Dedekind zeta function</term> <m>\zeta_K(s)</m> is a function on the complex plane given,
       for <m>\Real(s) > 1</m>, by the absolutely convergent product and sum
       <me>
         \zeta_K(s) = \prod_\gothp (1 - \Norm(\gothp)^{-s})^{-1} = \zeta_K(s) = \sum_{\gotha} \Norm(\gotha)^{-s}
-      </me>,
-      where in the sum <m>\gotha</m> runs over the nonzero ideals of <m>\gotho_K</m>.
+      </me>
+      where <m>\gothp</m> runs over the nonzero prime ideals of <m>\gotho_K</m> 
+      and <m>\gotha</m> runs over the nonzero ideals of <m>\gotho_K</m>.
     </definition>
     <p>
       A fundamental fact about the zeta function is the following.
@@ -44,16 +46,20 @@
       zeros along the negative real axis,
       the zeroes of <m>\zeta_K</m> all have real part <m>1/2</m>.
     </p>
-    <p>
+  </subsection>
+  <subsection>
+    <title><m>L</m>-functions of abelian characters</title>
+    <definition>
       More generally,
       let <m>\gothm</m> be a formal product of places of <m>K</m>,
       and let <m>\chi_\gothm: \Cl^\gothm(K) \to \CC^*</m> be a character of the ray class group of conductor <m>\gothm</m>.
       Extend <m>\chi_\gothm</m> to a function on all ideals of <m>K</m> by declaring its value to be 0 on ideals not coprime to <m>\gothm</m>.
-      Then we define the <m>L</m>-function
+      Then we define the <term><m>L</m>-function</term>
       <me>
-        L(s, \chi_\gothm) = \prod_{\gothp \not| \gothm} (1 - \chi(\gothp) \Norm(\gothp)^{-s})^{-1} = \sum_{(\gotha, \gothm) = 1} \chi(\gotha) \Norm(\gotha)^{-s}
-      </me>.
-    </p>
+        L(s, \chi_\gothm) = \prod_{\gothp \not| \gothm} (1 - \chi(\gothp) \Norm(\gothp)^{-s})^{-1} = \sum_{(\gotha, \gothm) = 1} \chi(\gotha) \Norm(\gotha)^{-s};
+      </me>
+      again the product converges absolutely for <m>\Real(s) > 1</m>.
+    </definition>
     <p>
       Then we have another basic fact whose proof we also omit.
     </p>
@@ -66,9 +72,15 @@
       </statement>
     </theorem>
     <p>
-      If <m>\chi_\gothm</m> is trivial,
+      By contrast, if <m>\chi_\gothm</m> is trivial,
       then <m>L(s, \chi_\gothm)</m> is just the Dedekind zeta function with the Euler factors for primes dividing <m>\gothm</m> removed,
       so it still has a pole at <m>s=1</m>.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Nonvanishing of <m>L</m>-functions and consequences</title>
+    <p>
+      One more basic fact, whose proof we again omit, is the following.
     </p>
     <theorem xml:id="T_nonvanishing_of_L">
       <statement>
@@ -79,43 +91,42 @@
       </statement>
     </theorem>
     <p>
-      This is already a nontrivial,
-      but important result over <m>\QQ</m>.
+      For <m>K = \QQ</m>, this is already a nontrivial but important result.
       It implies Dirichlet's famous theorem that there are infinitely many primes in arithmetic progression,
-      by implying that for any nontrivial <m>\chi_\gothm</m>,
+      via the conclusion that for any nontrivial <m>\chi_\gothm</m>,
       <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> remains bounded as <m>s \to \infty</m>.
-      In fact, we say that a set of primes <m>S</m> in a number field <m>K</m> has Dirichlet density <m>d</m> if
+      In fact, we say that a set of primes <m>S</m> in a number field <m>K</m> has <term>Dirichlet density</term> <m>d</m> if
       <me>
         \lim_{s \to 1^+} \frac{\sum_{\gothp \in S} \Norm(\gothp)^{-s}}{\log \frac{1}{s-1}} = d
       </me>.
     </p>
     <p>
-      Then the fact implies that the Dirichlet density of the set of primes congruent to <m>a</m> modulo <m>m</m>
-      (assuming <m>a</m> is coprime to <m>m</m>)
-      is <m>1/\phi(m)</m>.
+      Then <xref ref="T_nonvanishing_of_L"/> implies that the Dirichlet density of the set of primes congruent to <m>a</m> modulo <m>m</m>
+      is <m>1/\phi(m)</m> if <m>a</m> is coprime to <m>m</m> (and <m>0</m> otherwise).
     </p>
     <p>
       The fact also implies that for any number field <m>K</m> and any formal product of places <m>\gothm</m>,
       there are infinitely many primes in each class of the ray class group of conductor <m>\gothm</m>,
       the set of such primes having Dirichlet density <m>1/\#\Cl^\gothm(K)</m>.
-      (Proof: see exercises.)
+      (See <xref ref="exc-density-of-ray-classes"/>.)
     </p>
+  </subsection>
+  <subsection>
+    <title>The Chebotar&#xeb;v density theorem</title>
     <p>
       Finally, we point out a result of class field theory that also applies to nonabelian extensions.
       Recall that if <m>L/K</m> is any Galois extension of number fields with Galois group <m>G</m>,
-      <m>\gothp</m> is a prime of <m>K</m>,
-      and <m>\gothq</m> is a prime above <m>\gothp</m> which is unramified,
-      then there is a well-defined Frobenius associated to <m>\gothq</m> (it's the element <m>g</m> of the decomposition group
-      <m>G_{\gothq}</m> such that <m>x^g \equiv x^{\#(\gotho_K/\gothp)} \pmod{\gothq}</m>);
-      but as a function of <m>\gothp</m>,
-      this Frobenius is only well-defined up to conjugation in <m>G</m>.
+      <m>\gothp</m> is a prime of <m>K</m> which does not ramify in <m>L</m>,
+      and <m>\gothq</m> is a prime above <m>\gothp</m>,
+      then there is a well-defined Frobenius associated to <m>\gothq</m>: it's the element <m>g</m> of the decomposition group
+      <m>G_{\gothq}</m> such that <m>x^g \equiv x^{\#(\gotho_K/\gothp)} \pmod{\gothq}</m>.
+      Keep in mind thaht as a function of <m>\gothp</m>, this Frobenius is only well-defined up to conjugation in <m>G</m>.
     </p>
     <theorem xml:id="T_Chebotarev">
-      <title>Chebotarev Density Theorem</title>
+      <title>Chebotar&#xeb;v density theorem</title>
       <statement>
         <p>
-          Let <m>L/K</m> be an arbitrary Galois extension of number fields,
-          with Galois group <m>G</m>.
+          Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>.
           Then for any <m>g \in G</m>,
           there exist infinitely many primes <m>\gothp</m> of <m>K</m> such that there is a prime <m>\gothq</m> of <m>L</m> above <m>\gothp</m> with Frobenius <m>g</m>.
           In fact, the Dirichlet density of such primes <m>\gothp</m> is the order of the conjugacy class of <m>G</m> divided by <m>\#G</m>.
@@ -136,8 +147,7 @@
       <p>
         Let <m>Z</m> be the centralizer of <m>g</m> in <m>G</m>;
         that is, <m>Z = \{z \in G: zg = gz\}</m>.
-        Then for each prime of <m>K</m>
-        (of absolute degree 1)
+        Then for each prime of <m>K</m> of absolute degree 1)
         with Frobenius in the conjugacy class of <m>g</m>,
         there are <m>\#Z/f</m> primes of <m>K'</m> above it
         (also of absolute degree 1)
@@ -152,7 +162,37 @@
         note that the order of the conjugacy class of <m>G</m> is <m>\#G/\#Z</m>.
       </p>
     </proof>
-  </introduction>
+    <corollary xml:id="cor-some-primes-split">
+      <statement>
+        Let <m>L/K</m> be a nontrivial extension of number fields. Then there exist infinitely many primes of <m>K</m> which do not split completely in <m>L</m>.
+      </statement>
+      <proof>
+        <p>
+        Let <m>M/K</m> be the Galois closure of <m>L/K</m>, and set <m>G = \Gal(M/K), H = \Gal(M/L)</m>.
+        By hypothesis, <m>G</m> is not the trivial group and the conjugates of <m>H</m> in <m>G</m> have trivial intersection.
+        </p>
+        <p>
+        Let <m>\gothp</m> be any prime of <m>K</m> which does not ramify in <m>M</m> and let <m>\gothq</m> be a prime of <m>M</m> above <m>K</m>.
+        Then <m>\gothp</m> splits completely in <m>M</m> if and only if the Frobenius element of <m>\gothq</m> is trivial.
+        Moreover, if <m>\gothp</m> splits completely in <m>L</m>, then <m>g</m> lies in every conjugate of <m>H</m> and hence must be trivial,
+        so <m>\gothp</m> also splits completely in <m>M</m>. (The converse is also true.)
+        </p>
+        <p>
+        Since <m>G \neq H</m>, we can choose an element <m>g \in G \setminus H</m>. 
+        By <xref ref="T_Chebotarev"/>, there exist infinitely many primes <m>\gothp</m>
+        of <m>K</m> for which there is a prime <m>\gothq</m> of <m>L</m> above <m>\gothp</m> with Frobenius <m>g</m>.
+        By the previous discussion, any such <m>\gothp</m> does not split completely in <m>K</m>.
+        </p>
+      </proof>
+    </corollary>
+    <remark>
+      <p>
+        <xref ref="T_Chebotarev"/> is a special case of a much more general equidistribution conjecture including, among other things,
+        the <term>Sato-Tate conjecture</term> on the distribution of Frobenius traces of elliptic curves. See 
+        <xref ref="bib-Serre-NXp"/> for an introduction to this circle of ideas.
+      </p>
+    </remark>
+  </subsection>
   <exercises>
     <title>Exercises</title>
       <exercise>
@@ -166,7 +206,7 @@
           the Dirichlet density of the set of primes <m>\gothp</m> of absolute degree greater than 1 is zero.
         </statement>
       </exercise>
-      <exercise>
+      <exercise xml:id="exc-density-of-ray-classes">
         <statement>
           Let <m>\gothm</m> be a formal product of places of the number field <m>K</m>.
           Using <xref ref="T_meromorphic_continuation">Theorems</xref>,
@@ -190,6 +230,22 @@
         residue fields of the primes of <m>L</m> to the intersections of <m>G_{\gothq}</m> with the conjugates of <m>H</m> in <m>G</m>
         (see <xref ref="R-decomposition-inertia"/>).
         Use the fact that these conjugates have trivial intersection to deduce that <m>G_{\gothq}</m> must be trivial, and invoke <xref ref="T_Chebotarev"></xref> to conclude.
+        </hint>
+      </exercise>
+      <exercise xml:id="exc-Artin-map-surjective">
+        <statement>
+          Let <m>L/K</m> be an abelian extension of number fields.
+          Using <xref ref="cor-some-primes-split"/>, show that the homomorphism <m>I_K^\gothm \to \Gal(L/K)</m> is surjective.
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          Let <m>K</m> be a number field and let <m>\gothm</m> be a formal product of places of <m>K</m>.
+          Use <xref ref="cor-some-primes-split"/> to show that the ray class field of <m>\gothm</m> is unique.
+        </statement>
+        <hint>
+          Show that if <m>L_1, L_2</m> are both ray class fields of <m>\gothm</m>, then all but finitely many primes of <m>L_1</m> split
+          completely in the compositum <m>L_1L_2</m> (namely, those which do not ramify in the compositum).
         </hint>
       </exercise>
   </exercises>

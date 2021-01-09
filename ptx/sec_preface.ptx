@@ -1,5 +1,8 @@
 ﻿<preface>
   <p>
+  Last modified: <today/>.
+  </p>
+  <p>
     This text is a lightly edited version of the lecture notes of a course on class field theory (Math 254B) that I gave at
     UC Berkeley in the spring of 2002. To describe the scope of the course, I can do no better than to quote from the original syllabus:
   </p>
@@ -37,21 +40,20 @@
 </p>
 <p>
   I maintain very few claims of originality concerning the presentation of the material. 
-  Besides <xref ref="bib-Neukirch"/>, the main source of inspiration was Milne's lecture notes on class field theory<xref ref="bib-Milne-CFT"/>.
+  Besides <xref ref="bib-Neukirch"/>, the main source of inspiration was Milne's lecture notes on class field theory <xref ref="bib-Milne-CFT"/>.
   The basic approach may be summarized as follows: I follow Milne's treatment of local class field theory using group cohomology, then follow Neukirch to  recast local class field theory in the style of Artin-Tate's class formations, then reuse the same framework to obtain global class field theory. 
 </p>
 <p>
-This document is not yet in a final state; consequently, corrections and comments are welcome.
+As of winter 2021, I am using these notes for <url href="https://math.ucsd.edu/~kkedlaya/math204b/">a class </url> and so am starting to make somewhat more serious revisions.
+Corrections and comments are welcome.
 </p>
 <acknowledgment>
 <p>
-  Thanks to Zonglin Jiang, Justin Lacini, and Zongze Liu for their feedback on previous drafts.
+  Thanks to Zonglin Jiang, Justin Lacini, and Zongze Liu for their feedback on previous drafts,
+  and to the participants in Math 204B (winter 2021) for "test-driving" the HTML version and generating much additional feedback.
   Thanks also to Rob Beezer and David Farmer for their assistance with the conversion from <latex/> to <url href="https://pretextbook.org/"><pretext /></url>,
   which made it feasible to produce an HTML version.
 </p>
 </acknowledgment>
-<p>
-Last modified: <today/>.
-</p>
 </preface>
 

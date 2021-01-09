@@ -20,7 +20,7 @@
     Inventiones Mathematicae 147 (2002), 1<ndash/>241.
   </biblio>
   <biblio xml:id="bib-Lang-algebra">
-    S. Lang, <pubtitle>Algebraic Number Theory</pubtitle>.
+    S. Lang, <pubtitle>Algebra</pubtitle>.
   </biblio>
   <biblio xml:id="bib-Lang">
     S. Lang, <pubtitle>Algebraic Number Theory</pubtitle>.
@@ -33,8 +33,14 @@
   <biblio xml:id="bib-Neukirch">
     J. Neukirch, <pubtitle>Algebraic Number Theory</pubtitle>.
   </biblio>
+  <biblio xml:id="bib-Serre-GaloisCohomology">
+    J.-P. Serre, <pubtitle>Galois Cohomology</pubtitle>.
+  </biblio>
   <biblio xml:id="bib-Serre-LocalFields">
     J.-P. Serre, <pubtitle>Local Fields</pubtitle>.
+  </biblio>
+  <biblio xml:id="bib-Serre-NXp">
+    J.-P. Serre, <pubtitle>Lectures on <m>N_X(p)</m></pubtitle>.
   </biblio>
   <biblio xml:id="bib-Washington">
     L. Washington, <pubtitle>Introduction to Cyclotomic Fields</pubtitle>.

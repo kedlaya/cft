@@ -28,6 +28,24 @@
     <p>
       We first recall the following facts from the theory of local fields (e.g., see <xref ref="bib-Neukirch"/> II.7).
     </p>
+    <definition>
+      <p>
+        Let <m>L/K</m> be an extension of finite extensions of <m>\QQ_p</m>.
+        Let <m>\gotho_K, \gotho_L</m> be the integral closures of <m>\ZZ_p</m> in <m>K, L</m>.
+        We say that <m>L/K</m> is <term>unramified</term> if the maximal ideal of <m>\gotho_K</m>
+        generates the maximal ideal of <m>\gotho_L</m>. In other words, any element <m>\pi</m> of <m>K</m> which generates
+        the maximal ideal of <m>\gotho_K</m> (i.e., any <term>uniformizer</term> of <m>K</m>) is also a uniformizer of <m>L</m>.
+        In still other words, the condition is that the <term>ramification index</term> <m>e(L/K)</m> is equal to <m>1</m>.
+      </p>
+      <p>
+        In general, there is a maximal subextension of <m>L/K</m> which is unramified.
+        If this is <m>K</m> itself, we say that <m>L/K</m> is <term>totally ramified</term>.
+      </p>
+      <p>
+        Let <m>U</m> be the maximal unramified subextension of <m>L/K</m>. We say that <m>L/K</m> is <term>tamely ramified</term>
+        if the degree <m>[L:U]</m> is not divisible by <m>p</m>. In other words, the condition is that <m>e(L/K)</m> is not divisible by <m>p</m>.
+      </p>
+    </definition>
     <lemma xml:id="lem_unram">
       <statement>
         <p>
@@ -47,9 +65,7 @@
       <statement>
         <p>
           Let <m>L/K</m> be a totally and tamely ramified extension of finite extensions of <m>\QQ_p</m> of degree <m>e</m>.
-          (Recall that tamely ramified means that <m>p</m> does not divide <m>e</m>.)
-          Then there exists a uniformizer <m>\pi</m> of <m>K</m> (i.e., a generator of the maximal ideal of the valuation ring of <m>K</m>)
-          such that <m>L = K(\pi^{1/e})</m>.
+          Then there exists a uniformizer <m>\pi</m> of <m>K</m> such that <m>L = K(\pi^{1/e})</m>.
         </p>
       </statement>
     </lemma>
@@ -59,7 +75,7 @@
       congruent to 1 modulo <m>\pi_L</m>. By Hensel's lemma, <m>u</m> has an <m>e</m>-th root in <m>L</m>, as then does <m>\pi</m>.
     </proof>
     <p>
-      We now proceed to the proof of <xref ref="T_local_Kronecker-Weber2"/>.
+      We now proceed to the proof of <xref ref="T_local_Kronecker-Weber2"/>, modulo some lemmas which we fill in later.
     </p>
     <proof>
     <p>
@@ -151,6 +167,9 @@
       <xref ref="exer-local-kronweb-part2"/>, and <xref ref="exer-local-kronweb-part3"/>.
     </p>
     </proof>
+    <p>
+      We now return to the lemmas that we skipped over in the previous proof.
+    </p>
     <lemma xml:id="lem_zetap">
       <statement>
         <p>
@@ -292,7 +311,8 @@
         </statement>
         <hint>
           Reduce to showing that there exists no extension of <m>\QQ_2</m> containing
-          <m>\QQ_2(\sqrt{-1})</m> with Galois group <m>\ZZ/4\ZZ</m>.
+          <m>\QQ_2(\sqrt{-1})</m> with Galois group <m>\ZZ/4\ZZ</m>. Prove this by following the argument of 
+          <xref ref="lem_three"/>.
         </hint>
       </exercise>
   </exercises>

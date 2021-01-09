@@ -97,12 +97,21 @@
     </p>
     <proof>
       <p>
-        On one hand, if <m>\alpha \in K^*</m> is such that
-        <m>\alpha^{1/d} \notin K</m> for any proper divisor <m>d</m> of <m>n</m>,
-        then the polynomial <m>x^n - \alpha</m> is irreducible over <m>K</m>,
-        and every automorphism must have the form
-        <m>\alpha \mapsto \alpha \zeta_n^r</m> for some <m>r \in \ZZ/n\ZZ</m>.
-        Thus <m>\Gal(K(\alpha^{1/n})/K) \cong \ZZ/n\ZZ</m>.
+        On one hand, suppose that <m>\alpha \in K^*</m> is such that
+        <m>\alpha^{1/d} \notin K</m> for any proper divisor <m>d</m> of <m>n</m>.
+        Then every automorphism of <m>K(\alpha^{1/n})</m> over <m>K</m> must have the form
+        <m>\alpha \mapsto \alpha \zeta_n^r</m> for some <m>r \in \ZZ/n\ZZ</m>;
+        this defines a homomorphism <m>\Gal(K(\alpha^{1/n})/K) \cong \ZZ/n\ZZ</m> which is injective
+        because any automorphism of <m>K(\alpha^{1/n})</m> over <m>K</m> is uniquely determined by its effect on <m>\alpha^{1/n}</m>.
+        We claim that this map is also surjective. If <m>n</m> is prime, we can see this from the fact that by hypothesis
+        <m>K(\alpha^{1/p}) \neq K</m>, so the map <m>\Gal(K(\alpha^{1/n})/K) \cong \ZZ/n\ZZ</m> is an injective map from a nonzero
+        group into a prime cyclic group and hence must be surjective. In the general case, note that the definition of the map
+        <m>\Gal(K(\alpha^{1/n})/K) \cong \ZZ/n\ZZ</m> is compatible with replacing <m>n</m> with one of its prime factors <m>p</m>, 
+        and this logic tells us that the image of <m>\Gal(K(\alpha^{1/n})/K)</m> in <m>\ZZ/n\ZZ</m> cannot be contained in <m>p\ZZ/n\ZZ</m>
+        for any prime divisor <m>p</m> of <m>n</m>. So again we conclude that 
+        <m>\Gal(K(\alpha^{1/n})/K) \cong \ZZ/n\ZZ</m>.
+        (As a corollary, we deduce that the polynomial <m>x^n - \alpha</m> is irreducible over <m>K</m>;
+        see <xref ref="ex-Kummer-extension-not-Galois-1"/> and <xref ref="ex-Kummer-extension-not-Galois-2"/> for discussion of what happens when <m>\zeta_n \notin K</m>.)
       </p>
       <p>
         On the other hand, let <m>L</m> be an arbitrary
@@ -149,8 +158,11 @@
         <p>
           The Kummer pairing induces an isomorphism
           <me>
-            K^*/(K^*)^n \to \Hom(\Gal(\overline{K}/K), \ZZ/n\ZZ)
-          </me>.
+            K^*/(K^*)^n \to \Hom_{\mathrm{cts}}(\Gal(\overline{K}/K), \ZZ/n\ZZ)
+          </me>
+          where the subscript <m>\mathrm{cts}</m> indicates continuous homomorphisms for the profinite topology on <m>\Gal(\overline{K}/K)</m>
+          and the discrete topology on <m>\ZZ/n\ZZ</m>. Concretely, this means we consider homomorphisms that factor through a quotient
+          of the form <m>\Gal(L/K)</m> for some finite extension <m>L</m> of <m>K</m>.
         </p>
       </statement>
     </theorem>
@@ -176,7 +188,7 @@
         By Kummer theory, <m>L = K(y^{1/d})</m> for some <m>y</m>.
         But now the homomorphisms induced by <m>y^{mn/d}</m>,
         as <m>m</m> runs over all integers coprime to <m>d</m>,
-        give all possible homomorphisms of <m>\Gal(\overline{K}/K)/H</m> to <m>\ZZ/d\ZZ</m>,
+        give all possible surjective homomorphisms of <m>\Gal(\overline{K}/K)/H</m> to <m>\ZZ/d\ZZ</m>,
         so one of them must equal <m>f</m>.
         Thus surjectivity follows.
       </p>
@@ -275,19 +287,20 @@
    </subsection>
   <exercises>
     <title>Exercises</title>
-    <exercise>
+    <exercise xml:id="ex-Kummer-extension-not-Galois-1">
       <statement>
         Let <m>n</m> be a positive integer, let <m>K</m> be a field of characteristic coprime to <m>n</m>,
-        choose <m>a \in K^*</m>, and put <m>L = K(a^{1/n})</m>. Prove that <m>[K(a^{1/n}):K]</m> divides <m>n</m>.
+        choose <m>a \in K^*</m>, and put <m>L = K(a^{1/n})</m>. Prove that <m>[L:K]</m> divides <m>n</m>.
       </statement>
       <hint>
-        Reduce to the case where <m>n</m> is prime. If <m>\zeta_n \in K</m>, use Kummer theory; otherwise,
-        consider the Galois closure <m>K(a^{1/n}, \zeta_n)</m> of <m>L/K</m>.
+        Reduce to the case where <m>n</m> is prime. Since <m>[K(\zeta_n):K]</m> is coprime to <m>n</m>, by taking norms we see that
+        <m>a \in (K^*)^n</m> if and only if <m>a \in (K(\zeta_n)^*)^n</m>; we may thus reduce to the case <m>\zeta_n \in K</m>, 
+        to which Kummer theory applies.
       </hint>
     </exercise>
-    <exercise>
+    <exercise xml:id="ex-Kummer-extension-not-Galois-2">
       <statement>
-        With notation as in the previous exercise, prove that <m>[K(a^{1/n}):K] = n</m> if and only if
+        With notation as in the previous exercise, prove that <m>[L:K] = n</m> if and only if
         <m>a \notin (K^*)^p</m> for any prime divisor <m>p</m> of <m>n</m>.
       </statement>
       <hint>
@@ -304,7 +317,7 @@
     </exercise>
     <exercise xml:id="ex-linear-independence-of-automorphisms">
       <statement>
-        Prove the linear independence of automorphisms:
+        Prove <term>Dedekind's lemma</term> on the linear independence of automorphisms:
         if <m>g_1, \dots, g_n</m> are distinct automorphisms of <m>L</m> over <m>K</m>,
         then there do not exist <m>x_1, \dots, x_n \in L</m> such that <m>x_1 y^{g_1} + \cdots + x_n y^{g_n} = 0</m> for all <m>y \in L</m>.
         (This is a key step in the proof of <term>Artin's lemma</term> in Galois theory.)

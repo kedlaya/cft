@@ -1,15 +1,13 @@
-<section xml:id="sec_cohom1">
+﻿<section xml:id="sec_cohom1">
   <title>Cohomology of finite groups I: abstract nonsense</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
       <p>
-        Milne, II.1.
-        See Serre, <pubtitle>Galois Cohomology</pubtitle>
-        for a much more general presentation.
+        <xref ref="bib-Milne-CFT"/>, II.1.
+        See <xref ref="bib-Serre-GaloisCohomology"/> for a much more general presentation.
         (We will generalize ourselves from finite to profinite groups a bit later on.)
-        Warning: some authors
-        (like Milne, and Neukirch for the most part)
+        Warning: some authors (like Milne, and Neukirch for the most part)
         put group actions on the left and some
         (like Neukirch in chapter IV, and myself here)
         put them on the right.

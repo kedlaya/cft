@@ -1,4 +1,4 @@
-<section xml:id="sec_homology">
+﻿<section xml:id="sec_homology">
   <title>Homology of finite groups</title>
   <introduction>
     <paragraphs>
@@ -101,8 +101,7 @@
       The last map is induced by
       <m>I_G \hookrightarrow \ZZ[G]</m> and so is the zero map.
       Thus <m>H_1(G, \ZZ) \cong I_G/I_G^2</m>;
-      recall that in an earlier exercise
-      (see <xref ref="sec_principal">Chapter</xref>),
+      recall that in <xref ref="exc-augmentation"/>,
       it was shown that the map <m>g \mapsto [g] - 1</m> defines an isomorphism <m>G^{\ab} \to I_G/I_G^2</m>.
     </p>
   </subsection>
