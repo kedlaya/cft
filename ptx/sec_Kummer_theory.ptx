@@ -135,7 +135,7 @@
       </me>,
       where <m>(K^*)^n</m> is the group of <m>n</m>-th powers in <m>K^*</m>.
       (What we proved above was the case <m>r=1</m>,
-      but the general case follows easily.)
+      but the general case follows at once.)
       Another way is in terms of the absolute Galois group of <m>K</m>.
     </p>
     <definition>
@@ -304,15 +304,11 @@
         <m>a \notin (K^*)^p</m> for any prime divisor <m>p</m> of <m>n</m>.
       </statement>
       <hint>
-        Reduce to the case where <m>n</m> is a power of a prime <m>p</m>. 
-        The case <m>n=p</m> follows from the previous exercise.
-        By induction, the general case follows from the assertion that if <m>a \notin (K^*)^p</m>, then <m>a^{1/p} \notin (K(a^{1/p})^*)^p</m>,
-        which is equivalent to the case <m>n=p^2</m> of the original problem.
-        In this case, we only need to rule out the possibility that <m>K(a^{1/p^2}) = K(a^{1/p})</m>.
-        As in the previous exercise, we may reduce to the case <m>\zeta_p \in K</m>. If <m>a \notin (K(\zeta_{p^2})^*)^p</m>,
-        then we can further assume that <m>\zeta_{p^2} \in K</m> and argue using Kummer theory again;
-        otherwise, <m>K(a^{1/p}) = K(\zeta_{p^2})</m> and we can compare the Kummer parameters <m>a</m> and <m>\zeta_p</m> over <m>K</m>,
-        reducing to the case <m>a = \zeta_p</m> which we handle directly.
+        We may proceed by induction on <m>n</m> once we check that for any prime divisor <m>q</m> of <m>n</m>,
+        if <m>a \notin (K^*)^p</m> for any prime divisor <m>p</m> of <m>n</m>, then
+        <m>a^{1/q} \notin ((K(a^{1/q})^*)^p</m> for any prime divisor <m>p</m> of <m>n</m>.
+        To prove this, assume the contrary; since <m>[K(a^{1/q}):K] = q</m>, taking norms yields
+        <m>a \in (K^*)^p</m>, a contradiction.
       </hint>
     </exercise>
     <exercise xml:id="ex-linear-independence-of-automorphisms">
@@ -328,7 +324,7 @@
         then make an even smaller counterexample.
       </hint>
     </exercise>
-    <exercise>
+    <exercise xml:id="ex-additive-Hilbert-90">
       <statement>
         Prove the additive analogue of <xref ref="L_theorem_90"></xref>:
         if <m>L/K</m> is a finite Galois extension with Galois group <m>G</m>,

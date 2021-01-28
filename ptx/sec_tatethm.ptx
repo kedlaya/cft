@@ -1,18 +1,18 @@
-<section xml:id="sec_tatethm">
+﻿<section xml:id="sec_tatethm">
   <title>Local class field theory via Tate's theorem</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
       <p>
-        Milne II.3, III.5.
+        <xref ref="bib-Milne-CFT"/> II.3, III.5.
       </p>
     </paragraphs>
     <p>
       For <m>L/K</m> a finite extension of local fields,
       we have now computed that <m>H^1(L/K) = 0</m>
-      (<xref ref="L_theorem_90">Lemma</xref>)
+      (<xref ref="L_theorem_90"/>)
       and <m>H^2(L/K)</m> is cyclic of order <m>[L:K]</m>
-      (<xref ref="P_local_h2">Proposition</xref>).
+      <xref ref="P_local_h2"/>).
       In this chapter,
       we use these ingredients to establish all of the statements of local class field theory.
     </p>
@@ -21,7 +21,7 @@
     <title>Tate's theorem</title>
     <p>
       We first prove the theorem of Tate stated earlier
-      (<xref ref="T_tate_thm1">Theorem</xref>).
+      (<xref ref="T_tate_thm1"/>).
     </p>
     <theorem xml:id="T_tate_thm2">
       <title>Tate</title>
@@ -261,7 +261,7 @@ H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \a
       In any case, it remains to prove the local existence theorem
       (<xref ref="T_local_existence">Theorem</xref>).
       We begin with a lemma,
-      in which we take advantage of Kummer theory to establish an easy case of the existence theorem.
+      in which we take advantage of Kummer theory to establish a special case of the existence theorem.
     </p>
     <lemma xml:id="L_hilbert_symbol">
       <statement>
@@ -277,7 +277,7 @@ H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \a
       The same statement holds even if <m>\ell</m> is not prime (exercise) and can be interpreted in terms of the
       <term>Hilbert symbol</term>,
       whose properties generalize quadratic reciprocity to higher powers;
-      see Milne, III.4.
+      see <xref ref="bib-Milne-CFT"/>, III.4.
     </p>
     <proof>
       <p>

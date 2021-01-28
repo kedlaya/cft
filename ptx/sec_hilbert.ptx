@@ -138,6 +138,13 @@
         Prove that the Galois closure of <m>K</m> is unramified over all finite places of <m>\QQ(\sqrt{D})</m>. This gives an ample supply
         of everywhere unramified extensions (of various fields) which are nonabelian for <m>n > 3</m>.
         </statement>
+        <hint>
+        Let <m>M</m> be the Galois closure of <m>K</m>.
+        For any odd prime <m>p</m> dividing the discriminant, use the restriction on <m>D</m> to show that 
+        there is exactly one prime of <m>K</m> above <m>p</m> which is ramified and that its ramification index is 2.
+        Then deduce that the inertia group of a prime of <m>M</m> above <m>p</m> has order 2, and finally argue that said prime is unramified over
+        its restriction to <m>\QQ(\sqrt{D})</m>.
+        </hint>
       </exercise>
   </exercises>
 </section>

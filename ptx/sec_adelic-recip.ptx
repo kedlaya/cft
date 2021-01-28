@@ -1,4 +1,4 @@
-<section xml:id="sec_adelic-recip">
+﻿<section xml:id="sec_adelic-recip">
   <title>The adelic reciprocity law and Artin reciprocity</title>
   <introduction>
     <p>
@@ -151,9 +151,8 @@
             It would be natural to start by verifying that the map <m>r_K</m> given above does indeed kill principal id&#xe8;les,
             but this is too hard to do all at once
             (except for cyclotomic extensions,
-            for which the explicit calculation is easy and an important input into the machine).
-            Instead, we postpone this step all the way until the end;
-            see below.
+            for which the explicit calculation is an important input into the machine).
+            Instead, we postpone this step all the way until the end; see below.
           </p>
         </li>
         <li>

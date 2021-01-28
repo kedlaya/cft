@@ -91,18 +91,24 @@
       </statement>
     </theorem>
     <p>
-      For <m>K = \QQ</m>, this is already a nontrivial but important result.
-      It implies Dirichlet's famous theorem that there are infinitely many primes in arithmetic progression,
-      via the conclusion that for any nontrivial <m>\chi_\gothm</m>,
-      <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> remains bounded as <m>s \to \infty</m>.
-      In fact, we say that a set of primes <m>S</m> in a number field <m>K</m> has <term>Dirichlet density</term> <m>d</m> if
-      <me>
-        \lim_{s \to 1^+} \frac{\sum_{\gothp \in S} \Norm(\gothp)^{-s}}{\log \frac{1}{s-1}} = d
-      </me>.
+      For <m>K = \QQ</m>, this is already a nontrivial but important result:
+      it implies Dirichlet's famous theorem that there are infinitely many primes in arithmetic progression, as follows.
     </p>
+    <definition>
     <p>
-      Then <xref ref="T_nonvanishing_of_L"/> implies that the Dirichlet density of the set of primes congruent to <m>a</m> modulo <m>m</m>
+      A set of primes <m>S</m> in a number field <m>K</m> has <term>Dirichlet density</term> <m>d</m> if
+      <me>
+        \lim_{s \to 1^+} \frac{\sum_{\gothp \in S} \Norm(\gothp)^{-s}}{\log \frac{1}{s-1}} = d.
+      </me>
+      This in particular presumes the existence of the limit; otherwise, we may still define the <term>lower Dirichlet density</term>
+      and <term>upper Dirichlet density</term> using the limits inferior and superior.
+    </p>
+    </definition>
+    <p>
+      <xref ref="T_nonvanishing_of_L"/> implies that the Dirichlet density of the set of primes congruent to <m>a</m> modulo <m>m</m>
       is <m>1/\phi(m)</m> if <m>a</m> is coprime to <m>m</m> (and <m>0</m> otherwise).
+      The key point is that for any nontrivial <m>\chi_\gothm</m>,
+      <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> remains bounded as <m>s \to \infty</m>.
     </p>
     <p>
       The fact also implies that for any number field <m>K</m> and any formal product of places <m>\gothm</m>,
@@ -115,13 +121,17 @@
     <title>The Chebotar&#xeb;v density theorem</title>
     <p>
       Finally, we point out a result of class field theory that also applies to nonabelian extensions.
+    </p>
+    <definition>
       Recall that if <m>L/K</m> is any Galois extension of number fields with Galois group <m>G</m>,
       <m>\gothp</m> is a prime of <m>K</m> which does not ramify in <m>L</m>,
       and <m>\gothq</m> is a prime above <m>\gothp</m>,
-      then there is a well-defined Frobenius associated to <m>\gothq</m>: it's the element <m>g</m> of the decomposition group
+      then there is a well-defined <term>Frobenius element</term> to <m>\gothq</m>: it's the element <m>g</m> of the decomposition group
       <m>G_{\gothq}</m> such that <m>x^g \equiv x^{\#(\gotho_K/\gothp)} \pmod{\gothq}</m>.
-      Keep in mind thaht as a function of <m>\gothp</m>, this Frobenius is only well-defined up to conjugation in <m>G</m>.
-    </p>
+      Keep in mind that as a function of <m>\gothp</m>, this Frobenius is only well-defined up to conjugation in <m>G</m>.
+      (If <m>\gothp</m> ramifies in <m>L</m>, then a further ambiguity occurs: the Frobenius element associated to <m>\gothq</m> is only well-defined
+      in the quotient of <m>G_{\gothq}</m> by the inertia group <m>I_{\gothq}</m>.)
+    </definition>
     <theorem xml:id="T_Chebotarev">
       <title>Chebotar&#xeb;v density theorem</title>
       <statement>
@@ -192,6 +202,22 @@
         <xref ref="bib-Serre-NXp"/> for an introduction to this circle of ideas.
       </p>
     </remark>
+    <remark>
+      <p>
+      With somewhat more work, all of the previous density assertions remain true (and are indeed strictly stronger than before)
+      if Dirichlet density is replaced by natural density. The <term>natural density</term> of a set <m>S</m> of prime ideals of a number field <m>K</m>
+      is the limit (if it exists)
+      <me>
+         \lim_{X \to \infty} \frac{\#\{\gothp: \gothp \in S, \Norm(\gothp) \leq X\}}{\#\{\gothp: \Norm(\gothp) \leq X\}}
+      </me>
+      where in both sets <m>\gothp</m> runs over all prime ideals of <m>K</m>. (Again, if the limit does not exist, we may still define the <term>lower natural density</term>
+      and <term>upper natural density</term> using the limits inferior and superior.)
+      </p>
+      <p>
+      As with the prime number theorem, one can obtain effective power-saving error estimates conditional on the Generalized Riemann Hypothesis for 
+      appropriate Artin <m>L</m>-functions. See <xref ref="bib-Lagarias-Odlyzko"/>.
+      </p>
+    </remark>
   </subsection>
   <exercises>
     <title>Exercises</title>
@@ -212,7 +238,7 @@
           Using <xref ref="T_meromorphic_continuation">Theorems</xref>,
           <xref ref="T_analytic_continuation"></xref>,
           and <xref ref="T_nonvanishing_of_L"></xref>,
-          prove that the set of primes of <m>K</m> lying in any specified class of the ray class group of conductor <m>\gothm</m> is <m>1/\#\Cl^\gothm(K)</m>.
+          prove that the set of primes of <m>K</m> lying in any specified class of the generalized ideal class group of conductor <m>\gothm</m> has Dirichlet density <m>1/\#\Cl^\gothm(K)</m>.
         </statement>
         <hint>
           Combine the quantities <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> to cancel out all but one class.
@@ -247,6 +273,34 @@
           Show that if <m>L_1, L_2</m> are both ray class fields of <m>\gothm</m>, then all but finitely many primes of <m>L_1</m> split
           completely in the compositum <m>L_1L_2</m> (namely, those which do not ramify in the compositum).
         </hint>
+      </exercise>
+      <exercise>
+        <statement>
+        <p>
+        Here is an example to illustrate the difference between Dirichlet density and natural density, albeit not for primes.
+        Let <m>S</m> be the set of positive integers whose decimal expansion begins with 1.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Prove that <m>S</m> does not have a natural density, in the sense that
+              <me>
+                \lim_{X \to \infty} \frac{1}{X} \# (S \cap \{1,\dots,X\})
+              </me>
+              does not exist.
+            </p>
+          </li>
+          <li>
+            <p>
+              On the other hand, prove that <m>S</m> has a Dirichlet density in the sense that
+              <me>
+                \lim_{s \to 1^+} \frac{\sum_{n \in S} n^{-s}}{\sum_{n=1}^\infty n^{-s}}
+              </me>
+              exists, and compute this value.
+            </p>
+          </li>
+        </ol>
+        </statement>
       </exercise>
   </exercises>
 </section>

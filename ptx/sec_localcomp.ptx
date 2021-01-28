@@ -1,20 +1,22 @@
-<section xml:id="sec_localcomp">
+﻿<section xml:id="sec_localcomp">
   <title>Cohomology of local fields: some computations</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
       <p>
-        Milne, III.2 and III.3; Neukirch, V.1.
+        <xref ref="bib-Milne-CFT"/>, III.2 and III.3; <xref ref="bib-Neukirch"/>, V.1.
       </p>
     </paragraphs>
-  </introduction>
-  <subsection>
+    <paragraphs>
     <title>Notation convention</title>
     <p>
       If you catch me writing <m>H^i(L/K)</m> for <m>L/K</m> a Galois extension of fields,
       that's shorthand for <m>H^i(\Gal(L/K), L^*)</m>.
       Likewise for <m>H_i</m> or <m>H^i_T</m>.
     </p>
+    </paragraphs>
+  </introduction>
+  <subsection>
     <p>
       We now make some computations of
       <m>H^i_T(L/K)</m> for <m>L/K</m> a finite Galois extension of local fields.
@@ -56,7 +58,7 @@
       Recall that unramified extensions are cyclic,
       since their Galois groups are also the Galois groups of extensions of finite fields.
     </p>
-    <proposition>
+    <proposition xml:id="P_finite_norm_surjective">
       <statement>
         <p>
           For any finite extension <m>L/K</m> of <em>finite</em> fields,
@@ -67,57 +69,48 @@
     <proof>
       <p>
         One can certainly give an elementary proof of this using the fact that <m>L^*</m> is cyclic
-        (exercise).
+        (see <xref ref="exer-norm-map-finite"/>).
         But one can also see it using the machinery we have at hand.
-        Because <m>L^*</m> is a finite module,
-        its Herbrand quotient is 1.
+        Because <m>L^*</m> is a finite module, its Herbrand quotient is 1.
         Also, we know <m>H^1_T(L/K)</m> is trivial by <xref ref="L_theorem_90">Lemma</xref>.
-        Thus <m>H^0_T(L/K)</m> is trivial too,
-        that is, <m>\Norm_{L/K}: L^* \to K^*</m> is surjective.
+        Thus <m>H^0_T(L/K)</m> is trivial too, that is, <m>\Norm_{L/K}: L^* \to K^*</m> is surjective.
       </p>
     </proof>
-    <proposition>
+    <proposition xml:id="P_unramified_norm_surjective">
       <statement>
         <p>
-          For any finite unramified extension <m>L/K</m> of local fields,
-          the map <m>\Norm_{L/K}: U_L \to U_K</m> is surjective.
+          For any finite unramified extension <m>L/K</m> of local fields, the map <m>\Norm_{L/K}: U_L \to U_K</m> is surjective.
         </p>
       </statement>
     </proposition>
     <proof>
       <p>
         Say <m>u \in U_K</m> is a unit.
-        Pick <m>v_0 \in U_L</m> such that in the residue fields,
+        By <xref ref="P_finite_norm_surjective"/>, we may pick <m>v_0 \in U_L</m> such that in the residue fields,
         the norm of <m>v_0</m> coincides with <m>u</m>.
-        Thus <m>u/\Norm(v_0) \equiv 1 \pmod{\pi}</m>,
-        where <m>\pi</m> is a uniformizer of <m>K</m>.
+        Thus <m>u/\Norm(v_0) \equiv 1 \pmod{\pi}</m>, where <m>\pi</m> is a uniformizer of <m>K</m>.
         Now we construct units <m>v_i \equiv 1 \pmod{\pi^i}</m> such that <m>u_i = u/\Norm(v_0\cdots v_i) \equiv 1 \pmod{\pi^{i+1}}</m>:
         simply take <m>v_i</m> so that <m>\Trace((1-v_i)/\pi^i) \equiv (1-u_{i-1})/\pi^i \pmod{\pi}</m>.
         (That's possible because the trace map on residue fields is surjective by the normal basis theorem.)
         Then the product <m>v_0v_1\cdots</m> converges to a unit <m>v</m> with norm <m>u</m>.
       </p>
     </proof>
-    <corollary>
+    <corollary xml:id="C_cohomology_of_units_unramified">
       <statement>
         <p>
-          For any finite unramified extensions <m>L/K</m> of local fields,
-          then <m>H^i_T(\Gal(L/K), U_L) = 1</m> for all <m>i \in \ZZ</m>.
+          For any finite unramified extensions <m>L/K</m> of local fields, <m>H^i_T(\Gal(L/K), U_L) = 1</m> for all <m>i \in \ZZ</m>.
         </p>
       </statement>
     </corollary>
     <proof>
       <p>
-        Again, <m>\Gal(L/K)</m> is cyclic,
-        so by <xref ref="T_cyclic_group_periodicity">Theorem</xref>
-        we need only check this for <m>i=0,1</m>.
-        For <m>i=1</m>,
-        the desired equality is <xref ref="L_theorem_90">Lemma</xref>;
-        for <m>i=0</m>, it is the previous proposition.
+        Again, <m>\Gal(L/K)</m> is cyclic, so by <xref ref="T_cyclic_group_periodicity"/> we need only check this for <m>i=0,1</m>.
+        For <m>i=1</m>, the desired equality is <xref ref="L_theorem_90"/>; for <m>i=0</m>, it is <xref ref="P_unramified_norm_surjective"/>.
       </p>
     </proof>
     <p>
       Using the Herbrand quotient, we get <m>h(L^*) = h(U_L) h(L^*/U_L)</m>.
-      The previous corollary says that <m>h(U_L) = 1</m>, and
+      <xref ref="C_cohomology_of_units_unramified"/> says that <m>h(U_L) = 1</m>, and
       <md>
         <mrow>h(L^*/U_L) \amp = h(\ZZ)</mrow>
         <mrow>\amp = \#H^0_T(\Gal(L/K), \ZZ)/\#H^1_T(\Gal(L/K), \ZZ)</mrow>
@@ -127,11 +120,11 @@
     </p>
     <p>
       Since <m>H^1_T(\Gal(L/K), L^*)</m> is trivial,
-      we conclude <m>H^0_T(\Gal(L/K), L^*)</m> has order <m>[L:K]</m>.
-      In fact, it is cyclic: the long exact sequence of Tate groups gives
+      we conclude that <m>H^0_T(\Gal(L/K), L^*)</m> has order <m>[L:K]</m>.
+      In fact, this group is cyclic: the long exact sequence of Tate groups gives an exact sequence
       <me>
-        1 \to H^0_T(\Gal(L/K), L^*) \to H^0_T(\Gal(L/K), \ZZ) = \Gal(L/K) \to 1
-      </me>.
+        1 \to H^0_T(\Gal(L/K), L^*) \to H^0_T(\Gal(L/K), \ZZ) = \Gal(L/K) \to 1.
+      </me>
     </p>
     <p>
       Consider the short exact sequence
@@ -148,7 +141,10 @@
         H^1(\Gal(L/K), \QQ/\ZZ) = \Hom(\Gal(L/K), \QQ/\ZZ);
       </me>
       since <m>\Gal(L/K)</m> has a canonical generator (Frobenius),
-      we can evaluate there and get a canonical map <m>\Hom(\Gal(L/K), \QQ/\ZZ) \to \ZZ/[L:K]\ZZ \subset \QQ/\ZZ</m>.
+      we can evaluate there and get a canonical map 
+      <me>
+        \Hom(\Gal(L/K), \QQ/\ZZ) \to \ZZ/[L:K]\ZZ \subset \QQ/\ZZ.
+      </me>.
       Putting it all together, we get a canonical map
       <me>
         H^2(\Gal(L/K), L^*) \cong H^0_T(\Gal(L/K), L^*) \cong H^1(\Gal(L/K), \QQ/\ZZ) \hookrightarrow \QQ/\ZZ
@@ -162,13 +158,13 @@
         H^2(K^{\unr}/K) \cong \QQ/\ZZ
       </me>.
     </p>
+    <remark>
     <p>
       What's really going on here is that
-      <m>H^0_T(\Gal(L/K), L^*)</m> is a cyclic group generated by a uniformizer <m>\pi</m>
-      (since every unit is a norm).
-      Under the map <m>H^0_T(\Gal(L/K), L^*) \to \QQ/\ZZ</m>,
-      that uniformizer is being mapped to <m>1/[L:K]</m>.
+      <m>H^0_T(\Gal(L/K), L^*)</m> is a cyclic group generated by a uniformizer <m>\pi</m> (since every unit is a norm).
+      Under the map <m>H^0_T(\Gal(L/K), L^*) \to \QQ/\ZZ</m>, that uniformizer is being mapped to <m>1/[L:K]</m>.
     </p>
+    </remark>
   </subsection>
   <subsection>
     <title>The cyclic case</title>
@@ -179,7 +175,7 @@
       We are going to show again that it has order <m>[L:K]</m>.
       (It's actually cyclic again, but we won't prove this just yet.)
     </p>
-    <lemma>
+    <lemma xml:id="L_open_subgroup_acyclic">
       <statement>
         <p>
           Let <m>L/K</m> be a finite Galois extension of local fields.
@@ -215,7 +211,7 @@
     </lemma>
     <proof>
       <p>
-        Take <m>V</m> as in the previous lemma.
+        Take <m>V</m> as in <xref ref="L_open_subgroup_acyclic"/>.
         If we choose <m>\alpha</m> sufficiently divisible,
         then <m>V</m> lies in the radius of convergence of the exponential series
         <me>
@@ -235,24 +231,22 @@
       However, we cannot yet check that
       <m>H^0_T(\Gal(L/K), L^*)</m> is cyclic because the groups
       <m>H^1_T(\Gal(L/K), U_L)</m> are not guaranteed to vanish;
-      see the exercises.
+      see <xref ref="exer-units-not-acyclic"/>.
     </p>
-  </subsection>
-  <subsection>
+  <remark>
     <title>Note</title>
     <p>
-      This is all that we need for
-      <q>abstract</q>
-      local class field theory.
+      This is all that we need for <q>abstract</q> local class field theory.
       We'll revisit this point later.
     </p>
+  </remark>
   </subsection>
   <subsection>
     <title>The general case</title>
     <p>
       For those in the know,
       there is a spectral sequence underlying this next result;
-      see Milne, Remark II.1.35.
+      see <xref ref="bib-Milne-CFT"/>, Remark II.1.35.
     </p>
     <proposition xml:id="P_inflation_restriction">
       <title>Inflation-Restriction Exact Sequence</title>
@@ -438,8 +432,7 @@
       <m>\gotho_L</m> times <m>\pi_L^e</m>,
       so the map in question is indeed zero.
     </p>
-  </subsection>
-  <subsection>
+  <remark>
     <title>Note</title>
     <p>
       If <m>L/K</m> is a finite extension of degree <m>n</m>,
@@ -447,8 +440,9 @@
       via the local reciprocity map,
       into a map from <m>\QQ/\ZZ</m> to itself.
       This map turns out to be multiplication by <m>n</m>
-      (see Milne, Proposition II.2.7).
+      (see <xref ref="bib-Milne-CFT"/>, Proposition II.2.7).
     </p>
+  </remark>
   </subsection>
   <subsection>
     <title>The local invariant map</title>
@@ -476,14 +470,13 @@
   </subsection>
   <exercises>
     <title>Exercises</title>
-      <exercise>
+      <exercise xml:id="exer-norm-map-finite">
         <statement>
-          Give an elementary proof
-          (without cohomology)
+          Give an elementary proof (without cohomology)
           that the norm map from one finite field to another is always surjective.
         </statement>
       </exercise>
-      <exercise>
+      <exercise xml:id="exer-units-not-acyclic">
         <statement>
           Give an example of a cyclic ramified extension <m>L/K</m> of local fields in which the groups <m>H^i_T(\Gal(L/K), U_L)</m> are nontrivial.
         </statement>

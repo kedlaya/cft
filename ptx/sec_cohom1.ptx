@@ -8,14 +8,14 @@
         See <xref ref="bib-Serre-GaloisCohomology"/> for a much more general presentation.
         (We will generalize ourselves from finite to profinite groups a bit later on.)
         Warning: some authors (like Milne, and Neukirch for the most part)
-        put group actions on the left and some
-        (like Neukirch in chapter IV, and myself here)
-        put them on the right.
-        Of course, the theory is the same either way!
+        put group actions on the left and some (like Neukirch in chapter IV, and myself here)
+        put them on the right. Of course, the theory is the same either way!
+      </p>
+      <p>
+        For the broader context of homological algebra, the original reference is <xref ref="bib-Grothendieck-Tohoku"/>.
       </p>
     </paragraphs>
-  </introduction>
-  <subsection>
+    <paragraphs>
     <title>Caveat</title>
     <p>
       This material may seem a bit dry.
@@ -23,26 +23,68 @@
       only a small part of the theory will be relevant for class field theory.
       However, it doesn't make sense to learn that small part without knowing what it is a part of!
     </p>
-    <definition>
-      Let <m>G</m> be a finite group and <m>A</m> an abelian group
-      (itself not necessarily finite)
-      with a right <m>G</m>-action,
-      also known as a <m>G</m>-module.
-      I'll write the <m>G</m>-action as a superscript,
-      i.e., the image of the action of <m>g</m> on <m>m</m> is <m>m^g</m>.
-      Alternatively,
-      <m>A</m> can be viewed as a right module for the group algebra <m>\ZZ[G]</m>.
-      A <term>homomorphism</term> of <m>G</m>-modules
-      <m>\phi: M \to N</m> is a homomorphism of abelian groups that is compatible with the <m>G</m>-actions:
-      i.e., <m>\phi(m^g) = \phi(m)^g</m>.
-      (For those keeping score,
-      the category of <m>G</m>-modules is an abelian category.)
-    </definition>
     <p>
-      We would like to define some invariants of the pair <m>(G, A)</m> that we can use to get information about <m>G</m> and <m>A</m>.
-      We will use the general methodology of homological algebra to do this.
-      Before doing so,
-      though, we need a few lemmas about <m>G</m>-modules.
+      The euphemism <q>abstract nonsense</q> in specific reference to category theory and/or homological algebra has been attributed to Norman Steenrod.
+      It was used in a tongue-in-cheek manner without intending a negative connotation, although such a connotation has been imputed by later authors
+      (a notable example being <xref ref="bib-Lang-algebra"/>.
+    </p>
+    </paragraphs>
+  </introduction>
+  <subsection>
+    <title><m>G</m>-modules and their invariants</title>
+    <definition>
+      <p>
+        Let <m>G</m> be a finite group.
+        A <term>(right) <m>G</m>-module</term> is an abelian group <m>A</m> equipped with a right <m>G</m>-action.
+        I'll write this action using superscripts, i.e., the image of the action of <m>g</m> on <m>m</m> is <m>m^g</m>.
+        Alternatively, <m>A</m> can be viewed as a right module for the group algebra <m>\ZZ[G]</m>.
+      </p>
+      <p>
+      A <term>homomorphism</term> of <m>G</m>-modules <m>\phi: M \to N</m> is a homomorphism of abelian groups that is compatible with the <m>G</m>-actions, i.e., <m>\phi(m^g) = \phi(m)^g</m>.
+      </p>
+    </definition>
+    <remark>
+      For those keeping score, the category of <m>G</m>-modules is an example of an <term>abelian category</term>;
+      that is, it is an <term>additive category</term> (meaning that the Hom sets have abelian group structures for which composition distributes over addition)
+      with some extra properties related to kernels and cokernels of morphisms.
+      The following discussion is specialized from the general theory of derived functors on abelian categories.
+    </remark>
+    <definition>
+    <p>
+      Given a <m>G</m>-module <m>M</m>,
+      let <m>M^G</m> be the abelian group of <m>G</m>-invariant elements of <m>M</m>:
+      <me>
+        M^G = \{m \in M: m^g = m  \forall g \in G\}
+      </me>.
+      The functor <m>M \to M^G</m> from <m>G</m>-modules to abelian groups is <term>left exact</term> but not <term>right exact</term>.
+      That is, say we start with an <term>exact sequence</term>
+      <me>
+      0 \to M' \to M \to M'' \to 0
+      </me>
+      of <m>G</m>-modules; that is, the kernel of each map is equal to the image of the previous map. Then
+      <me>
+      0 \to (M')^G \to M^G \to (M'')^G
+      </me>
+      is again an exact sequence, but this need not remain true if we add 0 at the end; that is, the map
+      <m>M^G \to (M'')^G</m> may not be surjective.
+    </p>
+    <p>
+      More generally, if <m>0 \to M' \to M \to M'' \to 0</m> is an exact sequence,
+      then <m>0 \to (M')^G \to M^G \to (M'')^G</m> is exact,
+    </p>
+    </definition>
+    <example>
+      <p>
+        Take the sequence <m>0 \to \ZZ/p\ZZ \to \ZZ/p^2\ZZ \to \ZZ/p\ZZ \to 0</m> of <m>G</m>-modules for <m>G = \ZZ/p\ZZ</m>, which acts on the middle factor by <m>a^g = a(1+pg)</m>.
+        Then <m>M^G \to (M'')^G</m> is the zero map but <m>(M'')^G</m> is nonzero.)
+      </p>
+    </example>
+    </subsection>
+    <subsection>
+    <title>Injective objects and resolutions</title>
+    <p>
+      The topic of <term>homological algebra</term> provides a systematic way to quantify the difference between an exact functor and a left exact
+      (or a right exact) functor. This rests on the following key concept.
     </p>
     <definition>
       A <m>G</m>-module <m>M</m> is <term>injective</term>
@@ -53,67 +95,51 @@
       <statement>
         <p>
           Every <m>G</m>-module can be embedded into some injective <m>G</m>-module.
-          (That is, the category of <m>G</m>-modules has enough injectives.)
+          In other words, the abelian category of <m>G</m>-modules <term>has enough injectives</term>.
         </p>
       </statement>
     </lemma>
     <proof>
       <p>
-        Exercise.
+        See <xref ref="exer-enough-injectives"/>.
       </p>
     </proof>
+    <definition>
+      <p>
+        An <term>injective resolution</term> of a <m>G</m>-module <m>M</m> is an exact sequence
+        <me>
+          0 \to M \to I^0 \stackrel{d^0}{\to} I^1 \stackrel{d^1}{\to} \dots
+        </me>
+        in which the objects <m>I^0, I^1, \dots</m> are injective <m>G</m>-modules.
+     </p>
+      <p>
+        From <xref ref="L_enough_injectives"/>, it follows that injective resolutions always exist.
+        To wit, first embed <m>M</m> into an injective <m>G</m>-module <m>I^0</m>,
+        then embed <m>I^0/M</m> into an injective <m>G</m>-module <m>I^1</m>, and so on.
+      </p>
+    </definition>
+    <definition xml:id="def-derived-functor">
     <p>
-      In particular, any <m>G</m>-module <m>M</m> admits an
-      <term>injective resolution</term>: a complex
+      Starting with an injective resolution of <m>M</m>, apply the functor of <m>G</m>-invariants; the result
       <me>
-        0 \to M \to I_0 \stackrel{d_0}{\to} I_1 \stackrel{d_1}{\to} I_2 \stackrel{d_2}{\to} \dots
+        0 \to (I^0)^G \stackrel{d^0}{\to} (I^1)^G \stackrel{d^1}{\to} \dots
       </me>
-    </p>
-    <p>
-      (that is, <m>d_{i+1} \circ d_i = 0</m> for all <m>i</m>) in which each <m>I_i</m> is injective and the complex itself is <em>exact</em>:
-      <m>\im d_i = \ker d_{i+1}</m>.
-      (To wit, embed <m>M</m> into <m>I_0</m>,
-      embed <m>I_0/M</m> into <m>I_1</m>, et cetera.)
-    </p>
-    <p>
-      Given a <m>G</m>-module <m>M</m>,
-      let <m>M^G</m> be the abelian group of <m>G</m>-invariant elements of <m>M</m>:
+      is still a <term>complex</term> in the sense that any two consecutive maps compose to zero, but it is not necessarily exact.
+      (That is, we still have inclusions <m>\im(d^i) \subseteq \ker(d^{i+1})</m>, but these need not be equalities.)
+      We turn this failure into success by defining the <m>i</m>-th <term>cohomology group</term> as the quotient
       <me>
-        M^G = \{m \in M: m^g = m  \forall g \in G\}
-      </me>.
-    </p>
-    <p>
-      The functor <m>M \to M^G</m> from <m>G</m>-modules to abelian groups is left exact but not right exact:
-      if <m>0 \to M' \to M \to M'' \to 0</m> is an exact sequence,
-      then <m>0 \to (M')^G \to M^G \to (M'')^G</m> is exact,
-      but <m>M^G \to (M'')^G</m> may not be exact. (Example:
-      take the sequence <m>0 \to \ZZ/p\ZZ \to \ZZ/p^2\ZZ \to \ZZ/p\ZZ \to 0</m> of <m>G</m>-modules for <m>G = \ZZ/p\ZZ</m>,
-      which acts on the middle factor by <m>a^g = a(1+pg)</m>.
-      Then <m>M^G \to (M'')^G</m> is the zero map but <m>(M'')^G</m> is nonzero.)
-    </p>
-    <p>
-      This is the general situation addressed by homological algebra:
-      it provides a canonical way to extend the truncated exact sequence <m>0 \to (M')^G \to M^G \to (M'')^G</m>.
-      (Or if you prefer,
-      it helps measure the failure of exactness of the <m>G</m>-invariants functor.)
-      To do this, given <m>M</m> and an injective resolution as above,
-      take <m>G</m>-invariants: the result
-      <me>
-        0 \to I_0^G \stackrel{d_0}{\to} I_1^G \stackrel{d_1}{\to} I_2^G \stackrel{d_2}{\to} \dots
+        H^i(G, M) = \ker(d^i)/\im(d^{i-1}),
       </me>
-      is still a complex, but no longer exact.
-      We turn this failure into success by defining the <m>i</m>-th cohomology group as the quotient
-      <me>
-        H^i(G, M) = \ker(d^i)/\im(d^{i-1})
-      </me>.
-    </p>
-    <p>
-      By convention, we let <m>d_{-1}</m> be the map
+      with the temporary proviso that this appears to depend not just on <m>M</m> but also on the injective resolution.
+      By convention, we let <m>d^{-1}</m> be the map
       <m>0 \to I_0^G</m>, so <m>H^0(G,M)=M^G</m>.
     </p>
     <p>
-      Given a homomorphism <m>f: M \to N</m> and a injective resolution <m>0 \to N \to J_0 \to J_1 \to \cdots</m>,
-      there exists a commutative diagram
+      Given a homomorphism <m>f: M \to N</m> and another injective resolution <m>0 \to N \to J_0 \to J_1 \to \cdots</m>,
+      <xref ref="L_enough_injectives"/> again implies the existence of a commutative diagram as in <xref ref="fig-cohom1-1"/>
+      with exact rows. When we apply the functor of <m>G</m>-invariants, we again get a commutative diagram, but the rows are only
+      complexes rather than exact sequences. However, the vertical arrows in the resulting diagram induce maps
+      <m>H^i(f): H^i(G, M) \to H^i(G, N)</m>.
     </p>
     <figure xml:id="fig-cohom1-1">
     <image xml:id="img-cohom1-1">
@@ -123,31 +149,32 @@
     </latex-image>
     </image>
     </figure>
+    </definition>
+    </subsection>
+    <subsection>
+    <title>Right derived functors</title>
     <p>
-      and likewise after taking <m>G</m>-invariants,
-      so we get maps <m>H^i(f): H^i(G, M) \to H^i(G, N)</m>.
+      Continuing the thread, we observe the following.
     </p>
     <lemma xml:id="L_injective_resolutions_to_cohomology_maps">
       <statement>
         <p>
-          The map <m>H^i(f)</m> does not depend on the choice of the <m>f_i</m>
-          (given the choices of injective resolutions).
+          For a fixed choice of the injective resolutions of <m>M</m> and <m>N</m> in <xref ref="def-derived-functor"/>,
+          the map <m>H^i(f)</m> does not depend on the choice of the <m>f_i</m>.
         </p>
       </statement>
     </lemma>
     <proof>
       <p>
-        This proof is a bit of
-        <q>abstract nonsense</q>. It suffices to check that if <m>f=0</m>,
+        This proof is a standard example of <q>abstract nonsense</q>. It suffices to check that if <m>f=0</m>,
         then the <m>H^i(f)</m> are all zero regardless of what the <m>f_i</m> are.
-        In that case,
-        it turns out one can construct maps <m>g_i: I_{i+1} \to J_i</m>
+        In that case, it turns out one can construct maps <m>g_i: I_{i+1} \to J_i</m>
         (and by convention <m>g_{-1} = 0</m>)
-        such that <m>f_i = g_i \circ d_i + d_{i-1} \circ g_{i-1}</m>.
-        (Such a set of maps is called a <term>homotopy</term>.)
-        Details left as an exercise. (Warning:
-        the diagonal arrows in the diagram below don't commute!)
+        such that <m>f_i = g_i \circ d_i + d_{i-1} \circ g_{i-1}</m>,
+        as illustrated in <xref ref="fig-cohom1-2"/>. (Beware that this figure is not a commutative diagram!)
+        Details left as an exercise (see <xref ref="exer-resolutions-to-maps"/>).
       </p>
+    </proof>
     <figure xml:id="fig-cohom1-2">
     <image xml:id="img-cohom1-2">
     <latex-image>
@@ -156,43 +183,36 @@
     </latex-image>
     </image>
     </figure>
-    </proof>
+    <remark>
+      <p>
+        The diagonal arrows depicted in <xref ref="fig-cohom1-2"/> with the property described in the proof of <xref ref="L_injective_resolutions_to_cohomology_maps"/>
+        (namely, that <m>f_i = g_i \circ d_i + d_{i-1} \circ g_{i-1}</m>), are collectively called a <term>chain homotopy</term> for the map <m>f</m>.
+      </p>
+    </remark>
+    <definition>
     <p>
-      In particular, if <m>M=N</m> and <m>f</m> is the identity,
+      We can now close the books on <xref ref="def-derived-functor"/> as follows.
+      If <m>M=N</m> and <m>f</m> is the identity,
       we get a canonical map between
       <m>H^i(G,M)</m> and <m>H^i(G,N)</m> for each <m>i</m>.
       That is, the groups <m>H^i(G,M)</m> are well-defined independent of the choice of the injective resolution.
-      Likewise, the map <m>H^i(f)</m> is also independent of the choice of resolutions.
+      Likewise, the map <m>H^i(f)</m> is also independent of the choice of resolutions, so each <m>H^i</m> defines a functor from
+      <m>G</m>-modules to abelian groups. These are called the <term>right derived functors</term> of the functor of <m>G</m>-invariants.
     </p>
-    <p>
-      If you know any homological algebra,
-      you'll recognize what comes next:
-      given a short exact sequence <m>0 \to M' \to M \to M'' \to 0</m> of <m>G</m>-modules,
-      there is a canonical long exact sequence
-      <md>
-        <mrow>0 \to H^0(G, M') \to \cdots \to H^i(G, M'') \stackrel{\delta_i}{\to}</mrow>
-        <mrow>\stackrel{\delta_i}{\to} H^{i+1}(G, M') \to H^{i+1}(G, M) \to H^{i+1}(G,M'') \to \cdots,</mrow>
-      </md>
-      where the <m>\delta_i</m> are certain
-      <q>connecting homomorphisms</q>
-      (or
-      <q>snake maps</q>).
-      I won't punish you with the proof of this;
-      if you've never seen it before,
-      deduce it yourself from the Snake Lemma. (For the proof of the latter,
-      engage in
-      <q>diagram chasing</q>, or see the movie <url href="https://www.youtube.com/watch?v=etbcKWEKnvg"><pubtitle>It's My Turn</pubtitle></url>.
-      To define <m>\delta</m>: given <m>x \in \ker(f_2) \subseteq M_2</m>,
-      lift <m>x</m> to <m>M_1</m>, push it into <m>N_1</m> by <m>f_1</m>,
-      then check that the image has a preimage in <m>N_0</m>.
-      Then verify that the result is well-defined, et cetera.)
-    </p>
-    <lemma xml:id="L_snake_lemma">
-      <title>Snake Lemma</title>
+    </definition>
+    <lemma>
       <statement>
-        <p>
-          Given a commuting diagram
-        </p>
+      Given a short exact sequence <m>0 \to M' \to M \to M'' \to 0</m> of <m>G</m>-modules,
+      there is a canonical long exact sequence of abelian groups
+      <me>
+        0 \to H^0(G, M') \to \cdots \to H^i(G, M'') \stackrel{\delta_i}{\to} H^{i+1}(G, M') \to H^{i+1}(G, M) \to H^{i+1}(G,M'') \to \cdots
+      </me>
+      in which the <m>\delta_i</m> are certain <term>connecting homomorphisms</term>.
+      </statement>
+    </lemma>
+    <p>
+      I will not subject you to the proof of this, but rather mention the key step in its proof.
+    </p>
     <figure xml:id="fig-cohom1-3">
     <image xml:id="img-cohom1-3">
     <latex-image>
@@ -203,8 +223,11 @@
     </latex-image>
     </image>
     </figure>
+    <lemma xml:id="L_snake_lemma">
+      <title>Snake Lemma</title>
+      <statement>
         <p>
-          in which the rows are exact,
+          Given a commuting diagram as in <xref ref="fig-cohom1-3"/> with exact rows,
           there is a canonical map <m>\delta: \ker(f_2) \to \coker(f_0)</m> such that the sequence
           <me>
             0 \to \ker(f_0) \to \ker(f_1) \to \ker(f_2) \stackrel{\delta}{\to} \coker(f_0) \to \coker(f_1) \to \coker(f_2) \to 0
@@ -213,6 +236,22 @@
         </p>
       </statement>
     </lemma>
+    <proof>
+      The key point is to define the map <m>\delta</m>, as the rest amounts to <q>diagram chasing</q>.
+      To wit, given <m>x \in \ker(f_2) \subseteq M_2</m>,
+      lift <m>x</m> to <m>M_1</m>, push it into <m>N_1</m> by <m>f_1</m>,
+      then check that the image has a preimage in <m>N_0</m>.
+      Verification that this is well-defined (and a homomorphism), and that everything is exact, is left to the reader.
+      (Aside: the snake lemma is depicted in the movie <url href="https://www.youtube.com/watch?v=etbcKWEKnvg"><pubtitle>It's My Turn</pubtitle></url>,
+      but not in any more detail than we have given here.)
+   </proof>
+   <remark xml:id="rmk-universal-delta-functors">
+     In modern algebra, it is common to define objects (e.g., tensor products of modules) in terms of <q>universal properties</q> that they satisfy.
+     This can be done for derived functors via the theory of <term><m>\delta</m>-functors</term>, as introduced in <xref ref="bib-Grothendieck-Tohoku"/>.
+   </remark>
+   </subsection>
+   <subsection>
+   <title>Additional comments</title>
     <p>
       One important consequence of the long exact sequence is that if
       <m>0 \to M' \to M \to M'' \to 0</m> is a short exact sequence of <m>G</m>-modules and <m>H^1(G, M') = 0</m>,
@@ -245,7 +284,7 @@
             if <m>H^i(G,M) =0</m> for all <m>i>0</m>;
             so in particular, injective <m>G</m>-modules are acyclic.
             It turns out that we can replace the injective resolution in the definition by an acyclic resolution for the purposes of doing a computation;
-            see exercises.
+            see <xref ref="exer-acyclic-res"/>.
           </p>
         </li>
       </ul>
@@ -274,7 +313,7 @@
           Prove that <m>A</m> can be embedded in an injective <m>G</m>-module.
         </statement>
       </exercise>
-      <exercise>
+      <exercise xml:id="exer-enough-injectives">
         <statement>
           Prove <xref ref="L_enough_injectives">Lemma</xref>.
         </statement>
@@ -284,7 +323,7 @@
           Now map <m>M</m> into <m>\Hom_{\ZZ}(\ZZ[G], N)</m> and check that the latter is an injective <m>G</m>-module.
         </hint>
       </exercise>
-      <exercise>
+      <exercise xml:id="exer-resolutions-to-maps">
         <statement>
           Prove <xref ref="L_injective_resolutions_to_cohomology_maps">Lemma</xref>,
           following the sketch given.
@@ -294,20 +333,20 @@
           using that the <m>J</m>'s are injective <m>G</m>-modules.
         </hint>
       </exercise>
-      <exercise>
+      <exercise xml:id="exer-acyclic-res">
         <statement>
-          Prove that if <m>0 \to M \to M_0 \to M_1 \to \cdots</m> is an exact sequence of <m>G</m>-modules and each <m>M_i</m> is acyclic,
+          Prove that if <m>0 \to M \to M^0 \to M^1 \to \cdots</m> is an exact sequence of <m>G</m>-modules and each <m>M_i</m> is acyclic,
           then the cohomology groups of the complex
-          <m>0 \to M_0^G \to M_1^G \to \cdots</m> coincide with <m>H^i(G, M)</m>.
+          <m>0 \to M^{0G} \to M^{1G} \to \cdots</m> coincide with <m>H^i(G, M)</m>.
         </statement>
         <hint>
           Construct the canonical long exact sequence from the exact sequence
           <me>
-            0 \to M \to M_0 \to M_0/M \to 0
+            0 \to M \to M^0 \to M^0/M \to 0
           </me>,
           then do dimension shifting using the fact that
           <me>
-            0 \to M_0/M \to M_1 \to M_2 \to \cdots
+            0 \to M^0/M \to M^1 \to M^2 \to \cdots
           </me>
           is again exact.
           Don't forget to be careful about <m>H^1</m>!)

@@ -1,10 +1,10 @@
-<section xml:id="sec_localrecip">
+﻿<section xml:id="sec_localrecip">
   <title>Overview of local class field theory</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
       <p>
-        Milne, I.1; Neukirch, V.1.
+        <xref ref="bib-Milne-CFT"/>, I.1; <xref ref="bib-Neukirch"/>, V.1.
       </p>
     </paragraphs>
     <p>
@@ -19,8 +19,7 @@
       they also give us a model set of proofs which we will attempt to emulate in the global case.
     </p>
     <p>
-      Recall that the term
-      <q>local field</q>
+      Recall that the term <term>local field</term>
       refers to a finite extension either of the field of <m>p</m>-adic numbers <m>\QQ_p</m> or of the field of power series <m>\FF_q((t))</m>.
       I'm going to abuse language and ignore the second case,
       although all but a few things I'll say go through in the second case,
@@ -33,9 +32,13 @@
     <title>The local reciprocity law</title>
     <p>
       The main theorem of local class field theory is the following.
+    </p>
+    <definition>
+    <p>
       For <m>K</m> a local field,
       let <m>K^{\ab}</m> be the maximal abelian extension of <m>K</m>.
     </p>
+    </definition>
     <theorem xml:id="T_local_reciprocity">
       <title>Local Reciprocity Law</title>
       <statement>
@@ -46,8 +49,7 @@
           <ol>
             <li>
               <p>
-                for any generator <m>\pi</m> of the maximal ideal of
-                <m>\gotho_K</m> and any finite unramified extension <m>L</m> of <m>K</m>,
+                for any uniformizer <m>\pi</m> of <m>K</m> and any finite unramified extension <m>L</m> of <m>K</m>,
                 <m>\phi_K(\pi)</m> acts on <m>L</m> as the Frobenius automorphism;
               </p>
             </li>
@@ -62,18 +64,40 @@
         </p>
       </statement>
     </theorem>
+    <definition>
     <p>
-      The map <m>\phi_K</m> is variously called the
+      The map <m>\phi_K</m> in <xref ref="T_local_reciprocity"/> is variously called the
       <term>local reciprocity map</term>
       or the <term>norm residue symbol</term>.
+    </p>
+    </definition>
+    <example xml:id="exa-local-recip-Qp">
+    <p>
       Using the local Kronecker-Weber theorem
       (<xref ref="T_local_Kronecker-Weber1">Theorem</xref>),
-      this can be explicitly verified for <m>K=\QQ_p</m>
-      (see exercises).
+      the statement of <xref ref="T_local_reciprocity"/> can be explicitly verified for <m>K=\QQ_p</m>.
+      To wit, we have <m>K^{\ab} = K_1 K_2</m> where <m>K_1 = \bigcup_n \QQ_p(\zeta_{p^n})</m>
+      and <m>K_2 = \bigcup_n \QQ_p(\zeta_{p^n-1})</m>, and <m>\Gal(K^{\ab}/K) \cong \Gal(K_1/K) \times \Gal(K_2/K)</m>.
+      Since <m>p</m> is totally ramified in <m>K_1</m>, we have 
+      <me>\Gal(K_1/K) \cong \Gal(\left(\bigcup_n \QQ(\zeta_{p^n})\right)/\QQ) \cong \ZZ_p^*.
+      </me>
+      Since <m>p</m> is unramified in <m>K_2</m>, we have
+      <me>
+      \Gal(K_2/K) \cong \Gal(\overline{\FF}_p/\FF_p) \cong \widehat{\ZZ}.
+      </me>
+      However, it will be more convenient to think of the image as sitting inside
+      <me>
+      \Gal(\QQ^{\ab}/\QQ) \cong \widehat{\ZZ}^* \cong \ZZ_p^* \times \prod_{q \neq p} \ZZ_q^*
+      </me>
+      (here using global Kronecker-Weber and Artin reciprocity).
+      The factor <m>\Gal(K_2/K) \cong \widehat{\ZZ}</m> maps to <m>\prod_{q \neq p} \ZZ_q^*</m> via
+      <m>e \mapsto p^e</m>, noting that this makes sense in the target.
+      For the rest, see <xref ref="exer-Qp-reciprocity-map"/>.
     </p>
+    </example>
     <p>
       The local reciprocity law is an analogue of the Artin reprocity law for number fields.
-      We also get an analogue of the existence of class fields.
+      We also get an analogue of the existence of ray class fields.
     </p>
     <theorem xml:id="T_local_existence">
       <title>Local existence theorem</title>
@@ -88,17 +112,18 @@
         </p>
       </statement>
     </theorem>
+    <remark>
     <p>
-      The condition
-      <q>open</q>
-      is only needed in the function field case;
-      for <m>K</m> a finite extension of <m>\QQ_p</m>,
-      one can show that every subgroup of <m>K^*</m> of finite index is open.
+      In <xref ref="T_local_existence"/>, the topology on <m>K^*</m> is the one given by taking the disjoint union of the sets
+      <m>\pi^n \gotho_K^*</m> for <m>n \in \ZZ</m>, where <m>\pi \in K^\times</m> is a uniformizer. 
+      In fact, it is only necessary to keep track of this topology in the function field case;
+      for <m>K</m> a finite extension of <m>\QQ_p</m>, one can show that every subgroup of <m>K^*</m> of finite index is open.
     </p>
+    </remark>
     <p>
       The local existence theorem says that if we start with a nonabelian extension <m>L</m>,
       then <m>\Norm_{L/K} L^*</m> is also the group of norms of an abelian extension.
-      Which one?
+      But which one? The following theorem gives the answer.
     </p>
     <theorem xml:id="T_norm_limitation">
       <title>Norm limitation theorem</title>
@@ -109,17 +134,28 @@
         </p>
       </statement>
     </theorem>
+    <remark>
     <p>
-      Aside: for each uniformizer
-      (generator of the maximal ideal)
-      <m>\pi</m> of <m>K</m>,
+    In <xref ref="T_norm_limitation"/>, it is evident that <m>\Norm_{L/K} L^* \subseteq \Norm_{M/K} M^*</m> because
+    <m>\Norm_{L/K} = \Norm_{M/K} \circ \Norm_{L/M}</m>. Since the group <m>\Norm_{L/K} L^*</m> can be shown directly to be an open subgroup of finite index 
+    (see <xref ref="exer-norm-subgroup-is-open"/>), <xref ref="T_local_existence"/> implies that it has the form <m>Norm_{N/K} N^*</m> for some finite abelian 
+    extension <m>N</m> of <m>K</m>. <xref ref="T_local_reciprocity"/> then implies that <m>M \subseteq N</m>. The subtle point that remains to be proven is that
+    the inclusion <m>M \subseteq N</m> is actually an equality.
+    </p>
+    </remark>
+    <remark>
+    <p>
+      For each uniformizer <m>\pi</m> of <m>K</m>,
       let <m>K_\pi</m> be the composite of all finite abelian extensions <m>L</m> such that <m>\pi \in \Norm_{L/K} L^*</m>.
       Then the local reciprocity map implies that <m>K^{\ab} = K_\pi \cdot K^{\unr}</m>.
+    </p>
+    <p>
       It turns out that <m>K_\pi</m> can be explicitly constructed as the extension of <m>K</m> by certain elements,
       thus giving a generalization of local Kronecker-Weber to arbitrary local fields!
-      These elements come from Lubin-Tate formal groups,
+      These elements come from <term>Lubin-Tate formal groups</term>,
       which we will not discuss further.
     </p>
+    </remark>
     <p>
       Note that for <m>L/K</m> a finite extension of local fields, the map
       <me>
@@ -140,8 +176,7 @@
     </theorem>
     <p>
       In fact, this map can be written in terms of the cup product in group cohomology,
-      which we have not defined
-      (and will not).
+      which we have not defined (and will not).
     </p>
   </subsection>
   <subsection>
@@ -197,6 +232,7 @@
         </p>
       </statement>
     </theorem>
+    <remark>
     <p>
       In general, for any field <m>K</m>,
       the group <m>H^2(\Gal(\overline{K}/K), \overline{K}^*)</m> is called the
@@ -207,6 +243,7 @@
       I won't pursue this connection further,
       nor study many of the interesting properties and applications of Brauer groups.
     </p>
+    </remark>
   </subsection>
   <subsection>
     <title>Abstract class field theory</title>
@@ -249,13 +286,10 @@
   </subsection>
   <exercises>
     <title>Exercises</title>
-      <exercise>
+      <exercise xml:id="exer-Qp-reciprocity-map">
         <statement>
-          For <m>K = \QQ_p</m>,
-          the local reciprocity map plus the local Kronecker-Weber theorem give a canonical map <m>\QQ_p^* \to \Gal(\QQ_p^{\ab}/\QQ_p) \cong \widehat{\ZZ}</m>.
-          What is the map?
-          From the answer,
-          you should be able to turn things around and deduce local Kronecker-Weber from local reciprocity.
+          Building on <xref ref="exa-local-recip-Qp"/>,
+          verify <xref ref="T_local_reciprocity"/> in the case <m>K = \QQ_p</m>.
         </statement>
       </exercise>
       <exercise>
@@ -264,7 +298,7 @@
           Determine <m>K_\pi</m>, again using local Kronecker-Weber.
         </statement>
       </exercise>
-      <exercise>
+      <exercise xml:id="exer-norm-subgroup-is-open">
         <statement>
           Prove that for any finite extension <m>L/K</m> of finite extensions of <m>\QQ_p</m>,
           <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m>.

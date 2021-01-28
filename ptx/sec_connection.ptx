@@ -1,10 +1,10 @@
-<section xml:id="sec_connection">
+﻿<section xml:id="sec_connection">
   <title>The connection with local reciprocity</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
       <p>
-        Milne VII.5; Neukirch VI.4.
+        <xref ref="bib-Milne-CFT"/> VII.5; <xref ref="bib-Neukirch"/> VI.4.
       </p>
     </paragraphs>
     <p>
@@ -123,15 +123,15 @@
     </lemma>
     <proof>
       <p>
-        This is easy if <m>v</m> is infinite:
+        We can quickly dispatch the cases where <m>v</m> is infinite:
         if <m>v</m> is complex there is nothing to prove,
         and if <m>v</m> is real then we may take <m>L = K(\sqrt{-1})</m>.
         So assume hereafter that <m>v</m> is finite.
       </p>
       <p>
         By the Existence Theorem
-        (<xref ref="T_adelic_existence_theorem2">Theorem</xref>)
-        and <xref ref="L_reciprocity_corollaries">Lemma</xref>(ii),
+        (<xref ref="T_adelic_existence_theorem2"/>)
+        and <xref ref="L_reciprocity_corollaries"/>(ii),
         it suffices to produce an open subgroup <m>U</m> of <m>C_K</m> of finite index such that the preimage of <m>U</m> under
         <m>K_v^* \to C_K</m> is contained in <m>N = \Norm_{M/K_v} M^*</m>.
         Let <m>S</m> be the set of infinite places and <m>T = S \cup \{v\}</m>,
@@ -215,7 +215,7 @@
       It's worth repeating that only now do we know that the product <m>r_{L/K}</m> of the local reciprocity maps kills principal id&#xe8;les.
       That fact, which relates local behavior for different primes in a highly global fashion,
       is the basis of various <term>higher reciprocity laws</term>.
-      See Milne, Chapter VIII for details.
+      See <xref ref="bib-Milne-CFT"/>, Chapter VIII for details.
     </p>
   </subsection>
   <subsection>
@@ -225,7 +225,7 @@
       <q>abstract</q>
       reciprocity map <m>r'_{L/K}</m> with the product <m>r_{L/K}</m> of the local reciprocity maps,
       following Milne
-      (and Neukirch V.2).
+      (and <xref ref="bib-Neukirch"/> V.2).
     </p>
     <p>
       We first verify that <m>r = r'</m> for cyclotomic extensions of <m>\QQ</m>,

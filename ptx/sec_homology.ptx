@@ -4,30 +4,27 @@
     <paragraphs>
       <title>Reference</title>
       <p>
-        Milne, II.2; for cyclic groups,
-        also Neukirch, IV.7 and Lang,
-        <pubtitle>Algebraic Number Theory</pubtitle>, IX.1.
+        <xref ref="bib-Milne-CFT"/>, II.2; for cyclic groups,
+        also <xref ref="bib-Neukirch"/>, IV.7 and <xref ref="bib-Lang"/>, IX.1.
       </p>
     </paragraphs>
   </introduction>
   <subsection>
     <title>Caveat</title>
     <p>
-      The Galois cohomology groups used in Neukirch are not the ones we defined earlier.
-      They are the Tate cohomology groups we are going to define below.
+      The Galois cohomology groups used in <xref ref="bib-Neukirch"/> are not the ones we defined earlier,
+      but rather the Tate cohomology groups we are going to define below.
     </p>
   </subsection>
   <subsection>
     <title>Homology</title>
     <p>
-      You may not be surprised to learn that there is a
-      <q>dual</q>
-      theory to the theory of group cohomology, namely group homology.
+      You may not be surprised to learn that there is a <q>dual</q> theory to the theory of group cohomology, namely group homology.
       What you may be surprised to learn is that one can actually fit the two together,
       so that in a sense the homology groups become cohomology groups with negative indices.
-      (Since the arguments are similar to those for cohomology, I'm going to skip details.)
+      (Since the arguments are similar to those for cohomology, I'm going to skip some details.)
     </p>
-    <p>
+    <definition>
       Let <m>M_G</m> denote the maximal quotient of <m>M</m> on which <m>G</m> acts trivially.
       In other words,
       <m>M_G</m> is the quotient of <m>M</m> by the submodule spanned by <m>m^g-m</m> for all <m>m \in M</m> and <m>g \in G</m>.
@@ -37,7 +34,7 @@
       <me>
         I_G = \left\{\sum_{g \in G} z_g[g]: \sum_g z_g = 0\right\}
       </me>.
-    </p>
+    </definition>
     <p>
       Or if you like, <m>M_G = M \otimes_{\ZZ[G]} \ZZ</m>.
       Since <m>M^G</m> is the group of <m>G</m>-invariants,
@@ -54,17 +51,18 @@
       A <m>G</m>-module <m>M</m> is <term>projective</term>
       if for any surjection <m>N \to N'</m> of <m>G</m>-modules and any map <m>\phi: M \to N'</m>,
       there exists a map <m>\psi: M \to N</m> lifting <m>\phi</m>.
-      This is the reverse notion to injective;
-      but it's much easier to find projectives than injectives.
-      For example,
-      any <m>G</m>-module which is a free module over the ring <m>\ZZ[G]</m> is projective,
-      e.g., <m>\ZZ[G]</m> itself!
+      This definition is dual to the definition of an injective <m>G</m>-module, but this symmetry is a bit misleading:
+      it is much easier to find projectives than injectives.
+      For example,  any <m>G</m>-module which is a free module over the ring <m>\ZZ[G]</m> is projective
+      such as <m>\ZZ[G]</m> itself!
     </definition>
+    <definition>
     <p>
-      Given a projective resolution
-      <m>\cdots \to P_1 \to P_0 \to M \to 0</m> of a <m>G</m>-module <m>M</m>
-      (an exact sequence in which the <m>P_i</m> are projective),
-      take coinvariants to get a no longer exact complex
+      A <term>projective resolution</term> of <m>M</m> is an exact sequence
+      <m>\cdots \to P_1 \to P_0 \to M \to 0</m> of <m>G</m>-modules
+      in which the <m>P_i</m> are projective.
+      Given such a resolution,
+      take coinvariants to get a complex
       <me>
         \cdots \stackrel{d_2}{\to} P_2 \stackrel{d_1}{\to} P_1 \stackrel{d_0}{\to} P_0 \to 0
       </me>,
@@ -72,16 +70,20 @@
       Again, this is canonically independent of the resolution and functorial,
       and there is a long exact sequence which starts out
       <me>
-        \cdots \to H_1(G, M'') \to \stackrel{\delta}{\to} H_0(G, M') \to H_0(G, M) \to H_0(G, M'') \to 0
-      </me>.
+        \cdots \to H_1(G, M'') \stackrel{\delta}{\to} H_0(G, M') \to H_0(G, M) \to H_0(G, M'') \to 0.
+      </me>
     </p>
+    </definition>
+    <definition>
     <p>
-      Also, you can replace the projective resolution by an acyclic resolution (where here <m>M</m> being acyclic means
-      <m>H_i(G,M) =0</m> for <m>i>0</m>) and get the same homology groups.
-      For example, induced modules are again acyclic
-      (and the analogue of Shapiro's lemma holds,
-      in part because any free <m>\ZZ[H]</m>-module induces to a free <m>\ZZ[G]</m>-module).
+      We say that <m>M</m> is <term>acyclic (for homology)</term> if 
+      <m>H_i(G,M) =0</m> for <m>i>0</m>.
+      As with group cohomology, we can replace a projective resolution with an acyclic resolution and get the same homology groups.
+      For example, induced modules are again acyclic and the analogue of Shapiro's lemma holds
+      (key point: any free <m>\ZZ[H]</m>-module induces to a free <m>\ZZ[G]</m>-module).
     </p>
+    </definition>
+    <remark xml:id="rmk-first-homology">
     <p>
       One can give a concrete description of homology as well,
       but we won't need it for our purposes.
@@ -103,7 +105,10 @@
       Thus <m>H_1(G, \ZZ) \cong I_G/I_G^2</m>;
       recall that in <xref ref="exc-augmentation"/>,
       it was shown that the map <m>g \mapsto [g] - 1</m> defines an isomorphism <m>G^{\ab} \to I_G/I_G^2</m>.
+      This can be thought of as an algebraic analogue of the fact that the first homology group of a (reasonable)
+      topological space equals the abelianization of the fundamental group.
     </p>
+    </remark>
   </subsection>
   <subsection>
     <title>The Tate groups</title>
@@ -111,36 +116,58 @@
       We now
       <q>fit together</q>
       the long exact sequences of cohomology and homology to get a doubly infinite exact sequence.
+    </p>
+    <definition>
+    <p>
+      Let <m>M</m> be a <m>G</m>-module.
       Define the map <m>\Norm_G: M \to M</m> by
       <me>
         \Norm_G(m) = \sum_{g \in G} m^g
       </me>.
     </p>
     <p>
-      (It looks like it should be called
-      <q>trace</q>, but in practice our modules <m>M</m> will be groups which are most naturally written multiplicatively,
-      i.e., the nonzero elements of a field.) Then <m>\Norm_G</m> induces a homomorphism
+      Then <m>\Norm_G</m> induces a homomorphism
       <me>
         \Norm_G: H_0(G,M) = M_G \to M^G = H^0(G,M)
       </me>.
     </p>
+    </definition>
+    <remark>
     <p>
-      Now define
+    You might be wondering why <m>\Norm_G</m> is called a <q>norm</q> rather than a <q>trace</q>.
+    The reason is that in practice, our modules <m>M</m> will most often be groups which are most naturally written
+     multiplicatively, e.g., the nonzero elements of a field.
+     </p>
+    </remark>
+    <definition>
+    <p>
+      We now define the <term>Tate cohomology groups</term> (or <term>Tate homology groups</term> if you prefer) as follows:
       <me>
         H_T^i = \begin{cases}H^i(G, M) \amp  i > 0 \\ M^G/\Norm_G M \amp  i=0 \\ \ker(\Norm_G)/MI_G \amp  i=-1 \\ H_{-i-1}(G,M) \amp  i\lt -1. \end{cases}
       </me>
-      then I claim that for any short exact sequence
-      <m>0 \to M' \to M \to M'' \to 0</m>, we get an exact sequence
+    </p>
+    </definition>
+    <lemma>
+      <statement>
+      <p>
+      For any short exact sequence
+      <m>0 \to M' \to M \to M'' \to 0</m> of <m>G</m>-modules, we have a canonical exact sequence
       <me>
         \cdots \to H^{i-1}_T(G, M'') \to H^i_T(G, M') \to H^i_T(G, M) \to H^i_T(G, M'') \to H^{i+1}_T(G, M') \to \cdots
       </me>
       which extends infinitely in both directions.
-      The only issue is exactness between
-      <m>H^{-2}_T(G, M'')</m> and <m>H^1_T(G, M')</m> inclusive;
-      this follows by diagram-chasing
-      (as in the snake lemma)
-      on the commutative diagram
-    </p>
+      </p>
+      </statement>
+      <proof>
+      <p>
+        Since we already have long exact sequences for homology and cohomology, the only remaining issue is exactness between
+        <m>H^{-2}_T(G, M'')</m> and <m>H^1_T(G, M')</m> inclusive.
+        This follows by diagram-chasing, as in the proof of the snake lemma (<xref ref="L_snake_lemma"/>)
+        on the commutative diagram <xref ref="fig-homology-1"/>
+        with exact rows, noting that the diagram remains commutative with the dashed arrows added.
+      </p>
+      </proof>
+    </lemma>
       <figure xml:id="fig-homology-1">
       <image>
       <latex-image>
@@ -151,16 +178,13 @@
       </latex-image>
       </image>
       </figure>
+      <remark>
     <p>
-      with exact rows
-      (noting that the diagram remains commutative with the dashed arrows added).
+      If <m>M</m> is an induced <m>G</m>-module,
+      then <m>H^i_T(G,M) = 0</m> for all <m>i</m> (see <xref ref="exer-induced-acyclic-Tate"/>. 
+      That is, induced modules are acyclic for all of cohomology, homology, and Tate (co)homology.
     </p>
-    <p>
-      This construction is especially useful if <m>M</m> is induced,
-      in which case <m>H^i_T(G,M) = 0</m> for all <m>i</m>.
-      (The <m>T</m> stands for Tate,
-      who among many other things was an early pioneer in the use of Galois cohomology into algebraic number theory.)
-    </p>
+    </remark>
   </subsection>
   <subsection>
     <title>Finite cyclic groups</title>
@@ -168,7 +192,7 @@
       In general, for any given <m>G</m> and <m>M</m>,
       it is at worst a tedious exercise to compute
       <m>H^i_T(G,M)</m> for any single value of <m>i</m>,
-      but try to compute all of these at once and you discover that they exhibit very little obvious structure.
+      but try to compute all of these at once and you discover that they exhibit very little evident structure.
       Thankfully, there is an exception to that dreary rule when <m>G</m> is cyclic.
     </p>
     <theorem xml:id="T_cyclic_group_periodicity">
@@ -219,39 +243,42 @@
         </me>.
       </p>
     </proof>
+    <remark>
     <p>
-      In particular, the long exact sequence of a short exact sequence
-      <m>0 \to M' \to M \to M'' \to 0</m> of <m>G</m>-modules curls up into an exact hexagon:
+      In particular, when <m>G</m> is cyclic, the long exact sequence of a short exact sequence
+      <m>0 \to M' \to M \to M'' \to 0</m> of <m>G</m>-modules curls up into an exact hexagon
+      as in <xref ref="fig-homology-2"/>.
     </p>
+    </remark>
       <figure xml:id="fig-homology-2">
       <image>
       <latex-image>
-      \xymatrix{
-      H_1(G, M'') \ar[r] \ar@{-->}[d] &amp; H_0(G, M') \ar[r] \ar^{\Norm_G}[d] &amp;  H_0(G, M) \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M'') \ar[r] \ar^{\Norm_G}[d] &amp; 0 \ar@{-->}[d] \\
-      0 \ar[r] &amp; H^0(G, M') \ar[r]  &amp; H^0(G, M) \ar[r] &amp;  H^0(G, M') \ar[r] &amp; H^1(G, M')
-      }
-      </latex-image>
+        \xymatrix{
+        &amp; H^{-1}_T(G, M) \ar[r] &amp; H^{-1}_T(G, M'') \ar[dr] &amp; \\
+        H^{-1}_T(G, M') \ar[ru] &amp; &amp; &amp; H^0_T(G, M') \ar[dl] \\
+        &amp; H^{0}_T(G, M'') \ar[lu] &amp; H^{0}_T(G, M) \ar[l] &amp;
+        }
+       </latex-image>
       </image>
       </figure>
+    <definition>
     <p>
+      Let <m>G</m> be a finite cyclic group and let <m>M</m> be a <m>G</m>-module.
       If the groups <m>H^i_T(G, M)</m> are finite,
-      we define the <term>Herbrand quotient</term>
+      we define the <term>Herbrand quotient</term> as the ratio
       <me>
-        h(M) = \#H^0_T(G,M) / \#H^{-1}_T(G, M)
-      </me>.
-    </p>
-    <p>
-      Then from the exactness of the hexagon,
-      if <m>M', M, M''</m> all have Herbrand quotients, then
+        h(M) = \#H^0_T(G,M) / \#H^{-1}_T(G, M).
+      </me>
+      From the exactness of the hexagon in <xref ref="fig-homology-2"/>,
+      we see that if <m>M', M, M''</m> all have Herbrand quotients, then
       <me>
-        h(M) = h(M') h(M'')
-      </me>.
+        h(M) = h(M') h(M'').
+      </me>
     </p>
-    <p>
-      Moreover, if two of <m>M', M, M''</m> have Herbrand quotients,
-      so does the third.
-      For example,
-      if <m>M'</m> and <m>M''</m> have Herbrand quotients,
+    </definition>
+    <remark>
+      Expanding on the previous point, if two of <m>M', M, M''</m> have Herbrand quotients, then so does the third.
+      For example, if <m>M'</m> and <m>M''</m> have Herbrand quotients,
       i.e., their Tate groups are finite,
       then we have an exact sequence
       <me>
@@ -263,7 +290,8 @@
       and modulo that image,
       <m>H^{-1}_T(G,M)</m> injects into another finite group.
       So it's also finite, and so on.
-    </p>
+    </remark>
+    <remark>
     <p>
       In practice,
       it will often be much easier to compute the Herbrand quotient of a <m>G</m>-module than to compute either of its Tate groups directly.
@@ -271,9 +299,10 @@
       once one group is computed directly,
       at least the order of the other will be automatically known.
     </p>
+    </remark>
+    <remark>
     <p>
-      One special case is easy to work out:
-      if <m>M</m> is finite, then <m>h(M) = 1</m>.
+      If <m>M</m> is finite, then <m>h(M) = 1</m>.
       To wit, the sequences
       <md>
         <mrow>0 \to M^G \to M \to M \to M_G \to 0</mrow>
@@ -283,16 +312,20 @@
       thus <m>M_G</m> and <m>M^G</m> have the same order,
       as do <m>H^{-1}</m> and <m>H^0</m>.
     </p>
+    </remark>
   </subsection>
   <subsection>
     <title>Extended functoriality revisited</title>
     <p>
-      The extended functoriality for cohomology groups has an analogue for homology and Tate groups,
+      The extended functoriality for cohomology groups (<xref ref="D-extended-functoriality"/>) has an analogue for homology and Tate groups,
       but under more restrictive conditions.
+    </p>
+    <definition>
+    <p>
       Again, let <m>M</m> be a <m>G</m>-module and <m>M'</m> a <m>G'</m>-module,
       and consider a homomorphism
       <m>\alpha: G' \to G</m> of groups and a homomorphism
-      <m>\beta: M \to M'</m> of abelian which are compatible.
+      <m>\beta: M \to M'</m> of abelian which are compatible in the sense of <xref ref="D-extended-functoriality"/>.
       We would like to obtain canonical homomorphisms
       <m>H_i(G, M) \to H_i(G', M')</m> and <m>H^i_T(G, M) \to H^i_T(G',M')</m>,
       but for this we need to add an additional condition to ensure that
@@ -301,9 +334,20 @@
       (Note that for Tate groups,
       we don't need any extra condition to get functoriality for <m>i \geq 0</m>.)
     </p>
+    </definition>
   </subsection>
   <exercises>
     <title>Exercises</title>
+      <exercise xml:id="exer-induced-acyclic-Tate">
+        <statement>
+          Prove that if <m>M</m> is an induced <m>G</m>-module, then <m>H^i_T(G,M) = 0</m> for all <m>i \in \ZZ</m>.
+        </statement>
+        <hint>
+        <p>
+          Use the fact that induced <m>G</m>-modules are acyclic for both cohomology and cohomology to reduce to checking the cases <m>i = -1, 0</m>.
+          Another option is to extend Shapiro's lemma to Tate cohomology groups.</p> 
+        </hint>
+      </exercise>
       <exercise>
         <statement>
           The periodicity of the Tate groups for <m>G</m> cyclic means that there is a canonical
@@ -324,9 +368,12 @@
           Use the exact sequence <m>1 \to \gotho_K^* \to K^* \to \ZZ \to 1</m>.
         </hint>
       </exercise>
-      <exercise>
+      <exercise xml:id="exer-transfer-as-homology">
         <statement>
-          Show that <m>\Res: H^{-2}_T(G, \ZZ) \to H^{-2}_T(H,\ZZ)</m> corresponds to the transfer (Verlagerung) map <m>G^{\ab} \to H^{\ab}</m>.
+          Let <m>G \subseteq H</m> be an inclusion of finite groups.
+          Show that via the identification from <xref ref="rmk-first-homology"/>,
+          the map <m>\Res: H^{-2}_T(G, \ZZ) \to H^{-2}_T(H,\ZZ)</m> corresponds to the transfer (Verlagerung) map <m>V: G^{\ab} \to H^{\ab}</m>.
+          This provides another way to derive the existence of the latter.
         </statement>
       </exercise>
   </exercises>

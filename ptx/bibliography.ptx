@@ -9,8 +9,14 @@
   <biblio xml:id="bib-Frohlich-Taylor">
     A. Fröhlich and M.J. Taylor, <pubtitle>Algebraic Number Theory</pubtitle>, Cambridge University Press, 1991.
   </biblio>
+  <biblio xml:id="bib-Grothendieck-Tohoku">
+    A. Grothendieck, <articletitle>Sur quelques points d'algèbre homologique</articletitle>.
+  </biblio>
   <biblio xml:id="bib-Janusz">
     G. Janusz, <pubtitle>Algebraic Number Fields</pubtitle>, American Mathematical Society, 1996.
+  </biblio>
+  <biblio xml:id="bib-Harari">
+    D. Harari, <pubtitle>Galois Cohomology and Class Field Theory</pubtitle>.
   </biblio>
   <biblio xml:id="bib-Jarvis">
     F. Jarvis, <pubtitle>Algebraic Number Fields</pubtitle>, Springer, Cham, 2014.
@@ -19,11 +25,17 @@
     L. Lafforgue, <articletitle>Chtoucas de Drinfeld et correspondance de Langlands</articletitle>,
     Inventiones Mathematicae 147 (2002), 1<ndash/>241.
   </biblio>
+  <biblio xml:id="bib-Lagarias-Odlyzko">
+    J.C. Lagarias and A.M. Odlyzko, <articletitle>Effective versions of the Chebotarev density theorem</articletitle>.
+  </biblio>
   <biblio xml:id="bib-Lang-algebra">
     S. Lang, <pubtitle>Algebra</pubtitle>.
   </biblio>
   <biblio xml:id="bib-Lang">
     S. Lang, <pubtitle>Algebraic Number Theory</pubtitle>.
+  </biblio>
+  <biblio xml:id="bib-Leriche">
+    A. Leriche, <articletitle>About the embedding of a number field in a P&#xf3;lya field</articletitle>.
   </biblio>
   <biblio xml:id="bib-Milne-CFT">
     J. Milne, <pubtitle>Class Field Theory</pubtitle>,
@@ -32,6 +44,12 @@
   </biblio>
   <biblio xml:id="bib-Neukirch">
     J. Neukirch, <pubtitle>Algebraic Number Theory</pubtitle>.
+  </biblio>
+  <biblio xml:id="bib-Neukirch-CFT">
+    J. Neukirch, <pubtitle>Class Field Theory</pubtitle>.
+  </biblio>
+  <biblio xml:id="bib-Nikolov-Segal">
+    N. Nikolov and D. Segal, <pubtitle>On finitely generated profinite groups, I: strong completeness and uniform bounds</pubtitle>.
   </biblio>
   <biblio xml:id="bib-Serre-GaloisCohomology">
     J.-P. Serre, <pubtitle>Galois Cohomology</pubtitle>.
@@ -42,7 +60,13 @@
   <biblio xml:id="bib-Serre-NXp">
     J.-P. Serre, <pubtitle>Lectures on <m>N_X(p)</m></pubtitle>.
   </biblio>
+  <biblio xml:id="bib-Silverman-AEC">
+    J. Silverman, <pubtitle>The Arithmetic of Elliptic Curves</pubtitle>.
+  </biblio>
   <biblio xml:id="bib-Washington">
     L. Washington, <pubtitle>Introduction to Cyclotomic Fields</pubtitle>.
+  </biblio>
+  <biblio xml:id="bib-Zantema">
+    H. Zantema, <articletitle>Integer valued polynomials over a number field</articletitle>.
   </biblio>
 </references>

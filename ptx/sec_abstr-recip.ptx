@@ -1,4 +1,4 @@
-<section xml:id="sec_abstr-recip">
+﻿<section xml:id="sec_abstr-recip">
   <title>An
   <q>abstract</q>
   reciprocity map</title>
@@ -126,7 +126,7 @@
       and so is congruent to 1 in <m>(\ZZ/n\ZZ)^*</m>.
     </p>
     <p>
-      We now have maps <m>I_{\QQ} \to (\ZZ/n\ZZ)^*</m> which are easily seen to be compatible,
+      We now have maps <m>I_{\QQ} \to (\ZZ/n\ZZ)^*</m> which are compatible,
       so by taking inverse limits we get <m>I_{\QQ} \to \widehat{\ZZ}^* \cong \Gal(\QQ^{\cyc}/\QQ)</m>.
       We define <m>v</m> by channeling this map through the projection
       <m>\Gal(\QQ^{\cyc}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ)</m> and then using our chosen isomorphism <m>\Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}</m>.

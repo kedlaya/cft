@@ -1,4 +1,4 @@
-<section xml:id="sec_ideles-cohom1">
+﻿<section xml:id="sec_ideles-cohom1">
   <title>Cohomology of the id&#xe8;les I: the
   <q>First Inequality</q>
   </title>
@@ -168,7 +168,7 @@
     </p>
     <p>
       From the computation of <m>H^i(G, I_{L,S})</m>,
-      it's easy to read off its Herbrand quotient:
+      we may directly read off its Herbrand quotient:
       <me>
         h(I_{L,S}) = \prod_{v \in S} \#H^0_T(G_v, L_w^*)= \prod_{v \in S} [L_w:K_v]
       </me>.

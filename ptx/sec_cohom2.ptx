@@ -1,34 +1,36 @@
-<section xml:id="sec_cohom2">
+﻿<section xml:id="sec_cohom2">
   <title>Cohomology of finite groups II: concrete nonsense</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
       <p>
-        Milne, II.1.
+        <xref ref="bib-Milne-CFT"/>, II.1.
       </p>
     </paragraphs>
     <p>
       In the previous chapter,
       we associated to a finite group <m>G</m> and a (right) <m>G</m>-module <m>M</m> a sequence of abelian groups <m>H^i(G, M)</m>,
-      called the cohomology groups of <m>M</m>.
-      (They're also called the <term>Galois cohomology</term>
-      groups because in number theory,
+      called the <term>cohomology groups</term> of <m>M</m>.
+      (They're also called the <term>Galois cohomology</term> groups because in number theory,
       <m>G</m> will invariably be the Galois group of some extension of number fields,
       and <m>A</m> will be some object manufactured from this extension.)
       What we didn't do is make the construction at all usable in practice!
       This time we will remedy this.
     </p>
+  </introduction>
+  <subsection>
+    <title>Induced <m>G</m>-modules</title>
     <p>
       Recall the last point
       (and the last exercise)
       from the last chapter: if
       <me>
-        0 \to M \to M_0 \to M_1 \to \cdots
+        0 \to M \to M^0 \to M^1 \to \cdots
       </me>
       is an acyclic resolution of <m>M</m> (i.e., the sequence is exact,
       and <m>H^i(G, M_j) = 0</m> for <m>i > 0</m> and all <m>j</m>), then
       <me>
-        H^i(G, M) = \ker(M_i^G \to M_{i+1}^G)/\im(M_{i-1}^G \to M_i^G)
+        H^i(G, M) = \ker(M^{iG} \to M^{(i+1)G})/\im(M^{(i-1)G} \to M^{iG})
       </me>.
     </p>
     <p>
@@ -38,20 +40,20 @@
       By way of motivation,
       we note first that if <m>G</m> is the trivial group,
       <em>every</em> <m>G</m>-module is acyclic:
-      if <m>0 \to M \to I_0 \to I_1 \cdots</m> is an injective resolution,
+      if <m>0 \to M \to I^0 \to I^1 \cdots</m> is an injective resolution,
       taking <m>G</m>-invariants has no effect,
-      so <m>0 \to I_0 \to I_1 \to \cdots</m> is still exact except at <m>I_0</m>
+      so <m>0 \to I^0 \to I^1 \to \cdots</m> is still exact except at <m>I^0</m>
       (where we omitted <m>M</m>).
     </p>
-    <p>
+    <definition>
       If <m>H</m> is a subgroup of <m>G</m> and <m>M</m> is an <m>H</m>-module,
-      we define the <term>induced</term> <m>G</m>-module associated to <m>M</m> to be <m>\Ind^G_H M = M \otimes_{\ZZ[H]} \ZZ[G]</m>.
+      we define the <term>induction</term> of <m>M</m> from <m>H</m> to <m>G</m> to be <m>\Ind^G_H M = M \otimes_{\ZZ[H]} \ZZ[G]</m>.
       We may also identify <m>\Ind^G_H M</m> with the set of functions
       <m>\phi: G \to M</m> such that <m>\phi(gh) = \phi(g)^h</m> for <m>h \in H</m>,
       with the <m>G</m>-action on the latter being given by <m>\phi^g(g') = \phi(gg')</m>:
       namely, the element <m>m \otimes [g] \in M \otimes_{\ZZ[H]} \ZZ[G]</m> corresponds to the function
       <m>\phi_{m,g}</m> taking <m>g'</m> to <m>m^{gg'}</m> if <m>gg' \in H</m> and to 0 otherwise.
-    </p>
+    </definition>
     <lemma xml:id="L_Shapiro">
       <title>Shapiro's lemma</title>
       <statement>
@@ -71,14 +73,13 @@
           <li>
             <p>
               <m>(\Ind^G_H N)^G = N^H</m>,
-              so there is an isomorphism for <m>i=0</m> (this is clearest from the description using functions);
+              so there is an isomorphism for <m>i=0</m> (this is most visible from the description using functions);
             </p>
           </li>
           <li>
             <p>
               the functor <m>\Ind^G_H</m> from <m>H</m>-modules to <m>G</m>-modules is exact (that is,
-              <m>\ZZ[G]</m> is flat over <m>\ZZ[H]</m>,
-              which is easy to see because it in fact is free over <m>\ZZ[H]</m>);
+              <m>\ZZ[G]</m> is flat over <m>\ZZ[H]</m>; in fact it is free over <m>\ZZ[H]</m>);
             </p>
           </li>
           <li>
@@ -97,14 +98,13 @@
         and the result is an injective resolution of <m>\Ind^G_H N</m>.
       </p>
     </proof>
-    <p>
-      We say <m>M</m> is an <term>induced</term>
-      <m>G</m>-module if it has the form
+    <definition>
+      We say <m>M</m> is an <term>induced</term> <m>G</m>-module if it has the form
       <m>\Ind^G_{1} N</m> for some abelian group <m>N</m>,
       i.e., it can be written as <m>N \otimes_\ZZ \ZZ[G]</m>.
       (The subscript 1 stands for the trivial group,
       since <m>G</m>-modules for <m>G = 1</m> are just abelian groups.)
-    </p>
+    </definition>
     <corollary xml:id="C_induced_acyclic">
       <statement>
         <p>
@@ -113,8 +113,8 @@
       </statement>
     </corollary>
     <p>
-      To complete the previous argument,
-      we need an important property of induced modules.
+      To complete the previous argument, we need an important property of induced modules. 
+      This is closely related to the <term>Frobenius reciprocity law</term> in the theory of representations of finite groups.
     </p>
     <proposition xml:id="P_adjoint_property">
       <statement>
@@ -130,20 +130,13 @@
         </p>
       </statement>
     </proposition>
-    <p>
-      In other words,
-      the restriction functor from <m>G</m>-modules to <m>H</m>-modules and the induction functor from <m>H</m>-modules to <m>G</m>-modules form a pair of
-      <term>adjoint functors</term> in both directions.
-      This is rather unusual;
-      it is far more common to have such a relationship in only one direction.
-    </p>
     <proof>
       <p>
         To begin with, note that if we take <m>N = M</m>
         (or more precisely,
         <m>N</m> is a copy of <m>M</m> with only the action of <m>H</m> retained),
         then the identity map between <m>M</m> and <m>N</m> is supposed to correspond both to a homomorphism
-        <m>M \to \Ind^G_H M</m> and to a homomorphism <m>\Ind^G_H M \to M</m>.
+        <m>\Ind^G_H M \to M</m> and to a homomorphism <m>M \to \Ind^G_H M</m>.
         Let us write these maps down first:
         the map <m>\Ind^G_H M \to M</m> is
         <me>
@@ -154,14 +147,12 @@
           m \mapsto \sum_i m^{g_i} \otimes [g_i^{-1}]
         </me>
         where <m>g_i</m> runs over a set of left coset representatives of <m>H</m> in <m>G</m>.
-        Note that this second map doesn't depend on the choice of the representatives;
-        for <m>g \in G</m>,
-        we can use the coset representatives <m>gg_i</m> instead,
-        so the equality
+        This second map doesn't depend on the choice of the representatives; consequently, for <m>g \in G</m>,
+        we can use the coset representatives <m>gg_i</m> instead to see that
         <me>
-          m^{g} \mapsto \sum_{i} m^{gg_i} \otimes [g_i^{-1}] = \left( \sum_{i} m^{gg_i} \otimes [(g g_i)^{-1}] \right)[g]
+          m^{g} \mapsto \sum_{i} m^{gg_i} \otimes [g_i^{-1}] = \left( \sum_{i} m^{gg_i} \otimes [(g g_i)^{-1}] \right)[g].
         </me>
-        means that we do in fact get a map compatible with the <m>G</m>-actions.
+        This means that we do in fact get a map compatible with the <m>G</m>-actions.
         (Note that the composition of these two maps is not the identity!
         For more on this point,
         see the discussion of extended functoriality in <xref ref="sec_homology">Chapter</xref>.)
@@ -196,20 +187,33 @@
         <m>n \otimes [e]</m> to get a homomorphism <m>N \to M</m> of <m>H</m>-modules.
       </p>
     </proof>
-    <p>
+    <remark>
+      <p>
+      <xref ref="P_adjoint_property"/> asserts that 
+      the restriction functor from <m>G</m>-modules to <m>H</m>-modules and the induction functor from <m>H</m>-modules to <m>G</m>-modules form a pair of
+      <term>adjoint functors</term> in both directions.
+      This is rather unusual; it is far more common to have such a relationship in only one direction.
+      Indeed, without assuming that <m>G</m> is finite (or at least that <m>[G:H] &lt; \infty</m>), then the proof of <xref ref="P_adjoint_property"/> only shows that 
+      <m>\Hom_G(\Ind^G_H N, M) \cong \Hom_H(N,M).</m>
+      </p>
+    </remark>
+    <remark>
+      <p>
       The point of all of this is that it is much easier to embed <m>M</m> into an acyclic <m>G</m>-module than into an injective <m>G</m>-module:
       use the map <m>M \to \Ind^G_1 M</m> constructed in <xref ref="P_adjoint_property">Proposition</xref>!
-      Immediate consequence: if <m>M</m> is finite,
+      An immediate consequence is that if <m>M</m> is finite,
       it can be embedded into a finite acyclic <m>G</m>-module,
-      and thus <m>H^i(G,M)</m> is finite for all <m>i</m>. (But contrary to what you might expect,
-      for fixed <m>M</m>,
-      the groups <m>H^i(G,M)</m> do not necessarily become zero for <m>i</m> large,
-      even if <m>M</m> is finite!
-      We'll see explicit examples next time.)
-    </p>
+      and thus <m>H^i(G,M)</m> is finite for all <m>i</m>. 
+      </p>
+      <p>
+      However, contrary to what you might expect,
+      for fixed <m>M</m>, even if <m>M</m> is finite, the groups <m>H^i(G,M)</m> do not necessarily become zero for <m>i</m> large.
+      We'll see explicit examples in the next section.
+      </p>
+    </remark>
     <p>
       Another consequence is the following result.
-      (The case <m>i=1</m> was an exercise earlier.)
+      (The case <m>i=1</m> was stated previously in <xref ref="ex-additive-Hilbert-90"/>.)
     </p>
     <theorem xml:id="T_additive_theorem_90">
       <statement>
@@ -232,64 +236,89 @@
         so <m>L</m> is an induced <m>G</m>-module and so is acyclic.
       </p>
     </proof>
+    </subsection>
+    <subsection>
+    <title>Group cohomology via homogeneous cochains</title>
     <p>
       Now let's see an explicit way to compute group cohomology.
+    </p>
+    <definition xml:id="D-cohom-res1">
+    <p>
       Given a group <m>G</m> and a <m>G</m>-module <m>M</m>,
-      define the <m>G</m>-modules <m>N_i</m> for
+      define the <m>G</m>-module <m>N^i</m> for
       <m>i \geq 0</m> as the set of functions
       <m>\phi: G^{i+1} \to M</m>, with the <m>G</m>-action
       <me>
         (\phi^g)(g_0, \dots, g_i) = \phi(g_0g^{-1}, \dots, g_ig^{-1})^g
       </me>.
-    </p>
-    <p>
       Notice that this module is induced:
-      we have <m>N_i = \Ind_{1}^G N_{i,0}</m> where <m>N_{i,0}</m> is the subset of <m>N_i</m> consisting of functions for which
-      <m>\phi(g_0, \dots,
-      g_i) = 0</m> when <m>g_0 \neq e</m>.
+      we have <m>N^i = \Ind_{1}^G N^i_{0}</m> where <m>N^i_{0}</m> is the subset of <m>N^i</m> consisting of functions for which
+      <m>\phi(g_0, \dots, g_i) = 0</m> when <m>g_0 \neq e</m>.
     </p>
+    </definition>
+    <definition xml:id="D-cohom-res2">
     <p>
-      Define the map <m>d_i: N_i \to N_{i+1}</m> by
+      Define the map <m>d^i: N^i \to N^{i+1}</m> by
       <me>
-        (d_i \phi)(g_0, \dots, g_{i+1}) = \sum_{j=0}^{i+1} (-1)^j \phi(g_0, \dots, \widehat{g_j}, \dots, g_{i+1})
+        (d^i \phi)(g_0, \dots, g_{i+1}) = \sum_{j=0}^{i+1} (-1)^j \phi(g_0, \dots, \widehat{g_j}, \dots, g_{i+1})
       </me>,
       where the hat over <m>g_j</m> means you omit it from the list.
-      Then one checks that the sequence
+    </p>
+    </definition>
+    <lemma xml:id="L_acyclic_resolution_G">
+      <statement>
+      With notation as in <xref ref="D-cohom-res1"/> and <xref ref="D-cohom-res2"/>, one checks that the sequence
       <me>
-        0 \to M \to N_0 \to N_1 \to \dots
+        0 \to M \to N^0 \to N^1 \to \dots
       </me>
       is exact.
-      Since the <m>N_i</m> are induced,
-      this is an acyclic resolution:
-      thus the cohomology of the complex
+      </statement>
+      <proof>
+      Left to the reader.
+      </proof>
+    </lemma>
+    <definition>
+      <p>
+      By <xref ref="C_induced_acyclic"/> and <xref ref="L_acyclic_resolution_G"/>, the sequence
       <me>
-        0 \to N_0^G \to N_1^G \to \cdots
+       0 \to M \to N^0 \to N^1 \to \dots
+      </me>
+      is an acyclic resolution of the <m>G</m>-module <m>M</m>. Hence the cohomology of the complex
+      <me>
+        0 \to N^{0G} \to N^{1G} \to \cdots
       </me>
       coincides with the cohomology groups <m>H^i(G, M)</m>.
-      And now we have something we can actually compute! (Terminology:
-      the elements of <m>N_i^G</m> in the kernel of <m>d_i</m> are called
-      <term>(homogeneous) <m>i</m>-cochains</term>;
-      the ones in the image of <m>d_{i-1}</m> are called
-      <term><m>i</m>-coboundaries</term>.)
+      And now we have something we can actually compute!
+      </p>
+      <p>
+      Some terminology:
+      the elements of <m>N^{1G}</m> are called <term>(homogeneous) <m>i</m>-cochains</term>.
+      The cocycles in the kernel of <m>d^i</m> are called
+      <term>(homogeneous) <m>i</m>-cocycles</term>. The ones in the image of <m>d^{i-1}</m> are called
+      <term><m>i</m>-coboundaries</term>. (This terminology makes little sense here; it is transferred from the classical
+      theory of homology of topological spaces, where it has some geometric significance.)
     </p>
-  </introduction>
+    </definition>
+  </subsection>
   <subsection>
     <title>Fun with <m>H^1</m></title>
+    <remark>
     <p>
-      For example,
+      Using the resolution by homogeneous cochains,
       we can give a very simple description of <m>H^1(G,M)</m>.
-      Namely, a 1-cochain <m>\phi: G^2 \to M</m> is determined by <m>\rho(g) = \phi(e, g)</m>,
+      Namely, a 1-cocycle <m>\phi: G^2 \to M</m> is determined by <m>\rho(g) = \phi(e, g)</m>,
       which by <m>G</m>-invariance satisfies the relation
       <md>
-        <mrow>0 \amp = (d_1\phi)(e, h, gh)</mrow>
+        <mrow>0 \amp = (d^1\phi)(e, h, gh)</mrow>
         <mrow>\amp = \phi(h, gh) - \phi(e, gh) + \phi(e, h)</mrow>
         <mrow>\amp = (\phi^h)(h,gh) - \rho(gh) + \rho(h)</mrow>
         <mrow>\amp = \phi(e, g)^h - \rho(gh) + \rho(h)</mrow>
         <mrow>\amp = \rho(g)^h + \rho(h) - \rho(gh).</mrow>
       </md>
     </p>
+    </remark>
     <p>
-      It is the coboundary of a 0-cochain <m>\psi: G \to M</m> if and only if
+      It is the image of a 0-cochain <m>\psi: G \to M</m> if and only if
       <me>
         \rho(g) = \phi(e,g) = \psi(g) - \psi(e) = \psi(e)^g - \psi(e)
       </me>.
@@ -298,6 +327,7 @@
       That is, <m>H^1(G,M)</m> consists of crossed homomorphisms modulo principal crossed homomorphisms,
       consistent with the definition we gave in <xref ref="sec_Kummer_theory">Chapter</xref>.
     </p>
+    <definition xml:id="D-principal-homogeneous-spaces">
     <p>
       We may also interpret <m>H^1(G,M)</m> as the set of isomorphism classes of
       <term>principal homogeneous spaces</term> of <m>M</m>.
@@ -323,46 +353,63 @@
       <m>H^1(G,M)</m>, pick any <m>a \in A</m>,
       take the map <m>\rho: G \to M</m> given by <m>\rho(g) = a^g - a</m>,
       and let <m>\phi</m> be the 1-cocycle with <m>\phi(e, g) = \rho(g)</m>.
-      The verification that this defines a bijection is left to the reader. (For example,
-      the identity in <m>H^1(G,M)</m> corresponds to the trivial principal homogeneous space <m>A=M</m>,
-      on which <m>G</m> acts as it does on <m>M</m> while <m>M</m> acts by translation:
-      <m>m(a) = m+a</m>.)
+      The verification that this defines a bijection is left to the reader.
     </p>
+    </definition>
+    <example>
+      <p>
+      The identity in <m>H^1(G,M)</m> corresponds to the trivial principal homogeneous space <m>A=M</m>,
+      on which <m>G</m> acts as it does on <m>M</m> while <m>M</m> acts by translation: <m>m(a) = m+a</m>.
+      </p>
+      </example>
+    <remark>
     <p>
-      This interpretation of <m>H^1</m> appears prominently in the theory of elliptic curves: For example,
-      if <m>L</m> is a finite extension of <m>K</m> and <m>E</m> is an elliptic curve over <m>E</m>,
-      then <m>H^1(\Gal(L/K), E(\overline{K}))</m> is the set of <m>K</m>-isomorphism classes of curves whose Jacobians are <m>K</m>-isomorphic to <m>E</m>
-      (but which might not themselves be isomorphic to <m>E</m> by virtue of not having a <m>K</m>-rational point).
-      For another example,
-      <m>H^1(\Gal(L/K), \Aut(E))</m> parametrizes twists of <m>E</m>,
-      elliptic curves defined over <m>K</m> which are <m>L</m>-isomorphic to <m>E</m>. (E.g.,
-      <m>y^2 = x^3+x+1</m> versus <m>2y^2 = x^3 + x +1</m>,
-      with <m>L = \QQ(\sqrt{2})</m>.) See Silverman,
-      <pubtitle>The Arithmetic of Elliptic Curves</pubtitle>,
-      especially Chapter X, for all this and more fun with <m>H^1</m>,
-      including the infamous <term>Selmer group</term>
-      and <term>Tate-Shafarevich group</term>.
+      This interpretation of <m>H^1</m> appears prominently in the theory of elliptic curves.
     </p>
+      <ol>
+        <li>
+        <p>
+          For example, if <m>L</m> is a finite extension of <m>K</m> and <m>E</m> is an elliptic curve over <m>E</m>,
+          then <m>H^1(\Gal(L/K), E(\overline{K}))</m> is the set of <m>K</m>-isomorphism classes of curves whose Jacobians are <m>K</m>-isomorphic to <m>E</m>,
+          but which might not themselves be isomorphic to <m>E</m> by virtue of not having a <m>K</m>-rational point.
+        </p>
+        </li>
+        <li>
+        <p>
+          For another example,
+          <m>H^1(\Gal(L/K), \Aut(E))</m> parametrizes twists of <m>E</m>,
+          elliptic curves defined over <m>K</m> which are <m>L</m>-isomorphic to <m>E</m>. (E.g.,
+          <m>y^2 = x^3+x+1</m> versus <m>2y^2 = x^3 + x +1</m>,
+          with <m>L = \QQ(\sqrt{2})</m>.)
+        </p>
+        </li>
+    </ol>
+    <p>
+      See <xref ref="bib-Silverman-AEC"/>, especially Chapter X, for all this and more fun with <m>H^1</m>,
+      including the infamous <term>Selmer group</term> and <term>Tate-Shafarevich group</term>.
+    </p>
+    </remark>
   </subsection>
   <subsection>
     <title>Fun with <m>H^2</m></title>
     <p>
       We can also give an explicit interpretation of
-      <m>H^2(G,M)</m> (see Milne, example II.1.18(b)).
+      <m>H^2(G,M)</m> (see <xref ref="bib-Milne-CFT"/>, example II.1.18(b)).
       It classifies short exact sequences
       <me>
         1 \to M \to E \to G \to 1
       </me>
       of (not necessarily abelian) groups on which <m>G</m> has a fixed action on <m>M</m>.
-      (The action is given as follows:
+      The action is given as follows:
       given <m>g \in G</m> and <m>m \in M</m>,
       choose <m>h \in E</m> lifting <m>G</m>;
       then <m>h^{-1}mh</m> maps to the identity in <m>G</m>,
       so comes from <m>M</m>,
-      and we call it <m>m^g</m> since it depends only on <m>g</m>.)
-      Namely, given the sequence, choose a map <m>s: G \to E</m>
-      (not a homomorphism)
-      such that <m>s(g)</m> maps to <m>g</m> under the map <m>E \to G</m>.
+      and we call it <m>m^g</m> since it depends only on <m>g</m>.
+    </p>
+    <p>
+      The correspondence is constructed as follows. Given an exact sequence as above, 
+      choose a map <m>s: G \to E</m> (which need not be a homomorphism) such that <m>s(g)</m> maps to <m>g</m> under the map <m>E \to G</m>.
       Then the map <m>\phi: G^3 \to M</m> given by
       <me>
         \phi(a,b,c) = s(a)^{-1} s(ba^{-1})^{-1} s(cb^{-1})^{-1} s(ca^{-1}) s(a)
@@ -371,11 +418,10 @@
       and any two choices of <m>s</m> give maps that differ by a 2-coboundary.
     </p>
     <p>
-      What
-      <q>classifies</q>
+      What <q>classifies</q>
       means here is that two sequences give the same element of
       <m>H^2(G,M)</m> if and only if one can find an arrow
-      <m>E \to E'</m> making the following diagram commute:
+      <m>E \to E'</m> making the diagram in <xref ref="fig-cohom2-1"/> commute.
     </p>
     <figure xml:id="fig-cohom2-1">
     <image>
@@ -387,6 +433,7 @@
     </latex-image>
     </image>
     </figure>
+    <remark>
     <p>
       Note that two sequences may not be isomorphic under this definition even if <m>E</m> and <m>E'</m> are abstractly isomorphic as groups.
       For example,
@@ -394,6 +441,7 @@
       then <m>H^2(G, M) = \ZZ/p\ZZ</m> even though there are only two possible groups <m>E</m>,
       namely <m>\ZZ/p^2\ZZ</m> and <m>\ZZ/p\ZZ \times \ZZ/p\ZZ</m>.
     </p>
+    </remark>
   </subsection>
   <subsection>
     <title>Extended functoriality</title>
@@ -405,6 +453,7 @@
       It turns out that in a suitable sense,
       the cohomology groups are also functorial with respect to changing <m>G</m>.
     </p>
+    <definition xml:id="D-extended-functoriality">
     <p>
       Let <m>M</m> be a <m>G</m>-module and <m>M'</m> a <m>G'</m>-module.
       Suppose we are given a homomorphism
@@ -413,12 +462,15 @@
       We say these are <term>compatible</term>
       if <m>\beta(m^{\alpha(g)}) = \beta(m)^g</m> for all <m>g \in G</m> and <m>m \in M</m>.
       In this case,
-      one gets canonical homomorphisms <m>H^i(G, M) \to H^i(G', M')</m>
-      (construct them on pairs of injective resolutions,
-      then show that any two choices are homotopic).
+      one gets canonical homomorphisms <m>H^i(G, M) \to H^i(G', M')</m>:
+      one firsts constructs these on pairs of injective resolutions,
+      then shows that any two choices are homotopic and hence give the same maps on cohomology.
+      We will refer to the construction of such homomorphisms as the <term>extended functorality</term> of group cohomology.
     </p>
+    </definition>
+    <example xml:id="exa-extended-functoriality">
     <p>
-      The principal examples are as follows.
+      The principal examples of extended functoriality we will be using are the following.
       <ol>
         <li>
           <p>
@@ -429,7 +481,7 @@
             <m>g \mapsto h^{-1}gh</m>,
             and let <m>\beta: M \to M</m> be the map <m>m \mapsto m^h</m>.
             Then the induced homomorphisms
-            <m>H^i(G,M) \to H^i(G,M)</m> are all the identity map.
+            <m>H^i(G,M) \to H^i(G,M)</m> are all identity maps.
           </p>
         </li>
         <li>
@@ -454,8 +506,7 @@
         </li>
         <li>
           <p>
-            Take notation as in (a),
-            but this time consider the map
+            Let <m>M</m> be a <m>G</m>-module and consider the map
             <m>\Ind^G_H M \to M</m> taking <m>m \otimes [g]</m> to <m>m^g</m>.
             We then get maps <m>H^i(G, \Ind^G_H M) \to H^i(G,M)</m> which,
             together with the isomorphisms of Shapiro's lemma,
@@ -472,21 +523,25 @@
               m \mapsto \sum_i m^{g_i} \otimes [g_i^{-1}] \to \sum_i m = [G:H]m
             </me>.
             Thus <m>\Cor \circ \Res</m> acts as multiplication by <m>[G:H]</m> on each (co)homology group.
+          </p>
+          <p>
             Bonus consequence (hereafter excluding the case of <m>H^0</m>):
             if we take <m>H</m> to be the trivial group,
             then the group in the middle is isomorphic to <m>H^i(H, M) = 0</m>.
             So every cohomology group for <m>G</m> is killed by <m>\#G</m>,
             and in particular is a torsion group.
+          </p>
+          <p>
             In fact, if <m>M</m> is finitely generated as an abelian group,
             this means <m>H^i(G, M)</m> is always finite,
-            because each of these will be finitely generated and torsion. (Of course,
+            because each of these will be finitely generated and torsion. Of course,
             this won't happen in many of our favorite examples,
-            e.g., <m>H^i(\Gal(L/K), L^*)</m> for <m>L</m> and <m>K</m> fields.)
+            e.g., <m>H^i(\Gal(L/K), L^*)</m> for <m>L/K</m> a finite Galois extension of fields.
           </p>
         </li>
         <li>
           <p>
-            If <m>H</m> is a <em>normal</em> subgroup of <m>G</m>,
+            Let <m>H</m> be a <em>normal</em> subgroup of <m>G</m>,
             let <m>\alpha</m> be the surjection <m>G \to G/H</m>,
             and let <m>\beta</m> be the injection <m>M^H \hookrightarrow M</m>.
             Note that <m>G/H</m> acts on <m>M^H</m>;
@@ -500,19 +555,21 @@
         </li>
       </ol>
     </p>
+    </example>
   </subsection>
   <exercises>
     <title>Exercises</title>
       <exercise>
         <statement>
           Complete the proof of the correspondence between
-          <m>H^1(G,M)</m> and principal homogeneous spaces.
+          <m>H^1(G,M)</m> and principal homogeneous spaces (<xref ref="D-principal-homogeneous-spaces"/>).
         </statement>
       </exercise>
       <exercise>
         <statement>
           The set <m>H^2(G,M)</m> has the structure of an abelian group.
           Describe the corresponding structure on short exact sequences <m>0 \to M \to E \to G \to 0</m>.
+          (A related concept in homological algebra is the <term>Baer sum</term>.)
         </statement>
       </exercise>
       <exercise>
@@ -527,18 +584,6 @@
           or use the exact sequence <m>0 \to N \to M \to M/N \to 0</m>.
           Better yet, use more than one method and make sure that you get the same answer.
         </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          (Artin-Schreier) Let <m>L/K</m> be a
-          <m>\ZZ/p\ZZ</m>-extension of fields of characteristic <m>p>0</m>.
-          Prove that <m>L = K(\alpha)</m> for some <m>\alpha</m> such that <m>\alpha^p - \alpha \in K</m>.
-        </statement>
-        <hint>
-          Let <m>K^{\sep}</m> be a separable closure of <m>K</m> containing <m>L</m>,
-          and consider the short exact sequence <m>0 \to \FF_p \to K^{\sep} \to K^{\sep} \to 0</m> in which the map
-          <m>K^{\sep} \to K^{\sep}</m> is given by <m>x \mapsto x^p - x</m>.
-        </hint>
       </exercise>
   </exercises>
 </section>

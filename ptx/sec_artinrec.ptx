@@ -151,7 +151,7 @@
     </p>
     <p>
       Now for <m>\gothm</m> divisible by all primes of <m>K</m> which ramify in <m>L</m>,
-      define a homomorphism (the Artin map)
+      define a homomorphism (the <term>Artin map</term>)
       <me>
         I_K^\gothm \to \Gal(L/K) \qquad \gothp \mapsto \Frob_\gothp
       </me>.
@@ -249,15 +249,6 @@
           Use <xref ref="exc-order-of-generalized-ideal-class-group"/> to give a formula for the order of
           <m>\Cl^{\gothm}(\QQ(\sqrt{D}))</m> for <m>D</m> odd and squarefree,
           in terms of the prime factors of <m>\gothm</m> and <m>D</m> and the class number of <m>\QQ(\sqrt{D})</m>.
-        </statement>
-      </exercise>
-      <exercise xml:id="exc-Artin-map-surjective">
-        <statement>
-          Show that the homomorphism <m>I_K^\gothm \to \Gal(L/K)</m> is surjective.
-          You may assume the following fact:
-          if <m>L/K</m> is an extension of number fields
-          (with <m>L \neq K</m>),
-          there exists a prime of <m>K</m> which does not split completely in <m>L</m>.
         </statement>
       </exercise>
       <exercise>
