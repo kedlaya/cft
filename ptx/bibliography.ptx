@@ -18,6 +18,9 @@
   <biblio xml:id="bib-Harari">
     D. Harari, <pubtitle>Galois Cohomology and Class Field Theory</pubtitle>.
   </biblio>
+  <biblio xml:id="bib-Holt">
+    D.F. Holt, <pubtitle>An interpretation of the cohomology groups <m>H_n(G, M)</m></pubtitle>, J. Algebra 60 (1979), no. 2, 307--320. 
+  </biblio>
   <biblio xml:id="bib-Jarvis">
     F. Jarvis, <pubtitle>Algebraic Number Fields</pubtitle>, Springer, Cham, 2014.
   </biblio>
@@ -40,7 +43,7 @@
   <biblio xml:id="bib-Milne-CFT">
     J. Milne, <pubtitle>Class Field Theory</pubtitle>,
     <url href="http://jmilne.org/math/CourseNotes/cft.html"/>, version 3.10.
-    We believe, but have not confirmed, that our references remain valid for more recent versions of this text.
+    We believe, but have not confirmed, that our references remain valid for version 4.04.
   </biblio>
   <biblio xml:id="bib-Neukirch">
     J. Neukirch, <pubtitle>Algebraic Number Theory</pubtitle>.
@@ -49,7 +52,7 @@
     J. Neukirch, <pubtitle>Class Field Theory</pubtitle>.
   </biblio>
   <biblio xml:id="bib-Nikolov-Segal">
-    N. Nikolov and D. Segal, <pubtitle>On finitely generated profinite groups, I: strong completeness and uniform bounds</pubtitle>.
+    N. Nikolov and D. Segal, <articletitle>On finitely generated profinite groups, I: strong completeness and uniform bounds</articletitle>.
   </biblio>
   <biblio xml:id="bib-Serre-GaloisCohomology">
     J.-P. Serre, <pubtitle>Galois Cohomology</pubtitle>.

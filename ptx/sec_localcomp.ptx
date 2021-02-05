@@ -4,7 +4,7 @@
     <paragraphs>
       <title>Reference</title>
       <p>
-        <xref ref="bib-Milne-CFT"/>, III.2 and III.3; <xref ref="bib-Neukirch"/>, V.1.
+        <xref ref="bib-Milne-CFT"/>, III.1 and III.2; <xref ref="bib-Neukirch"/>, V.1.
       </p>
     </paragraphs>
     <paragraphs>
@@ -17,13 +17,14 @@
     </paragraphs>
   </introduction>
   <subsection>
+    <title>Overview</title>
     <p>
       We now make some computations of
       <m>H^i_T(L/K)</m> for <m>L/K</m> a finite Galois extension of local fields.
       To begin with, recall that by
       <q>Theorem 90</q>
       (<xref ref="L_theorem_90">Lemma</xref>), <m>H^1(L/K) = 0</m>.
-      Our goal in this chapter will be to supplement this fact with a computation of <m>H^2(L/K)</m>.
+      Our goal in this section will be to supplement this fact with a computation of <m>H^2(L/K)</m>.
     </p>
     <proposition xml:id="P_local_h2">
       <statement>
@@ -37,6 +38,7 @@
         </p>
       </statement>
     </proposition>
+    <remark>
     <p>
       Before continuing,
       it is worth keeping in a safe place the exact sequence
@@ -48,10 +50,22 @@
       In this exact sequence of <m>G = \Gal(L/K)</m>-modules,
       the action on <m>\pi_L^\ZZ</m> is always trivial
       (since the valuation on <m>L</m> is Galois-invariant).
-      For convenience,
-      we write <m>U_L</m> for the unit group <m>\gotho_L^*</m>.
     </p>
-  </subsection>
+    </remark>
+    <remark xml:id="rmk-local-galois-solvable">
+    <p>
+      Another basic fact to keep in mind is that any finite Galois extension of local fields is <em>solvable</em>.
+      To wit, the maximal unramified extension is cyclic,; the maximal tamely ramified extension is cyclic over that;
+      and the rest is a Galois extension whose degree is a power of <m>p</m>, and every finite <m>p</m>-group is solvable.
+    </p>
+    <p>
+      This will allow us to simplify some of the following arguments by writing a general Galois extension as a tower of successive
+      cyclic extensions. Of course we will have no such shortcut in the global case, because the Galois group of a Galois extension of number
+      fields can be any group whatsoever; in fact the inverse Galois problem asks whether this always occurs for an extension over <m>\QQ</m>,
+      and no counterexample is known.
+    </p>
+    </remark>
+    </subsection>
   <subsection>
     <title>The unramified case</title>
     <p>
@@ -79,14 +93,14 @@
     <proposition xml:id="P_unramified_norm_surjective">
       <statement>
         <p>
-          For any finite unramified extension <m>L/K</m> of local fields, the map <m>\Norm_{L/K}: U_L \to U_K</m> is surjective.
+          For any finite unramified extension <m>L/K</m> of local fields, the map <m>\Norm_{L/K}: \gotho_L^* \to \gotho_K^*</m> is surjective.
         </p>
       </statement>
     </proposition>
     <proof>
       <p>
-        Say <m>u \in U_K</m> is a unit.
-        By <xref ref="P_finite_norm_surjective"/>, we may pick <m>v_0 \in U_L</m> such that in the residue fields,
+        Say <m>u \in \gotho_K^*</m> is a unit.
+        By <xref ref="P_finite_norm_surjective"/>, we may pick <m>v_0 \in \gotho_L^*</m> such that in the residue fields,
         the norm of <m>v_0</m> coincides with <m>u</m>.
         Thus <m>u/\Norm(v_0) \equiv 1 \pmod{\pi}</m>, where <m>\pi</m> is a uniformizer of <m>K</m>.
         Now we construct units <m>v_i \equiv 1 \pmod{\pi^i}</m> such that <m>u_i = u/\Norm(v_0\cdots v_i) \equiv 1 \pmod{\pi^{i+1}}</m>:
@@ -98,35 +112,51 @@
     <corollary xml:id="C_cohomology_of_units_unramified">
       <statement>
         <p>
-          For any finite unramified extensions <m>L/K</m> of local fields, <m>H^i_T(\Gal(L/K), U_L) = 1</m> for all <m>i \in \ZZ</m>.
+          For any finite unramified extensions <m>L/K</m> of local fields, <m>H^i_T(\Gal(L/K), \gotho_L^*) = 1</m> for all <m>i \in \ZZ</m>.
         </p>
       </statement>
     </corollary>
     <proof>
       <p>
         Again, <m>\Gal(L/K)</m> is cyclic, so by <xref ref="T_cyclic_group_periodicity"/> we need only check this for <m>i=0,1</m>.
-        For <m>i=1</m>, the desired equality is <xref ref="L_theorem_90"/>; for <m>i=0</m>, it is <xref ref="P_unramified_norm_surjective"/>.
+        For <m>i=0</m>, it is <xref ref="P_unramified_norm_surjective"/>.
+        For <m>i=1</m>, note that because <m>L/K</m> is unramified, we can split the surjection <m>L^* \to L^*/\gotho_L^*</m>
+        by choosing a uniformizer <m>\pi_K</m> of <m>K</m> and writing <m>L^* = \gotho_L^* \pi_K^\ZZ</m>. Hence
+        <m>H^1_T(\Gal(L/K), \gotho_L^*)</m> is a direct summand of <m>H^1_T(\Gal(L/K), L^*)</m>, and the latter vanishes by <xref ref="L_theorem_90"/>. 
       </p>
     </proof>
+    <proposition xml:id="P_H2_unramified">
+      <statement>
+        <p>
+          For any finite unramified extension <m>L/K</m> of local fields,
+          <m>H^2(L/K)</m> is cyclic of order <m>[L:K]</m>.
+        </p>
+      </statement>
+      <proof>
+      <p>
+        Using the Herbrand quotient, we get <m>h(L^*) = h(\gotho_L^*) h(\ZZ)</m>.
+        <xref ref="C_cohomology_of_units_unramified"/> says that <m>h(\gotho_L^*) = 1</m>, and
+        <md>
+          <mrow>h(L^*/\gotho_L^*) \amp = h(\ZZ)</mrow>
+          <mrow>\amp = \#H^0_T(\Gal(L/K), \ZZ)/\#H^1_T(\Gal(L/K), \ZZ)</mrow>
+          <mrow>\amp = \#\Gal(L/K)^{\ab} / \#\Hom(\Gal(L/K), \ZZ)</mrow>
+          <mrow>\amp = [L:K].</mrow>
+        </md>
+      </p>
+      <p>
+        Since <m>H^1_T(\Gal(L/K), L^*)</m> is trivial,
+        we conclude that <m>H^0_T(\Gal(L/K), L^*)</m> has order <m>[L:K]</m>.
+        Moreover, the long exact sequence of Tate groups gives an exact sequence
+        <me>
+          1 \to H^0_T(\Gal(L/K), L^*) \to H^0_T(\Gal(L/K), \ZZ) = \Gal(L/K) \to 1,
+        </me>
+        where the ends vanish by <xref ref="C_cohomology_of_units_unramified"/> again;
+        so by periodicity (<xref ref="T_cyclic_group_periodicity"/>) we also get that <m>H^0_T(\Gal(L/K), L^*) \cong H^2(L/K)</m> is cyclic of order <m>[L:K]</m>.
+      </p>
+      </proof>
+    </proposition>
     <p>
-      Using the Herbrand quotient, we get <m>h(L^*) = h(U_L) h(L^*/U_L)</m>.
-      <xref ref="C_cohomology_of_units_unramified"/> says that <m>h(U_L) = 1</m>, and
-      <md>
-        <mrow>h(L^*/U_L) \amp = h(\ZZ)</mrow>
-        <mrow>\amp = \#H^0_T(\Gal(L/K), \ZZ)/\#H^1_T(\Gal(L/K), \ZZ)</mrow>
-        <mrow>\amp = \#\Gal(L/K)^{\ab} / \#\Hom(\Gal(L/K), \ZZ)</mrow>
-        <mrow>\amp = [L:K].</mrow>
-      </md>
-    </p>
-    <p>
-      Since <m>H^1_T(\Gal(L/K), L^*)</m> is trivial,
-      we conclude that <m>H^0_T(\Gal(L/K), L^*)</m> has order <m>[L:K]</m>.
-      In fact, this group is cyclic: the long exact sequence of Tate groups gives an exact sequence
-      <me>
-        1 \to H^0_T(\Gal(L/K), L^*) \to H^0_T(\Gal(L/K), \ZZ) = \Gal(L/K) \to 1.
-      </me>
-    </p>
-    <p>
+      Let us now make the description of <m>H^2(L/K)</m> more canonical.
       Consider the short exact sequence
       <me>
         0 \to \ZZ \to \QQ \to \QQ/\ZZ \to 0
@@ -134,7 +164,7 @@
       of modules with trivial Galois action.
       Since <m>\QQ</m> is injective as an abelian group,
       it is also injective as a <m>G</m>-module for any group <m>G</m>
-      (exercise).
+      (<xref ref="exer-trivial-module-injective"/>).
       Thus we get an isomorphism <m>H^0_T(\Gal(L/K), \ZZ) \to H^{-1}_T(\Gal(L/K), \QQ/\ZZ)</m>.
       But the latter is
       <me>
@@ -200,12 +230,12 @@
     <p>
       The following proof uses that we are in characteristic 0, but it can be modified to work also in the function field case.
     </p>
-    <lemma>
+    <lemma xml:id="L_open_subgroup_acyclic1">
       <statement>
         <p>
           Let <m>L/K</m> be a finite Galois extension of local fields.
           Then there is an open, Galois-stable subgroup <m>W</m> of
-          <m>U_L = \gotho_L^*</m> such that <m>H^i(\Gal(L/K), W) = 0</m> for all <m>i>0</m>.
+          <m>\gotho_L^*</m> such that <m>H^i(\Gal(L/K), W) = 0</m> for all <m>i>0</m>.
         </p>
       </statement>
     </lemma>
@@ -224,13 +254,14 @@
       </p>
     </proof>
     <p>
-      Since the quotient <m>U_L/W</m> is finite,
-      its Herbrand quotient is 1, so <m>h(U_L) = h(V) = 1</m>.
-      So again we may conclude that <m>h(L^*) = h(U_L) h(\ZZ) = [L:K]</m>,
+      Take <m>W</m> as in <xref ref="L_open_subgroup_acyclic1"/>.
+      Since <m>W</m> has finite index in <m>\gotho_L^*</m>, we have <m>h(\gotho_L^*/W) = 1</m>
+      and hence <m>h(\gotho_L^*) = h(W) = 1</m> by <xref ref="L_open_subgroup_acyclic1"/>.
+      So again we may conclude that <m>h(L^*) = h(\gotho_L^*) h(\ZZ) = [L:K]</m>,
       and so <m>H^0_T(\Gal(L/K), L^*) = [L:K]</m>.
       However, we cannot yet check that
       <m>H^0_T(\Gal(L/K), L^*)</m> is cyclic because the groups
-      <m>H^1_T(\Gal(L/K), U_L)</m> are not guaranteed to vanish;
+      <m>H^1_T(\Gal(L/K), \gotho_L^*)</m> are not guaranteed to vanish;
       see <xref ref="exer-units-not-acyclic"/>.
     </p>
   <remark>
@@ -345,40 +376,43 @@
     <p>
       We now prove the following.
     </p>
-    <proposition>
+    <proposition xml:id="P_H2_upper_bound">
       <statement>
         <p>
           For any finite Galois extension <m>L/K</m> of local fields,
           the group <m>H^2(\Gal(L/K), L^*)</m> has order at most <m>[L:K]</m>.
         </p>
       </statement>
-    </proposition>
-    <p>
-      A key fact we need to recall is that any finite Galois extension of local fields is <em>solvable</em>:
-      the maximal unramified extension is cyclic,
-      the maximal tamely ramified extension is cyclic over that,
-      and the rest is an extension of order a power of <m>p</m>,
-      so its Galois group is automatically solvable.
-      This lets us induct on <m>[L:K]</m>.
-    </p>
     <proof>
       <p>
         We've checked the case of <m>L/K</m> cyclic,
         so we may use it as the basis for an induction.
         If <m>L/K</m> is not cyclic,
-        since it is solvable, we can find a Galois subextension <m>M/K</m>.
+        since it is solvable (<xref ref="rmk-local-galois-solvable"/>), we can find a Galois subextension <m>M/K</m>.
         Now the exact sequence
         <me>
           0 \to H^2(M/K) \to H^2(L/K) \to H^2(L/M)
         </me>
+        from <xref ref="C_inflation_restriction_h2"/>
         implies that <m>\#H^2(L/K) \leq \#H^2(M/K) \#H^2(L/M) = [M:K][L:M] = [L:K]</m>.
       </p>
     </proof>
+    </proposition>
     <p>
       To complete the proof that
       <m>H^2(L/K)</m> is cyclic of order <m>[L:K]</m>,
       it now suffices to produce a cyclic subgroup of order <m>[L:K]</m>.
-      Let <m>M/K</m> be an unramified extension of degree <m>[L:K]</m>.
+    </p>
+    <proposition xml:id="P_H2_lower_bound">
+      <statement>
+        <p>
+          For any finite Galois extension <m>L/K</m> of local fields,
+          the group <m>H^2(\Gal(L/K), L^*)</m> contains a cyclic subgroup of order <m>[L:K]</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>M/K</m> be an unramified extension of degree <m>[L:K]</m>.
       Then we have a diagram
     </p>
       <figure xml:id="fig-localcomp-2">
@@ -392,12 +426,12 @@
       </image>
       </figure>
     <p>
-      in which the bottom row is exact and the vertical arrows are injective,
-      both by <xref ref="C_inflation_restriction_h2">Corollary</xref>.
-      It suffices to show that the diagonal arrow <m>H^2(M/K) \to H^2(ML/L)</m> is the zero map;
-      then we can push a generator of
-      <m>H^2(M/K)</m> down to <m>H^2(ML/K)</m>,
-      then pull it back to <m>H^2(L/K)</m> by exactness to get an element of order <m>[L:K]</m>.
+      in which the bottom row is exact and the vertical arrow is injective,
+      both by <xref ref="C_inflation_restriction_h2"/>.
+      It suffices to show that the diagonal arrow <m>H^2(M/K) \to H^2(ML/L)</m> is the zero map,
+      as this will imply an inclusion <m>H^2(M/K) \subseteq H^2(L/K)</m> within <m>H^2(ML/K)</m>
+      and we already know that <m>H^2(M/K)</m> is cyclic of order <m>[M:K]=[L:K]</m>
+      by <xref ref="P_H2_unramified"/>.
     </p>
     <p>
       Let <m>e = e(L/K)</m> and <m>f = f(L/K)</m> be the ramification index and residue field degree,
@@ -419,11 +453,15 @@
       </figure>
     <p>
       in which the vertical arrows are isomorphisms.
-      (Remember that extended functoriality for Tate groups starts in degree 0, yielding the first horizontal arrow.)
-      The composition in the bottom row is the map
-      <m>H^2(M/K) \to H^2(ML/L)</m> which we want to be zero;
+      (Remember from <xref ref="D-extended-functoriality-homology"/> that restriction maps on Tate homology make sense in degree 0;
+      that gives the first horizontal arrow in <xref ref="fig-localcomp-3"/>.)
+      The composition in the bottom row is the map <m>H^2(M/K) \to H^2(ML/L)</m> which we want to be zero;
       it thus suffices to check that the top row composes to zero.
-      This composition is none other than the canonical map <m>K^*/\Norm_{M/K} M^* \to L^*/\Norm_{ML/L} (ML)^*</m>.
+    </p>
+    <p>
+      Let us rewrite this composition concretely as
+      <me>K^*/\Norm_{M/K} M^* \to U^*/\Norm_{M/U} M^* \to L^*/\Norm_{ML/L} (ML)^*</me>
+      where the maps are induced by the inclusions <m>K^* \to U^* \to L^*</m>.
       Now <m>K^*/\Norm_{M/K} M^*</m> is a cyclic group of order <m>ef</m> generated by <m>\pi_K</m>,
       a uniformizer of <m>K</m>,
       and <m>L^*/\Norm_{ML/L} (ML)^*</m> is a cyclic group of order <m>e</m> generated by <m>\pi_L</m>,
@@ -432,8 +470,9 @@
       <m>\gotho_L</m> times <m>\pi_L^e</m>,
       so the map in question is indeed zero.
     </p>
+      </proof>
+    </proposition>
   <remark>
-    <title>Note</title>
     <p>
       If <m>L/K</m> is a finite extension of degree <m>n</m>,
       then the map <m>\Res: H^2(K^{\unr}/K) \to H^2(L^{\unr}/L)</m> translates,
@@ -447,11 +486,12 @@
   <subsection>
     <title>The local invariant map</title>
     <p>
-      By staring again at the above argument,
-      we can in fact prove that <m>H^2(\overline{K}/K) \cong \QQ/\ZZ</m>.
-      First of all, we have an injection
-      <m>H^2(K^{\unr}/K) \to H^2(\overline{K}/K)</m> by <xref ref="C_inflation_restriction_h2">Corollary</xref>,
-      and the former is canonically isomorphic to <m>\QQ/\ZZ</m>;
+    We have now proved the first assertion of <xref ref="P_local_h2"/> (by combining <xref ref="P_H2_upper_bound"/> and <xref ref="P_H2_lower_bound"/>).
+    We now turn to the second assertion. In the process, we will also see that <m>H^2(\overline{K}/K) \cong \QQ/\ZZ</m>.
+    </p>
+    <p>
+      By <xref ref="C_inflation_restriction_h2"/> we have an injection
+      <m>H^2(K^{\unr}/K) \to H^2(\overline{K}/K)</m>, and the former is canonically isomorphic to <m>\QQ/\ZZ</m>;
       so we have to prove that this injection is actually also surjective.
       Remember that <m>H^2(\overline{K}/K)</m> is the direct limit of
       <m>H^2(M/K)</m> running over all finite extensions <m>M</m> of <m>K</m>.
@@ -464,9 +504,6 @@
       Since that's true for any <m>M</m>,
       we get that the map is indeed surjective, hence an isomorphism.
     </p>
-    <p>
-      Next time, we'll use this map to obtain the local reciprocity map.
-    </p>
   </subsection>
   <exercises>
     <title>Exercises</title>
@@ -475,10 +512,23 @@
           Give an elementary proof (without cohomology)
           that the norm map from one finite field to another is always surjective.
         </statement>
+        <hint>
+          Write everything in terms of a generator of the multiplicative group of the larger field.
+        </hint>
+      </exercise>
+      <exercise xml:id="exer-trivial-module-injective">
+      <statement>
+        Let <m>G</m> be a finite group. Let <m>M</m> be a <m>G</m>-module whose underlying abelian group is divisible abelian group. 
+        Prove that <m>M</m> is an acyclic <m>G</m>-module.
+      </statement>
+      <hint>
+        First show that the groups <m>H^i(G,M)</m> are divisible, say using the description in terms of cochains. Then combine with the fact
+        that these group are killed by <m>#G</m> (<xref ref="exa-extended-functoriality"/>).
+      </hint>
       </exercise>
       <exercise xml:id="exer-units-not-acyclic">
         <statement>
-          Give an example of a cyclic ramified extension <m>L/K</m> of local fields in which the groups <m>H^i_T(\Gal(L/K), U_L)</m> are nontrivial.
+          Give an example of a cyclic ramified extension <m>L/K</m> of local fields in which the groups <m>H^i_T(\Gal(L/K), \gotho_L^*)</m> are nontrivial.
         </statement>
       </exercise>
   </exercises>

@@ -21,20 +21,7 @@
   <subsection>
     <title>Induced <m>G</m>-modules</title>
     <p>
-      Recall the last point
-      (and the last exercise)
-      from the last chapter: if
-      <me>
-        0 \to M \to M^0 \to M^1 \to \cdots
-      </me>
-      is an acyclic resolution of <m>M</m> (i.e., the sequence is exact,
-      and <m>H^i(G, M_j) = 0</m> for <m>i > 0</m> and all <m>j</m>), then
-      <me>
-        H^i(G, M) = \ker(M^{iG} \to M^{(i+1)G})/\im(M^{(i-1)G} \to M^{iG})
-      </me>.
-    </p>
-    <p>
-      Thus to compute cohomology,
+      In light of <xref ref="exer-acyclic-res"/>, to compute cohomology
       we are going to need an ample supply of acyclic <m>G</m>-modules.
       We will get these using a process known as <term>induction</term>.
       By way of motivation,
@@ -442,6 +429,12 @@
       namely <m>\ZZ/p^2\ZZ</m> and <m>\ZZ/p\ZZ \times \ZZ/p\ZZ</m>.
     </p>
     </remark>
+    <remark>
+    <p>
+      One can similarly interpret <m>H^i(G,M)</m> for <m>i > 2</m> in terms of longer exact sequences; this is similar to the construction of higher Yoneda extension groups.
+      See <xref ref="bib-Holt"/>.
+    </p>
+    </remark>
   </subsection>
   <subsection>
     <title>Extended functoriality</title>
@@ -465,7 +458,7 @@
       one gets canonical homomorphisms <m>H^i(G, M) \to H^i(G', M')</m>:
       one firsts constructs these on pairs of injective resolutions,
       then shows that any two choices are homotopic and hence give the same maps on cohomology.
-      We will refer to the construction of such homomorphisms as the <term>extended functorality</term> of group cohomology.
+      We will refer to the construction of such homomorphisms as the <term>extended functoriality</term> of group cohomology.
     </p>
     </definition>
     <example xml:id="exa-extended-functoriality">
@@ -550,7 +543,7 @@
               \Inf: H^i(G/H, M^H) \to H^i(G, M)
             </me>.
             The inflation and restriction maps will interact in an interesting way;
-            see <xref ref="P_inflation_restriction">Proposition</xref>.
+            see <xref ref="P_inflation_restriction"/>.
           </p>
         </li>
       </ol>

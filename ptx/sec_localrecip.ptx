@@ -111,13 +111,26 @@
           there exists a finite abelian extension <m>L</m> of <m>K</m> such that <m>U = \Norm_{L/K} L^*</m>.
         </p>
       </statement>
-    </theorem>
-    <remark>
+     <proof>
+       <p>
+         For the first assertion, see <xref ref="exer-norm-subgroup-is-open"/> 
+         (or <xref ref="exer-norm-subgroup-is-open-charp"/> for the case of characteristic <m>p</m>).
+         For the second assertion, see <xref ref="T_local_existence2"/>.
+       </p>
+     </proof>
+   </theorem>
+    <remark xml:id="rem-subspace-topology">
     <p>
       In <xref ref="T_local_existence"/>, the topology on <m>K^*</m> is the one given by taking the disjoint union of the sets
       <m>\pi^n \gotho_K^*</m> for <m>n \in \ZZ</m>, where <m>\pi \in K^\times</m> is a uniformizer. 
       In fact, it is only necessary to keep track of this topology in the function field case;
       for <m>K</m> a finite extension of <m>\QQ_p</m>, one can show that every subgroup of <m>K^*</m> of finite index is open.
+    </p>
+    <p>
+      Another way to identify the correct topology on <m>K^*</m> is to equip <m>K</m> with its usual topology (the norm topology defined by an extension of
+      the <m>p</m>-adic absolute value) and then take the subspace topology for the inclusion of <m>K^*</m> into <m>K \times K</m> given by
+      <m>x \mapsto (x, x^{-1})</m>. Note that this is not the same as the subspace topology for the inclusion of <m>K^*</m> into <m>K</m>; see
+      <xref ref="exer-subspace-top"/>.
     </p>
     </remark>
     <p>
@@ -138,7 +151,7 @@
     <p>
     In <xref ref="T_norm_limitation"/>, it is evident that <m>\Norm_{L/K} L^* \subseteq \Norm_{M/K} M^*</m> because
     <m>\Norm_{L/K} = \Norm_{M/K} \circ \Norm_{L/M}</m>. Since the group <m>\Norm_{L/K} L^*</m> can be shown directly to be an open subgroup of finite index 
-    (see <xref ref="exer-norm-subgroup-is-open"/>), <xref ref="T_local_existence"/> implies that it has the form <m>Norm_{N/K} N^*</m> for some finite abelian 
+    (see <xref ref="exer-norm-subgroup-is-open"/>), <xref ref="T_local_existence"/> implies that it has the form <m>\Norm_{N/K} N^*</m> for some finite abelian 
     extension <m>N</m> of <m>K</m>. <xref ref="T_local_reciprocity"/> then implies that <m>M \subseteq N</m>. The subtle point that remains to be proven is that
     the inclusion <m>M \subseteq N</m> is actually an equality.
     </p>
@@ -263,14 +276,14 @@
       a continuous <m>G</m>-module <m>A</m>,
       a surjective continuous homomorphism <m>d: G \to \widehat{\ZZ}</m>,
       and a homomorphism <m>v: A^G \to \widehat{\ZZ}</m> satisfying suitable conditions,
-      we will show that for every finite extension <m>L</m> of <m>K</m> there is a canonical isomorphism <m>\Gal(L/K)^{\ab} \to A_L \to \Norm_{L/K} A_K</m>,
+      we will show that for every finite extension <m>L</m> of <m>K</m> there is a canonical isomorphism <m>\Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L</m>,
       where <m>A_K</m> and <m>A_L</m> denote the <m>\Gal(\overline{K}/K)</m> and
       <m>\Gal(\overline{K}/L)</m>-invariants of <m>A</m>.
       In particular,
-      these conditions will hold for <m>K</m> a local field,
-      <m>A = \overline{K}^*</m>,
-      <m>d</m> the map <m>\Gal(\overline{K}/K) \to \Gal(K^{\unr}/K)</m>,
-      and <m>v: \Gal(K^*) \to \ZZ \to \widehat{\ZZ}</m> the valuation.
+      these conditions will hold when we take <m>K</m> to bea local field,
+      <m>A</m> to be <m>\overline{K}^*</m>,
+      <m>d</m> to be the map <m>\Gal(\overline{K}/K) \to \Gal(K^{\unr}/K)</m>,
+      and <m>v: \Gal(K^*) \to \ZZ \to \widehat{\ZZ}</m> to be the valuation.
     </p>
     <p>
       This is the precise sense in which we will use local class field theory as a model for global class field theory.
@@ -305,10 +318,10 @@
         </statement>
         <hint>
           Show that already <m>\Norm_{L/K} K^*</m> is open!
-          The corresponding statement in positive characteristic is more subtle.
+          The corresponding statement in positive characteristic is more subtle; see <xref ref="exer-norm-subgroup-is-open-charp"/>.
         </hint>
       </exercise>
-      <exercise>
+      <exercise xml:id="exer-norm-subgroup-is-open-charp">
         <statement>
           Prove that for any finite extension <m>L/K</m> of finite separable extensions of <m>\FF_p((t))</m>,
           <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m>.
@@ -316,7 +329,7 @@
         <hint>
           Reduce to the case of a cyclic extension of prime degree.
           If the degree is prime to <m>p</m>,
-          you may imitate the previous exercise;
+          you may imitate <xref ref="exer-norm-subgroup-is-open"/>;
           otherwise, that approach fails because
           <m>\Norm_{L/K} K^*</m> lands inside the subfield <m>K^p</m>,
           but you can use this to your advantage to make an explicit calculation.
@@ -338,6 +351,13 @@
           Give a direct proof of the following consequence of <xref ref="T_Brauer_group_identification">Theorem</xref>:
           if <m>K</m> is a local field,
           then any two quaternion algebras which are not split are isomorphic to each other.
+        </statement>
+      </exercise>
+      <exercise xml:id="exer-subspace-top">
+        <statement>
+           Let <m>K</m> be a finite extension of <m>\QQ_p</m>.
+           Show that <m>K^*</m> is a locally compact abelian group for the subspace topology from <m>K \times K</m> via the inclusion <m>x \mapsto (x,x^{-1})</m>,
+           but not for the subspace topology from <m>K</m>.
         </statement>
       </exercise>
   </exercises>

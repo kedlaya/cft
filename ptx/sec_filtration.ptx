@@ -1,0 +1,289 @@
+﻿<section xml:id="sec_filtration">
+  <title>Ramification filtrations and local reciprocity</title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        <xref ref="bib-Serre-LocalFields"/>, IV; <xref ref="bib-Neukirch"/>, II.10.
+      </p>
+    </paragraphs>
+      <p>
+        For <m>K</m> a finite extension of <m>\QQ_p</m>, the local reciprocity map defines an isomorphism of 
+        <m>\Gal(\overline{K}/K)^{\ab}</m> with the profinite completion of <m>K</m>. The natural filtration on the unit gruop
+        <m>\gotho_K^\times</m> thus defines a filtration on <m>\Gal(\overline{K}/K)^{\ab}</m>; but which one?
+        It turns out that the answer is related to a natural filtration on the entire group <m>\Gal(\overline{K}/K)</m>;
+        we give Hadamard's description of this.
+      </p>
+  </introduction>
+  <subsection>
+    <title>The lower numbering filtration</title>
+    <remark>
+        <p>
+          Recall that for any extension <m>L/K</m> of finite extensions of <m>\QQ_p</m>, the ring
+          <m>\gotho_L</m> is a <term>monogenic</term> extension of <m>\gotho_K</m>: there exists an element
+          <m>\alpha \in \gotho_L</m> such that <m>\gotho_L = \gotho_K[\alpha]</m>, meaning that
+          the <m>\gotho_K</m>-linear homomorphism <m>\gotho_K[x] \to \gotho_L</m>
+          taking <m>x</m> to <m>\alpha</m> is an isomorphism. (See <xref ref="bib-Serre-LocalFields"/>, II.6, Proposition 12 or 
+          <xref ref="bib-Neukirch"/>, Lemma II.10.4.)
+        </p>
+    </remark>
+    <lemma xml:id="lem-local-quotient-stabilizer">
+      <statement>
+        <p>
+          Let <m>L/K</m> be a Galois extension of finite extensions of <m>\QQ_p</m> with Galois group <m>G</m>.
+          Let <m>v_L</m> be the valuation on <m>L</m> and choose a uniformizer <m>\pi_L</m> of <m>L</m> (so that <m>v_L(\pi_L) = 1</m>).
+          Choose <m>\alpha \in \gotho_L</m> such that <m>\gotho_L = \gotho_K[\alpha]</m>.
+          For every <m>g \in G</m> and every integer <m>i \geq -1</m>, the following conditions are equivalent.
+          <ol>
+            <li>
+              The action of <m>g</m> on the ring <m>\gotho_L/\pi_L^{i+1}</m> is trivial.
+            </li>
+            <li>
+              For all <m>x \in \gotho_L</m>, <m>v_L(x^g - x) \geq i+1</m>.
+            </li>
+            <li>
+              We have <m>v_L(\alpha^g - \alpha) \geq i+1</m>.
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The first two conditions are equivalent more or less by definition. They both immediately imply the third condition;
+          conversely, the third condition implies the others because <m>g</m> fixes <m>\gotho_K</m> and <m>\gotho_L = \gotho_K[\alpha]</m>.
+        </p>
+      </proof>
+    </lemma>
+   <definition xml:id="def-lower-numbering-filtration">
+      <p>
+        Let <m>L/K</m> be a Galois extension of finite extensions of <m>\QQ_p</m> with Galois group <m>G</m>.
+        For each integer <m>i \geq -1</m>, let <m>G_i</m> be the set of <m>g \in G</m> satisfying the equivalent conditions
+        of <xref ref="lem-local-quotient-stabilizer"/>. The <m>G_i</m> form a decreasing sequence of subgroups of <m>G</m>;
+        these together form the <term>lower numbering ramification filtration</term> on <m>G</m>.
+        In particular, <m>G_{-1} = G</m> and <m>G_0</m> equals the inertia subgroup of <m>G</m>.
+      </p>
+      <p>
+        For convenience later, we extend the definition of the filtration <m>G_i</m> to arbitrary <em>real</em> values
+        <m>i \geq -1</m> by setting <m>G_i = G_{\lceil i \rceil}.</m>
+      </p>
+      <p>
+        From the definition, we see that the formation of the lower numbering filtration is compatible with subgroups:
+        if <m>H = \Gal(L/M)</m> is a subgroup of <m>G</m>, then <m>H_i = H \cap G_i</m> for all <m>i \geq -1</m>.
+        However, it is not at all clear what happens when we pass from <m>G</m> to a quotient.
+      </p>
+    </definition>
+    <lemma xml:id="lem-multiplicative-stabilizer">
+      <statement>
+        <p>
+          With notation as in <xref ref="lem-local-quotient-stabilizer"/>,
+          for <m>i \geq 0</m>, an element <m>g \in G_0</m> belongs to <m>G_i</m> if and only if 
+          <m>\pi_L^g/\pi_L \equiv 1 \pmod{\pi_L^i}</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Reduce to the case where <m>L/K</m> is totally ramified; we may then deduce the claim directly from
+          <xref ref="lem-local-quotient-stabilizer"/>. See also <xref ref="bib-Serre-LocalFields"/>, IV.2, Proposition 5.
+        </p>
+      </proof>
+    </lemma>
+    <definition xml:id="def-filtration-structure">
+      <p>
+        For <m>i \geq 0</m>, let <m>U_L^i</m> be the subgroup of <m>\gotho_L^*</m> consisting of elements <m>\alpha</m> for 
+        which <m>v_L(\alpha - 1) \geq i</m>. The group <m>U_L^0/U_L^1</m> is naturally isomorphic to the group of units of the 
+        residue field <m>\gotho_L/\pi_L</m>. For <m>i > 0</m>, the group <m>U_L^i/U_L^{i+1}</m> carries the structure of a one-dimensional
+        vector space over <m>\gotho_L/\pi_L</m>; for any choice of the uniformizer <m>\pi_L</m> we may use the class of <m>\pi_L^i</m> as the basis element,
+        but there is <em>no distinguished choice</em> without this breaking of symmetry.
+      </p>
+      <p>
+        By <xref ref="lem-multiplicative-stabilizer"/>, for <m>i \geq 0</m> we may view <m>G_i</m> as the maximal subgroup
+        of <m>G</m> carrying <m>U_L^0</m> into itself. In particular, the quotient <m>G_i/G_{i+1}</m> is naturally isomorphic
+        to a subgroup of <m>U_L^i/U_L^{i+1}</m>.
+      </p>
+      <p>
+        This gives us the following structural properties of <m>G</m>. 
+        First, the group <m>G_{-1}/G_0</m> is isomorphic to the residue field extension, which is cyclic.
+        Next, <m>G_0/G_1</m> is isomorphic to a subgroup of <m>U_L^0/U_L^1</m>, and so is cyclic of order prime to <m>p</m>.
+        Finally, for <m>i \geq 1</m>, <m>G_i/G_{i+1}</m> is a subgroup of <m>U_L^i/U_L^{i+1}</m>, and so is an elementary abelian <m>p</m>-group.
+        In particular, <m>G</m> is a solvable group, as noted in <xref ref="rmk-local-galois-solvable"/>.
+      </p>
+    </definition>
+  </subsection>
+  <subsection>
+    <title>The Herbrand functions</title>
+    <p>
+      We now introduce Herbrand's recipe to convert the <term>lower numbering</term> used in the definition of the ramification filtration
+      into an <term>upper numbering</term> that behaves well with respct to passage to quotients.
+    </p>
+    <definition>
+      <p>
+        Retain notation as in <xref ref="def-lower-numbering-filtration"/>.
+        Define the function <m>\varphi_{L/K}: [-1, \infty) \to [-1, \infty)</m> by the formula
+        <me>
+          \varphi_{L/K}(u) = \int_0^u \frac{dt}{[G_0:G_t]}.
+        </me>
+        This function is continuous, piecewise linear, increasing, and concave, and satisfies <m>\varphi_{L/K}(u) = u</m> for <m>u \in [-1,0]</m>.
+        Consequently, it admits an inverse <m>\psi_{L/K}: [-1, \infty) \to [-1, \infty)</m> which is continuous, piecewise linear, increasing, and convex.
+      </p>
+      <p>
+        We define the <term>upper numbering</term> on the ramification groups by the formula
+        <me>
+          G^i = G_{\psi(i)} \Leftrightarrow G^{\varphi(i)} = G_i.
+        </me>
+      </p>
+    </definition>
+    <lemma xml:id="lem-Herbrand-transition">
+      <statement>
+        <p>
+          Let <m>L/K</m> be a finite Galois extension of finite extensions of <m>\QQ_p</m> with Galois group <m>G</m>.
+          Let <m>H</m> be a normal subgroup of <m>G</m> with fixed field <m>K'</m>. 
+          For <m>i \geq -1</m>, <m>(G/H)_i = G_{\phi_{L/K'}(i)} H/H</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          See <xref ref="bib-Serre-LocalFields"/>, IV.3, Lemma 5.
+        </p>
+      </proof>
+    </lemma>
+    <lemma xml:id="lem-numbering-functions-composition">
+      <statement>
+        <p>
+          Let <m>L/K</m> be a finite Galois extension of finite extensions of <m>\QQ_p</m> with Galois group <m>G</m>.
+          Let <m>H</m> be a normal subgroup of <m>G</m> with fixed field <m>K'</m>. Then
+          <me>
+            \varphi_{L/K} = \varphi_{K'/K} \circ \varphi_{L/K'}, \qquad \psi_{L/K} = \psi_{L/K'} \circ \psi_{K'/K}.
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          See <xref ref="bib-Serre-LocalFields"/>, IV.3, Proposition 15.
+        </p>
+      </proof>
+    </lemma>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>L/K</m> be a finite Galois extension of finite extensions of <m>\QQ_p</m> with Galois group <m>G</m>.
+          Let <m>H</m> be a normal subgroup of <m>G</m> with fixed field <m>K'</m>.
+          For all <m>i \geq -1</m>, <m>(G/H)^i = G^i H/H</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Using <xref ref="lem-Herbrand-transition"/> and <xref ref="lem-numbering-functions-composition"/>, we see that
+          <md>
+            <mrow>(G/H)^i \amp = (G/H)_{\psi_{K'/K}(i)}</mrow>
+            <mrow>\amp = G_{\psi_{L/K'} \circ \psi_{K'/K}(i)}</mrow>
+            <mrow>\amp = G_{\psi_{L/K}(i)}</mrow>
+          </md>
+          as desired.
+        </p>
+      </proof>
+    </proposition>
+    <definition>
+      <statement>
+        <p>
+          Let <m>L/K</m> be a Galois extension of finite extensions of <m>\QQ_p</m> with Galois group <m>G</m>.
+          We define the <term>breaks</term> in the ramification filtration for the lower numbering (respectively, the upper numbering)
+          as the values of <m>i</m> for which <m>G_i \neq G_j</m> for all <m>j > i</m> (resp. <m>G^i \neq G^j</m> for all <m>j > i</m>).
+        </p>
+        <p>
+          By definition, the breaks for the lower numbering are integers, while the breaks for the upper numbering are only
+          guaranteed to be rational numbers. In fact, it is possible to exhibit examples where the breaks for the upper numbering
+          are not integers (see <xref ref="exer-no-Hasse-Arf-LMFDB"/> and <xref ref="exer-no-Hasse-Arf"/>).
+          However, in the next section we will see that this cannot occur for abelian extensions.
+        </p>
+      </statement>
+    </definition>
+  </subsection>
+  <subsection>
+    <title>The Hasse-Arf theorem</title>
+    <theorem>
+      <statement>
+        <p>
+          Let <m>L/K</m> be an <em>abelian</em> extension of finite extensions of <m>\QQ_p</m> with Galois group <m>G</m>.
+          Then the breaks in the ramification filtration for the upper numbering are integers.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          See <xref ref="bib-Serre-LocalFields"/>, V.7, Theorem 1.
+        </p>
+      </proof>
+    </theorem>
+    <example>
+      <p>
+        Consider the extension <m>\QQ_p(\zeta_{p^n})/\QQ_p</m>. One can compute directly (see <xref ref="exer-cyclotomic-ramification-filtration"/>) that the ramification breaks occur at <m>1, \dots, n</m>.
+        This will also follow from the comparison with local reciprocity (<xref ref="thm-ramification-filtration-reciprocity"/>).
+      </p>
+    </example>
+    <remark>
+      <p>
+        The Hasse-Arf theorem is more general than we have stated here; it holds whenever <m>L/K</m> is a finite abelian extension
+        of complete discretely valued fields in which the residue field extension is separable. That is, not only is there no restriction to characteristic 0, but the residue fields are not required to be finite.
+      </p>
+      <p>
+        At the same level of generality, one can use the Hasse-Arf theorem to deduce that the Artin conductor of a Galois representation is always integral. See <xref ref="bib-Serre-LocalFields"/>, VI.2, Theorem 1.
+      </p>
+    </remark>
+    <theorem xml:id="thm-ramification-filtration-reciprocity">
+      <statement>
+        <p>
+          Let <m>L/K</m> be an abelian extension of finite extensions of <m>\QQ_p</m> with Galois group <m>G</m>.
+          Let <m>r_{L/K}: K^* / \Norm_{L/K} L^* \to G</m> be the local reciprocity isomorphism.
+          Then for each positive integer <m>i</m>, the inverse image of <m>G^i</m> in <m>\gotho_K^*</m> equals <m>U_K^i</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          See <xref ref="bib-Neukirch"/>, Theorem V.6.2. (This proof uses the Lubin-Tate construction.)
+        </p>
+      </proof>
+    </theorem>
+  </subsection>
+  <exercises>
+    <title>Exercises</title>
+      <exercise xml:id="exer-cyclotomic-ramification-filtration">
+        <statement>
+          <p>
+            Compute the ramification breaks for the lower and upper numbering for the extension <m>\QQ_p(\zeta_{p^n})/\QQ_p</m>
+            directly from the definitions (i.e., without using local reciprocity). In particular, you should find that the breaks
+            for the upper numbering are <m>1, \dots, n</m>.
+          </p>
+        </statement>
+      </exercise>
+      <exercise xml:id="exer-no-Hasse-Arf-LMFDB">
+        <statement>
+          <p>
+            Let <m>K</m> be the splitting field of the polynomial <m>x^4 + 2x + 2</m> over <m>\QQ_2</m>.
+            Show that in the ramification filtration on <m>\Gal(K/\QQ_2)</m>, the largest break for the upper numbering occurs at <m>4/3</m>.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            This example is taken from the <href url="https://www.lmfdb.org/LocalNumberField/2.4.4.5">L-Functions and Modular Forms Database</href>.
+            Note that in this case the Galois group is <m>S_4</m>.
+          </p>
+        </hint>
+      </exercise>
+      <exercise xml:id="exer-no-Hasse-Arf">
+        <statement>
+          <p>
+            Let <m>G</m> be the quaternion group of order <m>8</m>; that is,
+            <m>G = \{\pm 1, \pm i, \pm j, \pm k\}</m>. Let <m>C = \{\pm 1\}</m> be the center of <m>G</m>.
+            Suppose that <m>L/K</m> is a totally ramified Galois extension of finite extensions of <m>\QQ_2</m>
+            satisfying <m>\Gal(L/K) = G</m> and <m>G_4 = \{1\}</m>. Show that 
+            <me>
+              G = G_0 = G_1, \qquad C = G_2 = G_3
+            </me>
+            and deduce that
+            <me>
+              G^i = \begin{cases} G \amp i \leq 1 \\ C \amp 1 &lt; i \leq \frac{3}{2} \\ \{1\} \amp i &gt; \frac{3}{2}. \end{cases}
+            </me>
+          </p>
+        </statement>
+      </exercise>
+  </exercises>
+</section>

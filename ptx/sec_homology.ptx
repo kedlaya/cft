@@ -310,31 +310,41 @@
       </md>
       are exact, where <m>M \to M</m> is the map <m>m \mapsto m^g - m</m>;
       thus <m>M_G</m> and <m>M^G</m> have the same order,
-      as do <m>H^{-1}</m> and <m>H^0</m>.
+      as do <m>H^{-1}_T</m> and <m>H^0_T</m>.
     </p>
     </remark>
   </subsection>
   <subsection>
     <title>Extended functoriality revisited</title>
     <p>
-      The extended functoriality for cohomology groups (<xref ref="D-extended-functoriality"/>) has an analogue for homology and Tate groups,
+      The extended functoriality for cohomology groups (<xref ref="D-extended-functoriality"/>) has analogues for homology groups and Tate cohomology groups,
       but under more restrictive conditions.
     </p>
-    <definition>
+    <definition xml:id="D-extended-functoriality-homology">
     <p>
       Again, let <m>M</m> be a <m>G</m>-module and <m>M'</m> a <m>G'</m>-module,
       and consider a homomorphism
       <m>\alpha: G' \to G</m> of groups and a homomorphism
       <m>\beta: M \to M'</m> of abelian which are compatible in the sense of <xref ref="D-extended-functoriality"/>.
       We would like to obtain canonical homomorphisms
-      <m>H_i(G, M) \to H_i(G', M')</m> and <m>H^i_T(G, M) \to H^i_T(G',M')</m>,
+      <m>H_i(G, M) \to H_i(G', M')</m>,
       but for this we need to add an additional condition to ensure that
       <m>M \to M'</m> induces a well-defined map <m>M_G \to M'_{G'}</m>.
       For instance, this holds if <m>\alpha</m> is surjective.
-      (Note that for Tate groups,
-      we don't need any extra condition to get functoriality for <m>i \geq 0</m>.)
+    </p>
+    <p>
+      For Tate cohomology groups, there is a further complication that the map <m>M^G \to (M')^{G'}</m> does not necessarily induce
+      a map <m>\Norm(M) \to \Norm(M')</m>. However, this does occur if <m>\alpha</m> is injective, so for instance we have well-defined
+      restriction maps <m>\Res: H^0_T(G, M) \to H^0_T(H, M)</m> whenever <m>H</m> is a subgroup of <m>G</m>.
     </p>
     </definition>
+    <remark xml:id="rmk-torsion-H0T">
+      <p>
+        In <xref ref="exa-extended-functoriality"/>, we used the restriction and corestriction maps to show that for <m>G</m> a finite group and
+        <m>M</m> a <M>G</M>-module, the groups <m>H^i(G, M)</m> are torsion groups killed by <m>\#G</m> for all <m>i > 0</m>.
+        While we cannot extend the corestriction map to Tate cohomology, we may still argue directly that <m>H^0_T(G, M)</m> is killed by <m>\#G</m>.
+      </p>
+    </remark>
   </subsection>
   <exercises>
     <title>Exercises</title>

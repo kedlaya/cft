@@ -4,7 +4,7 @@
     <paragraphs>
       <title>Reference</title>
       <p>
-        Neukirch, IV.4-IV.6.
+        <xref ref="bib-Neukirch"/>, IV.4-IV.6.
         Remember that Neukirch's cohomology groups are all Tate groups,
         so he doesn't put the subscript
         <q>T</q>
@@ -19,8 +19,7 @@
       and gives an outline of how to proceed to global class field theory.
       (Warning: this method does not give information about the local invariant map.)
     </p>
-  </introduction>
-  <subsection>
+    <paragraphs>
     <title>Caveat</title>
     <p>
       We are going to work with the absolute Galois group of a field <m>K</m>,
@@ -34,38 +33,45 @@
       that his profinite group corresponds to a field and its extensions via the Galois correspondence.
       This means you can simply assume that his group <m>G</m> is the absolute Galois group of a field without getting confused.
     </p>
-  </subsection>
-  <subsection>
+    </paragraphs>
+    <paragraphs>
     <title>Caveat</title>
     <p>
       Certain words you thought you knew what they meant, such as
       <q>unramified</q>, are going to be reassigned more abstract meanings.
       But these meanings will coincide with the correct definitions over a local field.
     </p>
-  </subsection>
+    </paragraphs>
+  </introduction>
   <subsection>
     <title>Abstract ramification theory</title>
     <p>
-      Let <m>k</m> be a field,
-      <m>\kbar</m> a separable closure of <m>k</m>,
-      and <m>G = \Gal(\kbar/k)</m>.
+      To begin, we encode the key aspects of ramification theory into an abstract framework.
+    </p>
+    <definition xml:id="def-abstract-frobenius">
+    <p>
+      Let <m>k</m> be a field, let <m>\kbar</m> be a separable closure of <m>k</m>, and put <m>G = \Gal(\kbar/k)</m>.
       Let <m>d: G \to \widehat{\ZZ}</m> be a continuous surjective homomorphism.
       The example we have in mind is when <m>k</m> is a local field and <m>d</m> is the surjection of <m>G</m> onto <m>\Gal(k^{\unr}/k) \cong \widehat{\ZZ}</m>.
     </p>
     <p>
-      We now make some constructions that, in our example,
-      recover information about ramification of extensions of <m>k</m>.
-      For starters, define the <term>inertia group</term>
-      <m>I_k</m> as the kernel of <m>d</m>,
-      and define the <term>maximal unramified extension</term>
-      <m>k^{\unr}</m> of <m>k</m> as the fixed field of <m>I_k</m>.
-      More generally,
-      for any field <m>L</m> between <m>k</m> and <m>\kbar</m>,
-      put <m>G_L = \Gal(\kbar/L)</m>,
-      put <m>I_L = G_L \cap I_k</m> and let
-      <m>L^{\unr}</m> be the fixed field of <m>I_L</m>.
-      We say an extension <m>L/K</m> is <term>unramified</term>
-      if <m>L \subseteq K^{\unr}</m>.
+      Define the <term>Weil group</term> of <m>k</m> as the subgroup <m>d^{-1}(\ZZ)</m> of <m>G</m>.
+      This group will play an important role in the construction of the reciprocity map,
+      via <xref ref="prop_norm"/> below.
+    </p>
+    </definition>
+    <p>
+      We now set some more notation to mimic the example case.
+    </p>
+    <definition>
+    <p>
+      Define the <term>inertia group</term> <m>I_k</m> to be the kernel of <m>d</m>.
+      Define the <term>maximal unramified extension</term> <m>k^{\unr}</m> of <m>k</m> to be the fixed field of <m>I_k</m>.
+      Likewise, for any field <m>L</m> between <m>k</m> and <m>\kbar</m>, put <m>G_L = \Gal(\kbar/L)</m> and <m>I_L = G_L \cap I_k</m>, and let
+      <m>L^{\unr} = k^{\unr} L</m> be the fixed field of <m>I_L</m>. 
+    </p>
+    <p>
+      We say an extension <m>L/K</m> is <term>unramified</term> if <m>L \subseteq K^{\unr}</m>.
       Note that this implies that <m>G_L</m> contains <m>I_K</m>,
       necessarily as a normal subgroup,
       and <m>G_L/I_K \subseteq G_K/I_K</m> injects via <m>d</m> into <m>\widehat{\ZZ}</m>;
@@ -73,9 +79,15 @@
       In particular,
       <m>G_K</m> is Galois in <m>G_L</m> and <m>\Gal(L/K) = G_L/G_K</m> is cyclic.
       (Note also that <m>K^{\unr}</m> is the compositum of <m>K</m> and <m>k^{\unr}</m>.)
+    </p>
+    </definition>
+    <p>
       If <m>K \neq k</m>,
       then <m>d</m> doesn't map <m>G_K</m> onto <m>\widehat{\ZZ}</m>,
       so it will be convenient to renormalize things.
+    </p>
+    <definition>
+    <p>
       Put
       <me>
         d_K = \frac{1}{[\widehat{\ZZ}: d(G_K)]}d: G_K \to \widehat{\ZZ};
@@ -108,64 +120,92 @@
       let <m>M</m> be a Galois extension of <m>K</m> containing <m>L</m>,
       then apply the fundamental identity to <m>M/L</m> and <m>M/K</m> and use multiplicativity.
     </p>
+    </definition>
   </subsection>
   <subsection>
+    <title>Abstract unit groups and the class field axiom</title>
+    <p>
+    Our next step is to introduce an abstract analogue of the groups <m>K^*</m>, for <m>K</m> a finite extension of <m>k</m>,
+    and the norm maps between them. This enables us to state a key cohomological assumption.
+    </p>
+    <definition xml:id="def-abstract-units">
+      <p>
+      With notation as in <xref ref="def-abstract-frobenius"/>, let <m>A</m> be a <m>G</m>-module.
+      In the example where <m>k</m> is a local field, we will take <m>A = \kbar^*</m>.
+      </p>
+      <p>
+      For any field <m>K</m> between <m>k</m> and <m>\kbar</m>, define <m>A_K = A^{G_K} = A^{\Gal(K/k)}</m>.
+      For <m>L/K</m> a finite extension of such fields, define the <term>norm map</term> <m>\Norm_{L/K}: A_L \to A_K</m> is given by <m>\Norm_{L/K}(a) = \prod_g a^g</m>,
+      where <m>g</m> runs over a set of right coset representatives of <m>G_K</m> in <m>G_L</m>.
+      </p>
+    <p>
+      For <m>L/K</m> an infinite extension of fields between <m>k</m> and <m>\kbar</m>, we don't have a well-defined norm map from <m>A_L</m> to <m>A_K</m>.
+      By convention, however, we still write <m>\Norm_{L/K} A_L</m> to mean the intersection of
+      <m>\Norm_{M/K} A_M</m> over all finite subextensions <m>M/K</m> of <m>L</m>.
+    </p>
+    </definition>
+    <definition>
+      <p>
+      Set notation as in <xref ref="def-abstract-frobenius"/> and <xref ref="def-abstract-units"/>.
+      We say that the objects <m>k, d, A</m> satisfy the <term>class field axiom</term> if for every <em>cyclic</em>
+      extension <m>L/K</m> of finite separable extensions of <m>k</m>,
+      <me>
+        \#H^i_T(\Gal(L/K), A_L) = \begin{cases} [L:K] \amp  i=0 \\ 1 \amp  i = -1. \end{cases}
+      </me>
+      Note that in general, it is not enough to impose this condition when <m>K = k</m>.
+      </p>
+    </definition>
+    <p>
+      Under the class field axiom, for each finite Galois extension <m>L/K</m> of finite separable extensions of <m>k</m>,
+      we will define a canonical isomorphism <m>r_{L/K}: \Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L</m>
+      (<xref ref="T_abstract_reciprocity_law"/>). 
+      Since we've already checked the class field axiom in the example where <m>k</m> is a local field and <m>A = \kbar^*</m>,
+      this will recover the local reciprocity law (<xref ref="T_local_reciprocity"/>).
+    </p>
+    </subsection>
+    <subsection>
     <title>Abstract valuation theory</title>
     <p>
-      Now suppose that,
-      in addition to the field <m>k</m> and the map <m>d: G \to \widehat{\ZZ}</m>,
-      we have a <m>G</m>-module <m>A</m>
-      (written multiplicatively)
-      and a homomorphism <m>v: A^G \to \widehat{\ZZ}</m>.
-      We wish to write down conditions that will be satisfied in case <m>k</m> is a local field
-      (with <m>d</m> as before, <m>A = \kbar^*</m> and
-      <m>v:
-      k^* \to \ZZ</m> the valuation of the local field),
-      but which will in general give a notion of
-      <q>valuation</q>
-      on all of <m>A</m>.
+      We next introduce an abstract analogue of the valuation maps on unit groups.
+      The catch is that these will be valued not in <m>\ZZ</m> but only in <m>\widehat{\ZZ}</m>;
+      however, this is okay because we only need these valuations to normalize the definition of the reciprocity map.
     </p>
-    <p>
-      Given <m>k</m>, <m>d: G \to \widehat{\ZZ}</m>,
-      and the <m>G</m>-module <m>A</m>,
-      write <m>A_K = A^{G_K} = A^{\Gal(K/k)}</m> for any field <m>K</m> between <m>k</m> and <m>\kbar</m>.
-      Also, recall that the norm map
-      <m>\Norm_{L/K}: A_L \to A_K</m> is given by <m>\Norm_{L/K}(a) = \prod_g a^g</m>,
-      where <m>g</m> runs over a set of right coset representatives of <m>G_K</m> in <m>G_L</m>,
-      at least when <m>L</m> is finite.
-      (The norm doesn't make sense for an infinite extension,
-      but it still makes sense to write
-      <m>\Norm_{L/K} A_L</m> to mean the intersection of
-      <m>\Norm_{M/K} A_M</m> over all finite subextensions <m>M/K</m> of <m>L</m>.)
-    </p>
+    <definition xml:id="def-abstract-henselian-valuation">
     <p>
       A <term>henselian valuation</term> of <m>A_k</m> with respect to <m>d</m> is a homomorphism <m>v: A_k \to \widehat{\ZZ}</m> such that:
       <ol>
         <li>
           <p>
-            if <m>Z = \im(v)</m>, then <m>Z</m> contains <m>\ZZ</m> and
+            the group <m>Z = \im(v)</m> contains <m>\ZZ</m> and satisfies
             <m>Z/nZ \cong \ZZ/n\ZZ</m> for all positive integers <m>n</m>;
           </p>
         </li>
         <li>
           <p>
-            <m>v(\Norm_{K/k} A_K) = f_{K/k} Z</m> for all finite extensions <m>K</m> of <m>k</m>.
+            for every finite extension <m>K</m> of <m>k</m>, <m>v(\Norm_{K/k} A_K) = f_{K/k} Z</m>.
           </p>
         </li>
       </ol>
     </p>
     <p>
-      This valuation immediately extends to a valuation
-      <m>v_K: A_K \to Z</m> for all fields <m>K</m> between <m>k</m> and <m>\kbar</m>,
-      by setting
+      In this case, for each field <m>K</m> between <m>k</m> and <m>\kbar</m>, we obtain a henselian valuation
+      <m>v_K: A_K \to Z</m> by setting
       <me>
-        v_K = \frac{1}{f_{K/k}} \circ \Norm_{K/k}
-      </me>.
-    </p>
-    <p>
+        v_K = \frac{1}{f_{K/k}} \circ \Norm_{K/k}.
+      </me>
       Then <m>v_{K}(a) = v_{K^g}(a^g)</m> for any <m>a \in A</m> and <m>g \in G</m>,
-      and for <m>L/K</m> a finite extension,
+      and for <m>L/K</m> a finite extension (of fields between <m>k</m> and <m>\kbar</m>),
       <m>v_K(\Norm_{L/K}(a)) = f_{L/K} v_L(a)</m> for any <m>a \in A_L</m>.
+    </p>
+  </definition>
+    </subsection>
+    <subsection>
+    <title>Cohomology of units</title>
+    <p>
+      Before defining the reciprocity map, we collect some direct consequences of the class field axiom.
+      These are very similar to arguments we used in the proof of local reciprocity,
+      except that we are now running the computation in reverse: instead of using the cohomology of unramified extensions
+      to establish the class field axiom, we are going the other way around!
     </p>
     <p>
       For any field <m>K</m> between <m>k</m> and <m>\kbar</m>,
@@ -175,51 +215,14 @@
       we say <m>\pi \in A_K</m> is a <term>uniformizer</term>
       for <m>K</m> if <m>v_K(\pi) = 1</m>.
     </p>
-  </subsection>
-  <subsection>
-    <title>Warning</title>
-    <p>
-      The multiplicativity of the reciprocity map is proven in Neukirch (Proposition IV.5.5),
-      but I find this proof unreadable.
-    </p>
-    <p>
-      Now we bring in the key cohomological input.
-      Suppose that for every <em>cyclic</em>
-      extension <m>L/K</m> of finite extensions of <m>k</m>,
-      <me>
-        \#H^i_T(\Gal(L/K), A_L) = \begin{cases}\amp  i=0 \\ 1 \amp  i = -1. \end{cases}
-      </me>
-    </p>
-    <p>
-      In Neukirch, this assumption is called the
-      <term>class field axiom</term>.
-      (Note that it's not enough just to check cyclic extensions of <m>k</m> itself.)
-      Then we will prove the following theorem.
-    </p>
-    <theorem>
-      <title>Reciprocity law</title>
+    <proposition xml:id="P_abstract_H0H1">
       <statement>
         <p>
-          For each finite Galois extension <m>L/K</m> of finite extensions of <m>k</m>,
-          there is a canonical isomorphism <m>r_{L/K}: \Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L</m>.
-        </p>
-      </statement>
-    </theorem>
-    <p>
-      Since we've already checked the class field axiom in the example where <m>k</m> is a local field and <m>A = \kbar^*</m>,
-      this immediately recovers the local reciprocity law.
-    </p>
-    <p>
-      Before defining the reciprocity map,
-      we verify a consequence of the class field axiom. (Notice the similarities between this argument and what we have done;
-      essentially we are running the computation of the cohomology of an unramified extension of local fields in reverse!)
-    </p>
-    <proposition>
-      <statement>
-        <p>
+          Suppose that <m>k, d, A</m> satisfy the class field axiom and <m>v</m> is a henselian valuation
+          (of <m>A_k</m> with respect to <m>d</m>).
           For <m>L/K</m> an unramified extension of finite extensions of <m>k</m> (i.e., <m>e_{L/K} = 1</m>),
-          the class field axiom implies that <m>H^i_T(\Gal(L/K), U_L) = 1</m> for <m>i=0, -1</m>.
-          Moreover, <m>H^1_T(\Gal(L/K), A_L)</m> is cyclic and is generated by any uniformizer <m>\pi_L</m> for <m>L</m>.
+          <m>H^i_T(\Gal(L/K), U_L) = 1</m> for <m>i=0, -1</m>.
+          Moreover, <m>H^0_T(\Gal(L/K), A_L)</m> is cyclic and is generated by any uniformizer <m>\pi_L</m> for <m>L</m>.
         </p>
       </statement>
     </proposition>
@@ -227,37 +230,33 @@
       <p>
         We'll drop <m>\Gal(L/K)</m> from the notation,
         because it's the same group throughout the proof.
-        Note that an unramified extension is always Galois and cyclic.
+        Keep in mind that an unramified extension is always Galois and cyclic,
+        so we can apply periodicity of Tate groups (<xref ref="T_cyclic_group_periodicity"/>) and Herbrand quotients.
+      </p>
+      <p>
         Consider the short exact sequence <m>0 \to U_L \to A_L \to A_L/U_L \to 0</m>.
-        Applying Herbrand quotients, we have <m>h(A_L) = h(U_L) h(A_L/U_L)</m>,
-        where <m>h(A_L) = \#H^0_T(A_L)/\#H^{-1}_T(A_L)</m> and so on.
-        By the class field axiom, <m>h(A_K) = [L:K]</m>.
-        Also, <m>A_L/U_L</m> is isomorphic to
+        In this sequence, <m>A_L/U_L</m> is isomorphic to
         <m>Z = \im(v)</m> with trivial group action,
-        so <m>H^0_T(Z)</m> is cyclic of order <m>[L:K]</m> and
-        <m>H^{-1}_T(Z)</m> is trivial. (Recall that
-        <m>H^0_T(Z) = Z/\Norm(Z)</m> and <m>H^{-1}_T(Z) = \ker(\Norm)</m>,
-        since the action is trivial.) Otherwise put,
-        the long exact sequence in Tate groups gives
+        so <m>H^0_T(Z) = Z/\Norm(Z)</m> is cyclic of order <m>[L:K]</m> generated by <m>\pi_L</m> and
+        <m>H^{-1}_T(Z) = \ker(\Norm)</m> is trivial. Using the class field axiom, we see that the
+        long exact sequence in Tate groups looks like
         <me>
           1 = H^{-1}_T(A_L/U_L) \to H^{0}_T(U_L) \to H^{0}_T(A_L) \to H^{0}_T(A_L/U_L) \to H^{1}_T(U_L) \to H^1_T(A_L) = 1
         </me>
-        and the two groups in the middle have the same order,
-        so we just have to show that one of the outer groups is trivial,
-        and then the middle map will be an isomorphism.
+        and the two groups in the middle have the same order.
+        It is thus enough to show that one of the outer groups is trivial,
+        as then the middle map will be an isomorphism.
       </p>
       <p>
-        Thus it suffices to check that <m>H^{1}_T(U_L) = 1</m>,
-        or equivalently <m>H^{-1}_T(U_L) = 1</m>.
+        We have now reduced to checking that <m>H^{1}_T(U_L) = 1</m>, or equivalently <m>H^{-1}_T(U_L) = 1</m>.
         Here is where we use that <m>L/K</m> is unramified, not just cyclic.
-        Recall that <m>H^{-1}_T(U_L)</m> consists of elements <m>u</m> of <m>U_L</m> of norm 1, modulo those of the form
-        <m>v^\sigma/v</m> for some <m>v \in U_L</m>,
-        where <m>\sigma</m> is a generator of <m>\Gal(L/K)</m>.
-        By hypothesis, <m>H^{-1}_T(A_L)</m> is trivial,
-        so any <m>u \in U_L</m> of norm 1 can be written as
+        Let <m>\sigma</m> is a generator of <m>\Gal(L/K)</m>.
+        Recall that <m>H^{-1}_T(U_L)</m> consists of elements <m>u</m> of <m>U_L</m> of valuation 0, modulo those of the form
+        <m>v^\sigma/v</m> for some <m>v \in U_L</m>.
+        By the class field axiom, <m>H^{-1}_T(A_L)</m> is trivial,
+        so any <m>u \in U_L</m> of valuation 0 can be written as
         <m>w^\sigma/w</m> for some <m>w \in A_L</m>.
-        Now because <m>L/K</m> is unramified,
-        there exists <m>x \in A_K</m> such that <m>w/x \in U_L</m>.
+        Since <m>L/K</m> is unramified, there exists <m>x \in A_K</m> such that <m>w/x \in U_L</m>.
         Now <m>u = v^\sigma/v</m> for <m>v = w/x</m>,
         so <m>u</m> defines the trivial class in <m>H^{-1}_T(U_L)</m>,
         proving the claim.
@@ -266,126 +265,40 @@
     <corollary xml:id="C_abstract_unramified">
       <statement>
         <p>
+          Suppose that <m>k, d, A</m> satisfy the class field axiom and <m>v</m> is a henselian valuation
+          (of <m>A_k</m> with respect to <m>d</m>).
           If <m>L/K</m> is unramified, then <m>U_K = \Norm_{L/K} U_L</m>. (Remember,
           this makes sense even if <m>L/K</m> is not finite!)
         </p>
       </statement>
     </corollary>
-    <p>
-      We now define the reciprocity map <m>r: \Gal(L/K) \to A_K/\Norm_{L/K} A_L</m>;
-      as a bonus, this definition will actually give an explicit recipe for computing the reciprocity map in local class field theory.
-      For starters, let <m>H</m> be the semigroup of
-      <m>g \in \Gal(L^{\unr}/K)</m> such that <m>d_K(g)</m> is a positive integer.
-      Define the map <m>r': H \to A_K/\Norm_{L/K} A_{L}</m> as follows.
-      For <m>g \in \Gal(L^{\unr}/K)</m>,
-      let <m>M</m> be the fixed field of <m>g</m> (so that
-      <m>e(M/K) = e((M \cap L)/K)</m> and <m>f(M/K) = d_K(g)</m>),
-      and set <m>r'(g) = \Norm_{M/K} (\pi_M)</m> for some uniformizer <m>\pi_M</m>.
-      This doesn't depend on the choice of uniformizer:
-      if <m>\pi'_M</m> is another one,
-      then <m>\pi_M/\pi'_M \in U_L</m> belongs to
-      <m>\Norm_{L^{\unr}/L} U_{L^{\unr}}</m> by <xref ref="C_abstract_unramified">Corollary</xref>,
-      so <m>\Norm_{M/K} (\pi_M/\pi'_M)</m> belongs to <m>\Norm_{L^{\unr}/K} U_{L^{\unr}} \subseteq \Norm_{L/K} U_L</m>.
-      So at least <m>r'</m> is now a well-defined map,
-      if not yet a semigroup homomorphism.
-    </p>
-    <p>
-      Let's make some other initial observations about this definition before getting into the weeds.
-      Note that <m>r'</m> is invariant under conjugation:
-      if we replace <m>g</m> by <m>h^{-1}gh</m>,
-      then its fixed field <m>M</m> is replaced by <m>M^h</m> and we can take the uniformizer <m>\pi_M^h</m>.
-      Also, if <m>g \in H</m> is actually in <m>\Gal(L^{\unr}/L)</m>,
-      then <m>r'(g) \in \Norm_{L/K} A_L</m>.
-      In that case, <m>M</m> contains <m>L</m>,
-      so <m>r'(g) = \Norm_{M/K}(\pi_M)</m> can be rewritten as
-      <m>\Norm_{L/K} \Norm_{M/L} (\pi_M)</m>, so is manifestly a norm.
-      That is, if <m>r'</m> were known to be multiplicative,
-      it would induce a group homomorphism from
-      <m>\Gal(L/K)</m> to <m>A_K/\Norm_{L/K} A_L</m>.
-    </p>
-    <p>
-      Now for the hard part: we have to check that <m>r'</m> is multiplicative.
-      Let <m>g_1, g_2 \in H</m> be arbitrary,
-      and put <m>g_3 = g_1g_2</m>.
-      Let <m>M_i</m> be the fixed field of <m>g_i</m>,
-      let <m>\pi_i</m> be a uniformizer of <m>M_i</m>,
-      and put <m>\rho_i = r(g_i) = \Norm_{M_i/K}(\pi_i)</m>.
-      Again, we want <m>\rho_1\rho_2/\rho_3</m> to be in <m>\Norm_{L^{\unr}/K} A_{L^{\unr}}</m>;
-      what makes this hard is that the <m>\rho_i</m> all lie in different fields over <m>K</m>.
-      One thing we can say is that
-      <m>v_K(\rho_i) = f(M_i/K) v_{M_i}(\pi_i) = f(M_i/K) = d_K(g_i)</m>,
-      so <m>v_K(\rho_1 \rho_2 /\rho_3) = 0</m>.
-    </p>
-    <p>
-      To make progress, we have to push our problem into a single field.
-      Choose <m>\phi \in \Gal(L^{\unr}/K)</m> such that <m>d_K(\phi) = 1</m>,
-      and put <m>d_i = d_K(g_i)</m>;
-      then we can write <m>g_i = \phi^{d_i} h_i</m> for some <m>h_i</m> with <m>d_K(h_i) = 0</m>, that is,
-      <m>h_i \in \Gal(L^{\unr}/K^{\unr})</m>.
-      Put
-      <me>
-        \sigma_i = \pi_i \pi_i^\phi \cdots \pi_i^{\phi^{d_i-1}};
-      </me>
-      then <m>\rho_i = \Norm_{L^{\unr}/K^{\unr}}(\sigma_i)</m>.
-    </p>
-    <proposition xml:id="prop_norm">
+    <lemma xml:id="lem-intermediate-norm">
       <statement>
         <p>
-          Let <m>M</m> be the fixed field of some
-          <m>h \in \Gal(L^{\unr}/K)</m> with <m>d_K(h) = n</m> a positive integer,
-          and suppose <m>\phi \in H</m> satisfies <m>d_K(\phi) = 1</m>.
-          Then for any <m>x \in A_M</m>,
-          <me>
-            \Norm_{M/K}(x) = \Norm_{L^{\unr}/K^{\unr}}(x x^\phi \cdots x^{\phi^{n-1}})
-          </me>.
-        </p>
-      </statement>
-    </proposition>
-    <p>
-      Now put <m>u = \sigma_1 \sigma_2/\sigma_3</m>;
-      then <m>u \in U_{L^{\unr}}</m> and
-      <m>\Norm_{L^{\unr}/K^{\unr}}(u) = \rho_1 \rho_2/\rho_3</m> is the thing we need to be in <m>\Norm_{L/K} U_L</m>.
-      Let <m>N</m> be a finite unramified extension of <m>L</m> such that <m>u \in U_N</m>.
-      Then <m>\Norm_{L^{\unr}/K^{\unr}}(u) = \Norm_{N/N \cap K^{\unr}}(u)</m>,
-      and by the lemma below,
-      that implies that <m>u \in \Norm_{N/K} U_N</m> and so <m>u \in \Norm_{L/K}(U_L)</m>.
-    </p>
-    <lemma>
-      <statement>
-        <p>
-          If <m>M/L</m> and <m>L/K</m> are finite extensions with <m>M/K</m> Galois and <m>L/K</m> unramified,
-          and <m>u \in U_M</m> is such that <m>\Norm_{M/L}(u) \in U_K</m>,
-          then <m>\Norm_{M/L}(u) \in \Norm_{M/K} U_L</m>.
+          Let <m>M/L/K</m> be finite extensions of finite separable extensions of <m>k</m> 
+          with <m>M/K</m> Galois and <m>L/K</m> unramified.
+          Then <m>U_K \cap \Norm_{M/L} U_M \subseteq \Norm_{M/K} U_M</m>.
         </p>
       </statement>
     </lemma>
     <proof>
       <p>
-        There is a noncohomological proof in Neukirch (Lemma<nbsp/>IV.5.4),
-        but I couldn't follow it, so here's a cohomological argument instead.
-        If <m>v = \Norm_{M/L}(u) \in U_K</m>,
-        then <m>v</m> represents an element of
-        <m>H^0_T(\Gal(M/K), U_M) = U_K/\Norm_{M/K}(U_M)</m> which maps to zero under the map <m>\Res: H^0_T(\Gal(M/K), U_M) \to H^0_T(\Gal(M/L), U_M)</m>.
-        By the following lemma,
-        <m>v</m> is then in the image of <m>\Inf: H^0_T(\Gal(L/K), U_L) \to H^0_T(\Gal(M/K), U_M)</m>;
-        but the former space is zero by <xref ref="C_abstract_unramified">Corollary</xref>!
-        Thus <m>v</m> is cohomologous to zero in <m>H^0_T(\Gal(M/K), U_M)</m>;
-        that is, <m>v = \Norm_{M/K}(w)</m> for some <m>w \in U_M</m>.
+        Put <m>G = \Gal(M/K), H = \Gal(M/L)</m>; the claim is that the map
+        <m>\Res: H^0_T(G, U_M) \to H^0_T(H, U_M)</m> is injective.
+        Since <m>H^0_T(G/H, U_L) = 0</m> by <xref ref="C_abstract_unramified"/>, we may apply 
+        <xref ref="lem-inflation-restriction-H0"/> to conclude.
+        (If you prefer a less cohomological argument, see instead <xref ref="bib-Neukirch"/>, Lemma<nbsp/>IV.5.4.)
       </p>
     </proof>
     <p>
-      This lemma is of course a variant of the inflation-restriction exact sequence;
-      we get it from there by dimension shifting.
+      The following lemma is a variant of the inflation-restriction exact sequence,
+      obtained by dimension shifting. (Beware that inflation maps do not in general exist for <m>H^0_T</m>.)
     </p>
-    <lemma>
+    <lemma xml:id="lem-inflation-restriction-H0">
       <statement>
         <p>
           Let <m>H</m> be a normal subgroup of a finite group <m>G</m> and <m>M</m> a <m>G</m>-module.
-          Then the sequence
-          <me>
-            0 \to H^0_T(G/H, M^H) \stackrel{\Inf}{\to} H^0_T(G,M) \stackrel{\Res}{\to} H^0_T(H,M)
-          </me>
-          is exact.
+          If <m>H^0_T(G/H, M^H) = 0</m>, then <m>\Res: H^0_T(G,M) \stackrel{\Res}{\to} H^0_T(H,M)</m> is injective.
         </p>
       </statement>
     </lemma>
@@ -393,7 +306,7 @@
       <p>
         Choose <m>N</m> so that <m>0 \to N \to \Ind^G_{1} M \to M \to 0</m> is exact (where again
         <m>\Ind^G_1 M \to M</m> is the map <m>m \otimes [g] \mapsto m^g</m>);
-        then by the usual inflation-restriction exact sequence (<xref ref="P_inflation_restriction">Proposition</xref>),
+        then by the usual inflation-restriction exact sequence (<xref ref="P_inflation_restriction"/>),
         <me>
           0 \to H^1_T(G/H, N^H) \stackrel{\Inf}{\to} H^1_T(G,N) \stackrel{\Res}{\to} H^1_T(H,N)
         </me>
@@ -407,58 +320,189 @@
         namely, exactness on the right holds because any
         <m>m \in M^H</m> lifts to <m>m \otimes [1] \in (\Ind^G_1 M)^H</m>.
         Using long exact sequences,
-        we may thus shift dimensions to deduce the desired result.
+        we now see first that <m>H^1_T(G/H, N^H) = H^0_T(G/H, M^H) = 0</m>,
+        then deduce that <m>\Res: H^1_T(G,N) \to H^1_T(H,N)</m> is injective,
+        then finally deduce the desired result.
       </p>
     </proof>
+  </subsection>
+  <subsection xml:id="subsec-abstract-recip-definition">
+  <title>Construction of the reciprocity map</title>
     <p>
-      Putting everything together,
-      we have a semigroup homomorphism
-      <m>r': H \to A_K/\Norm_{L/K}A_L</m> which kills <m>\Gal(L^{\unr}/L)</m>.
-      Thus <m>r'</m> induces a homomorphism <m>r = r_{L/K}: \Gal(L/K) \to A_K/\Norm_{L/K}A_L</m>.
-      We call this the <term>reciprocity map</term>.
-      Some straightforward functorialities are left to the reader,
-      including the following.
+      Our next goal is to define a candidate <m>r: \Gal(L/K) \to A_K/\Norm_{L/K} A_L</m> for the reciprocity map;
+      as a bonus, this definition will give an explicit recipe for computing the reciprocity map in 
+      local class field theory.
     </p>
+    <definition xml:id="def-abstract-recip-candidate">
+    <p>
+      Suppose that <m>k, d, A</m> satisfy the class field axiom and <m>v</m> is a henselian valuation.
+      Let <m>H</m> be the semigroup of
+      <m>g \in \Gal(L^{\unr}/K)</m> such that <m>d_K(g)</m> is a positive integer.
+      Define the map 
+      <me>r': H \to A_K/\Norm_{L/K} A_{L}</me> 
+      as follows.
+      For <m>g \in \Gal(L^{\unr}/K)</m>,
+      let <m>M</m> be the fixed field of <m>g</m> (so that
+      <m>e(M/K) = e((M \cap L)/K)</m> and <m>f(M/K) = d_K(g)</m>),
+      and set <m>r'(g) = \Norm_{M/K} (\pi_M)</m> for some uniformizer <m>\pi_M</m>.
+      This doesn't depend on the choice of uniformizer:
+      if <m>\pi'_M</m> is another one,
+      then <m>\pi_M/\pi'_M \in U_L</m> belongs to
+      <m>\Norm_{L^{\unr}/L} U_{L^{\unr}}</m> by <xref ref="C_abstract_unramified"/>,
+      so <m>\Norm_{M/K} (\pi_M/\pi'_M)</m> belongs to <m>\Norm_{L^{\unr}/K} U_{L^{\unr}} \subseteq \Norm_{L/K} U_L</m>.
+      So at least <m>r'</m> is now a well-defined map,
+      if not yet a semigroup homomorphism.
+    </p>
+    </definition>
+    <remark xml:id="rmk-abstract-recip-properties">
+    <p>
+      Before getting into the weeds,
+      let's make some other observations about <xref ref="def-abstract-recip-candidate"/>.
+    </p>
+    <p>
+      First, <m>r'</m> is invariant under conjugation:
+      if we replace <m>g</m> by <m>h^{-1}gh</m>,
+      then its fixed field <m>M</m> is replaced by <m>M^h</m> and we can take the uniformizer <m>\pi_M^h</m>.
+    </p>
+    <p>
+      Next, if <m>g \in H</m> is actually in <m>\Gal(L^{\unr}/L)</m>,
+      then <m>r'(g) \in \Norm_{L/K} A_L</m>.
+      In that case, <m>M</m> contains <m>L</m>,
+      so <m>r'(g) = \Norm_{M/K}(\pi_M)</m> can be rewritten as
+      <m>\Norm_{L/K} \Norm_{M/L} (\pi_M)</m>, so is manifestly a norm.
+      That is, if <m>r'</m> were known to be multiplicative,
+      it would induce a group homomorphism from
+      <m>\Gal(L/K)</m> to <m>A_K/\Norm_{L/K} A_L</m>.
+    </p>
+    </remark>
+    <p>
+      The remaining difficulty is to check that <m>r'</m> is multiplicative. 
+      The issue here is that the definition of <m>r'(g)</m> involves taking the norm from a field extension that
+      depends on <m>g</m>, so it is hopeless to use the formula directly to compare different values of <m>g</m>.
+      Instead, we rewrite the definition in a more uniform manner.
+    </p>
+    <proposition xml:id="prop_norm">
+      <statement>
+        <p>
+          Let <m>L/K</m> be a finite extension of finite separable extensions of <m>k</m>.
+          Choose <m>h, \phi \in \Gal(L^{\unr}/K)</m> such that <m>d_K(\phi) = 1</m>
+          and <m>d_K(h)</m> is a positive integer <m>n</m>.
+          Let <m>M</m> be the fixed field of <m>h</m>.
+          Then for <m>x \in A_M</m>,
+          <me>
+            \Norm_{M/K}(x) = \Norm_{L^{\unr}/K^{\unr}}(x x^\phi \cdots x^{\phi^{n-1}}).
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Put <m>U = M \cap K^{\unr}</m>, so that <m>\Norm_{M/K} = \Norm_{U/K} \circ \Norm_{M/U}</m>.
+          The group <m>\Gal(U/K)</m> is of order <m>n</m> generated by <m>\phi</m>, so for <m>y \in A_U</m>
+          we have <m>\Norm_{U/K}(y) = y y^\phi \cdots y^{\phi^{n-1}}.</m>
+          Meanwhile, on <m>A_M</m> we can view <m>\Norm_{M/U}</m> as the restriction of <m>\Norm_{L^{\unr}/K^{\unr}}</m>,
+          so <m>\Norm_{M/U}(x) = \Norm_{L^{\unr}/K^{\unr}}(x)</m>. By taking <m>y = \Norm_{M/U}(x)</m> and rewriting
+          <m>y^{\phi^i}</m> as <m>\Norm_{L^{\unr}/K^{\unr}}(x)^{\phi^i} = \Norm_{L^{\unr}/K^{\unr}}(x^{\phi^i})</m>,
+          we deduce the claim.
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      Using the formula from <xref ref="prop_norm"/>, we can now establish multiplicativity.
+    </p>
+    <lemma xml:id="lem-abstract-recip-multiplicative">
+      <statement>
+        <p>
+          The map <m>r': H \to A_K/\Norm_{L/K} A_L</m> exhibited in <xref ref="def-abstract-recip-candidate"/> is a homomorphism of semigroups.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>g_1, g_2 \in H</m> be arbitrary and put <m>g_3 = g_1g_2</m>.
+          Let <m>M_i</m> be the fixed field of <m>g_i</m>,
+          let <m>\pi_i</m> be a uniformizer of <m>M_i</m>,
+          and put <m>\rho_i = r(g_i) = \Norm_{M_i/K}(\pi_i)</m>.
+          Our goal is to check that
+          <me>
+            \rho_1\rho_2/\rho_3 \in \Norm_{L/K} A_{L}.
+          </me>
+          To begin with, note that
+          <me>
+            v_K(\rho_i) = f(M_i/K) v_{M_i}(\pi_i) = f(M_i/K) = d_K(g_i),
+          </me>
+          which implies that <m>v_K(\rho_1 \rho_2 /\rho_3) = 0</m>.
+        </p>
+        <p>
+          Choose <m>\phi \in H</m> such that <m>d_K(\phi) = 1</m>.
+          Put <m>d_i = d_K(g_i)</m> and 
+          <me>
+            \sigma_i = \pi_i \pi_i^\phi \cdots \pi_i^{\phi^{d_i-1}} \in M_i;
+          </me>
+          by <xref ref="prop_norm"/>, we have <m>\rho_i = \Norm_{L^{\unr}/K^{\unr}}(\sigma_i)</m>.
+        </p>
+        <p>
+          Now put <m>u = \sigma_1 \sigma_2/\sigma_3</m>;
+          then <m>u \in U_{L^{\unr}}</m> and we need to show that
+          <m>\Norm_{L^{\unr}/K^{\unr}}(u) = \rho_1 \rho_2/\rho_3</m> belongs to <m>\Norm_{L/K} A_L</m>.
+          Let <m>N</m> be a finite unramified extension of <m>L</m> such that <m>u \in U_N</m>,
+          so that <m>\Norm_{L^{\unr}/K^{\unr}}(u) = \Norm_{N/N \cap K^{\unr}}(u)</m>.
+          Since this quantity belongs to <m>K</m> (from its expression as <m>\rho_1 \rho_2/\rho_3</m>),
+          we may apply <xref ref="lem-intermediate-norm"/> to deduce that
+          <me>
+            \Norm_{L^{\unr}/K^{\unr}}(u) \in \Norm_{N/K} U_N \subset \Norm_{L/K} A_L
+          </me>
+          as required.
+        </p>
+      </proof>
+    </lemma>
+    <definition xml:id="def-abstract-recip-final">
+      <p>
+        Combining <xref ref="def-abstract-recip-candidate"/>, <xref ref="rmk-abstract-recip-properties"/>, and
+        <xref ref="lem-abstract-recip-multiplicative"/>, we obtain a semigroup homomorphism
+        <m>r': H \to A_K/\Norm_{L/K}A_L</m> which kills <m>\Gal(L^{\unr}/L)</m>
+        and thus induces a homomorphism <m>r = r_{L/K}: \Gal(L/K) \to A_K/\Norm_{L/K}A_L</m>.
+        We call <m>r_{L/K}</m> the <term>reciprocity map</term>.
+      </p>
+    </definition>
+    <p>
+      Here are a few consequences of the construction whose proofs are left to the reader.
+   </p>
     <proposition xml:id="P_abstract_functorialities">
       <statement>
         <p>
-          If <m>L/K</m> and <m>L'/K'</m> are finite Galois extensions such that
+          Suppose that <m>k, d, A</m> satisfy the class field axiom and <m>v</m> is a henselian valuation.
+          If <m>L/K</m> and <m>L'/K'</m> are finite Galois extensions (of finite separable extensions of <m>k</m>) such that
           <m>K \subseteq K'</m> and <m>L \subseteq L'</m>,
           then the natural map <m>\Gal(L'/K')^{\ab} \to \Gal(L/K)^{\ab}</m> is compatible via the reciprocity map with <m>\Norm_{K'/K}: A_{K'} \to A_K</m>.
           If moreover <m>K' \subseteq L</m>,
           then the natural map <m>A_K \to A_{K'}</m> is compatible with the transfer map <m>\Ver: \Gal(L/K)^{\ab} \to \Gal(L'/K')^{\ab}</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          See <xref ref="exer-abstract-functorialities"/>.
+        </p>
+      </proof>
     </proposition>
   </subsection>
   <subsection>
     <title>Proof of the reciprocity law</title>
     <p>
       We continue to assume the class field axiom.
-      Recall that we want the following result.
+      Our goal is to prove that for <m>L/K</m> a finite extension of finite separable extensions of <m>k</m>,
+      the homomorphism <m>r_{L/K}</m> from <xref ref="def-abstract-recip-final"/> induces an isomorphism
+      <m>\Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L</m>. Any resemblance with the proof of the local reciprocity law
+      is not at all coincidental!
     </p>
-    <theorem xml:id="T_abstract_reciprocity_law">
-      <title>Reciprocity law</title>
+    <lemma xml:id="lem-abstract-recip-case1">
       <statement>
         <p>
-          For each finite Galois extension <m>L/K</m> of finite extensions of <m>k</m>,
-          there is a canonical isomorphism <m>r_{L/K}: \Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L</m>.
+          Suppose that <m>k, d, A</m> satisfy the class field axiom and <m>v</m> is a henselian valuation.
+          For <m>L/K</m> an unramified extension of finite separable extensions of <m>k</m>,
+          <m>r_{L/K}: \Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L</m> is an isomorphism
+          sending the Frobenius of <m>\Gal(L/K)</m> to a uniformizer of <m>K</m>.
         </p>
       </statement>
-    </theorem>
-    <p>
-      From the definition of <m>r</m>,
-      we may check this directly for <m>L/K</m> unramified.
-    </p>
-    <proposition>
-      <statement>
-        <p>
-          If <m>L/K</m> is finite unramified,
-          the reciprocity map <m>r_{L/K}</m> sends the Frobenius of
-          <m>\Gal(L/K)</m> to a uniformizer of <m>K</m>, and is an isomorphism.
-        </p>
-      </statement>
-    </proposition>
+    </lemma>
     <proof>
       <p>
         The groups <m>\Gal(L/K)</m> and
@@ -470,18 +514,18 @@
         and from the definition of <m>r'</m>,
         <m>r(g) = r'(h)</m> is just a uniformizer of <m>K</m>.
         Since that uniformizer generates <m>H^0(\Gal(L/K), A_L)</m>,
-        we conclude <m>r_{L/K}</m> is an isomorphism.
+        we conclude that <m>r_{L/K}</m> is an isomorphism.
       </p>
     </proof>
-    <proposition>
+    <lemma xml:id="lem-abstract-recip-case2">
       <statement>
         <p>
-          If <m>L/K</m> is finite,
-          cyclic and totally ramified (i.e., <m>f_{L/K} = 1</m>),
-          then <m>r_{L/K}</m> is an isomorphism.
+          Suppose that <m>k, d, A</m> satisfy the class field axiom and <m>v</m> is a henselian valuation.
+          For <m>L/K</m> a cyclic, totally ramified extension of finite separable extensions of <m>k</m>,
+          the map <m>r_{L/K}: \Gal(L/K) \to A_K / \Norm_{L/K} A_L</m> is an isomorphism.
         </p>
       </statement>
-    </proposition>
+    </lemma>
     <proof>
       <p>
         Since <m>r_{L/K}</m> maps between two groups of the same order by the <m>H^0_T</m> clause of the class field axiom,
@@ -493,7 +537,7 @@
         Let <m>g</m> be a generator of the first factor and <m>\phi</m> a generator of the second factor.
         Put <m>\tau = g\phi</m>, so that <m>d_K(\tau)=1</m>,
         and let <m>M</m> be the fixed field of <m>\tau</m>.
-        Pick uniformizers <m>pi_L</m> and <m>\pi_M</m> of <m>L</m> and <m>M</m>,
+        Pick uniformizers <m>\pi_L</m> and <m>\pi_M</m> of <m>L</m> and <m>M</m>, respectively,
         so that <m>r(g) = r'(\tau) = \Norm_{M/K}(\pi_M)</m>.
         Let <m>N</m> be the compositum of <m>L</m> and <m>M</m>.
       </p>
@@ -503,8 +547,8 @@
         Since <m>d_K(\tau) = 1</m>,
         we have <m>r(g) = \Norm_{L^{\unr}/K^{\unr}}(\pi_M)</m>.
         On the other hand
-        (by <xref ref="prop_norm">Proposition</xref> with <m>n=0</m>!),
-        <m>\Norm_{L^{\unr}/K^{\unr}}(\pi_L)</m> is the identity in <m>A_K/\Norm_{L/K} A_L</m>.
+        <m>\Norm_{L^{\unr}/K^{\unr}}(\pi_L)</m> is the identity in <m>A_K/\Norm_{L/K} A_L</m>
+        (this is effectively the case <m>n=0</m> of <xref ref="prop_norm"/>).
         Thus we also have <m>r(g) = \Norm_{L^{\unr}/K^{\unr}}(\pi_M/\pi_L)</m>.
       </p>
       <p>
@@ -530,13 +574,12 @@
       </p>
     </proof>
     <p>
-      Now we proceed to the proof of the reciprocity law.
-      Any resemblance with the method used to calculate the local invariant map is not coincidental!
+      Before continuing, we record a key commutative diagram which will be the scene of a lot of diagram-chasing.
     </p>
-    <proof>
+    <remark>
       <p>
-        For reference, we record the following commutative diagram,
-        for <m>L/K</m> a finite extension and <m>M</m> an intermediate field:
+        For <m>L/K</m> a finite extension of finite separable extensions of <m>k</m>) and <m>M</m> an intermediate field,
+        the following diagram:
       </p>
       <figure xml:id="fig-abstractcft-1">
       <image>
@@ -549,30 +592,45 @@
       </image>
       </figure>
       <p>
-        in which the rows are exact.
-        We're going to do a lot of diagram-chasing on this picture.
+        commutes and the rows are exact.
       </p>
+    </remark>
+    <lemma xml:id="lem-abstract-recip-case3">
+      <statement>
+        <p>
+          Suppose that <m>k, d, A</m> satisfy the class field axiom and <m>v</m> is a henselian valuation.
+          For <m>L/K</m> an abelian extension of finite separable extensions of <m>k</m>,
+          the map <m>r_{L/K}: \Gal(L/K) \to A_K / \Norm_{L/K} A_L</m> is an isomorphism.
+        </p>
+      </statement>
+      <proof>
       <p>
-        First suppose <m>L/K</m> is abelian;
-        we induct on <m>[L:K]</m>.
+        We induct on <m>[L:K]</m>.
         If <m>L/K</m> is cyclic of prime order,
         then either it is unramified or totally ramified,
-        and we already know <m>r_{L/K}</m> is an isomorphism in those cases.
+        and we already know <m>r_{L/K}</m> is an isomorphism in those cases
+        (by <xref ref="lem-abstract-recip-case1"/> or <xref ref="lem-abstract-recip-case2"/>, respectively).
         Otherwise, let <m>M</m> be a subextension of <m>L/K</m>.
-        Then chasing the above diagram gives that <m>r_{L/K}</m> is surjective.
-        Now the diagram shows that the kernel of <m>r_{L/K}</m> lies in the kernel of <m>\Gal(L/K) \to \Gal(N/K)</m> for <em>every</em>
+        Then diagram chasing through <xref ref="fig-abstractcft-1"/> gives that <m>r_{L/K}</m> is surjective.
+        The same diagram shows further that the kernel of <m>r_{L/K}</m> lies in the kernel of <m>\Gal(L/K) \to \Gal(N/K)</m> for <em>every</em>
         proper subextension <m>N</m> of <m>L/K</m>.
         Since <m>L/K</m> is abelian, the intersection of these kernels is trivial.
         Thus <m>r_{L/K}</m> is also injective, so is an isomorphism.
       </p>
+      </proof>
+    </lemma>
+    <lemma xml:id="lem-abstract-recip-case4">
+      <statement>
+        <p>
+          Suppose that <m>k, d, A</m> satisfy the class field axiom and <m>v</m> is a henselian valuation.
+          For <m>L/K</m> an arbitrary extension of finite separable extensions of <m>k</m>,
+          the homomorphism <m>r_{L/K}</m> from <xref ref="def-abstract-recip-final"/> induces an injection
+          <m>\Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L</m>.
+        </p>
+      </statement>
+      <proof>
       <p>
-        Next, suppose <m>L/K</m> is solvable;
-        we again induct on <m>[L:K]</m>.
-        If <m>L</m> is abelian, we are done.
-        If not, let <m>M</m> be the maximal abelian subextension of <m>L/K</m>;
-        by the same diagram chase as in the previous paragraph,
-        <m>r_{L/K}</m> is surjective.
-        Also, we have a diagram
+        Let <m>M</m> be the maximal abelian subextension of <m>L/K</m>. We have the following commutative diagram:
       </p>
       <figure xml:id="fig-abstractcft-2">
       <image>
@@ -585,41 +643,62 @@
       </image>
       </figure>
       <p>
-        in which the left vertical and bottom horizontal arrows are isomorphisms.
+        in which the left vertical arrow and bottom horizontal arrows are isomorphisms
+        (the latter by <xref ref="lem-abstract-recip-case3"/>).
         Thus the composite <m>\Gal(L/K)^{\ab} \to A_K / \Norm_{M/K} A_M</m> is an isomorphism,
         so <m>r_{L/K}</m> must be injective.
-        Again, we conclude <m>r_{L/K}</m> is an isomorphism.
+      </p>
+      </proof>
+    </lemma>
+    <theorem xml:id="T_abstract_reciprocity_law">
+      <title>Reciprocity law</title>
+      <statement>
+        <p>
+          Suppose that <m>k, d, A</m> satisfy the class field axiom and <m>v</m> is a henselian valuation.
+          Then for each Galois extension <m>L/K</m> of finite separable extensions of <m>k</m>,
+          the homomorphism <m>r_{L/K}</m> from <xref ref="def-abstract-recip-final"/> induces an isomorphism
+          <m>\Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L</m>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        The map in question is injective by <xref ref="lem-abstract-recip-case4"/>, so it only remains to check that
+        <m>r_{L/K}</m> itself is surjective.
+        If <m>L/K</m> is solvable, we may deduce surjectivity from <xref ref="lem-abstract-recip-case3"/> by induction on
+        <m>[L:K]</m> again by a diagram chase on <xref ref="fig-abstractcft-1"/>.
       </p>
       <p>
-        Finally, let <m>L/K</m> be not solvable.
-        The same argument as in the previous paragraph shows that <m>r_{L/K}</m> is injective.
-        To show <m>r_{L/K}</m> is surjective,
-        let <m>M</m> be the fixed field of a <m>p</m>-Sylow subgroup of <m>\Gal(L/K)</m>.
-        Then <m>M/K</m> need not be Galois,
-        so the original diagram doesn't actually make sense.
-        But the square on the left still commutes,
-        and <m>r_{L/M}</m> is an isomorphism by what we already know.
-        If we can show the bottom arrow
-        <m>\Norm_{M/K}</m> surjects onto the <m>p</m>-Sylow subgroup <m>S_p</m> of <m>A_K/\Norm_{L/K}A_L</m>,
-        then the same will be true of <m>r_{L/K}</m>.
-        In fact, the inclusion <m>A_K \subseteq A_M</m> induces a homomorphism <m>i: A_K/\Norm_{L/K}A_L \to A_M /\Norm_{L/M} A_L</m> such that
+        For general <m>L/K</m>, we instead check that <m>r_{L/K}</m> becomes a surjection upon restriction to <m>p</m>-Sylow
+        subgroups for each prime <m>p</m>. That is, for <m>M</m> the fixed field of a Sylow <m>p</m>-subgroup of 
+        <m>\Gal(L/K)</m> and <m>S_p</m> the Sylow <m>p</m>-subgroup of <m>A_K/\Norm_{L/K}A_L</m>, the composition
+        <me>
+          \Gal(L/M) \to \Gal(L/K) \stackrel{r_{L/K}}{\to} A_K/\Norm_{L/K} A_L \to S_p
+        </me>
+        is surjective. (Compare the proof of <xref ref="L_tate_thm_lemma"/>.)
+      </p>
+      <p>
+        Here some caution is required because <m>M/K</m> need not be Galois, 
+        so we cannot draw the full diagram <xref ref="fig-abstractcft-1"/>.
+        However, the left square in that diagram still makes sense and commutes.
+        Meanwhile, we may apply the previous paragraph to see that the left vertical arrow <m>r_{L/M}</m>
+        is an isomorphism. Now note that the inclusion <m>A_K \subseteq A_M</m> induces a 
+        homomorphism <m>i: A_K/\Norm_{L/K}A_L \to A_M /\Norm_{L/M} A_L</m> such that
         <m>\Norm_{M/K} \circ i</m> is multiplication by <m>[M:K]</m>,
-        which is not divisible by <m>p</m>,
-        and so is an isomorphism on <m>S_p</m>.
-        Thus <m>\Norm_{M/K}</m> surjects onto <m>S_p</m>, as does <m>r_{L/K}</m>;
-        since <m>r_{L/K}</m> surjects onto each <m>p</m>-Sylow subgroup of
-        <m>A_K/\Norm_{L/K}A_L</m>, it is in fact surjective.
+        which is not divisible by <m>p</m>. It follows that the image of <m>\Norm_{M/K}</m> contains <m>S_p</m>, 
+        as then does the image of <m>r_{L/K}</m>.
       </p>
     </proof>
     <p>
-      As a bonus byproduct of the proof, we get the following.
+      As a bonus byproduct of the proof, we get a version of the norm limitation theorem.
     </p>
     <corollary>
       <title>Norm limitation theorem</title>
       <statement>
         <p>
-          If <m>M</m> is the maximal abelian subextension of the finite Galois extension <m>L/K</m>,
-          then <m>\Norm_{L/K} A_L = \Norm_{M/K} A_M</m>.
+          Suppose that <m>k, d, A</m> satisfy the class field axiom and <m>v</m> is a henselian valuation.
+          For <m>L/K</m> an arbitrary extension of finite separable extensions of <m>k</m>
+          and <m>M</m> the maximal abelian subextension of <m>L/K</m>, we have <m>\Norm_{L/K} A_L = \Norm_{M/K} A_M</m>.
         </p>
       </statement>
     </corollary>
@@ -627,11 +706,13 @@
   <subsection>
     <title>A look ahead</title>
     <p>
-      What does this tell us about the global Artin reciprocity law?
-      If <m>L/K</m> is a finite abelian extension of number fields,
-      we are trying to prove that
-      <m>\Gal(L/K)</m> is canonically isomorphic to a generalized ideal class group of <m>K</m>.
-      So we need to use for <m>A</m> something related to ideal classes.
+      What does the construction of an abstract reciprocity law tell us about the global Artin reciprocity law
+      (<xref ref="T-Artin-reciprocity"/>)?
+    </p>
+    <p>
+      For <m>L/K</m> a finite abelian extension of number fields,
+      we need to compare <m>\Gal(L/K)</m> to a generalized ideal class group of <m>K</m>.
+      This means that the group <m>A</m> must somehow be related to ideal classes.
       You might try taking the group of fractional ideals in <m>L</m>,
       then taking the direct limit over all finite extensions <m>L</m> of <m>K</m>.
       In this case, we would have to find
@@ -641,9 +722,8 @@
     </p>
     <p>
       The cohomology groups would behave better if <m>A_L</m> were
-      <q>complete</q>
-      in some sense,
-      the way that <m>K^*</m> is complete when <m>K</m> is a local field.
+      <q>complete</q> in some sense,
+      in the way that <m>K^*</m> is complete when <m>K</m> is a local field.
       But there is no good reason to distinguish one place over another in the global case.
       So we're going to make the target group <m>A</m> by
       <q>completing <m>K^*</m> at all places simultaneously</q>.
@@ -677,12 +757,27 @@
       extensions of a number field is a subfield of a cyclotomic extension,
       but not conversely.)
     </p>
+    <remark>
+      <p>
+        In the function field setting, we have a much more straightforward alternative to the use of cyclotomic extensions:
+        we may take the map to the Galois group of the base finite field. The point is that in this case we have an ample supply
+        of <em>everywhere unramified</em> extensions of the base field.
+      </p>
+      <p>
+        In the number field setting, using cyclotomic extensions as a proxy for abelian, everywhere unramified extensions 
+        is a rather productive idea even outside of class field theory. For one, it is the central premise of
+        <term>Iwasawa theory</term>, in which one studies the behavior of class fields in certain towers of number fields
+        and their relationship with <m>p</m>-adic <m>L</m>-functions (and other related concepts).
+        For another, it is the starting point of <em><m>p</m>-adic Hodge theory</em>, in which one studies the relationship
+        between different cohomology theories associated to algebraic varieties over local fields.
+      </p>
+    </remark>
   </subsection>
   <exercises>
     <title>Exercises</title>
-      <exercise>
+      <exercise xml:id="exer-abstract-functorialities">
         <statement>
-          Prove <xref ref="P_abstract_functorialities">Proposition</xref>.
+          Prove <xref ref="P_abstract_functorialities"/>.
         </statement>
       </exercise>
   </exercises>

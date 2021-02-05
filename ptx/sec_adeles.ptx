@@ -179,6 +179,11 @@
           <m>K + \AA_S^{\fin} = \AA_K^{\fin}</m> and <m>K + \AA_S = \AA_K</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          See <xref ref="exerc-crt-adeles"/>.
+        </p>
+      </proof>
     </proposition>
     <corollary>
       <statement>
@@ -240,8 +245,7 @@
       of <m>K</m> as the quotient
       <m>C_K = I_K/K^*</m> of the id&#xe8;les by the principal id&#xe8;les.
     </definition>
-  </subsection>
-  <subsection>
+    <remark>
     <title>Warning</title>
     <p>
       While the embedding of the id&#xe8;les into the ad&#xe8;les is continuous,
@@ -249,8 +253,12 @@
       For example,
       the set of id&#xe8;les whose component at each finite prime <m>\gothp</m> is in <m>\gotho_{\gothp}^*</m> is open,
       but not an intersection of the id&#xe8;le group with an open subset of the ad&#xe8;les.
-      See the exercises for one way to fix this, and the last part of this section for another.
+      This is essentially the same issue that came up in <xref ref="exer-subspace-top"/>,
+      and the same fix applies (<xref ref="exer-subspace-top-ideles"/>).
     </p>
+    </remark>
+  </subsection>
+  <subsection>
     <p>
       There is a homomorphism from <m>I_K</m> to the group of fractional ideals of <m>K</m>:
       <me>
@@ -400,12 +408,12 @@
   </subsection>
   <exercises>
     <title>Exercises</title>
-      <exercise>
+      <exercise xml:id="exerc-crt-adeles">
         <statement>
-          Prove <xref ref="P_adelic_CRT"></xref>.
+          Prove <xref ref="P_adelic_CRT"/>.
         </statement>
       </exercise>
-      <exercise>
+      <exercise xml:id="exer-subspace-top-ideles">
         <statement>
           Show that the restricted direct product topology on <m>I_K</m> is the subspace topology for the embedding into
           <m>\AA_K \times \AA_K</m> given by the map <m>x \mapsto (x,x^{-1})</m>.
@@ -413,11 +421,10 @@
       </exercise>
       <exercise>
         <statement>
-          Complete the proof of <xref ref="P_idele_group_compact">Proposition</xref>
-          by establishing the existence of the constant <m>c</m>.
+          Complete the proof of <xref ref="P_idele_group_compact"/> by establishing the existence of the constant <m>c</m>.
         </statement>
         <hint>
-          See Lang, Section V.1, Theorem 0.
+          See <xref ref="bib-Lang"/>, Section V.1, Theorem 0.
         </hint>
       </exercise>
   </exercises>

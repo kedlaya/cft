@@ -1,6 +1,6 @@
 This repository contains source for "Notes on Class Field Theory".
 
-Copyright (c) 2002-2020 by Kiran S. Kedlaya.
+Copyright (c) 2002-2021 by Kiran S. Kedlaya.
 
 Hints for processing PreTeXt:
 
@@ -10,7 +10,7 @@ xsltproc --xinclude -o cft-ptx.tex ~/code/mathbook/xsl/pretext-latex.xsl ptx/ind
 ```
 - To prepare images:
 ```
-~/code/mathbook/pretext/pretext -vv -c latex-image -f svg -d images/ ptx/*.ptx
+~/code/mathbook/pretext/pretext -c latex-image -f svg -d html/images/ ptx/index.ptx
 ```
 - To convert XML to HTML:
 ```
