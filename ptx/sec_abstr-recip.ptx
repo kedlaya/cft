@@ -6,30 +6,52 @@
     <paragraphs>
       <title>Reference</title>
       <p>
-        Milne VII.5; Neukirch VI.4, but only loosely.
+        <xref ref="bib-Milne-CFT"/> VII.5; <xref ref="bib-Neukirch"/> VI.4, but only loosely.
       </p>
     </paragraphs>
     <p>
       In this chapter, we'll manufacture a canonical isomorphism
       <m>\Gal(L/K)^{\ab} \to C_K/\Norm_{L/K} C_L</m> for any finite extension <m>L/K</m> of number fields,
-      where <m>C_K</m> and <m>C_L</m> are the corresponding id\<sq>ele class groups.
-      However, we won</sq>t yet know it agrees with our proposed reciprocity map,
+      where <m>C_K</m> and <m>C_L</m> are the corresponding id&#xe8;le class groups (<xref ref="T_abstract_adelic_reciprocity"/>).
+      However, we won't yet know it agrees with our proposed reciprocity map,
       which is the product of the local reciprocity maps.
-      We'll check that in the next chapter.
+      We'll come back to this point after we establish the existence theorem (see <xref ref="sec_connection"/>).
     </p>
   </introduction>
   <subsection>
-    <title>Cyclotomic extensions</title>
+    <title>Abstract unit groups and the class field axiom</title>
     <p>
-      The cyclotomic extensions
-      (extensions by roots of unity)
-      of a number field play a role in class field theory analogous to the role played by the unramified extensions in local class field theory.
-      This makes it essential to make an explicit study of them for use in proving the main results.
+      We will be applying abstract class field theory with <m>k = \QQ</m> and <m>\kbar = \overline{\QQ}</m>, an algebraic closure of <m>\QQ</m>.
+      We first specify the <m>\Gal(\overline{\QQ}/\QQ)</m>-module <m>A</m> which will give rise to abstract unit groups.
+    </p>
+    <definition xml:id="def-global-abstract-units">
+      <p>
+        Set <m>A = \bigcup_K C_K</m>, so that <m>A_K = C_K</m> for every number field <m>K</m>.
+        Our earlier calculations (<xref ref="T_first_inequality"/>,
+        <xref ref="T_first_and_second_inequality"/>)
+        imply that the class field axiom is satisfied:
+        for <m>L/K</m> a cyclic extension of number fields,
+        <me>
+          \#H^0_T(\Gal(L/K), C_L) = [L:K], \qquad \#H^1_T(\Gal(L/K), C_L) = 1.
+        </me>
+        Note that we neither know yet, nor need to know at this point, that <m>H^0_T(\Gal(L/K), C_L)</m> is cyclic.
+      </p>
+    </definition>
+  </subsection>
+  <subsection>
+    <title>Cyclotomic extensions and abstract ramification theory</title>
+    <p>
+      The cyclotomic extensions of a number field play a role in class field theory analogous to the role played by the unramified extensions in local class field theory.
+      This makes it essential to make an explicit study of them for use in proving the main results. However, we will not need the Kronecker-Weber theorem
+      (<xref ref="T_Kronecker-Weber"/>); instead, we will recover it as part of the reciprocity law.
     </p>
     <p>
       First of all,
       we should further articulate a distinction that has come up already.
-      The extension <m>\cup_n \QQ(\zeta_n)</m> of <m>\QQ</m> obtained by adjoining all roots of unity has Galois group <m>\widehat{\ZZ}^* = \prod_p \ZZ_p^*</m>.
+    </p>
+    <definition>
+      <p>
+      The extension <m>\bigcup_n \QQ(\zeta_n)</m> of <m>\QQ</m> obtained by adjoining all roots of unity has Galois group <m>\widehat{\ZZ}^* = \prod_p \ZZ_p^*</m>.
       That group has a lot of torsion,
       since each <m>\ZZ_p^*</m> contains a torsion subgroup of order <m>p-1</m>
       (or 2, if <m>p=2</m>).
@@ -41,33 +63,34 @@
       For <m>K</m> a number field, define <m>K^{\smcy} = K \QQ^{\smcy}</m>;
       then <m>\Gal(K^{\smcy}/K) \cong \widehat{\ZZ}</m> as well,
       even if <m>K</m> contains some extra roots of unity.
-    </p>
-  </subsection>
-  <subsection>
-    <title>The reciprocity map via abstract CFT</title>
+      </p>
+    </definition>
     <p>
-      First of all, we choose an isomorphism of
+      With this definition in hand, we can set up the homomorphism <m>d</m> needed to define abstract ramification theory for the base field <m>k = \QQ</m>.
+    </p>
+    <definition xml:id="def-global-abstract-ramification">
+    <p>
+      Choose an isomorphism of
       <m>\Gal(\QQ^{\smcy}/\QQ)</m> with <m>\widehat{\ZZ}</m>;
       our results are not going to depend on the choice.
       That gives a continuous surjection
       <me>
         d: \Gal(\overline{\QQ}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ};
       </me>
-      if we regard <m>\QQ^{\smcy}/\QQ</m> as the
-      <q>maximal unramified extension</q>
-      of <m>\QQ</m>,
-      we can define the ramification index <m>e_{L/K}</m> and inertia degree <m>f_{L/K}</m> for any extension of number fields,
-      by the rules
+      recall that this means we are going to regard <m>\QQ^{\smcy}/\QQ</m> as the <q>maximal unramified extension</q>
+      of <m>\QQ</m>. As in the general setup, for any finite extension <m>L/K</m> of number fields, we define the
+      <term>abstract ramification index</term> <m>e_{L/K}</m> and the <term>abstract inertia degree</term> <m>f_{L/K}</m> by setting
       <me>
-        f_{L/K} = [L \cap \QQ^{\smcy}:K \cap \QQ^{\smcy}], \qquad e_{L/K} = \frac{[L:K]}{f_{L/K}}
-      </me>.
+        f_{L/K} = [L \cap \QQ^{\smcy}:K \cap \QQ^{\smcy}], \qquad e_{L/K} = \frac{[L:K]}{f_{L/K}}.
+      </me>
     </p>
+    </definition>
+  </subsection>
+  <subsection>
+    <title>An abstract henselian valuation</title>
     <p>
-      To use abstract class field theory to exhibit the reciprocity map,
-      we need a
-      <q>henselian valuation</q>
-      <m>v: C_{\QQ} \to \widehat{\ZZ}</m>,
-      i.e., a homomorphism satisfying:
+      To complete the setup of abstract class field theory, we need an abstract henselian valuation <m>v: C_{\QQ} \to \widehat{\ZZ}</m>.
+      Recall from <xref ref="def-abstract-henselian-valuation"/> that this means:
       <ol>
         <li>
           <p>
@@ -83,21 +106,9 @@
         </li>
       </ol>
     </p>
+    <definition xml:id="def-global-abstract-valuation">
     <p>
-      Once we have that, our calculations from the preceding chapters
-      (<xref ref="T_first_inequality">Theorem</xref>,
-      <xref ref="T_first_and_second_inequality">Theorem</xref>)
-      imply that the class field axiom is satisfied:
-      for <m>L/K</m> cyclic,
-      <me>
-        \#H^0_T(\Gal(L/K), C_L) = [L:K], \qquad \#H^1_T(\Gal(L/K), C_L) = 1
-      </me>.
-    </p>
-    <p>
-      So then abstract class field theory will kick in.
-    </p>
-    <p>
-      We can make that valuation using Artin reciprocity for <m>\QQ(\zeta_n)/\QQ</m>.
+      We define <m>v</m> using Artin reciprocity for <m>\QQ(\zeta_n)/\QQ</m>.
       Recall that there is a canonical surjection
       <me>
         I_n \to (\ZZ/n\ZZ)^* \cong \Gal(\QQ(\zeta_n)/\QQ):
@@ -131,15 +142,22 @@
       We define <m>v</m> by channeling this map through the projection
       <m>\Gal(\QQ^{\cyc}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ)</m> and then using our chosen isomorphism <m>\Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}</m>.
     </p>
+    </definition>
+    <lemma xml:id="lem-global-abstract-valuation">
+      <statement>
+        <p>
+          The map <m>v</m> defined in <xref ref="def-global-abstract-valuation"/> is a henselian valuation in the sense of <xref ref="def-abstract-henselian-valuation"/>.
+        </p>
+      </statement>
+      <proof>
     <p>
-      Another way to say this:
-      <m>I_{\QQ}</m> can be written as <m>\QQ^* \times \RR^* \times \widehat{\ZZ}^*</m>,
-      and the map to <m>\widehat{\ZZ}^*</m> is just projection onto the third factor!
+      Note that <m>I_{\QQ}</m> can be written as <m>\QQ^* \times \RR^* \times \widehat{\ZZ}^*</m>,
+      and the map to <m>\widehat{\ZZ}^*</m> is just projection onto the third factor.
       In particular, the map factors through <m>C_\QQ</m>,
-      and property (i) above is straightforward.
+      which makes the first condition of <xref ref="def-abstract-henselian-valuation"/> apparent.
     </p>
     <p>
-      To check (ii),
+      To check the second condition of <xref ref="def-abstract-henselian-valuation"/>,
       we need to do the same thing that we just did a bit more generally.
       For <m>K</m> now a number field, define the map
       <me>
@@ -159,82 +177,96 @@
       <m>\Gal(K(\zeta_n)/K)</m> and second that it coincides with the Artin map.
     </p>
     <p>
-      From the First Inequality, we can deduce the following handy fact.
-    </p>
-    <proposition>
-      <statement>
-        <p>
-          For <m>L/K</m> a finite abelian extension of number fields,
-          the Artin map always surjects onto <m>\Gal(L/K)</m>.
-        </p>
-      </statement>
-    </proposition>
-    <proof>
-      <p>
-        If the Artin map only hit the subgroup <m>H</m> of <m>\Gal(L/K)</m>,
-        the fixed field <m>M</m> of <m>H</m> would have the property that all but finitely many primes of <m>M</m> split completely in <m>L</m>.
-        We've already seen that this contradicts the First Inequality
-        (<xref ref="C_split_completely">Corollary</xref>).
-      </p>
-    </proof>
-    <p>
-      In particular, the Artin map
+      Using the First Inequality (see <xref ref="prop-artin-map-surjects"/> below), we may see that the Artin map
       <m>I_n \to \Gal(K(\zeta_n)/K)</m> we wrote down above is surjective.
-      Using that, we can verify (ii):
+      Using that, we can verify the second condition of <xref ref="def-abstract-henselian-valuation"/>:
       given a prime ideal <m>\gothp</m> of <m>K</m>,
       the Artin map of <m>K(\zeta_n)/K</m> applied to it gives the same element of
       <m>(\ZZ/n\ZZ)^*</m> as the Artin map of <m>\QQ</m> applied to <m>\Norm_{K/\QQ}(\gothp)</m>.
       Meanwhile, the Artin map of
       <m>K(\zeta_n)/K</m> surjects onto <m>\Gal(K(\zeta_n)/K)</m>,
       which has index <m>[K \cap \QQ(\zeta_n):\QQ]</m> in <m>(\ZZ/n\ZZ)^*</m>.
-      This verifies
-      (ii).
     </p>
+      </proof>
+    </lemma>
     <p>
-      Thus lo and behold,
-      we get from abstract class field theory a reciprocity isomorphism for any finite extension of number fields:
-      <me>
-        r'_{L/K}: C_K/\Norm_{L/K} C_L \stackrel{\sim}{\to} \Gal(L/K)^{\ab}
-      </me>.
+      Here is the consequence of the First Inequality used in the proof of <xref ref="lem-global-abstract-valuation"/>.
     </p>
+    <proposition xml:id="prop-artin-map-surjects">
+      <statement>
+        <p>
+          For <m>L/K</m> an abelian extension of number fields,
+          the Artin map always surjects onto <m>\Gal(L/K)</m>.
+        </p>
+      </statement>
+    </proposition>
+    <proof>
+      <p>
+        Let <m>H</m> be the image of the Artin map; the fixed field <m>M</m> of <m>H</m> has the property that all but finitely many primes of <m>K</m> split completely in <m>M</m>.
+        We've already seen that this contradicts the First Inequality unless <m>M = K</m> (<xref ref="C_split_completely"/>).
+      </p>
+    </proof>
+  </subsection>
+  <subsection>
+    <title>Consequences of abstract CFT</title>
     <p>
-      These are compatible in the usual way,
-      so we get a map <m>r'_K: C_K \to \Gal(K^{\ab}/K)</m>.
-      Of course, we don't know what this map is,
-      so we can't yet use it to recover Artin reciprocity.
-      (That depended on the reciprocity map being the product of the local maps.)
-      But at least we deduce the norm limitation theorem.
+      We now apply abstract class field theory to obtain an <q>abstract adelic reciprocity law</q>.
     </p>
+    <theorem xml:id="T_abstract_adelic_reciprocity">
+      <title>Abstract adelic reciprocity law</title>
+      <statement>
+        <p>
+          For every Galois extension <m>L/K</m> of number fields, we obtain an isomorphism
+          <me>
+            r'_{L/K}: C_K/\Norm_{L/K} C_L \stackrel{\sim}{\to} \Gal(L/K)^{\ab}.
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The hypotheses of abstract class field theory are satisfied by taking 
+          <m>k = \QQ</m> <m>\kbar = \overline{\QQ}</m>; <m>A = \bigcup_K C_K</m> as in <xref ref="def-global-abstract-units"/> (using <xref ref="T_first_inequality"/> and
+          <xref ref="T_first_and_second_inequality"/> to verify the class field axiom);
+          <m>d: \Gal(\overline{\QQ}/\QQ) \to \widehat{\ZZ}</m> as in <xref ref="def-global-abstract-ramification"/>;
+          and <m>v: C_{\QQ} \to \widehat{\ZZ}</m> as in <xref ref="def-global-abstract-valuation"/> (using <xref ref="lem-global-abstract-valuation"/>).
+          We may thus apply <xref ref="T_abstract_reciprocity_law"/> to conclude.
+        </p>
+      </proof>
+    </theorem>
+    <definition>
+    <p>
+      The maps <m>r'_{L/K}</m> from <xref ref="T_abstract_adelic_reciprocity"/> fit together to give a map <m>r'_K: C_K \to \Gal(K^{\ab}/K)</m>;
+      but we do not yet know that this coincides with the product of the local reciprocity maps, so we cannot yet recover Artin reciprocity.
+      However, we can at least deduce the norm limitation theorem (<xref ref="T_adelic_norm_limitation1"/>). See also <xref ref="rmk-remove-identification"/> below.
+    </p>
+    </definition>
     <theorem xml:id="T_adelic_norm_limitation">
+      <title>Adelic norm limitation theorem</title>
       <statement>
         <p>
           If <m>L/K</m> is a finite extension of number fields and <m>M = L \cap K^{\ab}</m>,
           then <m>\Norm_{L/K} C_L = \Norm_{M/K} C_M</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          Apply <xref ref="C_abstract_norm_limitation"/>.
+        </p>
+      </proof>
     </theorem>
+    <remark xml:id="rmk-remove-identification">
     <p>
-      We do know one thing about the map <m>r'_{L/K}</m>: for
-      <q>unramified</q>
-      extensions <m>L/K</m> (i.e., <m>L \subseteq K^{\smcy}</m>), the
-      <q>Frobenius</q>
-      in <m>\Gal(L/K)</m> maps to a
-      <q>uniformizer</q>
+      Although we do not have a complete description of the isomorphism <m>r'_{L/K}</m> coming from abstract class field theory,
+      we do know one specific fact about this map: for <q>unramified</q> extensions <m>L/K</m> (i.e., <m>L \subseteq K^{\smcy}</m>), the
+      <q>Frobenius</q> in <m>\Gal(L/K)</m> maps to a <q>uniformizer</q>
       in <m>C_K</m>.
       That is, the element of <m>\Gal(L/K)</m> coming from the element of
       <m>\Gal(K^{\smcy}/K)</m> which maps to 1 under <m>d_K</m> is the element of <m>C_K</m> which maps to 1 under <m>v_K</m>.
       But we made <m>v_K</m> simply by mapping <m>C_K</m> to
       <m>\Gal(K^{\smcy}/K)</m> via the Artin map and then identifying the latter with
       <m>\widehat{\ZZ}</m> by the same identification we used to make <m>d_K</m>.
-      Upshot: the choice of that identification drops out,
-      and the reciprocity map coincides with the Artin map that we wrote down earlier.
+      The upshot is that the choice of that identification drops out.
     </p>
-    <p>
-      A bit later
-      (see <xref ref="sec_connection">Chapter</xref>),
-      we will check that <m>r'_{L/K}</m> agrees with the map that I called <m>r_{L/K}</m>,
-      namely the product of the local reciprocity maps.
-      Remember, I need this in order to recover Artin reciprocity in general.
-    </p>
+    </remark>
   </subsection>
 </section>

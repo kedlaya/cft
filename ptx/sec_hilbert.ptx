@@ -55,11 +55,12 @@
           The field <m>L</m> is called the <term>Hilbert class field</term> of <m>K</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+        A canonical isomorphism will be given by the Artin reciprocity law (<xref ref="T-Artin-reciprocity"/>).
+        </p>
+      </proof>
     </theorem>
-    <p>
-      In fact, there is a canonical isomorphism, given by the Artin reciprocity law
-      (<xref ref="T-Artin-reciprocity"/>).
-    </p>
     <remark>
       While <xref ref="T_Hilbert_class_field"/> implies that an abelian unramified extension must be finite,
       there can be infinite unramified <em>nonabelian</em> extensions.

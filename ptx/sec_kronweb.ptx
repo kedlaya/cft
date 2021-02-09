@@ -46,7 +46,7 @@
       An example of an abelian extension of <m>\QQ</m> is the cyclotomic field <m>\QQ(\zeta_n)</m>
       (where <m>n</m> is a positive integer and <m>\zeta_n</m> is a primitive <m>n</m>-th root of unity),
       whose Galois group is <m>(\ZZ/n\ZZ)^*</m>, or any subfield thereof.
-      Amazingly, <xref ref="T_Kronecker-Weber">Theorem</xref> implies that there are no other examples!
+      Amazingly, <xref ref="T_Kronecker-Weber"/> implies that there are no other examples!
     </p>
     </definition>
     <theorem xml:id="T_Kronecker-Weber">
@@ -72,9 +72,9 @@
     </p>
     </definition>
     <p>
-      We will prove <xref ref="T_Kronecker-Weber">Theorem</xref> in the next few lectures.
+      We will prove <xref ref="T_Kronecker-Weber"/> in the next few lectures.
       Our approach will be to deduce it from a local analogue
-      (see <xref ref="T_local_Kronecker-Weber2">Theorem</xref>).
+      (see <xref ref="T_local_Kronecker-Weber2"/>).
     </p>
     <theorem xml:id="T_local_Kronecker-Weber1">
       <title>Local Kronecker-Weber</title>
@@ -209,7 +209,7 @@
         For each prime <m>p</m> over which <m>K</m> ramifies,
         pick a prime <m>\gothp</m> of <m>K</m> over <m>p</m>;
         by local Kronecker-Weber
-        (<xref ref="T_local_Kronecker-Weber1">Theorem</xref>),
+        (<xref ref="T_local_Kronecker-Weber1"/>),
         <m>K_{\gothp} \subseteq \QQ_p(\zeta_{n_p})</m> for some positive integer <m>n_p</m>.
         Let <m>p^{e_p}</m> be the largest power of <m>p</m> dividing <m>n_p</m>,
         and put <m>n = \prod_p p^{e_p}</m>.
@@ -294,7 +294,7 @@
         </statement>
         <hint>
           By Dirichlet's units theorem, the index <m>[\ZZ[\zeta_p]^*:\ZZ[\zeta_p+\zeta_p^{-1}]^*]</m> is finite.
-          For <m>\alpha \in \ZZ[\zeta_p]^\times</m>, the ratio <m>\alpha/\overline{\alpha}</m> is an algebraic integer having absolute value <m>1</m>
+          For <m>\alpha \in \ZZ[\zeta_p]^*</m>, the ratio <m>\alpha/\overline{\alpha}</m> is an algebraic integer having absolute value <m>1</m>
           under each complex embedding, and hence is a root of unity by Kronecker's theorem.
         </hint>
       </exercise>

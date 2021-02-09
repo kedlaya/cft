@@ -8,6 +8,10 @@ Hints for processing PreTeXt:
 ```
 xsltproc --xinclude -o cft-ptx.tex ~/code/mathbook/xsl/pretext-latex.xsl ptx/index.ptx
 ```
+- To convert the resulting LaTeX to PDF:
+```
+pdflatex cft-ptx
+```
 - To prepare images:
 ```
 ~/code/mathbook/pretext/pretext -c latex-image -f svg -d html/images/ ptx/index.ptx

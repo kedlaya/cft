@@ -124,21 +124,26 @@
       </li>
       <li>
         <p>
-          Class field theory for function fields used to produce curves over finite fields with unusually many points
-          (see the web site <url xref="http://manypoints.org">manypoints.org</url> for references).
+          Class field theory for function fields (see <xref ref="bib-Serre-AGCF"/>) and its use to produce curves over finite fields with unusually many points
+          (see <url xref="http://manypoints.org">manypoints.org</url> and the forthcoming <xref ref="bib-Serre-Curves"/>).
         </p>
       </li>
       <li>
         <p>
           Application of Artin reciprocity to cubic,
           quartic, and higher reciprocity
-          (see Milne).
+          (see <xref ref="bib-Milne-CFT"/>).
         </p>
       </li>
       <li>
         <p>
           Algorithmic class field theory
           (see the books of Henri Cohen).
+        </p>
+      </li>
+      <li>
+        <p>
+          Clausen's <m>K</m>-theoretic approach to Artin reciprocity <xref ref="bib-Clausen"/>.
         </p>
       </li>
     </ul>
@@ -174,7 +179,7 @@
     (and again, more simply, by Henniart and Scholze),
     and for function fields by Lafforgue,
     based on the work of Drinfeld.
-    The work of Laumon and Ngo on the Langlands fundamental lemma is also part of this story.
+    The work of Laumon and Ng&#xf4; on the Langlands fundamental lemma is also part of this story.
   </p>
   <p>
     Okay, enough rambling for now; I hope that helps provide a bit of perspective.

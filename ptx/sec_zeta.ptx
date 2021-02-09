@@ -94,7 +94,7 @@
       For <m>K = \QQ</m>, this is already a nontrivial but important result:
       it implies Dirichlet's famous theorem that there are infinitely many primes in arithmetic progression, as follows.
     </p>
-    <definition>
+    <definition xml:id="def-dirichlet-density">
     <p>
       A set of primes <m>S</m> in a number field <m>K</m> has <term>Dirichlet density</term> <m>d</m> if
       <me>
@@ -172,9 +172,15 @@
         note that the order of the conjugacy class of <m>G</m> is <m>\#G/\#Z</m>.
       </p>
     </proof>
+    <p>
+      We state the following here as a corollary of <xref ref="T_Chebotarev"/>; however, we will eventually prove it <em>before</em>
+      proving Artin reciprocity (see <xref ref="C_split_completely"/>).
+    </p>
     <corollary xml:id="cor-some-primes-split">
       <statement>
-        Let <m>L/K</m> be a nontrivial extension of number fields. Then there exist infinitely many primes of <m>K</m> which do not split completely in <m>L</m>.
+        <p>
+          Let <m>L/K</m> be a nontrivial extension of number fields. Then there exist infinitely many primes of <m>K</m> which do not split completely in <m>L</m>.
+        </p>
       </statement>
       <proof>
         <p>
@@ -223,7 +229,9 @@
     <title>Exercises</title>
       <exercise>
         <statement>
+          <p>
           Show that the Dirichlet density of the set of all primes of a number field is 1.
+          </p>
         </statement>
       </exercise>
       <exercise>

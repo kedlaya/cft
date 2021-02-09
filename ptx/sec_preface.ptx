@@ -10,7 +10,7 @@
     <p>
       Class field theory, the study of abelian extensions of number fields, was a crowning achievement of number theory in the first half of the 20th century. 
       It brings together, in a unified fashion, the quadratic and higher reciprocity laws of Gauss, Legendre et al, and vastly generalizes them. 
-      Some of its consequences (e.g., the Chebotarev density theorem) apply even to nonabelian extensions.
+      Some of its consequences (e.g., the Chebotar&#xeb;v density theorem) apply even to nonabelian extensions.
     </p>
     <p>
       Our approach in this course will be to begin with the formulations of the statements of class field theory, omitting the proofs (except for the Kronecker-Weber theorem, which we prove first). 
@@ -26,7 +26,7 @@
   semester (Math 254A) based on chapters I, II, and III of Neukirch's book <xref ref="bib-Neukirch"/>; 
   for that reason, it was natural to use that book as a primary reference. 
   However, no special features of that presentation are assumed, so just about any graduate-level text on algebraic
-  number theory (e.g., Fr\"ohlich-Taylor <xref ref="bib-Frohlich-Taylor"/>, Janusz <xref ref="bib-Janusz"/>, Jarvis, Lang <xref ref="bib-Lang"/>) should provide suitable background.
+  number theory (e.g., Fr&#xf6;hlich-Taylor <xref ref="bib-Frohlich-Taylor"/>, Janusz <xref ref="bib-Janusz"/>, Jarvis <xref ref="bib-Jarvis"/>, Lang <xref ref="bib-Lang"/>) should provide suitable background.
 </p>
 <p>
   After the course ended, I kept the lecture notes posted on my web site in their originally written, totally uncorrected state.
@@ -51,7 +51,7 @@ Corrections and comments are welcome.
 <acknowledgment>
 <p>
   Thanks to Zonglin Jiang, Justin Lacini, and Zongze Liu for their feedback on previous drafts,
-  and to the participants in Math 204B (winter 2021) for "test-driving" the HTML version and generating much additional feedback.
+  and to the participants in Math 204B (winter 2021) for <q>test-driving</q> the HTML version and generating much additional feedback.
   Thanks also to Rob Beezer and David Farmer for their assistance with the conversion from <latex/> to <url href="https://pretextbook.org/"><pretext /></url>,
   which made it feasible to produce an HTML version.
 </p>

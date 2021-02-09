@@ -21,9 +21,8 @@
     <p>
       We now make some computations of
       <m>H^i_T(L/K)</m> for <m>L/K</m> a finite Galois extension of local fields.
-      To begin with, recall that by
-      <q>Theorem 90</q>
-      (<xref ref="L_theorem_90">Lemma</xref>), <m>H^1(L/K) = 0</m>.
+      To begin with, recall that by <q>Theorem 90</q>
+      (<xref ref="L_theorem_90"/>), <m>H^1(L/K) = 0</m>.
       Our goal in this section will be to supplement this fact with a computation of <m>H^2(L/K)</m>.
     </p>
     <proposition xml:id="P_local_h2">
@@ -253,17 +252,30 @@
         to be precise), and we may take <m>W = \exp(V)</m>.
       </p>
     </proof>
-    <p>
-      Take <m>W</m> as in <xref ref="L_open_subgroup_acyclic1"/>.
-      Since <m>W</m> has finite index in <m>\gotho_L^*</m>, we have <m>h(\gotho_L^*/W) = 1</m>
-      and hence <m>h(\gotho_L^*) = h(W) = 1</m> by <xref ref="L_open_subgroup_acyclic1"/>.
-      So again we may conclude that <m>h(L^*) = h(\gotho_L^*) h(\ZZ) = [L:K]</m>,
-      and so <m>H^0_T(\Gal(L/K), L^*) = [L:K]</m>.
-      However, we cannot yet check that
-      <m>H^0_T(\Gal(L/K), L^*)</m> is cyclic because the groups
-      <m>H^1_T(\Gal(L/K), \gotho_L^*)</m> are not guaranteed to vanish;
-      see <xref ref="exer-units-not-acyclic"/>.
-    </p>
+    <proposition xml:id="P_local_cyclic_H2">
+      <statement>
+        <p>
+          For <m>L/K</m> a cyclic extension of local fields, <m>\# H^0_T(\Gal(L/K), L^*) = [L:K]</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Take <m>W</m> as in <xref ref="L_open_subgroup_acyclic1"/>.
+          Since <m>W</m> has finite index in <m>\gotho_L^*</m>, we have <m>h(\gotho_L^*/W) = 1</m>
+          and hence <m>h(\gotho_L^*) = h(W) = 1</m> by <xref ref="L_open_subgroup_acyclic1"/>.
+          So again we may conclude that <m>h(L^*) = h(\gotho_L^*) h(\ZZ) = [L:K]</m>,
+          and so <m>H^0_T(\Gal(L/K), L^*) = [L:K]</m>.
+        </p>
+      </proof>
+    </proposition>
+    <remark>
+      <p>
+        Notwithstanding <xref ref="P_local_cyclic_H2"/>, at this stage we cannot yet check that
+        <m>H^0_T(\Gal(L/K), L^*)</m> is cyclic, because the groups
+        <m>H^1_T(\Gal(L/K), \gotho_L^*)</m> are not guaranteed to vanish.
+        See <xref ref="exer-units-not-acyclic"/>.
+      </p>
+    </remark>
   <remark>
     <title>Note</title>
     <p>
@@ -523,7 +535,7 @@
       </statement>
       <hint>
         First show that the groups <m>H^i(G,M)</m> are divisible, say using the description in terms of cochains. Then combine with the fact
-        that these group are killed by <m>#G</m> (<xref ref="exa-extended-functoriality"/>).
+        that these group are killed by the order of <m>G</m> (<xref ref="exa-extended-functoriality"/>).
       </hint>
       </exercise>
       <exercise xml:id="exer-units-not-acyclic">

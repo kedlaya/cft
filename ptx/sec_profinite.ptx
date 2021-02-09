@@ -4,7 +4,7 @@
     <paragraphs>
       <title>Reference</title>
       <p>
-        <xref ref="bib-Neukirch"/>, Sections IV.1 and IV.2.
+        <xref ref="bib-Neukirch"/>, IV.1 and IV.2.
       </p>
     </paragraphs>
     <p>
@@ -275,15 +275,16 @@
       <exercise>
         <statement>
           A closed subgroup <m>H</m> of a profinite group <m>G</m> is called a
-          <term><m>p</m>-Sylow subgroup</term> of <m>G</m> if,
+          <term>Sylow <m>p</m>-subgroup</term> of <m>G</m> if,
           for every open normal subgroup <m>N</m> of <m>G</m>,
-          <m>HN/N</m> is a <m>p</m>-Sylow subgroup of <m>G/N</m>.
+          the image of <m>H</m> in <m>G/N</m> (a/k/a <m>HN/N</m>) is a Sylow <m>p</m>-subgroup of <m>G/N</m>.
+          (It is enough to check this for <m>N</m> running over a neighborhood basis of the identity.)
           Using the Sylow theorems for finite groups, prove that:
          <ol>
             <li>
               <p>
                 For every prime <m>p</m>,
-                there exists a <m>p</m>-Sylow subgroup of <m>G</m>.
+                there exists a Sylow <m>p</m>-subgroup of <m>G</m>.
                 (Beware that this subgroup need not be open in <m>G</m>.)
               </p>
             </li>
@@ -291,12 +292,12 @@
               <p>
                 Every subgroup of <m>G</m>,
                 the quotient of which by any open normal subgroup is a <m>p</m>-group,
-                is contained in a <m>p</m>-Sylow subgroup.
+                is contained in a Sylow <m>p</m>-subgroup.
               </p>
             </li>
             <li>
               <p>
-                Every two <m>p</m>-Sylow subgroups of <m>G</m> are conjugate.
+                Every two Sylow <m>p</m>-subgroups of <m>G</m> are conjugate.
               </p>
             </li>
           </ol>
@@ -307,7 +308,7 @@
       </exercise>
       <exercise>
         <statement>
-          Compute the <m>p</m>-Sylow subgroups of <m>\widehat{\ZZ}</m>,
+          Compute the Sylow <m>p</m>-subgroups of <m>\widehat{\ZZ}</m>,
           of <m>\ZZ_p^*</m>, and of <m>\GL_2(\ZZ_p)</m>.
         </statement>
         <hint>

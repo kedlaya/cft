@@ -1,448 +1,335 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sec_ideles-cohom2">
-  <title>Cohomology of the id&#xe8;les II: the
-  <q>Second Inequality</q>
-  </title>
+  <title>Cohomology of the id&#xe8;les II: the <q>Second Inequality</q></title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
-      <p>
-        Milne VII.5; Neukirch VI.4.
+      <p><xref ref="bib-Milne-CFT"/> VII.5; <xref ref="bib-Neukirch"/> VI.4.
       </p>
     </paragraphs>
     <p>
       In the previous chapter,
       we proved that for <m>L/K</m> a cyclic extension of number fields,
-      the Herbrand quotient <m>h(C_L)</m> of the id\<sq>ele class group of <m>L</m> is equal to <m>[L:K]</m>.
-      This time we</sq>ll prove the following.
+      the Herbrand quotient <m>h(C_L)</m> of the id&#xe8;le class group of <m>L</m> is equal to <m>[L:K]</m>
+      (<xref ref="T_first_inequality1"/>)
+      and deduced that <m>\#H^0_T(\Gal(L/K), C_L) \geq [L:K]</m>
+      (the <q>First Inequality</q>; <xref ref="T_first_inequality"/>).
+      This time we'll prove the reverse inequality, and even a somewhat stronger statement (see <xref ref="T_first_and_second_inequality"/> below).
     </p>
-    <theorem xml:id="T_first_and_second_inequality">
+    <p>
+      For this step, we have no local analogue to draw upon: the corresponding assertion in local class field theory
+      is covered by Theorem 90 (<xref ref="L_theorem_90"/>). Unfortunately, there seems to be no direct approach to computing <m>H^1(G, C_L)</m>,
+      so some alternate strategy is needed.  In this lecture, we take an analytic approach motivated by the proof of Dirichlet's theorem on
+          primes in arithmetic progressions; see <xref ref="L_second_inequality_analytic"/>. There is also an algebraic approach, but we prefer to postpone discussing it
+          until we are ready to tackle the existence theorem, as these two topics share similar ideas; see <xref ref="T_first_and_second_inequality_algebraic"/>.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Back to ideals</title>
+    <p>
+      For the analytic proof,
+      we need to recast the Second Inequality back into classical,
+      ideal-theoretic language. In this argument, there is no need to assume that <m>L/K</m> is cyclic.
+    </p>
+    <definition xml:id="def-second-inequality-analytic">
+      <p>
+      Let <m>L/K</m> be a finite Galois extension and <m>\gothm</m> a formal product of places of <m>K</m>.
+      As in <xref ref="def-generalized-ideal-class-groups"/>, let <m>I_{\gothm}</m> be the group of fractional ideals of <m>K</m> coprime to <m>\gothm</m>;
+      similarly, let <m>J_{\gothm}</m> be the group of fractional ideals of <m>L</m> coprime to <m>\gothm</m>.
+      Let <m>P_{\gothm}</m> be the subgroup of principal ideals admitting a generator <m>\alpha</m> such that:
+        <ol>
+          <li>
+            <p>
+              for each finite prime <m>\gothp</m> of <m>K</m>, <m>\alpha \equiv 1 \pmod{\gothp^e}</m> where <m>e</m> is the exponent of <m>\gothp</m> in <m>\gothm</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              for each real place <m>v</m> in <m>\gothm</m>, the corresponding embedding <m>\tau</m> has the property that <m>\tau(\alpha) &gt; 0</m>.
+            </p>
+          </li>
+        </ol>
+      In this notation, the Second Inequality states that
+      <me>
+        [I_{\gothm} : P_{\gothm} \Norm_{L/K} J_{\gothm}] \leq [L:K].
+      </me>
+      </p>
+    </definition>
+  </subsection>
+  <subsection>
+    <title>A special case of Chebotarëv density</title>
+    <p>
+      We will need a special case of the Chebotarëv density theorem,
+      which fortunately we can prove without already having all of class field theory.
+    </p>
+    <proposition xml:id="prop-splitting-primes-density">
       <statement>
         <p>
-          Let <m>L/K</m> be a Galois extension of number fields,
-          with Galois group <m>G</m>.
+          Let <m>L</m> be a finite extension of <m>K</m> and let <m>M/K</m> be its Galois closure.
+          Then the set <m>S</m> of prime ideals of <m>K</m> that split completely in <m>L</m> has Dirichlet density <m>1/[M:K]</m>
+          (in the sense of <xref ref="def-dirichlet-density"/>).
+        </p>
+      </statement>
+      <proof>
+        <p>
+          A prime of <m>K</m> splits completely in <m>L</m> if and only if it splits completely in <m>M</m>,
+          so we may assume <m>L=M</m> is Galois.
+          Recall that the set <m>T</m> of unramfied primes <m>\gothq</m> of <m>L</m> of absolute degree 1 has Dirichlet density 1;
+          each such prime lies over an unramified prime <m>\gothp</m> of <m>K</m> of absolute degree 1 which splits completely in <m>L</m>.
+        </p>
+        <p>
+          The set <m>T</m> having Dirichlet density 1 means that
+          <me>
+            \sum_{\gothq \in T} \frac{1}{\Norm(\gothq)^s} \sim \frac{1}{s-1} \qquad s \searrow  1
+          </me>
+          (<m>s</m> approaching 1 from above, that is).
+          If we group the primes in <m>T</m> by which prime of <m>S</m> they lie over,
+          then we get
+          <me>
+            [L:K] \sum_{\gothp \in T} \frac{1}{\Norm(\gothp)^s} \sim \frac{1}{s-1}.
+          </me>
+          That is, the Dirichlet density of <m>S</m> is <m>1/[L:K]</m>.
+        </p>
+      </proof>
+    </proposition>
+    <p>
+      This gives the following result about splitting of primes, which may be of independent interest.
+    </p>
+    <lemma xml:id="lem-subgroup-density">
+      <statement>
+        <p>
+          With notation as in <xref ref="def-second-inequality-analytic"/>,
+          for any subgroup <m>H</m> of <m>I_{\gothm}</m> containing <m>P_{\gothm}</m>,
+          the set of primes in <m>H</m> has Dirichlet density equal to either <m>0</m> or <m>1/[I_{\gothm}:H]</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          For <m>\chi: I_{\gothm}/P_{\gothm} \to \CC^*</m> a character,
+          we defined the <term><m>L</m>-function</term>
+          <me>
+            L(s, \chi) = \prod_{\gothp \not| \gothm} \frac{1}{1 - \chi(\gothp) \Norm(\gothp)^{-s}}
+          </me>.
+          We'll use some basic properties of this function which can be found in any standard algebraic number theory text (e.g., <xref ref="bib-Lang"/>, VIII).
+          For starters,
+          <me>
+            \log L(s, 1) \sim \log \zeta_K(s) \sim \log \frac{1}{s-1} \qquad s \searrow 1,
+          </me>
+          while if <m>\chi</m> is not the trivial character,
+          <m>L(s, \chi)</m> is holomorphic at <m>s=1</m>.
+          If <m>L(s, \chi) = (s-1)^{m(\chi)} g(s)</m> where <m>g</m> is holomorphic and nonvanishing at <m>s=1</m>,
+          then <m>m(\chi) \geq 0</m>, and
+          <me>
+            \log L(s, \chi) \sim m(\chi) \log(s-1) = - m(\chi) \log \frac{1}{s-1}.
+          </me>
+          By discrete Fourier analysis (or equivalently orthogonality of characters),
+          <me>
+            \sum_{\chi: I_{\gothm}/H \to \CC^*} \log L(s, \chi) \sim [I_{\gothm}:H] \sum_{\gothp \in H} \frac{1}{\Norm(\gothp)^{-s}}.
+          </me>
+          We conclude that the set of primes in <m>H</m> has Dirichlet density
+          <me>
+            \frac{1 - \sum_{\chi \neq 1} m(\chi)}{[I_{\gothm}:H]};
+          </me>
+          this is <m>1/[I_{\gothm}:H]</m> if the <m>m(\chi)</m> are all zero and 0 otherwise.
+        </p>
+      </proof>
+    </lemma>
+  </subsection>
+  <subsection>
+    <title>The Second Inequality</title>
+    <p>
+      We are now ready to prove the Second Inequality.
+    </p>
+    <lemma xml:id="L_second_inequality_analytic">
+      <statement>
+        <p>
+          With notation as in <xref ref="def-second-inequality-analytic"/>, we have
+          <me>
+            [I_{\gothm} : P_{\gothm} \Norm_{L/K} J_{\gothm}] \leq [L:K].
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Define the group <m>H = P_{\gothm} \Norm_{L/K} J_{\gothm} \subseteq I_{\gothm}</m>.
+          The group <m>H</m> includes every prime of <m>K</m> that splits completely,
+          since such a prime is the norm of any prime of <m>L</m> lying over it.
+          Thus on one hand, by <xref ref="prop-splitting-primes-density"/> the set of primes in <m>H</m> has Dirichlet density at least <m>1/[L:K]</m>.
+          On the other hand, by <xref ref="lem-subgroup-density"/> the same set has density either zero or <m>1/[I_{\gothm}:H]</m>.
+          We conclude that <m>[I_{\gothm}:H] \leq [L:K]</m>, as desired.
+        </p>
+      </proof>
+    </lemma>
+    <corollary xml:id="C_second_inequality_analytic">
+      <statement>
+        <p>
+          Let <m>L/K</m> be a Galois extension of number fields. Then
+          <me>
+            \# H^0_T(\Gal(L/K), C_L) \leq [L:K].
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          This follows from <xref ref="L_second_inequality_analytic"/> by translating back into the language of id&#xe8;les.
+        </p>
+      </proof>
+    </corollary>
+    <remark xml:id="rmk-H0T-bound-analytic">
+      <p>
+        We do not consider <xref ref="C_second_inequality_analytic"/> to be a component of the Second Inequality because it is not needed in order to verify
+        the class field axiom (and we will not reproduce it in the algebraic approach). In fact, once we complete the proofs of the reciprocity law 
+        (<xref ref="T_adelic_reciprocity_law"/>) and the norm limitation theorem (<xref ref="T_adelic_norm_limitation1"/>),
+        <xref ref="C_second_inequality_analytic"/> will also follow from those two statements together.
+      </p>
+    </remark>
+    <theorem xml:id="T_first_and_second_inequality">
+      <title>Second Inequality</title>
+      <statement>
+        <p>
+          Let <m>L/K</m> be a Galois extension of number fields.
           Then:
           <ol>
             <li>
               <p>
-                the group <m>I_K/(K^* \Norm_{L/K} I_L)</m> is finite of order at most <m>[L:K]</m>;
+                the group <m>H^1(\Gal(L/K), C_L)</m> is trivial;
               </p>
             </li>
             <li>
               <p>
-                the group <m>H^1(G, C_L)</m> is trivial;
-              </p>
-            </li>
-            <li>
-              <p>
-                the group <m>H^2(G, C_L)</m> is finite of order at most <m>[L:K]</m>.
+                the group <m>H^2(\Gal(L/K), C_L)</m> is finite of order at most <m>[L:K]</m>.
               </p>
             </li>
           </ol>
         </p>
       </statement>
+      <proof>
+        <p>
+          For <m>L/K</m> cyclic, combining <xref ref="C_second_inequality_analytic"/> with the periodicity of Tate groups
+          (<xref ref="T_cyclic_group_periodicity"/>) shows that <m>\#H^2(\Gal(L/K), C_L) \leq [L:K]</m>. Combining with the First Inequality
+          (<xref ref="T_first_inequality"/>) yields that <m>H^1(\Gal(L/K), C_L)</m> is trivial and <m>\#H^2(\Gal(L/K), C_L) = [L:K]</m>.
+        </p>
+        <p>
+          For <m>L/K</m> solvable, we may proceed by induction on <m>[L:K]</m>. If <m>[L:K]</m> is not cyclic, choose an intermediate subextension
+          <m>K'/K</m> . By the induction hypothesis, <m>H^1(\Gal(L/K'), C_{K'})</m> vanishes,
+          so we may apply the inflation-restriction exact sequence (<xref ref="C_inflation_restriction_h2"/>) to see that for <m>i=1,2</m>,
+          <me>
+            0 \to H^i(\Gal(K'/K), C_{K'}) \stackrel{\Inf}{\to} H^i(\Gal(L/K), C_L) \stackrel{\Res}{\to} H^i(\Gal(L/K'), C_L)
+          </me>
+          is exact. This allows us to complete the induction.
+        </p>
+        <p>
+          For <m>L/K</m> general, put <m>G = \Gal(L/K)</m>, let <m>p</m> be a prime, and let <m>G_p</m> be a Sylow <m>p</m>-subgroup of <m>G</m>.
+          Then for any <m>G</m>-module <m>M</m> and any <m>i&gt;0</m>, <m>H^i(G,M)</m> is killed by the order of <m>G</m> and
+          <me>
+            \Res: H^i(G, M) \to H^i(G_p, M)
+          </me>
+          is injective on <m>p</m>-primary components (both by the relationship between restriction and corestriction, from <xref ref="exa-extended-functoriality"/>).
+          We may thus deduce both assertions from the solvable case.
+        </p>
+      </proof>
     </theorem>
-    <p>
-      By the first inequality, for <m>L/K</m> cyclic,
-      these three are equivalent and all imply that
-      <m>H^2(G, C_L)</m> has order exactly <m>[L:K]</m>.
-      That would suffice to prove the class field axiom in Neukirch's abstract class field theory.
-    </p>
-    <p>
-      There are two basic ways to prove this result:
-      an analytic proof and an algebraic proof.
-      Although the analytic proof is somewhat afield of what we have been doing
-      (it requires some properties of zeta functions that we haven't discussed previously),
-      it's somewhat simpler overall than the algebraic proof.
-      So we'll sketch it first before proceeding to the algebraic proof.
-    </p>
-  </introduction>
+  </subsection>
   <subsection>
-    <title>The analytic proof</title>
+    <title>Aside: the Hasse norm theorem</title>
     <p>
-      For the analytic proof,
-      we need to recast the Second Inequality back into classical,
-      ideal-theoretic language.
-      Let <m>L/K</m> be a finite Galois extension and <m>\gothm</m> a formal product of places of <m>K</m>.
-      Back when we defined generalized ideal class groups,
-      we defined the group <m>I_{\gothm}</m> of fractional ideals of <m>K</m> coprime to <m>\gothm</m> and
-      <m>P_{\gothm}</m> the group of principal ideals admitting a generator <m>\alpha</m> such that <m>\alpha \equiv 1 \pmod{\gothp^e}</m> if the prime power
-      <m>\gothp^e</m> occurs in <m>\gothm</m> for a finite prime <m>\gothp</m>,
-      and <m>\tau(\alpha) > 0</m> if <m>\tau</m> is the real embedding corresponding to a real place in <m>\gothm</m>.
-      Also, let <m>J_{\gothm}</m> be the group of fractional ideals of <m>L</m> coprime to <m>\gothm</m>.
-      Then the Second Inequality states that
-      <me>
-        \# I_{\gothm} / P_{\gothm} \Norm_{L/K} J_{\gothm} \leq [L:K]
-      </me>.
+    We record a byproduct of the Second Inequality (not needed in what follows).
     </p>
-    <p>
-      Note that we don't have to assume <m>\gothm</m> is divisible by the ramified primes of <m>L/K</m>.
-    </p>
-    <p>
-      We'll need the following special case of the Chebotarev density theorem,
-      which fortunately we can prove without already having all of class field theory.
-    </p>
-    <proposition>
+    <theorem xml:id="T_Hasse_norm">
+      <title>Hasse norm theorem</title>
       <statement>
         <p>
-          Let <m>L</m> be a finite extension of <m>K</m> and let <m>M/K</m> be its Galois closure.
-          Then the set <m>S</m> of prime ideals of <m>K</m> that split completely in <m>L</m> has Dirichlet density <m>1/[M:K]</m>.
+          Let <m>L/K</m> be a cyclic extension of number fields. Then an element <m>x \in K^*</m> belongs to <m>\Norm_{L/K} L^*</m>
+          if and only if for each (finite or infinite) place <m>v</m> of <m>K</m>, for some (and hence every) place <m>w</m> of <m>L</m> lying over <m>K</m>,
+          <m>x \in \Norm_{L_w/K_v} L_w^*</m>.
         </p>
       </statement>
-    </proposition>
-    <proof>
+      <proof>
+        <p>
+          By the Second Inequality (<xref ref="T_first_and_second_inequality"/>), <m>H^{-1}_T(G, C_L) = 1</m>.
+          This implies that <m>H^0_T(G, L^*) \to H^0_T(G, I_L)</m> is injective. Now if <m>x \in K^*</m> belongs to 
+          <m>\Norm_{L_w/K_v} L_w^*</m>. then it defines the zero class in <m>H^0_T(G, I_L)</m>, so by the previous logic 
+          it must also define the zero class in <m>H^0_T(G, L^*)</m>; this proves the claim.
+        </p>
+      </proof>
+    </theorem>
+    <remark>
       <p>
-        A prime of <m>K</m> splits completely in <m>L</m> if and only if it splits completely in <m>M</m>,
-        so we may assume <m>L=M</m> is Galois.
-        Recall that the set <m>T</m> of unramfied primes <m>\gothq</m> of <m>L</m> of absolute degree 1 has Dirichlet density 1;
-        each such prime lies over an unramified prime <m>\gothp</m> of <m>K</m> of absolute degree 1 which splits completely in <m>L</m>.
+        The conclusion of <xref ref="T_Hasse_norm"/> fails completely if <m>L/K</m> is abelian but not cyclic. See <xref ref="exer-Hasse_norm_theorem"/>.
+      </p>
+    </remark>
+    <remark>
+      <p>
+        Another related fact is the <term>Grunwald-Wang theorem</term>. It was originally announced (and published) in an incorrect form by Grunwald <xref ref="bib-Grunwald"/>, 
+        who asserted that
+        for <m>K</m> a number field and <m>n</m> a positive integer, an element <m>x \in K^*</m> is an <m>n</m>-th power if and only if it is an <m>n</m>-th power in <m>K_v</m>
+        for all but finitely many places <m>v</m> of <m>K</m>. 
       </p>
       <p>
-        Now recall how the Dirichlet density works:
-        the set <m>T</m> having Dirichlet density 1 means that
-        <me>
-          \sum_{\gothq \in T} \frac{1}{\Norm(\gothq)^s} \sim \frac{1}{s-1} \qquad s \searrow  1
-        </me>
+        It was then shown by Wang <xref ref="bib-Wang"/> that this statement fails in the following way: the element 16 is an <m>8</m>th power in <m>K_v</m> for any place <m>v</m>
+        not lying above <m>2</m> (see <xref ref="exer-Wang"/>) but is of course not an <m>8</m>th power in <m>\QQ</m>.
       </p>
       <p>
-        (<m>s</m> approaching 1 from above, that is).
-        If we group the primes in <m>T</m> by which prime of <m>S</m> they lie over,
-        then we get
-        <me>
-          [L:K] \sum_{\gothp \in T} \frac{1}{\Norm(\gothp)^s} \sim \frac{1}{s-1}
-        </me>.
+        Finally, Wang <xref ref="bib-Wang2"/> established a corrected version of the theorem, which shows that the original statement is <q>nearly</q> correct.
+        For example, it holds as written whenever <m>n</m> is odd.
       </p>
-      <p>
-        That is, the Dirichlet density of <m>S</m> is <m>1/[L:K]</m>.
-      </p>
-    </proof>
-    <p>
-      Now for the inequality.
-      For <m>\chi: I_{\gothm}/P_{\gothm} \to \CC^*</m> a character,
-      we defined the L-function
-      <me>
-        L(s, \chi) = \prod_{\gothp \not| \gothm} \frac{1}{1 - \chi(\gothp) \Norm(\gothp)^{-s}}
-      </me>.
-    </p>
-    <p>
-      We'll use some basic properties of this function which can be found in any standard algebraic number theory text.
-      For starters,
-      <me>
-        \log L(s, 1) \sim \log \zeta_K(s) \sim \log \frac{1}{s-1} \qquad s \searrow 1
-      </me>,
-      while if <m>\chi</m> is not the trivial character,
-      <m>L(s, \chi)</m> is holomorphic at <m>s=1</m>.
-      If <m>L(s, \chi) = (s-1)^{m(\chi)} g(s)</m> where <m>g</m> is holomorphic and nonvanishing at <m>s=1</m>,
-      then <m>m(\chi) \geq 0</m>, and
-      <me>
-        \log L(s, \chi) \sim m(\chi) \log(s-1) = - m(\chi) \log \frac{1}{s-1}
-      </me>.
-    </p>
-    <p>
-      Let <m>H</m> be a subgroup of
-      <m>I_{\gothm}</m> containing <m>P_{\gothm}</m>.
-      By finite Fourier analysis, or orthogonality of characters,
-      <me>
-        \sum_{\chi: I_{\gothm}/H \to \CC^*} \log L(s, \chi) \sim \#(I_{\gothm}/H) \sum_{\gothp \in H} \frac{1}{\Norm(\gothp)^{-s}}
-      </me>.
-    </p>
-    <p>
-      We conclude that the set of primes in <m>H</m> has Dirichlet density
-      <me>
-        \frac{1 - \sum_{\chi \neq 1} m(\chi)}{\#(I_{\gothm}/H)};
-      </me>
-      this is <m>1/\#(I_{\gothm}/H)</m> if the <m>m(\chi)</m> are all zero,
-      and 0 otherwise.
-    </p>
-    <p>
-      We apply this with <m>H = P_{\gothm} \Norm_{L/K} J_{\gothm}</m>.
-      This in particular includes every prime of <m>K</m> that splits completely,
-      since such a prime is the norm of any prime of <m>L</m> lying over it.
-      Thus the set of primes in <m>H</m> has Dirichlet density,
-      on one hand, is at least <m>1/[L:K]</m>.
-      On the other hand,
-      this set has density either zero or <m>1/\#(I_{\gothm}/H)</m>.
-      We conclude <m>\#I_{\gothm}/H \leq [L:K]</m>, as desired.
-    </p>
+    </remark>
   </subsection>
   <subsection>
-    <title>The algebraic proof</title>
+    <title>The Albert-Brauer-Hasse-Noether theorem</title>
     <p>
-      We now proceed to the algebraic proof of the Second Inequality.
-      To prove the theorem in general,
-      we can very quickly reduce to the case of <m>L/K</m> not just cyclic,
-      but cyclic of prime order.
-      The reductions are similar to those we used to compute <m>H^2(L^*)</m> in the local case.
-      First of all, if we have the theorem for all solvable groups,
-      then if <m>G</m> is general and <m>H</m> is a Sylow <m>p</m>-subgroup of <m>G</m>,
-      then for any <m>G</m>-module <m>M</m>,
-      <me>
-        \Res: H^i_T(G, M) \to H^i_T(H, M)
-      </me>
-      is injective on <m>p</m>-primary components
-      (because <m>\Cor \circ \Res</m> is multiplication by <m>[G:H]</m>),
-      so we can deduce the desired result.
-      Thus it suffices to consider <m>L/K</m> solvable.
-      In that case,
-      starting from the cyclic-of-prime-order case we can induct using the inflation-restriction exact sequence (<xref ref="C_inflation_restriction_h2">Corollary</xref>):
-      if <m>K'/K</m> is a subextension and
-      <m>H = \Gal(L/K')</m>, then for <m>i=1,2</m>,
-      <me>
-        0 \to H^i(G/H, C_{K'}) \to H^i(G, C_L) \to H^i(H, C_L)
-      </me>
+      We record another byproduct of the Second Inequality, called the <term>Albert-Brauer-Hasse-Noether theorem</term>.
     </p>
-    <p>
-      (using the fact that <m>H^1(H, C_L) = 0</m> by the induction hypothesis).
-      Upshot: we need only consider <m>L/K</m> cyclic of prime order <m>p</m>.
-    </p>
-    <p>
-      One more reduction to make things simpler:
-      we reduce to the case where <m>K</m> contains a <m>p</m>-th root of unity.
-      Let <m>K' = K(\zeta_p)</m> and <m>L' = L(\zeta_p)</m>;
-      then <m>K'</m> and <m>L</m> are linearly disjoint over <m>K</m>
-      (since their degrees are coprime),
-      so <m>[L':K'] = [L:K] = p</m> and the Galois groups of <m>L/K</m> and <m>L'/K'</m> are canonically isomorphic.
-      To complete the reduction, it suffices to check that the homomorphism
-      <me>
-        H^0_T(\Gal(L/K), C_L) \to H^0_T(\Gal(L'/K'), C_{L'})
-      </me>
-      induced by the inclusion <m>C_L \to C_{L'}</m> is injective.
-      These groups are both killed by multiplication by <m>p</m>,
-      since for <m>x \in C_K</m>, <m>\Norm_{L/K} (x) = x^p</m>.
-      Thus multiplication by <m>d = [K':K]</m>,
-      which divides <m>p-1</m>, is an isomorphism on these groups.
-      If <m>x \in C_K</m> maps to the identity in <m>H^0_T(\Gal(L'/K'), C_{L'})</m>,
-      we can choose a representative of the same class as <m>x</m> in
-      <m>H^0_T(\Gal(L/K), C_L)</m> of the form <m>y^d</m>;
-      then <m>y</m> also maps to the identity in <m>H^0_T(\Gal(L'/K'), C_{L'})</m>.
-      That is, <m>y = \Norm_{L'/K'}(z')</m> for some <m>z' \in C_{L'}</m>, and
-      <me>
-        y^d = \Norm_{K'/K}(y) = \Norm_{L'/K}(z') \in \Norm_{L/K} C_L
-      </me>.
-    </p>
-    <p>
-      Thus <m>x \in \Norm_{L/K} C_L</m>,
-      so the homomorphism is injective.
-    </p>
-  </subsection>
-  <subsection>
-    <title>The key case</title>
-    <p>
-      To sum up: it suffices to prove the theorem for <m>K</m> containing a <m>p</m>-th root of unity <m>\zeta_p</m> and <m>L/K</m> cyclic of order <m>p</m>.
-      We now address this case.
-    </p>
-    <p>
-      As in the proof of the First Inequality,
-      we will use a set <m>S</m> of places of <m>K</m> containing the infinite places,
-      the primes that ramify in <m>L</m>,
-      and enough additional primes so that <m>I_K = I_{K,S} K^*</m>;
-      we also include all places above <m>(p)</m>.
-      Again, we put <m>K_S = I_{K,S} \cap K^*</m>.
-      Also we write <m>s = \# S</m>.
-    </p>
-    <p>
-      The plan is to explicitly produce a subgroup of <m>C_K</m> of index <m>[L:K]</m> consisting of norms from <m>C_L</m>.
-      We do this by using an auxiliary set of places <m>T</m> disjoint from <m>S</m>.
-      For such <m>T</m>, we define
-      <me>
-        J = \prod_{v \in S} (K_v^*)^p \times \prod_{v \in T} K_v^* \times \prod_{v \notin S \cup T} \gotho_{K_v}^*
-      </me>.
-    </p>
-    <p>
-      Let <m>\Delta = (L^*)^p \cap K_S</m>.
-      We will show that:
-      <ol>
-        <li>
-          <p>
-            <m>L = K(\Delta^{1/p})</m>;
-          </p>
-        </li>
-        <li>
-          <p>
-            we can choose a set <m>T</m> of <m>s-1</m> primes such that <m>\Delta</m> is the kernel of the map <m>K_S \to \prod_{v \in T} K_v^*/(K_v^*)^p</m>;
-          </p>
-        </li>
-        <li>
-          <p>
-            for such a set <m>T</m>, if we put <m>C_{K,S,T} = J K^*/K^*</m>, then
-            <me>
-              \#C_K/C_{K,S,T} = [L:K] = p;
-            </me>
-          </p>
-        </li>
-        <li>
-          <p>
-            with the same notation, <m>C_{K,S,T} \subseteq \Norm_{L/K} C_L</m>.
-          </p>
-        </li>
-      </ol>
-    </p>
-    <p>
-      That will imply <m>\#C_K/\Norm_{L/K} C_L \leq p</m>, as desired.
-    </p>
-    <p>
-      We first concentrate on (a).
-      By Kummer theory,
-      since <m>K</m> contains a primitive <m>p</m>-th root of unity,
-      we can write <m>L = K(D^{1/p})</m> for <m>D = (L^*)^p \cap K^*</m>.
-      Thus <m>K(\Delta^{1/p}) \subseteq L</m> and since there is no room between <m>K</m> and <m>L</m> for an intermediate extension (<m>[L:K]</m> being prime),
-      all that we have to check is that <m>K(\Delta^{1/p}) \neq K</m>.
-      Choose a single <m>x \in D</m> such that <m>L = K(x^{1/p})</m>.
-      For each <m>v \notin S</m>,
-      the extension <m>K_v(x^{1/p})/K_v</m> is unramified,
-      so we can write <m>x</m> as a unit times a <m>p</m>-th power,
-      say <m>x = u_v y_v^p</m>.
-      If we put <m>y_v = 1</m> for <m>v \in S</m>,
-      we can assemble the <m>y_v</m> into an id&#xe8;le <m>y</m>,
-      which by <m>I_K = K^* I_{K,S}</m> we can rewrite as <m>zw</m> for
-      <m>z \in K^*</m> and <m>w \in I_{K,S}</m>.
-      Now for <m>v \notin S</m>, <m>(x/z^p)_v = u_v/w_v^p \in \gotho_{K_v}^*</m>.
-      Thus <m>x/z^p \in (L^*)^p \cap K_S \in \Delta</m> but <m>x \notin (K^*)^p</m>.
-      We conclude <m>L = K(\Delta^{1/p})</m>.
-    </p>
-    <p>
-      Now we move to (b).
-      Put <m>N = K(K_S^{1/p})</m>.
-      By Kummer theory,
-      <me>
-        \Gal(N/K) \cong \Hom(K_S/K_S^p, \ZZ/p\ZZ)
-      </me>.
-    </p>
-    <p>
-      By the generalization of Dirichlet's units theorem to <m>S</m>-units,
-      <m>K_S</m> modulo torsion is a free abelian group of rank <m>s-1</m>,
-      and the torsion subgroup consists of roots of unity,
-      so is cyclic of order divisible by <m>p</m>.
-      Thus <m>K_S/K_S^p \cong (\ZZ/p\ZZ)^s</m>.
-      Choose generators <m>g_1, \dots,
-      g_{s-1}</m> of <m>\Gal(N/L)</m>;
-      these correspond in <m>\Hom(K_S/K_S^p, \ZZ/p\ZZ)</m> to a set of homomorphisms whose common kernel is precisely <m>\Delta/K_S^p</m>.
-    </p>
-    <p>
-      So to establish (b),
-      we need to find for each <m>g_i</m> a place <m>v_i</m> such that the kernel of <m>g_i</m> is the same as the kernel of <m>K_S \to K_{v_i}^*/(K_{v_i}^*)^p</m>.
-      Let <m>N_i</m> be the fixed field of <m>g_i</m>;
-      by the First Inequality
-      (see <xref ref="C_split_completely">Corollary</xref>),
-      there are infinitely many primes of <m>N_i</m> that do not split in <m>N</m>.
-      So we can choose a place <m>w_i</m> of each <m>N_i</m> such that their restrictions <m>v_i</m> to <m>K</m> are distinct,
-      not contained in <m>S</m>, and don't divide <m>p</m>.
-    </p>
-    <p>
-      We claim <m>N_i</m> is the maximal subextension of <m>N/K</m> in which <m>v_i</m> splits completely (a/k/a the
-      <term>decomposition field</term> of <m>v_i</m>).
-      On one hand, <m>v_i</m> does not split completely in <m>N</m>,
-      so the decomposition field is no larger than <m>N_i</m>.
-      On the other hand,
-      the decomposition field is the fixed field of the decomposition group,
-      which has exponent <m>p</m> and is cyclic
-      (since <m>v_i</m> does not ramify in <m>N</m>).
-      Thus it must have index <m>p</m> in <m>N</m>,
-      so must be <m>N_i</m> itself.
-    </p>
-    <p>
-      Thus <m>L = \cap N_i</m> is the maximal subextension of <m>N</m> in which all of the <m>v_i</m> split completely.
-      We conclude that for <m>x \in K_S</m>,
-      <m>x</m> belongs to <m>\Delta</m> iff <m>K_{v_i}(x^{1/p}) = K_{v_i}</m> for all <m>i</m>,
-      which occurs iff <m>x \in K_{v_i}^p</m>.
-      That is, <m>\Delta</m> is precisely the kernel of the map <m>K_S \to \prod_i K_{v_i}^*/(K_{v_i}^*)^p</m>.
-      In fact, under this map,
-      <m>K_S</m> actually maps to the units in <m>K_{v_i}^*</m> for each <m>i</m>.
-      This proves (b).
-    </p>
-    <p>
-      Next, we verify (c), using the following lemma.
-    </p>
-    <lemma xml:id="L_adelic_intersection">
+    <theorem xml:id="T_Albert-Brauer-Hasse-Noether">
+      <title>Albert-Brauer-Hasse-Noether theorem</title>
       <statement>
         <p>
-          <m>J \cap K^* = (K_{S \cup T})^p</m>.
+          For any number field <m>K</m>, the map
+          <me>
+            H^2(\Gal(\overline{K}/K), \overline{K}^*) \to \bigoplus_v H^2(\Gal(\overline{K_v}/K_v), \overline{K_v}^*)
+          </me>
+          is injective, where the sum runs over places <m>v</m> of <m>K</m>.
         </p>
       </statement>
-    </lemma>
-    <proof>
-      <p>
-        Clearly <m>K_{S \cup T}^p \subseteq J \cap K^*</m>;
-        we have to work to show the other inclusion.
-        Take <m>y \in J \cap K^*</m> and <m>M = K(y^{1/p})</m>.
-        We'll show that <m>\Norm_{M/K} C_M = C_K</m>;
-        by the First Inequality,
-        this will imply <m>M = K</m>,
-        so <m>y \in (K^*)^p \cap J = (K_{S \cup T})^p</m>.
-      </p>
-      <p>
-        Since <m>I_K = I_{K,S}K^*</m>,
-        it is enough to choose <m>\alpha \in I_{K,S}</m> and show that
-        <m>\alpha/x \in \Norm_{M/K} I_M</m> for some <m>x \in K^*</m>.
-        As noted above, the map
-        <me>
-          K_S \to \prod_{v \in T} \gotho_{K_v}^*/(\gotho_{K_v}^*)^p
-        </me>
-        is surjective, and <m>\#K_S/\Delta = p^{s-1}</m>.
-        That's also the order of the product,
-        so the map is actually an isomorphism.
-        Thus we can find <m>x \in K_S</m> so that
-        <m>\alpha/x</m> has component the <m>p</m>-th power of a unit of <m>K_v</m> at each <m>v \in T</m>.
-        In particular,
-        such a component is the norm of its <m>p</m>-th root,
-        so <m>\alpha/x</m> is a norm at each <m>v \in T</m>.
-        For <m>v \in S</m>, we don't have anything to check:
-        because <m>y</m> is a <m>p</m>-th power at <m>v</m>, <m>M_w = K_v</m>.
-        Finally, for <m>v \notin S \cup T</m>,
-        <m>M_w/K_v</m> is unramified, so any unit is a norm.
-        Thus <m>\alpha/x</m> is indeed a norm.
-        We conclude <m>\Norm_{M/K} C_M = C_K</m>,
-        so <m>M=K</m> and <m>y \in K_{S\cup T}^p</m>, as desired.
-      </p>
-    </proof>
-    <p>
-      Given the lemma, we now have an exact sequence
-      <me>
-        1 \to (I_{K,S\cup T} \cap K^*)/(J \cap K^*) \to I_{K,S\cup T}/J \to I_{K,S \cup T}K^* / JK^* \to 1
-      </me>.
-    </p>
-    <p>
-      We can rewrite <m>I_{K,S \cup T}K^*</m> as simply <m>I_K</m>,
-      so the group on the right is precisely <m>C_K/C_{K,S,T}</m>.
-      By the lemma,
-      the group on the left is <m>K_{S\cup T}^*/(K_{S \cup T}^*)^n</m>,
-      which has order <m>p^{2s-1}</m> because
-      <m>K_{S\cup T}</m> is free of rank <m>2s-2</m> plus a cyclic group of order a multiple of <m>p</m>.
-      The group in the middle is the product of
-      <m>K_v^*/(K_v^*)^p</m> over all <m>v \in S</m>,
-      and each of those has order <m>p^2</m>
-      (generated by <m>\zeta_p</m> and a uniformizer of <m>K_v</m>).
-      Adding it all up, we get <m>\#C_K/C_{K,S,T} = p</m>, proving (c).
-    </p>
-    <p>
-      Finally, to check (d),
-      it suffices to check that <m>J \subseteq \Norm_{L/K} I_L</m>,
-      which we may check component by component.
-      It's automatic for the places <m>v \notin S \cup T</m>,
-      since those places are unramified, so every unit is a norm.
-      For places <m>v \in S</m>,
-      any element of <m>(K_v^*)^p</m> is a norm from
-      <m>K_v(K_v^{1/p})</m> by local reciprocity, so also from <m>L_w</m>.
-      Finally, for places <m>v \in T</m>,
-      from the construction of <m>T</m>,
-      we see that <m>\Delta \subseteq (K_v^*)^p</m>,
-      so <m>L_w = K_v</m>, and so <m>K_v^*</m> consists entirely of norms.
-    </p>
+      <proof>
+        <p>
+          This follows from <xref ref="T_first_and_second_inequality"/> via the exact sequence
+          <me>
+            1 = H^1(\Gal(L/K), C_L) \to H^2(\Gal(L/K), L^*) \to \bigoplus_v H^2(\Gal(L_w/K_v), L_w^*)
+          </me>
+          for any Galois extension <m>L/K</m>, where <m>w</m> denotes some place of <m>L</m> above <m>K</m>.
+        </p>
+      </proof>
+    </theorem>
   </subsection>
-  <subsection>
-    <title>Aside</title>
-    <p>
-      We get from this calculation that <m>H^{-1}_T(G, C_L) = 1</m>,
-      so <m>H^0_T(G, L^*) \to H^0_T(G, C_L)</m> is injective.
-      That is,
-      <me>
-        K^*/\Norm_{L/K} L^* \to \bigoplus_v K_v^*/\Norm_{L_w/K_v} L_w^*
-      </me>
-      is injective.
-      In other words, we have an interesting
-      <q>local-to-global</q>
-      statement, namely Hasse's Norm Theorem:
-      if <m>L/K</m> is cyclic,
-      <m>x \in K^*</m> is a norm if and only if it is locally a norm.
-    </p>
-  </subsection>
+  <exercises>
+    <exercise xml:id="exer-Hasse_norm_theorem">
+      <statement>
+        <p>
+          Show that the Hasse norm theorem (<xref ref="T_Hasse_norm"/>) fails for <m>K = \QQ</m>, <m>L = \QQ(\sqrt{13}, \sqrt{17})</m>. 
+          (This example is due to Serre and Tate.)
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Prove that every square in <m>L</m> is a local norm, but <m>5^2</m> is not a global norm.
+        </p>
+      </hint>
+    </exercise>
+    <exercise xml:id="exer-Wang">
+      <statement>
+        <p>
+          Let <m>K</m> be a number field. Show that <m>16</m> is an <m>8</m>th power in <m>K</m> if and only if one of <m>-1, 2, -2</m> is a square in <m>K</m>.
+          Then deduce that <m>16</m> is an <m>8</m>th power in <m>K_v</m> for any place <m>v</m> not lying above <m>2</m>, even though it is not always an <m>8</m>th power in <m>K</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="exer-Wang2">
+      <statement>
+        <p>
+          Put <m>K = \QQ(\sqrt{7})</m>. Show that <m>16</m> is an <m>8</m>th power in every completion of <m>K</m>, but not in <m>K</m> itself.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
 </section>

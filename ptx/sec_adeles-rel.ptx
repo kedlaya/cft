@@ -4,12 +4,17 @@
     <paragraphs>
       <title>Reference</title>
       <p>
-      <xref ref="bib-Neukirch" />, Section VI.1 and VI.2.
+      <xref ref="bib-Neukirch" />, VI.1 and VI.2.
       </p>
     </paragraphs>
+      <p>
+        Up to now, we have considered the ring of ad&#xe8;les associated to a single number field.
+        We now turn to the effect of a field extension on this construction.
+      </p>
   </introduction>
   <subsection>
-    <title>Ad&#xe8;les in Field Extensions</title>
+    <title>Ad&#xe8;les in field extensions</title>
+    <definition>
     <p>
       If <m>L/K</m> is an extension of number fields,
       we get an embedding <m>\AA_K \hookrightarrow \AA_L</m> as follows:
@@ -30,20 +35,25 @@
       then <m>g</m> maps the completion <m>L_v</m> of <m>L</m> to a completion <m>L_{v^g}</m> of <m>L^g</m>.
       (Remember, a place <m>v</m> corresponds to an absolute value <m>|\cdot|_v</m> on <m>L</m>;
       the absolute value <m>|\cdot|_{v^g}</m> on <m>L^g</m> is given by <m>|a^g|_{v^g}| = |a|_v</m>.)
+    </p>
+    <p>
       As you might expect,
       this action is compatible with the embeddings of <m>L</m> in <m>I_L</m> and <m>L^g</m> in <m>I_{L^g}</m>,
       so it induces an isomorphism
       <m>C_L \to C_{L^g}</m> of id&#xe8;le class groups.
     </p>
-  </subsection>
-  <subsection>
+  </definition>
+  <remark>
     <title>Aside</title>
     <p>
-      Neukirch points out that you can regard <m>\AA_L</m> as the tensor product <m>\AA_K \otimes_K L</m>;
-      in particular,
-      this is a good way to see the Galois action on <m>\AA_L</m>.
-      Details are left to the reader.
+      A more conceptual interpretation of the previous discussion is to identify <m>\AA_L</m> with the tensor product <m>\AA_K \otimes_K L</m>.
+      In particular, this is a good way to see the Galois action on <m>\AA_L</m>. See <xref ref="exer-adeles-tensor-product"/>.
     </p>
+  </remark>
+  </subsection>
+  <subsection>
+  <title>Trace and norm</title>
+    <definition>
     <p>
       We can define trace and norm maps as well:
       <me>
@@ -67,8 +77,8 @@
       In particular,
       the norm descends to a map <m>\Norm_{L/K}: C_L \to C_K</m>.
     </p>
-  </subsection>
-  <subsection>
+  </definition>
+  <remark>
     <title>Aside</title>
     <p>
       You can also define the trace of an ad&#xe8;le
@@ -76,16 +86,19 @@
       and the norm of an id&#xe8;le
       <m>\alpha \in I_L</m> as the determinant of multiplication by <m>\alpha</m> as an automorphism of the <m>\AA_K</m>-module <m>\AA_L</m>.
       (Yes, the action is on the <em>ad&#xe8;les</em> in both cases.
-      Remember, id&#xe8;les should be thought of as automorphisms of the ad&#xe8;les,
-      not as elements of the ad&#xe8;le ring,
-      in order to topologize them correctly.)
+      Remember from <xref ref="rmk-idele-topology"/> that id&#xe8;les should be thought of as automorphisms of the ad&#xe8;les,
+      not as elements of the ad&#xe8;le ring, in order to topologize them correctly.)
     </p>
+  </remark>
+  </subsection>
+  <subsection>
+    <title>Id&#xe8;le groups and class groups</title>
     <p>
       If <m>L/K</m> is a Galois extension,
       then <m>\Gal(L/K)</m> acts on <m>\AA_L</m> and <m>I_L</m> fixing <m>\AA_K</m> and <m>I_K</m>,
       respectively, and we have the following.
     </p>
-    <proposition>
+    <proposition xml:id="prop-adeles-Galois-invars">
       <statement>
         <p>
           If <m>L/K</m> is a Galois extension with Galois group <m>G</m>,
@@ -102,43 +115,49 @@
         then <m>\alpha_w</m> is <m>\Gal(L_w/K_v)</m>-invariant for each <m>w</m>,
         so belongs to <m>K_v</m>.
         Moreover, <m>G</m> acts transitively on the places <m>w</m> above <m>v</m>,
-        so <m>\alpha_w = \alpha_{w'}</m> for any two places <m>w,
-        w'</m> above <m>v</m>.
+        so <m>\alpha_w = \alpha_{w'}</m> for any two places <m>w, w'</m> above <m>v</m>.
         Thus <m>(\alpha)</m> is an ad&#xe8;le or id&#xe8;le over <m>K</m>.
       </p>
     </proof>
-    <p>
-      This has the following nice consequence for the id&#xe8;le class group,
-      a fact which is quite definitely not true for the ideal class group:
-      the map <m>\Cl_K \to \Cl_L^G</m> is neither injective nor surjective in general.
-      This is our first hint of why the id&#xe8;le class group will be a more convenient target for a reciprocity map than the ideal class group.
-    </p>
-    <proposition>
+    <corollary xml:id="cor-idele-group-galois-descent">
       <title>Galois descent</title>
       <statement>
         <p>
-          If <m>L/K</m> is a Galois extension with Galois group <m>G</m>,
-          then <m>G</m> acts on <m>C_L</m>,
+          If <m>L/K</m> is a Galois extension with Galois group <m>G</m>, then <m>G</m> acts on <m>C_L</m>,
           and the <m>G</m>-invariant elements are precisely <m>C_K</m>.
         </p>
       </statement>
-    </proposition>
-    <proof>
+      <proof>
+        <p>
+          We start with an exact sequence
+          <me>
+            1 \to L^* \to I_L \to C_L \to 1
+          </me>
+          of <m>G</m>-modules.
+          Taking <m>G</m>-invariants, we get a long exact sequence
+          <me>
+            1 \to (L^*)^G = K^* \to (I_L)^G = I_K \to C_L^G \to H^1(G, L^*)
+          </me>,
+          and the last term is 1 by Theorem 90 (<xref ref="L_theorem_90"/>).
+          So we again have a short exact sequence, and <m>C_L^G \cong I_K/K^* = C_K</m>.
+        </p>
+      </proof>
+    </corollary>
+    <remark>
       <p>
-        We start with an exact sequence
-        <me>
-          1 \to L^* \to I_L \to C_L \to 1
-        </me>
-        of <m>G</m>-modules.
-        Taking <m>G</m>-invariants, we get a long exact sequence
-        <me>
-          1 \to (L^*)^G = K^* \to (I_L)^G = I_K \to C_L^G \to H^1(G, L^*)
-        </me>,
-        and the last term is 1 by Theorem 90
-        (<xref ref="L_theorem_90">Lemma</xref>).
-        So we again have a short exact sequence,
-        and <m>C_L^G \cong I_K/K^* = C_K</m>.
+        There is no analogue of <xref ref="cor-idele-group-galois-descent"/> for ideal class groups:
+        the map <m>\Cl_K \to \Cl_L^G</m> is neither injective nor surjective in general.
+        This is our first hint of why the id&#xe8;le class group will be a more convenient target for a reciprocity map than the ideal class group.
       </p>
-    </proof>
+    </remark>
   </subsection>
+  <exercises>
+    <exercise xml:id="exer-adeles-tensor-product">
+      <statement>
+        <p>
+          Let <m>L/K</m> be a finite extension of number fields. Prove that the natural map <m>\AA_K \otimes_K L \to \AA_L</m> is an isomorphism.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
 </section>

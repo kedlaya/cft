@@ -1,75 +1,97 @@
 ﻿<references>
   <title>Bibliography</title>
-  <biblio xml:id="bib-Cassels-Frohlich">
+  <biblio type="raw" xml:id="bib-AWS">
+    B. Cais, B. Bhatt, A. Caraiani, K.S. Kedlaya, P. Scholze, and J. Weinstein, <pubtitle>Perfectoid Spaces: Lectures from the 2017 Arizona Winter School</pubtitle>,
+    American Mathematical Society, 2019.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Cassels-Frohlich">
     J.W.S. Cassels and A. Fröhlich, <pubtitle>Algebraic Number Theory</pubtitle>.
   </biblio>
-  <biblio xml:id="bib-Chevalley">
-    C. Chevalley, <articletitle>La thèorie du corps de classes</articletitle> (1940).
+  <biblio type="raw" xml:id="bib-Chevalley">
+    C. Chevalley, <articletitle>La th&#xe9;orie du corps de classes</articletitle> (1940).
   </biblio>
-  <biblio xml:id="bib-Frohlich-Taylor">
+  <biblio type="raw" xml:id="bib-Clausen">
+    D. Clausen, <articletitle>A <m>K</m>-theoretic approach to Artin maps</articletitle>, arXiv:1703.07842.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Frohlich-Taylor">
     A. Fröhlich and M.J. Taylor, <pubtitle>Algebraic Number Theory</pubtitle>, Cambridge University Press, 1991.
   </biblio>
-  <biblio xml:id="bib-Grothendieck-Tohoku">
-    A. Grothendieck, <articletitle>Sur quelques points d'algèbre homologique</articletitle>.
+  <biblio type="raw" xml:id="bib-Grothendieck-Tohoku">
+    A. Grothendieck, <articletitle>Sur quelques points d'alg&#xe8;bre homologique</articletitle>.
   </biblio>
-  <biblio xml:id="bib-Janusz">
-    G. Janusz, <pubtitle>Algebraic Number Fields</pubtitle>, American Mathematical Society, 1996.
+  <biblio type="raw" xml:id="bib-Grunwald">
+    W. Grunwald, <pubtitle>Ein allgemeiner Existenzsatz f&#xfc;r algebraische Zahlk&#xf6;rper</pubtitle>.
   </biblio>
-  <biblio xml:id="bib-Harari">
+  <biblio type="raw" xml:id="bib-Harari">
     D. Harari, <pubtitle>Galois Cohomology and Class Field Theory</pubtitle>.
   </biblio>
-  <biblio xml:id="bib-Holt">
-    D.F. Holt, <pubtitle>An interpretation of the cohomology groups <m>H_n(G, M)</m></pubtitle>, J. Algebra 60 (1979), no. 2, 307--320. 
+  <biblio type="raw" xml:id="bib-Holt">
+    D.F. Holt, <pubtitle>An interpretation of the cohomology groups <m>H_n(G, M)</m></pubtitle>, <journal>J. Algebra</journal> <volume>60</volume> (1979), no. 2, 307--320. 
   </biblio>
-  <biblio xml:id="bib-Jarvis">
+  <biblio type="raw" xml:id="bib-Janusz">
+    G. Janusz, <pubtitle>Algebraic Number Fields</pubtitle>, American Mathematical Society, 1996.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Jarvis">
     F. Jarvis, <pubtitle>Algebraic Number Fields</pubtitle>, Springer, Cham, 2014.
   </biblio>
-  <biblio xml:id="bib-Lafforgue_L">
+  <biblio type="raw" xml:id="bib-Lafforgue_L">
     L. Lafforgue, <articletitle>Chtoucas de Drinfeld et correspondance de Langlands</articletitle>,
-    Inventiones Mathematicae 147 (2002), 1<ndash/>241.
+    <journal>Inventiones Mathematicae</journal> <volume>147</volume> (2002), 1<ndash/>241.
   </biblio>
-  <biblio xml:id="bib-Lagarias-Odlyzko">
+  <biblio type="raw" xml:id="bib-Lagarias-Odlyzko">
     J.C. Lagarias and A.M. Odlyzko, <articletitle>Effective versions of the Chebotarev density theorem</articletitle>.
   </biblio>
-  <biblio xml:id="bib-Lang-algebra">
+  <biblio type="raw" xml:id="bib-Lang-algebra">
     S. Lang, <pubtitle>Algebra</pubtitle>.
   </biblio>
-  <biblio xml:id="bib-Lang">
+  <biblio type="raw" xml:id="bib-Lang">
     S. Lang, <pubtitle>Algebraic Number Theory</pubtitle>.
   </biblio>
-  <biblio xml:id="bib-Leriche">
+  <biblio type="raw" xml:id="bib-Leriche">
     A. Leriche, <articletitle>About the embedding of a number field in a P&#xf3;lya field</articletitle>.
   </biblio>
-  <biblio xml:id="bib-Milne-CFT">
+  <biblio type="raw" xml:id="bib-Milne-CFT">
     J. Milne, <pubtitle>Class Field Theory</pubtitle>,
     <url href="http://jmilne.org/math/CourseNotes/cft.html"/>, version 3.10.
     We believe, but have not confirmed, that our references remain valid for version 4.04.
   </biblio>
-  <biblio xml:id="bib-Neukirch">
+  <biblio type="raw" xml:id="bib-Neukirch">
     J. Neukirch, <pubtitle>Algebraic Number Theory</pubtitle>.
   </biblio>
-  <biblio xml:id="bib-Neukirch-CFT">
+  <biblio type="raw" xml:id="bib-Neukirch-CFT">
     J. Neukirch, <pubtitle>Class Field Theory</pubtitle>.
   </biblio>
-  <biblio xml:id="bib-Nikolov-Segal">
+  <biblio type="raw" xml:id="bib-Nikolov-Segal">
     N. Nikolov and D. Segal, <articletitle>On finitely generated profinite groups, I: strong completeness and uniform bounds</articletitle>.
   </biblio>
-  <biblio xml:id="bib-Serre-GaloisCohomology">
+  <biblio type="raw" xml:id="bib-Serre-AGCF">
+    J.-P. Serre, <pubtitle>Algebraic Groups and Class Fields</pubtitle>.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Serre-Curves">
+    J.-P. Serre, <pubtitle>Curves over Finite Fields</pubtitle>.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Serre-GaloisCohomology">
     J.-P. Serre, <pubtitle>Galois Cohomology</pubtitle>.
   </biblio>
-  <biblio xml:id="bib-Serre-LocalFields">
+  <biblio type="raw" xml:id="bib-Serre-LocalFields">
     J.-P. Serre, <pubtitle>Local Fields</pubtitle>.
   </biblio>
-  <biblio xml:id="bib-Serre-NXp">
+  <biblio type="raw" xml:id="bib-Serre-NXp">
     J.-P. Serre, <pubtitle>Lectures on <m>N_X(p)</m></pubtitle>.
   </biblio>
-  <biblio xml:id="bib-Silverman-AEC">
+  <biblio type="raw" xml:id="bib-Silverman-AEC">
     J. Silverman, <pubtitle>The Arithmetic of Elliptic Curves</pubtitle>.
   </biblio>
-  <biblio xml:id="bib-Washington">
+  <biblio type="raw" xml:id="bib-Wang">
+    S. Wang, <articletitle>A counter-example to Grunwald's theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>49</volume> (1948), 1008--1009.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Wang2">
+    S. Wang, <articletitle>On Grunwald's theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>51</volume> (1950), 471--484.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Washington">
     L. Washington, <pubtitle>Introduction to Cyclotomic Fields</pubtitle>.
   </biblio>
-  <biblio xml:id="bib-Zantema">
+  <biblio type="raw" xml:id="bib-Zantema">
     H. Zantema, <articletitle>Integer valued polynomials over a number field</articletitle>.
   </biblio>
 </references>

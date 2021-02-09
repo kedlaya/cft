@@ -193,7 +193,7 @@
     </proof>
   </subsection>
   <subsection>
-    <title>The results of local class field theory</title>
+    <title>Local reciprocity and norm limitation</title>
     <p>
       Let <m>L/K</m> be a finite Galois extension of local fields.
       For any intermediate extension <m>M/K</m>,
@@ -234,31 +234,64 @@ K^*/\Norm_{L/K} L^* \ar[r] &amp; \Gal(L/K)^{\ab}
       <image>
       <latex-image>
 \xymatrix{
-H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \ar[d] \\
- H^0_T(\Gal(L/K), L^*) \ar[r]&amp; H^{-1}_T(\Gal(L/K), I_{\Gal(L/K)})
+H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \ar[d] \ar[r] &amp; H^0_T(\Gal(M/K), \ZZ) \ar[d] \\
+ H^0_T(\Gal(L/K), L^*) \ar[r]&amp; H^{-1}_T(\Gal(L/K), I_{\Gal(L/K)}) \ar[r] &amp; H^0_T(\Gal(L/K), \ZZ)
 }
       </latex-image>
       </image>
       </figure>
     <p>
-      To construct this diagram, choose a 2-cocycle
-      <m>\phi_M: \Gal(M/K)^3 \to M^*</m> representing the preferred generator of <m>H^2(M/K)</m>;
-      then the upper horizontal arrow is a connecting homomorphism for the exact sequence
-      <me>
-        1 \to M^* \to M^*[\phi_M] \to I_{\Gal(M/K)} \to 1
-      </me>.
+      The right square in <xref ref="fig-tatethm-2"/> comes from taking long exact sequences in the commutative diagram with exact rows:
+    </p>
+      <figure xml:id="fig-tatethm-3">
+      <image>
+      <latex-image>
+\xymatrix{
+0 \ar[r] &amp; I_{\Gal(M/K)} \ar[r] \ar[d] &amp; \ZZ[\Gal(M/K)] \ar[r] \ar[d] &amp; \ZZ \ar[r] \ar[d] &amp; 0 \\
+0 \ar[r] &amp; I_{\Gal(L/K)} \ar[r] &amp; \ZZ[\Gal(L/K)] \ar[r] &amp; \ZZ \ar[r] &amp; 0
+}
+      </latex-image>
+      </image>
+      </figure>
+    <p>
+      To construct the left square in <xref ref="fig-tatethm-2"/>, we similarly need to construct a commutative diagram with exact rows:
+    </p>
+      <figure xml:id="fig-tatethm-4">
+      <image>
+      <latex-image>
+\xymatrix{
+0 \ar[r] &amp; M^* \ar[r] \ar^{\Norm_{M/L}}[d] &amp; M^*[\phi_M] \ar[r] \ar[d] &amp; I_{\Gal(M/K)} \ar[r] \ar[d] &amp; 0 \\
+0 \ar[r] &amp; L^* \ar[r] &amp; L^*[\phi_L] \ar[r] &amp; I_{\Gal(L/K)} \ar[r] &amp; 0
+}
+      </latex-image>
+      </image>
+      </figure>
+    <p>
+      I claim we can arrange for this as follows. First choose a cocycle <m>\phi_M: \Gal(M/K)^3 \to M^*</m> representing the preferred generator of <m>H^2(M/K)</m>.
+      Then there exists a unique map <m>\phi_L</m> fitting into the following commuting square:
+    </p>
+      <figure xml:id="fig-tatethm-5">
+      <image>
+      <latex-image>
+\xymatrix{
+\Gal(M/K)^3 \ar^(.7){\phi_M}[r] \ar[d] &amp; M^* \ar^{\Norm_{M/L}}[d] \\
+\Gal(L/K)^3 \ar^(.7){\phi_L}[r] &amp; L^*
+}
+      </latex-image>
+      </image>
+      </figure>
+      <p>
+        and this will necessarily give a cocycle representing the preferred generator of <m>H^2(L/K)</m>. Further details omitted.
+      </p>
+  </subsection>
+  <subsection>
+    <title>The local existence theorem</title>
+    <p>
+      It remains to prove the local existence theorem (<xref ref="T_local_existence"/>). This does not follow directly from cohomological considerations;
+      instead we need to construct some extensions with small norm groups. Fortunately, since we have already established the norm limitation theorem,
+      we do not need to construct <em>abelian</em> extensions; this will give us some flexibility.
     </p>
     <p>
-      The lower horizontal arrow arises similarly from the exact sequence
-      <me>
-        1 \to L^* \to L^*[\phi_L] \to I_{\Gal(L/K)} \to 1
-      </me>,
-      where <m>\phi_L</m> represents a class whose inflation is <m>[G:H]</m> times the class represented by <m>\phi_M</m>.
-      Further details omitted.
-    </p>
-    <p>
-      In any case, it remains to prove the local existence theorem
-      (<xref ref="T_local_existence"/>).
       We begin with a lemma,
       in which we take advantage of Kummer theory to establish a special case of the existence theorem.
     </p>
@@ -271,24 +304,26 @@ H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \a
           <m>\Norm_{L/K} L^*</m> for every cyclic extension <m>L</m> of <m>K</m> of degree <m>\ell</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          Let <m>M</m> be the compositum of all cyclic <m>\ell</m>-extensions of <m>K</m>.
+          The group <m>K^*/(K^*)^{\ell}</m> is finite (<xref ref="exer-finite-power-quotient"/>),
+          and hence is isomorphic to <m>(\ZZ/\ell \ZZ)^n</m> for some positive integer <m>n</m>.
+          By Kummer theory (<xref ref="T_Kummer_reformulated"/>), we also have <m>\Gal(M/K) \cong (\ZZ/\ell \ZZ)^n</m>.
+          By the local reciprocity law (<xref ref="T_local_reciprocity"/>), <m>K^*/\Norm_{M/K}M^* \cong (\ZZ/\ell \ZZ)^n</m>;
+          consequently, on one hand <m>(K^*)^{\ell} \subseteq \Norm_{M/K}M^*</m>,
+          and on other hand these subgroups of <m>K^*</m> have the same index <m>\ell^n</m>.
+          They are thus equal, proving the claim.
+        </p>
+      </proof>
     </lemma>
-    <p>
-      The same statement holds even if <m>\ell</m> is not prime (<xref ref="exer-hilbert-symbol"/>) and can be interpreted in terms of the
-      <term>Hilbert symbol</term>, whose properties generalize quadratic reciprocity to higher powers;
-      see <xref ref="bib-Milne-CFT"/>, III.4.
-    </p>
-    <proof>
+    <remark xml:id="rmk-Hilbert-symbol">
       <p>
-        Let <m>M</m> be the compositum of all cyclic <m>\ell</m>-extensions of <m>K</m>.
-        The group <m>K^*/(K^*)^{\ell}</m> is finite (<xref ref="exer-finite-power-quotient"/>),
-        and hence is isomorphic to <m>(\ZZ/\ell \ZZ)^n</m> for some positive integer <m>n</m>.
-        By Kummer theory (<xref ref="T_Kummer_reformulated"/>), we also have <m>\Gal(M/K) \cong (\ZZ/\ell \ZZ)^n</m>.
-        By the local reciprocity law (<xref ref="T_local_reciprocity"/>), <m>K^*/\Norm_{M/K}M^* \cong (\ZZ/\ell \ZZ)^n</m>;
-        consequently, on one hand <m>(K^*)^{\ell} \subseteq \Norm_{M/K}M^*</m>,
-        and on other hand these subgroups of <m>K^*</m> have the same index <m>\ell^n</m>.
-        They are thus equal, proving the claim.
+        The conclusion of <xref ref="L_hilbert_symbol"/> remains true even if <m>\ell</m> is not prime; see <xref ref="exer-hilbert-symbol"/>.
+        This statement can be interpreted in terms of the <term>Hilbert symbol</term>, whose properties generalize quadratic reciprocity to higher powers;
+        see <xref ref="bib-Milne-CFT"/>, III.4.
       </p>
-    </proof>
+    </remark>
     <p>
       This allows to deduce a corollary of the existence theorem which is needed in its proof.
       (The argument we give here depends squarely on characteristic <m>0</m>; some patching is needed in the positive characteristic case.)
@@ -307,8 +342,29 @@ H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \a
         note that <m>D_K \subseteq \gotho_K^*</m> by considering unramified extensions of <m>K</m>,
         so <m>D_K</m> is in particular a compact topological group.
         By <xref ref="L_hilbert_symbol"/>,
-        every element of <m>D_K</m> is an <m>\ell</m>-th power in <m>K</m> for every prime <m>\ell</m>;
-        this implies that <m>D_K</m> is trivial (<xref ref="exer-finite-power-intersection"/>).
+        every element of <m>D_K</m> is an <m>\ell</m>-th power in <m>K</m> for every prime <m>\ell</m>.
+        We will show that in fact every element of <m>D_K</m> is the <m>\ell</m>-th power of an element of <m>D_K</m> itself;
+        this will show that <m>D_K</m> is a divisible abelian group, and in particular every element is an <m>n</m>-th power for every positive integer <m>n</m>.
+        This will then imply using <xref ref="exer-finite-power-intersection"/> that <m>D_K</m> is the trivial group.
+        (Alternatively, one can follow the suggestion of <xref ref="rmk-Hilbert-symbol"/> and prove that the conclusion of <xref ref="L_hilbert_symbol"/>
+        retains true when <m>\ell</m> is replaced by an arbitrary positive integer <m>n</m>, and then apply <xref ref="exer-finite-power-intersection"/> directly.)
+      </p>
+      <p>
+        We first need to verify something which might seem obvious but isn't quite: for <m>L/K</m> a finite extension, 
+        <me>\Norm_{L/K} D_L = D_K</me>.
+        This isn't obvious because for <m>x \in D_K</m>, for each 
+        individual finite extension <m>M</m> of <m>K</m> we can write <m>x = \Norm_{M/K}(z)</m> for some <m>z \in M^*</m>, but it is not apparent that we can force the elements
+        <m>y = \Norm_{M/L}(z)</m> to all be equal. It is nonetheless true because, for any given <m>M</m> the set of such <m>y</m> is a nonempty compact subset of <m>U_L</m>, and any finite
+        intersection of these subsets is nonempty (because we can pass to a large enough field to contain all of the <m>M</m> in question and bring an element from there);
+        so the whole intersection is nonempty.
+      </p>
+      <p>
+        Now let <m>\ell</m> be a prime and choose <m>x \in D_K</m>. For each finite extension <m>L</m> of <m>K</m> containing a primitive <m>\ell</m>-th root of unity,
+        let <m>E(L)</m> be the set of <m>\ell</m>-th roots of <m>x</m> in <m>K</m> which belong to <m>\Norm_{L/K} L^*</m>. This set is finite (of cardinality at most <m>\ell</m>)
+        and nonempty: we have <m>x = \Norm_{L/K}(y)</m> for some <m>y \in D_L</m> by the previous paragraph, so <m>y</m> has an <m>\ell</m>-th root <m>z</m> in <m>L</m> and
+        <m>\Norm_{L/K}(z) \in E(L)</m>. By the previous paragraph, <m>E(M) \subseteq E(L)</m> whenever <m>L \subseteq M</m>, so we may again conclude using the finite intersection
+        property. Alternatively, just note that if each of the (finitely many!) elements of <m>E(K)</m> fails to survive to some larger field, we can take a compositum to get
+        a single field <m>L</m> such that no element of <m>E(K)</m> belongs to <m>E(L)</m>, which is absurd since <m>E(L) \neq \emptyset</m>.
       </p>
     </proof>
     <p>

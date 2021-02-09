@@ -3,15 +3,14 @@
   <introduction>
     <p>
       We now describe the setup by which we create a reciprocity law in global class field theory,
-      imitating the
-      <q>abstract</q>
+      imitating the <q>abstract</q>
       setup from local class field theory but using the id&#xe8;le class group in place of the multiplicative group of the field.
       We then work out why the reciprocity law and existence theorem in the adelic setup imply Artin reciprocity and the existence theorem
       (and a bit more)
       in the classical language.
     </p>
   </introduction>
-  <subsection>
+  <paragraphs>
     <title>Convention note</title>
     <p>
       We are going to fix an algebraic closure
@@ -21,14 +20,14 @@
       That is, we are fixing the embeddings of number fields into <m>\overline{\QQ}</m>.
       We'll use these embeddings to decide how to embed one number field in another.
     </p>
-  </subsection>
+  </paragraphs>
   <subsection>
     <title>The adelic reciprocity law and existence theorem</title>
     <p>
       Here are the adelic reciprocity law and existence theorem;
       notice that they look just like the local case except that the multiplicative group has been replaced by the id&#xe8;le class group.
     </p>
-    <theorem>
+    <theorem xml:id="T_adelic_reciprocity_law">
       <title>Adelic reciprocity law</title>
       <statement>
         <p>
@@ -37,6 +36,11 @@
           an isomorphism <m>r_{L/K}: C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          Precise cross-reference to be added later.
+        </p>
+      </proof>
     </theorem>
     <theorem xml:id="T_adelic_existence_theorem1">
       <title>Adelic existence theorem</title>
@@ -46,184 +50,220 @@
           there exists a finite (abelian) extension <m>L</m> of <m>K</m> such that <m>H = \Norm_{L/K} C_L</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          Precise cross-reference to be added later.
+        </p>
+      </proof>
     </theorem>
     <p>
-      In fact, using local class field theory,
-      we can construct the map that will end up being <m>r_K</m>.
-      For starters,
-      let <m>L/K</m> be a finite abelian extension and <m>v</m> a place of <m>K</m>.
-      Put <m>G = \Gal(L/K)</m>,
-      and let <m>G_v</m> be the decomposition group of <m>v</m>, that is,
-      the set of <m>g \in G</m> such that <m>v^g = v</m>.
-      Then for any place <m>w</m> above <m>v</m>,
-      <m>G_v \cong \Gal(L_w/K_v)</m>,
-      so we can view the local reciprocity map
-      <m>K_v^* \to \Gal(L_w/K_v)</m> as a map <m>r_{K,v}: K_v^* \to G</m>.
-      That is, if <m>v</m> is a finite place.
-      If <m>v = \CC</m>, then <m>\Gal(L_w/K_v)</m> is trivial,
-      so we just take <m>K_v^* \to G</m> to be the identity map.
-      If <m>v = \RR</m>, then we take
-      <m>K_v^* = \RR^* \to \Gal(L_w/K_v) = \Gal(\CC/\RR)</m> to be the map sending everything positive to the identity,
-      and everything negative to complex conjugation.
+      We will also obtain a global analogue of the local norm limitation theorem, which was not even suggested by the classical language.
     </p>
-    <p>
-      Now note that
-      <me>
-        (\alpha_v) \mapsto \prod_v r_{K,v}(\alpha_v)
-      </me>
-      is well-defined on id&#xe8;les:
-      for <m>(\alpha_v)</m> an id&#xe8;le,
-      <m>\alpha_v</m> is a unit for almost all <m>v</m> and <m>L_w/K_v</m> is unramified for almost all <m>v</m>.
-      For the (almost all) <m>v</m> in both categories,
-      <m>r_{K,v}</m> maps <m>\alpha_v</m> to the identity.
-    </p>
-    <p>
-      The subtle part is the following.
-      As noted below, before proving reciprocity,
-      we'll only be able to check this for the map obtained from <m>r_{K,v}</m> by projecting from
-      <m>\Gal(K^{\ab}/K)</m> to the torsion-free quotient of <m>\Gal(K(\zeta_\infty)/K)</m>,
-      the Galois group of the maximal cyclotomic extension;
-      in that case,
-      we can reduce to <m>K=\QQ</m> and do an explicit computation.
-      The general case will actually only follow after the fact from the construction of global reciprocity!
-    </p>
-    <proposition>
+    <theorem xml:id="T_adelic_norm_limitation1">
+      <title>Adelic norm limitation theorem</title>
       <statement>
         <p>
-          The map <m>r_{K,v}</m> is trivial on <m>K^*</m>.
+          Let <m>L/K</m> be a finite extension of number fields and put <m>M = L \cap K^{\ab}</m>.
+          Then <m>\Norm_{L/K} C_L = \Norm_{M/K} C_M</m>.
         </p>
       </statement>
-    </proposition>
-    <p>
-      Thus it induces a map <m>r_K: C_K \to \Gal(L/K)</m> for each <m>L/K</m> abelian,
-      and in fact to <m>r_K: C_K \to \Gal(K^{\ab}/K)</m> using the analogous compatibility for local reciprocity.
-    </p>
-    <p>
-      Since each of the local reciprocity maps is continuous,
-      so is the map <m>r_K</m>.
-      That means the kernel of <m>r_K: C_K \to \Gal(L/K)</m>,
-      for <m>L/K</m> abelian, is an open subgroup of <m>C_K</m>.
-      Now recall that the quotient of <m>C_K</m> by any open subgroup of finite index is a generalized ideal class group.
-      Thus <m>r_K</m> is giving us a canonical isomorphism between
-      <m>\Gal(L/K)</m> and a generalized ideal class group;
-      could this be anything but Artin reciprocity itself?
-    </p>
-    <p>
-      Indeed, let <m>U</m> be the kernel of <m>r_K</m>,
-      let <m>\gothm</m> be a conductor for the generalized ideal class group <m>C_K/U</m>,
-      and let <m>\gothp</m> be a prime of <m>K</m> not dividing <m>\gothm</m> and unramified in <m>L</m>.
-      Then the id&#xe8;le <m>\alpha = (1,1, \dots, \pi, \dots)</m> with a uniformizer <m>\pi</m> of
-      <m>\gotho_{K_\gothp}</m> in the <m>\gothp</m> component and ones elsewhere maps onto the class of <m>\gothp</m> in <m>C_K/U</m>.
-      On the other hand, <m>r_K(\alpha) = r_{K, \gothp}(\pi)</m> is
-      (because <m>L</m> is unramified over <m>K</m>)
-      precisely the Frobenius of <m>\gothp</m>.
-      So indeed, <m>\gothp</m> is being mapped to its Frobenius,
-      so the map <m>C_K/U \to \Gal(L/K)</m> is indeed Artin reciprocity.
-    </p>
-    <p>
-      In fact, we discover from this a little bit more than we knew already about the Artin map.
-      All we said before about the Artin map is that it factors through a generalized ideal class group,
-      and that the conductor <m>\gothm</m> of that group is divisible precisely by the ramified primes
-      (which we see from local reciprocity).
-      In fact, we can now say <em>exactly</em>
-      what is in the kernel of the classical Artin map: it is generated by
+      <proof>
+        <p>
+          See <xref ref="T_adelic_norm_limitation"/>.
+        </p>
+      </proof>
+    </theorem>
+    </subsection>
+    <subsection>
+      <title>More on the reciprocity map</title>
+      <p>
+        We next use local class field theory and the principle of <term>local-global compatibility</term> to come up with a candidate for the map <m>r_K</m> in 
+        the adelic reciprocity law <xref ref="T_adelic_reciprocity_law"/>. We note in passing that this principle also lies at the heart of the extension of class field theory envisioned in the 
+        Langlands program (<xref ref="rmk-beyond-CFT"/>).
+      </p>
+    <definition xml:id="def-adelic-reciprocity-candidate">
+      <p>
+      Let <m>L/K</m> be a finite abelian extension of number fields and <m>v</m> a place of <m>K</m>.
+      Put <m>G = \Gal(L/K)</m> and let <m>G_v</m> be the <term>decomposition group</term> of <m>v</m>, that is,
+      the set of <m>g \in G</m> such that <m>v^g = v</m>.
+      Then for any place <m>w</m> above <m>v</m>,
+      <m>G_v \cong \Gal(L_w/K_v)</m>.
+      We will define a map <m>r_{K, v}: K_v^* \to G_v \subseteq G</m> as follows.
       <ul>
         <li>
           <p>
-            all principal ideals congruent to 1 modulo <m>\gothm</m>;
+          If <m>v</m> is a finite place, use the local reciprocity map (<xref ref="T_local_reciprocity"/>).
           </p>
         </li>
         <li>
           <p>
-            norms of ideals of <m>L</m> not divisible by any ramified primes.
+          If <m>v</m> is a real place, use the sign map <m>\RR^* \to \{\pm 1\} \cong G_v</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+          If <m>v</m> is a complex place, then <m>G_v</m> is trivial and so there is nothing left to specify.
           </p>
         </li>
       </ul>
+      </p>
+      <p>
+        Now note that we obtain a well-defined product map
+        <me>
+        \tilde{r}_K: I_K \to G, \qquad (\alpha_v) \mapsto \prod_v r_{K,v}(\alpha_v):
+        </me>i
+        for <m>(\alpha_v) \in I_K</m>,
+        <m>\alpha_v</m> is a unit for almost all <m>v</m> and <m>L_w/K_v</m> is unramified for almost all <m>v</m> (we may ignore infinite places here).
+        For the (almost all) <m>v</m> in both categories,
+        <m>r_{K,v}</m> maps <m>\alpha_v</m> to the identity.
+      </p>
+      <p>
+        Since each of the maps <m>r_{K,v}</m> is continuous,
+        so is the map <m>\tilde{r}_K</m>.
+        That means the kernel of <m>\tilde{r}_K: I_K \to \Gal(L/K)</m> is an open subgroup of <m>I_K</m>.
+      </p>
+    </definition>
+    <p>
+      Here is the subtle point, and the real source of <q>reciprocity</q> in this construction.
     </p>
+    <proposition xml:id="prop-reciprocity-trivial-on-diagonal">
+      <statement>
+        <p>
+          For <m>L/K</m> a finite abelian extension of number fields, the map <m>\tilde{r}_K: I_K \to \Gal(L/K)</m> is trivial on <m>K^*</m>.
+          It thus factors through a map <m>r_K: C_K \to \Gal(L/K)</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          See <xref ref="prop-reciprocity-trivial-on-diagonal2"/>.
+        </p>
+      </proof>
+    </proposition>
+    <remark xml:id="rmk-cyclotomic-Artin">
+      <p>
+        In case <m>L = K(\zeta_n)</m> for some <m>n</m>, we can verify <xref ref="prop-reciprocity-trivial-on-diagonal"/> by an explicit computation,
+        similar to the direct verification of Artin reciprocity for these extensions. This suggests that in general, we must first prove the adelic existence
+        theorem (<xref ref="T_adelic_existence_theorem1"/>) before establishing <xref ref="prop-reciprocity-trivial-on-diagonal"/>. In the interim, we will derive
+        a makeshift form of adelic reciprocity from the framework of abstract class field theory.
+      </p>
+      <p></p>
+    </remark>
+    <proposition xml:id="prop-deduce-Artin">
+      <statement>
+        <p>
+          Let <m>L/K</m> be a finite abelian extension of number fields.
+          Given <xref ref="T_adelic_reciprocity_law"/> and <xref ref="prop-reciprocity-trivial-on-diagonal"/>,
+          let <m>U</m> be the kernel of <m>r_K</m>,
+          identify <m>C_K/U</m> with a generalized ideal class group (<xref ref="rmk-open-subgroup-idele"/>) of some conductor <m>\gothm</m>.
+          Then the map <m>C_K/U \to \Gal(L/K)</m> is the Artin map; consequently, <xref ref="T-Artin-reciprocity"/> holds.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The id&#xe8;le <m>\alpha = (1,1, \dots, \pi, \dots)</m> with a uniformizer <m>\pi</m> of
+          <m>\gotho_{K_\gothp}</m> in the <m>\gothp</m> component and 1s elsewhere maps onto the class of <m>\gothp</m> in <m>C_K/U</m>.
+          On the other hand, <m>r_K(\alpha) = r_{K, \gothp}(\pi)</m> is
+          (because <m>L</m> is unramified over <m>K</m>)
+          precisely the Frobenius of <m>\gothp</m>.
+          So indeed, <m>\gothp</m> is being mapped to its Frobenius,
+          so the map <m>C_K/U \to \Gal(L/K)</m> is indeed Artin reciprocity.
+        </p>
+      </proof>
+    </proposition>
+    <remark>
+      <p>
+        The argument from <xref ref="prop-deduce-Artin"/> also gives some additional information about the Artin map.
+        First, the Artin map factors through a generalized ideal class group
+        whose conductor <m>\gothm</m> is divisible <em>precisely</em> by the ramified primes
+        Second, we can <em>exactly</em> describe the kernel of the classical Artin map: it is generated by
+        <ul>
+          <li>
+            <p>
+              all principal ideals congruent to 1 modulo <m>\gothm</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              norms of ideals of <m>L</m> not divisible by any ramified primes.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </remark>
   </subsection>
   <subsection>
     <title>What needs to be done</title>
     <p>
       Many of these steps will be analogous to the steps in local class field theory.
+      Notably, we do <em>not</em> directly attempt to verify <xref ref="prop-deduce-Artin"/>
+      except for cyclotomic extensions, for which the explicit calculation suggested in <xref ref="rmk-cyclotomic-Artin"/> will be an important input into the machine.
+      Instead, we postpone this step all the way until the end; see below.
       <ul>
         <li>
           <p>
-            It would be natural to start by verifying that the map <m>r_K</m> given above does indeed kill principal id&#xe8;les,
-            but this is too hard to do all at once
-            (except for cyclotomic extensions,
-            for which the explicit calculation is an important input into the machine).
-            Instead, we postpone this step all the way until the end; see below.
-          </p>
-        </li>
-        <li>
-          <p>
-            Verify that for <m>L/K</m> cyclic,
-            the Herbrand quotient of <m>C_L</m> as a
-            <m>\Gal(L/K)</m>-module is <m>[L:K]</m>.
-            In particular,
-            that forces <m>\#H^0(\Gal(L/K), C_L) \geq [L:K]</m>
-            (the
-            <q>First Inequality</q>).
-          </p>
-        </li>
-        <li>
-          <p>
-            For <m>L/K</m> cyclic, determine that
+            Verify that for <m>L/K</m> cyclic, the Herbrand quotient of <m>C_L</m> as a <m>\Gal(L/K)</m>-module is <m>[L:K]</m>.
+            In particular, that forces what we call the <term>First Inequality</term> (<xref ref="T_first_inequality"/>):
             <me>
-              \#H^0(\Gal(L/K), C_L) = [L:K], \qquad \#H^1(\Gal(L/K), C_L) = 1
+              \#H^0_T(\Gal(L/K), C_L) \geq [L:K]
             </me>
-            (the
-            <q>Second Inequality</q>).
-            This step is trivial in local CFT by Theorem 90,
+          </p>
+        </li>
+        <li>
+          <p>
+            For <m>L/K</m> cyclic, we next prove the <term>Second Inequality</term> (<xref ref="T_first_and_second_inequality"/>):
+            <me>
+              \#H^0_T(\Gal(L/K), C_L) \leq [L:K],
+            </me>
+            which combined with the previous point yields
+            <me>
+              \#H^0_T(\Gal(L/K), C_L) = [L:K], \qquad \#H^1_T(\Gal(L/K), C_L) = 1.
+            </me>
+            This step is trivial in local CFT by Theorem 90 (<xref ref="L_theorem_90"/>),
             but is actually pretty subtle in the global case.
             We'll do it by reducing to the case where <m>K</m> contains enough roots of unity,
             so that <m>L/K</m> becomes a Kummer extension and we can compute everything explicitly.
-            There is also an analytic proof given in Milne which I'll very briefly allude to.
+            There is also an analytic proof given in <xref ref="bib-Milne-CFT"/> which I'll very briefly allude to.
           </p>
         </li>
         <li>
           <p>
-            Check the conditions for abstract class field theory,
-            using the setup described at the end of <xref ref="sec_abstractcft">Chapter</xref>.
-            In particular,
-            the role of the unramified extensions in local class field theory will be played by certain cyclotomic extensions.
-            This gives an
-            <q>abstract</q>
-            reciprocity map, not yet known to be related to Artin reciprocity.
+            Check the conditions for abstract class field theory using the setup described at the end of <xref ref="sec_abstractcft"/>,
+            using the previous calculations to establish the class field axiom. 
+            Plugging into the machine will then give an <q>abstract</q> reciprocity map, not yet known to be related to Artin reciprocity (except for cyclotomic extensions,
+            which are used in the construction of the maps <m>d</m> and <m>v</m>.)
           </p>
         </li>
         <li>
           <p>
-            Prove the existence theorem,
-            by showing that every open subgroup of <m>C_K</m> contains a norm group.
-            Again, we can enlarge <m>K</m> in order to do this,
-            so we can get into the realm of Kummer theory.
+            Prove the adelic existence theorem (<xref ref="T_adelic_existence_theorem1"/>) by showing that every open subgroup of <m>C_K</m> contains a norm group
+            (<xref ref="T_adelic_existence_theorem2"/>).
+            Again, we can enlarge <m>K</m> in order to do this, so we can get into the realm of Kummer theory. Note that it is crucial for this step that we have
+            the abstract reciprocity map, but not that it be reconciled with Artin reciprocity.
           </p>
         </li>
         <li>
           <p>
             Use the compatibility between the proofs of local and global class field theory to see that the
-            <q>abstract</q>
-            global reciprocity map restricts to the usual reciprocity map from local class field theory.
-            This will finally imply that the abstract map coincides with the adelic Artin reciprocity map,
-            and therefore yield the adelic reciprocity map.
-            It is only at this point that we will deduce that the reciprocity map <m>r_K</m> that we tried to define at the outset actually does kill principal id&#xe8;les!
+            <q>abstract</q> global reciprocity map restricts to the usual reciprocity map from local class field theory (<xref ref="prop-reciprocity-trivial-on-diagonal2"/>).
+            This will finally imply <xref ref="prop-reciprocity-trivial-on-diagonal"/>, thus yielding the adelic reciprocity map
+            (and also showing that it coincides with the abstract reciprocity map).
           </p>
         </li>
         <li>
           <p>
-            We will also briefly sketch the approach taken in Milne,
+            We will also briefly sketch the approach taken in <xref ref="bib-Milne-CFT"/>,
             in which one uses Galois cohomology in place of abstract class field theory.
             Specifically, one first checks that
             <m>H^2(\Gal(L/K), C_L)</m> is cyclic of order <m>[L:K]</m> in certain
             <q>unramified</q>
             (i.e., cyclotomic) cases; as in the local case,
             one can then deduce this result in general by induction on degree.
-            Using Tate's theorem
-            (<xref ref="T_tate_thm1">Theorem</xref>),
-            one gets a reciprocity map from
-            <m>H^{-2}_T(\Gal(L/K), \ZZ) = \Gal(L/K)^{\ab}</m> to <m>H^0_T(\Gal(L/K), C_K/\Norm_{L/K} C_L)</m>,
-            which again can be reconciled with local reciprocity to get the Artin reciprocity map.
+            Using Tate's theorem (<xref ref="T_tate_thm1"/>),
+            one gets a reciprocity map 
+            <me>
+              \Gal(L/K)^{\ab} = H^{-2}_T(\Gal(L/K), \ZZ) \to H^0_T(\Gal(L/K), C_K/\Norm_{L/K} C_L)
+            </me>
+            which again can be reconciled with local reciprocity to get the Artin reciprocity map (<xref ref="prop-reciprocity-trivial-on-diagonal3"/>).
           </p>
         </li>
       </ul>
