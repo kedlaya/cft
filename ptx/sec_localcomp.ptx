@@ -19,11 +19,9 @@
   <subsection>
     <title>Overview</title>
     <p>
-      We now make some computations of
-      <m>H^i_T(L/K)</m> for <m>L/K</m> a finite Galois extension of local fields.
-      To begin with, recall that by <q>Theorem 90</q>
-      (<xref ref="L_theorem_90"/>), <m>H^1(L/K) = 0</m>.
-      Our goal in this section will be to supplement this fact with a computation of <m>H^2(L/K)</m>.
+      We now make some computations of <m>H^i_T(L/K)</m> for <m>L/K</m> a Galois extension of local fields.
+      To begin with, recall that by <q>Theorem 90</q> (<xref ref="L_theorem_90"/>), <m>H^1(L/K) = 0</m>.
+      Our next goal will be to supplement this fact with a computation of <m>H^2(L/K)</m>.
     </p>
     <proposition xml:id="P_local_h2">
       <statement>
@@ -36,35 +34,41 @@
           <m>H^2(L/K) \to H^2(M/K)</m> corresponds to the inclusion <m>\frac{1}{[L:K]}\ZZ/\ZZ \subseteq \frac{1}{[M:K]}\ZZ/\ZZ</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          For the first assertion, see <xref ref="P_H2_upper_bound"/> and <xref ref="P_H2_lower_bound"/>.
+          For the second assertion, see <xref ref="L_local_invariant_map"/>.
+        </p>
+      </proof>
     </proposition>
     <remark>
-    <p>
-      Before continuing,
-      it is worth keeping in a safe place the exact sequence
-      <me>
-        1 \to \gotho_L^* \to L^* \to L^*/\gotho_L^* = \pi_L^\ZZ \to 1
-      </me>.
-    </p>
-    <p>
-      In this exact sequence of <m>G = \Gal(L/K)</m>-modules,
-      the action on <m>\pi_L^\ZZ</m> is always trivial
-      (since the valuation on <m>L</m> is Galois-invariant).
-    </p>
+      <p>
+        Before continuing,
+        it is worth keeping in a safe place the exact sequence
+        <me>
+          1 \to \gotho_L^* \to L^* \to L^*/\gotho_L^* = \pi_L^\ZZ \to 1
+        </me>.
+      </p>
+      <p>
+        In this exact sequence of <m>G = \Gal(L/K)</m>-modules,
+        the action on <m>\pi_L^\ZZ</m> is always trivial
+        (since the valuation on <m>L</m> is Galois-invariant).
+      </p>
     </remark>
     <remark xml:id="rmk-local-galois-solvable">
-    <p>
-      Another basic fact to keep in mind is that any finite Galois extension of local fields is <em>solvable</em>.
-      To wit, the maximal unramified extension is cyclic,; the maximal tamely ramified extension is cyclic over that;
-      and the rest is a Galois extension whose degree is a power of <m>p</m>, and every finite <m>p</m>-group is solvable.
-    </p>
-    <p>
-      This will allow us to simplify some of the following arguments by writing a general Galois extension as a tower of successive
-      cyclic extensions. Of course we will have no such shortcut in the global case, because the Galois group of a Galois extension of number
-      fields can be any group whatsoever; in fact the inverse Galois problem asks whether this always occurs for an extension over <m>\QQ</m>,
-      and no counterexample is known.
-    </p>
+      <p>
+        Another basic fact to keep in mind is that any finite Galois extension of local fields is <em>solvable</em>.
+        To wit, the maximal unramified extension is cyclic,; the maximal tamely ramified extension is cyclic over that;
+        and the rest is a Galois extension whose degree is a power of <m>p</m>, and every finite <m>p</m>-group is solvable.
+      </p>
+      <p>
+        This will allow us to simplify some of the following arguments by writing a general Galois extension as a tower of successive
+        cyclic extensions. Of course we will have no such shortcut in the global case, because the Galois group of a Galois extension of number
+        fields can be any group whatsoever; in fact the inverse Galois problem asks whether this always occurs for an extension over <m>\QQ</m>,
+        and no counterexample is known.
+      </p>
     </remark>
-    </subsection>
+  </subsection>
   <subsection>
     <title>The unramified case</title>
     <p>
@@ -161,8 +165,7 @@
         0 \to \ZZ \to \QQ \to \QQ/\ZZ \to 0
       </me>
       of modules with trivial Galois action.
-      Since <m>\QQ</m> is injective as an abelian group,
-      it is also injective as a <m>G</m>-module for any group <m>G</m>
+      The module <m>\QQ</m> is injective as a <m>G</m>-module for any group <m>G</m>
       (<xref ref="exer-trivial-module-injective"/>).
       Thus we get an isomorphism <m>H^0_T(\Gal(L/K), \ZZ) \to H^{-1}_T(\Gal(L/K), \QQ/\ZZ)</m>.
       But the latter is
@@ -288,16 +291,15 @@
     <title>The general case</title>
     <p>
       For those in the know,
-      there is a spectral sequence underlying this next result;
+      there is a <term>spectral sequence</term> underlying this next result;
       see <xref ref="bib-Milne-CFT"/>, Remark II.1.35.
     </p>
     <proposition xml:id="P_inflation_restriction">
       <title>Inflation-Restriction Exact Sequence</title>
       <statement>
         <p>
-          Let <m>G</m> be a finite group,
-          <m>H</m> a normal subgroup, and <m>M</m> a <m>G</m>-module.
-          If <m>H^i(H, M) = 0</m> for <m>i=1, \dots, r-1</m>, then
+          Let <m>G</m> be a finite group, let <m>H</m> be a normal subgroup, and let <m>M</m> be a <m>G</m>-module.
+          If <m>H^i(H, M) = 0</m> for <m>i=1, \dots, r-1</m>, then the sequence
           <me>
             0 \to H^r(G/H, M^H) \stackrel{\Inf}{\to} H^r(G,M) \stackrel{\Res}{\to} H^r(H,M)
           </me>
@@ -340,18 +342,16 @@
         </me>
         exact.
         We construct a commutative diagram
-      </p>
-      <figure xml:id="fig-localcomp-1">
-      <image>
-      <latex-image>
-      \xymatrix{
-      0 \ar[r] &amp; H^{r-1}(G/H, N^H) \ar^{\Inf}[r] \ar[d] &amp; H^{r-1}(G, N) \ar^{\Res}[r] \ar[d] &amp; H^{r-1}(H,N) \ar[d] \\
-      0 \ar[r] &amp; H^{r}(G/H, M^H) \ar^{\Inf}[r] &amp; H^{r}(G, M) \ar^{\Res}[r] &amp; H^{r}(H,M).
-      }
-      </latex-image>
-      </image>
-      </figure>
-      <p>
+        <figure xml:id="fig-localcomp-1">
+        <image>
+        <latex-image>
+        \xymatrix{
+        0 \ar[r] &amp; H^{r-1}(G/H, N^H) \ar^{\Inf}[r] \ar[d] &amp; H^{r-1}(G, N) \ar^{\Res}[r] \ar[d] &amp; H^{r-1}(H,N) \ar[d] \\
+        0 \ar[r] &amp; H^{r}(G/H, M^H) \ar^{\Inf}[r] &amp; H^{r}(G, M) \ar^{\Res}[r] &amp; H^{r}(H,M).
+        }
+        </latex-image>
+        </image>
+        </figure>
         The second vertical arrow arises from the long exact sequence for <m>G</m>-cohomology;
         since <m>\Ind^G_{1} M</m> is an induced <m>G</m>-module,
         this arrow is an isomorphism.
@@ -371,7 +371,7 @@
       </p>
     </proof>
     <p>
-      By <xref ref="L_theorem_90">Lemma</xref>, we have the following.
+      By <xref ref="L_theorem_90"/>, we have the following.
     </p>
     <corollary xml:id="C_inflation_restriction_h2">
       <statement>
@@ -501,21 +501,32 @@
     We have now proved the first assertion of <xref ref="P_local_h2"/> (by combining <xref ref="P_H2_upper_bound"/> and <xref ref="P_H2_lower_bound"/>).
     We now turn to the second assertion. In the process, we will also see that <m>H^2(\overline{K}/K) \cong \QQ/\ZZ</m>.
     </p>
-    <p>
-      By <xref ref="C_inflation_restriction_h2"/> we have an injection
-      <m>H^2(K^{\unr}/K) \to H^2(\overline{K}/K)</m>, and the former is canonically isomorphic to <m>\QQ/\ZZ</m>;
-      so we have to prove that this injection is actually also surjective.
-      Remember that <m>H^2(\overline{K}/K)</m> is the direct limit of
-      <m>H^2(M/K)</m> running over all finite extensions <m>M</m> of <m>K</m>.
-      What we just showed above is that if
-      <m>[M:K] = n</m> and <m>L</m> is the unramified extension of <m>K</m> of degree <m>n</m>,
-      then the images of <m>H^2(M/K)</m> and
-      <m>H^2(L/K)</m> in <m>H^2(ML/K)</m> are the same.
-      In particular, that means that
-      <m>H^2(M/K)</m> is in the image of the map <m>H^2(K^{\unr}/K) \to H^2(\overline{K}/K)</m>.
-      Since that's true for any <m>M</m>,
-      we get that the map is indeed surjective, hence an isomorphism.
-    </p>
+    <lemma xml:id="L_local_invariant_map">
+      <statement>
+        <p>
+          For any Galois extension <m>L/K</m> of local fields, the group <m>H^2(L/K)</m> can be canonically identified with
+          <m>\frac{1}{[L:K]}\ZZ/\ZZ</m> in such a way that if <m>M/K</m> is another Galois extension containing <m>L</m>,
+          the inflation homomorphism <m>H^2(L/K) \to H^2(M/K)</m> corresponds to the inclusion <m>\frac{1}{[L:K]}\ZZ/\ZZ \subseteq \frac{1}{[M:K]}\ZZ/\ZZ</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          By <xref ref="C_inflation_restriction_h2"/> we have an injection
+          <m>H^2(K^{\unr}/K) \to H^2(\overline{K}/K)</m>, and the former is canonically isomorphic to <m>\QQ/\ZZ</m>;
+          so we have to prove that this injection is actually also surjective.
+          Remember that <m>H^2(\overline{K}/K)</m> is the direct limit of
+          <m>H^2(M/K)</m> running over all finite extensions <m>M</m> of <m>K</m>.
+          What we just showed above is that if
+          <m>[M:K] = n</m> and <m>L</m> is the unramified extension of <m>K</m> of degree <m>n</m>,
+          then the images of <m>H^2(M/K)</m> and
+          <m>H^2(L/K)</m> in <m>H^2(ML/K)</m> are the same.
+          In particular, that means that
+          <m>H^2(M/K)</m> is in the image of the map <m>H^2(K^{\unr}/K) \to H^2(\overline{K}/K)</m>.
+          Since that's true for any <m>M</m>,
+          we get that the map is indeed surjective, hence an isomorphism.
+        </p>
+      </proof>
+    </lemma>
   </subsection>
   <exercises>
     <title>Exercises</title>
@@ -530,7 +541,7 @@
       </exercise>
       <exercise xml:id="exer-trivial-module-injective">
       <statement>
-        Let <m>G</m> be a finite group. Let <m>M</m> be a <m>G</m>-module whose underlying abelian group is divisible abelian group. 
+        Let <m>G</m> be a finite group. Let <m>M</m> be a <m>G</m>-module whose underlying abelian group is a <m>\QQ</m>-vector space. 
         Prove that <m>M</m> is an acyclic <m>G</m>-module.
       </statement>
       <hint>

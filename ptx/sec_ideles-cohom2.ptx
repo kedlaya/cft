@@ -18,10 +18,10 @@
     </p>
     <p>
       For this step, we have no local analogue to draw upon: the corresponding assertion in local class field theory
-      is covered by Theorem 90 (<xref ref="L_theorem_90"/>). Unfortunately, there seems to be no direct approach to computing <m>H^1(G, C_L)</m>,
+      is covered by Theorem 90 (<xref ref="L_theorem_90"/>). Unfortunately, there seems to be no direct approach to computing <m>H^1(\Gal(L/K), C_L)</m>,
       so some alternate strategy is needed.  In this lecture, we take an analytic approach motivated by the proof of Dirichlet's theorem on
-          primes in arithmetic progressions; see <xref ref="L_second_inequality_analytic"/>. There is also an algebraic approach, but we prefer to postpone discussing it
-          until we are ready to tackle the existence theorem, as these two topics share similar ideas; see <xref ref="T_first_and_second_inequality_algebraic"/>.
+      primes in arithmetic progressions; see <xref ref="L_second_inequality_analytic"/>. There is also an algebraic approach, but we prefer to postpone discussing it
+      until we are ready to tackle the existence theorem, as these two topics share similar ideas; see <xref ref="T_first_and_second_inequality_algebraic"/>.
     </p>
   </introduction>
   <subsection>

@@ -9,7 +9,7 @@
     </paragraphs>
       <p>
         For <m>K</m> a finite extension of <m>\QQ_p</m>, the local reciprocity map defines an isomorphism of 
-        <m>\Gal(\overline{K}/K)^{\ab}</m> with the profinite completion of <m>K</m>. The natural filtration on the unit gruop
+        <m>\Gal(\overline{K}/K)^{\ab}</m> with the profinite completion of <m>K</m>. The natural filtration on the unit group
         <m>\gotho_K^\times</m> thus defines a filtration on <m>\Gal(\overline{K}/K)^{\ab}</m>; but which one?
         It turns out that the answer is related to a natural filtration on the entire group <m>\Gal(\overline{K}/K)</m>;
         we give Hadamard's description of this.

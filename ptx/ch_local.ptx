@@ -3,6 +3,5 @@
   <xi:include  href="sec_localrecip.ptx"/>
   <xi:include  href="sec_localcomp.ptx"/>
   <xi:include  href="sec_tatethm.ptx"/>
-  <xi:include  href="sec_abstractcft.ptx"/>
   <xi:include  href="sec_filtration.ptx"/>
 </chapter>

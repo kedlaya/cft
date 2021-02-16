@@ -10,7 +10,7 @@
       </p>
     </paragraphs>
     <p>
-      In this chapter, we'll manufacture a canonical isomorphism
+      We next manufacture a canonical isomorphism
       <m>\Gal(L/K)^{\ab} \to C_K/\Norm_{L/K} C_L</m> for any finite extension <m>L/K</m> of number fields,
       where <m>C_K</m> and <m>C_L</m> are the corresponding id&#xe8;le class groups (<xref ref="T_abstract_adelic_reciprocity"/>).
       However, we won't yet know it agrees with our proposed reciprocity map,
@@ -72,7 +72,7 @@
     <p>
       Choose an isomorphism of
       <m>\Gal(\QQ^{\smcy}/\QQ)</m> with <m>\widehat{\ZZ}</m>;
-      our results are not going to depend on the choice.
+      our results are not going to depend on the choice (see <xref ref="rmk-remove-identification"/>).
       That gives a continuous surjection
       <me>
         d: \Gal(\overline{\QQ}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ};
@@ -108,39 +108,17 @@
     </p>
     <definition xml:id="def-global-abstract-valuation">
     <p>
-      We define <m>v</m> using Artin reciprocity for <m>\QQ(\zeta_n)/\QQ</m>.
-      Recall that there is a canonical surjection
+      To define the map <m>v</m>, we write 
       <me>
-        I_n \to (\ZZ/n\ZZ)^* \cong \Gal(\QQ(\zeta_n)/\QQ):
+      I_{\QQ} = \QQ^* \times \RR^* \times \widehat{\ZZ}^*
       </me>
-      for <m>p</m> not dividing <m>n</m>,
-      the ideal <m>(p)</m> goes to
-      <m>p \in (\ZZ/n\ZZ)^*</m> and then to the automorphism <m>\zeta_n \mapsto \zeta_n^p</m>,
-      which indeed does act as the <m>p</m>-th power map modulo any prime of <m>\QQ(\zeta_n)</m> above <m>p</m>.
-    </p>
-    <p>
-      That induces a homomorphism <m>I_{\QQ} \to (\ZZ/n\ZZ)^*</m> as follows:
-      given an id&#xe8;le <m>\alpha</m>,
-      pick <m>x \in \QQ^*</m> so that <m>\alpha_{\RR}/x > 0</m> and,
-      for each prime <m>p</m> with <m>p^e | n</m>,
-      <m>\alpha/x</m> has <m>p</m>-component congruent to 1 modulo <m>p^e</m>.
-      Then map <m>\alpha/x</m> to <m>(\ZZ/n\ZZ)^*</m> as follows:
+      as in <xref ref="rmk-idele-group-presentation-for-Q"/>. We then define <m>v</m> as the projection onto the third factor
+      followed by the projection 
       <me>
-        \alpha/x \mapsto \prod_{\ell \not| n} \ell^{v_{\ell}(\alpha_{\ell}/x)}
-      </me>.
-    </p>
-    <p>
-      This gives a well-defined map:
-      if <m>y</m> is an alternate choice for <m>x</m>,
-      then <m>x/y \equiv 1 \pmod{n}</m> and <m>x/y > 0</m>,
-      so the product on the right side is precisely <m>x/y</m> itself,
-      and so is congruent to 1 in <m>(\ZZ/n\ZZ)^*</m>.
-    </p>
-    <p>
-      We now have maps <m>I_{\QQ} \to (\ZZ/n\ZZ)^*</m> which are compatible,
-      so by taking inverse limits we get <m>I_{\QQ} \to \widehat{\ZZ}^* \cong \Gal(\QQ^{\cyc}/\QQ)</m>.
-      We define <m>v</m> by channeling this map through the projection
-      <m>\Gal(\QQ^{\cyc}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ)</m> and then using our chosen isomorphism <m>\Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}</m>.
+      \widehat{\ZZ}^* \cong \Gal(\QQ^{\cyc}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}.
+      </me>
+      The first condition of <xref ref="def-abstract-henselian-valuation"/> holds by construction.
+      We will check the second condition using Artin reciprocity for cyclotomic extensions.
     </p>
     </definition>
     <lemma xml:id="lem-global-abstract-valuation">
@@ -150,43 +128,23 @@
         </p>
       </statement>
       <proof>
-    <p>
-      Note that <m>I_{\QQ}</m> can be written as <m>\QQ^* \times \RR^* \times \widehat{\ZZ}^*</m>,
-      and the map to <m>\widehat{\ZZ}^*</m> is just projection onto the third factor.
-      In particular, the map factors through <m>C_\QQ</m>,
-      which makes the first condition of <xref ref="def-abstract-henselian-valuation"/> apparent.
-    </p>
-    <p>
-      To check the second condition of <xref ref="def-abstract-henselian-valuation"/>,
-      we need to do the same thing that we just did a bit more generally.
-      For <m>K</m> now a number field, define the map
-      <me>
-        I_n \to (\ZZ/n\ZZ)^* \supseteq \Gal(K(\zeta_n)/K)
-      </me>,
-      where now <m>I_n</m> is the group of fractional ideals of <m>K</m> coprime to <m>(n)</m>,
-      by sending a prime <m>\gothp</m> first to its absolute norm.
-      We then have to check that the result is always in the image of
-      <m>\Gal(K(\zeta_n)/K)</m>, but in fact it must be:
-      whatever the Frobenius of <m>\gothp</m> is,
-      it sends <m>\zeta_n</m> to a power of <m>\zeta_n</m> congruent to
-      <m>\zeta_n^{\Norm(\gothp)}</m> modulo <m>\gothp</m>.
-      Since <m>\gothp</m> is prime to <m>n</m>,
-      it's prime to the difference between any two powers of <m>\zeta_n</m>,
-      so the Frobenius of <m>\gothp</m> must in fact send <m>\zeta_n</m> to <m>\zeta_n^{\Norm(\gothp)}</m>.
-      This tells us first that the map above sends <m>I_n</m> to
-      <m>\Gal(K(\zeta_n)/K)</m> and second that it coincides with the Artin map.
-    </p>
-    <p>
-      Using the First Inequality (see <xref ref="prop-artin-map-surjects"/> below), we may see that the Artin map
-      <m>I_n \to \Gal(K(\zeta_n)/K)</m> we wrote down above is surjective.
-      Using that, we can verify the second condition of <xref ref="def-abstract-henselian-valuation"/>:
-      given a prime ideal <m>\gothp</m> of <m>K</m>,
-      the Artin map of <m>K(\zeta_n)/K</m> applied to it gives the same element of
-      <m>(\ZZ/n\ZZ)^*</m> as the Artin map of <m>\QQ</m> applied to <m>\Norm_{K/\QQ}(\gothp)</m>.
-      Meanwhile, the Artin map of
-      <m>K(\zeta_n)/K</m> surjects onto <m>\Gal(K(\zeta_n)/K)</m>,
-      which has index <m>[K \cap \QQ(\zeta_n):\QQ]</m> in <m>(\ZZ/n\ZZ)^*</m>.
-    </p>
+        <p>
+          Since we already know from <xref ref="def-global-abstract-valuation"/> that <m>v</m> factors through <m>C_\QQ</m> and surjects onto <m>\widehat{\ZZ}</m>,
+          it suffices to check that for every number field <m>K</m>, <m>v(\Norm_{K/\QQ} I_K) = f_{K/\QQ} \widehat{\ZZ}</m>. We establish this by checking that the map
+          <me>
+            I_K \stackrel{\Norm_{K/\QQ}}{\to} I_\QQ \to \Gal(\QQ^{\cyc}/\QQ)
+          </me>
+          has image <m>\Gal(K^{\cyc}/K) \subseteq \Gal(\QQ^{\cyc}/\QQ)</m>, as then we get the desired condition by projecting from <m>\Gal(\QQ^{\cyc}/\QQ)</m> to <m>\Gal(\QQ^{\smcy}/\QQ)</m>.
+          Note that for <m>K = \QQ</m>, this follows from Artin reciprocity for cyclotomic extensions (<xref ref="D_cyclotomic_reciprocity"/>).
+        </p>
+        <p>
+          In one direction, the fact that <m>I_K</m> maps into <m>\Gal(K^{\cyc}/K)</m> is a corollary of local reciprocity (<xref ref="T_local_reciprocity"/>)
+          plus Artin reciprocity for cyclotomic extensions as used above. 
+        </p>
+        <p>
+          In the other direction, the same logic shows that for each positive integer <m>n</m>, the image of <m>I_K</m> in <m>\Gal(K(\zeta_n)/K)</m> equals the image of the classical Artin map for
+          <m>K(\zeta_n)/K</m>; it will thus suffice to check that these maps are surjective. It is convenient to deduce this from the First Inequality; see <xref ref="prop-artin-map-surjects"/> below.
+        </p>
       </proof>
     </lemma>
     <p>
@@ -241,7 +199,7 @@
     </p>
     </definition>
     <theorem xml:id="T_adelic_norm_limitation">
-      <title>Adelic norm limitation theorem</title>
+      <title>Norm limitation theorem</title>
       <statement>
         <p>
           If <m>L/K</m> is a finite extension of number fields and <m>M = L \cap K^{\ab}</m>,
@@ -262,10 +220,8 @@
       in <m>C_K</m>.
       That is, the element of <m>\Gal(L/K)</m> coming from the element of
       <m>\Gal(K^{\smcy}/K)</m> which maps to 1 under <m>d_K</m> is the element of <m>C_K</m> which maps to 1 under <m>v_K</m>.
-      But we made <m>v_K</m> simply by mapping <m>C_K</m> to
-      <m>\Gal(K^{\smcy}/K)</m> via the Artin map and then identifying the latter with
-      <m>\widehat{\ZZ}</m> by the same identification we used to make <m>d_K</m>.
-      The upshot is that the choice of that identification drops out.
+      The point is that the definitions of both <m>d</m> and <m>v</m> involve the <em>same</em> artificial choice of 
+      an isomorphism <m>\Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}</m>; compare <xref ref="rmk-rescale-reciprocity"/>.
     </p>
     </remark>
   </subsection>

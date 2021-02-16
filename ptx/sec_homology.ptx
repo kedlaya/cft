@@ -345,6 +345,41 @@
         While we cannot extend the corestriction map to Tate cohomology, we may still argue directly that <m>H^0_T(G, M)</m> is killed by <m>\#G</m>.
       </p>
     </remark>
+    <p>
+      While <xref ref="D-extended-functoriality-homology"/> does not yield inflation maps for Tate groups, we can obtain the following 
+      variant of the inflation-restriction exact sequence by dimension shifting.
+    </p>
+    <lemma xml:id="lem-inflation-restriction-H0">
+      <statement>
+        <p>
+          Let <m>H</m> be a normal subgroup of a finite group <m>G</m> and <m>M</m> a <m>G</m>-module.
+          If <m>H^0_T(G/H, M^H) = 0</m>, then <m>\Res: H^0_T(G,M) \stackrel{\Res}{\to} H^0_T(H,M)</m> is injective.
+        </p>
+      </statement>
+    </lemma>
+    <proof>
+      <p>
+        Choose <m>N</m> so that <m>0 \to N \to \Ind^G_{1} M \to M \to 0</m> is exact (where again
+        <m>\Ind^G_1 M \to M</m> is the map <m>m \otimes [g] \mapsto m^g</m>);
+        then by the usual inflation-restriction exact sequence (<xref ref="P_inflation_restriction"/>),
+        <me>
+          0 \to H^1_T(G/H, N^H) \stackrel{\Inf}{\to} H^1_T(G,N) \stackrel{\Res}{\to} H^1_T(H,N)
+        </me>
+        is exact.
+        Now <m>\Ind^G_{1} M</m> is acyclic for <m>G</m> and for <m>H</m>,
+        and <m>(\Ind^G_1 M)^H</m> is acyclic for <m>G/H</m>.
+        Moreover, if we take <m>H</m>-invariants, we have an exact sequence
+        <me>
+          0 \to N^H \to (\Ind^G_1 M)^H \to M^H \to 0;
+        </me>
+        namely, exactness on the right holds because any
+        <m>m \in M^H</m> lifts to <m>m \otimes [1] \in (\Ind^G_1 M)^H</m>.
+        Using long exact sequences,
+        we now see first that <m>H^1_T(G/H, N^H) = H^0_T(G/H, M^H) = 0</m>,
+        then deduce that <m>\Res: H^1_T(G,N) \to H^1_T(H,N)</m> is injective,
+        then finally deduce the desired result.
+      </p>
+    </proof>
   </subsection>
   <exercises>
     <title>Exercises</title>
@@ -354,7 +389,7 @@
         </statement>
         <hint>
         <p>
-          Use the fact that induced <m>G</m>-modules are acyclic for both cohomology and cohomology to reduce to checking the cases <m>i = -1, 0</m>.
+          Use the fact that induced <m>G</m>-modules are acyclic for both cohomology and homology to reduce to checking the cases <m>i = -1, 0</m>.
           Another option is to extend Shapiro's lemma to Tate cohomology groups.</p> 
         </hint>
       </exercise>

@@ -105,7 +105,7 @@
     <title>An algebraic approach to the Second Inequality</title>
     <p>
       Suppose now that <m>L/K</m> is a cyclic extension of number fields of prime degree <m>p</m> and that <m>\zeta_p \in K</m>.
-      We describe an algebraic approach to proving the Second Inequality in case, using a similar setup to 
+      We describe an algebraic approach to proving the Second Inequality in this case, using a similar setup to 
       the proof of the First Inequality (<xref ref="T_first_inequality1"/>): we apply <xref ref="lem-generate-ideles-with-S-units"/>
       to write <m>I_K = I_{K,S} K^*</m> for a conveniently large finite set <m>S</m> of places of <m>K</m> containing the infinite places.
       We then produce an explicit subgroup of <m>C_K</m> of index <m>[L:K]</m> consisting of norms from <m>C_L</m>,

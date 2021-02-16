@@ -13,6 +13,15 @@
   <biblio type="raw" xml:id="bib-Clausen">
     D. Clausen, <articletitle>A <m>K</m>-theoretic approach to Artin maps</articletitle>, arXiv:1703.07842.
   </biblio>
+  <biblio type="raw" xml:id="bib-Cohen">
+    H. Cohen, <pubtitle>A Course in Computational Algebraic Number Theory</pubtitle>, Springer.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Cohen2">
+    H. Cohen, <pubtitle>Advanced Topics in Computational Number Theory</pubtitle>, Springer.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Cox">
+    D.A. Cox, <pubtitle>Primes of the form <m>x^2 + ny^2</m></pubtitle>.
+  </biblio>
   <biblio type="raw" xml:id="bib-Frohlich-Taylor">
     A. Fröhlich and M.J. Taylor, <pubtitle>Algebraic Number Theory</pubtitle>, Cambridge University Press, 1991.
   </biblio>
@@ -25,6 +34,9 @@
   <biblio type="raw" xml:id="bib-Harari">
     D. Harari, <pubtitle>Galois Cohomology and Class Field Theory</pubtitle>.
   </biblio>
+  <biblio type="raw" xml:id="bib-Hayes-Drinfeld">
+    D. Hayes, <articletitle>A brief introduction to Drinfeld modules</articletitle>.
+  </biblio>
   <biblio type="raw" xml:id="bib-Holt">
     D.F. Holt, <pubtitle>An interpretation of the cohomology groups <m>H_n(G, M)</m></pubtitle>, <journal>J. Algebra</journal> <volume>60</volume> (1979), no. 2, 307--320. 
   </biblio>
@@ -33,6 +45,9 @@
   </biblio>
   <biblio type="raw" xml:id="bib-Jarvis">
     F. Jarvis, <pubtitle>Algebraic Number Fields</pubtitle>, Springer, Cham, 2014.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Kato">
+    K. Kato, <articletitle>A generalization of local class field theory by using <m>K</m>-groups, I</articletitle>.
   </biblio>
   <biblio type="raw" xml:id="bib-Lafforgue_L">
     L. Lafforgue, <articletitle>Chtoucas de Drinfeld et correspondance de Langlands</articletitle>,

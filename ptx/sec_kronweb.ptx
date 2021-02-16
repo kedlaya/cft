@@ -122,7 +122,7 @@
       Assuming the Kronecker-Weber theorem,
       we can deduce strong results about the way primes of <m>\QQ</m> split in an abelian extension.
     </p>
-    <definition>
+    <definition xml:id="D_cyclotomic_reciprocity">
       <p>
       Suppose <m>K/\QQ</m> is abelian, with conductor <m>m</m>.
       Then we get a surjective homomorphism

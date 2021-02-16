@@ -8,15 +8,11 @@
       </p>
     </paragraphs>
     <p>
-      We will spend the next few chapters establishing
-      <term>local class field theory</term>,
+      We will spend the entirety of <xref ref="ch_local"/> establishing <term>local class field theory</term>,
       a classification of the abelian extensions of a local field.
       This will serve two purposes.
-      On one hand,
-      the results of local class field theory can be used to assist in the proofs of the global theorems,
-      as we saw with Kronecker-Weber.
-      On the other hand,
-      they also give us a model set of proofs which we will attempt to emulate in the global case.
+      On one hand, the results of local class field theory can be used to assist in the proofs of the global theorems, as we saw with Kronecker-Weber.
+      On the other hand, they also give us a model set of proofs which we will attempt to emulate in the global case.
     </p>
     <p>
       Recall that the term <term>local field</term>
@@ -129,8 +125,8 @@
     <p>
       Another way to identify the correct topology on <m>K^*</m> is to equip <m>K</m> with its usual topology (the norm topology defined by an extension of
       the <m>p</m>-adic absolute value) and then take the subspace topology for the inclusion of <m>K^*</m> into <m>K \times K</m> given by
-      <m>x \mapsto (x, x^{-1})</m>. Note that this is not the same as the subspace topology for the inclusion of <m>K^*</m> into <m>K</m>; see
-      <xref ref="exer-subspace-top"/>.
+      <m>x \mapsto (x, x^{-1})</m>. While this does coincide with the subspace topology for the inclusion of <m>K^*</m> into <m>K</m>, there are good reasons
+      not to view it this way; see <xref ref="exer-subspace-top"/>.
     </p>
     </remark>
     <p>
@@ -187,17 +183,17 @@
         </p>
       </statement>
     </theorem>
-    <p>
-      In fact, this map can be written in terms of the cup product in group cohomology,
-      which we have not defined (and will not).
-    </p>
+    <remark>
+      <p>
+        The map in <xref ref="T_cup_product_isomorphism"/> can be written in terms of the <term>cup product</term> in group cohomology.
+        However, we will not develop this point of view here.
+      </p>
+    </remark>
   </subsection>
   <subsection>
     <title>The local invariant map</title>
     <p>
-      One way to deduce the local reciprocity law
-      (the one we will carry out first)
-      is to first prove the following.
+      We will first prove the following.
     </p>
     <theorem xml:id="T_Brauer_group_identification">
       <statement>
@@ -227,11 +223,11 @@
       see below.)
     </p>
     <p>
-      To use this to prove <xref ref="T_cup_product_isomorphism">Theorem</xref>
-      and hence the local reciprocity law and the norm limitation theorem,
+      To use this to prove <xref ref="T_cup_product_isomorphism"/>
+      and hence the local reciprocity law (<xref ref="T_local_reciprocity"/>) and the norm limitation theorem (<xref ref="T_norm_limitation"/>),
       we employ the following theorem of Tate,
       which we will prove a bit later
-      (see <xref ref="T_tate_thm2">Theorem</xref>).
+      (see <xref ref="T_tate_thm2"/>).
     </p>
     <theorem xml:id="T_tate_thm1">
       <statement>
@@ -262,39 +258,21 @@
     <title>Abstract class field theory</title>
     <p>
       Having derived local class field theory once,
-      we will do it again a slightly different way.
+      we will do it again a slightly different way in <xref ref="ch_abstract"/>.
       In the course of proving the above results,
-      we will have calculated that if <m>L/K</m> is a cyclic extension of local fields, that
+      we will show (among other things) that if <m>L/K</m> is a cyclic extension of local fields,
       <me>
-        \#H^0_T(\Gal(L/K), L^*) = [L:K], \qquad \#H^{-1}_T(\Gal(L/K), L^*) =1
-      </me>.
+        \#H^0_T(\Gal(L/K), L^*) = [L:K], \qquad \#H^{-1}_T(\Gal(L/K), L^*) =1.
+      </me>
     </p>
     <p>
       It turns out that this alone is enough number-theoretic input to prove local class field theory!
       More precisely,
-      given a field <m>K</m> with <m>G = \Gal(\overline{K}/K)</m>,
-      a continuous <m>G</m>-module <m>A</m>,
-      a surjective continuous homomorphism <m>d: G \to \widehat{\ZZ}</m>,
-      and a homomorphism <m>v: A^G \to \widehat{\ZZ}</m> satisfying suitable conditions,
-      we will show that for every finite extension <m>L</m> of <m>K</m> there is a canonical isomorphism <m>\Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L</m>,
-      where <m>A_K</m> and <m>A_L</m> denote the <m>\Gal(\overline{K}/K)</m> and
-      <m>\Gal(\overline{K}/L)</m>-invariants of <m>A</m>.
-      In particular,
-      these conditions will hold when we take <m>K</m> to bea local field,
-      <m>A</m> to be <m>\overline{K}^*</m>,
-      <m>d</m> to be the map <m>\Gal(\overline{K}/K) \to \Gal(K^{\unr}/K)</m>,
-      and <m>v: \Gal(K^*) \to \ZZ \to \widehat{\ZZ}</m> to be the valuation.
-    </p>
-    <p>
-      This is the precise sense in which we will use local class field theory as a model for global class field theory.
-      After we complete local class field theory,
-      our next goal will be to construct an analogous module <m>A</m> in the global case which is
-      <q>complete enough</q>
-      that its <m>H^0_T</m> and <m>H^{-1}_T</m> will not be too big;
-      the result will be the idele class group.
-      (One main difference is that in the global case,
-      the analogue of <m>v</m> will really take values in
-      <m>\widehat{\ZZ}</m>, not just <m>\ZZ</m>.)
+      we will identify <q>minimal</q> properties of a field <m>K</m> with <m>G = \Gal(\overline{K}/K)</m>,
+      a surjective continuous homomorphism <m>d: G \to \widehat{\ZZ}</m> (defining <q>unramified</q> extensions of <m>K</m>),
+      a continuous <m>G</m>-module <m>A</m> (playing the role of <m>\overline{K}^*</m>),
+      and a homomorphism <m>v: A^G \to \widehat{\ZZ}</m> (playing the role of the valuation map)
+      that will suffice to yield the reciprocity map. See <xref ref="sec_look_ahead"/> for the continuation of this discussion.
     </p>
   </subsection>
   <exercises>
@@ -356,8 +334,10 @@
       <exercise xml:id="exer-subspace-top">
         <statement>
            Let <m>K</m> be a finite extension of <m>\QQ_p</m>.
-           Show that <m>K^*</m> is a locally compact abelian group for the subspace topology from <m>K \times K</m> via the inclusion <m>x \mapsto (x,x^{-1})</m>,
-           but not for the subspace topology from <m>K</m>.
+           Show that <m>K^*</m> can be viewed as a closed subspace of <m>K \times K</m> via the inclusion <m>x \mapsto (x,x^{-1})</m>,
+           and deduce from this that <m>K^*</m> is a locally compact abelian group for the subspace topology
+           It can also be viewed as a subspace of <m>K</m>, but not as a closed subspace; this distinction will show up more seriously when we talk about 
+           ad&#xe8;les and id&#xe8;les (<xref ref="rmk-idele-topology"/>).
         </statement>
       </exercise>
   </exercises>

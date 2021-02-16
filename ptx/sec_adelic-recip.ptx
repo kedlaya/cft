@@ -32,13 +32,15 @@
       <statement>
         <p>
           There is a canonical map <m>r_K: C_K \to \Gal(K^{\ab}/K)</m> which induces,
-          for each finite extension <m>L/K</m> of number fields,
+          for each Galois extension <m>L/K</m> of number fields,
           an isomorphism <m>r_{L/K}: C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}</m>.
         </p>
       </statement>
       <proof>
         <p>
-          Precise cross-reference to be added later.
+          We will first prove an <q>abstract</q> form of this theorem, in which we do not say much about the identity of the map <m>r_K</m>;
+          see <xref ref="T_abstract_adelic_reciprocity"/>. We then prove a more precise version including a more specific recipe for the map; see <xref ref="prop-reciprocity-trivial-on-diagonal"/> for the
+          recipe and <xref ref="prop-reciprocity-trivial-on-diagonal2"/> for the comparison with the abstract version.
         </p>
       </proof>
     </theorem>
@@ -52,7 +54,7 @@
       </statement>
       <proof>
         <p>
-          Precise cross-reference to be added later.
+          See <xref ref="T_adelic_existence_theorem2"/>.
         </p>
       </proof>
     </theorem>
@@ -63,7 +65,7 @@
       <title>Adelic norm limitation theorem</title>
       <statement>
         <p>
-          Let <m>L/K</m> be a finite extension of number fields and put <m>M = L \cap K^{\ab}</m>.
+          Let <m>L/K</m> be an extension of number fields and put <m>M = L \cap K^{\ab}</m>.
           Then <m>\Norm_{L/K} C_L = \Norm_{M/K} C_M</m>.
         </p>
       </statement>
@@ -78,12 +80,12 @@
       <title>More on the reciprocity map</title>
       <p>
         We next use local class field theory and the principle of <term>local-global compatibility</term> to come up with a candidate for the map <m>r_K</m> in 
-        the adelic reciprocity law <xref ref="T_adelic_reciprocity_law"/>. We note in passing that this principle also lies at the heart of the extension of class field theory envisioned in the 
+        the adelic reciprocity law (<xref ref="T_adelic_reciprocity_law"/>). We note in passing that this principle also lies at the heart of the extension of class field theory envisioned in the 
         Langlands program (<xref ref="rmk-beyond-CFT"/>).
       </p>
     <definition xml:id="def-adelic-reciprocity-candidate">
       <p>
-      Let <m>L/K</m> be a finite abelian extension of number fields and <m>v</m> a place of <m>K</m>.
+      Let <m>L/K</m> be an abelian extension of number fields and <m>v</m> a place of <m>K</m>.
       Put <m>G = \Gal(L/K)</m> and let <m>G_v</m> be the <term>decomposition group</term> of <m>v</m>, that is,
       the set of <m>g \in G</m> such that <m>v^g = v</m>.
       Then for any place <m>w</m> above <m>v</m>,
@@ -129,7 +131,7 @@
     <proposition xml:id="prop-reciprocity-trivial-on-diagonal">
       <statement>
         <p>
-          For <m>L/K</m> a finite abelian extension of number fields, the map <m>\tilde{r}_K: I_K \to \Gal(L/K)</m> is trivial on <m>K^*</m>.
+          For <m>L/K</m> an abelian extension of number fields, the map <m>\tilde{r}_K: I_K \to \Gal(L/K)</m> is trivial on <m>K^*</m>.
           It thus factors through a map <m>r_K: C_K \to \Gal(L/K)</m>.
         </p>
       </statement>
@@ -151,7 +153,7 @@
     <proposition xml:id="prop-deduce-Artin">
       <statement>
         <p>
-          Let <m>L/K</m> be a finite abelian extension of number fields.
+          Let <m>L/K</m> be an abelian extension of number fields.
           Given <xref ref="T_adelic_reciprocity_law"/> and <xref ref="prop-reciprocity-trivial-on-diagonal"/>,
           let <m>U</m> be the kernel of <m>r_K</m>,
           identify <m>C_K/U</m> with a generalized ideal class group (<xref ref="rmk-open-subgroup-idele"/>) of some conductor <m>\gothm</m>.
@@ -202,15 +204,15 @@
         <li>
           <p>
             Verify that for <m>L/K</m> cyclic, the Herbrand quotient of <m>C_L</m> as a <m>\Gal(L/K)</m>-module is <m>[L:K]</m>.
-            In particular, that forces what we call the <term>First Inequality</term> (<xref ref="T_first_inequality"/>):
+            This implies the <term>First Inequality</term> (<xref ref="T_first_inequality"/>):
             <me>
-              \#H^0_T(\Gal(L/K), C_L) \geq [L:K]
+              \#H^0_T(\Gal(L/K), C_L) \geq [L:K].
             </me>
           </p>
         </li>
         <li>
           <p>
-            For <m>L/K</m> cyclic, we next prove the <term>Second Inequality</term> (<xref ref="T_first_and_second_inequality"/>):
+            For <m>L/K</m> cyclic, prove the <term>Second Inequality</term> (<xref ref="T_first_and_second_inequality"/>):
             <me>
               \#H^0_T(\Gal(L/K), C_L) \leq [L:K],
             </me>
@@ -219,25 +221,25 @@
               \#H^0_T(\Gal(L/K), C_L) = [L:K], \qquad \#H^1_T(\Gal(L/K), C_L) = 1.
             </me>
             This step is trivial in local CFT by Theorem 90 (<xref ref="L_theorem_90"/>),
-            but is actually pretty subtle in the global case.
-            We'll do it by reducing to the case where <m>K</m> contains enough roots of unity,
-            so that <m>L/K</m> becomes a Kummer extension and we can compute everything explicitly.
-            There is also an analytic proof given in <xref ref="bib-Milne-CFT"/> which I'll very briefly allude to.
+            but is pretty subtle in the global case.
+            We will first describe a proof using analytic methods (properties of <m>L</m>-functions); there is also an algebraic approach, more on which below.
           </p>
         </li>
         <li>
           <p>
-            Check the conditions for abstract class field theory using the setup described at the end of <xref ref="sec_abstractcft"/>,
+            Check the conditions for abstract class field theory (<xref ref="sec_abstractcft1"/>) in the setup described at the end of <xref ref="sec_abstractcft3"/>,
             using the previous calculations to establish the class field axiom. 
-            Plugging into the machine will then give an <q>abstract</q> reciprocity map, not yet known to be related to Artin reciprocity (except for cyclotomic extensions,
-            which are used in the construction of the maps <m>d</m> and <m>v</m>.)
+            Plugging into the machine will then give an <q>abstract</q> reciprocity map (<xref ref="T_abstract_adelic_reciprocity"/>), 
+            not yet known to be related to Artin reciprocity except for cyclotomic extensions,
+            which are used in the construction of the maps <m>d</m> and <m>v</m>.
           </p>
         </li>
         <li>
           <p>
             Prove the adelic existence theorem (<xref ref="T_adelic_existence_theorem1"/>) by showing that every open subgroup of <m>C_K</m> contains a norm group
             (<xref ref="T_adelic_existence_theorem2"/>).
-            Again, we can enlarge <m>K</m> in order to do this, so we can get into the realm of Kummer theory. Note that it is crucial for this step that we have
+            This can be done after enlarging <m>K</m>, so we can get into the realm of Kummer theory; this is closely related to the algebraic proof
+            of the Second Inequality mentioned above. Note that it is crucial for this step that we have
             the abstract reciprocity map, but not that it be reconciled with Artin reciprocity.
           </p>
         </li>

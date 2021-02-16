@@ -482,7 +482,7 @@
           \frac{1}{2} \ZZ &amp; \mbox{for $v$ real} \\
           0 &amp; \mbox{for $v$ complex}. \end{cases}
         </me>
-        This exact sequence plays a key role in various applications of Brauer groups, such as their use to detect obstructions to the existence of rational points
+        This exact sequence (sometimes called the <term>Fundamental Exact Sequence</term>) plays a key role in various applications of Brauer groups, such as their use to detect obstructions to the existence of rational points
         on algebraic varieties over number fields (called <term>Brauer-Manin obstructions</term>).
       </p>
     </definition>

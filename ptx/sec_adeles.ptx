@@ -427,7 +427,7 @@
       but not an intersection of the id&#xe8;le group with an open subset of the ad&#xe8;les.
     </p>
     <p>
-      This is essentially the same issue that came up in <xref ref="exer-subspace-top"/>,
+      This is a more serious version of the same issue that came up in <xref ref="exer-subspace-top"/>,
       and the same fix applies: namely, identify <m>I_K</m> with <m>\GL_1(\AA_K)</m> and topologize it accordingly (<xref ref="exer-subspace-top-ideles"/>).
     </p>
     </remark>
@@ -535,7 +535,7 @@
         </p>
       </proof>
     </corollary>
-    <remark>
+    <remark xml:id="rmk-idele-group-presentation-for-Q">
       <p>
         One corollary of the proof of <xref ref="cor-class-group-finite"/> is that the component group of <m>C_K</m>
         surjects onto <m>\Cl(K)</m>, and hence is nontrivial in general.
@@ -614,7 +614,7 @@
       <exercise xml:id="exer-subspace-top-ideles">
         <statement>
           Show that the restricted direct product topology on <m>I_K</m> is the subspace topology for the embedding into
-          <m>\AA_K \times \AA_K</m> given by the map <m>x \mapsto (x,x^{-1})</m>.
+          <m>\AA_K \times \AA_K</m> given by the map <m>x \mapsto (x,x^{-1})</m>, and moreover this embedding has closed image.
         </statement>
       </exercise>
       <exercise xml:id="exer-idele-group-compact">

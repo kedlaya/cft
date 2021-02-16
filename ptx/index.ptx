@@ -77,6 +77,7 @@
     <xi:include href="./ch_statements.ptx"/>
     <xi:include href="./ch_cohomology.ptx"/>
     <xi:include href="./ch_local.ptx"/>
+    <xi:include href="./ch_abstract.ptx"/>
     <xi:include href="./ch_adelic.ptx"/>
     <xi:include href="./ch_main_results.ptx"/>
     <xi:include href="./ch_parting.ptx"/>
