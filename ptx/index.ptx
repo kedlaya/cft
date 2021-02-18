@@ -45,9 +45,7 @@
 \DeclareMathOperator{\Trace}{Trace}
 \DeclareMathOperator{\unr}{unr}
 \DeclareMathOperator{\Ver}{Ver}
-\newcommand{\head}[1]{  \textbf{#1}.}
 
-\renewcommand{\terminology}[1]{\emph{#1}}
 </macros>
 <latex-image-preamble>
 \usepackage{tikz}
@@ -69,8 +67,19 @@
       <titlepage>
         <author>
           <personname>Kiran S. Kedlaya</personname>
+          <department>Department of Mathematics</department>
+          <institution>University of California San Diego</institution>
+          <email>kedlaya@ucsd.edu</email>
         </author>
       </titlepage>
+      <colophon>
+        <name><c>https://kskedlaya.org/cft</c></name>
+        <address>https://kskedlaya.org/cft</address>      
+        <copyright>
+          <year>2002<ndash/>2021</year>
+          <holder>Kiran S. Kedlaya</holder>
+        </copyright>
+      </colophon>
       <xi:include href="./sec_preface.ptx"/>
     </frontmatter>
     <xi:include href="./ch_trailer.ptx"/>
@@ -80,8 +89,8 @@
     <xi:include href="./ch_abstract.ptx"/>
     <xi:include href="./ch_adelic.ptx"/>
     <xi:include href="./ch_main_results.ptx"/>
-    <xi:include href="./ch_parting.ptx"/>
     <backmatter>
+      <xi:include href="./sec_parting.ptx"/>
       <xi:include href="./bibliography.ptx"/>
     </backmatter>
   </book>

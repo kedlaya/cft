@@ -1,7 +1,7 @@
-﻿<section xml:id="sec_parting">
+﻿<appendix xml:id="sec_parting">
   <title>Parting thoughts</title>
   <p>
-    Class field theory is a vast expanse of mathematics,
+    Class field theory encompasses a vast expanse of mathematics,
     so it's worth concluding by taking stock of what we've seen and what we haven't.
     First, a reminder of the main topics we have covered.
     <ul>
@@ -23,7 +23,7 @@
       </li>
       <li>
         <p>
-          The Chebotarev density theorem,
+          The Chebotar&#xeb;v density theorem,
           describing the distribution over primes of a number field of various splitting behaviors in an extension field (<xref ref="T_Chebotarev"/>).
         </p>
       </li>
@@ -36,6 +36,12 @@
       <li>
         <p>
           The local reciprocity law (<xref ref="T_local_reciprocity"/>), the local existence theorem (<xref ref="T_local_existence"/>), and the norm limitation theorem (<xref ref="T_norm_limitation"/>).
+        </p>
+      </li>
+      <li>
+        <p>
+          The Artin-Tate framework of abstract class field theory, including the abstract reciprocity law (<xref ref="T_abstract_reciprocity_law"/>)
+          and the abstract norm limitation theorem (<xref ref="C_abstract_norm_limitation"/>).
         </p>
       </li>
       <li>
@@ -78,29 +84,27 @@
       </li>
       <li>
         <p>
-          Orders in number fields, and the notion of a <q>ring class field.</q>
+          Orders in number fields, and the notion of a <term>ring class field</term>.
         </p>
       </li>
       <li>
         <p>
-          An analogue of the Kronecker-Weber theorem over the function field <m>\FF_q(t)</m>,
-          and even over its extensions (see <xref ref="bib-Hayes-Drinfeld"/>).
+          An analogue of the Kronecker-Weber theorem over the function field <m>\FF_q(t)</m>, and even over its extensions (see <xref ref="bib-Hayes-Drinfeld"/>).
         </p>
       </li>
       <li>
         <p>
-          Explicit class field theory for imaginary quadratic fields,
-          via elliptic curves with complex multiplication (see <xref ref="bib-Cassels-Frohlich"/>, XIII; <xref ref="bib-Cox"/>).
+          Explicit class field theory for imaginary quadratic fields, via elliptic curves with complex multiplication (see <xref ref="bib-Cassels-Frohlich"/>, XIII; <xref ref="bib-Cox"/>).
         </p>
       </li>
       <li>
         <p>
-          Quadratic forms over number fields and the Hasse-Minkowski theorem.
+          Quadratic forms over number fields and the Hasse-Minkowski theorem (see <xref ref="bib-Serre-CourseInArithmetic"/>).
         </p>
       </li>
       <li>
         <p>
-          Artin (nonabelian) L-series, the basis of <q>nonabelian class field theory.</q>
+          Artin (nonabelian) <m>L</m>-series, the basis of <q>nonabelian class field theory.</q>
         </p>
       </li>
     </ul>
@@ -110,13 +114,18 @@
     <ul>
       <li>
         <p>
+          Duality in Galois cohomology, including Tate local duality and Poitou-Tate global duality (see <xref ref="bib-Harari"/>).
+        </p>
+      </li>
+      <li>
+        <p>
           The Golod-Shafarevich inequality and the class field tower problem (see <xref ref="bib-Cassels-Frohlich"/>, IX).
         </p>
       </li>
       <li>
         <p>
           Class field theory for function fields (see <xref ref="bib-Serre-AGCF"/>) and its use to produce curves over finite fields with unusually many points
-          (see <url xref="http://manypoints.org">manypoints.org</url> and the forthcoming <xref ref="bib-Serre-Curves"/>).
+          (see <url href="http://manypoints.org">manypoints.org</url> and the forthcoming <xref ref="bib-Serre-Curves"/>).
         </p>
       </li>
       <li>
@@ -131,7 +140,7 @@
       </li>
       <li>
         <p>
-          Clausen's <m>K</m>-theoretic approach to Artin reciprocity <xref ref="bib-Clausen"/>.
+          Clausen's <m>K</m>-theoretic approach to Artin reciprocity (see <xref ref="bib-Clausen"/>).
         </p>
       </li>
       <li>
@@ -141,7 +150,7 @@
       </li>
       <li>
         <p>
-          Higher-dimensional class field theory <xref ref="bib-Kato"/>.
+          Higher-dimensional class field theory (see <xref ref="bib-Kato"/>).
         </p>
       </li>
     </ul>
@@ -152,31 +161,30 @@
     for <m>K</m> a number field,
     and certain representations of <m>\GL_1(\AA_K)</m>,
     otherwise known as the group of id&#xe8;les.
-    But what about the nonabelian extensions of <m>K</m>,
-    or what is about the same,
-    the higher-dimensional representations of <m>\Gal(\overline{K}/K)</m>?
+    But what about the nonabelian extensions of <m>K</m>, or equivalently the higher-dimensional representations of <m>\Gal(\overline{K}/K)</m>?
   </p>
   <p>
     Building on work of many authors, Langlands has proposed that for every <m>n</m>,
     there should be a correspondence between <m>n</m>-dimensional representations of
     <m>\Gal(\overline{K}/K)</m> and representations of <m>\GL_n(\AA_K)</m>.
     This correspondence is the heart of the so-called
-    <q>Langlands Program</q>, an unbelievably deep web of statements which has driven much of the mathematical establishment for the last few decades.
+    <term>Langlands Program</term>, an unbelievably deep web of statements which has driven much of the mathematical establishment for the last few decades.
     For example, for <m>n=2</m>,
     this correspondence includes on one hand the <m>2</m>-dimensional Galois representations coming from elliptic curves,
     and on the other hand representations of
     <m>\GL_2(\AA_K)</m> corresponding to modular forms.
     In particular, it includes the
-    <q>modularity of elliptic curves</q>, proved by Breuil, Conrad, Diamond, and Taylor following on the celebrated work of Wiles and Taylor-Wiles on Fermat's Last Theorem.
+    <term>modularity of elliptic curves</term>, proved by Breuil, Conrad, Diamond, and Taylor <xref ref="bib-BCDT"/>
+    following on the celebrated work of Wiles <xref ref="bib-Wiles"/> and Taylor-Wiles <xref ref="bib-Taylor-Wiles"/> on Fermat's Last Theorem.
   </p>
   <p>
     Various analogues of the Langlands correspondence have been worked out:
-    for local fields by Taylor and Harris (with subsequent simplifications by Henniart and Scholze),
+    for local fields by Harris and Taylor (with subsequent simplifications by Henniart and Scholze),
     and for function fields by L. Lafforgue and (in more generality) V. Lafforgue, based on the work of Drinfeld.
     The work of Waldspurger and of Laumon and Ng&#xf4; on the Langlands fundamental lemma is also part of this story.
   </p>
   <p>
-    Okay, enough rambling for now; I hope that helps provide a bit of perspective.
+    This discussion could be continued almost indefinitely, so I have made the arbitrary decision to stop here.
     Thanks for reading!
   </p>
-</section>
+</appendix>

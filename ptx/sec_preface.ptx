@@ -18,43 +18,45 @@
       From there, we set up a local form of class field theory, then proceed to the main results. 
     </p>
   </blockquote>
-<p>
-  The assumed background for the course was a one-semester graduate course in algebraic number theory, including the following topics: 
-  number fields and rings of integers; structure of the class and unit groups; splitting, ramification,
-  and inertia of prime ideals under finite extensions; different and discriminant; basic properties of local fields.
-  In fact, most of the students in Math 254B had attended such a course that I gave the previous
-  semester (Math 254A) based on chapters I, II, and III of Neukirch's book <xref ref="bib-Neukirch"/>; 
-  for that reason, it was natural to use that book as a primary reference. 
-  However, no special features of that presentation are assumed, so just about any graduate-level text on algebraic
-  number theory (e.g., Fr&#xf6;hlich-Taylor <xref ref="bib-Frohlich-Taylor"/>, Janusz <xref ref="bib-Janusz"/>, Jarvis <xref ref="bib-Jarvis"/>, Lang <xref ref="bib-Lang"/>) should provide suitable background.
-</p>
-<p>
-  After the course ended, I kept the lecture notes posted on my web site in their originally written, totally uncorrected state.
-  Despite their roughness, I heard back from many people over the years who had found them useful;
-  as a result, I decided to prepare a corrected version of the notes. In so doing, I made a conscious decision
-  to suppress any temptation to modify 
-  the presentation with the benefit of hindsight, or to fill in additional material to make the text more self-contained.
-  This decision, while largely dictated by lack of time and energy, was justified by the belief that the
-  informality of the original notes contributed to their readibility. In other words, this is not intended as a standalone
-  replacement for a good book on class field theory!
-</p>
-<p>
-  I maintain very few claims of originality concerning the presentation of the material. 
-  Besides <xref ref="bib-Neukirch"/>, the main source of inspiration was Milne's lecture notes on class field theory <xref ref="bib-Milne-CFT"/>.
-  The basic approach may be summarized as follows: I follow Milne's treatment of local class field theory using group cohomology, then follow Neukirch to  recast local class field theory in the style of Artin-Tate's class formations, then reuse the same framework to obtain global class field theory. 
-  Since the original draft of these notes was written, several treatments have appeared in a similar vein: <xref ref="bib-Neukirch-CFT"/>, <xref ref="bib-Harari"/>.
-</p>
-<p>
-As of winter 2021, I am using these notes for <url href="https://math.ucsd.edu/~kkedlaya/math204b/">a class </url> and so am starting to make somewhat more serious revisions.
-Corrections and comments are welcome.
-</p>
-<acknowledgment>
-<p>
-  Thanks to Zonglin Jiang, Justin Lacini, and Zongze Liu for their feedback on previous drafts,
-  and to the participants in Math 204B (winter 2021) for <q>test-driving</q> the HTML version and generating much additional feedback.
-  Thanks also to Rob Beezer and David Farmer for their assistance with the conversion from <latex/> to <url href="https://pretextbook.org/"><pretext /></url>,
-  which made it feasible to produce an HTML version.
-</p>
-</acknowledgment>
+  <p>
+    The assumed background for the course was a one-semester graduate course in algebraic number theory, including the following topics: 
+    number fields and rings of integers; structure of the class and unit groups; splitting, ramification,
+    and inertia of prime ideals under finite extensions; different and discriminant; basic properties of local fields.
+    In fact, most of the students in Math 254B had attended such a course that I gave the previous
+    semester (Math 254A) based on chapters I, II, and III of Neukirch's book <xref ref="bib-Neukirch"/>; 
+    for that reason, it was natural to use that book as a primary reference. 
+    However, no special features of that presentation are assumed, so just about any graduate-level text on algebraic
+    number theory (e.g., Fr&#xf6;hlich-Taylor <xref ref="bib-Frohlich-Taylor"/>, Janusz <xref ref="bib-Janusz"/>, Jarvis <xref ref="bib-Jarvis"/>, Lang <xref ref="bib-Lang"/>) should provide suitable background.
+  </p>
+  <p>
+    After the course ended, I kept the lecture notes posted on my web site in their originally written, totally uncorrected state.
+    Despite their roughness, I heard back from many people over the years who had found them useful;
+    as a result, I decided to prepare a corrected version of the notes. In so doing, I made a conscious decision
+    to suppress any temptation to modify 
+    the presentation with the benefit of hindsight, or to fill in additional material to make the text more self-contained.
+    This decision, while largely dictated by lack of time and energy, was justified by the belief that the
+    informality of the original notes contributed to their readibility. In other words, this is not intended as a standalone
+    replacement for a good book on class field theory!
+  </p>
+  <p>
+    I maintain very few claims of originality concerning the presentation of the material. 
+    Besides <xref ref="bib-Neukirch"/>, the main source of inspiration was Milne's lecture notes on class field theory <xref ref="bib-Milne-CFT"/>
+    (and by extension the original development by Artin and Tate <xref ref="bib-Artin-Tate"/>).
+    The basic approach may be summarized as follows: I follow Milne's treatment of local class field theory using group cohomology, then follow Neukirch to  recast local class field theory in the style of Artin-Tate's class formations, then reuse the same framework to obtain global class field theory. 
+    Since the original draft of these notes was written, several treatments have appeared in a similar vein: <xref ref="bib-Neukirch-CFT"/>, <xref ref="bib-Harari"/>.
+    (See also <xref ref="bib-Gras"/> for a modern exposition of a more classical approach.)
+  </p>
+  <p>
+    As of winter 2021, I am using these notes for <url href="https://math.ucsd.edu/~kkedlaya/math204b/">a class </url> and so am starting to make somewhat more serious revisions.
+    Corrections and comments are welcome.
+  </p>
+  <acknowledgment>
+    <p>
+      Thanks to Zonglin Jiang, Justin Lacini, and Zongze Liu for their feedback on previous drafts,
+      and to the participants in Math 204B (winter 2021) for <q>test-driving</q> the HTML version and generating much additional feedback.
+      Thanks also to Rob Beezer and David Farmer for their assistance with the conversion from <latex/> to <url href="https://pretextbook.org/"><pretext /></url>,
+      which made it feasible to produce an HTML version.
+    </p>
+  </acknowledgment>
 </preface>
 

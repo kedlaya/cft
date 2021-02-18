@@ -1,5 +1,11 @@
 ﻿<references>
   <title>Bibliography</title>
+  <biblio type="raw" xml:id="bib-Artin-Tate">
+    E. Artin and J. Tate, <pubtitle>Class Field Theory</pubtitle>.
+  </biblio>
+  <biblio type="raw" xml:id="bib-BCDT">
+    C. Breuil, B. Conrad, F. Diamond, and R. Taylor, <articletitle>On the modularity of elliptic curves over <m>\QQ</m>: wild 3-adic exercises</articletitle>.
+  </biblio>
   <biblio type="raw" xml:id="bib-AWS">
     B. Cais, B. Bhatt, A. Caraiani, K.S. Kedlaya, P. Scholze, and J. Weinstein, <pubtitle>Perfectoid Spaces: Lectures from the 2017 Arizona Winter School</pubtitle>,
     American Mathematical Society, 2019.
@@ -24,6 +30,9 @@
   </biblio>
   <biblio type="raw" xml:id="bib-Frohlich-Taylor">
     A. Fröhlich and M.J. Taylor, <pubtitle>Algebraic Number Theory</pubtitle>, Cambridge University Press, 1991.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Gras">
+    G. Gras, <pubtitle>Class Field Theory: From Theory to Practice</pubtitle>.
   </biblio>
   <biblio type="raw" xml:id="bib-Grothendieck-Tohoku">
     A. Grothendieck, <articletitle>Sur quelques points d'alg&#xe8;bre homologique</articletitle>.
@@ -82,6 +91,9 @@
   <biblio type="raw" xml:id="bib-Serre-AGCF">
     J.-P. Serre, <pubtitle>Algebraic Groups and Class Fields</pubtitle>.
   </biblio>
+  <biblio type="raw" xml:id="bib-Serre-CourseInArithmetic">
+    J.-P. Serre, <pubtitle>A Course in Arithmetic</pubtitle>.
+  </biblio>
   <biblio type="raw" xml:id="bib-Serre-Curves">
     J.-P. Serre, <pubtitle>Curves over Finite Fields</pubtitle>.
   </biblio>
@@ -97,6 +109,9 @@
   <biblio type="raw" xml:id="bib-Silverman-AEC">
     J. Silverman, <pubtitle>The Arithmetic of Elliptic Curves</pubtitle>.
   </biblio>
+  <biblio type="raw" xml:id="bib-Taylor-Wiles">
+    R. Taylor and A. Wiles, <articletitle>Ring-theoretic properties of certain Hecke algebras,</articletitle>.
+  </biblio>
   <biblio type="raw" xml:id="bib-Wang">
     S. Wang, <articletitle>A counter-example to Grunwald's theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>49</volume> (1948), 1008--1009.
   </biblio>
@@ -105,6 +120,9 @@
   </biblio>
   <biblio type="raw" xml:id="bib-Washington">
     L. Washington, <pubtitle>Introduction to Cyclotomic Fields</pubtitle>.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Wiles">
+    A. Wiles, <articletitle>Modular elliptic curves and Fermat’s Last Theorem</articletitle>.
   </biblio>
   <biblio type="raw" xml:id="bib-Zantema">
     H. Zantema, <articletitle>Integer valued polynomials over a number field</articletitle>.

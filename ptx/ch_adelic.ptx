@@ -1,6 +1,7 @@
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_adelic">
+﻿<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_adelic">
   <title>The adelic formulation</title>
   <xi:include  href="sec_adeles.ptx"/>
+  <xi:include  href="sec_ideles.ptx"/>
   <xi:include  href="sec_adeles-rel.ptx"/>
   <xi:include  href="sec_adelic-recip.ptx"/>
 </chapter>
