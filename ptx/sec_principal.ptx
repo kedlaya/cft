@@ -43,7 +43,7 @@
     <p>
       The idea of the proof is to apply Artin reciprocity to reduce to a problem purely in finite group theory, which we then solve.
       To this end, let <m>M</m> be the Hilbert class field of <m>L</m>;
-      then an ideal of <m>L</m> is principal if and only if its image under the Artin map <m>I_L \to \Gal(M/L)</m> is trivial.
+      then an ideal of <m>L</m> is principal if and only if its image under the Artin map <m>J_L \to \Gal(M/L)</m> is trivial.
       So our first step will be to give a purely group-theoretic description of the map <m>V: \Gal(L/K) \to \Gal(M/L)</m>
       corresponding to the extension homomorphism <m>\Cl(K) \to \Cl(L)</m> (i.e., making the diagram in <xref ref="fig-principal-1"/> commute,
       in which the horizontal arrows are Artin maps).

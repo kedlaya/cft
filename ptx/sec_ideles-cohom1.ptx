@@ -10,16 +10,17 @@
       </p>
     </paragraphs>
     <p>
-      By analogy with local class field theory,
-      we want to prove that for <m>K,L</m> number fields and
-      <m>C_K, C_L</m> their id&#xe8;le class groups,
-      <me>
-        H^1(\Gal(L/K), C_L) = 1, \qquad H^2(\Gal(L/K), C_L) = \ZZ/[L:K]\ZZ
-      </me>.
+      We finally embark on the proof of the main results of global class field theory, via the adelic reformulation
+      (<xref ref="sec_adelic-recip"/>) and specifically the outline from <xref ref="subsec-adelic-recip-outline"/>.
     </p>
     <p>
-      In this chapter,
-      we'll look at the special case <m>L/K</m> cyclic, and prove the following.
+      By analogy with local class field theory,
+      we want to prove that for <m>L/K</m> a cyclic extension of number fields 
+      and <m>C_K, C_L</m> the respective id&#xe8;le class groups of <m>K</m> and <m>L</m>,
+      <me>
+        H^1(\Gal(L/K), C_L) = 1, \qquad H^2(\Gal(L/K), C_L) = \ZZ/[L:K]\ZZ.
+      </me>
+      Our first step is to calculate the Herbrand quotient.
     </p>
     <theorem xml:id="T_first_inequality1">
       <statement>
@@ -37,12 +38,11 @@
       </proof>
     </theorem>
     <p>
-      As we'll see,
-      this will end up reducing to looking at units in a real vector space,
-      much as in the proof of Dirichlet's units theorem.
+      This will end up reducing to a study of lattices in a real vector space,
+      much as in the proof of Dirichlet's units theorem (<xref ref="cor-S-units-theorem"/>).
     </p>
     <p>
-      This will imply the so-called <q>First Inequality</q>.
+      From <xref ref="T_first_inequality1"/>, we will deduce the so-called <q>First Inequality</q>.
     </p>
     <theorem xml:id="T_first_inequality">
       <title>First Inequality</title>
@@ -71,26 +71,36 @@
       <p>
         Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>.
         (We do not yet need <m>G</m> to be cyclic.)
-        For any finite set <m>S</m> of places of <m>K</m> containing all infinite places and all ramified primes,
-        let <m>I_{L,S}</m> be the set of id&#xe8;les with a unit at each component other than at the places dividing any places in <m>S</m>.
-        Note that <m>I_{L,S}</m> is stable under <m>G</m>
-        (because we defined it in terms of places of <m>K</m>, not <m>L</m>).
-        By definition,
-        <m>I_L</m> is the direct limit of the <m>I_{L,S}</m> over all <m>S</m>.
+        For any finite set <m>S</m> of places of <m>K</m> containing all infinite places,
+        write <m>I_{L,S}</m> to mean the group <m>I_{L,T}</m> where <m>T</m> denotes the set of places of <m>L</m> lying over some place in <m>S</m>.
+        Similarly, write <m>\gotho_{L,S}</m> to mean <m>\gotho_{L,T}</m>.
+      </p>
+      <p>
+        Note that each <m>I_{L,S}</m> is stable under the action of <m>G</m> and that <m>I_L</m> is the direct limit of the <m>I_{L,S}</m> over all <m>S</m>.
+        Moreover, by <xref ref="lem-generate-ideles-with-S-units"/>, for <m>S</m> sufficiently large we have
+        <me>
+          I_L = I_{L,S} L^*.
+        </me>
       </p>
     </definition>
     <proposition xml:id="prop-idele-cohomology-local">
       <statement>
         <p>
           Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>.
-          For each <m>i>0</m>, <m>H^i(G, I_L) = \bigoplus_v H^i(G_v, L_v^*)</m>.
-          For each <m>i</m>, <m>H^i_T(G, I_L) = \bigoplus_v H^i_T(G_v, L_v^*)</m>.
+          For each <m>i>0</m>, 
+          <me>
+            H^i(G, I_L) = \bigoplus_v H^i(G_v, L_v^*).
+          </me>
+          For each <m>i</m>,
+          <me>
+            H^i_T(G, I_L) = \bigoplus_v H^i_T(G_v, L_v^*).
+          </me>
         </p>
       </statement>
     <proof>
       <p>
-        Since <m>I_L</m> is the direct limit of the <m>I_{L,S}</m> over all <m>S</m>,
-        <m>H^i(G,I_L)</m> is the direct limit of the <m>H^i(G, I_{L,S})</m>.
+        View <m>I_L</m> as the direct limit of the <m>I_{L,S}</m> over all finite sets <m>S</m> of places of <m>K</m> containing all infinite places
+        and all ramified places; then <m>H^i(G,I_L)</m> is the direct limit of the <m>H^i(G, I_{L,S})</m>.
         The latter is the product of
         <m>H^i(G, \prod_{w|v} L_w^*)</m> over all <m>v \in S</m> and
         <m>H^i(G, \prod_{w|v} \gotho_{L_w}^*)</m> over all <m>v \notin S</m>,
@@ -118,12 +128,13 @@
       </proof>
     </corollary>
     <remark>
-    <p>
-      As a sanity check, note that the case <m>i=0</m> of <xref ref="prop-idele-cohomology-local"/> asserts something that is evidently true:
-      an id&#xe8;le in <m>I_K</m>is a norm from <m>I_L</m> if and only if each component is a norm.
-    </p>
+      <title>Sanity check</title>
+      <p>
+        The case <m>i=0</m> of <xref ref="prop-idele-cohomology-local"/> asserts something that is evidently true:
+        an id&#xe8;le in <m>I_K</m> is a norm from <m>I_L</m> if and only if each component is a norm.
+      </p>
     </remark>
-    <remark>
+    <remark xml:id="rmk-adelic-norm-open">
       <p>
       If <m>S</m> contains all infinite places and all ramified places, then
       <me>
@@ -153,85 +164,34 @@
   </subsection>
   <subsection>
     <title>Cohomology of the units: first steps</title>
-    <p>
-      We now
-      Remember, we're going to be assuming
-      <m>G = \Gal(L/K)</m> is cyclic until further notice,
-      so that we may use periodicity of the Tate groups,
-      and the Herbrand quotient.
-    </p>
-    <p>
-      We first observe that we can replace <m>I_L</m> with <m>I_{L,S}</m> for some conveniently large set of places <m>S</m>.
-    </p>
-    <lemma xml:id="lem-generate-ideles-with-S-units">
-      <statement>
-        <p>
-          Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>.
-          Then there exists a finite set <m>S</m> of places of <m>K</m> such that
-          <me>
-           I_L = I_{L,S} L^*.
-          </me>
-          In particular, for any such <m>S</m>, <m>C_L</m> is a quotient of <m>I_{L,S}</m>.
-        </p>
-      </statement>
-      <proof>
-        <p>
-          Since <m>\Cl(L) = I_L/L^*</m> is finite, it is generated by some finite set of primes.
-          By ensuring that each of these lies over a finite place in <m>S</m>, we achieve the desired effect.
-        </p>
-      </proof>
-    </lemma>
-    <remark>
-      <p>
-        The proof of <xref ref="lem-generate-ideles-with-S-units"/> can also be used to prove that <m>C^0_L</m> is compact
-        (<xref ref="P_idele_group_compact"/>), except that one cannot then deduce the finiteness of the ideal class group as a corollary (as this would be circular).
-      </p>
-    </remark>
     <definition xml:id="def-idele-S-units-Herbrand">
-    <p>
-      Let <m>L/K</m> be a cyclic extension of number fields.
-      For some <m>S</m> as in <xref ref="lem-generate-ideles-with-S-units"/>, let <m>L_S = L^* \cap I_{L,S}</m> be the group of <term><m>S</m>-units</term> in <m>L</m>.
-      From the exact sequence
-      <me>
-        1 \to L_S \to I_{L,S} \to I_{L,S}/L_S = C_L \to 1
-      </me>
-      we have an equality of Herbrand quotients
-      <me>
-        h(C_L) = h(I_{L,S})/h(L_S).
-      </me>
-    </p>
-    <p>
-      By <xref ref="cor-idele-cohomology-local"/>, we may compute the Herbrand quotient
-      <me>
-        h(I_{L,S}) = \prod_{v \in S} \#H^0_T(G_v, L_w^*)= \prod_{v \in S} [L_w:K_v].
-      </me>
-    </p>
-    <p>
-      To get <m>h(C_L) = [L:K]</m>, we thus need the equality
-      <me>
-        h(L_S) = \frac{1}{[L:K]} \prod_{v \in S} [L_w:K_v].
-      </me>.
-    </p>
-    <p>
-      This will in fact be true even if we only assume <m>S</m> contains all infinite places,
-      as we check below (<xref ref="lem-Herbrand-S-units"/>).
-    </p>
+      <p>
+        Let <m>L/K</m> be a cyclic extension of number fields.
+        Apply <xref ref="lem-generate-ideles-with-S-units"/> to choose a finite set <m>S</m> of places of <m>K</m> so that <m>I_L = I_{L,S} L^*</m>.
+        From the exact sequence
+        <me>
+          1 \to \gotho_{L,S}^* \to I_{L,S} \to I_{L,S}/\gotho_{L,S}^* = C_L \to 1
+        </me>
+        we have an equality of Herbrand quotients
+        <me>
+          h(C_L) = h(I_{L,S})/h(\gotho_{L,S}^*).
+        </me>
+      </p>
+      <p>
+        By <xref ref="cor-idele-cohomology-local"/>, we may compute the Herbrand quotient
+        <me>
+          h(I_{L,S}) = \prod_{v \in S} \#H^0_T(G_v, L_w^*)= \prod_{v \in S} [L_w:K_v].
+        </me>
+        To get <m>h(C_L) = [L:K]</m>, it will thus suffice to establish <xref ref="lem-Herbrand-S-units"/> below.
+      </p>
     </definition>
-    </subsection>
-    <subsection>
-    <title>Cohomology of the units: a computation with <m>S</m>-units</title>
-    <p>
-      At this point, we have reduced the computation of the Herbrand quotient <m>h(I_L)</m>, and by extension the First Inequality,
-      to the computation of <m>h(L_S)</m> for a suitable set <m>S</m> of places of <m>K</m>. We treat this point next, using similar
-      ideas to the proof of Dirichlet's units theorem.
-    </p>
     <lemma xml:id="lem-Herbrand-S-units">
       <statement>
         <p>
-          Let <m>L/K</m> be a finite cyclic extension of number fields.
+          Let <m>L/K</m> be a cyclic extension of number fields.
           Let <m>S</m> be a finite set of places of <m>K</m> containing all infinite places. Then
           <me>
-            h(L_S) = \frac{1}{[L:K]} \prod_{v \in S} [L_w:K_v].
+            h(\gotho_{L,S}^*) = \frac{1}{[L:K]} \prod_{v \in S} [L_w:K_v].
           </me>
         </p>
       </statement>
@@ -242,26 +202,30 @@
         </p>
       </proof>
     </lemma>
+  </subsection>
+  <subsection>
+    <title>Cohomology of the units: a computation with <m>S</m>-units</title>
+    <p>
+      At this point, we have reduced the computation of the Herbrand quotient <m>h(I_L)</m>, and by extension the First Inequality,
+      to the computation of <m>h(\gotho_{L,S}^*)</m> for a suitable set <m>S</m> of places of <m>K</m>. We treat this point next, using similar
+      ideas to the proof of Dirichlet's units theorem (<xref ref="cor-S-units-theorem"/>).
+    </p>
     <definition xml:id="def-Herbrand-quotient-real-lattices1">
         <p>
-          With notation as in <xref ref="lem-Herbrand-S-units"/>, let <m>T</m> be the set of places of <m>L</m> dividing the places of <m>S</m>.
+          Let <m>L/K</m> be a cyclic extension of number fields.
+          Let <m>S</m> be a finite set of places of <m>K</m> containing all infinite places, and let <m>T</m> be the set of places of <m>L</m> lying above places of <m>S</m>.
           Let <m>V</m> be the real vector space consisting of one copy of <m>\RR</m> for each place in <m>T</m>.
-          Define the map <m>L_S \to V</m> by sending
+          Define the map <m>\gotho_{L,S}^* \to V</m> by
           <me>
-            L_S \to V, \qquad \alpha \to \prod_{w \in T} \log |\alpha|_w
+            \alpha \to \prod_{w \in T} \log |\alpha|_w
           </me>
-          with normalizations as in <xref ref="def-normalized-adele-norm"/>;
-          by Kronecker's theorem (any algebraic integer whose conjugates in <m>\CC</m> all have norm 1 is a root of unity),
-          the kernel of this map consists of roots of unity.
+          with normalizations as in <xref ref="def-normalized-adele-norm"/>.
+          By the product formula (<xref ref="prop-product-formula"/>) and Dirichlet's units theorem (<xref ref="cor-S-units-theorem"/>), the kernel of this map consists of roots of unity,
+          and the image <m>M</m> is a lattice in the trace-zero hyperplane <m>H</m> of <m>V</m>.
         </p>
         <p>
-          Let <m>M</m> be the image of <m>L_S</m> in <m>V</m>;
-          since the kernel of <m>L_S \to V</m> is finite, we have <m>h(M) = h(L_S)</m>.
-          Let <m>H \subset V</m> be the hyperplane of vectors with sum of coordinates 0;
-          by the product formula (<xref ref="prop-product-formula"/>), <m>M</m> maps into <m>H</m>.
-          By Dirichlet's units theorem (<xref ref="cor-S-units-theorem"/>), <m>M</m> is a lattice in <m>H</m>;
-          moreover, we have an action of <m>G</m> on <m>V</m> compatible with the embedding of <m>M</m>:
-          <m>G</m> acts on the places in <m>T</m>, so it acts on <m>V</m> by permuting the coordinates.
+          Put <m>G = \Gal(L/K)</m>.
+          We have an action of <m>G</m> on <m>V</m> compatible with the embedding of <m>M</m> and the map from <m>\gotho_{L,S}^*</m>.
         </p>
     </definition>
     <remark>
@@ -295,7 +259,7 @@
     </definition>
     <p>
       To sum up, the calculations from <xref ref="def-Herbrand-quotient-real-lattices1"/> and <xref ref="def-Herbrand-quotient-real-lattices2"/>
-      reduce <xref ref="lem-Herbrand-quotient-real-lattices"/> to the following statement (<xref ref="lem-Herbrand-quotient-real-lattices"/>).
+      reduce <xref ref="lem-Herbrand-S-units"/> to the following statement (<xref ref="lem-Herbrand-quotient-real-lattices"/>).
     </p>
     </subsection>
     <subsection>

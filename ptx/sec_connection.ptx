@@ -446,7 +446,7 @@
     <proposition xml:id="prop-reciprocity-trivial-on-diagonal3">
       <statement>
         <p>
-          For any Galois extension <m>L/K</m>, the map <m>r_{L/K}</m> kills principal id&#xe8;les.
+          For any Galois extension <m>L/K</m> of number fields, the map <m>r_{L/K}</m> kills principal id&#xe8;les.
         </p>
       </statement>
       <proof>

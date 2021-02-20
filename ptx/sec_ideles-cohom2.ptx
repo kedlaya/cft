@@ -4,11 +4,12 @@
   <introduction>
     <paragraphs>
       <title>Reference</title>
-      <p><xref ref="bib-Milne-CFT"/> VII.5; <xref ref="bib-Neukirch"/> VI.4.
+      <p>
+        <xref ref="bib-Milne-CFT"/> VII.5; <xref ref="bib-Neukirch"/> VI.4.
       </p>
     </paragraphs>
     <p>
-      In the previous chapter,
+      In <xref ref="sec_ideles-cohom1"/>,
       we proved that for <m>L/K</m> a cyclic extension of number fields,
       the Herbrand quotient <m>h(C_L)</m> of the id&#xe8;le class group of <m>L</m> is equal to <m>[L:K]</m>
       (<xref ref="T_first_inequality1"/>)
@@ -19,24 +20,25 @@
     <p>
       For this step, we have no local analogue to draw upon: the corresponding assertion in local class field theory
       is covered by Theorem 90 (<xref ref="L_theorem_90"/>). Unfortunately, there seems to be no direct approach to computing <m>H^1(\Gal(L/K), C_L)</m>,
-      so some alternate strategy is needed.  In this lecture, we take an analytic approach motivated by the proof of Dirichlet's theorem on
-      primes in arithmetic progressions; see <xref ref="L_second_inequality_analytic"/>. There is also an algebraic approach, but we prefer to postpone discussing it
+      so some alternate strategy is needed.
+    </p>
+    <p>
+      We take an analytic approach motivated by the proof of Dirichlet's theorem on primes in arithmetic progressions; see <xref ref="L_second_inequality_analytic"/>. There is also an algebraic approach, but we prefer to postpone discussing it
       until we are ready to tackle the existence theorem, as these two topics share similar ideas; see <xref ref="T_first_and_second_inequality_algebraic"/>.
     </p>
   </introduction>
   <subsection>
     <title>Back to ideals</title>
     <p>
-      For the analytic proof,
-      we need to recast the Second Inequality back into classical,
+      For the analytic proof, we need to recast the Second Inequality back into classical,
       ideal-theoretic language. In this argument, there is no need to assume that <m>L/K</m> is cyclic.
     </p>
     <definition xml:id="def-second-inequality-analytic">
       <p>
       Let <m>L/K</m> be a finite Galois extension and <m>\gothm</m> a formal product of places of <m>K</m>.
-      As in <xref ref="def-generalized-ideal-class-groups"/>, let <m>I_{\gothm}</m> be the group of fractional ideals of <m>K</m> coprime to <m>\gothm</m>;
-      similarly, let <m>J_{\gothm}</m> be the group of fractional ideals of <m>L</m> coprime to <m>\gothm</m>.
-      Let <m>P_{\gothm}</m> be the subgroup of principal ideals admitting a generator <m>\alpha</m> such that:
+      As in <xref ref="def-generalized-ideal-class-groups"/>, let <m>J^{\gothm}_K</m> be the group of fractional ideals of <m>K</m> coprime to <m>\gothm</m>;
+      similarly, let <m>J^{\gothm}_L</m> be the group of fractional ideals of <m>L</m> coprime to <m>\gothm</m>.
+      Let <m>P^{\gothm}_K</m> be the subgroup of principal ideals admitting a generator <m>\alpha</m> such that:
         <ol>
           <li>
             <p>
@@ -51,7 +53,7 @@
         </ol>
       In this notation, the Second Inequality states that
       <me>
-        [I_{\gothm} : P_{\gothm} \Norm_{L/K} J_{\gothm}] \leq [L:K].
+        [J^{\gothm}_K : P^{\gothm}_{K} \Norm_{L/K} J^{\gothm}_L] \leq [L:K].
       </me>
       </p>
     </definition>
@@ -99,13 +101,13 @@
       <statement>
         <p>
           With notation as in <xref ref="def-second-inequality-analytic"/>,
-          for any subgroup <m>H</m> of <m>I_{\gothm}</m> containing <m>P_{\gothm}</m>,
-          the set of primes in <m>H</m> has Dirichlet density equal to either <m>0</m> or <m>1/[I_{\gothm}:H]</m>.
+          for any subgroup <m>H</m> of <m>J^{\gothm}_{K}</m> containing <m>P_{\gothm}</m>,
+          the set of primes in <m>H</m> has Dirichlet density equal to either <m>0</m> or <m>1/[J^{\gothm}_{K}:H]</m>.
         </p>
       </statement>
       <proof>
         <p>
-          For <m>\chi: I_{\gothm}/P_{\gothm} \to \CC^*</m> a character,
+          For <m>\chi: J^{\gothm}_K/P^{\gothm}_K \to \CC^*</m> a character,
           we defined the <term><m>L</m>-function</term>
           <me>
             L(s, \chi) = \prod_{\gothp \not| \gothm} \frac{1}{1 - \chi(\gothp) \Norm(\gothp)^{-s}}
@@ -124,13 +126,13 @@
           </me>
           By discrete Fourier analysis (or equivalently orthogonality of characters),
           <me>
-            \sum_{\chi: I_{\gothm}/H \to \CC^*} \log L(s, \chi) \sim [I_{\gothm}:H] \sum_{\gothp \in H} \frac{1}{\Norm(\gothp)^{-s}}.
+            \sum_{\chi: J^{\gothm}_{K}/H \to \CC^*} \log L(s, \chi) \sim [J^{\gothm}_K:H] \sum_{\gothp \in H} \frac{1}{\Norm(\gothp)^{-s}}.
           </me>
           We conclude that the set of primes in <m>H</m> has Dirichlet density
           <me>
-            \frac{1 - \sum_{\chi \neq 1} m(\chi)}{[I_{\gothm}:H]};
+            \frac{1 - \sum_{\chi \neq 1} m(\chi)}{[J^{\gothm}_K:H]};
           </me>
-          this is <m>1/[I_{\gothm}:H]</m> if the <m>m(\chi)</m> are all zero and 0 otherwise.
+          this is <m>1/[J^{\gothm}_{K}:H]</m> if the <m>m(\chi)</m> are all zero and 0 otherwise.
         </p>
       </proof>
     </lemma>
@@ -145,18 +147,18 @@
         <p>
           With notation as in <xref ref="def-second-inequality-analytic"/>, we have
           <me>
-            [I_{\gothm} : P_{\gothm} \Norm_{L/K} J_{\gothm}] \leq [L:K].
+            [J^{\gothm}_K : P^{\gothm}_K \Norm_{L/K} J^{\gothm}_{L}] \leq [L:K].
           </me>
         </p>
       </statement>
       <proof>
         <p>
-          Define the group <m>H = P_{\gothm} \Norm_{L/K} J_{\gothm} \subseteq I_{\gothm}</m>.
+          Define the group <m>H = P^{\gothm}_K \Norm_{L/K} J^{\gothm}_L \subseteq J^{\gothm}_K</m>.
           The group <m>H</m> includes every prime of <m>K</m> that splits completely,
           since such a prime is the norm of any prime of <m>L</m> lying over it.
           Thus on one hand, by <xref ref="prop-splitting-primes-density"/> the set of primes in <m>H</m> has Dirichlet density at least <m>1/[L:K]</m>.
-          On the other hand, by <xref ref="lem-subgroup-density"/> the same set has density either zero or <m>1/[I_{\gothm}:H]</m>.
-          We conclude that <m>[I_{\gothm}:H] \leq [L:K]</m>, as desired.
+          On the other hand, by <xref ref="lem-subgroup-density"/> the same set has density either zero or <m>1/[J^{\gothm}_K:H]</m>.
+          We conclude that <m>[J^{\gothm}_K:H] \leq [L:K]</m>, as desired.
         </p>
       </proof>
     </lemma>
@@ -266,11 +268,12 @@
         for all but finitely many places <m>v</m> of <m>K</m>. 
       </p>
       <p>
-        It was then shown by Wang <xref ref="bib-Wang"/> that this statement fails in the following way: the element 16 is an <m>8</m>th power in <m>K_v</m> for any place <m>v</m>
-        not lying above <m>2</m> (see <xref ref="exer-Wang"/>) but is of course not an <m>8</m>th power in <m>\QQ</m>.
+        It was then shown by Wang <xref ref="bib-Wang"/> that this statement fails in the following way: 
+        the element 16 is an <m>8</m>th power in <m>K_v</m> for any place <m>v</m>
+        not lying above <m>2</m> (see <xref ref="exer-Wang"/>) but need not be an <m>8</m>th power in <m>K</m>.
       </p>
       <p>
-        Finally, Wang <xref ref="bib-Wang2"/> established a corrected version of the theorem, which shows that the original statement is <q>nearly</q> correct.
+        Finally, Wang <xref ref="bib-Wang2"/> established a corrected version of the theorem, which shows that the original statement is <q>nearly</q> true.
         For example, it holds as written whenever <m>n</m> is odd.
       </p>
     </remark>
@@ -319,8 +322,8 @@
     <exercise xml:id="exer-Wang">
       <statement>
         <p>
-          Let <m>K</m> be a number field. Show that <m>16</m> is an <m>8</m>th power in <m>K</m> if and only if one of <m>-1, 2, -2</m> is a square in <m>K</m>.
-          Then deduce that <m>16</m> is an <m>8</m>th power in <m>K_v</m> for any place <m>v</m> not lying above <m>2</m>, even though it is not always an <m>8</m>th power in <m>K</m>.
+          Show that in any field <m>K</m> of characteristic not equal to 2, <m>16</m> is an <m>8</m>th power in <m>K</m> if and only if one of <m>-1, 2, -2</m> is a square in <m>K</m>.
+          Then deduce that for <m>K</m> a number field, <m>16</m> is an <m>8</m>th power in <m>K_v</m> for any place <m>v</m> not lying above <m>2</m>, even though it is not always an <m>8</m>th power in <m>K</m>.
         </p>
       </statement>
     </exercise>

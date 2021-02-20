@@ -79,7 +79,7 @@
       </li>
       <li>
         <p>
-          Another application of group cohomology: to computing ranks of elliptic curves (see <xref ref="bib-Silverman-AEC"/>, X).
+          Another application of group cohomology: to computing ranks of elliptic curves via <term>Selmer groups</term> (see <xref ref="bib-Silverman-AEC"/>, X).
         </p>
       </li>
       <li>
@@ -172,16 +172,23 @@
     For example, for <m>n=2</m>,
     this correspondence includes on one hand the <m>2</m>-dimensional Galois representations coming from elliptic curves,
     and on the other hand representations of
-    <m>\GL_2(\AA_K)</m> corresponding to modular forms.
+    <m>\GL_2(\AA_K)</m> corresponding to modular forms (see <xref ref="bib-Gelbart"/> for the reinterpretation of the classical theory of modular forms in this language).
     In particular, it includes the
     <term>modularity of elliptic curves</term>, proved by Breuil, Conrad, Diamond, and Taylor <xref ref="bib-BCDT"/>
     following on the celebrated work of Wiles <xref ref="bib-Wiles"/> and Taylor-Wiles <xref ref="bib-Taylor-Wiles"/> on Fermat's Last Theorem.
   </p>
   <p>
     Various analogues of the Langlands correspondence have been worked out:
-    for local fields by Harris and Taylor (with subsequent simplifications by Henniart and Scholze),
-    and for function fields by L. Lafforgue and (in more generality) V. Lafforgue, based on the work of Drinfeld.
-    The work of Waldspurger and of Laumon and Ng&#xf4; on the Langlands fundamental lemma is also part of this story.
+    for local fields by Harris and Taylor <xref ref="bib-Harris-Taylor"/>,
+    with subsequent simplifications by Henniart <xref ref="bib-Henniart"/> and Scholze <xref ref="bib-Scholze"/>;
+    and for function fields by L. Lafforgue <xref ref="bib-Lafforgue_L"/>, building on the case <m>n=2</m> which was treated by Drinfeld.
+    Moreover, one can pin things down better by replacing <m>\GL_n</m> with a more general algebraic group;
+    in the function fields, this case is addressed by V. Lafforgue <xref ref="bib-Lafforgue-V"/>.
+    The work of Waldspurger <xref ref="bib-Waldspurger"/> of Laumon and Ng&#xf4; <xref ref="bib-Laumon-Ngo"/> on the Langlands fundamental lemma is also part of this story.
+  </p>
+  <p>
+    Recently, some intriguing links have emerged between the Langlands program and some duality theories appearing in mathematical physics,
+    leading to fruitful transfers of ideas in both directions. See <xref ref="bib-Kapustin-Witten"/> for the starting point.
   </p>
   <p>
     This discussion could be continued almost indefinitely, so I have made the arbitrary decision to stop here.

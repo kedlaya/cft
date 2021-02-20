@@ -24,29 +24,29 @@
       This embedding induces an inclusion <m>I_K \hookrightarrow I_L</m> of id&#xe8;le groups.
     </p>
     <p>
-      If <m>L/K</m> is Galois with Galois group <m>G</m>,
-      then <m>G</m> acts naturally on <m>\AA_L</m> and <m>I_L</m>.
+      All automorphisms of <m>L/K</m> act naturally on on <m>\AA_L</m> and <m>I_L</m>.
       More generally, if <m>g \in \Gal(\overline{K}/K)</m>,
       then <m>g</m> maps <m>L</m> to some other extension <m>L^g</m> of <m>K</m>,
-      and <m>G</m> induces isomorphisms of <m>\AA_L</m> with
-      <m>\AA_{L^g}</m> and of <m>I_L</m> with <m>I_{L^g}</m>.
-      Namely, if <m>(\alpha_v)_v</m> is an id&#xe8;le over <m>L</m> and <m>g \in G</m>,
+      and <m>g</m> induces isomorphisms 
+      <me>
+        \AA_L \to \AA_{L^g}, \qquad I_L \cong I_{L^g}, \qquad C_L \to C_{L^g}.
+      </me>
+      Explicitly, if <m>(\alpha_v)_v \in \AA_L</m> and <m>g \in G</m>,
       then <m>g</m> maps the completion <m>L_v</m> of <m>L</m> to a completion <m>L_{v^g}</m> of <m>L^g</m>.
-      (Remember, a place <m>v</m> corresponds to an absolute value <m>|\cdot|_v</m> on <m>L</m>;
+      (Remember that a place <m>v</m> corresponds to an absolute value <m>|\cdot|_v</m> on <m>L</m>;
       the absolute value <m>|\cdot|_{v^g}</m> on <m>L^g</m> is given by <m>|a^g|_{v^g} = |a|_v</m>.)
-    </p>
-    <p>
-      As you might expect,
-      this action is compatible with the embeddings of <m>L</m> in <m>I_L</m> and <m>L^g</m> in <m>I_{L^g}</m>,
-      so it induces an isomorphism
-      <m>C_L \to C_{L^g}</m> of id&#xe8;le class groups.
     </p>
   </definition>
   <remark>
-    <title>Aside</title>
     <p>
       A more conceptual interpretation of the previous discussion is to identify <m>\AA_L</m> with the tensor product <m>\AA_K \otimes_K L</m>.
       In particular, this is a good way to see the Galois action on <m>\AA_L</m>. See <xref ref="exer-adeles-tensor-product"/>.
+    </p>
+  </remark>
+  <remark>
+    <p>
+      It is possible to show that every automorphism of <m>\AA_K</m> is induced by an automorphism of <m>K</m> over <m>\QQ</m>, even if we ignore topology and consider
+      automorphisms of the underlying ring which need not be continuous. See <xref ref="exer-automorphisms-AK"/>.
     </p>
   </remark>
   </subsection>
@@ -60,10 +60,9 @@
         \Trace_{L/K}(x) = \sum_g x^g, \qquad \Norm_{L/K}(x) = \prod_g x^g
       </me>
       where <m>g</m> runs over coset representatives of
-      <m>\Gal(\overline{K}/L)</m> in <m>\Gal(\overline{K}/K)</m>,
-      the sum and product taking places in the ad&#xe8;le and id&#xe8;le rings of the Galois closure of <m>L</m> over <m>K</m>.
-      In particular, if <m>L/K</m> is Galois,
-      <m>g</m> simply runs over <m>\Gal(L/K)</m>.
+      <m>\Gal(\overline{K}/L)</m> in <m>\Gal(\overline{K}/K)</m>.
+      Here the sum and product take place in the ad&#xe8;le and id&#xe8;le rings of the Galois closure of <m>L</m> over <m>K</m>;
+      in particular, if <m>L/K</m> is Galois, <m>g</m> simply runs over <m>\Gal(L/K)</m> and the arithmetic takes place in <m>\AA_L</m>.
     </p>
     <p>
       In terms of components, these definitions translate as
@@ -73,13 +72,11 @@
       </md>
     </p>
     <p>
-      The trace and norm do what you expect on principal ad&#xe8;les/id&#xe8;les.
-      In particular,
-      the norm descends to a map <m>\Norm_{L/K}: C_L \to C_K</m>.
+      The trace and norm as defined here are compatible with the usual definitions for principal ad&#xe8;les/id&#xe8;les.
+      In particular, the norm induces a map <m>\Norm_{L/K}: C_L \to C_K</m>.
     </p>
   </definition>
   <remark>
-    <title>Aside</title>
     <p>
       You can also define the trace of an ad&#xe8;le
       <m>\alpha \in \AA_L</m> as the trace of addition by <m>\alpha</m> as an endomorphism of the finite free <m>\AA_K</m>-module <m>\AA_L</m>,
@@ -114,6 +111,12 @@
         Thus <m>(\alpha)</m> is an ad&#xe8;le or id&#xe8;le over <m>K</m>.
       </p>
     </proof>
+    <p>
+      This has the following consequence for id&#xe8;le class groups. Note that for <m>L/K</m> any extension of number fields,
+      we can see that <m>C_K \to C_L</m> is injective from the fact that <m>L^* \cap I_K = K^*</m> within <m>I_L</m>,
+      which follows from the fact that <m>L \cap \AA_K = K</m> within <m>\AA_L</m>
+      (e.g., by <xref ref="exer-integral-closure-adelic"/>).
+    </p>
     <corollary xml:id="cor-idele-group-galois-descent">
       <title>Galois descent</title>
       <statement>
@@ -141,7 +144,7 @@
     <remark>
       <p>
         There is no analogue of <xref ref="cor-idele-group-galois-descent"/> for ideal class groups:
-        the map <m>\Cl_K \to \Cl_L^G</m> is neither injective nor surjective in general.
+        the map <m>\Cl(K) \to \Cl(L)^G</m> is neither injective nor surjective in general (<xref ref="exer-map-of-class-groups"/>).
         This is our first hint of why the id&#xe8;le class group will be a more convenient target for a reciprocity map than the ideal class group.
       </p>
     </remark>
@@ -151,6 +154,7 @@
       <statement>
         <p>
           Let <m>L/K</m> be a finite extension of number fields. Prove that the natural map <m>\AA_K \otimes_K L \to \AA_L</m> is an isomorphism.
+          In other words, if <m>\alpha_1,\dots,\alpha_n</m> form a basis of <m>L</m> as a <m>K</m>-vector space, then they also form a basis of <m>\AA_L</m> as an <m>\AA_K</m>-module.
         </p>
       </statement>
     </exercise>
@@ -167,7 +171,7 @@
         </p>
       </hint>
     </exercise>
-    <exercise>
+    <exercise xml:id="exer-automorphisms-AK">
       <statement>
         <p>
           Let <m>K</m> be a Galois number field. Prove that the automorphism group of <m>\AA_K</m> as a bare ring (ignoring its topology) equals <m>\Gal(K/\QQ).</m>
@@ -176,6 +180,31 @@
       <hint>
         <p>
           Combine <xref ref="exer-automorphisms-AQ"/> with <xref ref="exer-integral-closure-adelic"/>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise xml:id="exer-map-of-class-groups">
+      <statement>
+        <p>
+          Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>.
+          <ol>
+            <li>
+              <p>
+                Give an example for which <m>\Cl(K) \to \Cl(L)^G</m> fails to be injective.
+              </p>
+            </li>
+            <li>
+              <p>
+                Give an example for which <m>\Cl(K) \to \Cl(L)^G</m> fails to be surjective.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          One way to produce failures of injectivity is via the principal ideal theorem (<xref ref="T_principal_ideal_theorem"/>).
+          One way to produce failures of surjectivity is to find quadratic fields with class group <m>\ZZ/4\ZZ</m>.
         </p>
       </hint>
     </exercise>

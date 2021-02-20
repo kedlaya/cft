@@ -55,7 +55,7 @@
       Thanks to Zonglin Jiang, Justin Lacini, and Zongze Liu for their feedback on previous drafts,
       and to the participants in Math 204B (winter 2021) for <q>test-driving</q> the HTML version and generating much additional feedback.
       Thanks also to Rob Beezer and David Farmer for their assistance with the conversion from <latex/> to <url href="https://pretextbook.org/"><pretext /></url>,
-      which made it feasible to produce an HTML version.
+      which made it feasible to produce an <url href="https://kskedlaya.org/cft">HTML version</url> in sync with the PDF version.
     </p>
   </acknowledgment>
 </preface>

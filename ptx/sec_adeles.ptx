@@ -343,15 +343,15 @@
         </p>
       </proof>
     </proposition>
-    <corollary>
+    <corollary xml:id="cor-adeles-discrete">
       <p>
         The subset <m>K</m> of <m>\AA_K</m> is discrete.
       </p>
     </corollary>
-    <definition>
+    <definition xml:id="def-adelic-S-integers">
     <p>
-      For any finite set <m>S</m> of places, let <m>\AA_S</m> (resp.
-      <m>\AA^{\fin}_S</m>) be the subring of <m>\AA_K</m> (resp.
+      For any finite set <m>S</m> of places, let <m>\AA_{K,S}</m> (resp.
+      <m>\AA^{\fin}_{K,S}</m>) be the subring of <m>\AA_K</m> (resp.
       <m>\AA^{\fin}_K</m>) consisting of those ad&#xe8;les which are integral at all finite places not contained in <m>S</m>.
       The elements of <m>\AA_S</m> might be thought of as <q>adelic <m>S</m>-integers</q>.
     </p>
@@ -363,7 +363,7 @@
       <statement>
         <p>
           For any finite set <m>S</m> of places,
-          <m>K + \AA_S^{\fin} = \AA_K^{\fin}</m> and <m>K + \AA_S = \AA_K</m>.
+          <m>K + \AA_{K,S}^{\fin} = \AA_K^{\fin}</m> and <m>K + \AA_{K,S} = \AA_K</m>.
         </p>
       </statement>
       <proof>

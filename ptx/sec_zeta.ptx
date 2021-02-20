@@ -309,6 +309,11 @@
           </li>
         </ol>
         </statement>
+        <hint>
+          <p>
+            Estimate <m>\sum_{n=a}^b n^{-s}</m> using upper and lower Riemann sums for the integral of <m>x^{-s}\,dx</m>.
+          </p>
+        </hint>
       </exercise>
   </exercises>
 </section>

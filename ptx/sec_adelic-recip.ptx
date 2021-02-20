@@ -34,6 +34,7 @@
           There is a canonical map <m>r_K: C_K \to \Gal(K^{\ab}/K)</m> which induces,
           for each Galois extension <m>L/K</m> of number fields,
           an isomorphism <m>r_{L/K}: C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}</m>.
+          Moreover, <m>\Norm_{L/K} C_L</m> is an open subgroup of <m>C_K</m>.
         </p>
       </statement>
       <proof>
@@ -41,6 +42,7 @@
           We will first prove an <q>abstract</q> form of this theorem, in which we do not say much about the identity of the map <m>r_K</m>;
           see <xref ref="T_abstract_adelic_reciprocity"/>. We then prove a more precise version including a more specific recipe for the map; see <xref ref="prop-reciprocity-trivial-on-diagonal"/> for the
           recipe and <xref ref="prop-reciprocity-trivial-on-diagonal2"/> for the comparison with the abstract version.
+          (For the assertion that <m>\Norm_{L/K} C_L</m> is open in <m>C_K</m>, see <xref ref="rmk-adelic-norm-open"/>.)
         </p>
       </proof>
     </theorem>
@@ -110,7 +112,7 @@
       </ul>
       </p>
       <p>
-        Now note that we obtain a well-defined product map
+        We obtain a well-defined product map
         <me>
         \tilde{r}_K: I_K \to G, \qquad (\alpha_v) \mapsto \prod_v r_{K,v}(\alpha_v):
         </me>
@@ -193,7 +195,7 @@
       </p>
     </remark>
   </subsection>
-  <subsection>
+  <subsection xml:id="subsec-adelic-recip-outline">
     <title>What needs to be done</title>
     <p>
       Many of these steps will be analogous to the steps in local class field theory.
