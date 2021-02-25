@@ -1,5 +1,11 @@
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_main_results">
+﻿<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_main_results">
   <title>The main results</title>
+  <introduction>
+    <p>
+      We finally embark on the proof of the main results of global class field theory, via the adelic reformulation
+      (<xref ref="sec_adelic-recip"/>) and specifically the outline from <xref ref="subsec-adelic-recip-outline"/>.
+    </p>
+  </introduction>
   <xi:include  href="sec_ideles-cohom1.ptx"/>
   <xi:include  href="sec_ideles-cohom2.ptx"/>
   <xi:include  href="sec_abstr-recip.ptx"/>

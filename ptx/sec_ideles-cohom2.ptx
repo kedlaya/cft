@@ -19,7 +19,8 @@
     </p>
     <p>
       For this step, we have no local analogue to draw upon: the corresponding assertion in local class field theory
-      is covered by Theorem 90 (<xref ref="L_theorem_90"/>). Unfortunately, there seems to be no direct approach to computing <m>H^1(\Gal(L/K), C_L)</m>,
+      is covered by Theorem 90 (<xref ref="L_theorem_90"/>). Unfortunately, there seems to be no direct approach to computing either
+      <m>H^{-1}_T(\Gal(L/K), C_L)</m> or <m>H^1(\Gal(L/K), C_L)</m>,
       so some alternate strategy is needed.
     </p>
     <p>

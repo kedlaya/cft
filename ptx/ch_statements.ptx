@@ -1,5 +1,13 @@
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_statements">
+﻿<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_statements">
   <title>The statements of class field theory</title>
+  <introduction>
+    <p>
+      We next give the statements of the principal results of class field theory, with almost no proofs.
+      Our goal at this point is to clarify what the statements say and how they can be applied.
+      We will have to discuss plenty of other material before returning to the proofs, but the reader who wishes to peek ahead for a glimpse of the strategy
+      is directed to <xref ref="sec_look_ahead"/>.
+    </p>
+  </introduction>
   <xi:include  href="sec_hilbert.ptx"/>
   <xi:include  href="sec_artinrec.ptx"/>
   <xi:include  href="sec_principal.ptx"/>

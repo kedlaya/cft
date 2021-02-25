@@ -1,5 +1,22 @@
 ﻿<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_local">
   <title>Local class field theory</title>
+  <introduction>
+    <p>
+      We will spend the entirety of <xref ref="ch_local"/> establishing <term>local class field theory</term>,
+      a classification of the abelian extensions of a local field.
+      This will serve two purposes.
+      On one hand, the results of local class field theory can be used to assist in the proofs of the global theorems, as we saw with Kronecker-Weber.
+      On the other hand, they also give us a model set of proofs which we will attempt to emulate in the global case.
+    </p>
+    <p>
+      Recall that the term <term>local field</term>
+      refers to a finite extension either of the field of <m>p</m>-adic numbers <m>\QQ_p</m> or of the field of power series <m>\FF_q((t))</m>.
+      I'm going to abuse language and ignore the second case,
+      although all but a few things I'll say go through in the second case,
+      and I'll try to flag those when they come up.
+      (One big one: a lot of extensions have to be assumed to be separable for things to work right.)
+    </p>
+  </introduction>
   <xi:include  href="sec_localrecip.ptx"/>
   <xi:include  href="sec_localcomp.ptx"/>
   <xi:include  href="sec_tatethm.ptx"/>

@@ -7,32 +7,6 @@
         <xref ref="bib-Milne-CFT" />; <xref ref="bib-Neukirch" />, VI.1 and VI.2; <xref ref="bib-Lang" />, VII.
       </p>
     </paragraphs>
-    <p>
-      The <m>p</m>-adic numbers, and more general local fields,
-      were introduced into number theory as a way to translate local facts about number fields (i.e., facts concerning a single prime ideal) into statements of a topological flavor.
-      To prove the statements of class field theory,
-      we need an analogous global construction.
-      To this end,
-      we construct a topological object that includes all of the completions of a number field,
-      including both the archimedean and nonarchimedean ones.
-      This object will be the ring of <term>ad&#xe8;les</term>,
-      and it will lead us to the right target group for use in the abstract class field theory we have just set up.
-    </p>
-    <remark>
-    <title>Spelling note</title>
-    <p>
-      There is a lack of consensus regarding the presence or absence of accents in the words
-      <em>ad&#xe8;le</em> and <em>id&#xe8;le</em>.
-      The term <em>id&#xe8;le</em> is thought to be a contraction of
-      <q>ideal element</q>; it makes its first appearance,
-      with the accent, in Chevalley's 1940 paper <xref ref="bib-Chevalley" />.
-      The term <em>ad&#xe8;le</em> appeared in the 1950s, possibly as a contraction of
-      <q>additive id&#xe8;le</q>; it appears to have been suggested by Weil as a replacement for Tate's term
-      <q>valuation vector</q>
-      and Chevalley's term
-      <q>repartition</q>. Based on this history, we have opted for the accented spellings here.
-    </p>
-    </remark>
     <definition>
     <title>Jargon watch</title>
       By a <term>place</term> of a number field <m>K</m>,
@@ -163,30 +137,34 @@
     </p>
     <definition>
       <p>
-      We define the <term>ring of finite ad&#xe8;les</term>
-      <m>\AA^{\fin}_\QQ</m> as any of the following isomorphic objects:
-      <ul>
-        <li>
-          <p>
-            the tensor product <m>\widehat{\ZZ} \otimes_{\ZZ} \QQ</m>;
-          </p>
-        </li>
-        <li>
-          <p>
-            the direct limit of <m>\frac{1}{n} \widehat{\ZZ}</m> over all nonzero integers <m>n</m>;
-          </p>
-        </li>
-        <li>
-          <p>
-            the <term>restricted direct product</term>
-            <m>\sideset{}{'_p}\prod \QQ_p</m>,
-            where we only allow tuples <m>(\alpha_p)</m> for which
-            <m>\alpha_p \in \ZZ_p</m> for almost all <m>p</m>. See <xref ref="def-restricted-product"/>.
-          </p>
-        </li>
-      </ul>
-      This is a locally compact topological ring, with the groups <m>\frac{1}{n} \widehat{\ZZ}</m> forming a fundamental system of neighborhoods of 0
-      consisting of compact subgroups.
+        We define the <term>ring of finite ad&#xe8;les</term>
+        <m>\AA^{\fin}_\QQ</m> as any of the following isomorphic objects:
+        <ul>
+          <li>
+            <p>
+              the tensor product <m>\widehat{\ZZ} \otimes_{\ZZ} \QQ</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              the direct limit of <m>\frac{1}{n} \widehat{\ZZ}</m> over all nonzero integers <m>n</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              the <term>restricted direct product</term>
+              <m>\sideset{}{'_p}\prod \QQ_p</m>,
+              where we only allow tuples <m>(\alpha_p)</m> for which
+              <m>\alpha_p \in \ZZ_p</m> for almost all <m>p</m>. See <xref ref="def-restricted-product"/>.
+            </p>
+          </li>
+        </ul>
+        This is a locally compact topological ring, with the groups <m>\frac{1}{n} \widehat{\ZZ}</m> forming a fundamental system of neighborhoods of 0
+        consisting of compact subgroups. The natural group homomorphism
+        <me>
+          \QQ/\ZZ \to \AA^{\fin}_{\QQ}/\widehat{\ZZ}
+        </me>
+        is an isomorphism.
       </p>
     </definition>
     <p>
@@ -291,6 +269,11 @@
           </p>
         </li>
       </ul>
+      The natural homomorphism
+        <me>
+          K/\gotho_K \to \AA^{\fin}_{K}/\widehat{\gotho_K}
+        </me>
+        is an isomorphism.
     </p>
     <p>
       The ring of ad&#xe8;les <m>\AA_K</m> is the product <m>K_\RR \times \AA^{\fin}_K</m>. In other words, this is the restricted product
@@ -401,20 +384,20 @@
   </subsection>
   <exercises>
     <title>Exercises</title>
-      <exercise xml:id="exer-cover-adeles">
-        <statement>
-          <p>
-            Prove that the map from <m>[0,1] \times \prod_p \ZZ_p</m> to <m>\AA_\QQ/\QQ</m> is surjective.
-          </p>
-        </statement>
-      </exercise>
-      <exercise xml:id="exerc-crt-adeles">
-        <statement>
-          <p>
-            Prove <xref ref="P_adelic_CRT"/>.
-          </p>
-        </statement>
-      </exercise>
+    <exercise xml:id="exer-cover-adeles">
+      <statement>
+        <p>
+          Prove that the map from <m>[0,1] \times \prod_p \ZZ_p</m> to <m>\AA_\QQ/\QQ</m> is surjective.
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="exerc-crt-adeles">
+      <statement>
+        <p>
+          Prove <xref ref="P_adelic_CRT"/>.
+        </p>
+      </statement>
+    </exercise>
     <exercise xml:id="exer-no-local-automorphism-Q">
       <statement>
         Let <m>v</m> be a place of <m>\QQ</m>. Prove that every automorphism of the field <m>\QQ_v</m>, <em>not necessarily continuous</em>, is trivial.

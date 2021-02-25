@@ -14,6 +14,9 @@
   <biblio type="raw" xml:id="bib-Cassels-Frohlich">
     J.W.S. Cassels and A. Fr&#xf6;hlich, <pubtitle>Algebraic Number Theory</pubtitle>, Academic Press, London, 1967. 
   </biblio>
+  <biblio type="raw" xml:id="bib-Chabert">
+    J.-L. Chabert, <articletitle>From P&#xf3;lya fields to P&#xf3;lya groups, I: Galois extensions</articletitle>, <journal>Journal of Number Theory</journal> <volume>203</volume> (2019), 360<ndash/>375.
+  </biblio>
   <biblio type="raw" xml:id="bib-Chevalley">
     C. Chevalley, <articletitle>La th&#xe9;orie du corps de classes</articletitle>, <journal>Annals of Mathematics</journal> <volume>41</volume> (1940), 394<ndash/>418.
   </biblio>

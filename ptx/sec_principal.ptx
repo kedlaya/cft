@@ -220,7 +220,7 @@
       (See <xref ref="bib-Cassels-Frohlich"/> for more discussion.)
       </p>
     </remark>
-    <remark>
+    <remark xml:id="rmk-Polya-field">
       <p>
         Let <m>K</m> be a number field. Let <m>M</m> be the <m>\gotho_K</m>-submodule of <m>K[x]</m> consisting of <term>integer-valued</term> polynomials,
         meaning those that map <m>\gotho_K</m> into itself. The field <m>K</m> is said to be a <term>P&#xf3;lya field</term> if <m>M</m> admits a basis

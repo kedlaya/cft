@@ -1,5 +1,33 @@
 ﻿<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_adelic">
   <title>The adelic formulation</title>
+  <introduction>
+    <p>
+      The <m>p</m>-adic numbers, and more general local fields,
+      were introduced into number theory as a way to translate local facts about number fields (i.e., facts concerning a single prime ideal) into statements of a topological flavor.
+      To prove the statements of class field theory,
+      we need an analogous global construction.
+      To this end,
+      we construct a topological object that includes all of the completions of a number field,
+      including both the archimedean and nonarchimedean ones.
+      This object will be the ring of <term>ad&#xe8;les</term>,
+      and it will lead us to the right target group for use in the abstract class field theory we have just set up.
+    </p>
+    <remark>
+    <title>Spelling note</title>
+    <p>
+      There is a lack of consensus regarding the presence or absence of accents in the words
+      <em>ad&#xe8;le</em> and <em>id&#xe8;le</em>.
+      The term <em>id&#xe8;le</em> is thought to be a contraction of
+      <q>ideal element</q>; it makes its first appearance,
+      with the accent, in Chevalley's 1940 paper <xref ref="bib-Chevalley" />.
+      The term <em>ad&#xe8;le</em> appeared in the 1950s, possibly as a contraction of
+      <q>additive id&#xe8;le</q>; it appears to have been suggested by Weil as a replacement for Tate's term
+      <q>valuation vector</q>
+      and Chevalley's term
+      <q>repartition</q>. Based on this history, we have opted for the accented spellings here.
+    </p>
+    </remark>
+  </introduction>
   <xi:include  href="sec_adeles.ptx"/>
   <xi:include  href="sec_ideles.ptx"/>
   <xi:include  href="sec_adeles-rel.ptx"/>

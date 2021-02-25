@@ -31,7 +31,7 @@
     </p>
   </introduction>
   <subsection>
-    <title>Local-global compatibility</title>
+    <title>Properties of the reciprocity maps</title>
     <p>
       For any extension <m>L/K</m> of number fields,
       we currently have the map 
@@ -469,7 +469,7 @@
       This establishes the reciprocity law for cyclic extensions, from which it directly follows also for abelian extensions.
       Hooray again!
     </p>
-    <definition>
+    <definition xml:id="def-fundamental-exact-sequence">
       <p>
         Combining the previous discussion with <xref ref="T_Albert-Brauer-Hasse-Noether"/>, 
         we see that for any number field <m>K</m>, the group <m>H^2(K^*) = H^2(\Gal(\overline{K}/K), \overline{K}^*)</m> fits into an exact sequence of the form

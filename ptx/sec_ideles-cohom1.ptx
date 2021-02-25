@@ -10,10 +10,6 @@
       </p>
     </paragraphs>
     <p>
-      We finally embark on the proof of the main results of global class field theory, via the adelic reformulation
-      (<xref ref="sec_adelic-recip"/>) and specifically the outline from <xref ref="subsec-adelic-recip-outline"/>.
-    </p>
-    <p>
       By analogy with local class field theory,
       we want to prove that for <m>L/K</m> a cyclic extension of number fields 
       and <m>C_K, C_L</m> the respective id&#xe8;le class groups of <m>K</m> and <m>L</m>,

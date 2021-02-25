@@ -31,10 +31,10 @@
       <me>
         \AA_L \to \AA_{L^g}, \qquad I_L \cong I_{L^g}, \qquad C_L \to C_{L^g}.
       </me>
-      Explicitly, if <m>(\alpha_v)_v \in \AA_L</m> and <m>g \in G</m>,
-      then <m>g</m> maps the completion <m>L_v</m> of <m>L</m> to a completion <m>L_{v^g}</m> of <m>L^g</m>.
-      (Remember that a place <m>v</m> corresponds to an absolute value <m>|\cdot|_v</m> on <m>L</m>;
-      the absolute value <m>|\cdot|_{v^g}</m> on <m>L^g</m> is given by <m>|a^g|_{v^g} = |a|_v</m>.)
+      Explicitly, if <m>(\alpha_w)_w \in \AA_L</m> and <m>g \in G</m>,
+      then <m>g</m> maps the completion <m>L_w</m> of <m>L</m> to a completion <m>L_{w^g}</m> of <m>L^g</m>.
+      (Remember that a place <m>w</m> of <m>L</m> corresponds to an absolute value <m>|\cdot|_w</m> on <m>L</m>;
+      the absolute value <m>|\cdot|_{w^g}</m> on <m>L^g</m> is given by <m>|a^g|_{w^g} = |a|_w</m>.)
     </p>
   </definition>
   <remark>
@@ -147,6 +147,10 @@
         the map <m>\Cl(K) \to \Cl(L)^G</m> is neither injective nor surjective in general (<xref ref="exer-map-of-class-groups"/>).
         This is our first hint of why the id&#xe8;le class group will be a more convenient target for a reciprocity map than the ideal class group.
       </p>
+      <p>
+        The group <m>\Cl(L)^G</m> is classically known as the group of <term>ambiguous classes</term> of <m>L/K</m>.
+        This is related to the concept of a <term>P&#xf3;lya field</term> from <xref ref="rmk-Polya-field"/>; see <xref ref="bib-Chabert"/>.
+      </p>
     </remark>
   </subsection>
   <exercises>
@@ -157,6 +161,11 @@
           In other words, if <m>\alpha_1,\dots,\alpha_n</m> form a basis of <m>L</m> as a <m>K</m>-vector space, then they also form a basis of <m>\AA_L</m> as an <m>\AA_K</m>-module.
         </p>
       </statement>
+      <hint>
+        <p>
+          Show first that for any place <m>v</m> of <m>K</m>, any basis of <m>L</m> as a <m>K</m>-vector space also forms a basis of <m>\prod_{w|v} L_w</m> as a <m>K_v</m>-vector space.
+        </p>
+      </hint>
     </exercise>
     <exercise xml:id="exer-integral-closure-adelic">
       <statement>
@@ -171,6 +180,19 @@
         </p>
       </hint>
     </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove the following converse to <xref ref="exerc-crt-adeles"/>: if <m>L/K</m> is an extension of number fields such that
+          <m>K + \AA_{L,S} = \AA_L</m> for some finite set of places <m>S</m> of <m>L</m>, prove that <m>K=L</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Use the fact that there are infinitely many primes of <m>K</m> that do not split completely in <m>L</m> (<xref ref="cor-some-primes-split"/>).
+        </p>
+      </hint>
+    </exercise> 
     <exercise xml:id="exer-automorphisms-AK">
       <statement>
         <p>

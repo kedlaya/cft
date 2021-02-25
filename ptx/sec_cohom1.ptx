@@ -17,17 +17,17 @@
     </paragraphs>
     <paragraphs>
     <title>Caveat</title>
-    <p>
-      This material may seem a bit dry.
-      If so, don't worry;
-      only a small part of the theory will be relevant for class field theory.
-      However, it doesn't make sense to learn that small part without knowing what it is a part of!
-    </p>
-    <p>
-      The euphemism <q>abstract nonsense</q> in specific reference to category theory and/or homological algebra has been attributed to Norman Steenrod.
-      It was used in a tongue-in-cheek manner without intending a negative connotation, although such a connotation has been imputed by later authors
-      (a notable example being <xref ref="bib-Lang-algebra"/>.
-    </p>
+      <p>
+        This material may seem a bit dry.
+        If so, don't worry;
+        only a small part of the theory will be relevant for class field theory.
+        However, it doesn't make sense to learn that small part without knowing what it is a part of!
+      </p>
+      <p>
+        The euphemism <q>abstract nonsense</q> in specific reference to category theory and/or homological algebra has been attributed to Norman Steenrod.
+        It was used in a tongue-in-cheek manner without intending a negative connotation, although such a connotation has been imputed by later authors
+        (a notable example being <xref ref="bib-Lang-algebra"/>).
+      </p>
     </paragraphs>
   </introduction>
   <subsection>
