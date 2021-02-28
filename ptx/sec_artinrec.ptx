@@ -14,14 +14,14 @@
       Before proceeding to generalized ideal class groups,
       we continue a bit with <xref ref="ex-unramified"/> to illustrate what is about to happen.
     </p>
-    <theorem>
+    <proposition xml:id="prop-principal-ideal-example">
       <statement>
         <p>
           For <m>K = \QQ(\sqrt{-5}), L = \QQ(\sqrt{-5}, \sqrt{-1})</m>, let <m>\gothp</m> be a prime of <m>\gotho_K</m>.
           Then <m>\gothp</m> splits in <m>L</m> if and only if <m>\gothp</m> is principal.
         </p>
       </statement>
-    </theorem>
+    </proposition>
     <proof>
       <p>
         First suppose <m>\gothp = (p)</m>,
@@ -66,9 +66,9 @@
       </p>
     </proof>
     <remark>
-      As a bonus, note that for <m>K = \QQ(\sqrt{-5}), L = \QQ(\sqrt{-5}, \sqrt{-1})</m> as above,
+      As a bonus, note that in <xref ref="prop-principal-ideal-example"/>,
       for any ideal <m>\gotha</m> of <m>\gotho_K</m>,
-      <m>\gotha \gotho_L</m> is principal. (It suffices to verify that
+      <m>\gotha \gotho_L</m> is principal. (To check this, it suffices to verify that
       <m>(2, 1+\sqrt{-5})\gotho_L = (1+\sqrt{-1})\gotho_L</m>.) This is a special case of the principal ideal theorem
       (<xref ref="T_principal_ideal_theorem"/>).
     </remark>
@@ -123,9 +123,8 @@
     <definition>
     <p>
       Let <m>L/K</m> be a (finite) abelian extension of number fields.
-      We imitate the
-      <q>reciprocity law</q>
-      construction we made for <m>\QQ(\zeta_m)/\QQ</m>,
+      We imitate the <q>reciprocity law</q>
+      construction we made for <m>\QQ(\zeta_m)/\QQ</m> (<xref ref="D_cyclotomic_reciprocity"/>),
       but this time with no reason <em>a priori</em>
       to expect it to give anything useful.
     </p>

@@ -1,0 +1,89 @@
+﻿<section xml:id="sec_look_ahead">
+  <title>A look ahead</title>
+  <introduction>
+    <p>
+      We conclude our treatment of abstract class field theory by asking ourselves: what does the construction of an abstract reciprocity law tell us about the global Artin reciprocity law
+      (<xref ref="T-Artin-reciprocity"/>)? See <xref ref="sec_adelic-overview"/> for a continuation of this discussion with more of the details filled in.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Replacing the multiplicative group</title>
+    <p>
+      For <m>L/K</m> a finite abelian extension of number fields,
+      we need to compare <m>\Gal(L/K)</m> to a generalized ideal class group of <m>K</m>.
+      This means that the group <m>A</m> must somehow be related to ideal classes.
+      You might try taking the group of fractional ideals in <m>L</m>,
+      then taking the direct limit over all finite extensions <m>L</m> of <m>K</m>.
+      In this case, we would have to find
+      <m>H^i(\Gal(L/K), A_L)</m> for <m>A_L</m> the group of fractional ideals in <m>L</m>,
+      where <m>L/K</m> is cyclic and <m>i=0, -1</m>.
+      Unfortunately, these groups are not so well-behaved as that!
+    </p>
+    <p>
+      The cohomology groups would behave better if <m>A_L</m> were
+      <q>complete</q> in some sense,
+      in the way that <m>K^*</m> is complete when <m>K</m> is a local field.
+      But there is no good reason to distinguish one place over another in the global case.
+      So we're going to make the target group <m>A</m> by
+      <q>completing <m>K^*</m> at all places simultaneously</q>.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Replacing the unramified extensions and the valuation</title>
+    <p>
+      Even without <m>A</m>, I can at least tell you what <m>d</m> is going to be over <m>\QQ</m>.
+      To begin with, note that there is a surjective map
+      <m>\Gal(\overline{\QQ}/\QQ) \to \Gal(\QQ^{\cyc}/\QQ)</m> that turns an automorphism into its action on roots of unity.
+      The latter group is unfortunately isomorphic to the multiplicative group
+      <m>\widehat{\ZZ}^*</m> rather than the additive group
+      <m>\widehat{\ZZ}</m>, but this is a start.
+      To make more progress, write
+      <m>\widehat{\ZZ}</m> as the product <m>\prod_p \ZZ_p</m>,
+      so that <m>\widehat{\ZZ}^* \cong \prod_p \ZZ_p^*</m>.
+      Then recall that there exist isomorphisms
+      <me>
+        \ZZ_p^* \cong \begin{cases}\ZZ/(p-1)\ZZ \times \ZZ_p \amp  p > 2 \\ \ZZ/2\ZZ \times \ZZ_p \amp  p = 2. \end{cases}
+      </me>
+    </p>
+    <p>
+      In particular,
+      <m>\ZZ_p^*</m> modulo its torsion subgroup is isomorphic to <m>\ZZ_p</m>,
+      but not in a canonical way.
+      Paying this no mind, let us choose an isomorphism for each <m>p</m> and then obtain a surjective map <m>\widehat{\ZZ}^* \to \widehat{\ZZ}</m>.
+      Composing, we get a surjective map
+      <m>\Gal(\overline{\QQ}/\QQ) \to \widehat{\ZZ}</m> which in principle depends on some choices,
+      but the ultimate statements of the theory will be independent of these choices.
+      (Note that in this setup, every <q>unramified</q> extensions of a number field is a subfield of a cyclotomic extension,
+      but not conversely.)
+    </p>
+    <p>
+      As for the valuation <m>v</m>, this will be more straightforward. In the situation we end up considering, the group <m>A_{\QQ}</m>
+      will end up having a natural map to <m>\Gal(\QQ^{\cyc}/\QQ)</m>, which we can then use to map to <m>\widehat{\ZZ}</m>. This again involves
+      an artificial choice, but as long as we make the <em>same</em> artificial choice as we did for <m>d</m>, we get the necessary compatibility between <m>d</m> and <m>v</m>.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Further remarks</title>
+    <remark>
+      <p>
+        In the function field setting, we have a much more straightforward alternative to the use of cyclotomic extensions:
+        we may take the map to the Galois group of the base finite field. The point is that in this case we have an ample supply
+        of <em>everywhere unramified</em> extensions of the base field (without quotation marks).
+      </p>
+      <p>
+        In the number field setting, using cyclotomic extensions as a proxy for abelian, everywhere unramified extensions 
+        is a rather productive idea even outside of class field theory. For one, it is the central premise of
+        <term>Iwasawa theory</term>, in which one studies the behavior of class fields in certain towers of number fields
+        and their relationship with <m>p</m>-adic <m>L</m>-functions (and other related concepts).
+        For another, it is the starting point of <term><m>p</m>-adic Hodge theory</term>, in which one studies the relationship
+        between different cohomology theories associated to algebraic varieties over local fields.
+      </p>
+    </remark>
+    <remark>
+      <p>
+        One can also apply the framework of abstract class field theory to prove some forms of <term>higher-dimensional class field theory</term>,
+        taking the group <m>A</m> to be something coming from algebraic <m>K</m>-theory. See the remark at the end of <xref ref="bib-Neukirch"/>, IV.6.
+      </p>
+    </remark>
+  </subsection>
+</section>

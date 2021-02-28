@@ -5,7 +5,8 @@
     <paragraphs>
       <title>Reference</title>
       <p>
-        <xref ref="bib-Milne-CFT"/> VII.5; <xref ref="bib-Neukirch"/> VI.4.
+        <xref ref="bib-Milne-CFT"/> VII.5; <xref ref="bib-Neukirch"/> VI.4. 
+        See also <url href="https://amathew.wordpress.com/2010/06/05/the-algebraic-proof-of-the-second-inequality-i/">this blog post by Akhil Mathew</url>.
       </p>
     </paragraphs>
     <p>
@@ -36,34 +37,82 @@
     </p>
     <definition xml:id="def-second-inequality-analytic">
       <p>
-      Let <m>L/K</m> be a finite Galois extension and <m>\gothm</m> a formal product of places of <m>K</m>.
-      As in <xref ref="def-generalized-ideal-class-groups"/>, let <m>J^{\gothm}_K</m> be the group of fractional ideals of <m>K</m> coprime to <m>\gothm</m>;
-      similarly, let <m>J^{\gothm}_L</m> be the group of fractional ideals of <m>L</m> coprime to <m>\gothm</m>.
-      Let <m>P^{\gothm}_K</m> be the subgroup of principal ideals admitting a generator <m>\alpha</m> such that:
-        <ol>
-          <li>
-            <p>
-              for each finite prime <m>\gothp</m> of <m>K</m>, <m>\alpha \equiv 1 \pmod{\gothp^e}</m> where <m>e</m> is the exponent of <m>\gothp</m> in <m>\gothm</m>;
-            </p>
-          </li>
-          <li>
-            <p>
-              for each real place <m>v</m> in <m>\gothm</m>, the corresponding embedding <m>\tau</m> has the property that <m>\tau(\alpha) &gt; 0</m>.
-            </p>
-          </li>
-        </ol>
-      In this notation, the Second Inequality states that
+        Let <m>L/K</m> be a finite Galois extension and <m>\gothm</m> a formal product of places of <m>K</m>.
+        As in <xref ref="def-generalized-ideal-class-groups"/>, let <m>J^{\gothm}_K</m> be the group of fractional ideals of <m>K</m> coprime to <m>\gothm</m>;
+        similarly, let <m>J^{\gothm}_L</m> be the group of fractional ideals of <m>L</m> coprime to <m>\gothm</m>.
+      </p>
+      <p>
+        Let <m>I^{\gothm}_K</m> be the subset of <m>\alpha \in I_K</m> such that:
+          <ol>
+            <li>
+              <p>
+                for each finite prime <m>\gothp</m> of <m>K</m>, <m>\alpha_v \equiv 1 \pmod{\gothp^e}</m> where <m>e</m> is the exponent of <m>\gothp</m> in <m>\gothm</m>;
+              </p>
+            </li>
+            <li>
+              <p>
+                for each real place <m>v</m> in <m>\gothm</m>, <m>\alpha_v &gt; 0</m>.
+              </p>
+            </li>
+          </ol>
+        Define <m>I^{\gothm}_L</m> similarly.
+      </p>
+      <p>
+        Let <m>P^{\gothm}_K</m> be the subgroup of <m>J^{\gothm}_K</m> consisting of principal ideals admitting a generator <m>\alpha \in K^* \cap I^{\gothm}_L</m>; 
+        define <m>P^{\gothm}_L</m> similarly. In this notation,
+        <me>
+          \Cl^{\gothm}(K) = J^{\gothm}_K/P^{\gothm}_K, \qquad \Cl^{\gothm}(L) = J^{\gothm}_L / P^{\gothm}_L.
+        </me>
+      </p>
+      <p>
+        The homomorphism <m>I_K \to J_K</m> from <xref ref="def-ideles-to-ideals-hom"/> restricts to a homomorphism
+        <m>I_K^{\gothm} \to J_K^{\gothm}</m>, which in turn induces a surjective homomorphism <m>I_K^{\gothm}/(K^* \cap I_K^{\gothm}) \to \Cl^{\gothm}(K)</m>.
+        On the other hand, as indicated in <xref ref="rmk-open-subgroup-idele"/>, we have <m>K^* I_K^{\gothm} = I_K</m> and hence 
+        <m>I_K^{\gothm}/(K^* \cap I_K^{\gothm}) \cong C_K</m>, yielding a surjection <m>C_K \to \Cl^{\gothm}(K)</m>.
+      </p>
+    </definition>
+    <lemma xml:id="lem-norm-quotient-classical">
+      <statement>
+        <p>
+          With notation as in <xref ref="def-second-inequality-analytic"/>, the composition
+          <me>
+            C_K / \Norm_{L/K} C_L \cong I_K^{\gothm}/(K^* \Norm_{L/K} I_L^{\gothm}) \to J^{\gothm}_K / P^{\gothm}_{K} \Norm_{L/K} J^{\gothm}_L
+          </me>
+          is an isomorphism for some <m>\gothm</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The map in question is surjective because <m>I_K^{\gothm} \to J_K^{\gothm}</m> is; we thus need to check injectivity for suitable <m>\gothm</m>.
+          Let <m>S</m> be the set of finite places of <m>K</m> which ramify in <m>L</m>.
+          For each <m>v \in S</m>, apply local class field theory (see <xref ref="T_local_existence"/>) to see that 
+          for <m>w</m> a place of <m>L</m> above <m>v</m>, the image of <m>\Norm_{L_w/K_v} L_w^*</m>
+          is an open subgroup <m>U_v</m> of <m>K_v^*</m> of finite index. We may then choose <m>\gothm</m> to include every real place and each place in <m>S</m>,
+          and to ensure that for each <m>v \in S</m>, <m>(I_K^{\gothm})_v \subseteq U_v</m>.
+        </p>
+        <p>
+          We now prove the claim for such a choice of <m>\gothm</m>. Given an element of <m>I_K^{\gothm}</m> whose image in <m>J^{\gothm}_K</m> belongs to 
+          <m>P^{\gothm}_{K} \Norm_{L/K} J^{\gothm}_L</m>, we can factor it as an element of <m>K^* \cap I_K^{\gothm}</m> times an element of <m>\Norm_{L/K} I_L^{\gothm}</m>
+          times an element <m>\alpha \in I_K^{\gothm}</m> such that for each finite place <m>v</m>, <m>\alpha_v \in \gotho_{K_v}^*</m>.
+          We see that <m>\alpha \in \Norm_{L/K} I_L^{\gothm}</m> by looking separately at real places (which are okay because these places appear in <m>\gothm</m>),
+          complex places (which are okay for trivial reasons), finite places in <m>S</m> (which are okay by our choice of <m>\gothm</m>), and finite places not in <m>S</m>
+          (which are okay because these places are unramified in <m>L</m>).
+        </p>
+      </proof>
+    </lemma>
+    <p>
+      With <xref ref="lem-norm-quotient-classical"/> in hand, we can reduce the Second Inequality to proving that
       <me>
         [J^{\gothm}_K : P^{\gothm}_{K} \Norm_{L/K} J^{\gothm}_L] \leq [L:K].
       </me>
-      </p>
-    </definition>
+    </p>
   </subsection>
   <subsection>
     <title>A special case of Chebotarëv density</title>
     <p>
       We will need a special case of the Chebotarëv density theorem,
       which fortunately we can prove without already having all of class field theory.
+      We use the notion of <term>Dirichlet density</term> for sets of prime ideals in a number field; see <xref ref="def-dirichlet-density"/>.
     </p>
     <proposition xml:id="prop-splitting-primes-density">
       <statement>
@@ -77,7 +126,8 @@
         <p>
           A prime of <m>K</m> splits completely in <m>L</m> if and only if it splits completely in <m>M</m>,
           so we may assume <m>L=M</m> is Galois.
-          Recall that the set <m>T</m> of unramfied primes <m>\gothq</m> of <m>L</m> of absolute degree 1 has Dirichlet density 1;
+          Recall that the set <m>T</m> of unramfied primes <m>\gothq</m> of <m>L</m> of absolute degree 1 has Dirichlet density 1
+          (see <xref ref="exc-density-1"/> and <xref ref="exc-density-split-1"/>);
           each such prime lies over an unramified prime <m>\gothp</m> of <m>K</m> of absolute degree 1 which splits completely in <m>L</m>.
         </p>
         <p>
@@ -95,6 +145,13 @@
         </p>
       </proof>
     </proposition>
+    <example>
+      <p>
+        For <m>L/\QQ</m> a quadratic extension, <xref ref="prop-splitting-primes-density"/> states that the set of prime ideals of <m>\QQ</m>
+        that split completely in <m>L</m> has Dirichlet density <m>1/2</m>. As this splitting is governed by a congruence condition thanks to quadratic
+        reciprocity, this assertion also follows from Dirichlet's theorem on primes in arithmetic progressions.
+      </p>
+    </example>
     <p>
       This gives the following result about splitting of primes, which may be of independent interest.
     </p>
@@ -133,7 +190,8 @@
           <me>
             \frac{1 - \sum_{\chi \neq 1} m(\chi)}{[J^{\gothm}_K:H]};
           </me>
-          this is <m>1/[J^{\gothm}_{K}:H]</m> if the <m>m(\chi)</m> are all zero and 0 otherwise.
+          this is <m>1/[J^{\gothm}_{K}:H]</m> if the <m>m(\chi)</m> are all zero and 0 otherwise. (We also see incidentally that at most one of the <m>m(\chi)</m> can be 
+          nonzero, in which case it equals <m>1</m>.)
         </p>
       </proof>
     </lemma>
@@ -174,7 +232,7 @@
       </statement>
       <proof>
         <p>
-          This follows from <xref ref="L_second_inequality_analytic"/> by translating back into the language of id&#xe8;les.
+          This follows from <xref ref="L_second_inequality_analytic"/> by translating back into the language of id&#xe8;les using <xref ref="lem-norm-quotient-classical"/>.
         </p>
       </proof>
     </corollary>
@@ -334,6 +392,20 @@
           Put <m>K = \QQ(\sqrt{7})</m>. Show that <m>16</m> is an <m>8</m>th power in every completion of <m>K</m>, but not in <m>K</m> itself.
         </p>
       </statement>
+    </exercise>
+    <exercise xml:id="exer-Hasse-Minkowski">
+      <statement>
+        <p>
+          Let <m>K</m> be a number field and choose <m>a,b,c \in K^*</m>. Prove that the equation <m>ax^2 + by^2 + c^2 = 0</m> has a solution with <m>x,y,z \in K</m> not all zero
+          if and only if for each place <m>v</m> of <m>K</m>, there exists a solution with <m>x,y,z \in K_v</m> not all zero.
+          (This is a special case of the <term>Hasse-Minkowski theorem</term>.)
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The equation has a solution in <m>K</m> if and only if <m>-c</m> is a norm from <m>K(\sqrt{-b/a})</m> to <m>K</m>.
+        </p>
+      </hint>
     </exercise>
   </exercises>
 </section>

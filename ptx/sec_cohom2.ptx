@@ -74,7 +74,7 @@
               if <m>I</m> is an injective <m>H</m>-module,
               then <m>\Ind^G_H(I)</m> is an injective <m>G</m>-module.
               This follows from the existence of a canonical isomorphism <m>\Hom_G(M, \Ind^G_H I) = \Hom_H(M, I)</m>,
-              for which see <xref ref="P_adjoint_property">Proposition</xref> below.
+              for which see <xref ref="P_adjoint_property"/> below.
             </p>
           </li>
         </ol>
@@ -142,7 +142,7 @@
         This means that we do in fact get a map compatible with the <m>G</m>-actions.
         (Note that the composition of these two maps is not the identity!
         For more on this point,
-        see the discussion of extended functoriality in <xref ref="sec_homology">Chapter</xref>.)
+        see the discussion of extended functoriality in <xref ref="sec_homology"/>.)
       </p>
       <p>
         Now let <m>N</m> be general.
@@ -187,7 +187,7 @@
     <remark>
       <p>
       The point of all of this is that it is much easier to embed <m>M</m> into an acyclic <m>G</m>-module than into an injective <m>G</m>-module:
-      use the map <m>M \to \Ind^G_1 M</m> constructed in <xref ref="P_adjoint_property">Proposition</xref>!
+      use the map <m>M \to \Ind^G_1 M</m> constructed in <xref ref="P_adjoint_property"/>!
       An immediate consequence is that if <m>M</m> is finite,
       it can be embedded into a finite acyclic <m>G</m>-module,
       and thus <m>H^i(G,M)</m> is finite for all <m>i</m>. 
@@ -312,7 +312,7 @@
     </p>
     <p>
       That is, <m>H^1(G,M)</m> consists of crossed homomorphisms modulo principal crossed homomorphisms,
-      consistent with the definition we gave in <xref ref="sec_Kummer_theory">Chapter</xref>.
+      consistent with the definition we gave in <xref ref="sec_Kummer_theory"/>.
     </p>
     <definition xml:id="D-principal-homogeneous-spaces">
     <p>
@@ -488,10 +488,10 @@
             </me>.
             Another way to get the same map:
             use the adjunction homomorphism
-            <m>M \to \Ind^G_H M</m> from <xref ref="P_adjoint_property">Proposition</xref>
+            <m>M \to \Ind^G_H M</m> from <xref ref="P_adjoint_property"/>
             sending <m>m</m> to <m>\sum_i m^{g_i} \otimes [g_i^{-1}]</m>,
             where <m>g_i</m> runs over a set of right coset representatives of <m>H</m> in <m>G</m>,
-            then apply Shapiro's Lemma to get
+            then apply Shapiro's lemma (<xref ref="L_Shapiro"/>) to get
             <me>
               H^i(G, M) \to H^i(G, \Ind^G_H M) \stackrel{\sim}{\to} H^i(H, M)
             </me>.
@@ -502,7 +502,7 @@
             Let <m>M</m> be a <m>G</m>-module and consider the map
             <m>\Ind^G_H M \to M</m> taking <m>m \otimes [g]</m> to <m>m^g</m>.
             We then get maps <m>H^i(G, \Ind^G_H M) \to H^i(G,M)</m> which,
-            together with the isomorphisms of Shapiro's lemma,
+            together with the isomorphisms of Shapiro's lemma (<xref ref="L_Shapiro"/>),
             give what are called the <term>corestriction homomorphisms</term>:
             <me>
               \Cor: H^i(H, M) \stackrel{\sim}{\to} H^i(G, \Ind^G_H M) \to H^i(G, M)

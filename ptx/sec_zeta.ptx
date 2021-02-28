@@ -227,14 +227,14 @@
   </subsection>
   <exercises>
     <title>Exercises</title>
-      <exercise>
+      <exercise xml:id="exc-density-1">
         <statement>
           <p>
           Show that the Dirichlet density of the set of all primes of a number field is 1.
           </p>
         </statement>
       </exercise>
-      <exercise>
+      <exercise xml:id="exc-density-split-1">
         <statement>
           Show that in any number field,
           the Dirichlet density of the set of primes <m>\gothp</m> of absolute degree greater than 1 is zero.
@@ -243,9 +243,9 @@
       <exercise xml:id="exc-density-of-ray-classes">
         <statement>
           Let <m>\gothm</m> be a formal product of places of the number field <m>K</m>.
-          Using <xref ref="T_meromorphic_continuation">Theorems</xref>,
-          <xref ref="T_analytic_continuation"></xref>,
-          and <xref ref="T_nonvanishing_of_L"></xref>,
+          Using <xref ref="T_meromorphic_continuation"/>,
+          <xref ref="T_analytic_continuation"/>,
+          and <xref ref="T_nonvanishing_of_L"/>,
           prove that the set of primes of <m>K</m> lying in any specified class of the generalized ideal class group of conductor <m>\gothm</m> has Dirichlet density <m>1/\#\Cl^\gothm(K)</m>.
         </statement>
         <hint>
@@ -255,7 +255,7 @@
       <exercise>
         <statement>
         Let <m>L/K</m> be an extension of number fields. Suppose that for every prime <m>\gothp</m> of <m>K</m> which does not ramify in <m>L</m>,
-        all of the primes of <m>L</m> above <m>\gothp</m> have isomorphic residue fields. Using <xref ref="T_Chebotarev"></xref>, prove that <m>L/K</m> is Galois.
+        all of the primes of <m>L</m> above <m>\gothp</m> have isomorphic residue fields. Using <xref ref="T_Chebotarev"/>, prove that <m>L/K</m> is Galois.
         </statement>
         <hint>
         Let <m>M</m> be the Galois closure of <m>L/K</m>.
@@ -263,7 +263,7 @@
         For <m>\gothq</m> a prime of <m>M</m> with decomposition group <m>G_{\gothq}</m> lying above the prime <m>\gothp</m> of <m>K</m>, relate the orders of the
         residue fields of the primes of <m>L</m> to the intersections of <m>G_{\gothq}</m> with the conjugates of <m>H</m> in <m>G</m>
         (see <xref ref="R-decomposition-inertia"/>).
-        Use the fact that these conjugates have trivial intersection to deduce that <m>G_{\gothq}</m> must be trivial, and invoke <xref ref="T_Chebotarev"></xref> to conclude.
+        Use the fact that these conjugates have trivial intersection to deduce that <m>G_{\gothq}</m> must be trivial, and invoke <xref ref="T_Chebotarev"/> to conclude.
         </hint>
       </exercise>
       <exercise xml:id="exc-Artin-map-surjective">

@@ -1,0 +1,297 @@
+﻿<section xml:id="sec_abstractcft3">
+  <title>The theorems of abstract class field theory</title>
+  <introduction>
+    <p>
+      We now establish that the reciprocity map is an isomorphism (<xref ref="T_abstract_reciprocity_law"/>).
+      We also obtain an analogue of the norm limitation theorem (<xref ref="C_abstract_norm_limitation"/>)
+      and some tools which will help with the existence theorem (<xref ref="rmk_abstract_existence"/>).
+    </p>
+  </introduction>
+  <subsection>
+    <title>Proof of the reciprocity law</title>
+    <p>
+      Our goal is to prove that the homomorphism <m>r_{L/K}</m> from <xref ref="def-abstract-recip-final"/> induces an isomorphism
+      <m>\Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L</m>. Any resemblance with the proof of the local reciprocity law
+      is not at all coincidental!
+    </p>
+    <lemma xml:id="lem-abstract-recip-case1">
+      <statement>
+        <p>
+          Under <xref ref="hypo-abstract-cft"/>, 
+          for <m>L/K</m> an unramified extension of finite subextensions of <m>\kbar/k</m>,
+          <m>r_{L/K}: \Gal(L/K) \to A_K / \Norm_{L/K} A_L</m> is an isomorphism
+          sending the Frobenius of <m>\Gal(L/K)</m> to a uniformizer of <m>K</m>.
+        </p>
+      </statement>
+    </lemma>
+    <proof>
+      <p>
+        Let <m>g \in \Gal(L/K)</m> be the Frobenius and choose <m>h \in \Gal(L^{\unr}/K)</m> lifting <m>g</m>.
+        Then the fixed field of <m>h</m> is <m>K</m> itself,
+        and from the definition of <m>r'</m>, <m>r(g) = r'(h)</m> is a uniformizer of <m>K</m>.
+        By <xref ref="P_abstract_H0H1"/>, <m>r(g)</m> generates <m>H^0(\Gal(L/K), A_L)</m>.
+      </p>
+      <p>
+        By the class field axiom, <m>r_{L/K}</m> maps between two groups of the same order, and the previous paragraph implies that the map is surjective.
+        It is thus an isomorphism.
+      </p>
+    </proof>
+    <lemma xml:id="lem-abstract-recip-case2">
+      <statement>
+        <p>
+          Under <xref ref="hypo-abstract-cft"/>,
+          for <m>L/K</m> a cyclic, totally ramified extension of finite subextensions of <m>\kbar/k</m>,
+          the map <m>r_{L/K}: \Gal(L/K) \to A_K / \Norm_{L/K} A_L</m> is an isomorphism.
+        </p>
+      </statement>
+    </lemma>
+    <proof>
+     <p>
+        Put <m>n = [L:K]</m>. The extension <m>L^{\unr}/K</m> is the compositum of two linearly disjoint extensions <m>L/K</m> and <m>K^{\unr}/K</m>,
+        so its Galois group is canonically a product <m>\Gal(L/K) \times \Gal(K^{\unr}/K)</m>.
+        Let <m>g</m> be a generator of the first factor (which we can also identify with <m>\Gal(L^{\unr}/K^{\unr})</m>)
+        and let <m>\phi</m> be a generator of the second factor with <m>d_K(\phi) = 1</m>.
+        Put <m>\tau = g\phi</m> and let <m>M</m> be the fixed field of <m>\tau</m>.
+        Let <m>N</m> be the compositum of <m>L</m> and <m>M</m> and put <m>N_0 = N \cap K^{\unr}</m>.
+        We now have the field diagram <xref ref="fig-abstractcft-6"/> in which each line denotes a <m>\ZZ/n\ZZ</m>-extension,
+        the dashed lines represent unramified extensions, and each label indicates one or more generators of the Galois group <m>g</m>.
+      </p>
+        <figure xml:id="fig-abstractcft-6">
+        <image>
+        <latex-image>
+        \xymatrix{
+        &amp; N \ar@{--}_{\phi}[ld] \ar@{--}^{\tau}[d] \ar@{-}^g[rd] &amp; \\
+        L \ar@{-}_{g, \tau}[rd] &amp; M \ar@{-}^{g, \phi}[d] &amp; N_0 \ar@{--}^{\phi, \tau}[ld] \\
+        &amp; K &amp;
+        }
+        </latex-image>
+        </image>
+        </figure>
+      <p>
+        Pick uniformizers <m>\pi_L</m> and <m>\pi_M</m> of <m>L</m> and <m>M</m>, respectively.
+        Since <m>d_K(\tau) = 1</m>, by <xref ref="prop_norm"/>
+        we have <m>r_{L/K}(g) = \Norm_{L^{\unr}/K^{\unr}}(\pi_M)</m>.
+      </p>
+      <p>
+        Let <m>j</m> be the order of <m>r_{L/K}(g)</m> in <m>A_K/\Norm_{L/K} A_L</m> and put <m>u = \pi_M^j/\pi_L^j \in U_N</m>.
+        Since both <m>\Norm_{L^{\unr}/K^{\unr}}(\pi_M^j)</m> and <m>\Norm_{L^{\unr}/K^{\unr}}(\pi_L^j) = \Norm_{L/K}(\pi_L^j)</m>
+        belong to <m>\Norm_{L/K} A_L</m>, we can choose <m>v \in A_L</m> such that
+        <me>
+          \Norm_{L^{\unr}/K^{\unr}}(u) = \Norm_{L/K}(v) = \Norm_{L^{\unr}/K^{\unr}}(v).
+        </me>
+        Since <m>\Norm_{L/K}(v) \in A_K \cap U_N = U_K</m>, we must have <m>v \in U_L</m>.
+      </p>
+      <p>
+        Applying the class field axiom to <m>N/N_0</m> yields
+        <me>
+          0 = H^{-1}_T(\Gal(N/N_0), A_N) = \frac{\ker(\Norm_{N/N_0}: A_N \to A_{N_0})}{ \{ a^{g-1}: a \in A_N \}}.
+        </me>
+        Since <m>\Norm_{N/N_0}(u/v) = \Norm_{L^{\unr}/K^{\unr}}(u/v) = 1</m>, we can write <m>u/v</m> in the form
+        <m>a^{g-1} = a^g/a</m> for some <m>a \in A_N</m>. Then
+        <me>
+          (\pi_L^j v)^{g-1} = (\pi_L^j v)^{\tau-1} = (\pi_M^j v/u)^{\tau - 1} = (v/u)^{\tau-1} = (a/a^\tau)^{g-1}.
+        </me>
+        If we put <m>x = (\pi_L^j v)(a^\tau/a)</m>, then <m>x^g = x</m> and so <m>x \in A_{N_0}</m>.
+        Hence 
+        <me>
+          j = v_N(x) = nv_{N_0}(x) \in n \widehat{\ZZ}.
+        </me>
+        That is, the order of <m>r_{L/K}(g)</m> in <m>A_K/\Norm_{L/K} A_L</m> is divisible by <m>n</m> in <m>\widehat{\ZZ}</m>, and hence also in <m>\ZZ</m>.
+      </p>
+      <p>
+        By the class field axiom, <m>r_{L/K}</m> maps between two groups of the same order <m>n</m>, and the previous paragraph implies that the map has image
+        of size at least <m>n</m>. It is thus an isomorphism.
+      </p>
+     </proof>
+    <p>
+      Before continuing, we record a key commutative diagram which will be the scene of a lot of diagram-chasing.
+    </p>
+    <remark>
+      <p>
+        For <m>L/K</m> a Galois extension of finite subextensions of <m>\kbar/k</m> and <m>M/K</m> a Galois subextension,
+        the diagram
+        <figure xml:id="fig-abstractcft-1">
+        <image>
+        <latex-image>
+        \xymatrix{
+        1 \ar[r] &amp; \Gal(L/M) \ar[r] \ar^{r_{L/M}}[d] &amp; \Gal(L/K) \ar[r] \ar^{r_{L/K}}[d] &amp; \Gal(M/K) \ar[r] \ar[d]^{r_{M/K}} &amp; 1 \\
+        &amp; A_M/\Norm_{L/M}A_L \ar^{\Norm_{M/K}}[r] &amp; A_K/\Norm_{L/K} A_L \ar[r] &amp; A_K / \Norm_{M/K} A_M \ar[r] &amp; 1
+        }
+        </latex-image>
+        </image>
+        </figure>
+        commutes (thanks to <xref ref="P_abstract_functorialities"/>) and the rows are exact.
+      </p>
+    </remark>
+    <lemma xml:id="lem-abstract-recip-case3">
+      <statement>
+        <p>
+          Under <xref ref="hypo-abstract-cft"/>, 
+          for <m>L/K</m> an abelian extension of finite subextensions of <m>\kbar/k</m>,
+          the map <m>r_{L/K}: \Gal(L/K) \to A_K / \Norm_{L/K} A_L</m> is an isomorphism.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          If <m>L/K</m> is cyclic of prime order,
+          We induct on <m>[L:K]</m>.
+          then either it is unramified or totally ramified,
+          and we already know <m>r_{L/K}</m> is an isomorphism in those cases
+          (by <xref ref="lem-abstract-recip-case1"/> or <xref ref="lem-abstract-recip-case2"/>, respectively).
+          Otherwise, let <m>M</m> be a subextension of <m>L/K</m>.
+          Then diagram chasing through <xref ref="fig-abstractcft-1"/> gives that <m>r_{L/K}</m> is surjective.
+          If <m>L/K</m> is cyclic, then the class field axiom implies that <m>r_{L/K}</m> is a map between two groups of the same order,
+          and hence must be an isomorphism.
+          Otherwise, we see from <xref ref="fig-abstractcft-1"/> again that
+          the kernel of <m>r_{L/K}</m> lies in the kernel of <m>\Gal(L/K) \to \Gal(N/K)</m> for <em>every</em>
+          cyclic subextension <m>N</m> of <m>L/K</m>.
+          Since <m>L/K</m> is abelian and not cyclic, the intersection of these kernels is trivial.
+          Thus <m>r_{L/K}</m> is also injective, so is an isomorphism.
+        </p>
+      </proof>
+    </lemma>
+    <lemma xml:id="lem-abstract-recip-case4">
+      <statement>
+        <p>
+          Under <xref ref="hypo-abstract-cft"/>, 
+          for <m>L/K</m> a Galois extension of finite subextensions of <m>\kbar/k</m>,
+          the homomorphism <m>r_{L/K}</m> from <xref ref="def-abstract-recip-final"/> induces an injection
+          <m>\Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>M</m> be the maximal abelian subextension of <m>L/K</m>. We have the following commutative diagram:
+          <figure xml:id="fig-abstractcft-2">
+          <image>
+          <latex-image>
+          \xymatrix{
+          \Gal(L/K)^{\ab} \ar^{r_{L/K}}[r] \ar[d] &amp; A_K / \Norm_{L/K} A_L \ar[d] \\
+          \Gal(M/K) \ar^{r_{M/K}}[r] &amp; A_K / \Norm_{M/K} A_M
+          }
+          </latex-image>
+          </image>
+          </figure>
+          in which the left vertical arrow and bottom horizontal arrows are isomorphisms
+          (the latter by <xref ref="lem-abstract-recip-case3"/>).
+          Thus the composite <m>\Gal(L/K)^{\ab} \to A_K / \Norm_{M/K} A_M</m> is an isomorphism,
+          so <m>r_{L/K}</m> must be injective.
+        </p>
+      </proof>
+    </lemma>
+    <theorem xml:id="T_abstract_reciprocity_law">
+      <title>Reciprocity law</title>
+      <statement>
+        <p>
+          Under <xref ref="hypo-abstract-cft"/>, 
+          for each Galois extension <m>L/K</m> of finite subextensions of <m>\kbar/k</m>,
+          the homomorphism <m>r_{L/K}</m> from <xref ref="def-abstract-recip-final"/> induces an isomorphism
+          <m>\Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L</m>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        The map in question is injective by <xref ref="lem-abstract-recip-case4"/>, so it only remains to check that
+        <m>r_{L/K}</m> itself is surjective.
+        If <m>L/K</m> is solvable, we may deduce surjectivity from <xref ref="lem-abstract-recip-case3"/> by induction on
+        <m>[L:K]</m> again by a diagram chase on <xref ref="fig-abstractcft-1"/>.
+      </p>
+      <p>
+        For general <m>L/K</m>, we instead check that <m>r_{L/K}</m> becomes a surjection upon restriction to <m>p</m>-Sylow
+        subgroups for each prime <m>p</m>. That is, for <m>M</m> the fixed field of a Sylow <m>p</m>-subgroup of 
+        <m>\Gal(L/K)</m> and <m>S_p</m> the Sylow <m>p</m>-subgroup of <m>A_K/\Norm_{L/K}A_L</m>, the composition
+        <me>
+          \Gal(L/M) \to \Gal(L/K) \stackrel{r_{L/K}}{\to} A_K/\Norm_{L/K} A_L \to S_p
+        </me>
+        is surjective. (Compare the proof of <xref ref="L_tate_thm_lemma"/>.)
+      </p>
+      <p>
+        Here some caution is required because <m>M/K</m> need not be Galois, 
+        so we cannot draw the full diagram <xref ref="fig-abstractcft-1"/>.
+        However, the left square in that diagram still makes sense and commutes.
+        Meanwhile, we may apply the previous paragraph to see that the left vertical arrow <m>r_{L/M}</m>
+        is an isomorphism. Now note that the composition <m>A_K \subseteq A_M \stackrel{\Norm_{M/K}}{\to} A_K</m> is multiplication by <m>[M:K]</m>,
+        which is coprime to <m>p</m>; it follows that the bottom horizontal arrow induces a surjection of Sylow <m>p</m>-subgroups. 
+        (One can also apply <xref ref="P_abstract_functorialities2"/> here.)
+      </p>
+    </proof>
+    <remark>
+      <p>
+        Alternatively, one can derive <xref ref="T_abstract_reciprocity_law"/> by an argument closer to what we did in local class field theory.
+        In this approach, one first simulates the proofs of <xref ref="P_H2_upper_bound"/> and <xref ref="P_H2_lower_bound"/> to show that
+        <m>H^2(\Gal(L/K), A_L)</m> is cyclic of order <m>[L:K]</m>; 
+        the latter argument ends up being quite similar to the proof of <xref ref="lem-abstract-recip-case2"/>, with the role of Theorem 90 (<xref ref="L_theorem_90"/>)
+        being played by the <m>H^{-1}_T</m> aspect of the class field axiom.
+        One must then check that the reciprocity map agrees with the map given by Tate's theorem <xref ref="T_tate_thm2"/>; we leave the details to the interested reader,
+        but see <xref ref="sec_connection"/> for a similar argument in the setting of global class field theory.
+      </p>
+    </remark>
+    <p>
+      This directly implies a version of the norm limitation theorem.
+    </p>
+    <corollary xml:id="C_abstract_norm_limitation">
+      <title>Norm limitation theorem</title>
+      <statement>
+        <p>
+          Under <xref ref="hypo-abstract-cft"/>, 
+          for <m>L/K</m> an arbitrary extension of finite subextensions of <m>\kbar/k</m>
+          and <m>M</m> the maximal abelian subextension of <m>L/K</m>, we have <m>\Norm_{L/K} A_L = \Norm_{M/K} A_M</m>.
+          In particular, <m>\Norm_{L/K} A_L</m> depends only on the Galois closure of <m>L/K</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The only issue is the inclusion <m>\Norm_{M/K} A_M \subseteq \Norm_{L/K} A_L</m>, which we are free to check after enlarging <m>L</m>
+          (as long as we do not change <m>M</m>). We may thus assume that <m>L/K</m> is Galois.
+        </p>
+        <p>
+          By <xref ref="P_abstract_functorialities"/> and <xref ref="T_abstract_reciprocity_law"/>, we have a commutative diagram
+          <figure xml:id="fig-abstractcft-3">
+          <image>
+          <latex-image>
+          \xymatrix{
+          \Gal(L/K)^{\ab} \ar[r] \ar@{=}[d] &amp; A_K/\Norm_{L/K} A_L \ar[d] \\
+          \Gal(M/K)^{\ab} \ar[r] &amp; A_K/\Norm_{M/K} A_M
+          }
+          </latex-image>
+          </image>
+          </figure>
+          in which the horizontal arrows are isomorphisms. This implies the claim.
+        </p>
+      </proof>
+    </corollary>
+    <p>
+      By similar logic, we also obtain a uniqueness result.
+    </p>
+    <corollary>
+      <statement>
+        <p>
+          Under <xref ref="hypo-abstract-cft"/>, 
+          let <m>L_1/K</m> and <m>L_2/K</m> be abelian extensions of finite subextensions of <m>\kbar/k</m>.
+          If <m>\Norm_{L_1/K} A_{L_1} = \Norm_{L_2/K} A_{L_2}</m>, then <m>L_1 = L_2</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The compositum <m>L = L_1 L_2</m> is also a finite abelian extension of <m>K</m>. By  <xref ref="P_abstract_functorialities"/>, 
+          <m>\Gal(L_1/K) \cong A_K/\Norm_{L_1/K} A_{L_1}</m> and <m>\Gal(L_2/K) \cong \Norm_{L_2/K} A_{L_2}</m> must be the same quotient of 
+          <m>\Gal(L/K) \cong A_K/\Norm_{L/K} A_L</m>, which forces <m>L_1=L_2</m>.
+        </p>
+      </proof>
+    </corollary>
+    <remark xml:id="rmk_abstract_existence">
+      <p>
+        In a similar vein, note that every subgroup of <m>A_K</m> containing a subgroup of the form <m>\Norm_{M/K} A_M</m> for some finite extension <m>M/K</m> 
+        must itself occur as <m>\Norm_{L/K} A_L</m> for some finite (and even abelian) extension <m>L/K</m>. 
+        Consequently, proving an analogue of the existence theorem in this setting amounts to computing the intersection of the groups <m>\Norm_{M/K} A_M</m>.
+      </p>
+      <p>
+        Following <xref ref="bib-Neukirch"/>, 
+        one can view the groups <m>\Norm_{M/K} A_M</m> as the open subgroups for a certain topology on <m>A_K</m>, called the <term>norm topology</term>. 
+        One can then assert that <m>\Gal(K^{\ab}/K)</m> is isomorphic to the profinite completion of <m>A_K</m>, or equivalently its maximal Hausdorff quotient, 
+        for the family of quotients by open subgroups in the norm topology.
+      </p>
+    </remark>
+  </subsection>
+</section>

@@ -62,6 +62,8 @@
     </theorem>
     <p>
       We will also obtain a global analogue of the local norm limitation theorem, which was not even suggested by the classical language.
+      (Well, not in this treatment anyway. See <xref ref="lem-norm-quotient-classical"/> for an interpretation of the quotient <m>C_K/\Norm_{L/K} C_L</m>
+      in ideal-theoretic terms.)
     </p>
     <theorem xml:id="T_adelic_norm_limitation1">
       <title>Adelic norm limitation theorem</title>
@@ -193,87 +195,5 @@
         </ul>
       </p>
     </remark>
-  </subsection>
-  <subsection xml:id="subsec-adelic-recip-outline">
-    <title>What needs to be done</title>
-    <p>
-      We now pick up the thread from <xref ref="sec_look_ahead"/> to outline the proofs of the main results of class field theory,
-      to be presented in <xref ref="ch_main_results"/>.
-      Many of these steps will be analogous to the steps in local class field theory;
-      however, we do <em>not</em> directly attempt to verify <xref ref="prop-deduce-Artin"/>
-      except for cyclotomic extensions, for which the explicit calculation suggested in <xref ref="rmk-cyclotomic-Artin"/> will be an important input into the machine.
-      Instead, we postpone this step all the way until the end.
-      <ul>
-        <li>
-          <p>
-            Verify that for <m>L/K</m> cyclic, the Herbrand quotient of <m>C_L</m> as a <m>\Gal(L/K)</m>-module is <m>[L:K]</m>.
-            This implies the <term>First Inequality</term> (<xref ref="T_first_inequality"/>):
-            <me>
-              \#H^0_T(\Gal(L/K), C_L) \geq [L:K].
-            </me>
-          </p>
-        </li>
-        <li>
-          <p>
-            For <m>L/K</m> cyclic, prove the <term>Second Inequality</term> (<xref ref="T_first_and_second_inequality"/>):
-            <me>
-              \#H^0_T(\Gal(L/K), C_L) \leq [L:K],
-            </me>
-            which combined with the previous point yields
-            <me>
-              \#H^0_T(\Gal(L/K), C_L) = [L:K], \qquad \#H^1_T(\Gal(L/K), C_L) = 1.
-            </me>
-            This step is trivial in local CFT by Theorem 90 (<xref ref="L_theorem_90"/>),
-            but is pretty subtle in the global case.
-            We will first describe a proof using analytic methods (properties of <m>L</m>-functions); there is also an algebraic approach, more on which below.
-          </p>
-        </li>
-        <li>
-          <p>
-            Check the conditions for abstract class field theory (<xref ref="sec_abstractcft1"/>) in the setup described at the end of <xref ref="sec_abstractcft3"/>,
-            using the previous calculations to establish the class field axiom
-            and the explicit nature of Artin reciprocity for cyclotomic extensions to establish the compatibility between <m>d</m> and <m>v</m>.
-            Plugging into the machine will then give an <q>abstract</q> reciprocity map (<xref ref="T_abstract_adelic_reciprocity"/>), 
-            not yet known to be related to Artin reciprocity except for cyclotomic extensions.
-          </p>
-        </li>
-        <li>
-          <p>
-            Prove the adelic existence theorem (<xref ref="T_adelic_existence_theorem1"/>) by showing that every open subgroup of <m>C_K</m> contains a norm group
-            (<xref ref="T_adelic_existence_theorem2"/>).
-            This can be done after enlarging <m>K</m>, so we can get into the realm of Kummer theory; this is closely related to the algebraic proof
-            of the Second Inequality mentioned above. Note that it is crucial for this step that we have
-            the abstract reciprocity map, but not that it be reconciled with Artin reciprocity.
-          </p>
-        </li>
-        <li>
-          <p>
-            Use the existence theorem to deduce that for every finite abelian extension of the completion of a number field at some place is itself the completion
-            of a finite extension of the number field (<xref ref="L_auxiliary_existence"/>), then use this to show that the
-            <q>abstract</q> global reciprocity map restricts to the usual reciprocity map from local class field theory (<xref ref="prop-reciprocity-trivial-on-diagonal2"/>).
-            This will finally imply <xref ref="prop-reciprocity-trivial-on-diagonal"/>, thus yielding the adelic reciprocity map
-            (and also showing that it coincides with the abstract reciprocity map).
-          </p>
-        </li>
-        <li>
-          <p>
-            We will also briefly sketch the approach taken in <xref ref="bib-Milne-CFT"/>,
-            in which one uses Galois cohomology in place of abstract class field theory.
-            Specifically, one first checks that
-            <m>H^2(\Gal(L/K), C_L)</m> is cyclic of order <m>[L:K]</m> in certain
-            <q>unramified</q>
-            (i.e., cyclotomic) cases; as in the local case,
-            one can then deduce this result in general by induction on degree.
-            Using Tate's theorem (<xref ref="T_tate_thm1"/>),
-            one gets a reciprocity map 
-            <me>
-              \Gal(L/K)^{\ab} = H^{-2}_T(\Gal(L/K), \ZZ) \to H^0_T(\Gal(L/K), C_K/\Norm_{L/K} C_L)
-            </me>
-            which again can be reconciled with local reciprocity to get the Artin reciprocity map (<xref ref="prop-reciprocity-trivial-on-diagonal3"/>).
-            This approach will also yield some additional information, notably a description of the Brauer group of a number field (<xref ref="def-fundamental-exact-sequence"/>).
-          </p>
-        </li>
-      </ul>
-    </p>
   </subsection>
 </section>

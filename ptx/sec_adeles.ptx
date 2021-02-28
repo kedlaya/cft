@@ -331,6 +331,9 @@
         The subset <m>K</m> of <m>\AA_K</m> is discrete.
       </p>
     </corollary>
+  </subsection>
+  <subsection>
+    <title>Adelic <m>S</m>-integers</title>
     <definition xml:id="def-adelic-S-integers">
     <p>
       For any finite set <m>S</m> of places, let <m>\AA_{K,S}</m> (resp.
@@ -340,7 +343,7 @@
     </p>
     </definition>
     <p>
-      The following can be viewed as an adelic analogue of the Chinese remainder theorem.
+      We can formulate an adelic analogue of the Chinese remainder theorem.
     </p>
     <proposition xml:id="P_adelic_CRT">
       <statement>
@@ -381,6 +384,26 @@
         (<xref ref="exer-no-local-automorphism-Q"/>), the ring <m>\AA_\QQ</m> also has  no nontrivial automorphisms even if you ignore the topology (<xref ref="exer-automorphisms-AQ"/>).
       </p>
     </remark>
+  </subsection>
+  <subsection>
+    <title>The approximation theorem</title>
+    <p>
+      We already mentioned one analogue of the Chinese remainder theorem (<xref ref="P_adelic_CRT"/>). Here is another one.
+    </p>
+    <proposition xml:id="P_adelic_CRT_0">
+      <title>Approximation theorem</title>
+      <statement>
+        <p>
+          Let <m>S</m> be a finite set of places of <m>K</m>. For each <m>v \in S</m>, let <m>U_v</m> be an open subgroup of <m>K_v</m>.
+          Then <m>K \cap \bigcap_{v \in S} U_v \neq \emptyset.</m>
+       </p>
+      </statement>
+      <proof>
+        <p>
+          See <xref ref="exerc-crt-adeles_0"/>.
+        </p>
+      </proof>
+    </proposition>
   </subsection>
   <exercises>
     <title>Exercises</title>
@@ -454,6 +477,22 @@
         <p>
           Use <xref ref="exer-no-semilocal-automorphism-Q"/> and <xref ref="exer-binary-quadratic-form"/> to prove that the map <m>\AA_\QQ \to \prod_v \QQ_v</m> is equivariant for any automorphism
           of <m>\AA_\QQ</m> and the trivial action on <m>\prod_v \QQ_v</m>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise xml:id="exerc-crt-adeles_0">
+      <statement>
+        <p>
+          Prove <xref ref="P_adelic_CRT_0"/>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Prove by induction on <m>n</m> that given any pairwise distinct places <m>v_1, \dots, v_n</m>, we can find <m>x \in K</m> with
+          <me>
+            |x|_{v_1} @gt; 1, |x|_{v_2} @lt; 1, \dots, |x|_{v_n} @lt; 1.
+          </me>
+          Then make a careful linear combination of powers of such elements. For more details, see <xref ref="bib-Neukirch"/>, Theorem II.3.4.
         </p>
       </hint>
     </exercise>

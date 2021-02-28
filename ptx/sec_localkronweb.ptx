@@ -6,25 +6,14 @@
       <p>
         <xref ref="bib-Washington"/>, Chapter 14.
       </p>
+    <p>
+      We now prove the local Kronecker-Weber theorem (<xref ref="T_local_Kronecker-Weber1"/>), modulo some steps which will be left as exercises.
+      As shown previously, this will imply the original Kronecker-Weber theorem.
+    </p>
     </paragraphs>
   </introduction>
   <subsection>
-    <p>
-      We now prove the local Kronecker-Weber theorem
-      (<xref ref="T_local_Kronecker-Weber1">Theorem</xref>),
-      modulo some steps which will be left as exercises.
-      As shown previously,
-      this will imply the original Kronecker-Weber theorem.
-    </p>
-    <theorem xml:id="T_local_Kronecker-Weber2">
-      <title>Local Kronecker-Weber</title>
-      <statement>
-        <p>
-          If <m>K/\QQ_p</m> is a finite abelian extension,
-          then <m>K \subseteq \QQ_p(\zeta_n)</m> for some positive integer <m>n</m>.
-        </p>
-      </statement>
-    </theorem>
+    <title>Extensions of local fields</title>
     <p>
       We first recall the following facts from the theory of local fields (e.g., see <xref ref="bib-Neukirch"/> II.7).
     </p>
@@ -54,13 +43,15 @@
           where <m>q</m> is the cardinality of the residue field of <m>L</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          Choose <m>u \in \gotho_L</m> generating the residue field of <m>L</m> over the residue field of <m>K</m>,
+          and let <m>P(x)</m> be the minimal polynomial of <m>u</m> over <m>K</m>. Then over the residue field of <m>K</m>,
+          <m>P(x)</m> divides the <m>(q-1)</m>-st cyclotomic polynomial, so by Hensel's lemma it splits over <m>K(\zeta_{q-1})</m>.
+          Hence <m>L \subseteq K(\zeta_{q-1})</m>, and equality follows by comparing degrees.
+        </p>
+      </proof>
     </lemma>
-    <proof>
-       Choose <m>u \in \gotho_L</m> generating the residue field of <m>L</m> over the residue field of <m>K</m>,
-       and let <m>P(x)</m> be the minimal polynomial of <m>u</m> over <m>K</m>. Then over the residue field of <m>K</m>,
-       <m>P(x)</m> divides the <m>(q-1)</m>-st cyclotomic polynomial, so by Hensel's lemma it splits over <m>K(\zeta_{q-1})</m>.
-       Hence <m>L \subseteq K(\zeta_{q-1})</m>, and equality follows by comparing degrees.
-    </proof>
     <lemma xml:id="lem_tame">
       <statement>
         <p>
@@ -68,105 +59,139 @@
           Then there exists a uniformizer <m>\pi</m> of <m>K</m> such that <m>L = K(\pi^{1/e})</m>.
         </p>
       </statement>
+      <proof>
+        Let <m>\pi_L</m> be a uniformizer of <m>L</m>.
+        Then <m>\pi_L^e</m> can be written as a product of a uniformizer <m>\pi</m> of <m>K</m> times an element <m>u</m> of <m>\gotho_L</m>
+        congruent to 1 modulo <m>\pi_L</m>. By Hensel's lemma, <m>u</m> has an <m>e</m>-th root in <m>L</m>, as then does <m>\pi</m>.
+      </proof>
     </lemma>
-    <proof>
-      Let <m>\pi_L</m> be a uniformizer of <m>L</m>.
-      Then <m>\pi_L^e</m> can be written as a product of a uniformizer <m>\pi</m> of <m>K</m> times an element <m>u</m> of <m>\gotho_L</m>
-      congruent to 1 modulo <m>\pi_L</m>. By Hensel's lemma, <m>u</m> has an <m>e</m>-th root in <m>L</m>, as then does <m>\pi</m>.
-    </proof>
+  </subsection>
+  <subsection>
+    <title>Proof of local Kronecker-Weber</title>
     <p>
       We now proceed to the proof of <xref ref="T_local_Kronecker-Weber2"/>, modulo some lemmas which we fill in later.
     </p>
-    <proof>
+    <theorem xml:id="T_local_Kronecker-Weber2">
+      <title>Local Kronecker-Weber</title>
+      <statement>
+        <p>
+          If <m>K/\QQ_p</m> is a finite abelian extension,
+          then <m>K \subseteq \QQ_p(\zeta_n)</m> for some positive integer <m>n</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Since <m>\Gal(K/\QQ_p)</m> decomposes into a product of cyclic groups of prime-power order,
+          by the structure theorem for finite abelian groups we may write <m>K</m> as the compositum of extensions of <m>\QQ_p</m> whose Galois groups are cyclic of prime-power order.
+          In other words, it suffices to prove local Kronecker-Weber under the assumption that <m>\Gal(K/\QQ_p) \cong \ZZ/q^r \ZZ</m> for some prime <m>q</m> and some positive integer <m>r</m>.
+          We split this discussion into three cases; see <xref ref="lem_local_kronweb_case1"/>, <xref ref="lem_local_kronweb_case2"/>, and <xref ref="lem_local_kronweb_case3"/>.
+        </p>
+      </proof>
+    </theorem>
+    <lemma xml:id="lem_local_kronweb_case1">
+      <statement>
+        <p>
+          The statement of <xref ref="T_local_Kronecker-Weber2"/> holds when <m>\Gal(K/\QQ_p) \cong \ZZ/q^r \ZZ</m> for some prime <m>q \neq p</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          To begin, note that <m>\QQ_p(\zeta_p)/\QQ_p</m> is totally tamely ramified of degree <m>p-1</m>, so by <xref ref="lem_tame"/> it has the form
+          <m>\QQ_p(c^{1/(p-1)})</m> for some <m>c \in p \ZZ_p^*</m>. (The value of <m>c</m> won't be critical here, but see <xref ref="lem_zetap"/>
+          for later reference.)
+        </p>
+        <p>
+          Let <m>L</m> be the maximal unramified subextension of <m>K</m>.
+          By <xref ref="lem_unram"/>,
+          <m>L = \QQ_p(\zeta_n)</m> for some <m>n</m>.
+          Let <m>e = [K:L]</m>.
+          Since <m>e</m> is a power of <m>q</m>,
+          <m>e</m> is not divisible by <m>p</m>,
+          so <m>K</m> is totally and tamely ramified over <m>L</m>.
+          Thus by <xref ref="lem_tame"/>,
+          there exists <m>\pi \in L</m> generating the maximal ideal of
+          <m>\gotho_L</m> such that <m>K = L(\pi^{1/e})</m>.
+          Since <m>L/\QQ_p</m> is unramified,
+          <m>p</m> also generates the maximal ideal of <m>\gotho_L</m>,
+          so we can write <m>\pi = cu</m> for some unit <m>u \in \gotho_L^*</m>.
+          Now <m>L(u^{1/e})/L</m> is unramified since <m>e</m> is prime to <m>p</m> and <m>u</m> is a unit.
+          In particular,
+          <m>L(u^{1/e})/\QQ_p</m> is unramified, hence abelian.
+          Then <m>K(u^{1/e})/\QQ_p</m> is the compositum of the two abelian extensions <m>K/\QQ_p</m> and
+          <m>L(u^{1/e})/\QQ_p</m>, so it's also abelian.
+          Hence any subextension is abelian,
+          in particular <m>\QQ_p(c^{1/e})/\QQ_p</m>.
+        </p>
+        <p>
+          For <m>\QQ_p(c^{1/e})/\QQ_p</m> to be Galois,
+          it must contain the <m>e</m>-th roots of unity
+          (since it must contain all of the <m>e</m>-th roots of <m>-p</m>,
+          and we can divide one by another to get an <m>e</m>-th root of unity).
+          But <m>\QQ_p(c^{1/e})/\QQ_p</m> is totally ramified,
+          whereas <m>\QQ_p(\zeta_e)/\QQ_p</m> is unramified.
+          This is a contradiction unless
+          <m>\QQ_p(\zeta_e)</m> is actually equal to <m>\QQ_p</m>,
+          which only happens if <m>e|(p-1)</m> (since the residue field <m>\FF_p</m> of <m>\QQ_p</m> contains only <m>(p-1)</m>-st roots of unity).
+        </p>
+        <p>
+          Now <m>K \subseteq L(c^{1/e}, u^{1/e})</m> as noted above.
+          But on one hand, <m>L(u^{1/e})</m> is unramified over <m>L</m>,
+          so <m>L(u^{1/e}) = L(\zeta_m)</m> for some <m>m</m>;
+          on the other hand, because <m>e|(p-1)</m>,
+          we have <m>\QQ_p(c^{1/e}) \subseteq \QQ_p(c^{1/(p-1)}) = \QQ_p(\zeta_p)</m>.
+          Putting it all together,
+          <me>
+            K \subseteq L(c^{1/e}, u^{1/e}) \subseteq \QQ_p(\zeta_n, \zeta_p, \zeta_m) \subseteq \QQ_p(\zeta_{mnp})
+          </me>.
+        </p>
+      </proof>
+    </lemma>
+    <lemma xml:id="lem_local_kronweb_case2">
+      <statement>
+        <p>
+          The statement of <xref ref="T_local_Kronecker-Weber2"/> holds when <m>\Gal(K/\QQ_p) \cong \ZZ/q^r \ZZ</m> for <m>q = p \neq 2</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Suppose <m>\Gal(K/\QQ_p) \cong \ZZ/p^r\ZZ</m>.
+          We can use roots of unity to construct two other extensions of <m>\QQ_p</m> with this Galois group.
+          Namely, <m>\QQ_{p}(\zeta_{p^{p^r}-1})/\QQ_p</m> is unramified of degree <m>p^r</m>,
+          and automatically has cyclic Galois group;
+          meanwhile, the index <m>p-1</m> subfield of
+          <m>\QQ_p(\zeta_{p^{r+1}})</m> is totally ramified with Galois group <m>\ZZ/p^r\ZZ</m>.
+          By assumption,
+          <m>K</m> is not contained in the compositum of these two fields,
+          so for some <m>s>0</m>,
+          <me>
+            \Gal(K(\zeta_{p^{p^r}-1}, \zeta_{p^{r+1}})/\QQ_p) \cong (\ZZ/p^r\ZZ)^2 \times \ZZ/p^s \ZZ \times \ZZ/(p-1)\ZZ
+          </me>.
+          This group admits <m>(\ZZ/p\ZZ)^3</m> as a quotient, so we have an extension of <m>\QQ_p</m> with Galois group <m>(\ZZ/p\ZZ)^3</m>.
+          We rule this out using <xref ref="lem_three"/>.
+        </p>
+      </proof>
+    </lemma>
+    <lemma xml:id="lem_local_kronweb_case3">
+      <statement>
+        <p>
+          The statement of <xref ref="T_local_Kronecker-Weber2"/> holds when <m>\Gal(K/\QQ_p) \cong \ZZ/q^r \ZZ</m> for <m>q = p = 2</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          This is similar to <xref ref="lem_local_kronweb_case2"/>,
+          but a bit messier because <m>\QQ_2</m> <em>does</em> admit an extension with Galois group <m>(\ZZ/2\ZZ)^3</m>.
+          We defer this case to the exercises; see <xref ref="exer-local-kronweb-part1"/>, 
+          <xref ref="exer-local-kronweb-part2"/>, and <xref ref="exer-local-kronweb-part3"/>.
+        </p>
+      </proof>
+    </lemma>
+  </subsection>
+  <subsection>
+    <title>Filling in the details</title>
     <p>
-      Since <m>\Gal(K/\QQ_p)</m> decomposes into a product of cyclic groups of prime-power order,
-      by the structure theorem for finite abelian groups we may write <m>K</m> as the compositum of extensions of <m>\QQ_p</m> whose Galois groups are cyclic of prime-power order.
-      In other words, it suffices to prove local Kronecker-Weber under the assumption that <m>\Gal(K/\QQ_p) \cong \ZZ/q^r \ZZ</m> for some prime <m>q</m> and some positive integer <m>r</m>.
-    </p>
-    <p>
-      <em>Case 1: <m>q \neq p</m>.</em>
-    </p>
-    <p>
-      To begin, note that <m>\QQ_p(\zeta_p)/\QQ_p</m> is totally tamely ramified of degree <m>p-1</m>, so by <xref ref="lem_tame"/> it has the form
-      <m>\QQ_p(c^{1/(p-1)})</m> for some <m>c \in p \ZZ_p^*</m>. (The value of <m>c</m> won't be critical here, but see <xref ref="lem_zetap"/>
-      for later reference.)
-    </p>
-    <p>
-      Let <m>L</m> be the maximal unramified subextension of <m>K</m>.
-      By <xref ref="lem_unram"/>,
-      <m>L = \QQ_p(\zeta_n)</m> for some <m>n</m>.
-      Let <m>e = [K:L]</m>.
-      Since <m>e</m> is a power of <m>q</m>,
-      <m>e</m> is not divisible by <m>p</m>,
-      so <m>K</m> is totally and tamely ramified over <m>L</m>.
-      Thus by <xref ref="lem_tame"/>,
-      there exists <m>\pi \in L</m> generating the maximal ideal of
-      <m>\gotho_L</m> such that <m>K = L(\pi^{1/e})</m>.
-      Since <m>L/\QQ_p</m> is unramified,
-      <m>p</m> also generates the maximal ideal of <m>\gotho_L</m>,
-      so we can write <m>\pi = cu</m> for some unit <m>u \in \gotho_L^*</m>.
-      Now <m>L(u^{1/e})/L</m> is unramified since <m>e</m> is prime to <m>p</m> and <m>u</m> is a unit.
-      In particular,
-      <m>L(u^{1/e})/\QQ_p</m> is unramified, hence abelian.
-      Then <m>K(u^{1/e})/\QQ_p</m> is the compositum of the two abelian extensions <m>K/\QQ_p</m> and
-      <m>L(u^{1/e})/\QQ_p</m>, so it's also abelian.
-      Hence any subextension is abelian,
-      in particular <m>\QQ_p(c^{1/e})/\QQ_p</m>.
-    </p>
-    <p>
-      For <m>\QQ_p(c^{1/e})/\QQ_p</m> to be Galois,
-      it must contain the <m>e</m>-th roots of unity
-      (since it must contain all of the <m>e</m>-th roots of <m>-p</m>,
-      and we can divide one by another to get an <m>e</m>-th root of unity).
-      But <m>\QQ_p(c^{1/e})/\QQ_p</m> is totally ramified,
-      whereas <m>\QQ_p(\zeta_e)/\QQ_p</m> is unramified.
-      This is a contradiction unless
-      <m>\QQ_p(\zeta_e)</m> is actually equal to <m>\QQ_p</m>,
-      which only happens if <m>e|(p-1)</m> (since the residue field <m>\FF_p</m> of <m>\QQ_p</m> contains only <m>(p-1)</m>-st roots of unity).
-    </p>
-    <p>
-      Now <m>K \subseteq L(c^{1/e}, u^{1/e})</m> as noted above.
-      But on one hand, <m>L(u^{1/e})</m> is unramified over <m>L</m>,
-      so <m>L(u^{1/e}) = L(\zeta_m)</m> for some <m>m</m>;
-      on the other hand, because <m>e|(p-1)</m>,
-      we have <m>\QQ_p(c^{1/e}) \subseteq \QQ_p(c^{1/(p-1)}) = \QQ_p(\zeta_p)</m>.
-      Putting it all together,
-      <me>
-        K \subseteq L(c^{1/e}, u^{1/e}) \subseteq \QQ_p(\zeta_n, \zeta_p, \zeta_m) \subseteq \QQ_p(\zeta_{mnp})
-      </me>.
-    </p>
-    <p>
-      <em>Case 2: <m>q = p \neq 2</m>.</em>
-    </p>
-    <p>
-      Suppose <m>\Gal(K/\QQ_p) \cong \ZZ/p^r\ZZ</m>.
-      We can use roots of unity to construct two other extensions of <m>\QQ_p</m> with this Galois group.
-      Namely, <m>\QQ_{p}(\zeta_{p^{p^r}-1})/\QQ_p</m> is unramified of degree <m>p^r</m>,
-      and automatically has cyclic Galois group;
-      meanwhile, the index <m>p-1</m> subfield of
-      <m>\QQ_p(\zeta_{p^{r+1}})</m> is totally ramified with Galois group <m>\ZZ/p^r\ZZ</m>.
-      By assumption,
-      <m>K</m> is not contained in the compositum of these two fields,
-      so for some <m>s>0</m>,
-      <me>
-        \Gal(K(\zeta_{p^{p^r}-1}, \zeta_{p^{r+1}})/\QQ_p) \cong (\ZZ/p^r\ZZ)^2 \times \ZZ/p^s \ZZ \times \ZZ/(p-1)\ZZ
-      </me>.
-    </p>
-    <p>
-      This group admits <m>(\ZZ/p\ZZ)^3</m> as a quotient,
-      so we have an extension of <m>\QQ_p</m> with Galois group <m>(\ZZ/p\ZZ)^3</m>.
-      We rule out this case using <xref ref="lem_three"/>.
-    </p>
-    <p>
-      <em>Case 3: <m>p=q=2</m>.</em> This case is similar to the previous case,
-      but a bit messier
-      because <m>\QQ_2</m> does admit an extension with Galois group <m>(\ZZ/2\ZZ)^3</m>.
-      We defer this case to the exercises; see <xref ref="exer-local-kronweb-part1"/>, 
-      <xref ref="exer-local-kronweb-part2"/>, and <xref ref="exer-local-kronweb-part3"/>.
-    </p>
-    </proof>
-    <p>
-      We now return to the lemmas that we skipped over in the previous proof.
+      We now return to the lemmas that we skipped over in the proof of <xref ref="T_local_Kronecker-Weber2"/>.
+      At this point, we make heavy use of Kummer theory.
     </p>
     <lemma xml:id="lem_zetap">
       <statement>
@@ -253,7 +278,9 @@
     <title>Exercises</title>
       <exercise xml:id="exer-lem_zetap">
         <statement>
-          Prove <xref ref="lem_zetap">Lemma</xref>.
+          <p>
+          Prove <xref ref="lem_zetap"/>.
+          </p>
         </statement>
         <hint>
           Prove that <m>(\zeta_p-1)^{p-1}/p - 1</m> belongs to the maximal ideal of <m>\ZZ_p[\zeta_p]</m>.
@@ -261,7 +288,7 @@
       </exercise>
       <exercise xml:id="exer-1units-power">
         <statement>
-          Prove that (in the notation of <xref ref="lem_three">Lemma</xref>) <m>U_1^p</m> is the set of units congruent to 1 modulo <m>\pi^{p+1}</m>.
+          Prove that (in the notation of <xref ref="lem_three"/>) <m>U_1^p</m> is the set of units congruent to 1 modulo <m>\pi^{p+1}</m>.
         </statement>
         <hint>
           In one direction, write <m>u \in U_1</m> as a power of <m>\zeta_p</m> times a unit congruent to 1 modulo <m>\pi^2</m>.
@@ -279,13 +306,17 @@
       </exercise>
       <exercise xml:id="exer-local-kronweb-part1">
         <statement>
+          <p>
           Suppose that <m>K/\QQ_2</m> is a <m>\ZZ/2^r\ZZ</m>-extension not contained in <m>\QQ_2(\zeta_n)</m> for any <m>n>0</m>.
           Prove that there exists an extension of <m>\QQ_2</m> with Galois group <m>(\ZZ/2\ZZ)^4</m> or <m>(\ZZ/4\ZZ)^3</m>.
+          </p>
         </statement>
         <hint>
-          Compare <p>K</p> with its compositum with some field <m>L</m> as in <xref ref="exer-2power-extension"/>.
+          <p>
+          Compare <m>K</m> with its compositum with some field <m>L</m> as in <xref ref="exer-2power-extension"/>.
           Use the structure of finite abelian groups to show that if <m>LK \neq L</m>, then <m>\Gal(LK/\mathbb{Q}_2)</m> is forced to have 
           a quotient of the specified form.
+          </p>
         </hint>
       </exercise>
               <exercise xml:id="exer-local-kronweb-part2">

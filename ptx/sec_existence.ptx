@@ -534,4 +534,12 @@
       </p>
     </remark>
   </subsection>
+  <exercises>
+    <exercise>
+      <p>
+        Let <m>K</m> be a number field. Prove that for every positive integer <m>n</m>, <m>C_K^n</m> is the intersection of the norm groups <m>\Norm_{L/K} C_L</m>
+        over all abelian extensions <m>L/K</m> of exponent <m>n</m>.
+      </p>
+    </exercise>
+  </exercises>
 </section>

@@ -89,7 +89,7 @@
         (see <xref ref="exer-norm-map-finite"/>).
         But one can also see it using the machinery we have at hand.
         Because <m>L^*</m> is a finite module, its Herbrand quotient is 1.
-        Also, we know <m>H^1_T(L/K)</m> is trivial by <xref ref="L_theorem_90">Lemma</xref>.
+        Also, we know <m>H^1_T(L/K)</m> is trivial by <xref ref="L_theorem_90"/>.
         Thus <m>H^0_T(L/K)</m> is trivial too, that is, <m>\Norm_{L/K}: L^* \to K^*</m> is surjective.
       </p>
     </proof>
@@ -202,7 +202,7 @@
     <title>The cyclic case</title>
     <p>
       Let <m>L/K</m> be a cyclic but possibly ramified extension of local fields.
-      Again, <m>H^1_T(L/K)</m> is trivial by <xref ref="L_theorem_90">Lemma</xref>,
+      Again, <m>H^1_T(L/K)</m> is trivial by <xref ref="L_theorem_90"/>,
       so all there is to compute is <m>H^0_T(L/K)</m>.
       We are going to show again that it has order <m>[L:K]</m>.
       (It's actually cyclic again, but we won't prove this just yet.)
@@ -224,7 +224,7 @@
         g \in \Gal(L/K)\}</m> is a basis for <m>L</m> over <m>K</m>.
         Without loss of generality, we may rescale to get <m>\alpha \in \gotho_L</m>;
         then put <m>V = \sum \gotho_K \alpha^g</m>.
-        As in the proof of <xref ref="T_additive_theorem_90">Theorem</xref>,
+        As in the proof of <xref ref="T_additive_theorem_90"/>,
         <m>V</m> is induced:
         <m>V = \Ind^G_{1} \gotho_K</m>, so is acyclic.
       </p>
@@ -335,7 +335,7 @@
       </p>
       <p>
         If <m>r>1</m>, we induct on <m>r</m> by dimension shifting.
-        Recall (from <xref ref="P_adjoint_property">Proposition</xref>) that there is an injective homomorphism <m>M \to \Ind^G_1 M</m> of <m>G</m>-modules.
+        Recall (from <xref ref="P_adjoint_property"/>) that there is an injective homomorphism <m>M \to \Ind^G_1 M</m> of <m>G</m>-modules.
         Let <m>N</m> be the <m>G</m>-module which makes the sequence
         <me>
           0 \to M \to \Ind^G_{1} M \to N \to 0

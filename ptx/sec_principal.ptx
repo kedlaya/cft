@@ -239,7 +239,7 @@
     <title>Exercises</title>
       <exercise xml:id="exc-transfer-homomorphism">
         <statement>
-          Prove <xref ref="T_transfer_homomorphism">Theorem</xref>.
+          Prove <xref ref="T_transfer_homomorphism"/>.
         </statement>
         <hint>
           One approach to proving independence from choices is to change one <m>g_i</m> at a time.
@@ -248,7 +248,7 @@
       </exercise>
       <exercise xml:id="exc-transfer-Frobenius">
         <statement>
-          Prove <xref ref="L_transfer_Frobenius">Lemma</xref>.
+          Prove <xref ref="L_transfer_Frobenius"/>.
         </statement>
         <hint>
           See <xref ref="bib-Neukirch"/>, Proposition IV.5.9.
@@ -262,7 +262,7 @@
           <m>\sum_{g \in G} n_g [g]</m> with <m>n_g \in \ZZ</m>,
           multiplied by putting <m>[g][h] = [gh]</m>.
           Let <m>I_G \subset \ZZ[G]</m> be the ideal of sums <m>\sum n_g[g]</m> with <m>\sum n_g = 0</m>
-          (called the <term>augmentation ideal</term>; see <xref ref="sec_homology">Chapter</xref>).
+          (called the <term>augmentation ideal</term>; see <xref ref="sec_homology"/>).
           Let
           <me>
             \delta: H/H' \to (I_{H}+I_GI_{H})/I_GI_{H}
@@ -300,7 +300,7 @@
       </exercise>
       <exercise xml:id="exc-transfer-vanishes">
         <statement>
-          Prove <xref ref="T_transfer_vanishes">Theorem</xref>.
+          Prove <xref ref="T_transfer_vanishes"/>.
         </statement>
         <hint>
           Quotient by the commutator subgroup of <m>H</m> to reduce to the case where <m>H</m> is abelian.

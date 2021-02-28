@@ -77,7 +77,7 @@
     F. Jarvis, <pubtitle>Algebraic Number Fields</pubtitle>, Springer, Cham, 2014.
   </biblio>
   <biblio type="raw" xml:id="bib-Kapustin-Witten">
-    A. kapustin and E. Witten, <articletitle>Electric-magnetic duality and the geometric Langlands program</articletitle>,
+    A. Kapustin and E. Witten, <articletitle>Electric-magnetic duality and the geometric Langlands program</articletitle>,
     <journal>Communications in Number Theory and Physics</journal>  <volume>1</volume> (2007), 1<ndash/>236.
   </biblio>
   <biblio type="raw" xml:id="bib-Kato">
@@ -121,6 +121,9 @@
   <biblio type="raw" xml:id="bib-Nikolov-Segal">
     N. Nikolov and D. Segal, <articletitle>On finitely generated profinite groups, I: strong completeness and uniform bounds</articletitle>,
     <journal>Annals of Mathematics</journal> <volume>165</volume> (2007), 171--238.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Noether">
+    E. Noether, <articletitle>Der Hauptgeschlechtssatz für relativ-galoissche Zahlkörper</articletitle>, <journal>Mathematische Annalen</journal> <journal>108</journal> (1933), 411<ndash/>419.
   </biblio>
   <biblio type="raw" xml:id="bib-Scholze">
     P. Scholze, <articletitle>The local Langlands correspondence for <m>\GL_n</m> over <m>p</m>-adic fields</articletitle>,

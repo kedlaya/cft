@@ -32,4 +32,5 @@
   <xi:include  href="sec_ideles.ptx"/>
   <xi:include  href="sec_adeles-rel.ptx"/>
   <xi:include  href="sec_adelic-recip.ptx"/>
+  <xi:include  href="sec_adelic-overview.ptx"/>
 </chapter>

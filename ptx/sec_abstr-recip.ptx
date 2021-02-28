@@ -1,7 +1,5 @@
 ﻿<section xml:id="sec_abstr-recip">
-  <title>An
-  <q>abstract</q>
-  reciprocity map</title>
+  <title>An <q>abstract</q> reciprocity map</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
@@ -34,7 +32,7 @@
         <me>
           \#H^0_T(\Gal(L/K), C_L) = [L:K], \qquad \#H^1_T(\Gal(L/K), C_L) = 1.
         </me>
-        Note that we neither know yet, nor need to know at this point, that <m>H^0_T(\Gal(L/K), C_L)</m> is cyclic.
+        Note that at this point we neither know, nor need to know, that <m>H^0_T(\Gal(L/K), C_L)</m> is cyclic.
       </p>
     </definition>
   </subsection>
@@ -51,18 +49,18 @@
     </p>
     <definition>
       <p>
-      The extension <m>\bigcup_n \QQ(\zeta_n)</m> of <m>\QQ</m> obtained by adjoining all roots of unity has Galois group <m>\widehat{\ZZ}^* = \prod_p \ZZ_p^*</m>.
-      That group has a lot of torsion,
-      since each <m>\ZZ_p^*</m> contains a torsion subgroup of order <m>p-1</m>
-      (or 2, if <m>p=2</m>).
-      If we take the fixed field for the torsion subgroup of <m>\ZZ^*</m>,
-      we get a slightly smaller extension,
-      which I'll call the <term>small cyclotomic extension</term>
-      of <m>\QQ</m> and denote <m>\QQ^{\smcy}</m>.
-      Its Galois group is <m>\prod_p \ZZ_p = \widehat{\ZZ}</m>.
-      For <m>K</m> a number field, define <m>K^{\smcy} = K \QQ^{\smcy}</m>;
-      then <m>\Gal(K^{\smcy}/K) \cong \widehat{\ZZ}</m> as well,
-      even if <m>K</m> contains some extra roots of unity.
+        The extension <m>\bigcup_n \QQ(\zeta_n)</m> of <m>\QQ</m> obtained by adjoining all roots of unity has Galois group <m>\widehat{\ZZ}^* = \prod_p \ZZ_p^*</m>.
+        That group has a lot of torsion,
+        since each <m>\ZZ_p^*</m> contains a torsion subgroup of order <m>p-1</m>
+        (or 2, if <m>p=2</m>).
+        If we take the fixed field for the torsion subgroup of <m>\ZZ^*</m>,
+        we get a slightly smaller extension,
+        which I'll call the <term>small cyclotomic extension</term>
+        of <m>\QQ</m> and denote <m>\QQ^{\smcy}</m>.
+        Its Galois group is <m>\prod_p \ZZ_p = \widehat{\ZZ}</m>.
+        For <m>K</m> a number field, define <m>K^{\smcy} = K \QQ^{\smcy}</m>;
+        then <m>\Gal(K^{\smcy}/K) \cong \widehat{\ZZ}</m> as well,
+        even if <m>K</m> contains some extra roots of unity.
       </p>
     </definition>
     <p>
@@ -94,9 +92,7 @@
       <ol>
         <li>
           <p>
-            <m>v(C_{\QQ})</m> is a subgroup <m>Z</m> of
-            <m>\widehat{\ZZ}</m> containing <m>\ZZ</m> with
-            <m>Z/nZ \cong \ZZ/n\ZZ</m> for all positive integers <m>n</m>;
+            <m>v(C_{\QQ})</m> is a subgroup <m>Z</m> of <m>\widehat{\ZZ}</m> containing <m>\ZZ</m> with <m>Z/nZ \cong \ZZ/n\ZZ</m> for all positive integers <m>n</m>;
           </p>
         </li>
         <li>
@@ -110,12 +106,12 @@
     <p>
       To define the map <m>v</m>, we write 
       <me>
-      I_{\QQ} = \QQ^* \times \RR^* \times \widehat{\ZZ}^*
+        I_{\QQ} = \QQ^* \times \RR^* \times \widehat{\ZZ}^*
       </me>
       as in <xref ref="rmk-idele-group-presentation-for-Q"/>. We then define <m>v</m> as the projection onto the third factor
       followed by the projection 
       <me>
-      \widehat{\ZZ}^* \cong \Gal(\QQ^{\cyc}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}.
+        \widehat{\ZZ}^* \cong \Gal(\QQ^{\cyc}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}.
       </me>
       The first condition of <xref ref="def-abstract-henselian-valuation"/> holds by construction.
       We will check the second condition using Artin reciprocity for cyclotomic extensions.
@@ -153,8 +149,7 @@
     <proposition xml:id="prop-artin-map-surjects">
       <statement>
         <p>
-          For <m>L/K</m> an abelian extension of number fields,
-          the Artin map always surjects onto <m>\Gal(L/K)</m>.
+          For <m>L/K</m> an abelian extension of number fields, the Artin map always surjects onto <m>\Gal(L/K)</m>.
         </p>
       </statement>
     </proposition>
@@ -192,18 +187,17 @@
       </proof>
     </theorem>
     <definition>
-    <p>
-      The maps <m>r'_{L/K}</m> from <xref ref="T_abstract_adelic_reciprocity"/> fit together to give a map <m>r'_K: C_K \to \Gal(K^{\ab}/K)</m>;
-      but we do not yet know that this coincides with the product of the local reciprocity maps, so we cannot yet recover Artin reciprocity.
-      However, we can at least deduce the norm limitation theorem (<xref ref="T_adelic_norm_limitation1"/>). See also <xref ref="rmk-remove-identification"/> below.
-    </p>
+      <p>
+        The maps <m>r'_{L/K}</m> from <xref ref="T_abstract_adelic_reciprocity"/> fit together to give a map <m>r'_K: C_K \to \Gal(K^{\ab}/K)</m>;
+        but we do not yet know that this coincides with the product of the local reciprocity maps, so we cannot yet recover Artin reciprocity.
+        However, we can at least deduce the norm limitation theorem (<xref ref="T_adelic_norm_limitation1"/>). See also <xref ref="rmk-remove-identification"/> below.
+      </p>
     </definition>
     <theorem xml:id="T_adelic_norm_limitation">
       <title>Norm limitation theorem</title>
       <statement>
         <p>
-          If <m>L/K</m> is a finite extension of number fields and <m>M = L \cap K^{\ab}</m>,
-          then <m>\Norm_{L/K} C_L = \Norm_{M/K} C_M</m>.
+          If <m>L/K</m> is a finite extension of number fields and <m>M = L \cap K^{\ab}</m>, then <m>\Norm_{L/K} C_L = \Norm_{M/K} C_M</m>.
         </p>
       </statement>
       <proof>
@@ -213,16 +207,16 @@
       </proof>
     </theorem>
     <remark xml:id="rmk-remove-identification">
-    <p>
-      Although we do not have a complete description of the isomorphism <m>r'_{L/K}</m> coming from abstract class field theory,
-      we do know one specific fact about this map: for <q>unramified</q> extensions <m>L/K</m> (i.e., <m>L \subseteq K^{\smcy}</m>), the
-      <q>Frobenius</q> in <m>\Gal(L/K)</m> maps to a <q>uniformizer</q>
-      in <m>C_K</m>.
-      That is, the element of <m>\Gal(L/K)</m> coming from the element of
-      <m>\Gal(K^{\smcy}/K)</m> which maps to 1 under <m>d_K</m> is the element of <m>C_K</m> which maps to 1 under <m>v_K</m>.
-      The point is that the definitions of both <m>d</m> and <m>v</m> involve the <em>same</em> artificial choice of 
-      an isomorphism <m>\Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}</m>; compare <xref ref="rmk-rescale-reciprocity"/>.
-    </p>
+      <p>
+        Although we do not have a complete description of the isomorphism <m>r'_{L/K}</m> coming from abstract class field theory,
+        we do know one specific fact about this map: for <q>unramified</q> extensions <m>L/K</m> (i.e., <m>L \subseteq K^{\smcy}</m>), the
+        <q>Frobenius</q> in <m>\Gal(L/K)</m> maps to a <q>uniformizer</q>
+        in <m>C_K</m>.
+        That is, the element of <m>\Gal(L/K)</m> coming from the element of
+        <m>\Gal(K^{\smcy}/K)</m> which maps to 1 under <m>d_K</m> is the element of <m>C_K</m> which maps to 1 under <m>v_K</m>.
+        The point is that the definitions of both <m>d</m> and <m>v</m> involve the <em>same</em> artificial choice of 
+        an isomorphism <m>\Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}</m>; compare <xref ref="rmk-rescale-reciprocity"/> and <xref ref="exer-rescale-reciprocity2"/>.
+      </p>
     </remark>
   </subsection>
 </section>

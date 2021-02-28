@@ -12,7 +12,7 @@
       we have now computed that <m>H^1(L/K) = 0</m>
       (<xref ref="L_theorem_90"/>)
       and <m>H^2(L/K)</m> is cyclic of order <m>[L:K]</m>
-      <xref ref="P_local_h2"/>).
+      (<xref ref="P_local_h2"/>).
       We next use these ingredients to establish all of the statements of local class field theory.
     </p>
   </introduction>
@@ -111,7 +111,7 @@
         and <m>H^1(H, M[\phi])</m> is also zero.
       </p>
       <p>
-        Now apply <xref ref="L_tate_thm_lemma">Lemma</xref>
+        Now apply <xref ref="L_tate_thm_lemma"/>
         below to conclude that <m>H^i_T(G, M[\phi]) = 0</m> for all <m>i</m>.
         This allows us to use the four-term exact sequence
         <me>
@@ -119,7 +119,7 @@
         </me>
       </p>
       <p>
-        (as in the proof of <xref ref="T_cyclic_group_periodicity">Theorem</xref>) to conclude that <m>H^i_T(G, \ZZ) \cong H^{i+2}_T(G, M)</m>.
+        (as in the proof of <xref ref="T_cyclic_group_periodicity"/>) to conclude that <m>H^i_T(G, \ZZ) \cong H^{i+2}_T(G, M)</m>.
       </p>
     </proof>
     <lemma xml:id="L_tate_thm_lemma">
@@ -140,7 +140,7 @@
         Since <m>G</m> is solvable,
         it has a proper subgroup <m>H</m> for which <m>G/H</m> is cyclic.
         By the induction hypothesis, <m>H^i_T(H,M) = 0</m> for all <m>i</m>.
-        Thus by the inflation-restriction exact sequence (<xref ref="P_inflation_restriction">Proposition</xref>),
+        Thus by the inflation-restriction exact sequence (<xref ref="P_inflation_restriction"/>),
         <me>
           0 \to H^i(G/H, M^H) \to H^i(G, M) \to H^i(H, M)
         </me>
@@ -148,7 +148,7 @@
         The term on the end being zero,
         we have <m>H^i(G/H, M^H) \cong H^i(G,M) = 0</m> for <m>i=1, 2</m>.
         By periodicity
-        (<xref ref="T_cyclic_group_periodicity">Theorem</xref>),
+        (<xref ref="T_cyclic_group_periodicity"/>),
         <m>H^i_T(G/H, M^H) = 0</m> for all <m>i</m>,
         so <m>H^i(G/H, M^H) = 0</m> for all <m>i>0</m>,
         and <m>H^i(G,M) = 0</m> for <m>i>0</m>.
@@ -198,10 +198,9 @@
       For any intermediate extension <m>M/K</m>,
       we know that <m>H^1(L/M) = 0</m> and
       <m>H^2(L/M)</m> is cyclic of order <m>[L:M]</m>.
-      We may thus apply <xref ref="T_tate_thm2">Theorem</xref>
-      with <m>G = \Gal(L/K)</m>,
+      We may thus apply <xref ref="T_tate_thm2"/> with <m>G = \Gal(L/K)</m>,
       <m>M = L^*</m> to obtain isomorphisms <m>H^i_T(G, \ZZ) \to H^{i+2}_T(G,M)</m>,
-      thus proving <xref ref="T_cup_product_isomorphism">Theorem</xref>.
+      thus proving <xref ref="T_cup_product_isomorphism"/>.
       This yields a canonical isomorphism
       <me>
         K^*/\Norm_{L/K} L^* = H^0_T(L/K) \to  H^{-2}_T(\Gal(L/K), \ZZ) = \Gal(L/K)^{\ab}
@@ -418,133 +417,6 @@ H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \a
       </proof>
     </theorem>
   </subsection>
-  <subsection>
-    <title>Making things explicit</title>
-    <p>
-      It is natural to ask whether the local reciprocity map can be described more explicitly.
-      In fact, given an explicit cocycle <m>\phi</m> generating <m>H^2(L/K)</m>,
-      we can trace through the arguments to get the local reciprocity map.
-      However, the argument is somewhat messy,
-      so I won't torture you with all of the details;
-      the point is simply to observe that everything we've done can be used for explicit computations.
-      (This observation is apparently due to Dwork.)
-      If you find this indigestible, you may hold out until we hit abstract class field theory;
-      that point of view will give a different (though of course related) mechanism for computing the reciprocity map
-      (see <xref ref="subsec-abstract-recip-definition"/>).
-    </p>
-    <p>
-      Put <m>G = \Gal(L/K)</m>.
-      First recall that <m>G^{\ab} = H^{-2}_T(G, \ZZ)</m> is isomorphic to <m>H^{-1}_T(G, I_G) = I_G/I_G^2</m>,
-      with <m>g \mapsto [g]-1</m>.
-      Next, use the exact sequence
-      <me>
-        0 \to M \to M[\phi] \to I_G \to 0
-      </me>
-      and apply the
-      <q>snaking</q>
-      construction: pull <m>[g]-1</m> back to <m>x_g \in M[\phi]</m>,
-      take the norm to get <m>\prod_h x_g^h = \prod_h (x_{gh} x_h^{-1} \phi(e,h,gh))</m>
-      (switching to multiplicative notation).
-      The <m>x_{gh}</m> and <m>x_h</m> term cancel out when you take the product,
-      so we get <m>\prod_h \phi(e, h, gh) \in L^*</m> as the inverse image of <m>g \in \Gal(L/K)</m>.
-    </p>
-    <p>
-      As noted above, one needs <m>\phi</m> to make this truly explicit;
-      one can get <m>\phi</m> using explicit generators of <m>L/K</m> if you have them.
-      For <m>K = \QQ_p</m>, one can use roots of unity;
-      for general <m>K</m>, one can use the Lubin-Tate construction.
-      In general, one can at least do the following,
-      imitating our proof that <m>H^2(L/K)</m> is cyclic of order <m>n</m>.
-      Let <m>M/K</m> be unramified of degree <m>n</m>;
-      then <m>H^2(M/K) \to H^2(ML/K)</m> is injective,
-      and its image lies in the image of <m>H^2(L/K) \to H^2(ML/K)</m>.
-    </p>
-    <p>
-      Now <m>H^2(M/K)</m> is isomorphic to <m>H^0_T(M/K) = K^*/\Norm_{M/K}M^*</m>,
-      which is generated by a uniformizer <m>\pi \in K</m>.
-      To explicate that isomorphism,
-      we recall generally how to construct the isomorphism
-      <m>H^0_T(G,M) \to H^2_T(G,M)</m> for <m>G</m> cyclic with a distinguished generator <m>g</m>.
-      Recall the exact sequence we used to produce the isomorphism in <xref ref="T_cyclic_group_periodicity"/>:
-      <me>
-        0 \to M \to M \otimes_{\ZZ} \ZZ[G] \to M \otimes_{\ZZ} \ZZ[G] \to M \to 0
-      </me>.
-    </p>
-    <p>
-      (Remember, <m>G</m> acts on both factors in <m>M \otimes_{\ZZ} \ZZ[G]</m>.
-      The first map is <m>m \mapsto \sum_{h \in G} m \otimes [h]</m>,
-      the second is <m>m \otimes [h] \mapsto m \otimes ([gh] - [h])</m>,
-      and the third is <m>[h] \mapsto 1</m>.) Let
-      <m>A = M \otimes_{\ZZ} I_G</m> be the kernel of the third arrow,
-      so <m>0 \to M \to M \otimes_{\ZZ} \ZZ[G] \to A \to 0</m> and <m>0 \to A \to M \otimes_{\ZZ} \ZZ[G] \to M \to 0</m> are exact.
-    </p>
-    <p>
-      Given <m>x \in H^0_T(M/K) = M^G/\Norm_G(M)</m>,
-      lift it to <m>x \otimes [1]</m>.
-      Now view this as a 0-cochain
-      <m>\phi_0: G \to M \otimes_{\ZZ} \ZZ[G]</m> given by <m>\phi_0(h) = x \otimes [h]</m>.
-      Apply <m>d</m> to get a 1-cocycle:
-      <me>
-        \phi_1(h_0, h_1) = \phi_0(h_1) - \phi_0(h_0) = x \otimes ([h_1]- [h_0])
-      </me>
-      which actually takes values in <m>A</m>.
-      Now snake again:
-      pull this back to a 1-cochain <m>\psi_1: G^2 \to M \otimes_{\ZZ} \ZZ[G]</m> given by
-      <me>
-        \psi_1(g^i, g^{i+j}) = x \otimes ([g^i] + [g^{i+1}] + \cdots + [g^{j-1}])
-      </me>
-      for <m>i,j=0, \dots, \#G-1</m>.
-      Apply <m>d</m> again: now we have a 2-cocycle
-      <m>\psi_2: G^3 \to M \otimes_{\ZZ} \ZZ[G]</m> given by (again for <m>i,j=0, \dots, \#G-1</m>)
-      <md>
-        <mrow>\psi_2(e, g^i, g^{i+j}) \amp = \psi_1(g^i, g^{i+j}) - \psi_1(e, g^{i+j}) + \psi_1(e, g^i)</mrow>
-        <mrow>\amp = x \otimes ([e] + \cdots + [g^{i-1}] + [g^i] + \cdots + [g^{i+j-1}] - [e] - \cdots - [g^{i+j-1}])</mrow>
-        <mrow>\amp = \begin{cases} 0 \amp  i+j \lt  \#G</mrow>
-        <mrow>-x \otimes ([e] + \cdots + [g^{\#G-1}]) \amp  i+j \geq \#G. \end{cases}</mrow>
-      </md>
-    </p>
-    <p>
-      This pulls back to a 2-cocycle <m>\phi_2: G^3 \to M</m> given by
-      <me>
-        \phi_2(e, g^i, g^{i+j}) = \begin{cases}0 \amp  i+j \lt  \#G \\ -x \amp  i+j \geq \#G. \end{cases}
-      </me>
-    </p>
-    <p>
-      If you prefer, you can shift by a coboundary to get <m>x</m> if
-      <m>i+j \lt \#G</m> and 0 if <m>i+j \geq \#G</m>.
-    </p>
-    <p>
-      Back to the desired computation.
-      Applying this to <m>\Gal(M/K)</m> acting on <m>M^*</m>,
-      with the canonical generator <m>g</m> equal to the Frobenius,
-      we get that <m>H^2(M/K)</m> is generated by a cocycle <m>\phi</m> with
-      <m>\phi(e, g^i, g^{i+j}) = \pi</m> if <m>i+j \lt  \#G</m> and 1 otherwise.
-      Now push this into <m>H^2(ML/K)</m>;
-      the general theory says the image comes from <m>H^2(L/K)</m>.
-      That is, for <m>h \in \Gal(ML/K)</m>,
-      let <m>f(h)</m> be the integer <m>i</m> such that <m>h</m> restricted to <m>\Gal(M/K)</m> equals <m>g^i</m>.
-      Then there exists a 1-cochain <m>\rho: \Gal(ML/K)^2 \to (ML)^*</m> such that
-      <m>\phi(e, h_1, h_2h_1) /(\rho(h_1, h_2h_1) \rho(e, h_2h_1)^{-1} \rho(e, h_1))</m> belongs to <m>L^*</m> and depends only on the images of <m>h_1, h_2</m> in <m>\Gal(M/K)</m>.
-      Putting <m>\sigma(h) = \rho(e, h)</m>, we thus have
-      <me>
-        \frac{\phi(e, h_1, h_2h_1) \sigma(h_2h_1)}{\sigma(h_2)^{h_1} \sigma(h_1)}
-      </me>
-      depends only on <m>h_1, h_2</m> modulo <m>\Gal(ML/L)</m>.
-    </p>
-    <p>
-      The upshot: once you compute such a <m>\sigma</m>
-      (which I won't describe how to do,
-      since it requires an explicit description of <m>L/K</m>),
-      to find the inverse image of <m>g \in \Gal(L/K)</m> under the Artin map,
-      choose a lift <m>g_1</m> of <m>g</m> into <m>\Gal(ML/K)</m>,
-      then compute
-      <me>
-        \prod_h \frac{\phi(e, h, gh) \sigma(gh)}{\sigma(g)^h \sigma(h)}
-      </me>
-      for <m>h</m> running over a set of lifts of the elements of
-      <m>\Gal(L/K)</m> into <m>\Gal(ML/K)</m>.
-    </p>
-  </subsection>
   <exercises>
     <title>Exercises</title>
       <exercise xml:id="exer-finite-power-quotient">
@@ -567,7 +439,7 @@ H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \a
       </exercise>
       <exercise xml:id="exer-hilbert-symbol">
         <statement>
-          Extend <xref ref="L_hilbert_symbol">Lemma</xref>
+          Extend <xref ref="L_hilbert_symbol"/>
           to the case where <m>\ell</m> is an arbitrary positive integer,
           not necessarily prime.
         </statement>

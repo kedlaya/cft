@@ -1,0 +1,17 @@
+﻿<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_abstract">
+  <title>Abstract class field theory</title>
+  <introduction>
+    <p>
+      We now turn to an alternate method for deriving the results of local class field theory,
+      particularly the local reciprocity law (<xref ref="T_local_reciprocity"/>).
+      This method, based on a presentation of Artin and Tate (the method of <q>class formations</q> introduced in <xref ref="bib-Artin-Tate"/>),
+      isolates the main cohomological inputs in the local case
+      and gives an outline of how to proceed to global class field theory. We conclude with a preview of how the method will apply in the global case;
+      see <xref ref="sec_look_ahead"/>.
+    </p>
+  </introduction>
+  <xi:include href="sec_abstractcft1.ptx"/>
+  <xi:include href="sec_abstractcft2.ptx"/>
+  <xi:include href="sec_abstractcft3.ptx"/>
+  <xi:include href="sec_look_ahead.ptx"/>
+</chapter>

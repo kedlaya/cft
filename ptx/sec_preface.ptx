@@ -31,14 +31,14 @@
   <p>
     After the course ended, I kept the lecture notes posted on my web site in their originally written, totally uncorrected state.
     Despite their roughness, I heard back from many people over the years who had found them useful;
-    as a result, I decided to prepare a corrected version of the notes. In so doing, I made a conscious decision
-    to suppress any temptation to modify 
-    the presentation with the benefit of hindsight, or to fill in additional material to make the text more self-contained.
-    This decision, while largely dictated by lack of time and energy, was justified by the belief that the
-    informality of the original notes contributed to their readibility. In other words, this is not intended as a standalone
+    in response to this, I decided to prepare a corrected version of the notes. 
+    This project gained some steam when I had the opportunity to teach <url href="https://math.ucsd.edu/~kkedlaya/math204b/">another class</url> on class field theory in winter 2021.
+    This occasioned some more significant revisions than I had previously dared, including a small degree of rearrangement of the material;
+    however, I have tried to retain most of the original structure, on the grounds that the
+    informality of the original notes contributed to their readibility. In other words, this document is not intended as a standalone
     replacement for a good book on class field theory!
   </p>
-  <p>
+ <p>
     I maintain very few claims of originality concerning the presentation of the material. 
     Besides <xref ref="bib-Neukirch"/>, the main source of inspiration was Milne's lecture notes on class field theory <xref ref="bib-Milne-CFT"/>
     (and by extension the original development by Artin and Tate <xref ref="bib-Artin-Tate"/>).
@@ -47,15 +47,14 @@
     (See also <xref ref="bib-Gras"/> for a modern exposition of a more classical approach.)
   </p>
   <p>
-    As of winter 2021, I am using these notes for <url href="https://math.ucsd.edu/~kkedlaya/math204b/">a class </url> and so am starting to make somewhat more serious revisions.
-    Corrections and comments are welcome.
+    My winter 2021 class, having been given during the COVID-19 pandemic, was given online with recorded lectures. The recordings continue to be available from the <url href="https://math.ucsd.edu/~kkedlaya/math204b/">course web site</url>.
   </p>
   <acknowledgment>
     <p>
       Thanks to Zonglin Jiang, Justin Lacini, and Zongze Liu for their feedback on previous drafts,
       and to the participants in Math 204B (winter 2021) for <q>test-driving</q> the HTML version and generating much additional feedback.
       Thanks also to Rob Beezer and David Farmer for their assistance with the conversion from <latex/> to <url href="https://pretextbook.org/"><pretext /></url>,
-      which made it feasible to produce an <url href="https://kskedlaya.org/cft">HTML version</url> in sync with the PDF version.
+      which made it feasible to produce an <url href="https://kskedlaya.org/cft">HTML version</url> in sync with the <url href="https://kskedlaya.org/papers/cft-ptx.pdf">PDF version</url>.
     </p>
   </acknowledgment>
 </preface>

@@ -54,7 +54,7 @@
     <example xml:id="exa-local-recip-Qp">
     <p>
       Using the local Kronecker-Weber theorem
-      (<xref ref="T_local_Kronecker-Weber1">Theorem</xref>),
+      (<xref ref="T_local_Kronecker-Weber1"/>),
       the statement of <xref ref="T_local_reciprocity"/> can be explicitly verified for <m>K=\QQ_p</m>.
       To wit, we have <m>K^{\ab} = K_1 K_2</m> where <m>K_1 = \bigcup_n \QQ_p(\zeta_{p^n})</m>
       and <m>K_2 = \bigcup_n \QQ_p(\zeta_{p^n-1})</m>, and <m>\Gal(K^{\ab}/K) \cong \Gal(K_1/K) \times \Gal(K_2/K)</m>.
@@ -310,7 +310,7 @@
           A quaternion algebra is <term>split</term>
           if it is isomorphic to the ring of
           <m>2 \times 2</m> matrices over <m>K</m>.
-          Give a direct proof of the following consequence of <xref ref="T_Brauer_group_identification">Theorem</xref>:
+          Give a direct proof of the following consequence of <xref ref="T_Brauer_group_identification"/>:
           if <m>K</m> is a local field,
           then any two quaternion algebras which are not split are isomorphic to each other.
         </statement>

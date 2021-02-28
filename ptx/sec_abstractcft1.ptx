@@ -1,0 +1,394 @@
+﻿<section xml:id="sec_abstractcft1">
+  <title>The setup of abstract class field theory</title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        <xref ref="bib-Neukirch"/>, IV.4-IV.6.
+        Remember that Neukirch's cohomology groups are all Tate groups,
+        so he doesn't put the subscript <q>T</q> on them.
+      </p>
+    </paragraphs>
+    <paragraphs>
+    <title>Caveat</title>
+    <p>
+      Certain words you thought you knew what they meant, such as
+      <q>unramified</q>, are going to be reassigned more abstract meanings.
+      But these meanings will coincide with the correct definitions over a local field.
+    </p>
+    </paragraphs>
+  </introduction>
+  <subsection>
+    <title>Abstract multiplicative groups and the class field axiom</title>
+    <p>
+    We first introduce an abstract analogue of the groups <m>K^*</m>, for <m>K</m> a finite extension of <m>k</m>,
+    and the norm maps between them. This enables us to state a key cohomological assumption.
+    </p>
+    <definition xml:id="def-abstract-units">
+      <p>
+        Let <m>k</m> be a field, let <m>\kbar</m> be an algebraic extension of <m>k</m>, and put <m>G = \Gal(\kbar/k)</m>.
+        Let <m>A</m> be a <m>G</m>-module;
+        for any subextension <m>K</m> of <m>\kbar/k</m>, define <m>A_K = A^{\Gal(\kbar/K)}</m>.
+        (In the example where <m>k</m> is a local field, we will take <m>\kbar</m> to be the separable closure and <m>A = \kbar^*</m>.)
+      </p>
+    </definition>
+    <remark>
+      <p>
+        In this discussion, we are not going to make any explicit use of the field <m>k</m>; we are really just working with the profinite group <m>G</m>.
+        One could extend this discussion to a general profinite group <m>G</m>, as is done in <xref ref="bib-Neukirch"/>,
+        by <q>pretending</q> that the profinite group corresponds to a field and its extensions via the Galois correspondence.
+        That is, a <q>field extension</q> of <m>k</m> corresponds to a closed subgroup of <m>G</m>; a <q>finite extension</q> of <m>k</m> corresponds to an
+        open subgroup of <m>G</m>; and so on.
+      </p>
+    </remark>
+    <definition>
+      <p>
+      For <m>L/K</m> a finite extension of subextensions of <m>\kbar/k</m>, 
+      define the <term>norm map</term> <m>\Norm_{L/K}: A_L \to A_K</m> by <m>\Norm_{L/K}(a) = \prod_g a^g</m>,
+      where <m>g</m> runs over a set of right coset representatives of <m>G_L</m> in <m>G_K</m>. 
+      In the Galois case this coincides with the norm map used in the definition
+      of the Tate cohomology groups, except that we are using multiplicative notation rather than additive notation.
+      </p>
+    <p>
+      For <m>L/K</m> an infinite extension of subextensions of <m></m><m>\kbar/k</m>, we don't have a well-defined norm map from <m>A_L</m> to <m>A_K</m>.
+      By convention, however, we still write <m>\Norm_{L/K} A_L</m> to mean the intersection of
+      <m>\Norm_{M/K} A_M</m> over all finite subextensions <m>M</m> of <m>L/K</m>.
+    </p>
+    </definition>
+    <definition xml:id="def-class-field-axiom">
+      <p>
+        Set notation as in <xref ref="def-abstract-units"/>.
+        We say that <m>A</m> satisfies the <term>class field axiom</term> if for every <em>cyclic</em>
+        extension <m>L/K</m> of finite subextensions of <m>\kbar/k</m>,
+        <me>
+          \#H^i_T(\Gal(L/K), A_L) = \begin{cases} [L:K] \amp  i=0 \\ 1 \amp  i = -1. \end{cases}
+        </me>
+        Note that in general, it is not enough to impose this condition when <m>K = k</m>
+      </p>
+      <p>
+        Since <m>L/K</m> is cyclic here, <xref ref="T_cyclic_group_periodicity"/> implies that the groups <m>H^i_T(\Gal(L/K), A_L)</m> repeat with period 2.
+        It will sometimes be convenient to work with <m>i=1</m> instead of <m>i=-1</m>, or with <m>i=2</m> instead of <m>i=0</m>.
+      </p>
+    </definition>
+    <p>
+      Under the class field axiom and the other conditions of abstract class field theory, for each finite Galois extension <m>L/K</m> of finite subextensions of <m>\kbar/k</m>,
+      we will define a canonical isomorphism 
+      <me>
+        r_{L/K}: \Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L
+      </me>
+      (<xref ref="T_abstract_reciprocity_law"/>), which will moreover satisfy some compatibilities as we vary the field extension
+      (<xref ref="P_abstract_functorialities2"/>, <xref ref="P_abstract_functorialities2"/>).
+      Since we've already checked the class field axiom in the example where <m>k</m> is a local field and <m>A = \kbar^*</m>,
+      this will recover the local reciprocity law (<xref ref="T_local_reciprocity"/>).
+    </p>
+    </subsection>
+  <subsection>
+    <title>Abstract ramification theory</title>
+    <p>
+      We next encode the key aspects of ramification theory into an abstract framework. At the moment this has nothing to do with the abstract units;
+      the relationship will be made when we introduce abstract valuations a bit later.
+    </p>
+    <definition xml:id="def-abstract-frobenius">
+    <p>
+      With notation as in <xref ref="def-abstract-units"/>,
+      let <m>d: G \to \widehat{\ZZ}</m> be a continuous surjective homomorphism.
+      The example we have in mind is when <m>k</m> is a local field and <m>d</m> is the surjection of <m>G</m> onto <m>\Gal(k^{\unr}/k) \cong \widehat{\ZZ}</m>.
+    </p>
+    <p>
+      Define the <term>Weil group</term> of <m>k</m> as the subgroup <m>d^{-1}(\ZZ)</m> of <m>G</m>.
+      This group will play an important role in the construction of the reciprocity map (see <xref ref="def-abstract-recip-candidate"/>).
+    </p>
+    </definition>
+    <p>
+      We now set some more notation to mimic the example case.
+    </p>
+    <definition>
+    <p>
+      Define the <term>inertia group</term> <m>I_k</m> to be the kernel of <m>d</m>.
+      Define the <term>maximal unramified extension</term> <m>k^{\unr}</m> of <m>k</m> to be the fixed field of <m>I_k</m>.
+      Likewise, for any subextension <m>K</m> of <m>\kbar/k</m>, put <m>I_K = G_K \cap I_k</m> and let
+      <m>K^{\unr} = k^{\unr} K</m> be the fixed field of <m>I_K</m>. 
+    </p>
+    <p>
+      We say an extension <m>L/K</m> of subextensions of <m>\kbar/k</m> is <term>unramified</term> if <m>L \subseteq K^{\unr}</m>.
+      This implies that <m>G_L</m> contains <m>I_K</m>,
+      necessarily as a normal subgroup,
+      and that <m>G_L/I_K \subseteq G_K/I_K</m> injects via <m>d</m> into <m>\widehat{\ZZ}</m>.
+      Hence <m>G_L/I_K</m> is abelian and any finite quotient of it is cyclic;
+      in particular, <m>G_K</m> is normal in <m>G_L</m> and <m>\Gal(L/K) = G_L/G_K</m> is cyclic.
+      (Note also that <m>K^{\unr}</m> is the compositum of <m>K</m> and <m>k^{\unr}</m>; see <xref ref="exa-abstract-CFT-local"/>.)
+    </p>
+    </definition>
+    <p>
+      If <m>K \neq k</m>,
+      then <m>d</m> need not map <m>G_K</m> onto <m>\widehat{\ZZ}</m>,
+      so it will be convenient to renormalize things.
+    </p>
+    <definition>
+    <p>
+      Put
+      <me>
+        d_K = \frac{1}{[\widehat{\ZZ}: d(G_K)]}d;
+      </me>
+      then <m>d_K: G_K \to \widehat{\ZZ}</m> is surjective and induces an isomorphism <m>\Gal(K^{\unr}/K) \cong \widehat{\ZZ}</m>.
+    </p>
+    <p>
+      Given a finite extension <m>L/K</m> of subextensions of <m>\kbar/k</m>,
+      define the <term>inertia degree</term> (or <term>residue field degree</term>)
+      <me>
+        f_{L/K} = [d(G_K):d(G_L)]
+      </me> 
+      and the <term>ramification degree</term>
+      <me>
+        e_{L/K} = [I_K:I_L].
+      </me>
+      By design we have multiplicativity:
+      <me>
+        e_{M/K} = e_{M/L}e_{L/K}, \qquad f_{M/K} = f_{M/L}f_{L/K}.
+      </me>
+      Moreover, if <m>L/K</m> is Galois, we have an exact sequence
+      <me>
+        1 \to I_K/I_L \to \Gal(L/K) \to d(G_K)/d(G_L) \to 1,
+      </me>
+      so the
+      <q>fundamental identity</q>
+      holds:
+      <me>
+        e_{L/K}f_{L/K} = [L:K].
+      </me>
+      The fundamental identity also holds if <m>L/K</m> is not Galois:
+      let <m>M</m> be a Galois extension of <m>K</m> containing <m>L</m>,
+      then apply the fundamental identity to <m>M/L</m> and <m>M/K</m> and use multiplicativity.
+    </p>
+    </definition>
+  </subsection>
+    <subsection>
+    <title>Abstract valuation theory</title>
+    <p>
+      We next introduce an abstract analogue of the valuation maps on unit groups, which tie <m>d</m> and <m>A</m> together in a crucial way.
+      The catch is that these valuations will be valued not in <m>\ZZ</m> but only in <m>\widehat{\ZZ}</m>;
+      however, this is okay because we only need them to normalize the definition of the reciprocity map.
+    </p>
+    <definition xml:id="def-abstract-henselian-valuation">
+      <p>
+        With notation as in <xref ref="def-abstract-units"/> and <xref ref="def-abstract-frobenius"/>,
+        a <term>henselian valuation</term> of <m>A_k</m> with respect to <m>d</m> is a homomorphism <m>v: A_k \to \widehat{\ZZ}</m> such that:
+        <ol>
+          <li>
+            <p>
+              the group <m>Z = \im(v)</m> contains <m>\ZZ</m> and satisfies
+              <m>Z/nZ \cong \ZZ/n\ZZ</m> for all positive integers <m>n</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              for every finite extension <m>K</m> of <m>k</m>, <m>v(\Norm_{K/k} A_K) = f_{K/k} Z</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        In this case, for each finite subextension <m>K</m> of <m>\kbar/k</m>, we obtain a henselian valuation
+        <m>v_K: A_K \to Z</m> by setting
+        <me>
+          v_K = \frac{1}{f_{K/k}} \Norm_{K/k}.
+        </me>
+        Then <m>v_{K}(a) = v_{K^g}(a^g)</m> for any <m>a \in A</m> and <m>g \in G</m>,
+        and for <m>L/K</m> a finite extension of finite subextensions of <m>\kbar/k</m>,
+        <m>v_K(\Norm_{L/K}(a)) = f_{L/K} v_L(a)</m> for any <m>a \in A_L</m>.
+      </p>
+    </definition>
+    <example xml:id="exa-abstract-CFT-local">
+      <p>
+        By design, the previous conditions are satisfied in the case where:
+        <ul>
+          <li>
+            <p>
+              <m>k</m> is a local field of characteristic 0 and <m>\kbar</m> is its algebraic closure;
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A = \kbar^*</m> (the class field axiom is confirmed by <xref ref="L_theorem_90"/> for <m>H^1_T</m> and <xref ref="P_local_cyclic_H2"/> for <m>H^0_T</m>);
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>d: \Gal(\kbar/k) \to \widehat{\ZZ}</m> the map coming from the identification of <m>\Gal(k^{\unr}/k)</m> with <m>\widehat{\ZZ}</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>v: A_k \to \widehat{\ZZ}</m> is the composition of the valuation <m>k^* \to \ZZ</m> with the inclusion <m>\ZZ \to \widehat{\ZZ}</m>.
+            </p>
+          </li>
+        </ul>
+        One piece of content in this statement is the assertion that for any finite extension <m>K</m> of <m>k</m>, <m>K^{\unr} \subseteq K k^{\unr}</m>.
+        This holds because for any finite unramified extension <m>L</m> of <m>K</m>, we can write <m>L = K L_0</m> where <m>L_0</m> is the unramified extension of <m>k</m>
+        with the same residue field as <m>L</m>.
+      </p>
+    </example>
+    <example>
+      <p>
+        A basic example of these constructions occurs for <m>k</m> finite; see <xref ref="exer-abstract-cft-finite-field"/>.
+        A closely related example can be obtained from <xref ref="exa-abstract-CFT-local"/> by replacing the algebraic closure of <m>k</m> with its maximal unramified subextension.
+      </p>
+    </example>
+    <remark xml:id="rmk-rescale-reciprocity">
+      <p>
+        Suppose that we have an instance of <xref ref="def-abstract-henselian-valuation"/>. Then for any <m>c \in \widehat{\ZZ}^*</m>,
+        the map <m>v</m> is also a henselian valuation of <m>A_k</m> with respect to <m>cd</m>, but the definition of the reciprocity map will be affected; see
+        <xref ref="exer-rescale-reciprocity"/>.
+      </p>
+      <p>
+        Now suppose further that <m>cZ = Z</m>. Then <m>cv</m> is also a henselian valuation of <m>A_k</m> with respect to <m>cd</m>, 
+        and in this case the definition of the reciprocity map will be unaffected; see <xref ref="exer-rescale-reciprocity2"/>.
+      </p>
+    </remark>
+  </subsection>
+  <subsection>
+    <title>Cohomology of units</title>
+    <p>
+      Before defining the reciprocity map, we collect some direct consequences of the class field axiom.
+      These are very similar to arguments we used in the proof of local reciprocity
+      except that there, we used the cohomology of unramified extensions
+      to establish the class field axiom, whereas here we are moving information in the opposite direction!
+    </p>
+    <hypothesis xml:id="hypo-abstract-cft">
+      <p>
+        For the remainder of <xref ref="ch_abstract"/>, fix <m>k, A, d, v</m> as in <xref ref="def-abstract-units"/>, <xref ref="def-abstract-frobenius"/>,
+        and <xref ref="def-abstract-henselian-valuation"/>. In particular, <m>A</m> satisfies the class field axiom and <m>v</m> is a henselian valuation of <m>A_k</m>
+        with respect to <m>d</m>.
+      </p>
+    </hypothesis>
+    <definition>
+      <p>
+        For any finite subextension <m>K</m> of <m>\kbar/k</m>,
+        define the <term>unit subgroup</term>
+        <m>U_K</m> as the set of <m>u \in A_K</m> with <m>v_K(u) = 0</m>;
+        this definition extends naturally to infinite subextensions.
+        We say that <m>\pi \in A_K</m> is a <term>uniformizer</term> for <m>K</m> if <m>v_K(\pi) = 1</m>.
+      </p>
+    </definition>
+    <proposition xml:id="P_abstract_H0H1">
+      <statement>
+        <p>
+          Under <xref ref="hypo-abstract-cft"/>, 
+          let <m>L/K</m> be an unramified extension of finite subextensions of <m>\kbar/k</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              The groups <m>H^i_T(\Gal(L/K), U_L)</m> are all trivial.
+            </p>
+          </li>
+          <li>
+            <p>
+              The group <m>H^0_T(\Gal(L/K), A_L)</m> is cyclic, generated by any uniformizer <m>\pi_L</m> for <m>L</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </proposition>
+    <proof>
+      <p>
+        We'll drop <m>\Gal(L/K)</m> from the notation,
+        because it's the same group throughout the proof.
+        Keep in mind that an unramified extension is always Galois and cyclic,
+        so we can apply periodicity of Tate groups (<xref ref="T_cyclic_group_periodicity"/>) and Herbrand quotients.
+      </p>
+      <p>
+        Consider the short exact sequence 
+        <me>
+          0 \to U_L \to A_L \to A_L/U_L \to 0.
+        </me>
+        In this sequence, <m>A_L/U_L</m> is isomorphic to
+        <m>Z = \im(v)</m> with trivial group action,
+        so <m>H^0_T(Z) = Z/\Norm(Z)</m> is cyclic of order <m>[L:K]</m> generated by <m>\pi_L</m> and
+        <m>H^{-1}_T(Z) = \ker(\Norm)</m> is trivial. Using the class field axiom, we see that the
+        long exact sequence in Tate groups looks like
+        <me>
+          1 = H^{-1}_T(A_L/U_L) \to H^{0}_T(U_L) \to H^{0}_T(A_L) \to H^{0}_T(A_L/U_L) \to H^{1}_T(U_L) \to H^1_T(A_L) = 1
+        </me>
+        and the two groups in the middle have the same order.
+        It is thus enough to show that one of the outer groups is trivial,
+        as then the middle map will be an isomorphism.
+      </p>
+      <p>
+        We have now reduced to checking that <m>H^{1}_T(U_L) = 1</m>.
+        Here is where we use that <m>L/K</m> is unramified, not just cyclic: this means that any uniformer of <m>K</m> is also a uniformizer of <m>L</m>,
+        which allows us to split the surjection <m>A_L \to A_L/U_L</m> of <m>\Gal(L/K)</m>-modules. This in turn means that <m>H^1_T(U_L)</m> is a direct
+        summand of <m>H^1_T(A_L)</m>, and the latter vanishes by the class field axiom.
+      </p>
+    </proof>
+    <corollary xml:id="C_abstract_unramified">
+      <statement>
+        <p>
+          Under <xref ref="hypo-abstract-cft"/>, 
+          for <m>L/K</m> an unramified extension of finite subextensions of <m>\kbar/k</m>, then <m>U_K = \Norm_{L/K} U_L</m>. (Remember,
+          this makes sense even if <m>L/K</m> is not finite!)
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Apply the <m>i=0</m> case of <xref ref="P_abstract_H0H1"/> to each finite subextension of <m>L/K</m>.
+        </p>
+      </proof>
+    </corollary>
+    <p>
+      We can formally promote <xref ref="C_abstract_unramified"/> as follows.
+    </p>
+    <lemma xml:id="lem-intermediate-norm">
+      <statement>
+        <p>
+          Under <xref ref="hypo-abstract-cft"/>, 
+          let <m>M/L/K</m> be finite subextensions of <m>\kbar/k</m> 
+          with <m>M/K</m> Galois and <m>L/K</m> unramified.
+          Then <m>U_K \cap \Norm_{M/L} U_M \subseteq \Norm_{M/K} U_M</m>.
+          (Note that the case <m>M=L</m> recovers <xref ref="C_abstract_unramified"/>.)
+        </p>
+      </statement>
+    </lemma>
+    <proof>
+      <p>
+        Put <m>G = \Gal(M/K), H = \Gal(M/L)</m>; the claim is that the map
+        <m>\Res: H^0_T(G, U_M) \to H^0_T(H, U_M)</m> is injective.
+        Since <m>H^0_T(G/H, U_L) = 0</m> by <xref ref="C_abstract_unramified"/>, we may apply 
+        <xref ref="lem-inflation-restriction-H0"/> to conclude.
+        (If you prefer a less cohomological argument, see instead <xref ref="bib-Neukirch"/>, Lemma<nbsp/>IV.5.4.)
+      </p>
+    </proof>
+  </subsection>
+  <exercises>
+    <title>Exercises</title>
+      <exercise xml:id="exer-abstract-cft-finite-field">
+        <statement>
+          <p>
+          Show that the hypotheses of abstract class field theory (i.e., the class field axiom and the conditions on a henselian valuation) are satisfied in the following case:
+          <ul>
+            <li>
+              <p>
+                <m>k</m> is a finite field and <m>\kbar</m> is its algebraic closure;
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>d: \Gal(\overline{k}/k) \to \widehat{\ZZ}</m> is the usual isomorphism;
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> is the group <m>\ZZ</m> with the trivial action;
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>v: A_k \to \widehat{\ZZ}</m> is the inclusion of <m>\ZZ</m> into its profinite completion.
+              </p>
+            </li>
+          </ul>
+          </p>
+        </statement>
+      </exercise>
+  </exercises>
+</section>

@@ -315,7 +315,7 @@
       </exercise>
       <exercise xml:id="exer-enough-injectives">
         <statement>
-          Prove <xref ref="L_enough_injectives">Lemma</xref>.
+          Prove <xref ref="L_enough_injectives"/>.
         </statement>
         <hint>
           For <m>M</m> a <m>G</m>-module,
@@ -325,8 +325,7 @@
       </exercise>
       <exercise xml:id="exer-resolutions-to-maps">
         <statement>
-          Prove <xref ref="L_injective_resolutions_to_cohomology_maps">Lemma</xref>,
-          following the sketch given.
+          Prove <xref ref="L_injective_resolutions_to_cohomology_maps"/> following the sketch given.
         </statement>
         <hint>
           Construct <m>g_i</m> given <m>f_{i-1}</m> and <m>g_{i-1}</m>,

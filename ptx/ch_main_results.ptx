@@ -3,7 +3,7 @@
   <introduction>
     <p>
       We finally embark on the proof of the main results of global class field theory, via the adelic reformulation
-      (<xref ref="sec_adelic-recip"/>) and specifically the outline from <xref ref="subsec-adelic-recip-outline"/>.
+      (<xref ref="sec_adelic-recip"/>) and specifically the outline from <xref ref="sec_adelic-overview"/>.
     </p>
   </introduction>
   <xi:include  href="sec_ideles-cohom1.ptx"/>
@@ -11,4 +11,5 @@
   <xi:include  href="sec_abstr-recip.ptx"/>
   <xi:include  href="sec_existence.ptx"/>
   <xi:include  href="sec_connection.ptx"/>
+  <xi:include  href="sec_brauer.ptx"/>
 </chapter>

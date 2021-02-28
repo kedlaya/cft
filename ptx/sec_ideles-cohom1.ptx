@@ -7,6 +7,7 @@
       <title>Reference</title>
       <p>
         <xref ref="bib-Milne-CFT"/> VII.2-VII.4; <xref ref="bib-Neukirch"/> VI.3, but see below.
+        See also <url href="https://amathew.wordpress.com/2010/05/30/the-first-inequality-cohomology-of-the-idele-classes/">this blog post by Akhil Mathew</url>.
       </p>
     </paragraphs>
     <p>
@@ -85,11 +86,11 @@
           Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>.
           For each <m>i>0</m>, 
           <me>
-            H^i(G, I_L) = \bigoplus_v H^i(G_v, L_v^*).
+            H^i(G, I_L) = \bigoplus_v H^i(G_w, L_w^*),
           </me>
-          For each <m>i</m>,
+          where <m>v</m> runs over places of <m>K</m> and <m>w</m> denotes a single place of <m>L</m> above <m>v</m>. Similarly, for each <m>i</m>,
           <me>
-            H^i_T(G, I_L) = \bigoplus_v H^i_T(G_v, L_v^*).
+            H^i_T(G, I_L) = \bigoplus_v H^i_T(G_w, L_w^*).
           </me>
         </p>
       </statement>
@@ -102,7 +103,7 @@
         <m>H^i(G, \prod_{w|v} \gotho_{L_w}^*)</m> over all <m>v \notin S</m>,
         but the latter is trivial because <m>v \notin S</m> cannot ramify.
         By Shapiro's lemma (<xref ref="L_Shapiro"/>),
-        <m>H^i(G, \prod_{w|v} L_w^*) = H^i(G_v, L_w^*)</m>, so we have what we want.
+        <m>H^i(G, \prod_{w|v} L_w^*) = H^i(G_w, L_w^*)</m>, so we have what we want.
         The argument for Tate groups is analogous.
       </p>
     </proof>
@@ -118,8 +119,11 @@
       </statement>
       <proof>
         <p>
-          This follows by combining <xref ref="prop-idele-cohomology-local"/> with the computation of cohomology of local fields
-          (<xref ref="L_theorem_90"/> and <xref ref="P_local_h2"/>).
+          This follows by combining <xref ref="prop-idele-cohomology-local"/>, the computation of cohomology of local fields
+          (<xref ref="L_theorem_90"/> and <xref ref="P_local_h2"/>), and the equality
+          <me>
+            H^2(\Gal(\CC/\RR), \CC^*) \cong H^0_T(\Gal(\CC/\RR), \CC^*) = \RR^*/\RR^+ \cong \ZZ/2\ZZ.
+          </me>
         </p>
       </proof>
     </corollary>
@@ -154,7 +158,7 @@
       </image>
       </figure>
       <p>
-        implies that the quotient <m>I_K/(K^* \times \Norm_{L/K} I_L)</m> is isomorphic to <m>C_K</m>.
+        implies that the quotient <m>I_K/(K^* \times \Norm_{L/K} I_L)</m> is isomorphic to <m>C_K/\Norm_{L/K} C_L</m>.
       </p>
     </remark>
   </subsection>
@@ -162,7 +166,7 @@
     <title>Cohomology of the units: first steps</title>
     <definition xml:id="def-idele-S-units-Herbrand">
       <p>
-        Let <m>L/K</m> be a cyclic extension of number fields.
+        Let <m>L/K</m> be a cyclic extension of number fields with Galois group <m>G</m>.
         Apply <xref ref="lem-generate-ideles-with-S-units"/> to choose a finite set <m>S</m> of places of <m>K</m> so that <m>I_L = I_{L,S} L^*</m>.
         From the exact sequence
         <me>
@@ -174,10 +178,11 @@
         </me>
       </p>
       <p>
-        By <xref ref="cor-idele-cohomology-local"/>, we may compute the Herbrand quotient
+        By <xref ref="cor-idele-cohomology-local"/>,
         <me>
           h(I_{L,S}) = \prod_{v \in S} \#H^0_T(G_v, L_w^*)= \prod_{v \in S} [L_w:K_v].
         </me>
+        (Since <m>G</m> is abelian, we write <m>G_v</m> instead of <m>G_w</m>.)
         To get <m>h(C_L) = [L:K]</m>, it will thus suffice to establish <xref ref="lem-Herbrand-S-units"/> below.
       </p>
     </definition>
@@ -208,7 +213,7 @@
     </p>
     <definition xml:id="def-Herbrand-quotient-real-lattices1">
         <p>
-          Let <m>L/K</m> be a cyclic extension of number fields.
+          Let <m>L/K</m> be a cyclic extension of number fields with Galois group <m>G</m>.
           Let <m>S</m> be a finite set of places of <m>K</m> containing all infinite places, and let <m>T</m> be the set of places of <m>L</m> lying above places of <m>S</m>.
           Let <m>V</m> be the real vector space consisting of one copy of <m>\RR</m> for each place in <m>T</m>.
           Define the map <m>\gotho_{L,S}^* \to V</m> by
@@ -218,10 +223,7 @@
           with normalizations as in <xref ref="def-normalized-adele-norm"/>.
           By the product formula (<xref ref="prop-product-formula"/>) and Dirichlet's units theorem (<xref ref="cor-S-units-theorem"/>), the kernel of this map consists of roots of unity,
           and the image <m>M</m> is a lattice in the trace-zero hyperplane <m>H</m> of <m>V</m>.
-        </p>
-        <p>
-          Put <m>G = \Gal(L/K)</m>.
-          We have an action of <m>G</m> on <m>V</m> compatible with the embedding of <m>M</m> and the map from <m>\gotho_{L,S}^*</m>.
+          Since <m>G</m> acts compatibly on <m>\gotho_{L,S}^*</m> and <m>V</m> (the latter by permuting the factors), it also acts on <m>M</m>.
         </p>
     </definition>
     <remark>
@@ -266,49 +268,62 @@
     <lemma xml:id="lem-Herbrand-quotient-real-lattices">
       <statement>
         <p>
-          Let <m>V</m> be a real vector space on which a finite group <m>G</m> acts linearly,
+          Let <m>V</m> be a real vector space on which a finite cyclic group <m>G</m> acts linearly,
           and let <m>L_1</m> and <m>L_2</m> be <m>G</m>-stable lattices in <m>V</m> for which at least one of <m>h(L_1)</m> and <m>h(L_2)</m> is defined.
           Then <m>h(L_1) = h(L_2)</m> (and both are defined).
         </p>
       </statement>
     <proof>
       <p>
-        We first show that <m>L_1 \otimes_{\ZZ} \QQ</m> and
-        <m>L_2 \otimes_{\ZZ} \QQ</m> are isomorphic as <m>\QQ[G]</m>-modules.
-        We are given that <m>L_1 \otimes_{\ZZ} \RR</m> and
-        <m>L_2 \otimes_{\ZZ} \RR</m> are isomorphic as <m>\RR[G]</m>-modules.
-        That is, the real vector space <m>W = \Hom_{\RR}(L_1 \otimes_{\ZZ} \RR, L_2 \otimes_{\ZZ} \RR)</m>,
-        on which <m>G</m> acts by the formula <m>T^g(x) = T(x^{g^{-1}})^g</m>,
-        contains an invariant vector which,
-        as a linear transformation, is invertible.
-        Now <m>W</m> can also be written as
-        <me>
-          \Hom_{\ZZ}(L_1, L_2) \otimes_{\ZZ} \RR;
-        </me>
-        that is, <m>\Hom_{\ZZ}(L_1, L_2)</m> sits inside as a sublattice.
-        The fact that <m>W</m> has an invariant vector says that a certain set of linear equations has a nonzero solution over <m>\RR</m>,
-        namely the equations that express the fact that the action of <m>G</m> leaves the vector invariant.
-        But those equations have coefficients in <m>\QQ</m>,
-        so there must already be invariant vectors over <m>\QQ</m>.
-        Moreover, if we fix an isomorphism
-        (not <m>G</m>-equivariant)
-        between <m>L_2 \otimes_{\ZZ} \RR</m> and <m>L_1 \otimes_{\ZZ} \RR</m>,
-        we can compose this with any element of <m>W</m> to get a map from <m>L_1</m> to itself,
-        which has a determinant;
-        and by hypothesis,
-        there is some invariant vector of <m>W</m> whose determinant is nonzero.
-        Thus the determinant doesn't vanish identically on the set of invariant vectors in <m>W</m>,
-        so it also doesn't vanish identically on the set of invariant vectors in <m>\Hom_{\ZZ}(L_1, L_2) \otimes_{\ZZ} \QQ</m>.
+        Note that <m>L_1 \otimes_{\ZZ} \QQ</m> and <m>L_2 \otimes_{\ZZ} \QQ</m> are <m>\QQ[G]</m>-modules
+        which become isomorphic to <m>V</m>, and hence to each other, after tensoring over <m>\QQ</m> with <m>\RR</m>.
+        By <xref ref="lem-descend-group-rep"/>, this implies that <m>L_1 \otimes_{\ZZ} \QQ</m> and <m>L_2 \otimes_{\ZZ} \QQ</m> are isomorphic as <m>\QQ[G]</m>-modules.
       </p>
       <p>
-        Thus there is a <m>G</m>-equivariant isomorphism between
-        <m>L_1 \otimes_{\ZZ} \QQ</m> and <m>L_2 \otimes_{\ZZ} \QQ</m>;
-        that is, <m>L_1</m> is isomorphic to a sublattice of <m>L_2</m>.
+        From this isomorphism, we see that as a <m>\ZZ[G]</m>-module, <m>L_1</m> is isomorphic to some sublattice of <m>L_2</m>.
         Since a lattice has the same Herbrand quotient as any sublattice
         (the quotient is finite, so its Herbrand quotient is 1),
         that means <m>h(L_1) = h(L_2)</m>.
       </p>
     </proof>
+    </lemma>
+    <lemma xml:id="lem-descend-group-rep">
+      <statement>
+        <p>
+          Let <m>F/E</m> be an extension of infinite fields. Let <m>G</m> be a finite group.
+          Let <m>V_1</m> and <m>V_2</m> be two right <m>E[G]</m>-modules which are finite-dimensional as <m>E</m>-vector spaces.
+          If <m>V_1 \otimes_E F</m> and <m>V_2 \otimes_E F</m> are isomorphic as <m>F[G]</m>-modules, then <m>V_1</m> and <m>V_2</m> are isomorphic.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          By hypothesis, the <m>F</m>-vector space 
+          <me>
+            W_F = \Hom_{F}(V_1 \otimes_{E} F, V_2 \otimes_{E} F),
+          </me>
+          on which <m>G</m> acts by the formula <m>T^g(x) = T(x^{g^{-1}})^g</m>,
+          contains an invariant vector which, as a linear transformation, is invertible.
+          Now <m>W_F</m> can also be written as
+          <me>
+            W \otimes_E F, \qquad W = \Hom_{E}(V_1, V_2).
+          </me>
+          The fact that <m>W_F</m> has an invariant vector says that a certain set of linear equations has a nonzero solution over <m>F</m>,
+          namely the equations that express the fact that the action of <m>G</m> leaves the vector invariant.
+          But those equations have coefficients in <m>E</m>, so 
+          <me>
+            W^G \otimes_E F = W_F^G;
+          </me>
+          in particular, the space of invariant vectors in <m>W</m> is also nonzero.
+        </p>
+        <p>
+          It remains to check that some element of <m>W^G</m> corresponds to a map <m>V_1 \to V_2</m> which is actually an isomorphism;
+          for this, we argue as in <xref ref="ex-GLn-theorem-90"/>.
+          Fix an isomorphism of vector spaces between <m>V_2 \otimes_{E} F</m> and <m>V_1 \otimes_{E} F</m> (which need not respect the <m>G</m>-action).
+          By composing each element of <m>W</m> with this isomorphism and taking the determinant, we get a well-defined polynomial function on <m>W</m>,
+          which we can restrict to <m>W^G</m>. By hypothesis, this function is not identically zero on <m>W_F^G</m>, so (because <m>E</m> is infinite)
+          it cannot be identically zero on <m>W^G</m> either.
+       </p>
+      </proof>
     </lemma>
   </subsection>
   <subsection>
@@ -327,9 +342,14 @@
       </statement>
     <proof>
       <p>
-        Suppose first that <m>L/K</m> is of prime order.
-        If all but finitely many primes split completely,
-        we can put the remaining primes into <m>S</m> and deduce that <m>C_K = \Norm_{L/K} C_L</m>,
+        Suppose first that <m>L/K</m> is cyclic.
+        Suppose that all but finitely many primes split completely;
+        we can then take a finite set <m>S</m> of places which contains all of them as well as all of the infinite places and all of the ramified places. 
+        For each <m>v \in S</m>, the group <m>U_v = \Norm_{L_w/K_v} L_w^*</m> is open of finite index in <m>K_v^*</m>.
+        For any <m>\alpha \in I_K</m>, using the approximation theorem (<xref ref="P_adelic_CRT_0"/>)
+        we can then find <m>\beta \in K^*</m> such that <m>(\alpha/\beta)_v \in U_v</m> for all <m>v \in S</m>.
+        For each place <m>v \notin S</m>, we have <m>L_w = K_v</m>, so <m>\alpha/\beta \in \Norm_{L/K} I_L</m>.
+        We deduce that the class of <m>\alpha</m> in <m>C_L</m> is a norm; that is, <m>C_K = \Norm_{L/K} C_L</m>,
         whereas <xref ref="T_first_inequality"/> asserts that <m>H^0_T(\Gal(L/K), C_L) \geq [L:K]</m>,
         contradiction.
       </p>
@@ -337,7 +357,7 @@
         In the general case, let <m>M</m> be the Galois closure of <m>L/K</m>;
         then a prime of <m>K</m> splits completely in <m>L</m> if and only if it splits completely in <m>M</m>.
         Since <m>\Gal(M/K)</m> is a nontrivial finite group,
-        it contains a cyclic subgroup of prime order;
+        it contains a cyclic subgroup;
         let <m>N</m> be the fixed field of this subgroup.
         By the previous paragraph,
         there are infinitely many prime ideals of <m>N</m> which do not split completely in <m>M</m>,
@@ -346,4 +366,16 @@
     </proof>
     </corollary>
   </subsection>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>K</m> be a number field.
+          Let <m>L_1, \dots, L_r</m> be cyclic extensions of <m>K</m> of the same prime degree <m>p</m> such that <m>L_i \cap L_j = K</m> for <m>i \neq j</m>.
+          Using the First Inequality (<xref ref="T_first_inequality"/>), prove that there are infinitely many primes of <m>K</m> which split completely in
+          <m>L_2, \dots, L_r</m> but not in <m>L_1</m>.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
 </section>
