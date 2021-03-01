@@ -43,37 +43,42 @@
           </ol>
         </p>
       </statement>
+      <proof>
+        <p>
+          See the discussion in <xref ref="subsec-proof-local-reciprocity"/>.
+        </p>
+      </proof>
     </theorem>
     <definition>
-    <p>
-      The map <m>\phi_K</m> in <xref ref="T_local_reciprocity"/> is variously called the
-      <term>local reciprocity map</term>
-      or the <term>norm residue symbol</term>.
-    </p>
+      <p>
+        The map <m>\phi_K</m> in <xref ref="T_local_reciprocity"/> is variously called the
+        <term>local reciprocity map</term>
+        or the <term>norm residue symbol</term>.
+      </p>
     </definition>
     <example xml:id="exa-local-recip-Qp">
-    <p>
-      Using the local Kronecker-Weber theorem
-      (<xref ref="T_local_Kronecker-Weber1"/>),
-      the statement of <xref ref="T_local_reciprocity"/> can be explicitly verified for <m>K=\QQ_p</m>.
-      To wit, we have <m>K^{\ab} = K_1 K_2</m> where <m>K_1 = \bigcup_n \QQ_p(\zeta_{p^n})</m>
-      and <m>K_2 = \bigcup_n \QQ_p(\zeta_{p^n-1})</m>, and <m>\Gal(K^{\ab}/K) \cong \Gal(K_1/K) \times \Gal(K_2/K)</m>.
-      Since <m>p</m> is totally ramified in <m>K_1</m>, we have 
-      <me>\Gal(K_1/K) \cong \Gal(\left(\bigcup_n \QQ(\zeta_{p^n})\right)/\QQ) \cong \ZZ_p^*.
-      </me>
-      Since <m>p</m> is unramified in <m>K_2</m>, we have
-      <me>
-      \Gal(K_2/K) \cong \Gal(\overline{\FF}_p/\FF_p) \cong \widehat{\ZZ}.
-      </me>
-      However, it will be more convenient to think of the image as sitting inside
-      <me>
-      \Gal(\QQ^{\ab}/\QQ) \cong \widehat{\ZZ}^* \cong \ZZ_p^* \times \prod_{q \neq p} \ZZ_q^*
-      </me>
-      (here using global Kronecker-Weber and Artin reciprocity).
-      The factor <m>\Gal(K_2/K) \cong \widehat{\ZZ}</m> maps to <m>\prod_{q \neq p} \ZZ_q^*</m> via
-      <m>e \mapsto p^e</m>, noting that this makes sense in the target.
-      For the rest, see <xref ref="exer-Qp-reciprocity-map"/>.
-    </p>
+      <p>
+        Using the local Kronecker-Weber theorem
+        (<xref ref="T_local_Kronecker-Weber1"/>),
+        the statement of <xref ref="T_local_reciprocity"/> can be explicitly verified for <m>K=\QQ_p</m>.
+        To wit, we have <m>K^{\ab} = K_1 K_2</m> where <m>K_1 = \bigcup_n \QQ_p(\zeta_{p^n})</m>
+        and <m>K_2 = \bigcup_n \QQ_p(\zeta_{p^n-1})</m>, and <m>\Gal(K^{\ab}/K) \cong \Gal(K_1/K) \times \Gal(K_2/K)</m>.
+        Since <m>p</m> is totally ramified in <m>K_1</m>, we have 
+        <me>\Gal(K_1/K) \cong \Gal(\left(\bigcup_n \QQ(\zeta_{p^n})\right)/\QQ) \cong \ZZ_p^*.
+        </me>
+        Since <m>p</m> is unramified in <m>K_2</m>, we have
+        <me>
+        \Gal(K_2/K) \cong \Gal(\overline{\FF}_p/\FF_p) \cong \widehat{\ZZ}.
+        </me>
+        However, it will be more convenient to think of the image as sitting inside
+        <me>
+        \Gal(\QQ^{\ab}/\QQ) \cong \widehat{\ZZ}^* \cong \ZZ_p^* \times \prod_{q \neq p} \ZZ_q^*
+        </me>
+        (here using global Kronecker-Weber and Artin reciprocity).
+        The factor <m>\Gal(K_2/K) \cong \widehat{\ZZ}</m> maps to <m>\prod_{q \neq p} \ZZ_q^*</m> via
+        <m>e \mapsto p^e</m>, noting that this makes sense in the target.
+        For the rest, see <xref ref="exer-Qp-reciprocity-map"/>.
+      </p>
     </example>
     <p>
       The local reciprocity law is an analogue of the Artin reprocity law for number fields.
@@ -83,35 +88,33 @@
       <title>Local existence theorem</title>
       <statement>
         <p>
-          For every finite
-          (not necessarily abelian)
-          extension <m>L</m> of <m>K</m>,
+          For every finite (not necessarily abelian) extension <m>L</m> of <m>K</m>,
           <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m> of finite index.
           Conversely, for every (open) subgroup <m>U</m> of <m>K^*</m> of finite index,
           there exists a finite abelian extension <m>L</m> of <m>K</m> such that <m>U = \Norm_{L/K} L^*</m>.
         </p>
       </statement>
-     <proof>
-       <p>
-         For the first assertion, see <xref ref="exer-norm-subgroup-is-open"/> 
-         (or <xref ref="exer-norm-subgroup-is-open-charp"/> for the case of characteristic <m>p</m>).
-         For the second assertion, see <xref ref="T_local_existence2"/>.
-       </p>
-     </proof>
-   </theorem>
+      <proof>
+        <p>
+          For the first assertion, see <xref ref="exer-norm-subgroup-is-open"/> 
+          (or <xref ref="exer-norm-subgroup-is-open-charp"/> for the case of characteristic <m>p</m>).
+          For the second assertion, see <xref ref="T_local_existence2"/>.
+        </p>
+      </proof>
+    </theorem>
     <remark xml:id="rem-subspace-topology">
-    <p>
-      In <xref ref="T_local_existence"/>, the topology on <m>K^*</m> is the one given by taking the disjoint union of the sets
-      <m>\pi^n \gotho_K^*</m> for <m>n \in \ZZ</m>, where <m>\pi \in K^\times</m> is a uniformizer. 
-      In fact, it is only necessary to keep track of this topology in the function field case;
-      for <m>K</m> a finite extension of <m>\QQ_p</m>, one can show that every subgroup of <m>K^*</m> of finite index is open.
-    </p>
-    <p>
-      Another way to identify the correct topology on <m>K^*</m> is to equip <m>K</m> with its usual topology (the norm topology defined by an extension of
-      the <m>p</m>-adic absolute value) and then take the subspace topology for the inclusion of <m>K^*</m> into <m>K \times K</m> given by
-      <m>x \mapsto (x, x^{-1})</m>. While this does coincide with the subspace topology for the inclusion of <m>K^*</m> into <m>K</m>, there are good reasons
-      not to view it this way; see <xref ref="exer-subspace-top"/>.
-    </p>
+      <p>
+        In <xref ref="T_local_existence"/>, the topology on <m>K^*</m> is the one given by taking the disjoint union of the sets
+        <m>\pi^n \gotho_K^*</m> for <m>n \in \ZZ</m>, where <m>\pi \in K^\times</m> is a uniformizer. 
+        In fact, it is only necessary to keep track of this topology in the function field case;
+        for <m>K</m> a finite extension of <m>\QQ_p</m>, one can show that every subgroup of <m>K^*</m> of finite index is open.
+      </p>
+      <p>
+        Another way to identify the correct topology on <m>K^*</m> is to equip <m>K</m> with its usual topology (the norm topology defined by an extension of
+        the <m>p</m>-adic absolute value) and then take the subspace topology for the inclusion of <m>K^*</m> into <m>K \times K</m> given by
+        <m>x \mapsto (x, x^{-1})</m>. While this does coincide with the subspace topology for the inclusion of <m>K^*</m> into <m>K</m>, there are good reasons
+        not to view it this way; see <xref ref="exer-subspace-top"/>.
+      </p>
     </remark>
     <p>
       The local existence theorem says that if we start with a nonabelian extension <m>L</m>,
@@ -120,34 +123,39 @@
     </p>
     <theorem xml:id="T_norm_limitation">
       <title>Norm limitation theorem</title>
-      <statement>
-        <p>
-          Let <m>M</m> be the maximal abelian subextension of <m>L/K</m>.
-          Then <m>\Norm_{L/K} L^* = \Norm_{M/K} M^*</m>.
-        </p>
-      </statement>
+        <statement>
+          <p>
+            Let <m>M</m> be the maximal abelian subextension of <m>L/K</m>.
+            Then <m>\Norm_{L/K} L^* = \Norm_{M/K} M^*</m>.
+          </p>
+        </statement>
+        <proof>
+          <p>
+            See the discussion in <xref ref="subsec-proof-local-reciprocity"/>.
+          </p>
+        </proof>
     </theorem>
     <remark>
-    <p>
-    In <xref ref="T_norm_limitation"/>, it is evident that <m>\Norm_{L/K} L^* \subseteq \Norm_{M/K} M^*</m> because
-    <m>\Norm_{L/K} = \Norm_{M/K} \circ \Norm_{L/M}</m>. Since the group <m>\Norm_{L/K} L^*</m> can be shown directly to be an open subgroup of finite index 
-    (see <xref ref="exer-norm-subgroup-is-open"/>), <xref ref="T_local_existence"/> implies that it has the form <m>\Norm_{N/K} N^*</m> for some finite abelian 
-    extension <m>N</m> of <m>K</m>. <xref ref="T_local_reciprocity"/> then implies that <m>M \subseteq N</m>. The subtle point that remains to be proven is that
-    the inclusion <m>M \subseteq N</m> is actually an equality.
-    </p>
+      <p>
+        In <xref ref="T_norm_limitation"/>, it is evident that <m>\Norm_{L/K} L^* \subseteq \Norm_{M/K} M^*</m> because
+        <m>\Norm_{L/K} = \Norm_{M/K} \circ \Norm_{L/M}</m>. Since the group <m>\Norm_{L/K} L^*</m> can be shown directly to be an open subgroup of finite index 
+        (see <xref ref="exer-norm-subgroup-is-open"/>), <xref ref="T_local_existence"/> implies that it has the form <m>\Norm_{N/K} N^*</m> for some finite abelian 
+        extension <m>N</m> of <m>K</m>. <xref ref="T_local_reciprocity"/> then implies that <m>M \subseteq N</m>. The subtle point that remains to be proven is that
+        the inclusion <m>M \subseteq N</m> is actually an equality.
+      </p>
     </remark>
     <remark>
-    <p>
-      For each uniformizer <m>\pi</m> of <m>K</m>,
-      let <m>K_\pi</m> be the composite of all finite abelian extensions <m>L</m> such that <m>\pi \in \Norm_{L/K} L^*</m>.
-      Then the local reciprocity map implies that <m>K^{\ab} = K_\pi \cdot K^{\unr}</m>.
-    </p>
-    <p>
-      It turns out that <m>K_\pi</m> can be explicitly constructed as the extension of <m>K</m> by certain elements,
-      thus giving a generalization of local Kronecker-Weber to arbitrary local fields!
-      These elements come from <term>Lubin-Tate formal groups</term>,
-      which we will not discuss further.
-    </p>
+      <p>
+        For each uniformizer <m>\pi</m> of <m>K</m>,
+        let <m>K_\pi</m> be the composite of all finite abelian extensions <m>L</m> such that <m>\pi \in \Norm_{L/K} L^*</m>.
+        Then the local reciprocity map implies that <m>K^{\ab} = K_\pi \cdot K^{\unr}</m>.
+      </p>
+      <p>
+        It turns out that <m>K_\pi</m> can be explicitly constructed as the extension of <m>K</m> by certain elements,
+        thus giving a generalization of local Kronecker-Weber to arbitrary local fields!
+        These elements come from <term>Lubin-Tate formal groups</term>,
+        which we will not discuss further.
+      </p>
     </remark>
     <p>
       Note that for <m>L/K</m> a finite extension of local fields, the map
@@ -166,11 +174,16 @@
           there is a canonical isomorphism <m>H^i_T(G, \ZZ) \to H^{i+2}_T(G, L^*)</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          See the discussion in <xref ref="subsec-proof-local-reciprocity"/>.
+        </p>
+      </proof>
     </theorem>
     <remark>
       <p>
-        The map in <xref ref="T_cup_product_isomorphism"/> can be written in terms of the <term>cup product</term> in group cohomology.
-        However, we will not develop this point of view here.
+        The map in <xref ref="T_cup_product_isomorphism"/> can be written in terms of the <term>cup product</term> in group cohomology
+        (see <xref ref="bib-Milne-CFT"/>, Proposition II.1.38). We will not develop this point of view here.
       </p>
     </remark>
   </subsection>
@@ -190,28 +203,29 @@
           </md>
         </p>
       </statement>
+      <proof>
+        <p>
+          This will follow from <xref ref="P_local_h2"/>.
+        </p>
+      </proof>
     </theorem>
+    <definition>
+      <p>
+        In <xref ref="T_Brauer_group_identification"/>, the first map is an inflation homomorphism;
+        the second map is called the <term>local invariant map</term>.
+        More precisely, for <m>L/K</m> finite of degree <m>n</m>, we have an isomorphism
+        <me>
+          \inv_{L/K}: H^2(\Gal(L/K), L^*) \to \frac{1}{n}\ZZ/\ZZ,
+        </me>
+        and these isomorphisms are compatible with inflation.
+        (In particular, we don't need to prove the first isomorphism separately.
+        But that can be done, by considerations involving the Brauer group; see below.)
+      </p>
+    </definition>
     <p>
-      The first map is an inflation homomorphism;
-      the second map in this theorem is called the
-      <term>local invariant map</term>.
-      More precisely,
-      for <m>L/K</m> finite of degree <m>n</m>, we have an isomorphism
-      <me>
-        \inv_{L/K}: H^2(\Gal(L/K), L^*) \to \frac{1}{n}\ZZ/\ZZ
-      </me>,
-      and these isomorphisms are compatible with inflation.
-      (In particular,
-      we don't need to prove the first isomorphism separately.
-      But that can be done, by considerations involving the Brauer group;
-      see below.)
-    </p>
-    <p>
-      To use this to prove <xref ref="T_cup_product_isomorphism"/>
+      To use <xref ref="T_Brauer_group_identification"/> to prove <xref ref="T_cup_product_isomorphism"/>
       and hence the local reciprocity law (<xref ref="T_local_reciprocity"/>) and the norm limitation theorem (<xref ref="T_norm_limitation"/>),
-      we employ the following theorem of Tate,
-      which we will prove a bit later
-      (see <xref ref="T_tate_thm2"/>).
+      we employ the following theorem of Tate.
     </p>
     <theorem xml:id="T_tate_thm1">
       <statement>
@@ -224,19 +238,24 @@
           these are canonical once you fix a choice of a generator of <m>H^2(G,M)</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          See <xref ref="T_tate_thm2"/>.
+        </p>
+      </proof>
     </theorem>
-    <remark>
-    <p>
-      In general, for any field <m>K</m>,
-      the group <m>H^2(\Gal(\overline{K}/K), \overline{K}^*)</m> is called the
-      <term>Brauer group</term> of <m>K</m>.
-      It is an important invariant of <m>K</m>;
-      it can be realized also in terms of certain noncommutative algebras over <m>K</m>
-      (central simple algebras).
-      I won't pursue this connection further,
-      nor study many of the interesting properties and applications of Brauer groups.
-    </p>
-    </remark>
+    <definition>
+      <p>
+        For any field <m>K</m>,
+        the group <m>H^2(\Gal(\overline{K}/K), \overline{K}^*)</m> is called the
+        <term>Brauer group</term> of <m>K</m>.
+        It is an important invariant of <m>K</m>;
+        it can be realized also in terms of certain noncommutative algebras over <m>K</m>
+        (central simple algebras).
+        I won't pursue this connection further,
+        nor study many of the interesting properties and applications of Brauer groups.
+      </p>
+    </definition>
   </subsection>
   <subsection>
     <title>Abstract class field theory</title>

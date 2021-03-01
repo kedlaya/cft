@@ -82,52 +82,52 @@
           the map <m>\Norm_{L/K}: L^* \to K^*</m> is surjective.
         </p>
       </statement>
+      <proof>
+        <p>
+          One can certainly give an elementary proof of this using the fact that <m>L^*</m> is cyclic
+          (see <xref ref="exer-norm-map-finite"/>).
+          But one can also see it using the machinery we have at hand.
+          Because <m>L^*</m> is a finite module, its Herbrand quotient is 1.
+          Also, we know <m>H^1_T(L/K)</m> is trivial by <xref ref="L_theorem_90"/>.
+          Thus <m>H^0_T(L/K)</m> is trivial too, that is, <m>\Norm_{L/K}: L^* \to K^*</m> is surjective.
+        </p>
+      </proof>
     </proposition>
-    <proof>
-      <p>
-        One can certainly give an elementary proof of this using the fact that <m>L^*</m> is cyclic
-        (see <xref ref="exer-norm-map-finite"/>).
-        But one can also see it using the machinery we have at hand.
-        Because <m>L^*</m> is a finite module, its Herbrand quotient is 1.
-        Also, we know <m>H^1_T(L/K)</m> is trivial by <xref ref="L_theorem_90"/>.
-        Thus <m>H^0_T(L/K)</m> is trivial too, that is, <m>\Norm_{L/K}: L^* \to K^*</m> is surjective.
-      </p>
-    </proof>
     <proposition xml:id="P_unramified_norm_surjective">
       <statement>
         <p>
           For any finite unramified extension <m>L/K</m> of local fields, the map <m>\Norm_{L/K}: \gotho_L^* \to \gotho_K^*</m> is surjective.
         </p>
       </statement>
+      <proof>
+        <p>
+          Say <m>u \in \gotho_K^*</m> is a unit.
+          By <xref ref="P_finite_norm_surjective"/>, we may pick <m>v_0 \in \gotho_L^*</m> such that in the residue fields,
+          the norm of <m>v_0</m> coincides with <m>u</m>.
+          Thus <m>u/\Norm(v_0) \equiv 1 \pmod{\pi}</m>, where <m>\pi</m> is a uniformizer of <m>K</m>.
+          Now we construct units <m>v_i \equiv 1 \pmod{\pi^i}</m> such that <m>u_i = u/\Norm(v_0\cdots v_i) \equiv 1 \pmod{\pi^{i+1}}</m>:
+          simply take <m>v_i</m> so that <m>\Trace((1-v_i)/\pi^i) \equiv (1-u_{i-1})/\pi^i \pmod{\pi}</m>.
+          (That's possible because the trace map on residue fields is surjective by the normal basis theorem.)
+          Then the product <m>v_0v_1\cdots</m> converges to a unit <m>v</m> with norm <m>u</m>.
+        </p>
+      </proof>
     </proposition>
-    <proof>
-      <p>
-        Say <m>u \in \gotho_K^*</m> is a unit.
-        By <xref ref="P_finite_norm_surjective"/>, we may pick <m>v_0 \in \gotho_L^*</m> such that in the residue fields,
-        the norm of <m>v_0</m> coincides with <m>u</m>.
-        Thus <m>u/\Norm(v_0) \equiv 1 \pmod{\pi}</m>, where <m>\pi</m> is a uniformizer of <m>K</m>.
-        Now we construct units <m>v_i \equiv 1 \pmod{\pi^i}</m> such that <m>u_i = u/\Norm(v_0\cdots v_i) \equiv 1 \pmod{\pi^{i+1}}</m>:
-        simply take <m>v_i</m> so that <m>\Trace((1-v_i)/\pi^i) \equiv (1-u_{i-1})/\pi^i \pmod{\pi}</m>.
-        (That's possible because the trace map on residue fields is surjective by the normal basis theorem.)
-        Then the product <m>v_0v_1\cdots</m> converges to a unit <m>v</m> with norm <m>u</m>.
-      </p>
-    </proof>
     <corollary xml:id="C_cohomology_of_units_unramified">
       <statement>
         <p>
           For any finite unramified extensions <m>L/K</m> of local fields, <m>H^i_T(\Gal(L/K), \gotho_L^*) = 1</m> for all <m>i \in \ZZ</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          Again, <m>\Gal(L/K)</m> is cyclic, so by <xref ref="T_cyclic_group_periodicity"/> we need only check this for <m>i=0,1</m>.
+          For <m>i=0</m>, it is <xref ref="P_unramified_norm_surjective"/>.
+          For <m>i=1</m>, note that because <m>L/K</m> is unramified, we can split the surjection <m>L^* \to L^*/\gotho_L^*</m>
+          by choosing a uniformizer <m>\pi_K</m> of <m>K</m> and writing <m>L^* = \gotho_L^* \pi_K^\ZZ</m>. Hence
+          <m>H^1_T(\Gal(L/K), \gotho_L^*)</m> is a direct summand of <m>H^1_T(\Gal(L/K), L^*)</m>, and the latter vanishes by <xref ref="L_theorem_90"/>. 
+        </p>
+      </proof>
     </corollary>
-    <proof>
-      <p>
-        Again, <m>\Gal(L/K)</m> is cyclic, so by <xref ref="T_cyclic_group_periodicity"/> we need only check this for <m>i=0,1</m>.
-        For <m>i=0</m>, it is <xref ref="P_unramified_norm_surjective"/>.
-        For <m>i=1</m>, note that because <m>L/K</m> is unramified, we can split the surjection <m>L^* \to L^*/\gotho_L^*</m>
-        by choosing a uniformizer <m>\pi_K</m> of <m>K</m> and writing <m>L^* = \gotho_L^* \pi_K^\ZZ</m>. Hence
-        <m>H^1_T(\Gal(L/K), \gotho_L^*)</m> is a direct summand of <m>H^1_T(\Gal(L/K), L^*)</m>, and the latter vanishes by <xref ref="L_theorem_90"/>. 
-      </p>
-    </proof>
     <proposition xml:id="P_H2_unramified">
       <statement>
         <p>
@@ -136,26 +136,26 @@
         </p>
       </statement>
       <proof>
-      <p>
-        Using the Herbrand quotient, we get <m>h(L^*) = h(\gotho_L^*) h(\ZZ)</m>.
-        <xref ref="C_cohomology_of_units_unramified"/> says that <m>h(\gotho_L^*) = 1</m>, and
-        <md>
-          <mrow>h(L^*/\gotho_L^*) \amp = h(\ZZ)</mrow>
-          <mrow>\amp = \#H^0_T(\Gal(L/K), \ZZ)/\#H^1_T(\Gal(L/K), \ZZ)</mrow>
-          <mrow>\amp = \#\Gal(L/K)^{\ab} / \#\Hom(\Gal(L/K), \ZZ)</mrow>
-          <mrow>\amp = [L:K].</mrow>
-        </md>
-      </p>
-      <p>
-        Since <m>H^1_T(\Gal(L/K), L^*)</m> is trivial,
-        we conclude that <m>H^0_T(\Gal(L/K), L^*)</m> has order <m>[L:K]</m>.
-        Moreover, the long exact sequence of Tate groups gives an exact sequence
-        <me>
-          1 \to H^0_T(\Gal(L/K), L^*) \to H^0_T(\Gal(L/K), \ZZ) = \Gal(L/K) \to 1,
-        </me>
-        where the ends vanish by <xref ref="C_cohomology_of_units_unramified"/> again;
-        so by periodicity (<xref ref="T_cyclic_group_periodicity"/>) we also get that <m>H^0_T(\Gal(L/K), L^*) \cong H^2(L/K)</m> is cyclic of order <m>[L:K]</m>.
-      </p>
+        <p>
+          Using the Herbrand quotient, we get <m>h(L^*) = h(\gotho_L^*) h(\ZZ)</m>.
+          <xref ref="C_cohomology_of_units_unramified"/> says that <m>h(\gotho_L^*) = 1</m>, and
+          <md>
+            <mrow>h(L^*/\gotho_L^*) \amp = h(\ZZ)</mrow>
+            <mrow>\amp = \#H^0_T(\Gal(L/K), \ZZ)/\#H^1_T(\Gal(L/K), \ZZ)</mrow>
+            <mrow>\amp = \#\Gal(L/K)^{\ab} / \#\Hom(\Gal(L/K), \ZZ)</mrow>
+            <mrow>\amp = [L:K].</mrow>
+          </md>
+        </p>
+        <p>
+          Since <m>H^1_T(\Gal(L/K), L^*)</m> is trivial,
+          we conclude that <m>H^0_T(\Gal(L/K), L^*)</m> has order <m>[L:K]</m>.
+          Moreover, the long exact sequence of Tate groups gives an exact sequence
+          <me>
+            1 \to H^0_T(\Gal(L/K), L^*) \to H^0_T(\Gal(L/K), \ZZ) = \Gal(L/K) \to 1,
+          </me>
+          where the ends vanish by <xref ref="C_cohomology_of_units_unramified"/> again;
+          so by periodicity (<xref ref="T_cyclic_group_periodicity"/>) we also get that <m>H^0_T(\Gal(L/K), L^*) \cong H^2(L/K)</m> is cyclic of order <m>[L:K]</m>.
+        </p>
       </proof>
     </proposition>
     <p>
@@ -191,11 +191,11 @@
       </me>.
     </p>
     <remark>
-    <p>
-      What's really going on here is that
-      <m>H^0_T(\Gal(L/K), L^*)</m> is a cyclic group generated by a uniformizer <m>\pi</m> (since every unit is a norm).
-      Under the map <m>H^0_T(\Gal(L/K), L^*) \to \QQ/\ZZ</m>, that uniformizer is being mapped to <m>1/[L:K]</m>.
-    </p>
+      <p>
+        What's really going on here is that
+        <m>H^0_T(\Gal(L/K), L^*)</m> is a cyclic group generated by a uniformizer <m>\pi</m> (since every unit is a norm).
+        Under the map <m>H^0_T(\Gal(L/K), L^*) \to \QQ/\ZZ</m>, that uniformizer is being mapped to <m>1/[L:K]</m>.
+      </p>
     </remark>
   </subsection>
   <subsection>
@@ -215,20 +215,18 @@
           <m>H^i(\Gal(L/K), V) = 0</m> for all <m>i>0</m> (i.e., <m>V</m> is acyclic for cohomology).
         </p>
       </statement>
+      <proof>
+        <p>
+          By the normal basis theorem, there exists <m>\alpha \in L</m> such that
+          <m>\{\alpha^g: g \in \Gal(L/K)\}</m> is a basis for <m>L</m> over <m>K</m>.
+          Without loss of generality, we may rescale to get <m>\alpha \in \gotho_L</m>;
+          then put <m>V = \sum \gotho_K \alpha^g</m>.
+          As in the proof of <xref ref="T_additive_theorem_90"/>,
+          <m>V</m> is induced:
+          <m>V = \Ind^G_{1} \gotho_K</m>, so is acyclic.
+        </p>
+      </proof>
     </lemma>
-    <proof>
-      <p>
-        By the normal basis theorem,
-        there exists <m>\alpha \in L</m> such that
-        <m>\{\alpha^g:
-        g \in \Gal(L/K)\}</m> is a basis for <m>L</m> over <m>K</m>.
-        Without loss of generality, we may rescale to get <m>\alpha \in \gotho_L</m>;
-        then put <m>V = \sum \gotho_K \alpha^g</m>.
-        As in the proof of <xref ref="T_additive_theorem_90"/>,
-        <m>V</m> is induced:
-        <m>V = \Ind^G_{1} \gotho_K</m>, so is acyclic.
-      </p>
-    </proof>
     <p>
       The following proof uses that we are in characteristic 0, but it can be modified to work also in the function field case.
     </p>
@@ -240,21 +238,21 @@
           <m>\gotho_L^*</m> such that <m>H^i(\Gal(L/K), W) = 0</m> for all <m>i>0</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          Take <m>V</m> as in <xref ref="L_open_subgroup_acyclic"/>.
+          If we choose <m>\alpha</m> sufficiently divisible,
+          then <m>V</m> lies in the radius of convergence of the exponential series
+          <me>
+            \exp(x) = \sum_{i=0}^\infty \frac{x^i}{i!}
+          </me>
+        </p>
+        <p>
+          (you need <m>v_p(x) > 1/(p-1)</m>,
+          to be precise), and we may take <m>W = \exp(V)</m>.
+        </p>
+      </proof>
     </lemma>
-    <proof>
-      <p>
-        Take <m>V</m> as in <xref ref="L_open_subgroup_acyclic"/>.
-        If we choose <m>\alpha</m> sufficiently divisible,
-        then <m>V</m> lies in the radius of convergence of the exponential series
-        <me>
-          \exp(x) = \sum_{i=0}^\infty \frac{x^i}{i!}
-        </me>
-      </p>
-      <p>
-        (you need <m>v_p(x) > 1/(p-1)</m>,
-        to be precise), and we may take <m>W = \exp(V)</m>.
-      </p>
-    </proof>
     <proposition xml:id="P_local_cyclic_H2">
       <statement>
         <p>
@@ -290,9 +288,8 @@
   <subsection>
     <title>The general case</title>
     <p>
-      For those in the know,
-      there is a <term>spectral sequence</term> underlying this next result;
-      see <xref ref="bib-Milne-CFT"/>, Remark II.1.35.
+      For those in the know, there is a <term>spectral sequence</term> underlying this next result;
+      compare <xref ref="exer-S3-cohomology-example"/>.
     </p>
     <proposition xml:id="P_inflation_restriction">
       <title>Inflation-Restriction Exact Sequence</title>
@@ -306,73 +303,70 @@
           is exact.
         </p>
       </statement>
+      <proof>
+        <p>
+          For <m>r=1</m>, the condition on <m>H^i</m> is empty.
+          In this case,
+          <m>H^1(G,M)</m> classifies crossed homomorphisms <m>\phi:G \to M</m>.
+          If one of these factors through <m>G/H</m>,
+          it becomes a constant map when restricted to <m>H</m>;
+          if that constant value itself belongs to <m>M^H</m>,
+          then it must be zero and so the restriction to <m>H</m> is trivial.
+          Conversely, if there exists some <m>m \in M</m> such that
+          <m>\phi(h) = m^h - m</m> for all <m>h \in H</m>,
+          then <m>\phi'(g) = \phi(g) - m^g + m</m> is another crossed homomorphism representing the same class in <m>H^1(G,M)</m>,
+          but taking the value 0 on each <m>h \in H</m>.
+          For <m>g \in G, h \in H</m>, we have
+          <me>
+            \phi'(hg) = \phi'(h)^g + \phi'(g) = \phi'(g)
+          </me>,
+          so <m>\phi'</m> is constant on cosets of <m>H</m> and so may be viewed as a crossed homomorphism from <m>G/H</m> to <m>M</m>.
+          On the other hand,
+          <me>
+            \phi'(g) = \phi'(gh) = \phi'(g)^h + \phi(h) = \phi'(g)^h
+          </me>
+          so <m>\phi'</m> takes values in <m>M^H</m>.
+          Thus the sequence is exact at <m>H^1(G,M)</m>;
+          exactness at <m>H^i(G/H,M^H)</m> is similar but easier.
+        </p>
+        <p>
+          If <m>r>1</m>, we induct on <m>r</m> by dimension shifting.
+          Recall (from <xref ref="P_adjoint_property"/>) that there is an injective homomorphism <m>M \to \Ind^G_1 M</m> of <m>G</m>-modules.
+          Let <m>N</m> be the <m>G</m>-module which makes the sequence
+          <me>
+            0 \to M \to \Ind^G_{1} M \to N \to 0
+          </me>
+          exact.
+          We construct a commutative diagram
+          <figure xml:id="fig-localcomp-1">
+          <image>
+          <latex-image>
+          \xymatrix{
+          0 \ar[r] &amp; H^{r-1}(G/H, N^H) \ar^{\Inf}[r] \ar[d] &amp; H^{r-1}(G, N) \ar^{\Res}[r] \ar[d] &amp; H^{r-1}(H,N) \ar[d] \\
+          0 \ar[r] &amp; H^{r}(G/H, M^H) \ar^{\Inf}[r] &amp; H^{r}(G, M) \ar^{\Res}[r] &amp; H^{r}(H,M).
+          }
+          </latex-image>
+          </image>
+          </figure>
+          The second vertical arrow arises from the long exact sequence for <m>G</m>-cohomology;
+          since <m>\Ind^G_{1} M</m> is an induced <m>G</m>-module,
+          this arrow is an isomorphism.
+          Similarly, the third vertical arrow arises from the long exact sequence for <m>H</m>-cohomology,
+          and it is an isomorphism because
+          <m>\Ind^G_1 M</m> is also an induced <m>H</m>-module;
+          moreover, <m>H^i(H, N) = 0</m> for <m>i=1, \dots, r-2</m>.
+          Finally, taking <m>H</m>-invariants yields another exact sequence
+          <me>
+            0 \to M^H \to (\Ind^G_1 M)^H \to N^H \to H^1(H, M) = 0
+          </me>,
+          so we may take the long exact sequence for <m>G/H</m>-cohomology to obtain the first vertical arrow;
+          it is an isomorphism because
+          <m>(\Ind^G_1 M)^H</m> is an induced <m>G/H</m>-module.
+          The induction hypothesis implies that the top row is exact,
+          so the bottom row is also exact.
+        </p>
+      </proof>
     </proposition>
-    <proof>
-      <p>
-        For <m>r=1</m>, the condition on <m>H^i</m> is empty.
-        In this case,
-        <m>H^1(G,M)</m> classifies crossed homomorphisms <m>\phi:G \to M</m>.
-        If one of these factors through <m>G/H</m>,
-        it becomes a constant map when restricted to <m>H</m>;
-        if that constant value itself belongs to <m>M^H</m>,
-        then it must be zero and so the restriction to <m>H</m> is trivial.
-        Conversely, if there exists some <m>m \in M</m> such that
-        <m>\phi(h) = m^h - m</m> for all <m>h \in H</m>,
-        then <m>\phi'(g) = \phi(g) - m^g + m</m> is another crossed homomorphism representing the same class in <m>H^1(G,M)</m>,
-        but taking the value 0 on each <m>h \in H</m>.
-        For <m>g \in G, h \in H</m>, we have
-        <me>
-          \phi'(hg) = \phi'(h)^g + \phi'(g) = \phi'(g)
-        </me>,
-        so <m>\phi'</m> is constant on cosets of <m>H</m> and so may be viewed as a crossed homomorphism from <m>G/H</m> to <m>M</m>.
-        On the other hand,
-        <me>
-          \phi'(g) = \phi'(gh) = \phi'(g)^h + \phi(h) = \phi'(g)^h
-        </me>
-        so <m>\phi'</m> takes values in <m>M^H</m>.
-        Thus the sequence is exact at <m>H^1(G,M)</m>;
-        exactness at <m>H^i(G/H,M^H)</m> is similar but easier.
-      </p>
-      <p>
-        If <m>r>1</m>, we induct on <m>r</m> by dimension shifting.
-        Recall (from <xref ref="P_adjoint_property"/>) that there is an injective homomorphism <m>M \to \Ind^G_1 M</m> of <m>G</m>-modules.
-        Let <m>N</m> be the <m>G</m>-module which makes the sequence
-        <me>
-          0 \to M \to \Ind^G_{1} M \to N \to 0
-        </me>
-        exact.
-        We construct a commutative diagram
-        <figure xml:id="fig-localcomp-1">
-        <image>
-        <latex-image>
-        \xymatrix{
-        0 \ar[r] &amp; H^{r-1}(G/H, N^H) \ar^{\Inf}[r] \ar[d] &amp; H^{r-1}(G, N) \ar^{\Res}[r] \ar[d] &amp; H^{r-1}(H,N) \ar[d] \\
-        0 \ar[r] &amp; H^{r}(G/H, M^H) \ar^{\Inf}[r] &amp; H^{r}(G, M) \ar^{\Res}[r] &amp; H^{r}(H,M).
-        }
-        </latex-image>
-        </image>
-        </figure>
-        The second vertical arrow arises from the long exact sequence for <m>G</m>-cohomology;
-        since <m>\Ind^G_{1} M</m> is an induced <m>G</m>-module,
-        this arrow is an isomorphism.
-        Similarly, the third vertical arrow arises from the long exact sequence for <m>H</m>-cohomology,
-        and it is an isomorphism because
-        <m>\Ind^G_1 M</m> is also an induced <m>H</m>-module;
-        moreover, <m>H^i(H, N) = 0</m> for <m>i=1, \dots, r-2</m>.
-        Finally, taking <m>H</m>-invariants yields another exact sequence
-        <me>
-          0 \to M^H \to (\Ind^G_1 M)^H \to N^H \to H^1(H, M) = 0
-        </me>,
-        so we may take the long exact sequence for <m>G/H</m>-cohomology to obtain the first vertical arrow;
-        it is an isomorphism because
-        <m>(\Ind^G_1 M)^H</m> is an induced <m>G/H</m>-module.
-        The induction hypothesis implies that the top row is exact,
-        so the bottom row is also exact.
-      </p>
-    </proof>
-    <p>
-      By <xref ref="L_theorem_90"/>, we have the following.
-    </p>
     <corollary xml:id="C_inflation_restriction_h2">
       <statement>
         <p>
@@ -384,6 +378,11 @@
           is exact.
         </p>
       </statement>
+      <proof>
+        <p>
+          This follows from <xref ref="P_inflation_restriction"/> using <xref ref="L_theorem_90"/>.
+        </p>
+      </proof>
     </corollary>
     <p>
       We now prove the following.
@@ -395,20 +394,20 @@
           the group <m>H^2(\Gal(L/K), L^*)</m> has order at most <m>[L:K]</m>.
         </p>
       </statement>
-    <proof>
-      <p>
-        We've checked the case of <m>L/K</m> cyclic,
-        so we may use it as the basis for an induction.
-        If <m>L/K</m> is not cyclic,
-        since it is solvable (<xref ref="rmk-local-galois-solvable"/>), we can find a Galois subextension <m>M/K</m>.
-        Now the exact sequence
-        <me>
-          0 \to H^2(M/K) \to H^2(L/K) \to H^2(L/M)
-        </me>
-        from <xref ref="C_inflation_restriction_h2"/>
-        implies that <m>\#H^2(L/K) \leq \#H^2(M/K) \#H^2(L/M) = [M:K][L:M] = [L:K]</m>.
-      </p>
-    </proof>
+      <proof>
+        <p>
+          We've checked the case of <m>L/K</m> cyclic,
+          so we may use it as the basis for an induction.
+          If <m>L/K</m> is not cyclic,
+          since it is solvable (<xref ref="rmk-local-galois-solvable"/>), we can find a Galois subextension <m>M/K</m>.
+          Now the exact sequence
+          <me>
+            0 \to H^2(M/K) \to H^2(L/K) \to H^2(L/M)
+          </me>
+          from <xref ref="C_inflation_restriction_h2"/>
+          implies that <m>\#H^2(L/K) \leq \#H^2(M/K) \#H^2(L/M) = [M:K][L:M] = [L:K]</m>.
+        </p>
+      </proof>
     </proposition>
     <p>
       To complete the proof that
@@ -425,75 +424,69 @@
       <proof>
         <p>
           Let <m>M/K</m> be an unramified extension of degree <m>[L:K]</m>.
-      Then we have a diagram
-    </p>
-      <figure xml:id="fig-localcomp-2">
-      <image>
-      <latex-image>
-      \xymatrix{
-      &amp; &amp; H^2(M/K) \ar[d]^{\Inf} \ar[rd] &amp;  \\
-      0 \ar[r] &amp; H^2(L/K) \ar^{\Inf}[r] &amp; H^2(ML/K) \ar^{\Res}[r] &amp; H^2(ML/L)
-      }
-      </latex-image>
-      </image>
-      </figure>
-    <p>
-      in which the bottom row is exact and the vertical arrow is injective,
-      both by <xref ref="C_inflation_restriction_h2"/>.
-      It suffices to show that the diagonal arrow <m>H^2(M/K) \to H^2(ML/L)</m> is the zero map,
-      as this will imply an inclusion <m>H^2(M/K) \subseteq H^2(L/K)</m> within <m>H^2(ML/K)</m>
-      and we already know that <m>H^2(M/K)</m> is cyclic of order <m>[M:K]=[L:K]</m>
-      by <xref ref="P_H2_unramified"/>.
-    </p>
-    <p>
-      Let <m>e = e(L/K)</m> and <m>f = f(L/K)</m> be the ramification index and residue field degree,
-      so that <m>[ML:L] = e</m>.
-      Let <m>U</m> be the maximal unramified subextension of <m>L/K</m>;
-      then we have a canonical isomorphism <m>\Gal(ML/L) \cong \Gal(M/U)</m> of cyclic groups.
-      By using the same generators in both groups,
-      we can make a commutative diagram
-    </p>
-      <figure xml:id="fig-localcomp-3">
-      <image>
-      <latex-image>
-      \xymatrix{
-      H^0_T(M/K) \ar^{\Res}[r] \ar[d] &amp; H^0_T(M/U) \ar[r]  \ar[d] &amp; H^0_T(ML/L) \ar[d]  \\
-      H^2(M/K) \ar^{\Res}[r] &amp; H^2(M/U) \ar[r] &amp; H^2(ML/L)
-      }
-      </latex-image>
-      </image>
-      </figure>
-    <p>
-      in which the vertical arrows are isomorphisms.
-      (Remember from <xref ref="D-extended-functoriality-homology"/> that restriction maps on Tate homology make sense in degree 0;
-      that gives the first horizontal arrow in <xref ref="fig-localcomp-3"/>.)
-      The composition in the bottom row is the map <m>H^2(M/K) \to H^2(ML/L)</m> which we want to be zero;
-      it thus suffices to check that the top row composes to zero.
-    </p>
-    <p>
-      Let us rewrite this composition concretely as
-      <me>K^*/\Norm_{M/K} M^* \to U^*/\Norm_{M/U} M^* \to L^*/\Norm_{ML/L} (ML)^*</me>
-      where the maps are induced by the inclusions <m>K^* \to U^* \to L^*</m>.
-      Now <m>K^*/\Norm_{M/K} M^*</m> is a cyclic group of order <m>ef</m> generated by <m>\pi_K</m>,
-      a uniformizer of <m>K</m>,
-      and <m>L^*/\Norm_{ML/L} (ML)^*</m> is a cyclic group of order <m>e</m> generated by <m>\pi_L</m>,
-      a uniformizer of <m>L</m>.
-      But <m>\pi_K</m> is a unit of
-      <m>\gotho_L</m> times <m>\pi_L^e</m>,
-      so the map in question is indeed zero.
-    </p>
+          Then we have a diagram
+          <figure xml:id="fig-localcomp-2">
+          <image>
+          <latex-image>
+          \xymatrix{
+          &amp; &amp; H^2(M/K) \ar[d]^{\Inf} \ar[rd] &amp;  \\
+          0 \ar[r] &amp; H^2(L/K) \ar^{\Inf}[r] &amp; H^2(ML/K) \ar^{\Res}[r] &amp; H^2(ML/L)
+          }
+          </latex-image>
+          </image>
+          </figure>
+          in which the bottom row is exact and the vertical arrow is injective,
+          both by <xref ref="C_inflation_restriction_h2"/>.
+          It suffices to show that the diagonal arrow <m>H^2(M/K) \to H^2(ML/L)</m> is the zero map,
+          as this will imply an inclusion <m>H^2(M/K) \subseteq H^2(L/K)</m> within <m>H^2(ML/K)</m>
+          and we already know that <m>H^2(M/K)</m> is cyclic of order <m>[M:K]=[L:K]</m>
+          by <xref ref="P_H2_unramified"/>.
+        </p>
+        <p>
+          Let <m>e = e(L/K)</m> and <m>f = f(L/K)</m> be the ramification index and residue field degree,
+          so that <m>[ML:L] = e</m>.
+          Let <m>U</m> be the maximal unramified subextension of <m>L/K</m>;
+          then we have a canonical isomorphism <m>\Gal(ML/L) \cong \Gal(M/U)</m> of cyclic groups.
+          By using the same generators in both groups,
+          we can make a commutative diagram
+          <figure xml:id="fig-localcomp-3">
+          <image>
+          <latex-image>
+          \xymatrix{
+          H^0_T(M/K) \ar^{\Res}[r] \ar[d] &amp; H^0_T(M/U) \ar[r]  \ar[d] &amp; H^0_T(ML/L) \ar[d]  \\
+          H^2(M/K) \ar^{\Res}[r] &amp; H^2(M/U) \ar[r] &amp; H^2(ML/L)
+          }
+          </latex-image>
+          </image>
+          </figure>
+          in which the vertical arrows are isomorphisms.
+          (Remember from <xref ref="D-extended-functoriality-homology"/> that restriction maps on Tate homology make sense in degree 0;
+          that gives the first horizontal arrow in <xref ref="fig-localcomp-3"/>.)
+          The composition in the bottom row is the map <m>H^2(M/K) \to H^2(ML/L)</m> which we want to be zero;
+          it thus suffices to check that the top row composes to zero.
+        </p>
+        <p>
+          Let us rewrite this composition concretely as
+          <me>K^*/\Norm_{M/K} M^* \to U^*/\Norm_{M/U} M^* \to L^*/\Norm_{ML/L} (ML)^*</me>
+          where the maps are induced by the inclusions <m>K^* \to U^* \to L^*</m>.
+          Now <m>K^*/\Norm_{M/K} M^*</m> is a cyclic group of order <m>ef</m> generated by <m>\pi_K</m>,
+          a uniformizer of <m>K</m>,
+          and <m>L^*/\Norm_{ML/L} (ML)^*</m> is a cyclic group of order <m>e</m> generated by <m>\pi_L</m>,
+          a uniformizer of <m>L</m>.
+          But <m>\pi_K</m> is a unit of
+          <m>\gotho_L</m> times <m>\pi_L^e</m>,
+          so the map in question is indeed zero.
+        </p>
       </proof>
     </proposition>
-  <remark>
-    <p>
-      If <m>L/K</m> is a finite extension of degree <m>n</m>,
-      then the map <m>\Res: H^2(K^{\unr}/K) \to H^2(L^{\unr}/L)</m> translates,
-      via the local reciprocity map,
-      into a map from <m>\QQ/\ZZ</m> to itself.
-      This map turns out to be multiplication by <m>n</m>
-      (see <xref ref="bib-Milne-CFT"/>, Proposition II.2.7).
-    </p>
-  </remark>
+    <remark>
+      <p>
+        If <m>L/K</m> is a finite extension of degree <m>n</m>,
+        then the map <m>\Res: H^2(K^{\unr}/K) \to H^2(L^{\unr}/L)</m> translates,
+        via the local reciprocity map, into a map from <m>\QQ/\ZZ</m> to itself.
+        This map turns out to be multiplication by <m>n</m> (see <xref ref="bib-Milne-CFT"/>, Proposition II.2.7).
+      </p>
+    </remark>
   </subsection>
   <subsection>
     <title>The local invariant map</title>

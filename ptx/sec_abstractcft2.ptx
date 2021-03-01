@@ -164,6 +164,11 @@
           </image>
           </figure>
       </statement>
+      <proof>
+        <p>
+          See <xref ref="exer-abstract-functorialities"/>.
+        </p>
+      </proof>
     </proposition>
     <proposition xml:id="P_abstract_functorialities2">
       <statement>
@@ -200,7 +205,7 @@
         </statement>
         <hint>
           <p>
-          See <xref ref="bib-Neukirch"/>, Proposition IV.5.8.
+            See <xref ref="bib-Neukirch"/>, Proposition IV.5.8.
           </p>
         </hint>
       </exercise>
@@ -210,7 +215,7 @@
         </statement>
         <hint>
           <p>
-          See <xref ref="bib-Neukirch"/>, Proposition IV.5.9.
+            See <xref ref="bib-Neukirch"/>, Proposition IV.5.9.
           </p>
         </hint>
       </exercise>

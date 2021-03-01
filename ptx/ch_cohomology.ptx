@@ -13,5 +13,6 @@
   <xi:include  href="sec_cohom1.ptx"/>
   <xi:include  href="sec_cohom2.ptx"/>
   <xi:include  href="sec_homology.ptx"/>
+  <xi:include  href="sec_cohom-cyclic.ptx"/>
   <xi:include  href="sec_profinite.ptx"/>
 </chapter>

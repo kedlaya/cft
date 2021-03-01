@@ -21,56 +21,58 @@
           Then <m>\gothp</m> splits in <m>L</m> if and only if <m>\gothp</m> is principal.
         </p>
       </statement>
+      <proof>
+        <p>
+          First suppose <m>\gothp = (p)</m>,
+          where <m>p \neq 2, 5</m> is a rational prime that remains inert (i.e., does not split and is not ramified) in <m>K</m>.
+          This happens if and only if <m>-5</m> is not a square mod <m>p</m>.
+          In this case,
+          one of <m>-1</m> and <m>5</m> is a square in <m>\FF_p</m>,
+          so <m>\gotho_K/\gothp</m> contains a square root of one of them,
+          hence of both
+          (since <m>-5</m> already has a square root there).
+          Thus the residue field does not grow when we pass to <m>L</m>,
+          that is, <m>\gothp</m> is split.
+        </p>
+        <p>
+          Next suppose <m>p \neq 2,5</m> is a rational prime that splits as <m>\gothp \overline{\gothp}</m>.
+          If <m>\gothp = (\beta)</m> is principal,
+          then the equation <m>x^2 + 5y^2 = p</m> has a solution in <m>\ZZ</m> (namely,
+          for <m>x + y \sqrt{-5} = \beta</m>),
+          but this is only possible if <m>p \equiv 1 \pmod{4}</m>.
+          Then <m>p</m> splits in <m>\QQ(\sqrt{-1})</m> as well,
+          so <m>p</m> is totally split in <m>L</m>,
+          so <m>\gothp</m> splits in <m>L</m>.
+        </p>
+        <p>
+          Conversely, suppose <m>\gothp</m> is not principal.
+          Since there are only two ideal classes in <m>\QQ(\sqrt{-5})</m>,
+          we have <m>\gothp = \alpha (2, 1 + \sqrt{-5})</m> for some <m>\alpha \in K</m>.
+          Thus <m>\Norm(\gothp) = |\Norm(\alpha)| \Norm(2, 1 + \sqrt{-5})</m>.
+          If <m>\alpha = x + y \sqrt{-5}</m> for <m>x,y \in \QQ</m>,
+          we then have <m>p = 2(x^2 + 5y^2)</m>.
+          Considering things mod 4, we see that <m>2x</m> and <m>2y</m> must be ratios of two odd integers,
+          and <m>p \equiv 3 \pmod{4}</m>.
+          Thus <m>p</m> does not split in <m>L</m>,
+          so <m>\gothp</m> cannot split in <m>L</m>.
+        </p>
+        <p>
+          The only cases left are <m>\gothp = (2, 1+\sqrt{-5})</m>,
+          which does not split
+          (see above),
+          and <m>\gothp = (\sqrt{-5})</m>, which does split
+          (since <m>-1</m> has a square root mod 5).
+        </p>
+      </proof>
     </proposition>
-    <proof>
-      <p>
-        First suppose <m>\gothp = (p)</m>,
-        where <m>p \neq 2, 5</m> is a rational prime that remains inert (i.e., does not split and is not ramified) in <m>K</m>.
-        This happens if and only if <m>-5</m> is not a square mod <m>p</m>.
-        In this case,
-        one of <m>-1</m> and <m>5</m> is a square in <m>\FF_p</m>,
-        so <m>\gotho_K/\gothp</m> contains a square root of one of them,
-        hence of both
-        (since <m>-5</m> already has a square root there).
-        Thus the residue field does not grow when we pass to <m>L</m>,
-        that is, <m>\gothp</m> is split.
-      </p>
-      <p>
-        Next suppose <m>p \neq 2,5</m> is a rational prime that splits as <m>\gothp \overline{\gothp}</m>.
-        If <m>\gothp = (\beta)</m> is principal,
-        then the equation <m>x^2 + 5y^2 = p</m> has a solution in <m>\ZZ</m> (namely,
-        for <m>x + y \sqrt{-5} = \beta</m>),
-        but this is only possible if <m>p \equiv 1 \pmod{4}</m>.
-        Then <m>p</m> splits in <m>\QQ(\sqrt{-1})</m> as well,
-        so <m>p</m> is totally split in <m>L</m>,
-        so <m>\gothp</m> splits in <m>L</m>.
-      </p>
-      <p>
-        Conversely, suppose <m>\gothp</m> is not principal.
-        Since there are only two ideal classes in <m>\QQ(\sqrt{-5})</m>,
-        we have <m>\gothp = \alpha (2, 1 + \sqrt{-5})</m> for some <m>\alpha \in K</m>.
-        Thus <m>\Norm(\gothp) = |\Norm(\alpha)| \Norm(2, 1 + \sqrt{-5})</m>.
-        If <m>\alpha = x + y \sqrt{-5}</m> for <m>x,y \in \QQ</m>,
-        we then have <m>p = 2(x^2 + 5y^2)</m>.
-        Considering things mod 4, we see that <m>2x</m> and <m>2y</m> must be ratios of two odd integers,
-        and <m>p \equiv 3 \pmod{4}</m>.
-        Thus <m>p</m> does not split in <m>L</m>,
-        so <m>\gothp</m> cannot split in <m>L</m>.
-      </p>
-      <p>
-        The only cases left are <m>\gothp = (2, 1+\sqrt{-5})</m>,
-        which does not split
-        (see above),
-        and <m>\gothp = (\sqrt{-5})</m>, which does split
-        (since <m>-1</m> has a square root mod 5).
-      </p>
-    </proof>
     <remark>
-      As a bonus, note that in <xref ref="prop-principal-ideal-example"/>,
-      for any ideal <m>\gotha</m> of <m>\gotho_K</m>,
-      <m>\gotha \gotho_L</m> is principal. (To check this, it suffices to verify that
-      <m>(2, 1+\sqrt{-5})\gotho_L = (1+\sqrt{-1})\gotho_L</m>.) This is a special case of the principal ideal theorem
-      (<xref ref="T_principal_ideal_theorem"/>).
+      <p>
+        As a bonus, note that in <xref ref="prop-principal-ideal-example"/>,
+        for any ideal <m>\gotha</m> of <m>\gotho_K</m>,
+        <m>\gotha \gotho_L</m> is principal. (To check this, it suffices to verify that
+        <m>(2, 1+\sqrt{-5})\gotho_L = (1+\sqrt{-1})\gotho_L</m>.) This is a special case of the principal ideal theorem
+        (<xref ref="T_principal_ideal_theorem"/>).
+      </p>
     </remark>
   </subsection>
   <subsection>
@@ -87,78 +89,80 @@
       we need to define the appropriate generalization of <m>(\ZZ/m\ZZ)^*</m> to number fields.
     </p>
     <definition xml:id="def-generalized-ideal-class-groups">
-    <p>
-      Recall that the ideal class group <m>\Cl(K)</m> of <m>K</m> is defined as the group <m>J_K</m> of fractional ideals modulo the subgroup <m>P_K</m>
-      of principal fractional ideals.
-      Let <m>\gothm</m> be a formal product of places of <m>K</m>;
-      you may regard such a beast as an ordinary integral ideal together with a nonnegative coefficient for each infinite place.
-    </p>
-    <p>
-      Let <m>J_K^\gothm</m> be the group of fractional ideals of <m>K</m> which are coprime to each finite place of <m>K</m> occurring in <m>\gothm</m>.
-      Let <m>P_K^\gothm \subseteq J_K^\gothm</m> be the group of principal fractional ideals generated by elements <m>\alpha \in K</m> such that:
-      <ul>
-        <li>
-          <p>
-            for <m>\gothp^e | \gothm</m> finite,
-            <m>\alpha \equiv 1 \pmod{\gothp^e}</m>;
-          </p>
-        </li>
-        <li>
-          <p>
-            for every real place <m>\tau</m> in <m>\gothm</m>, <m>\tau(\alpha) > 0</m>.
-          </p>
-        </li>
-      </ul>
-      (There is no condition for complex places.) 
-      Then the
-      <term>ray class group</term>
-      <m>\Cl^\gothm(K)</m> is defined as the quotient <m>J_K^\gothm / P_K^\gothm</m>.
-      A quotient of a ray class group is called a
-      <term>generalized ideal class group</term>.
-    </p>
+      <p>
+        Recall that the ideal class group <m>\Cl(K)</m> of <m>K</m> is defined as the group <m>J_K</m> of fractional ideals modulo the subgroup <m>P_K</m>
+        of principal fractional ideals.
+        Let <m>\gothm</m> be a formal product of places of <m>K</m>;
+        you may regard such a beast as an ordinary integral ideal together with a nonnegative coefficient for each infinite place.
+      </p>
+      <p>
+        Let <m>J_K^\gothm</m> be the group of fractional ideals of <m>K</m> which are coprime to each finite place of <m>K</m> occurring in <m>\gothm</m>.
+        Let <m>P_K^\gothm \subseteq J_K^\gothm</m> be the group of principal fractional ideals generated by elements <m>\alpha \in K</m> such that:
+        <ul>
+          <li>
+            <p>
+              for <m>\gothp^e | \gothm</m> finite,
+              <m>\alpha \equiv 1 \pmod{\gothp^e}</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              for every real place <m>\tau</m> in <m>\gothm</m>, <m>\tau(\alpha) > 0</m>.
+            </p>
+          </li>
+        </ul>
+        (There is no condition for complex places.) 
+        Then the
+        <term>ray class group</term>
+        <m>\Cl^\gothm(K)</m> is defined as the quotient <m>J_K^\gothm / P_K^\gothm</m>.
+        A quotient of a ray class group is called a
+        <term>generalized ideal class group</term>.
+      </p>
     </definition>
   </subsection>
   <subsection>
     <title>The Artin reciprocity law</title>
     <definition>
-    <p>
-      Let <m>L/K</m> be a (finite) abelian extension of number fields.
-      We imitate the <q>reciprocity law</q>
-      construction we made for <m>\QQ(\zeta_m)/\QQ</m> (<xref ref="D_cyclotomic_reciprocity"/>),
-      but this time with no reason <em>a priori</em>
-      to expect it to give anything useful.
-    </p>
-    <p>
-      For each prime <m>\gothp</m> of <m>K</m> that does not ramify in <m>L</m>,
-      let <m>\gothq</m> be a prime of <m>L</m> above <m>K</m>,
-      and put <m>\kappa = \gotho_K/\gothp</m> and <m>\lambda = \gotho_L/\gothq</m>.
-      Then the residue field extension
-      <m>\lambda/\kappa</m> is an extension of finite fields,
-      so it has a canonical generator <m>\sigma</m>, the Frobenius,
-      which acts by raising to the <m>q</m>-th power. (Here
-      <m>q = \Norm(\gothp) = \#\kappa</m> is the absolute norm of <m>\gothp</m>.) Since <m>\gothp</m> does not ramify,
-      the decomposition group <m>G_\gothq</m> is isomorphic to <m>\Gal(\lambda/\kappa)</m>,
-      so we get a canonical element of <m>G_\gothq</m>,
-      called the Frobenius of <m>\gothq</m>.
-      In general, replacing <m>\gothq</m> by <m>\gothq^\tau</m> for some
-      <m>\tau \in \Gal(L/K)</m> conjugates both the decomposition group and the Frobenius by <m>\tau</m>;
-      since <m>L/K</m> is abelian in our case,
-      that conjugation has no effect.
-      Thus we may speak of
-      <q>the Frobenius of <m>\gothp</m></q>
-      without ambiguity.
-    </p>
-    <p>
-      Now for <m>\gothm</m> divisible by all primes of <m>K</m> which ramify in <m>L</m>,
-      define a homomorphism (the <term>Artin map</term>)
-      <me>
-        J_K^\gothm \to \Gal(L/K) \qquad \gothp \mapsto \Frob_\gothp
-      </me>.
-    </p>
+      <p>
+        Let <m>L/K</m> be a (finite) abelian extension of number fields.
+        We imitate the <q>reciprocity law</q>
+        construction we made for <m>\QQ(\zeta_m)/\QQ</m> (<xref ref="D_cyclotomic_reciprocity"/>),
+        but this time with no reason <em>a priori</em>
+        to expect it to give anything useful.
+      </p>
+      <p>
+        For each prime <m>\gothp</m> of <m>K</m> that does not ramify in <m>L</m>,
+        let <m>\gothq</m> be a prime of <m>L</m> above <m>K</m>,
+        and put <m>\kappa = \gotho_K/\gothp</m> and <m>\lambda = \gotho_L/\gothq</m>.
+        Then the residue field extension
+        <m>\lambda/\kappa</m> is an extension of finite fields,
+        so it has a canonical generator <m>\sigma</m>, the Frobenius,
+        which acts by raising to the <m>q</m>-th power. (Here
+        <m>q = \Norm(\gothp) = \#\kappa</m> is the absolute norm of <m>\gothp</m>.) Since <m>\gothp</m> does not ramify,
+        the decomposition group <m>G_\gothq</m> is isomorphic to <m>\Gal(\lambda/\kappa)</m>,
+        so we get a canonical element of <m>G_\gothq</m>,
+        called the Frobenius of <m>\gothq</m>.
+        In general, replacing <m>\gothq</m> by <m>\gothq^\tau</m> for some
+        <m>\tau \in \Gal(L/K)</m> conjugates both the decomposition group and the Frobenius by <m>\tau</m>;
+        since <m>L/K</m> is abelian in our case,
+        that conjugation has no effect.
+        Thus we may speak of
+        <q>the Frobenius of <m>\gothp</m></q>
+        without ambiguity.
+      </p>
+      <p>
+        Now for <m>\gothm</m> divisible by all primes of <m>K</m> which ramify in <m>L</m>,
+        define a homomorphism (the <term>Artin map</term>)
+        <me>
+          J_K^\gothm \to \Gal(L/K) \qquad \gothp \mapsto \Frob_\gothp
+        </me>.
+      </p>
     </definition>
     <remark>
-      The fact that we have to avoid the ramified primes will be a bit of a nuisance later.
-      Eventually we'll get around this using the adelic formulation.
+      <p>
+        The fact that we have to avoid the ramified primes will be a bit of a nuisance later.
+        Eventually we'll get around this using the adelic formulation.
+      </p>
     </remark>
     <p>
     At this point, the following miracle occurs.
@@ -187,10 +191,12 @@
       (see <xref ref="exc-Artin-map-surjective"/>), but now  we don't have the Kronecker-Weber theorem to explain this.
     </p>
     <definition>
-      Define the <term>conductor</term> of <m>L/K</m> to be the smallest formal product <m>\gothm</m> for which the conclusion of 
-      <xref ref="T-Artin-reciprocity"/> holds.
-      We say <m>L/K</m> is the <term>ray class field</term>
-      corresponding to the product <m>\gothm</m> if <m>L/K</m> has conductor dividing <m>\gothm</m> and the map <m>J_K/J_K^\gothm \to \Gal(L/K)</m> is an isomorphism.
+      <p>
+        Define the <term>conductor</term> of <m>L/K</m> to be the smallest formal product <m>\gothm</m> for which the conclusion of 
+        <xref ref="T-Artin-reciprocity"/> holds.
+        We say <m>L/K</m> is the <term>ray class field</term>
+        corresponding to the product <m>\gothm</m> if <m>L/K</m> has conductor dividing <m>\gothm</m> and the map <m>J_K/J_K^\gothm \to \Gal(L/K)</m> is an isomorphism.
+      </p>
     </definition>
     <theorem xml:id="T-existence-theorem">
       <title>Existence of ray class fields</title>
@@ -207,17 +213,21 @@
       </proof>
     </theorem>
     <example>
-      The ray class field of <m>\QQ</m> of conductor <m>m\infty</m> is <m>\QQ(\zeta_m)</m>.
-      The ray class field of <m>\QQ</m> of conductor <m>m</m> is the maximal real subfield of <m>\QQ(\zeta_m)</m>.
+      <p>
+        The ray class field of <m>\QQ</m> of conductor <m>m\infty</m> is <m>\QQ(\zeta_m)</m>.
+        The ray class field of <m>\QQ</m> of conductor <m>m</m> is the maximal real subfield of <m>\QQ(\zeta_m)</m>.
+      </p>
     </example>
     <remark xml:id="rmk-no-explicit-CFT">
-      Unfortunately, for number fields other than <m>\QQ</m>,
-      we do not have an explicit description of the ray class fields as being generated by particular algebraic numbers. (A salient exception is the imaginary quadratic fields,
-      for which the theory of elliptic curves with complex multiplication provides such numbers.
-      Also, if we were to work with function fields instead of number fields,
-      the theory of Drinfeld modules would do something similar.) This gap in our knowledge,
-      also referred to as Hilbert's 12th Problem,
-      will make establishing class field theory somewhat more complicated than it would be otherwise.
+      <p>
+        Unfortunately, for number fields other than <m>\QQ</m>,
+        we do not have an explicit description of the ray class fields as being generated by particular algebraic numbers. (A salient exception is the imaginary quadratic fields,
+        for which the theory of elliptic curves with complex multiplication provides such numbers.
+        Also, if we were to work with function fields instead of number fields,
+        the theory of Drinfeld modules would do something similar.) This gap in our knowledge,
+        also referred to as Hilbert's 12th Problem,
+        will make establishing class field theory somewhat more complicated than it would be otherwise.
+      </p>
     </remark>
   </subsection>
   <exercises>
@@ -248,8 +258,7 @@
       </exercise>
       <exercise xml:id="exc-order-of-generalized-ideal-class-group">
         <statement>
-          Find a formula for the order of
-          <m>\Cl^\gothm(K)</m> in terms of the order of <m>\Cl(K)</m> and other relevant stuff.
+          Find a formula for the order of <m>\Cl^\gothm(K)</m> in terms of the order of <m>\Cl(K)</m> and other relevant stuff.
         </statement>
         <hint>
           It's in <xref ref="bib-Milne-CFT"/> V.1. Make sure you understand its proof!

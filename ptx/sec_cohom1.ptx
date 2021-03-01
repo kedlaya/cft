@@ -29,6 +29,13 @@
         (a notable example being <xref ref="bib-Lang-algebra"/>).
       </p>
     </paragraphs>
+    <paragraphs>
+      <title>Caveat</title>
+      <p>
+        The Galois cohomology groups used in <xref ref="bib-Neukirch"/> are not the ones we define here. Rather, they
+        are the Tate groups to be introduced in <xref ref="sec_homology"/>.
+      </p>
+    </paragraphs>
   </introduction>
   <subsection>
     <title><m>G</m>-modules and their invariants</title>

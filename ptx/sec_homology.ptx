@@ -1,29 +1,21 @@
 ﻿<section xml:id="sec_homology">
-  <title>Homology of finite groups</title>
+  <title>Homology and Tate groups</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
       <p>
-        <xref ref="bib-Milne-CFT"/>, II.2; for cyclic groups,
-        also <xref ref="bib-Neukirch"/>, IV.7 and <xref ref="bib-Lang"/>, IX.1.
+        <xref ref="bib-Milne-CFT"/>, II.2.
       </p>
     </paragraphs>
-  </introduction>
-  <subsection>
-    <title>Caveat</title>
-    <p>
-      The Galois cohomology groups used in <xref ref="bib-Neukirch"/> are not the ones we defined earlier,
-      but rather the Tate cohomology groups we are going to define below.
-    </p>
-  </subsection>
-  <subsection>
-    <title>Homology</title>
     <p>
       You may not be surprised to learn that there is a <q>dual</q> theory to the theory of group cohomology, namely group homology.
       What you may be surprised to learn is that one can actually fit the two together,
       so that in a sense the homology groups become cohomology groups with negative indices.
       (Since the arguments are similar to those for cohomology, I'm going to skip some details.)
     </p>
+  </introduction>
+  <subsection>
+    <title>Homology</title>
     <definition>
       Let <m>M_G</m> denote the maximal quotient of <m>M</m> on which <m>G</m> acts trivially.
       In other words,
@@ -187,134 +179,6 @@
     </remark>
   </subsection>
   <subsection>
-    <title>Finite cyclic groups</title>
-    <p>
-      In general, for any given <m>G</m> and <m>M</m>,
-      it is at worst a tedious exercise to compute
-      <m>H^i_T(G,M)</m> for any single value of <m>i</m>,
-      but try to compute all of these at once and you discover that they exhibit very little evident structure.
-      Thankfully, there is an exception to that dreary rule when <m>G</m> is cyclic.
-    </p>
-    <theorem xml:id="T_cyclic_group_periodicity">
-      <statement>
-        <p>
-          Let <m>G</m> be a finite cyclic group and <m>M</m> a <m>G</m>-module.
-          Then there is a canonical
-          (up to the choice of a generator of <m>G</m>),
-          functorial isomorphism <m>H^i_T(G,M) \to H^{i+2}_T(G,M)</m> for all <m>i \in \ZZ</m>.
-        </p>
-      </statement>
-    </theorem>
-    <proof>
-      <p>
-        Choose a generator <m>g</m> of <m>G</m>.
-        We start with the four-term exact sequence of <m>G</m>-modules
-        <me>
-          0 \to \ZZ \to \ZZ[G] \to \ZZ[G] \to \ZZ \to 0
-        </me>
-        in which the first map is <m>1 \mapsto \sum_{g \in G} [g]</m>,
-        the second map is <m>[h] \mapsto [hg] - [h]</m>,
-        and the third map is <m>[h] \mapsto 1</m>.
-        Since everything in sight is a free abelian group,
-        we can tensor over <m>\ZZ</m> with <m>M</m> and get another exact sequence:
-        <me>
-          0 \to M \to M \otimes_\ZZ \ZZ[G] \to M \otimes_\ZZ \ZZ[G] \to M \to 0
-        </me>.
-      </p>
-      <p>
-        The terms in the middle are just <m>\Ind^G_{1} M</m>,
-        where we first restrict <m>M</m> to a module for the trivial group and then induce back up.
-        Thus their Tate groups are all zero.
-        The desired result now follows from the following general fact: if
-        <me>
-          0 \to A \stackrel{f}{\to} B \stackrel{g}{\to} C \stackrel{h}{\to} D \to 0
-        </me>
-        is exact and <m>B</m> and <m>C</m> have all Tate groups zero,
-        then there is a canonical isomorphism <m>H^{i+2}_T(G, A) \to H^i_T(G, D)</m>.
-        To see this,
-        apply the long exact sequence to the short exact sequences
-        <md>
-          <mrow>0 \to A \to B \to B/\im(f) \to 0</mrow>
-          <mrow>0 \to B/\ker(g) \to C \to D \to 0</mrow>
-        </md>
-        to get
-        <me>
-          H^{i+2}(G, A) \cong H^{i+1}(G, B/\im(f)) = H^{i+1}(G, B/\ker(g)) \cong H^i(G,D)
-        </me>.
-      </p>
-    </proof>
-    <remark>
-    <p>
-      In particular, when <m>G</m> is cyclic, the long exact sequence of a short exact sequence
-      <m>0 \to M' \to M \to M'' \to 0</m> of <m>G</m>-modules curls up into an exact hexagon
-      as in <xref ref="fig-homology-2"/>.
-    </p>
-    </remark>
-      <figure xml:id="fig-homology-2">
-      <image>
-      <latex-image>
-        \xymatrix{
-        &amp; H^{-1}_T(G, M) \ar[r] &amp; H^{-1}_T(G, M'') \ar[dr] &amp; \\
-        H^{-1}_T(G, M') \ar[ru] &amp; &amp; &amp; H^0_T(G, M') \ar[dl] \\
-        &amp; H^{0}_T(G, M'') \ar[lu] &amp; H^{0}_T(G, M) \ar[l] &amp;
-        }
-       </latex-image>
-      </image>
-      </figure>
-    <definition>
-    <p>
-      Let <m>G</m> be a finite cyclic group and let <m>M</m> be a <m>G</m>-module.
-      If the groups <m>H^i_T(G, M)</m> are finite,
-      we define the <term>Herbrand quotient</term> as the ratio
-      <me>
-        h(M) = \#H^0_T(G,M) / \#H^{-1}_T(G, M).
-      </me>
-      From the exactness of the hexagon in <xref ref="fig-homology-2"/>,
-      we see that if <m>M', M, M''</m> all have Herbrand quotients, then
-      <me>
-        h(M) = h(M') h(M'').
-      </me>
-    </p>
-    </definition>
-    <remark>
-      Expanding on the previous point, if two of <m>M', M, M''</m> have Herbrand quotients, then so does the third.
-      For example, if <m>M'</m> and <m>M''</m> have Herbrand quotients,
-      i.e., their Tate groups are finite,
-      then we have an exact sequence
-      <me>
-        H^{-1}_T(G, M') \to H^{-1}_T(G, M) \to H^{-1}_T(G, M'')
-      </me>
-      and the outer groups are all finite.
-      In particular,
-      the first map is out of a finite group and so has finite image,
-      and modulo that image,
-      <m>H^{-1}_T(G,M)</m> injects into another finite group.
-      So it's also finite, and so on.
-    </remark>
-    <remark>
-    <p>
-      In practice,
-      it will often be much easier to compute the Herbrand quotient of a <m>G</m>-module than to compute either of its Tate groups directly.
-      The Herbrand quotient will then do half of the work for free:
-      once one group is computed directly,
-      at least the order of the other will be automatically known.
-    </p>
-    </remark>
-    <remark>
-    <p>
-      If <m>M</m> is finite, then <m>h(M) = 1</m>.
-      To wit, the sequences
-      <md>
-        <mrow>0 \to M^G \to M \to M \to M_G \to 0</mrow>
-        <mrow>0 \to H^{-1}_T(G,M) \to M_G \stackrel{\Norm_G}{\to} M^G \to H^0_T(G,M) \to 0</mrow>
-      </md>
-      are exact, where <m>M \to M</m> is the map <m>m \mapsto m^g - m</m>;
-      thus <m>M_G</m> and <m>M^G</m> have the same order,
-      as do <m>H^{-1}_T</m> and <m>H^0_T</m>.
-    </p>
-    </remark>
-  </subsection>
-  <subsection>
     <title>Extended functoriality revisited</title>
     <p>
       The extended functoriality for cohomology groups (<xref ref="D-extended-functoriality"/>) has analogues for homology groups and Tate cohomology groups,
@@ -391,26 +255,6 @@
         <p>
           Use the fact that induced <m>G</m>-modules are acyclic for both cohomology and homology to reduce to checking the cases <m>i = -1, 0</m>.
           Another option is to extend Shapiro's lemma to Tate cohomology groups.</p> 
-        </hint>
-      </exercise>
-      <exercise>
-        <statement>
-          The periodicity of the Tate groups for <m>G</m> cyclic means that there is a canonical
-          (up to the choice of a generator of <m>G</m>)
-          isomorphism between <m>H^{-1}_T(G, M)</m> and <m>H^1_T(G,M)</m>,
-          i.e., between <m>\ker(\Norm_G)/MI_G</m> and the set of equivalence classes of 1-cocycles.
-          What is this isomorphism explicitly?
-          In other words, given an element of <m>\ker(\Norm_G)/MI_G</m>,
-          what is the corresponding 1-cocycle?
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          Put <m>K = \QQ_p(\sqrt{p})</m>.
-          Compute the Herbrand quotient of <m>K^*</m> as a <m>G</m>-module for <m>G = \Gal(\QQ_p(\sqrt{p})/\QQ_p)</m>.
-        </statement>
-        <hint>
-          Use the exact sequence <m>1 \to \gotho_K^* \to K^* \to \ZZ \to 1</m>.
         </hint>
       </exercise>
       <exercise xml:id="exer-transfer-as-homology">

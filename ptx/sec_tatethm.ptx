@@ -191,7 +191,7 @@
       </p>
     </proof>
   </subsection>
-  <subsection>
+  <subsection xml:id="subsec-proof-local-reciprocity">
     <title>Local reciprocity and norm limitation</title>
     <p>
       Let <m>L/K</m> be a finite Galois extension of local fields.
@@ -213,74 +213,64 @@
       modulo one subtlety:
       if <m>M/K</m> is another finite Galois extension containing <m>L</m>,
       we need to know that the diagram
-    </p>
       <figure xml:id="fig-tatethm-1">
       <image>
       <latex-image>
-\xymatrix{
-K^*/\Norm_{M/K} M^* \ar[r] \ar[d]  &amp; \Gal(M/K)^{\ab} \ar[d] \\
-K^*/\Norm_{L/K} L^* \ar[r] &amp; \Gal(L/K)^{\ab}
-}
+      \xymatrix{
+        K^*/\Norm_{M/K} M^* \ar[r] \ar[d]  &amp; \Gal(M/K)^{\ab} \ar[d] \\
+        K^*/\Norm_{L/K} L^* \ar[r] &amp; \Gal(L/K)^{\ab}
+      }
       </latex-image>
       </image>
       </figure>
-    <p>
       commutes, so that the maps <m>K^* \to \Gal(L/K)^{\ab}</m> fit together to give a map <m>K^* \to \Gal(K^{\sep}/K)^{\ab}</m>.
       In other words, we need a commuting diagram
-    </p>
       <figure xml:id="fig-tatethm-2">
       <image>
       <latex-image>
-\xymatrix{
-H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \ar[d] \ar[r] &amp; H^0_T(\Gal(M/K), \ZZ) \ar[d] \\
- H^0_T(\Gal(L/K), L^*) \ar[r]&amp; H^{-1}_T(\Gal(L/K), I_{\Gal(L/K)}) \ar[r] &amp; H^0_T(\Gal(L/K), \ZZ)
-}
+      \xymatrix{
+        H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \ar[d] \ar[r] &amp; H^0_T(\Gal(M/K), \ZZ) \ar[d] \\
+         H^0_T(\Gal(L/K), L^*) \ar[r]&amp; H^{-1}_T(\Gal(L/K), I_{\Gal(L/K)}) \ar[r] &amp; H^0_T(\Gal(L/K), \ZZ)
+      }
       </latex-image>
       </image>
       </figure>
-    <p>
       The right square in <xref ref="fig-tatethm-2"/> comes from taking long exact sequences in the commutative diagram with exact rows:
-    </p>
       <figure xml:id="fig-tatethm-3">
       <image>
       <latex-image>
-\xymatrix{
-0 \ar[r] &amp; I_{\Gal(M/K)} \ar[r] \ar[d] &amp; \ZZ[\Gal(M/K)] \ar[r] \ar[d] &amp; \ZZ \ar[r] \ar[d] &amp; 0 \\
-0 \ar[r] &amp; I_{\Gal(L/K)} \ar[r] &amp; \ZZ[\Gal(L/K)] \ar[r] &amp; \ZZ \ar[r] &amp; 0
-}
+      \xymatrix{
+        0 \ar[r] &amp; I_{\Gal(M/K)} \ar[r] \ar[d] &amp; \ZZ[\Gal(M/K)] \ar[r] \ar[d] &amp; \ZZ \ar[r] \ar[d] &amp; 0 \\
+        0 \ar[r] &amp; I_{\Gal(L/K)} \ar[r] &amp; \ZZ[\Gal(L/K)] \ar[r] &amp; \ZZ \ar[r] &amp; 0
+      }
       </latex-image>
       </image>
       </figure>
-    <p>
       To construct the left square in <xref ref="fig-tatethm-2"/>, we similarly need to construct a commutative diagram with exact rows:
-    </p>
       <figure xml:id="fig-tatethm-4">
       <image>
       <latex-image>
-\xymatrix{
-0 \ar[r] &amp; M^* \ar[r] \ar^{\Norm_{M/L}}[d] &amp; M^*[\phi_M] \ar[r] \ar[d] &amp; I_{\Gal(M/K)} \ar[r] \ar[d] &amp; 0 \\
-0 \ar[r] &amp; L^* \ar[r] &amp; L^*[\phi_L] \ar[r] &amp; I_{\Gal(L/K)} \ar[r] &amp; 0
-}
+      \xymatrix{
+        0 \ar[r] &amp; M^* \ar[r] \ar^{\Norm_{M/L}}[d] &amp; M^*[\phi_M] \ar[r] \ar[d] &amp; I_{\Gal(M/K)} \ar[r] \ar[d] &amp; 0 \\
+        0 \ar[r] &amp; L^* \ar[r] &amp; L^*[\phi_L] \ar[r] &amp; I_{\Gal(L/K)} \ar[r] &amp; 0
+      }
       </latex-image>
       </image>
       </figure>
-    <p>
       I claim we can arrange for this as follows. First choose a cocycle <m>\phi_M: \Gal(M/K)^3 \to M^*</m> representing the preferred generator of <m>H^2(M/K)</m>.
       Then there exists a unique map <m>\phi_L</m> fitting into the following commuting square:
-    </p>
       <figure xml:id="fig-tatethm-5">
       <image>
       <latex-image>
-\xymatrix{
-\Gal(M/K)^3 \ar^(.7){\phi_M}[r] \ar[d] &amp; M^* \ar^{\Norm_{M/L}}[d] \\
-\Gal(L/K)^3 \ar^(.7){\phi_L}[r] &amp; L^*
-}
+      \xymatrix{
+        \Gal(M/K)^3 \ar^(.7){\phi_M}[r] \ar[d] &amp; M^* \ar^{\Norm_{M/L}}[d] \\
+        \Gal(L/K)^3 \ar^(.7){\phi_L}[r] &amp; L^*
+      }
       </latex-image>
       </image>
       </figure>
-      <p>
-        and this will necessarily give a cocycle representing the preferred generator of <m>H^2(L/K)</m>. Further details omitted.
-      </p>
+      and this will necessarily give a cocycle representing the preferred generator of <m>H^2(L/K)</m>. Further details omitted.
+    </p>
   </subsection>
   <subsection>
     <title>The local existence theorem</title>
@@ -333,38 +323,38 @@ H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \a
           Then the intersection of the groups <m>\Norm_{L/K} L^*</m> for all finite extensions <m>L</m> of <m>K</m> is the trivial group.
         </p>
       </statement>
+      <proof>
+        <p>
+          Let <m>D_K</m> be the intersection in question;
+          note that <m>D_K \subseteq \gotho_K^*</m> by considering unramified extensions of <m>K</m>,
+          so <m>D_K</m> is in particular a compact topological group.
+          By <xref ref="L_hilbert_symbol"/>,
+          every element of <m>D_K</m> is an <m>\ell</m>-th power in <m>K</m> for every prime <m>\ell</m>.
+          We will show that in fact every element of <m>D_K</m> is the <m>\ell</m>-th power of an element of <m>D_K</m> itself;
+          this will show that <m>D_K</m> is a divisible abelian group, and in particular every element is an <m>n</m>-th power for every positive integer <m>n</m>.
+          This will then imply using <xref ref="exer-finite-power-intersection"/> that <m>D_K</m> is the trivial group.
+          (Alternatively, one can follow the suggestion of <xref ref="rmk-Hilbert-symbol"/> and prove that the conclusion of <xref ref="L_hilbert_symbol"/>
+          retains true when <m>\ell</m> is replaced by an arbitrary positive integer <m>n</m>, and then apply <xref ref="exer-finite-power-intersection"/> directly.)
+        </p>
+        <p>
+          We first need to verify something which might seem obvious but isn't quite: for <m>L/K</m> a finite extension, 
+          <me>\Norm_{L/K} D_L = D_K</me>.
+          This isn't obvious because for <m>x \in D_K</m>, for each 
+          individual finite extension <m>M</m> of <m>K</m> we can write <m>x = \Norm_{M/K}(z)</m> for some <m>z \in M^*</m>, but it is not apparent that we can force the elements
+          <m>y = \Norm_{M/L}(z)</m> to all be equal. It is nonetheless true because, for any given <m>M</m> the set of such <m>y</m> is a nonempty compact subset of <m>U_L</m>, and any finite
+          intersection of these subsets is nonempty (because we can pass to a large enough field to contain all of the <m>M</m> in question and bring an element from there);
+          so the whole intersection is nonempty.
+        </p>
+        <p>
+          Now let <m>\ell</m> be a prime and choose <m>x \in D_K</m>. For each finite extension <m>L</m> of <m>K</m> containing a primitive <m>\ell</m>-th root of unity,
+          let <m>E(L)</m> be the set of <m>\ell</m>-th roots of <m>x</m> in <m>K</m> which belong to <m>\Norm_{L/K} L^*</m>. This set is finite (of cardinality at most <m>\ell</m>)
+          and nonempty: we have <m>x = \Norm_{L/K}(y)</m> for some <m>y \in D_L</m> by the previous paragraph, so <m>y</m> has an <m>\ell</m>-th root <m>z</m> in <m>L</m> and
+          <m>\Norm_{L/K}(z) \in E(L)</m>. By the previous paragraph, <m>E(M) \subseteq E(L)</m> whenever <m>L \subseteq M</m>, so we may again conclude using the finite intersection
+          property. Alternatively, just note that if each of the (finitely many!) elements of <m>E(K)</m> fails to survive to some larger field, we can take a compositum to get
+          a single field <m>L</m> such that no element of <m>E(K)</m> belongs to <m>E(L)</m>, which is absurd since <m>E(L) \neq \emptyset</m>.
+        </p>
+      </proof>
     </corollary>
-    <proof>
-      <p>
-        Let <m>D_K</m> be the intersection in question;
-        note that <m>D_K \subseteq \gotho_K^*</m> by considering unramified extensions of <m>K</m>,
-        so <m>D_K</m> is in particular a compact topological group.
-        By <xref ref="L_hilbert_symbol"/>,
-        every element of <m>D_K</m> is an <m>\ell</m>-th power in <m>K</m> for every prime <m>\ell</m>.
-        We will show that in fact every element of <m>D_K</m> is the <m>\ell</m>-th power of an element of <m>D_K</m> itself;
-        this will show that <m>D_K</m> is a divisible abelian group, and in particular every element is an <m>n</m>-th power for every positive integer <m>n</m>.
-        This will then imply using <xref ref="exer-finite-power-intersection"/> that <m>D_K</m> is the trivial group.
-        (Alternatively, one can follow the suggestion of <xref ref="rmk-Hilbert-symbol"/> and prove that the conclusion of <xref ref="L_hilbert_symbol"/>
-        retains true when <m>\ell</m> is replaced by an arbitrary positive integer <m>n</m>, and then apply <xref ref="exer-finite-power-intersection"/> directly.)
-      </p>
-      <p>
-        We first need to verify something which might seem obvious but isn't quite: for <m>L/K</m> a finite extension, 
-        <me>\Norm_{L/K} D_L = D_K</me>.
-        This isn't obvious because for <m>x \in D_K</m>, for each 
-        individual finite extension <m>M</m> of <m>K</m> we can write <m>x = \Norm_{M/K}(z)</m> for some <m>z \in M^*</m>, but it is not apparent that we can force the elements
-        <m>y = \Norm_{M/L}(z)</m> to all be equal. It is nonetheless true because, for any given <m>M</m> the set of such <m>y</m> is a nonempty compact subset of <m>U_L</m>, and any finite
-        intersection of these subsets is nonempty (because we can pass to a large enough field to contain all of the <m>M</m> in question and bring an element from there);
-        so the whole intersection is nonempty.
-      </p>
-      <p>
-        Now let <m>\ell</m> be a prime and choose <m>x \in D_K</m>. For each finite extension <m>L</m> of <m>K</m> containing a primitive <m>\ell</m>-th root of unity,
-        let <m>E(L)</m> be the set of <m>\ell</m>-th roots of <m>x</m> in <m>K</m> which belong to <m>\Norm_{L/K} L^*</m>. This set is finite (of cardinality at most <m>\ell</m>)
-        and nonempty: we have <m>x = \Norm_{L/K}(y)</m> for some <m>y \in D_L</m> by the previous paragraph, so <m>y</m> has an <m>\ell</m>-th root <m>z</m> in <m>L</m> and
-        <m>\Norm_{L/K}(z) \in E(L)</m>. By the previous paragraph, <m>E(M) \subseteq E(L)</m> whenever <m>L \subseteq M</m>, so we may again conclude using the finite intersection
-        property. Alternatively, just note that if each of the (finitely many!) elements of <m>E(K)</m> fails to survive to some larger field, we can take a compositum to get
-        a single field <m>L</m> such that no element of <m>E(K)</m> belongs to <m>E(L)</m>, which is absurd since <m>E(L) \neq \emptyset</m>.
-      </p>
-    </proof>
     <p>
       We now return to the proof of the local existence theorem (<xref ref="T_local_existence"/>).
     </p>
@@ -378,41 +368,41 @@ H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \a
       </statement>
       <proof>
         <p>
-        We note first that by the local reciprocity law (<xref ref="T_local_reciprocity"/>),
-        it is enough to construct <m>L</m> so that <m>U</m> contains <m>\Norm_{L/K}L^*</m>:
-        in this case,
-        we will have <m>\Gal(L/K) \cong K^*/\Norm_{L/K}L^*</m>,
-        and then <m>U/\Norm_{L/K}L^*</m> will corresponding to
-        <m>\Gal(L/M)</m> for some intermediate extension <m>M/K</m> having the desired effect.
-        We note next that by the norm limitation theorem (<xref ref="T_norm_limitation"/>),
-        it suffices to produce <em>any</em>
-        finite extension <m>L/K</m>,
-        not necessarily abelian, such that <m>U</m> contains <m>\Norm_{L/K}L^*</m>.
+          We note first that by the local reciprocity law (<xref ref="T_local_reciprocity"/>),
+          it is enough to construct <m>L</m> so that <m>U</m> contains <m>\Norm_{L/K}L^*</m>:
+          in this case,
+          we will have <m>\Gal(L/K) \cong K^*/\Norm_{L/K}L^*</m>,
+          and then <m>U/\Norm_{L/K}L^*</m> will corresponding to
+          <m>\Gal(L/M)</m> for some intermediate extension <m>M/K</m> having the desired effect.
+          We note next that by the norm limitation theorem (<xref ref="T_norm_limitation"/>),
+          it suffices to produce <em>any</em>
+          finite extension <m>L/K</m>,
+          not necessarily abelian, such that <m>U</m> contains <m>\Norm_{L/K}L^*</m>.
         </p>
         <p>
-        Let <m>m\ZZ \subseteq \ZZ</m> be the image of <m>U</m> in <m>K^*/\gotho_K^* \cong \ZZ</m>;
-        by choosing <m>L</m> to contain the unramified extension of <m>K</m> of degree <m>m</m>,
-        we may ensure that the image of
-        <m>\Norm_{L/K} L^*</m> in <m>K^*/\gotho_K^*</m> is also contained in <m>m\ZZ</m>.
-        It thus remains to further ensure that
-        <me>
-          (\Norm_{L/K} L^*) \cap \gotho_K^* \subseteq U \cap \gotho_K^*.
-        </me>
+          Let <m>m\ZZ \subseteq \ZZ</m> be the image of <m>U</m> in <m>K^*/\gotho_K^* \cong \ZZ</m>;
+          by choosing <m>L</m> to contain the unramified extension of <m>K</m> of degree <m>m</m>,
+          we may ensure that the image of
+          <m>\Norm_{L/K} L^*</m> in <m>K^*/\gotho_K^*</m> is also contained in <m>m\ZZ</m>.
+          It thus remains to further ensure that
+          <me>
+            (\Norm_{L/K} L^*) \cap \gotho_K^* \subseteq U \cap \gotho_K^*.
+          </me>
         </p>
         <p>
-        Since <m>\gotho_K^*</m> is compact,
-        each open subgroup <m>(\Norm_{L/K}L^*) \cap \gotho_K^*</m> is also closed and hence compact.
-        By <xref ref="C_universal_norms_divisible"/>,
-        as <m>L/K</m> runs over all finite extensions of <m>K</m>,
-        the intersection of the groups <m>(\Norm_{L/K} L^*) \cap \gotho_K^*</m> is trivial;
-        in particular, the intersection of the compact subsets
-        <me>
-          ((\Norm_{L/K} L^*) \cap \gotho_K^*) \cap (\gotho_K^* \setminus U)
-        </me>
-        of <m>\gotho_K^*</m> is empty.
-        By the finite intersection property
-        (and taking a compositum),
-        there exists a single <m>L/K</m> for which <m>(\Norm_{L/K} L^*) \cap \gotho_K^* \subseteq U \cap \gotho_K^*</m>, as desired.
+          Since <m>\gotho_K^*</m> is compact,
+          each open subgroup <m>(\Norm_{L/K}L^*) \cap \gotho_K^*</m> is also closed and hence compact.
+          By <xref ref="C_universal_norms_divisible"/>,
+          as <m>L/K</m> runs over all finite extensions of <m>K</m>,
+          the intersection of the groups <m>(\Norm_{L/K} L^*) \cap \gotho_K^*</m> is trivial;
+          in particular, the intersection of the compact subsets
+          <me>
+            ((\Norm_{L/K} L^*) \cap \gotho_K^*) \cap (\gotho_K^* \setminus U)
+          </me>
+          of <m>\gotho_K^*</m> is empty.
+          By the finite intersection property
+          (and taking a compositum),
+          there exists a single <m>L/K</m> for which <m>(\Norm_{L/K} L^*) \cap \gotho_K^* \subseteq U \cap \gotho_K^*</m>, as desired.
         </p>
       </proof>
     </theorem>

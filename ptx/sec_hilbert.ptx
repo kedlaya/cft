@@ -11,10 +11,8 @@
   <subsection>
     <title>An example of an unramified extension</title>
     <p>
-      Recall that the field <m>\QQ</m> has no extensions which are everywhere unramified
-      (<xref ref="T_Minkowski"/>).
-      This is quite definitely not true of other number fields;
-      we begin with an example illustrating this.
+      Recall that the field <m>\QQ</m> has no extensions which are everywhere unramified (<xref ref="T_Minkowski"/>).
+      This is quite definitely not true of other number fields; we begin with an example illustrating this.
     </p>
     <example xml:id="ex-unramified">
       <title>An unramified extension of a number field</title>

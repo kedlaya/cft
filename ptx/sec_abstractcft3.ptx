@@ -23,19 +23,19 @@
           sending the Frobenius of <m>\Gal(L/K)</m> to a uniformizer of <m>K</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          Let <m>g \in \Gal(L/K)</m> be the Frobenius and choose <m>h \in \Gal(L^{\unr}/K)</m> lifting <m>g</m>.
+          Then the fixed field of <m>h</m> is <m>K</m> itself,
+          and from the definition of <m>r'</m>, <m>r(g) = r'(h)</m> is a uniformizer of <m>K</m>.
+          By <xref ref="P_abstract_H0H1"/>, <m>r(g)</m> generates <m>H^0(\Gal(L/K), A_L)</m>.
+        </p>
+        <p>
+          By the class field axiom, <m>r_{L/K}</m> maps between two groups of the same order, and the previous paragraph implies that the map is surjective.
+          It is thus an isomorphism.
+        </p>
+      </proof>
     </lemma>
-    <proof>
-      <p>
-        Let <m>g \in \Gal(L/K)</m> be the Frobenius and choose <m>h \in \Gal(L^{\unr}/K)</m> lifting <m>g</m>.
-        Then the fixed field of <m>h</m> is <m>K</m> itself,
-        and from the definition of <m>r'</m>, <m>r(g) = r'(h)</m> is a uniformizer of <m>K</m>.
-        By <xref ref="P_abstract_H0H1"/>, <m>r(g)</m> generates <m>H^0(\Gal(L/K), A_L)</m>.
-      </p>
-      <p>
-        By the class field axiom, <m>r_{L/K}</m> maps between two groups of the same order, and the previous paragraph implies that the map is surjective.
-        It is thus an isomorphism.
-      </p>
-    </proof>
     <lemma xml:id="lem-abstract-recip-case2">
       <statement>
         <p>
@@ -44,65 +44,65 @@
           the map <m>r_{L/K}: \Gal(L/K) \to A_K / \Norm_{L/K} A_L</m> is an isomorphism.
         </p>
       </statement>
+      <proof>
+       <p>
+          Put <m>n = [L:K]</m>. The extension <m>L^{\unr}/K</m> is the compositum of two linearly disjoint extensions <m>L/K</m> and <m>K^{\unr}/K</m>,
+          so its Galois group is canonically a product <m>\Gal(L/K) \times \Gal(K^{\unr}/K)</m>.
+          Let <m>g</m> be a generator of the first factor (which we can also identify with <m>\Gal(L^{\unr}/K^{\unr})</m>)
+          and let <m>\phi</m> be a generator of the second factor with <m>d_K(\phi) = 1</m>.
+          Put <m>\tau = g\phi</m> and let <m>M</m> be the fixed field of <m>\tau</m>.
+          Let <m>N</m> be the compositum of <m>L</m> and <m>M</m> and put <m>N_0 = N \cap K^{\unr}</m>.
+          We now have the field diagram <xref ref="fig-abstractcft-6"/> in which each line denotes a <m>\ZZ/n\ZZ</m>-extension,
+          the dashed lines represent unramified extensions, and each label indicates one or more generators of the Galois group <m>g</m>.
+        </p>
+          <figure xml:id="fig-abstractcft-6">
+          <image>
+          <latex-image>
+          \xymatrix{
+          &amp; N \ar@{--}_{\phi}[ld] \ar@{--}^{\tau}[d] \ar@{-}^g[rd] &amp; \\
+          L \ar@{-}_{g, \tau}[rd] &amp; M \ar@{-}^{g, \phi}[d] &amp; N_0 \ar@{--}^{\phi, \tau}[ld] \\
+          &amp; K &amp;
+          }
+          </latex-image>
+          </image>
+          </figure>
+        <p>
+          Pick uniformizers <m>\pi_L</m> and <m>\pi_M</m> of <m>L</m> and <m>M</m>, respectively.
+          Since <m>d_K(\tau) = 1</m>, by <xref ref="prop_norm"/>
+          we have <m>r_{L/K}(g) = \Norm_{L^{\unr}/K^{\unr}}(\pi_M)</m>.
+        </p>
+        <p>
+          Let <m>j</m> be the order of <m>r_{L/K}(g)</m> in <m>A_K/\Norm_{L/K} A_L</m> and put <m>u = \pi_M^j/\pi_L^j \in U_N</m>.
+          Since both <m>\Norm_{L^{\unr}/K^{\unr}}(\pi_M^j)</m> and <m>\Norm_{L^{\unr}/K^{\unr}}(\pi_L^j) = \Norm_{L/K}(\pi_L^j)</m>
+          belong to <m>\Norm_{L/K} A_L</m>, we can choose <m>v \in A_L</m> such that
+          <me>
+            \Norm_{L^{\unr}/K^{\unr}}(u) = \Norm_{L/K}(v) = \Norm_{L^{\unr}/K^{\unr}}(v).
+          </me>
+          Since <m>\Norm_{L/K}(v) \in A_K \cap U_N = U_K</m>, we must have <m>v \in U_L</m>.
+        </p>
+        <p>
+          Applying the class field axiom to <m>N/N_0</m> yields
+          <me>
+            0 = H^{-1}_T(\Gal(N/N_0), A_N) = \frac{\ker(\Norm_{N/N_0}: A_N \to A_{N_0})}{ \{ a^{g-1}: a \in A_N \}}.
+          </me>
+          Since <m>\Norm_{N/N_0}(u/v) = \Norm_{L^{\unr}/K^{\unr}}(u/v) = 1</m>, we can write <m>u/v</m> in the form
+          <m>a^{g-1} = a^g/a</m> for some <m>a \in A_N</m>. Then
+          <me>
+            (\pi_L^j v)^{g-1} = (\pi_L^j v)^{\tau-1} = (\pi_M^j v/u)^{\tau - 1} = (v/u)^{\tau-1} = (a/a^\tau)^{g-1}.
+          </me>
+          If we put <m>x = (\pi_L^j v)(a^\tau/a)</m>, then <m>x^g = x</m> and so <m>x \in A_{N_0}</m>.
+          Hence 
+          <me>
+            j = v_N(x) = nv_{N_0}(x) \in n \widehat{\ZZ}.
+          </me>
+          That is, the order of <m>r_{L/K}(g)</m> in <m>A_K/\Norm_{L/K} A_L</m> is divisible by <m>n</m> in <m>\widehat{\ZZ}</m>, and hence also in <m>\ZZ</m>.
+        </p>
+        <p>
+          By the class field axiom, <m>r_{L/K}</m> maps between two groups of the same order <m>n</m>, and the previous paragraph implies that the map has image
+          of size at least <m>n</m>. It is thus an isomorphism.
+        </p>
+       </proof>
     </lemma>
-    <proof>
-     <p>
-        Put <m>n = [L:K]</m>. The extension <m>L^{\unr}/K</m> is the compositum of two linearly disjoint extensions <m>L/K</m> and <m>K^{\unr}/K</m>,
-        so its Galois group is canonically a product <m>\Gal(L/K) \times \Gal(K^{\unr}/K)</m>.
-        Let <m>g</m> be a generator of the first factor (which we can also identify with <m>\Gal(L^{\unr}/K^{\unr})</m>)
-        and let <m>\phi</m> be a generator of the second factor with <m>d_K(\phi) = 1</m>.
-        Put <m>\tau = g\phi</m> and let <m>M</m> be the fixed field of <m>\tau</m>.
-        Let <m>N</m> be the compositum of <m>L</m> and <m>M</m> and put <m>N_0 = N \cap K^{\unr}</m>.
-        We now have the field diagram <xref ref="fig-abstractcft-6"/> in which each line denotes a <m>\ZZ/n\ZZ</m>-extension,
-        the dashed lines represent unramified extensions, and each label indicates one or more generators of the Galois group <m>g</m>.
-      </p>
-        <figure xml:id="fig-abstractcft-6">
-        <image>
-        <latex-image>
-        \xymatrix{
-        &amp; N \ar@{--}_{\phi}[ld] \ar@{--}^{\tau}[d] \ar@{-}^g[rd] &amp; \\
-        L \ar@{-}_{g, \tau}[rd] &amp; M \ar@{-}^{g, \phi}[d] &amp; N_0 \ar@{--}^{\phi, \tau}[ld] \\
-        &amp; K &amp;
-        }
-        </latex-image>
-        </image>
-        </figure>
-      <p>
-        Pick uniformizers <m>\pi_L</m> and <m>\pi_M</m> of <m>L</m> and <m>M</m>, respectively.
-        Since <m>d_K(\tau) = 1</m>, by <xref ref="prop_norm"/>
-        we have <m>r_{L/K}(g) = \Norm_{L^{\unr}/K^{\unr}}(\pi_M)</m>.
-      </p>
-      <p>
-        Let <m>j</m> be the order of <m>r_{L/K}(g)</m> in <m>A_K/\Norm_{L/K} A_L</m> and put <m>u = \pi_M^j/\pi_L^j \in U_N</m>.
-        Since both <m>\Norm_{L^{\unr}/K^{\unr}}(\pi_M^j)</m> and <m>\Norm_{L^{\unr}/K^{\unr}}(\pi_L^j) = \Norm_{L/K}(\pi_L^j)</m>
-        belong to <m>\Norm_{L/K} A_L</m>, we can choose <m>v \in A_L</m> such that
-        <me>
-          \Norm_{L^{\unr}/K^{\unr}}(u) = \Norm_{L/K}(v) = \Norm_{L^{\unr}/K^{\unr}}(v).
-        </me>
-        Since <m>\Norm_{L/K}(v) \in A_K \cap U_N = U_K</m>, we must have <m>v \in U_L</m>.
-      </p>
-      <p>
-        Applying the class field axiom to <m>N/N_0</m> yields
-        <me>
-          0 = H^{-1}_T(\Gal(N/N_0), A_N) = \frac{\ker(\Norm_{N/N_0}: A_N \to A_{N_0})}{ \{ a^{g-1}: a \in A_N \}}.
-        </me>
-        Since <m>\Norm_{N/N_0}(u/v) = \Norm_{L^{\unr}/K^{\unr}}(u/v) = 1</m>, we can write <m>u/v</m> in the form
-        <m>a^{g-1} = a^g/a</m> for some <m>a \in A_N</m>. Then
-        <me>
-          (\pi_L^j v)^{g-1} = (\pi_L^j v)^{\tau-1} = (\pi_M^j v/u)^{\tau - 1} = (v/u)^{\tau-1} = (a/a^\tau)^{g-1}.
-        </me>
-        If we put <m>x = (\pi_L^j v)(a^\tau/a)</m>, then <m>x^g = x</m> and so <m>x \in A_{N_0}</m>.
-        Hence 
-        <me>
-          j = v_N(x) = nv_{N_0}(x) \in n \widehat{\ZZ}.
-        </me>
-        That is, the order of <m>r_{L/K}(g)</m> in <m>A_K/\Norm_{L/K} A_L</m> is divisible by <m>n</m> in <m>\widehat{\ZZ}</m>, and hence also in <m>\ZZ</m>.
-      </p>
-      <p>
-        By the class field axiom, <m>r_{L/K}</m> maps between two groups of the same order <m>n</m>, and the previous paragraph implies that the map has image
-        of size at least <m>n</m>. It is thus an isomorphism.
-      </p>
-     </proof>
     <p>
       Before continuing, we record a key commutative diagram which will be the scene of a lot of diagram-chasing.
     </p>
@@ -189,33 +189,33 @@
           <m>\Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          The map in question is injective by <xref ref="lem-abstract-recip-case4"/>, so it only remains to check that
+          <m>r_{L/K}</m> itself is surjective.
+          If <m>L/K</m> is solvable, we may deduce surjectivity from <xref ref="lem-abstract-recip-case3"/> by induction on
+          <m>[L:K]</m> again by a diagram chase on <xref ref="fig-abstractcft-1"/>.
+        </p>
+        <p>
+          For general <m>L/K</m>, we instead check that <m>r_{L/K}</m> becomes a surjection upon restriction to <m>p</m>-Sylow
+          subgroups for each prime <m>p</m>. That is, for <m>M</m> the fixed field of a Sylow <m>p</m>-subgroup of 
+          <m>\Gal(L/K)</m> and <m>S_p</m> the Sylow <m>p</m>-subgroup of <m>A_K/\Norm_{L/K}A_L</m>, the composition
+          <me>
+            \Gal(L/M) \to \Gal(L/K) \stackrel{r_{L/K}}{\to} A_K/\Norm_{L/K} A_L \to S_p
+          </me>
+          is surjective. (Compare the proof of <xref ref="L_tate_thm_lemma"/>.)
+        </p>
+        <p>
+          Here some caution is required because <m>M/K</m> need not be Galois, 
+          so we cannot draw the full diagram <xref ref="fig-abstractcft-1"/>.
+          However, the left square in that diagram still makes sense and commutes.
+          Meanwhile, we may apply the previous paragraph to see that the left vertical arrow <m>r_{L/M}</m>
+          is an isomorphism. Now note that the composition <m>A_K \subseteq A_M \stackrel{\Norm_{M/K}}{\to} A_K</m> is multiplication by <m>[M:K]</m>,
+          which is coprime to <m>p</m>; it follows that the bottom horizontal arrow induces a surjection of Sylow <m>p</m>-subgroups. 
+          (One can also apply <xref ref="P_abstract_functorialities2"/> here.)
+        </p>
+      </proof>
     </theorem>
-    <proof>
-      <p>
-        The map in question is injective by <xref ref="lem-abstract-recip-case4"/>, so it only remains to check that
-        <m>r_{L/K}</m> itself is surjective.
-        If <m>L/K</m> is solvable, we may deduce surjectivity from <xref ref="lem-abstract-recip-case3"/> by induction on
-        <m>[L:K]</m> again by a diagram chase on <xref ref="fig-abstractcft-1"/>.
-      </p>
-      <p>
-        For general <m>L/K</m>, we instead check that <m>r_{L/K}</m> becomes a surjection upon restriction to <m>p</m>-Sylow
-        subgroups for each prime <m>p</m>. That is, for <m>M</m> the fixed field of a Sylow <m>p</m>-subgroup of 
-        <m>\Gal(L/K)</m> and <m>S_p</m> the Sylow <m>p</m>-subgroup of <m>A_K/\Norm_{L/K}A_L</m>, the composition
-        <me>
-          \Gal(L/M) \to \Gal(L/K) \stackrel{r_{L/K}}{\to} A_K/\Norm_{L/K} A_L \to S_p
-        </me>
-        is surjective. (Compare the proof of <xref ref="L_tate_thm_lemma"/>.)
-      </p>
-      <p>
-        Here some caution is required because <m>M/K</m> need not be Galois, 
-        so we cannot draw the full diagram <xref ref="fig-abstractcft-1"/>.
-        However, the left square in that diagram still makes sense and commutes.
-        Meanwhile, we may apply the previous paragraph to see that the left vertical arrow <m>r_{L/M}</m>
-        is an isomorphism. Now note that the composition <m>A_K \subseteq A_M \stackrel{\Norm_{M/K}}{\to} A_K</m> is multiplication by <m>[M:K]</m>,
-        which is coprime to <m>p</m>; it follows that the bottom horizontal arrow induces a surjection of Sylow <m>p</m>-subgroups. 
-        (One can also apply <xref ref="P_abstract_functorialities2"/> here.)
-      </p>
-    </proof>
     <remark>
       <p>
         Alternatively, one can derive <xref ref="T_abstract_reciprocity_law"/> by an argument closer to what we did in local class field theory.

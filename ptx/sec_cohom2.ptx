@@ -565,18 +565,5 @@
           (A related concept in homological algebra is the <term>Baer sum</term>.)
         </statement>
       </exercise>
-      <exercise>
-        <statement>
-          Let <m>G = S_3</m>
-          (the symmetric group on three letters),
-          let <m>M = \ZZ^3</m> with the natural <m>G</m>-action permuting the factors,
-          and let <m>N = M^G</m>.
-          Compute <m>H^i(G, M/N)</m> for <m>i=1,2</m> however you want:
-          you can explicitly compute cochains,
-          use the alternate interpretations given above,
-          or use the exact sequence <m>0 \to N \to M \to M/N \to 0</m>.
-          Better yet, use more than one method and make sure that you get the same answer.
-        </statement>
-      </exercise>
   </exercises>
 </section>

@@ -47,22 +47,22 @@
           Then <m>H^1(G, L^*) = 0</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          Let <m>f</m> be a function of the form described above.
+          By the linear independence of automorphisms
+          (see <xref ref="ex-linear-independence-of-automorphisms"/>),
+          there exists <m>x \in L</m> such that <m>t = \sum_{g \in G} x^g f(g)</m> is nonzero.
+          But now
+          <me>
+            t^h = \sum_{g \in G} x^{gh} f(g)^h = \sum_{g \in G} x^{gh} f(gh) f(h)^{-1} = f(h)^{-1} t
+          </me>.
+        </p>
+        <p>
+          Thus <m>f</m> is zero in <m>H^1(G,L^*)</m>.
+        </p>
+      </proof>
     </lemma>
-    <proof>
-      <p>
-        Let <m>f</m> be a function of the form described above.
-        By the linear independence of automorphisms
-        (see <xref ref="ex-linear-independence-of-automorphisms"/>),
-        there exists <m>x \in L</m> such that <m>t = \sum_{g \in G} x^g f(g)</m> is nonzero.
-        But now
-        <me>
-          t^h = \sum_{g \in G} x^{gh} f(g)^h = \sum_{g \in G} x^{gh} f(gh) f(h)^{-1} = f(h)^{-1} t
-        </me>.
-      </p>
-      <p>
-        Thus <m>f</m> is zero in <m>H^1(G,L^*)</m>.
-      </p>
-    </proof>
     <remark>
       <xref ref="L_theorem_90"/> derives its unusual name from the fact that in the special case where <m>G</m> is cyclic,
       this statement occurs as Theorem (Satz) 90 in <xref ref="bib-Hilbert-Zahlbericht"/>.
@@ -164,34 +164,34 @@
           of the form <m>\Gal(L/K)</m> for some finite extension <m>L</m> of <m>K</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          The map comes from the pairing;
+          we have to check that it is injective and surjective.
+          If <m>y \in K^* \setminus (K^*)^n</m>,
+          then <m>K(y^{1/n})</m> is a nontrivial Galois extension of <m>K</m>,
+          so there exists some element of
+          <m>\Gal(K(y^{1/n})/K)</m> that doesn't preserve <m>y^{1/n}</m>.
+          Any lift of that element to
+          <m>\Gal(\overline{K}/K)</m> pairs with <m>y</m> to give something other than 1;
+          that is, <m>y</m> induces a nonzero homomorphism of <m>\Gal(\overline{K}/K)</m> to <m>\ZZ/n\ZZ</m>.
+          Thus injectivity follows.
+        </p>
+        <p>
+          On the other hand, suppose
+          <m>f: \Gal(\overline{K}/K) \to \ZZ/n\ZZ</m> is a homomorphism whose image is the cyclic subgroup of <m>\ZZ/n\ZZ</m> of order <m>d</m>.
+          Let <m>H</m> be the kernel of <m>f</m>;
+          then the fixed field <m>L</m> of <m>H</m> is a
+          <m>\ZZ/d\ZZ</m>-extension of <m>K</m> with Galois group <m>\Gal(\overline{K}/K)/H</m>.
+          By Kummer theory, <m>L = K(y^{1/d})</m> for some <m>y</m>.
+          But now the homomorphisms induced by <m>y^{mn/d}</m>,
+          as <m>m</m> runs over all integers coprime to <m>d</m>,
+          give all possible surjective homomorphisms of <m>\Gal(\overline{K}/K)/H</m> to <m>\ZZ/d\ZZ</m>,
+          so one of them must equal <m>f</m>.
+          Thus surjectivity follows.
+        </p>
+      </proof>
     </theorem>
-    <proof>
-      <p>
-        The map comes from the pairing;
-        we have to check that it is injective and surjective.
-        If <m>y \in K^* \setminus (K^*)^n</m>,
-        then <m>K(y^{1/n})</m> is a nontrivial Galois extension of <m>K</m>,
-        so there exists some element of
-        <m>\Gal(K(y^{1/n})/K)</m> that doesn't preserve <m>y^{1/n}</m>.
-        Any lift of that element to
-        <m>\Gal(\overline{K}/K)</m> pairs with <m>y</m> to give something other than 1;
-        that is, <m>y</m> induces a nonzero homomorphism of <m>\Gal(\overline{K}/K)</m> to <m>\ZZ/n\ZZ</m>.
-        Thus injectivity follows.
-      </p>
-      <p>
-        On the other hand, suppose
-        <m>f: \Gal(\overline{K}/K) \to \ZZ/n\ZZ</m> is a homomorphism whose image is the cyclic subgroup of <m>\ZZ/n\ZZ</m> of order <m>d</m>.
-        Let <m>H</m> be the kernel of <m>f</m>;
-        then the fixed field <m>L</m> of <m>H</m> is a
-        <m>\ZZ/d\ZZ</m>-extension of <m>K</m> with Galois group <m>\Gal(\overline{K}/K)/H</m>.
-        By Kummer theory, <m>L = K(y^{1/d})</m> for some <m>y</m>.
-        But now the homomorphisms induced by <m>y^{mn/d}</m>,
-        as <m>m</m> runs over all integers coprime to <m>d</m>,
-        give all possible surjective homomorphisms of <m>\Gal(\overline{K}/K)/H</m> to <m>\ZZ/d\ZZ</m>,
-        so one of them must equal <m>f</m>.
-        Thus surjectivity follows.
-      </p>
-    </proof>
   </subsection>
   <subsection>
     <title>Cyclic extensions without roots of unity</title>
