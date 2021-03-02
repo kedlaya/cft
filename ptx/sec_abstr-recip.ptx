@@ -32,9 +32,14 @@
         <me>
           \#H^0_T(\Gal(L/K), C_L) = [L:K], \qquad \#H^1_T(\Gal(L/K), C_L) = 1.
         </me>
-        Note that at this point we neither know, nor need to know, that <m>H^0_T(\Gal(L/K), C_L)</m> is cyclic.
       </p>
     </definition>
+    <remark>
+      <p>
+        In <xref ref="def-global-abstract-units"/>, it will follow from the reciprocity law that the group <m>H^0_T(\Gal(L/K), C_L)</m> is cyclic.
+        However, the class field axiom does not require advance knowledge of this.
+      </p>
+    </remark>
   </subsection>
   <subsection>
     <title>Cyclotomic extensions and abstract ramification theory</title>
@@ -44,8 +49,7 @@
       (<xref ref="T_Kronecker-Weber"/>); instead, we will recover it as part of the reciprocity law.
     </p>
     <p>
-      First of all,
-      we should further articulate a distinction that has come up already.
+      We first make a distinction which is of limited significance in the totality of number theory, but is critical for our use of the machinery of abstract class field theory.
     </p>
     <definition>
       <p>
@@ -53,13 +57,17 @@
         That group has a lot of torsion,
         since each <m>\ZZ_p^*</m> contains a torsion subgroup of order <m>p-1</m>
         (or 2, if <m>p=2</m>).
+      </p>
+      <p>
         If we take the fixed field for the torsion subgroup of <m>\ZZ^*</m>,
         we get a slightly smaller extension,
         which I'll call the <term>small cyclotomic extension</term>
         of <m>\QQ</m> and denote <m>\QQ^{\smcy}</m>.
-        Its Galois group is <m>\prod_p \ZZ_p = \widehat{\ZZ}</m>.
-        For <m>K</m> a number field, define <m>K^{\smcy} = K \QQ^{\smcy}</m>;
-        then <m>\Gal(K^{\smcy}/K) \cong \widehat{\ZZ}</m> as well,
+        Its Galois group is isomorphic to <m>\prod_p \ZZ_p = \widehat{\ZZ}</m>, but <em>not canonically so</em>.
+      </p>
+      <p>
+        For <m>K</m> a number field, define <m>K^{\smcy} = K \QQ^{\smcy}</m>.
+        Then <m>\Gal(K^{\smcy}/K) \cong \widehat{\ZZ}</m> as well,
         even if <m>K</m> contains some extra roots of unity.
       </p>
     </definition>
@@ -68,15 +76,17 @@
     </p>
     <definition xml:id="def-global-abstract-ramification">
     <p>
-      Choose an isomorphism of
-      <m>\Gal(\QQ^{\smcy}/\QQ)</m> with <m>\widehat{\ZZ}</m>;
+      Choose an isomorphism of <m>\Gal(\QQ^{\smcy}/\QQ)</m> with <m>\widehat{\ZZ}</m>;
       our results are not going to depend on the choice (see <xref ref="rmk-remove-identification"/>).
       That gives a continuous surjection
       <me>
         d: \Gal(\overline{\QQ}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ};
       </me>
       recall that this means we are going to regard <m>\QQ^{\smcy}/\QQ</m> as the <q>maximal unramified extension</q>
-      of <m>\QQ</m>. As in the general setup, for any finite extension <m>L/K</m> of number fields, we define the
+      of <m>\QQ</m>.
+    </p>
+    <p>
+      As in the general setup, for any finite extension <m>L/K</m> of number fields, we define the
       <term>abstract ramification index</term> <m>e_{L/K}</m> and the <term>abstract inertia degree</term> <m>f_{L/K}</m> by setting
       <me>
         f_{L/K} = [L \cap \QQ^{\smcy}:K \cap \QQ^{\smcy}], \qquad e_{L/K} = \frac{[L:K]}{f_{L/K}}.
@@ -87,7 +97,7 @@
   <subsection>
     <title>An abstract henselian valuation</title>
     <p>
-      To complete the setup of abstract class field theory, we need an abstract henselian valuation <m>v: C_{\QQ} \to \widehat{\ZZ}</m>.
+      To complete the setup of abstract class field theory, we need an <term>abstract henselian valuation</term> <m>v: C_{\QQ} \to \widehat{\ZZ}</m> with respect to <m>d</m>.
       Recall from <xref ref="def-abstract-henselian-valuation"/> that this means:
       <ol>
         <li>
@@ -120,13 +130,14 @@
     <lemma xml:id="lem-global-abstract-valuation">
       <statement>
         <p>
-          The map <m>v</m> defined in <xref ref="def-global-abstract-valuation"/> is a henselian valuation in the sense of <xref ref="def-abstract-henselian-valuation"/>.
+          The map <m>v</m> defined in <xref ref="def-global-abstract-valuation"/> is a henselian valuation in the sense of <xref ref="def-abstract-henselian-valuation"/>
+          (with respect to the map <m>d</m> from <xref ref="def-global-abstract-ramification"/>).
         </p>
       </statement>
       <proof>
         <p>
           Since we already know from <xref ref="def-global-abstract-valuation"/> that <m>v</m> factors through <m>C_\QQ</m> and surjects onto <m>\widehat{\ZZ}</m>,
-          it suffices to check that for every number field <m>K</m>, <m>v(\Norm_{K/\QQ} I_K) = f_{K/\QQ} \widehat{\ZZ}</m>. We establish this by checking that the map
+          it suffices to check that for every number field <m>K</m>, <m>v(\Norm_{K/\QQ} I_K) = f_{K/\QQ} \widehat{\ZZ}</m>. We may establish this by checking that the map
           <me>
             I_K \stackrel{\Norm_{K/\QQ}}{\to} I_\QQ \to \Gal(\QQ^{\cyc}/\QQ)
           </me>
@@ -188,7 +199,7 @@
     </theorem>
     <definition>
       <p>
-        The maps <m>r'_{L/K}</m> from <xref ref="T_abstract_adelic_reciprocity"/> fit together to give a map <m>r'_K: C_K \to \Gal(K^{\ab}/K)</m>;
+        By <xref ref="P_abstract_functorialities"/>, the maps <m>r'_{L/K}</m> from <xref ref="T_abstract_adelic_reciprocity"/> fit together to give a map <m>r'_K: C_K \to \Gal(K^{\ab}/K)</m>;
         but we do not yet know that this coincides with the product of the local reciprocity maps, so we cannot yet recover Artin reciprocity.
         However, we can at least deduce the norm limitation theorem (<xref ref="T_adelic_norm_limitation1"/>). See also <xref ref="rmk-remove-identification"/> below.
       </p>
@@ -213,9 +224,12 @@
         <q>Frobenius</q> in <m>\Gal(L/K)</m> maps to a <q>uniformizer</q>
         in <m>C_K</m>.
         That is, the element of <m>\Gal(L/K)</m> coming from the element of
-        <m>\Gal(K^{\smcy}/K)</m> which maps to 1 under <m>d_K</m> is the element of <m>C_K</m> which maps to 1 under <m>v_K</m>.
-        The point is that the definitions of both <m>d</m> and <m>v</m> involve the <em>same</em> artificial choice of 
-        an isomorphism <m>\Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}</m>; compare <xref ref="rmk-rescale-reciprocity"/> and <xref ref="exer-rescale-reciprocity2"/>.
+        <m>\Gal(K^{\smcy}/K)</m> which maps to 1 under <m>d_K</m> corresponds via reciprocity to the element of <m>C_K</m> which maps to 1 under <m>v_K</m>.
+      </p>
+      <p>
+        The broader point here is that the definitions of both <m>d</m> and <m>v</m> involve the <em>same</em> artificial choice of 
+        an isomorphism <m>\Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}</m>, which thus does not affect the reciprocity map.
+        Compare <xref ref="rmk-rescale-reciprocity"/> and <xref ref="exer-rescale-reciprocity2"/>.
       </p>
     </remark>
   </subsection>

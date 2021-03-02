@@ -244,6 +244,9 @@
       This establishes the reciprocity law for cyclic extensions, from which it directly follows also for abelian extensions.
       Hooray again!
     </p>
+  </subsection>
+  <subsection>
+    <title>More remarks about Brauer groups</title>
     <definition xml:id="def-fundamental-exact-sequence">
       <p>
         Combining the previous discussion with <xref ref="T_Albert-Brauer-Hasse-Noether"/>, 
@@ -261,5 +264,37 @@
         on algebraic varieties over number fields (called <term>Brauer-Manin obstructions</term>).
       </p>
     </definition>
+    <remark>
+      <p>
+        The property of a field <m>K</m> of characteristic 0 having trivial Brauer group is useful in the theory of finite group representations:
+        for such a field, any <m>K</m>-valued character of a finite group arises from a representation defined over <m>K</m>. (This follows from <term>Schur's lemma</term>:
+        the character in question appears within some irreducible <m>K</m>-linear representation, whose endomorphism ring is a division algebra;
+        the triviality of the Brauer group forces this to split without any base extension.)
+        By contrast,
+        for <m>G = \{\pm 1, \pm i, \pm j, \pm k\}</m>, the standard 2-dimensional representation has a <m>\QQ</m>-valued character but cannot be realized
+        as a representation over <m>\QQ</m>.
+      </p>
+      <p>
+        By <xref ref="prop-H2-class-absorb-by-cyclotomic"/>, the field <m>\QQ^{\ab}</m> has trivial Brauer group. Since in addition every complex character of a finite group
+        has values in <m>\QQ^{\ab}</m>, it follows that every irreducible complex representation of a finite group can be realized over <m>\QQ^{\ab}</m>;
+        for a more direct proof of this, see <xref ref="bib-Serre-LinRep"/>, Chapter 12, Theorem 24.
+      </p>
+    </remark>
   </subsection>
+  <exercises>
+    <exercise xml:id="exer-large-cyclotomic-degree">
+      <statement>
+        <p>
+          Let <m>K</m> be a number field, let <m>S</m> be a finite set of finite places of <m>K</m>, and let <m>m</m> be a positive integer.
+          Prove that there exists a subextension <m>L</m> of <m>K^{\smcy}/K</m> (which is necessarily cyclic) such that for all <m>v \in S</m>, for some place <m>w</m> of <m>L</m> above <m>K</m>,
+          <m>[L_w:K_v]</m> is divisible by <m>m</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          See <xref ref="bib-Milne-CFT"/>, Lemma VII.7.3.
+        </p>
+      </hint>
+    </exercise>
+  </exercises>
 </section>

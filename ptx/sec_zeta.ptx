@@ -61,7 +61,7 @@
   </subsection>
   <subsection>
     <title><m>L</m>-functions of abelian characters</title>
-    <definition>
+    <definition xml:id="def-L-function">
       <p>
       More generally,
       let <m>\gothm</m> be a formal product of places of <m>K</m>,

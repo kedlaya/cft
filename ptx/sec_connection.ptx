@@ -4,109 +4,131 @@
     <paragraphs>
       <title>Reference</title>
       <p>
-        <xref ref="bib-Neukirch"/> VI.4, modulo some liberties taken in the presentation.
+        <xref ref="bib-Neukirch"/> VI.5.
       </p>
     </paragraphs>
     <p>
+      Let <m>L/K</m> be a Galois extension of number fields.
       So far, we've used abstract class field theory to construct reciprocity isomorphisms
-      <me>
-        r'_{L/K}: C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}
-      </me>
-      (<xref ref="T_abstract_adelic_reciprocity"/>)
       and to establish the adelic form of the existence theorem (<xref ref="T_adelic_existence_theorem2"/>).
-      We also know that if <m>L/K</m> is a small cyclotomic extension,
-      then this map induces the usual Artin map (<xref ref="rmk-remove-identification"/>).
     </p>
     <p>
-      It thus remains to verify that this map coincides with the product of the local reciprocity maps (<xref ref="def-adelic-reciprocity-candidate"/>).
+      It remains to verify that the <q>abstract</q> reciprocity map coincides with the product of the local reciprocity maps (<xref ref="def-adelic-reciprocity-candidate"/>).
       As noted earlier, this is enough to recover the classical Artin reciprocity law (<xref ref="prop-deduce-Artin"/>); this will finally complete the proof of
       all of the statements originally asserted in <xref ref="ch_statements"/>).
     </p>
   </introduction>
   <subsection>
-    <title>Properties of the reciprocity maps</title>
-    <p>
-      For any extension <m>L/K</m> of number fields,
-      we currently have the map 
-      <me>
-        r_{L/K}: I_K \to \Gal(L/K)^{\ab}
+    <title>Comparison of reciprocity maps</title>
+    <definition xml:id="abstract-local-reciprocity-map">
+      <p>
+        Let <m>L/K</m> be a Galois extension of number fields. Let
+        <me>
+          r_{L/K}: I_K \to \Gal(L/K)^{\ab}
         </me> 
-      formed as the product of the local reciprocity maps,
-      and the abstract reciprocity map 
-      <me>
-        r'_{L/K}: I_K \to \Gal(L/K)^{\ab}
-      </me>,
-      which actually factors through <m>C_K</m> and even through <m>C_K/\Norm_{L/K} C_L</m>.
-      To show that these agree, we first identify some properties that they share, then show that these properties
-      (quantified over all extensions) are enough to <em>uniquely</em> determine the maps.
-    </p>
-    <lemma xml:id="L_reciprocity_corollaries">
+        be the product of the local reciprocity maps <xref ref="def-adelic-reciprocity-candidate"/>.
+        Meanwhile, let
+        <me>
+          r'_{L/K}: I_K \to \Gal(L/K)^{\ab}
+        </me>
+        be the map obtained by inverting the isomorphism <m>\Gal(L/K)^{\ab} \to C_K/\Norm_{L/K} C_L</m> given by <xref ref="T_abstract_adelic_reciprocity"/>.
+      </p>
+    </definition>
+    <lemma xml:id="lem-compare-reciprocity-small-cyclotomic">
       <statement>
         <p>
-          Let <m>L/K</m> be an abelian extension of number fields.
-          Let <m>v</m> be a place of <m>K</m> and let <m>w</m> be a place of <m>L</m> above <m>v</m>.
-          Compose the injection <m>K_v^* \to I_K</m> with the abstract reciprocity map <m>r'_{L/K}</m> to get a map <m>K_v^* \to \Gal(L/K)</m>.
-          <ol>
-            <li>
-              <p>
-                The image of the map <m>K_v^* \to \Gal(L/K)</m> is contained in the decomposition group of <m>w</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The subgroup <m>\Norm_{L_w/K_v} L_w^*</m> is contained in the kernel of <m>K_v^* \to \Gal(L/K)</m>.
-              </p>
-            </li>
-          </ol>
+          With notation as in <xref ref="abstract-local-reciprocity-map"/>, suppose that <m>L \subset K^{\smcy}</m>.
+          Then <m>r_{L/K} = r'_{L/K}</m>.
         </p>
       </statement>
-    <proof>
-      <p>
-        For the first assertion, let <m>M</m> be the fixed field of the decomposition group of <m>w</m>;
-        then we have the compatibility
-        <figure xml:id="fig-connection-1">
-        <image>
-        <latex-image>
-        \xymatrix{
-        \Gal(L/K) \ar[r] \ar[d] &amp; C_K/\Norm_{L/K} C_L \ar[d] \\
-        \Gal(M/K) \ar[r] &amp; C_K/\Norm_{M/K} C_M
-        }
-        </latex-image>
-        </image>
-        </figure>
-        and the image of <m>K_v^* \to I_K</m> lands in
-        <m>\Norm_{M/K} I_M</m> because <m>v</m> splits completely in <m>M</m>.
-        So this image lies in the kernel of <m>\Gal(L/K) \to \Gal(M/K)</m>,
-        which is to say <m>\Gal(L/M)</m>, the decomposition group of <m>w</m>.
-      </p>
-      <p>
-        For the second, we need only check that
-        <m>\Norm_{L_w/K_v} L_w^*</m> is contained in the kernel of <m>K_v^* \to C_K/\Norm_{L/K} C_L</m>.
-        But <m>\Norm_{L_w/K_v} L_w^*</m> is already in the kernel of <m>K_v^* \to I_K/\Norm_{L/K} I_L</m>,
-        so we're all set.
-      </p>
-    </proof>
+      <proof>
+        <p>
+          In the setting of abstract class field theory, <m>L/K</m> is viewed as an <q>unramified</q> extension. Consequently,
+          the reciprocity map <m>r'_{L/K}: C_K/\Norm_{L/K} C_L \to \Gal(L/K)</m> is described completely by <xref ref="lem-abstract-recip-case1"/>:
+          it is given by composing the valuation map <m>v_K: C_K \to \widehat{\ZZ}</m> with the inverse of the map <m>d_K: \Gal(K^{\smcy}/K) \cong \widehat{\ZZ}</m>,
+          then projecting from <m>\Gal(K^{\smcy}/K)</m> to <m>\Gal(L/K)</m>. (Note that as per <xref ref="rmk-remove-identification"/>, this does not depend on the 
+          artificial choice of the isomorphism <m>d_K</m>, because <m>v_K</m> is defined using the same choice.)
+          Consequently, in this case we end up with the usual Artin map for a cyclotomic extension (<xref ref="D_cyclotomic_reciprocity"/>), which is compatible with local reciprocity
+          by direct calculation (<xref ref="exa-local-recip-Qp"/>).
+        </p>
+      </proof>
     </lemma>
+    <lemma xml:id="lem-compare-reciprocity-ramified">
+      <statement>
+        <p>
+          With notation as in <xref ref="abstract-local-reciprocity-map"/>, suppose that <m>L \cap K^{\smcy} = K</m>.
+          Then <m>r_{L/K} = r'_{L/K}</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          In the setting of abstract class field theory, <m>L/K</m> is viewed as a <q>totally ramified</q> extension. Consequently,
+          we may set notation as in the proof of <xref ref="lem-abstract-recip-case2"/>, then apply <xref ref="P_abstract_functorialities"/> to obtain a commutative diagram
+          <figure xml:id="fig-connection-4">
+          <image>
+          <latex-image>
+          \xymatrix{
+          C_{N_0}/\Norm_{N/N_0} C_{N} \ar^{r'_{N/N_0}}[r] \ar^{\Norm_{N_0/K}}[d] &amp; \Gal(N/N_0) \ar[d] \\
+          C_{K}/\Norm_{L/K} C_{L} \ar^{r'_{L/K}}[r] &amp;\Gal(L/K)
+          }
+          </latex-image>
+          </image>
+          </figure>
+          in which the horizontal arrows are isomorphisms (<xref ref="T_abstract_adelic_reciprocity"/>) and the right vertical arrow is an isomorphism,
+          as then is the left vertical arrow.
+          We also have a corresponding diagram on the local side. This means that we can reduce checking the compatibility for <m>L/K</m> to the corresponding 
+          statement for <m>N/N_0</m>, to which <xref ref="lem-compare-reciprocity-small-cyclotomic"/> applies.
+        </p>
+      </proof>
+    </lemma>
+    <p>
+      At last, we obtain the desired compatibility of reciprocity maps, and with it the completion of the proofs from global class field theory. Hooray!
+    </p>
+    <proposition xml:id="prop-reciprocity-trivial-on-diagonal2">
+      <statement>
+        <p>
+          For any Galois extension <m>L/K</m> of number fields, <m>r_{L/K} = r'_{L/K}</m>; that is, the abstract reciprocity map coincides with the product of the local reciprocity maps.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          By the norm limitation theorem (<xref ref="T_adelic_norm_limitation"/>), we may assume that <m>L/K</m> is abelian.
+          By <xref ref="P_abstract_functorialities"/>, we may check the comparison of maps after replacing <m>L</m> with a larger abelian extension of <m>K</m>.
+        </p>
+        <p>
+          We may split the exact sequence
+          <me>
+            1 \to \Gal(K^{\ab}/K^{\smcy}) \to \Gal(K^{\ab}/K) \to \Gal(K^{\smcy}/K) \cong \widehat{\ZZ} \to 1
+          </me>
+          by choosing an element of <m>\Gal(K^{\ab}/K)</m> lifting the generator <m>1 \in \widehat{\ZZ}</m>. Using this, we can
+          split <m>K^{\ab}</m> as the compositum of <m>K^{\smcy}</m> and an abelian extension which is linearly disjoint from <m>K^{\smcy}</m>.
+          Using the previous paragraph, we can split some finite extension of <m>L</m> as the compositum of linearly disjoint cyclic extensions,
+          one contained in <m>K^{\smcy}</m> and the others linearly disjoint from <m>K^{\smcy}</m>. Applying <xref ref="lem-compare-reciprocity-small-cyclotomic"/> to the first
+          extension and <xref ref="lem-compare-reciprocity-ramified"/> to the others, we deduce the desired compatibility for abelian extensions.
+        </p>
+        <p>
+          It follows that for any abelian extension <m>L/K</m> of number fields, the maps <m>r_{L/K}</m> and <m>r'_{L/K}</m> coincide.
+          Using the .
+        </p>
+      </proof>
+    </proposition>
     <remark>
       <p>
-        In the second part of <xref ref="L_reciprocity_corollaries"/>, knowing that <m>r=r'</m> would imply that
-        <q>contained in</q>
-        can be replaced by <q>equal to</q>. However, we don't need to check this independently.
+        It's worth repeating that only now do we know that the product <m>r_{L/K}</m> of the local reciprocity maps kills principal id&#xe8;les
+        (<xref ref="prop-reciprocity-trivial-on-diagonal"/>). That fact, which relates local behavior for different primes in a highly global fashion,
+        is the basis of various <term>higher reciprocity laws</term>.
+        See <xref ref="bib-Milne-CFT"/>, Chapter VIII for details.
       </p>
     </remark>
   </subsection>
   <subsection>
     <title>Globalization of local abelian extensions</title>
     <p>
-      While <xref ref="L_reciprocity_corollaries"/> is a rather limited form of local-global compatibility compared to what we ultimately need, it turns out to
-      carry enough information to force the comparison we need! The point is that the existence theorem provides an ample supply of cases to which 
-      <xref ref="L_reciprocity_corollaries"/> can be applied, which ends up providing enough rigidity.
-    </p>
-    <p>
-      The following lemma is a statement we already know for <m>K = \QQ</m> because the local Kronecker-Weber theorem (<xref ref="T_local_Kronecker-Weber2"/>)
+      As a complement to <xref ref="prop-reciprocity-trivial-on-diagonal2"/>, we show that every local abelian extension is the completion of a global abelian extension;
+      over <m>\QQ</m>, note that this holds because the local Kronecker-Weber theorem (<xref ref="T_local_Kronecker-Weber2"/>)
       and the Kronecker-Weber theorem (<xref ref="T_Kronecker-Weber"/>) are expressed in terms of the same family of extension of <m>\QQ</m>, namely the cyclotomic extensions.
     </p>
-    <lemma xml:id="L_auxiliary_existence">
+    <theorem xml:id="L_auxiliary_existence">
       <statement>
         <p>
           Let <m>K</m> be a number field,
@@ -124,15 +146,15 @@
       </p>
       <p>
         By the existence theorem (<xref ref="T_adelic_existence_theorem2"/>)
-        and <xref ref="L_reciprocity_corollaries"/>,
+        plus local-to-global compatibility (<xref ref="prop-reciprocity-trivial-on-diagonal2"/>),
         it suffices to produce an open subgroup <m>U</m> of <m>C_K</m> of finite index such that the preimage of <m>U</m> under
         <m>K_v^* \to C_K</m> is contained in <m>N = \Norm_{M/K_v} M^*</m>.
         Let <m>S</m> be the set of infinite places, let <m>T = S \cup \{v\}</m>,
-        and let <m>G = K_T \cap N</m>.
+        and let <m>G = \gotho_{K,T}^* \cap N</m>.
         Then one can choose an additional place <m>u</m>
         (finite and distinct from <m>v</m>)
         and an open subgroup <m>V</m> of
-        <m>\gotho_{K_u}^*</m> such that <m>V \cap K_T \subseteq G</m>.
+        <m>\gotho_{K_u}^*</m> such that <m>V \cap \gotho_{K,T}^* \subseteq G</m>.
         Now put
         <me>
           W = N \times V \times \prod_{w \in S} K_w^* \times \prod_{w \notin S \cup \{u,v\}} \gotho_K^*
@@ -141,111 +163,12 @@
         If <m>\alpha_v \in K_v^*</m> maps into <m>U</m>,
         then there exists <m>\beta \in K^*</m> such that <m>\alpha_v \beta \in W</m>.
         That means first of all that
-        <m>\beta \in K_T</m> and then that <m>\beta \in V</m>,
+        <m>\beta \in \gotho_{K,T}^*</m> and then that <m>\beta \in V</m>,
         so that <m>\beta \in G</m> and so also <m>\beta \in N</m>;
         it also means that <m>\alpha_v \beta \in N</m>.
         Thus <m>\alpha_v \in N</m>, as desired.
       </p>
     </proof>
-    </lemma>
+    </theorem>
   </subsection>
-  <subsection>
-    <title>Comparison of reciprocity maps</title>
-    <definition xml:id="def-abstract-reciprocity-collated">
-    <p>
-      For each place <m>v</m> of <m>K</m> and each abelian extension <m>M</m> of <m>K_v</m>,
-      we can now write down a map
-      <m>r'_{K,v,M}: K_v^* \to \Gal(M/K_v)</m>  as follows.
-      Apply <xref ref="L_auxiliary_existence"/> to choose an abelian extension <m>L</m> such that
-      <m>M \subseteq L_w</m> for any place <m>w</m> of <m>L</m> above <m>v</m>.
-      Let <m>N</m> be the fixed field of the decomposition group of <m>w</m>,
-      and set <m>r'_{K,v,M}</m> equal to the composition
-      <me>
-        K_v^* \stackrel{r'_{L/K}}{\to} \Gal(L/N) = \Gal(L_w/K_v) \to \Gal(M/K_v)
-      </me>
-      By <xref ref="L_reciprocity_corollaries"/>, this map does not change if we enlarge <m>L</m>.
-      Since we can compare any two choices of <m>L</m> with their compositum, we deduce that the definition of <m>r'_{K,v,M}</m> does not depend on the choice of <m>L</m> at all.
-      By <xref ref="L_reciprocity_corollaries"/> again, we can fit the maps <m>r'_{K,v,M}</m> together
-      to give a single map <m>r'_{K,v}: K_v^* \to \Gal(K_v^{\ab}/K_v)</m>.
-    </p>
-    </definition>
-    <lemma xml:id="lem-abstract-reciprocity-compatibilities">
-      <statement>
-        <p>
-          The map <m>r'_{K,v}: K_v^* \to \Gal(K_v^{\ab}/K_v)</m> of <xref ref="def-abstract-reciprocity-collated"/> has the following properties.
-          <ol>
-            <li>
-              <p>
-                For <m>M/K_v</m> unramified,
-                the induced map <m>K_v^* \to \Gal(M/K_v^*)</m> kills units and maps a uniformizer of <m>K_v</m> to the Frobenius automorphism.
-              </p>
-            </li>
-            <li>
-              <p>
-                For any finite extension <m>M/K_v</m>,
-                <m>r'_{K,v}</m> induces an isomorphism
-                <me>
-                  K_v^*/\Norm_{M/K_v} M^* \to \Gal(M/K_v).
-                </me>
-              </p>
-            </li>
-          </ol>
-        </p>
-      </statement>
-      <proof>
-        <p>
-          For the first assertion, note that <m>M</m> is generated over <m>K_v</m> by a suitable root of unity, so we may compute
-          <m>r'_{K,v,M}</m> by taking the global abelian extension <m>L</m> to be a suitable small cyclotomic extension. In this case,
-          we have already checked that the map in question is the Artin map; see <xref ref="rmk-remove-identification"/>.
-        </p>
-        <p>
-          For the second assertion, note that the map in question is injective by construction,
-          but local reciprocity (<xref ref="T_local_reciprocity"/>) implies that the source and target are finite groups of the same order.
-          Hence the map is forced to be an isomorphism.
-        </p>
-      </proof>
-    </lemma>
-    <p>
-      At last, we obtain the desired compatibility of reciprocity maps, and with it the completion of the proofs from global class field theory. Hooray!
-    </p>
-    <proposition xml:id="prop-reciprocity-trivial-on-diagonal2">
-      <statement>
-        <p>
-          For <m>L/K</m> an abelian extension of number fields,
-          the maps <m>r_{L/K}</m> and <m>r'_{L/K}</m> described above coincide.
-       </p>
-      </statement>
-      <proof>
-        <p>
-          The properties stated in <xref ref="lem-abstract-reciprocity-compatibilities"/> determine the maps <m>r'_{K,v}</m> uniquely.
-          We conclude that <m>r'_{K,v}</m> is the local reciprocity map for <m>K_v</m>,
-          and so <m>r_{L/K} = r'_{L/K}</m>.
-        </p>
-      </proof>
-    </proposition>
-    <remark>
-      <p>
-        It's worth repeating that only now do we know that the product <m>r_{L/K}</m> of the local reciprocity maps kills principal id&#xe8;les
-        (<xref ref="prop-reciprocity-trivial-on-diagonal"/>). That fact, which relates local behavior for different primes in a highly global fashion,
-        is the basis of various <term>higher reciprocity laws</term>.
-        See <xref ref="bib-Milne-CFT"/>, Chapter VIII for details.
-      </p>
-    </remark>
-  </subsection>
-  <exercises>
-    <exercise xml:id="exer-large-cyclotomic-degree">
-      <statement>
-        <p>
-          Let <m>K</m> be a number field, let <m>S</m> be a finite set of finite places of <m>K</m>, and let <m>m</m> be a positive integer.
-          Prove that there exists a cyclic extension <m>L</m> of <m>K</m> contained in <m>K(\zeta_n)</m> for some <m>n</m> such that for all <m>v \in S</m>, for some place <m>w</m> of <m>L</m> above <m>K</m>,
-          <m>[L_w:K_v]</m> is divisible by <m>m</m>.
-        </p>
-      </statement>
-      <hint>
-        <p>
-          See <xref ref="bib-Milne-CFT"/>, Lemma VII.7.3.
-        </p>
-      </hint>
-    </exercise>
-  </exercises>
 </section>

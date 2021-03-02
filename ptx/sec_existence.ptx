@@ -9,305 +9,121 @@
     </paragraphs>
     <p>
       With the <q>abstract</q> reciprocity theorem in hand, we now prove the existence theorem in its idelic formulation (see <xref ref="T_adelic_existence_theorem1"/>).
-      This will imply the classical version of the theorem, namely
-      that every generalized ideal class group of a number field is identified by Artin reciprocity with the Galois group of a suitable abelian extension
+      Modulo the pending reconciliation of Artin reciprocity with abstract reciprocity (see <xref ref="prop-reciprocity-trivial-on-diagonal2"/>), this will imply the classical version of the existence theorem:
+      every generalized ideal class group of a number field is identified by Artin reciprocity with the Galois group of a suitable abelian extension
       (<xref ref="T-existence-theorem"/>).
     </p>
     <p>
       As in the proof of the local existence theorem (<xref ref="T_local_existence2"/>), having access to the (abstract) reciprocity law and the norm limitation theorem
       reduces the task of proving the existence theorem to the <q>topological</q> assertion that every open subgroup of <m>C_L</m> of finite index contains a norm subgroup.
-      Before tackling this (<xref ref="T_adelic_existence_theorem2"/>), we introduce a second approach to the Second Inequality (<xref ref="T_first_and_second_inequality"/>)
-      that replaces the analytic considerations with a more algebraic approach; while this is not logically necessary, it nicely sets up the proof of the existence theorem.
+      For this, we can essentially rerun the Kummer-theoretic argument from the local case.
+    </p>
+    <p>
+      We then give the closely related algebraic proof of the Second Inequality (<xref ref="T_first_and_second_inequality"/>).
     </p>
   </introduction>
   <subsection>
-    <title>Revisiting the Second Inequality</title>
+    <title>A base case for the existence theorem</title>
     <p>
-      Recall the statement of the Second Inequality <xref ref="T_first_and_second_inequality"/>.
+      As in the proof of the local existence theorem (<xref ref="T_local_existence2"/>),
+      the key to the proof of <xref ref="T_adelic_existence_theorem2"/> is showing that for any given number field <m>K</m>,
+      we can find finite extensions <m>L/K</m> for which the groups <m>\Norm_{L/K} C_L</m> can be made arbitrarily small.
+      In preparation for an inductive proof, we establish a key base case using Kummer theory.
     </p>
-    <theorem xml:id="T_first_and_second_inequality_algebraic">
-      <title>Second Inequality (algebraic proof)</title>
+    <lemma xml:id="lem-adelic-exponent-p-subgroup">
       <statement>
         <p>
-          Let <m>L/K</m> be a Galois extension of number fields,
-          with Galois group <m>G</m>.
-          Then:
-          <ol>
-            <li>
-              <p>
-                the group <m>H^1(G, C_L)</m> is trivial;
-              </p>
-            </li>
-            <li>
-              <p>
-                the group <m>H^2(G, C_L)</m> is finite of order at most <m>[L:K]</m>.
-              </p>
-            </li>
-          </ol>
+          Let <m>K</m> be a number field containing a primitive <m>p</m>-th root of unity for some prime <m>p</m>.
+          Let <m>U</m> be an open subgroup of <m>C_K</m> of index <m>p</m>. Then for some finite set <m>S</m> of places of <m>K</m> containing the infinite places
+          and all places above <m>p</m>,
+          <m>I_K = K^* I_{K,S}</m> and the preimage of <m>U</m> in <m>I_K</m> contains
+          <me>
+            W_S = \prod_{v \in S} (K_v^*)^p \times \prod_{v \notin S} \gotho_{K_v}^*.
+          </me>
         </p>
       </statement>
       <proof>
         <p>
-          As in the proof of <xref ref="T_first_and_second_inequality"/>, we used an induction argument to reduce to proving that for <m>L/K</m> a cyclic extension
-          of number fields,
+          Let <m>J</m> be the preimage of <m>U</m> under the projection <m>I_K \to C_K</m>,
+          so that <m>J</m> is open in <m>I_K</m> of finite index.
+          Then <m>J</m> contains a subgroup of the form
           <me>
-            H^0_T(\Gal(L/K), C_L) \leq [L:K].
+            V = \prod_{v \in S} \{1\} \times \prod_{v \notin S} \gotho_{K_v}^*
           </me>
-        In fact, the same induction (considering <m>H^2</m> in place of <m>H^0_T</m>) allows us to further reduce to the case where <m>[L:K] = p</m> is prime.
-        (Recall that the same inequality holds when <m>L/K</m> is not cyclic, but is not needed to verify the class field axiom; see <xref ref="rmk-H0T-bound-analytic"/>.)
-        </p>
-        <p>
-          In fact, one can further reduce to the case where <m>K</m> contains a primitive <m>p</m>-th root of unity <m>\zeta_p</m>. To see this,
-          let <m>K' = K(\zeta_p)</m> and <m>L' = L(\zeta_p)</m>;
-          then <m>K'</m> and <m>L</m> are linearly disjoint over <m>K</m>
-          since their degrees are coprime),
-          so <m>[L':K'] = [L:K] = p</m> and the Galois groups of <m>L/K</m> and <m>L'/K'</m> are canonically isomorphic.
-          By <xref ref="lem-second-inequality-reduction-to-zetap"/> below, we see that
-          <me>
-            \#H^0_T(\Gal(L/K), C_L) \to \#H^0_T(\Gal(L'/K'), C_{L'}) \leq [L':K'] = [L:K].
-          </me>
-          It thus suffices to check the upper bound for <m>L/K</m> a cyclic extension of prime degree <m>p</m> under the extra hypothesis that <m>p \in \zeta_p</m>.
-          For this, see <xref ref="L_second_inequality_base_case"/>.
+          for some finite set <m>S</m> of places of <m>K</m> containing the infinite places,
+          which by <xref ref="lem-generate-ideles-with-S-units"/> we may choose large enough so that <m>K^* I_{K,S} = I_K</m>.
+          The group <m>J</m> must also contain <m>I_K^p</m>, and hence <m>W_S</m>.
         </p>
       </proof>
-    </theorem>
-    <lemma xml:id="lem-second-inequality-reduction-to-zetap">
+    </lemma>
+    <p>
+      We continue with a lemma that allows to detect whether certain elements of a number field are <m>p</m>-th powers based on whether this happens locally.
+      This amounts to a carefully chosen special case of the Grunwald-Wang theorem (<xref ref="rmk-Grunwald-Wang"/>).
+    </p>
+    <lemma xml:id="lem-local-pth-power">
       <statement>
         <p>
-          Let <m>L/K</m> be a cyclic extension of number fields of prime degree <m>p</m> and let <m>K' = K(\zeta_p), L' = L(\zeta_p)</m>. Then the map
+          With notation as in <xref ref="lem-adelic-exponent-p-subgroup"/>, 
           <me>
-            H^0_T(\Gal(L/K), C_L) \to H^0_T(\Gal(L'/K'), C_{L'})
+            W_S \cap K^* = (\gotho_{K,S}^*)^p.
           </me>
-          induced by the inclusion <m>C_L \to C_{L'}</m> is injective.
         </p>
       </statement>
       <proof>
         <p>
-          For <m>x \in C_K</m>, <m>\Norm_{L/K} (x) = x^p</m>; this implies that both groups in question are killed by <m>p</m>.
-          In particular, multiplication by <m>d = [K':K]</m>,
-          which divides <m>p-1</m>, is an isomorphism on these groups.
-        </p>
-        <p>
-          Suppose <m>x \in C_K</m> maps to the identity in <m>H^0_T(\Gal(L'/K'), C_{L'})</m>.
-          We can then choose a representative of class of <m>x</m> in
-          <m>H^0_T(\Gal(L/K), C_L)</m> of the form <m>y^d</m>;
-          then <m>y</m> also maps to the identity in <m>H^0_T(\Gal(L'/K'), C_{L'})</m>.
-          That is, <m>y = \Norm_{L'/K'}(z')</m> for some <m>z' \in C_{L'}</m>, and
+          It is clear that <me>(\gotho_{K,S}^*)^p \subseteq W_S \cap K^*</me>. To prove the reverse inclusion, note that
+          for any <m>y \in W_S \cap K^*</m>, if we set <m>L = K(y^{1/p})</m>, then every place <m>v \in S</m> is split in <m>L</m> and 
+          every place <m>v \notin S</m> is unramified in <m>L</m>, yielding
           <me>
-          y^d = \Norm_{K'/K}(y) = \Norm_{L'/K}(z') \in \Norm_{L/K} C_L.
+            \Norm_{L/K} I_{L,S} = I_{K,S}.
           </me>
-          Thus <m>x \in \Norm_{L/K} C_L</m>, as needed.
+          Since <m>I_K = K^* I_{K,S}</m>, this implies <m>\Norm_{L/K} C_L = C_K</m>.
+          By the First Inequality (<xref ref="T_first_inequality"/>), this implies <m>L = K</m> and so <m>y \in (K^*)^p</m>.
         </p>
       </proof>
     </lemma>
-  </subsection>
-  <subsection>
-    <title>An algebraic approach to the Second Inequality</title>
     <p>
-      Suppose now that <m>L/K</m> is a cyclic extension of number fields of prime degree <m>p</m> and that <m>\zeta_p \in K</m>.
-      We describe an algebraic approach to proving the Second Inequality in this case, using a similar setup to 
-      the proof of the First Inequality (<xref ref="T_first_inequality1"/>): we apply <xref ref="lem-generate-ideles-with-S-units"/>
-      to write <m>I_K = I_{K,S} K^*</m> for a conveniently large finite set <m>S</m> of places of <m>K</m> containing the infinite places.
-      We then produce an explicit subgroup of <m>C_K</m> of index <m>[L:K]</m> consisting of norms from <m>C_L</m>,
-      using an auxiliary set of places <m>T</m> disjoint from <m>S</m>.
+      This will in turn enable us to compute the norm group for a certain compositum of Kummer extensions.
     </p>
-    <p>
-      Before getting into the details, let us formulate the steps of the argument in the form of a lemma.
-    </p>
-    <lemma xml:id="L_second_inequality_base_case">
+    <lemma xml:id="lem-Kummer-norm-subgroup">
       <statement>
         <p>
-          Let <m>K</m> be a number field containing <m>\zeta_p</m> for some prime <m>p</m>.
-          Let <m>L/K</m> be a cyclic extension of number fields of degree <m>p</m>.
-          Let <m>S</m> be a set of places of <m>K</m> of finite cardinality <m>s</m> containing all infinite places, all places that ramify in <m>L</m>,
-          and all places above <m>p</m>, for which <m>I_K = I_{K,S} K^*</m> (possible by <xref ref="lem-generate-ideles-with-S-units"/>).
-          Let <m>K_S = I_{K,S} \cap K^*</m> and <m>\Delta = (L^*)^p \cap K_S</m>.
-          <ol><li><p>
-                We have <m>L = K(\Delta^{1/p})</m>.
-              </p></li><li><p>
-                We can choose a set <m>T</m> of <m>s-1</m> places of <m>K</m>, disjoint from <m>S</m>, 
-                such that <m>\Delta</m> is the kernel of the map <m>K_S \to \prod_{v \in T} K_v^*/(K_v^*)^p</m>.
-              </p></li><li><p>
-                For any such set <m>T</m>, write
-                <me>
-                  J = \prod_{v \in S} (K_v^*)^p \times \prod_{v \in T} K_v^* \times \prod_{v \notin S \cup T} \gotho_{K_v}^*
-                </me>
-                and <m>C_{K,S,T} = J K^*/K^*</m>; then 
-                <me>
-                  [C_K:C_{K,S,T}] = [L:K] = p;
-                </me>
-              </p></li><li><p>
-                We have <m>C_{K,S,T} \subseteq \Norm_{L/K} C_L</m>.
-              </p></li></ol>
-          In particular, <m>[C_K: \Norm_{L/K} C_L] \leq p</m>, so the Second Inequality holds for <m>L/K</m>.
-        </p>
-      </statement>
-    </lemma>
-    <proof>
-      <p>
-        The assertions are proved respectively in:
-        <ol>
-          <li>
-            <p>
-              <xref ref="L_second_inequality_base_case_step1"/>;
-            </p>
-          </li>
-          <li>
-            <p>
-              <xref ref="L_second_inequality_base_case_step2"/>;
-            </p>
-          </li>
-          <li>
-            <p>
-              <xref ref="L_second_inequality_base_case_step3"/>;
-            </p>
-          </li>
-          <li>
-            <p>
-              and <xref ref="L_second_inequality_base_case_step4"/>.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </proof>
-  </subsection>
-  <subsection>
-    <title>Calculations for the Second Inequality</title>
-    <p>
-      We next carry out the calculations needed to prove <xref ref="L_second_inequality_base_case"/>.
-    </p>
-    <lemma xml:id="L_second_inequality_base_case_step1">
-      <statement>
-        <p>
-          With notation as in <xref ref="L_second_inequality_base_case"/>, we have <m>L = K(\Delta^{1/p})</m>.
-        </p>
-      </statement>
-      <proof>
-        <p>
-          Since <m>\zeta_p \in K</m>, by Kummer theory (<xref ref="T_Kummer"/>)
-          we can write <m>L = K(D^{1/p})</m> for <m>D = (L^*)^p \cap K^*</m>.
-          Thus <m>K(\Delta^{1/p}) \subseteq L</m>; since <m>[L:K]</m> being prime,
-          all that remains is to check that <m>K(\Delta^{1/p}) \neq K</m>.
-        </p>
-        <p>
-          Choose a single <m>x \in D</m> such that <m>L = K(x^{1/p})</m>.
-          For each <m>v \notin S</m>,
-          the extension <m>K_v(x^{1/p})/K_v</m> is unramified,
-          so we can write <m>x</m> as a unit times a <m>p</m>-th power,
-          say <m>x = u_v y_v^p</m>.
-          If we put <m>y_v = 1</m> for <m>v \in S</m>,
-          we can assemble the <m>y_v</m> into an id&#xe8;le <m>y</m>,
-          which using the equality <m>I_K = K^* I_{K,S}</m> we can rewrite as <m>zw</m> for
-          <m>z \in K^*</m> and <m>w \in I_{K,S}</m>.
-          Now for <m>v \notin S</m>, <m>(x/z^p)_v = u_v/w_v^p \in \gotho_{K_v}^*</m>.
-          Thus <m>x/z^p \in (L^*)^p \cap K_S \in \Delta</m> but <m>x \notin (K^*)^p</m>.
-          We conclude that <m>L = K(\Delta^{1/p})</m>, as desired.
-        </p>
-      </proof>
-    </lemma>
-    <lemma xml:id="L_second_inequality_base_case_step2">
-      <statement>
-        <p>
-          With notation as in <xref ref="L_second_inequality_base_case"/>,
-          we can choose a set <m>T</m> of <m>s-1</m> places of <m>K</m>, disjoint from <m>S</m>, 
-          such that <m>\Delta</m> is the kernel of the map <m>K_S \to \prod_{v \in T} K_v^*/(K_v^*)^p</m>.
-        </p>
-      </statement>
-      <proof>
-        <p>
-          Put <m>N = K(K_S^{1/p})</m>.
-          By Kummer theory (<xref ref="T_Kummer"/>),
+          With notation as in <xref ref="lem-adelic-exponent-p-subgroup"/>, put <m>s = \#S</m> and
           <me>
-            \Gal(N/K) \cong \Hom(K_S/K_S^p, \ZZ/p\ZZ)
-          </me>.
-        </p>
-        <p>
-          By <xref ref="cor-S-units-theorem"/>,
-          the torsion subgroup of <m>K_S</m> is finite cyclic and the quotient by it is a free abelian group of rank <m>s-1</m>;
-          it follows that <m>K_S/K_S^p \cong (\ZZ/p\ZZ)^s</m>.
-          Choose generators <m>g_1, \dots, g_{s-1}</m> of <m>\Gal(N/L)</m>;
-          these correspond in <m>\Hom(K_S/K_S^p, \ZZ/p\ZZ)</m> to a set of homomorphisms whose common kernel is precisely <m>\Delta/K_S^p</m>.
-          We thus need to find, for each <m>g_i</m>, a place <m>v_i</m> such that the kernel of <m>g_i</m> is the same as the kernel of <m>K_S \to K_{v_i}^*/(K_{v_i}^*)^p</m>;
-          we can then take <m>T = \{v_1,\dots,v_{s-1}\}</m>.
-        </p>
-        <p>
-          Let <m>N_i</m> be the fixed field of <m>g_i</m>;
-          by <xref ref="C_split_completely"/> (which we deduced from the First Inequality),
-          there are infinitely many primes of <m>N_i</m> that do not split in <m>N</m>.
-          So we can choose a place <m>w_i</m> of each <m>N_i</m> such that their restrictions <m>v_i</m> to <m>K</m> are distinct,
-          not contained in <m>S</m>, and don't divide <m>p</m>.
-        </p>
-        <p>
-          We claim <m>N_i</m> is the maximal subextension of <m>N/K</m> in which <m>v_i</m> splits completely (i.e., the
-          <term>decomposition field</term> of <m>v_i</m>).
-          On one hand, <m>v_i</m> does not split completely in <m>N</m>,
-          so the decomposition field is no larger than <m>N_i</m>.
-          On the other hand,
-          the decomposition field is the fixed field of the decomposition group,
-          which has exponent <m>p</m> and is cyclic
-          (since <m>v_i</m> does not ramify in <m>N</m>).
-          Thus it must have index <m>p</m> in <m>N</m>,
-          so must be <m>N_i</m> itself.
-        </p>
-        <p>
-          Thus <m>L = \cap N_i</m> is the maximal subextension of <m>N</m> in which all of the <m>v_i</m> split completely.
-          We conclude that for <m>x \in K_S</m>,
-          <m>x</m> belongs to <m>\Delta</m> iff <m>K_{v_i}(x^{1/p}) = K_{v_i}</m> for all <m>i</m>,
-          which occurs iff <m>x \in K_{v_i}^p</m>.
-          That is, <m>\Delta</m> is precisely the kernel of the map <m>K_S \to \prod_i K_{v_i}^*/(K_{v_i}^*)^p</m>.
-          In fact, under this map,
-          <m>K_S</m> actually maps to the units in <m>K_{v_i}^*</m> for each <m>i</m>.
-          This proves the claim.
-        </p>
-      </proof>
-    </lemma>
-    <p>
-      Before continuing, we insert the following lemmas.
-    </p>
-    <lemma xml:id="L_adelic_intersection">
-      <statement>
-        <p>
-          With notation as in <xref ref="L_second_inequality_base_case"/>, for any set <m>T</m> as in <xref ref="L_second_inequality_base_case_step2"/>,
-          <m>J \cap K^* = K_{S \cup T}^p</m>.
+            L = K(u^{1/p}: u \in \gotho_{K,S}^*).
+          </me>
+          Then <m>[L:K] = p^s</m> and
+          <me>
+            \Norm_{L/K} C_L = K^* W_S/K^* \subset C_K.
+          </me>
         </p>
       </statement>
-    </lemma>
-    <proof>
-      <p>
-        Clearly <m>K_{S \cup T}^p \subseteq J \cap K^*</m>;
-        we have to work to show the other inclusion.
-        Take <m>y \in J \cap K^*</m> and <m>M = K(y^{1/p})</m>.
-        We'll show that <m>\Norm_{M/K} C_M = C_K</m>;
-        by the First Inequality (<xref ref="T_first_inequality"/>),
-        this will imply <m>M = K</m>,
-        so <m>y \in (K^*)^p \cap J = K_{S \cup T}^p</m>.
-      </p>
-      <p>
-        Since <m>I_K = I_{K,S}K^*</m>,
-        it is enough to choose <m>\alpha \in I_{K,S}</m> and show that
-        <m>\alpha/x \in \Norm_{M/K} I_M</m> for some <m>x \in K^*</m>.
-        As noted above, the map
-        <me>
-          K_S \to \prod_{v \in T} \gotho_{K_v}^*/(\gotho_{K_v}^*)^p
-        </me>
-        is surjective and <m>[K_S:\Delta] = p^{s-1}</m>.
-        That's also the order of the product,
-        so the induced map <m>K_S/\Delta \to \prod_{v \in T} \gotho_{K_v}^*/(\gotho_{K_v}^*)^p </m> is an isomorphism.
-        Thus we can find <m>x \in K_S</m> so that the component of
-        <m>\alpha/x</m> at each <m>v \in T</m> is the <m>p</m>-th power of a unit of <m>K_v</m>.
-        In particular,
-        such a component is the norm of its <m>p</m>-th root,
-        so <m>\alpha/x</m> is a norm at each <m>v \in T</m>.
-        For <m>v \in S</m>, we don't have anything to check:
-        because <m>y</m> is a <m>p</m>-th power at <m>v</m>, <m>M_w = K_v</m>.
-        Finally, for <m>v \notin S \cup T</m>,
-        <m>M_w/K_v</m> is unramified, so any unit is a norm.
-        Thus <m>\alpha/x</m> is indeed a norm.
-        We conclude that <m>\Norm_{M/K} C_M = C_K</m>,
-        so <m>M=K</m> and <m>y \in K_{S\cup T}^p</m> as desired.
-      </p>
-    </proof>
-    <lemma xml:id="L_local-pth-powers-index">
+      <proof>
+        <p>
+          By <xref ref="cor-S-units-theorem"/> and the assumption that <m>K</m> contains a primitive <m>p</m>-th root of unity,
+          the group <m>\gotho_{K,S}^*/(\gotho_{K,S}^*)^p</m> is finite of order <m>p^s</m>, yielding <m>[L:K] = p^s</m>.
+          By local reciprocity (<xref ref="L_hilbert_symbol"/>), we have <m>K^* W_S/K^* \subseteq \Norm_{L/K} C_L</m>; to prove equality,
+          it will suffice to check that these groups have the same index in <m>C_K</m>.
+        </p>
+        <p>
+          Consider now the exact sequence
+          <me>
+            1 \to \frac{\gotho_{K,S}^*}{\gotho_{K,S}^* \cap W_S} \to \frac{I_{K,S}}{W_S} \to \frac{C_K}{K^* W_S/K^*} \to 1.
+          </me>
+          By <xref ref="lem-local-pth-power"/>, the group on the left has order <m>[\gotho_{K,S}^*:(\gotho_{K,S}^*)^p] = p^s</m>.
+          By <xref ref="L_local-pth-powers-index"/>, the group in the middle has order <m>p^{2s}</m>.
+          Thus using the abstract global reciprocity isomorphism (<xref ref="T_abstract_adelic_reciprocity"/>), we obtain
+          <me>
+            [C_K:K^* W_S/K^*] = p^s = [L:K] = [C_K:\Norm_{L/K} C_L],
+          </me>
+          as desired.
+        </p>
+      </proof>
+   </lemma>
+   <p>
+     Here is the local calculation used in the proof of <xref ref="lem-Kummer-norm-subgroup"/>.
+   </p>
+   <lemma xml:id="L_local-pth-powers-index">
       <statement>
         <p>
           For <m>K</m> a number field, <m>v</m> a place of <m>K</m>, and <m>p</m> a prime such that <m>\zeta_p \in K</m>, 
@@ -346,63 +162,8 @@
         </p>
       </proof>
     </lemma>
-    <lemma xml:id="L_second_inequality_base_case_step3">
-      <statement>
-        <p>
-          With notation as in <xref ref="L_second_inequality_base_case"/>, for any set <m>T</m> as in <xref ref="L_second_inequality_base_case_step2"/>,
-          <m>[C_K:C_{K,S,T}] = [L:K] = p</m>.
-         </p>
-      </statement>
-      <proof>
-        <p>
-          From <xref ref="L_adelic_intersection"/>, we obtain an exact sequence
-          <me>
-            1 \to (I_{K,S\cup T} \cap K^*)/(J \cap K^*) \to I_{K,S\cup T}/J \to I_{K,S \cup T}K^* / JK^* \to 1.
-          </me>
-          We can rewrite <m>I_{K,S \cup T}K^*</m> as simply <m>I_K</m>,
-          so the group on the right is <m>I_{K,S \cup T}K^* / JK^* = C_K/C_{K,S,T}</m>.
-          We can also rewrite <m>(I_{K,S\cup T} \cap K^*)/(J \cap K^*)</m> as <m>K_{S\cup T}^*/(K_{S \cup T}^*)^s</m>,
-          which has order <m>p^{2s-1}</m> because
-          <m>K_{S\cup T}</m> has torsion subgroup cyclic of order divisible by <m>p</m> and the quotient by same is free of rank <m>2s-2</m>.
-          The group <m>I_{K,S\cup T}/J</m> is the product of
-          <m>K_v^*/(K_v^*)^p</m> over all <m>v \in S</m>; since <m>\zeta_p \in K</m>,
-          by <xref ref="L_local-pth-powers-index"/> the order of this group is <m>p^2 / |p|_v</m>.
-          Since <m>S</m> contains all infinite places and all places above <m>p</m>, the factors of <m>|p|_v</m> cancel out and we get an order of
-          <m>p^{2s}</m>. Adding it all up, we get <m>[C_K:C_{K,S,T}] = p</m>.
-        </p>
-      </proof>
-    </lemma>
-    <lemma xml:id="L_second_inequality_base_case_step4">
-      <statement>
-        <p>
-          With notation as in <xref ref="L_second_inequality_base_case"/>, for any set <m>T</m> as in <xref ref="L_second_inequality_base_case_step2"/>,
-          <m>C_{K,S,T} \subseteq \Norm_{L/K} C_L</m>.
-        </p>
-      </statement>
-      <proof>
-        <p>
-          It suffices to check that <m>J \subseteq \Norm_{L/K} I_L</m>,
-          which we may check component by component.
-          It's automatic for the places <m>v \notin S \cup T</m>,
-          since those places are unramified, so every unit is a norm.
-          For places <m>v \in S</m>,
-          any element of <m>(K_v^*)^p</m> is a norm from
-          <m>K_v(K_v^{1/p})</m> by local reciprocity, so also from <m>L_w</m>.
-          Finally, for places <m>v \in T</m>,
-          from the construction of <m>T</m>,
-          we see that <m>\Delta \subseteq (K_v^*)^p</m>,
-          so <m>L_w = K_v</m>, and so <m>K_v^*</m> consists entirely of norms.
-        </p>
-      </proof>
-    </lemma>
-  </subsection>
-  <subsection>
-    <title>A base case for the existence theorem</title>
     <p>
-      As in the proof of the local existence theorem (<xref ref="T_local_existence2"/>),
-      the key to the proof of <xref ref="T_adelic_existence_theorem2"/> is showing that for any given number field <m>K</m>,
-      we can find finite extensions <m>L/K</m> for which the groups <m>\Norm_{L/K} C_L</m> can be made arbitrarily small.
-      In preparation for an inductive proof, we establish a key base case by adapting the previous arguments.
+      We finally put everything together to get a key special case of the existence theorem.
     </p>
     <lemma xml:id="lem-norm-group-prime-index">
       <statement>
@@ -414,41 +175,8 @@
       </statement>
       <proof>
        <p>
-        Let <m>J</m> be the preimage of <m>U</m> under the projection <m>I_K \to C_K</m>,
-        so that <m>J</m> is open in <m>I_K</m> of finite index.
-        Then <m>J</m> contains a subgroup of the form
-        <me>
-          V = \prod_{v \in S} \{1\} \times \prod_{v \notin S} \gotho_{K_v}^*
-        </me>
-        for some finite set <m>S</m> of places of <m>K</m> containing the infinite places and all places dividing <m>p</m>,
-        which by <xref ref="lem-generate-ideles-with-S-units"/> we may choose large enough so that <m>I_{K,S} K^* = I_K</m>.
-        Put <m>s = \#S</m> and let <m>K_S = K^* \cap I_{K,S}</m> be the group of <m>S</m>-units of <m>K</m>.
-      </p>
-      <p>
-        The group <m>J</m> must also contain <m>I_K^p</m>, so in particular contains
-        <me>
-          W_S = \prod_{v \in S} (K_v^*)^p \times \prod_{v \notin S} \gotho_{K_v}^*.
-        </me>
-        Put <m>C_S = W_S K^*/K^* \subseteq U</m>.
-        We now emulate the proof of <xref ref="L_second_inequality_base_case_step3"/> using the exact sequence
-         <me>
-          1 \to K_S / (W_S \cap K_S) \to I_{K,S}/{W_S} \to C_K /C_S \to 1.
-        </me>
-        On one hand, we have <m>W_S \cap K_S = K_S^p</m> as in the proof of <xref ref="L_adelic_intersection"/>,
-        which gives <m>[K_S:W_S \cap K_S] = p^{s}</m>.
-        On the other hand, <m>I_{K,S}/W_S</m> is the product of <m>s</m> quotients of the form <m>K_v^*/(K_v^*)^p</m>,
-        each of which has order <m>p^2/|p|_v</m> by <xref ref="L_local-pth-powers-index"/> (here we need <m>\zeta_p \in K</m>).
-        We deduce that <m>[C_K:C_S] = p</m>, so in fact <m>C_S = U</m>.
-      </p>
-      <p>
-        We now take <m>L = K(K_S^{1/p})</m>.
-        As in the proof of <xref ref="L_second_inequality_base_case_step4"/>, we now check that
-        <m>W_S \subseteq \Norm_{L/K} I_L</m> by checking this place by place;
-        the places not in <m>S</m> are straightforward
-        (they don't ramify in <m>L</m>, so local units are local norms),
-        and the ones in <m>S</m> follow from the fact that for any local field <m>M</m> containing a <m>p</m>-th root of unity, if <m>N = M((M^*)^{1/p})</m>, then
-        <m>\Norm_{N/M} N^* = (M^*)^p</m> (<xref ref="L_hilbert_symbol"/>).
-        We thus conclude that <m>\Norm_{L/K} C_L \subseteq C_S = U</m> as desired.
+        This now follows from <xref ref="lem-adelic-exponent-p-subgroup"/> and <xref ref="lem-Kummer-norm-subgroup"/>.
+        which by <xref ref="lem-generate-ideles-with-S-units"/> we may choose large enough so that <m>K^* I_{K,S} = I_K</m>.
       </p>
      </proof>
     </lemma>
@@ -514,7 +242,8 @@
         <p>
           By the abstract reciprocity law (<xref ref="T_abstract_adelic_reciprocity"/>),
           for any finite abelian extension <m>L/K</m>, <m>\Norm_{L/K} C_L</m> is an open subgroup of <m>C_K</m> of finite index.
-          Moreover, by the adelic norm limitation theorem (<xref ref="T_adelic_norm_limitation1"/>), the correspondence <m>K \mapsto \Norm_{L/K} C_L</m> is injective.
+          Moreover, by the adelic norm limitation theorem (<xref ref="T_adelic_norm_limitation1"/> and <xref ref="cor-uniqueness-in-existence-theorem"/>), 
+          the correspondence <m>K \mapsto \Norm_{L/K} C_L</m> is injective.
         </p>
         <p>
           Conversely, let <m>U</m> be an open subgroup of <m>C_K</m> of finite index.
@@ -533,6 +262,224 @@
         We remind the reader that there is no easy fix known for this (<xref ref="rmk-no-explicit-CFT"/>).
       </p>
     </remark>
+  </subsection>
+  <subsection>
+    <title>An algebraic approach to the Second Inequality</title>
+    <p>
+      Drawing inspiration from the calculation of norm groups given in <xref ref="lem-Kummer-norm-subgroup"/>,
+      we now explain how to use similar ideas to give an algebraic proof of the Second Inequality.
+      Again, the key case is where <m>L/K</m> is a cyclic extension of number fields of prime degree <m>p</m> and <m>\zeta_p \in K</m>.
+      To modify the calculation from <xref ref="lem-Kummer-norm-subgroup"/> to compute the norm group of a single Kummer extension, we use a second set of places.
+    </p>
+    <lemma xml:id="lem-second-inequality-algebraic-setup">
+      <statement>
+        <p>
+          Let <m>K</m> be a number field containing <m>\zeta_p</m> for some prime <m>p</m>.
+          Let <m>L/K</m> be a cyclic extension of number fields of degree <m>p</m>.
+          We can then choose the following.
+          <ol>
+            <li>
+              <p>
+                A finite set <m>S</m> of <m>s</m> places of <m>K</m> containing all infinite places, all places that ramify in <m>L</m>,
+                and all places above <m>p</m>, for which <m>I_K = I_{K,S} K^*</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                A second set <m>T</m> of <m>s-1</m> places of <m>K</m> disjoint from <m>S</m>, such that <m>\gotho_{K,S}^* \to \prod_{v \in T} K_v^*/(K_v^*)^p</m>
+                is surjective with kernel <m>\Delta</m> and <m>L = K(\Delta^{1/p})</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          By Kummer theory (<xref ref="T_Kummer"/>), we can choose a finite set <m>S</m> of places of <m>K</m> containing all infinite places, all places that ramify in <m>L</m>,
+          and all places above <m>p</m> so that <m>L = K(\Delta^{1/p})</m> for <m>\Delta = \gotho_{K,S}^* \cap (L^*)^p</m>.
+          This remains true after enlarging <m>S</m>, so by <xref ref="lem-generate-ideles-with-S-units"/> we can further ensure that <m>I_K = I_{K,S} K^*</m>.
+        </p>
+        <p>
+          Put <m>N = K((\gotho_{K,S}^*)^{1/p})</m>.
+          By Kummer theory again
+          <me>
+            \Gal(N/K) \cong \Hom(\gotho_{K,S}^*/(\gotho_{K,S}^*)^p, \ZZ/p\ZZ).
+          </me>
+          By <xref ref="cor-S-units-theorem"/>, <m>\gotho_{K,S}^*/(\gotho_{K,S}^*)^p \cong (\ZZ/p\ZZ)^s</m>.
+          Choose generators <m>g_1, \dots, g_{s-1}</m> of <m>\Gal(N/L)</m>;
+          these correspond in <m>\Hom(\gotho_{K,S}^*/(\gotho_{K,S}^*)^p, \ZZ/p\ZZ)</m> to a set of homomorphisms whose common kernel is precisely <m>\Delta/(\gotho_{K,S}^*)^p</m>.
+          We thus need to find, for each <m>g_i</m>, a place <m>v_i</m> such that the kernel of <m>g_i</m> is the same as the kernel of <m>\gotho_{K,S}^* \to K_{v_i}^*/(K_{v_i}^*)^p</m>;
+          we can then take <m>T = \{v_1,\dots,v_{s-1}\}</m>.
+        </p>
+        <p>
+          Let <m>N_i</m> be the fixed field of <m>g_i</m>;
+          by <xref ref="C_split_completely"/> (which we deduced from the First Inequality),
+          there are infinitely many primes of <m>N_i</m> that do not split in <m>N</m>.
+          So we can choose a place <m>w_i</m> of each <m>N_i</m> such that their restrictions <m>v_i</m> to <m>K</m> are distinct,
+          not contained in <m>S</m>, and don't divide <m>p</m>.
+        </p>
+        <p>
+          We claim <m>N_i</m> is the maximal subextension of <m>N/K</m> in which <m>v_i</m> splits completely (i.e., the
+          <term>decomposition field</term> of <m>v_i</m>).
+          On one hand, <m>v_i</m> does not split completely in <m>N</m>,
+          so the decomposition field is no larger than <m>N_i</m>.
+          On the other hand,
+          the decomposition field is the fixed field of the decomposition group,
+          which has exponent <m>p</m> and is cyclic
+          (since <m>v_i</m> does not ramify in <m>N</m>).
+          Thus it must have index <m>p</m> in <m>N</m>,
+          so must be <m>N_i</m> itself.
+        </p>
+        <p>
+          Thus <m>L = \bigcap N_i</m> is the maximal subextension of <m>N</m> in which all of the <m>v_i</m> split completely.
+          We conclude that for <m>x \in \gotho_{K,S}^*</m>,
+          <m>x</m> belongs to <m>\Delta</m> iff <m>K_{v_i}(x^{1/p}) = K_{v_i}</m> for all <m>i</m>,
+          which occurs iff <m>x \in K_{v_i}^p</m>.
+          That is, <m>\Delta</m> is precisely the kernel of the map <m>\gotho_{K,S}^* \to \prod_i K_{v_i}^*/(K_{v_i}^*)^p</m>.
+          This proves the claim.
+        </p>
+      </proof>
+    </lemma>
+    <p>
+      We have the following modified version of <xref ref="lem-local-pth-power"/>.
+    </p>
+    <lemma xml:id="lem-local-pth-power-T">
+      <statement>
+        <p>
+          With notation as in <xref ref="lem-second-inequality-algebraic-setup"/>, 
+          <me>
+            W_{S,T} \cap K^* = (\gotho_{K,S \cup T}^*)^p.
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          It is again clear that <me>(\gotho_{K,S \cup T}^*)^p \subseteq W_{S,T} \cap K^*</me>. To prove the reverse inclusion, it will again suffice
+          to prove that <m>y \in W_{S, T} \cap K^*</m>, if we set <m>L = K(y^{1/p})</m>, then <m>\Norm_{L/K} C_L = C_K</m>;
+          namely, <xref ref="T_first_inequality"/> will then imply <m>L = K</m> and so <m>y \in (K^*)^p</m>.
+        </p>
+        <p>
+          Since <m>\gotho_{K,S}^* \to \prod_{v \in T} \gotho_{K_v}^*/(\gotho_{K_v}^*)^p</m>
+          is surjective, any element of <m>I_{K,S \cup bigT}</m> can be written as the product of an element of <m>\gotho_{K,S}^*</m> with an element of <m>I_{K,S \cup T}</m> 
+          which is a <m>p</m>-th power at each place of <m>T</m>. In particular, by <xref ref="L_hilbert_symbol"/> such an element is a norm from <m>L</m> at each place of <m>T</m>;
+          we can now reprise the proof of <xref ref="lem-local-pth-power"/>, skipping over the places in <m>T</m>, to deduce that we have a norm from <m>L</m>.
+        </p>
+      </proof>
+    </lemma>
+    <lemma xml:id="L_second_inequality_base_case">
+      <statement>
+        <p>
+          With notation as in <xref ref="lem-second-inequality-algebraic-setup"/>, write
+          <me>
+            W_{S,T} = \prod_{v \in S} (K_v^*)^p \times \prod_{v \in T} K_v^* \times \prod_{v \notin S \cup T} \gotho_{K_v}^*.
+          </me>
+          Then <m>K^* W_{S,T}/K^*</m> is contained in <m>\Norm_{L/K} C_L</m> and has index <m>p</m> in <m>C_K</m>;
+          consequently, the Second Inequality holds for <m>L/K</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          By <xref ref="lem-local-pth-power-T"/>, we have an exact sequence
+          <me>
+            1 \to \frac{\gotho_{K,S\cup T}^*}{(\gotho_{K,S \cup T}^*)^p} \to \frac{I_{K,S \cup T}}{W_{S,T}} \to \frac{C_K}{K^* W_{S,T}/K^*} \to 1,
+          </me>
+          with which we may compute as in <xref ref="lem-Kummer-norm-subgroup"/>: the left group has order <m>p^{\#(S \cup T)} = p^{2s-1}</m> by <xref ref="cor-S-units-theorem"/> 
+          while the middle group has order <m>p^{2s}</m> by <xref ref="L_local-pth-powers-index"/>, so
+          <me>
+            [C_K: K^* W_{S,T}/K^*] = p.
+          </me>
+          Meanwhile, we can check by local reciprocity that <m>\Norm_{L/K} I_{L,S} = I_{K,S}</m> (compare the proof of <xref ref="lem-local-pth-power-T"/>).
+          <ul>
+            <li>
+              <p>
+                For <m>v \in S</m>, elements of <m>(K_v^*)^p</m> are norms from any abelian extension of <m>K_v</m> of exponent <m>p</m> (by <xref ref="L_hilbert_symbol"/>).
+              </p>
+            </li>
+            <li>
+              <p>
+                For <m>v \in T</m>, <m>v</m> splits in <m>L</m> and so <m>L_w = K_v</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For <m>v \notin S \cup T</m>, <m>v</m> is unramified in <m>L</m> and so <m>\Norm_{L_w/K_v} \gotho_{L_w}^* = \gotho_{K_v}^*</m>.
+              </p>
+            </li>
+          </ul>
+          Dence <m>K^* W_{S,T} \subseteq \Norm_{L/K} C_L</m>, completing the proof.
+        </p>
+      </proof>
+    </lemma>
+    <lemma xml:id="lem-second-inequality-reduction-to-zetap">
+      <statement>
+        <p>
+          Let <m>L/K</m> be a cyclic extension of number fields of prime degree <m>p</m> and let <m>K' = K(\zeta_p), L' = L(\zeta_p)</m>. Then the map
+          <me>
+            H^0_T(\Gal(L/K), C_L) \to H^0_T(\Gal(L'/K'), C_{L'})
+          </me>
+          induced by the inclusion <m>C_L \to C_{L'}</m> is injective.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          For <m>x \in C_K</m>, <m>\Norm_{L/K} (x) = x^p</m>; this implies that both groups in question are killed by <m>p</m>.
+          In particular, multiplication by <m>d = [K':K]</m>,
+          which divides <m>p-1</m>, is an isomorphism on these groups.
+        </p>
+        <p>
+          Suppose <m>x \in C_K</m> maps to the identity in <m>H^0_T(\Gal(L'/K'), C_{L'})</m>.
+          We can then choose a representative of class of <m>x</m> in
+          <m>H^0_T(\Gal(L/K), C_L)</m> of the form <m>y^d</m>;
+          then <m>y</m> also maps to the identity in <m>H^0_T(\Gal(L'/K'), C_{L'})</m>.
+          That is, <m>y = \Norm_{L'/K'}(z')</m> for some <m>z' \in C_{L'}</m>, and
+          <me>
+          y^d = \Norm_{K'/K}(y) = \Norm_{L'/K}(z') \in \Norm_{L/K} C_L.
+          </me>
+          Thus <m>x \in \Norm_{L/K} C_L</m>, as needed.
+        </p>
+      </proof>
+    </lemma>
+    <theorem xml:id="T_first_and_second_inequality_algebraic">
+      <title>Second Inequality (algebraic proof)</title>
+      <statement>
+        <p>
+          Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>.
+          Then:
+          <ol>
+            <li>
+              <p>
+                the group <m>H^1(G, C_L)</m> is trivial;
+              </p>
+            </li>
+            <li>
+              <p>
+                the group <m>H^2(G, C_L)</m> is finite of order at most <m>[L:K]</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          As in the proof of <xref ref="T_first_and_second_inequality"/>, we use an induction argument to reduce to proving that for <m>L/K</m> cyclic,
+          <me>
+            H^0_T(\Gal(L/K), C_L) \leq [L:K].
+          </me>
+          In fact, the same induction (considering <m>H^2</m> in place of <m>H^0_T</m>) allows us to further reduce to the case where <m>[L:K] = p</m> is prime.
+        </p>
+        <p>
+          Let <m>K' = K(\zeta_p)</m> and <m>L' = L(\zeta_p)</m>;
+          then <m>K'</m> and <m>L</m> are linearly disjoint over <m>K</m>
+          (since their degrees are coprime),
+          so <m>[L':K'] = [L:K] = p</m> and the Galois groups of <m>L/K</m> and <m>L'/K'</m> are canonically isomorphic.
+          By <xref ref="L_second_inequality_base_case"/> and <xref ref="lem-second-inequality-reduction-to-zetap"/>,
+          <me>
+            \#H^0_T(\Gal(L/K), C_L) \leq \#H^0_T(\Gal(L'/K'), C_{L'}) \leq [L':K'] = p
+          </me>
+          as desired.
+        </p>
+      </proof>
+    </theorem>
   </subsection>
   <exercises>
     <exercise>

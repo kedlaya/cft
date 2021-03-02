@@ -112,7 +112,8 @@
     <p>
       We will need a special case of the Chebotarëv density theorem,
       which fortunately we can prove without already having all of class field theory.
-      We use the notion of <term>Dirichlet density</term> for sets of prime ideals in a number field; see <xref ref="def-dirichlet-density"/>.
+      We use the notion of <term>Dirichlet density</term> for sets of prime ideals in a number field; see <xref ref="def-dirichlet-density"/>
+      and the remainder of the discussion in <xref ref="sec_zeta"/>.
     </p>
     <proposition xml:id="prop-splitting-primes-density">
       <statement>
@@ -159,23 +160,22 @@
       <statement>
         <p>
           With notation as in <xref ref="def-second-inequality-analytic"/>,
-          for any subgroup <m>H</m> of <m>J^{\gothm}_{K}</m> containing <m>P_{\gothm}</m>,
+          for any subgroup <m>H</m> of <m>J^{\gothm}_{K}</m> of finite index containing <m>P^{\gothm}_K</m>,
           the set of primes in <m>H</m> has Dirichlet density equal to either <m>0</m> or <m>1/[J^{\gothm}_{K}:H]</m>.
         </p>
       </statement>
       <proof>
         <p>
           For <m>\chi: J^{\gothm}_K/P^{\gothm}_K \to \CC^*</m> a character,
-          we defined the <term><m>L</m>-function</term>
+          we defined in <xref ref="def-L-function"/> the <term><m>L</m>-function</term>
           <me>
             L(s, \chi) = \prod_{\gothp \not| \gothm} \frac{1}{1 - \chi(\gothp) \Norm(\gothp)^{-s}}
           </me>.
-          We'll use some basic properties of this function which can be found in any standard algebraic number theory text (e.g., <xref ref="bib-Lang"/>, VIII).
-          For starters,
+          By <xref ref="T_meromorphic_continuation"/>,
           <me>
             \log L(s, 1) \sim \log \zeta_K(s) \sim \log \frac{1}{s-1} \qquad s \searrow 1,
           </me>
-          while if <m>\chi</m> is not the trivial character,
+          while if <m>\chi</m> is not the trivial character, by <xref ref="T_analytic_continuation"/>,
           <m>L(s, \chi)</m> is holomorphic at <m>s=1</m>.
           If <m>L(s, \chi) = (s-1)^{m(\chi)} g(s)</m> where <m>g</m> is holomorphic and nonvanishing at <m>s=1</m>,
           then <m>m(\chi) \geq 0</m>, and
@@ -190,11 +190,21 @@
           <me>
             \frac{1 - \sum_{\chi \neq 1} m(\chi)}{[J^{\gothm}_K:H]};
           </me>
-          this is <m>1/[J^{\gothm}_{K}:H]</m> if the <m>m(\chi)</m> are all zero and 0 otherwise. (We also see incidentally that at most one of the <m>m(\chi)</m> can be 
-          nonzero, in which case it equals <m>1</m>.)
+          this is <m>1/[J^{\gothm}_{K}:H]</m> if the <m>m(\chi)</m> are all zero and 0 otherwise.
         </p>
       </proof>
     </lemma>
+    <remark>
+      <p>
+        Using <xref ref="T_nonvanishing_of_L"/> one can see that in the proof of <xref ref="lem-subgroup-density"/>, we must have <m>m(\chi) = 0</m> for all <m>\chi \neq 1</m>;
+        consequently, the set of primes in <m>H</m> cannot in fact have density 0. However, we will not need this refinement for the proof of the Second Inequality.
+      </p>
+      <p>
+        From the proof of <xref ref="lem-subgroup-density"/>, we see incidentally that at most one of the <m>m(\chi)</m> can be nonzero, in which case it equals <m>1</m>.
+        This already implies that <m>m(\chi) = 0</m> when <m>\chi</m> is of order greater than 2, as in this case <m>\chi</m> is distinct from its complex conjugate <m>\overline{\chi}</m>
+        but <m>m(\chi) = m(\overline{\chi})</m>.
+      </p>
+    </remark>
   </subsection>
   <subsection>
     <title>The Second Inequality</title>
@@ -281,12 +291,12 @@
         </p>
         <p>
           For <m>L/K</m> general, put <m>G = \Gal(L/K)</m>, let <m>p</m> be a prime, and let <m>G_p</m> be a Sylow <m>p</m>-subgroup of <m>G</m>.
-          Then for any <m>G</m>-module <m>M</m> and any <m>i&gt;0</m>, <m>H^i(G,M)</m> is killed by the order of <m>G</m> and
+          Then for any <m>i&gt;0</m>, <m>H^i(G,C_L)</m> is killed by the order of <m>G</m> and
           <me>
-            \Res: H^i(G, M) \to H^i(G_p, M)
+            \Res: H^i(G, C_L) \to H^i(G_p, C_L)
           </me>
           is injective on <m>p</m>-primary components (both by the relationship between restriction and corestriction, from <xref ref="exa-extended-functoriality"/>).
-          We may thus deduce both assertions from the solvable case.
+          Since <m>G_p</m> is solvable, we may deduce both assertions from the solvable case.
         </p>
       </proof>
     </theorem>
@@ -319,7 +329,7 @@
         The conclusion of <xref ref="T_Hasse_norm"/> fails completely if <m>L/K</m> is abelian but not cyclic. See <xref ref="exer-Hasse_norm_theorem"/>.
       </p>
     </remark>
-    <remark>
+    <remark xml:id="rmk-Grunwald-Wang">
       <p>
         Another related fact is the <term>Grunwald-Wang theorem</term>. It was originally announced (and published) in an incorrect form by Grunwald <xref ref="bib-Grunwald"/>, 
         who asserted that

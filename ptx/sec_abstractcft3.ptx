@@ -264,7 +264,7 @@
     <p>
       By similar logic, we also obtain a uniqueness result.
     </p>
-    <corollary>
+    <corollary xml:id="cor-uniqueness-in-existence-theorem">
       <statement>
         <p>
           Under <xref ref="hypo-abstract-cft"/>, 
