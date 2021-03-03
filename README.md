@@ -18,5 +18,5 @@ pdflatex cft-ptx
 ```
 - To convert XML to HTML:
 ```
-xsltproc -xinclude -o html/ ~/code/mathbook/xsl/pretext-html.xsl ptx/index.ptx
+xsltproc -xinclude -o html/unused.html.ignore ~/code/mathbook/xsl/pretext-html.xsl ptx/index.ptx
 ```
