@@ -1,5 +1,5 @@
 ﻿<section xml:id="sec_connection">
-  <title>The connection with local reciprocity</title>
+  <title>Local-global compatibility</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
@@ -19,7 +19,7 @@
     </p>
   </introduction>
   <subsection>
-    <title>Comparison of reciprocity maps</title>
+    <title>Compatibility for cyclotomic extensions</title>
     <definition xml:id="abstract-local-reciprocity-map">
       <p>
         Let <m>L/K</m> be a Galois extension of number fields. Let
@@ -34,6 +34,9 @@
         be the map obtained by inverting the isomorphism <m>\Gal(L/K)^{\ab} \to C_K/\Norm_{L/K} C_L</m> given by <xref ref="T_abstract_adelic_reciprocity"/>.
       </p>
     </definition>
+    <p>
+      As a base case for our work, we need to know that <m>r_{L/K} = r'_{L/K}</m> when <m>L</m> is contained in a small cyclotomic extension.
+    </p>
     <lemma xml:id="lem-compare-reciprocity-small-cyclotomic">
       <statement>
         <p>
@@ -53,6 +56,78 @@
         </p>
       </proof>
     </lemma>
+    <p>
+      For the purposes of illustration, we sketch an alternate approach to that calculation in terms of Lubin-Tate formal groups. 
+      This approach has the benefit that it does not depend on global reciprocity, and so can be adapted more easily to extensions which are not cyclotomic.
+    </p>
+    <lemma xml:id="L_cyclotomic_explicit_reciprocity">
+      <statement>
+        <p>
+          Via the identifications <m>\Gal(\QQ(\zeta_{p^m})/\QQ)</m> with <m>(\ZZ/p^m\ZZ)^*</m>, we have
+          <me>
+            r_{\QQ_{\ell}(\zeta_{p^m})/\QQ_{\ell}}(a) = \begin{cases}\sign(a) \amp  \ell = \infty \\ \ell^{v_{\ell}}(a) \amp  \ell \neq \infty, p \\ u^{-1} \amp  \ell = p. \end{cases}
+          </me>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          This is straightforward for <m>\ell = \infty</m>.
+          For <m>\ell \neq \infty,
+          p</m>, we have an unramified extension of local fields,
+          where we know the local reciprocity map takes a uniformizer to a Frobenius.
+          In this case the latter is simply <m>\ell</m>.
+        </p>
+        <p>
+          The hard work is in the case <m>\ell=p</m>.
+          For that computation one uses what amounts to a very special case of the Lubin-Tate construction of explicit class field theory for local fields,
+          using formal groups.
+          Put <m>K = \QQ_p</m>,
+          <m>\zeta = \zeta_{p^m}</m> and <m>L = \QQ_p(\zeta)</m>.
+        </p>
+        <p>
+          Suppose without loss of generality that <m>u</m> is a positive integer,
+          and let <m>\sigma \in \Gal(L/K)</m> be the automorphism corresponding to <m>u^{-1}</m>.
+          Since <m>L/K</m> is totally ramified at <m>p</m>,
+          we have <m>\Gal(L/K) \cong \Gal(L^{\unr}/K^{\unr})</m>,
+          and we can view <m>\sigma</m> as an element of <m>\Gal(L^{\unr}/K)</m>.
+          Let <m>\phi_L \in \Gal(L^{\unr}/L)</m> denote the Frobenius,
+          and put <m>\tau = \sigma \phi_L</m>.
+          Then <m>\tau</m> restricts to the Frobenius in
+          <m>\Gal(K^{\unr}/K)</m> and to <m>\sigma</m> in <m>\Gal(L/K)</m>.
+          As per <xref ref="def-abstract-recip-candidate"/>,
+          we may compute <m>r^{-1}_{L/K}(\sigma)</m> as <m>\Norm_{M/K} \pi_M</m>,
+          where <m>M</m> is the fixed field of <m>\tau</m> and <m>\pi_M</m> is a uniformizer.
+          We want that norm to be <m>u</m> times a norm from <m>L</m> to <m>K</m>, i.e.,
+          <me>
+            r^{-1}_{L/K}(\sigma) \in u \Norm_{L/K} L^*
+          </me>.
+        </p>
+        <p>
+          Define the polynomial
+          <me>
+            e(x) = x^p + upx
+          </me>
+          and put
+          <me>
+            P(x) = e^{(n-1)}(x)^{p-1} + pu
+          </me>,
+          where <m>e^{(k+1)}(x) = e(e^{(k)}(u))</m>.
+          Then <m>P(x)</m> satisfies Eisenstein's criterion,
+          so its splitting field over <m>\QQ_p</m> is totally ramified,
+          any root of <m>P</m> is a uniformizer,
+          and the norm of said uniformizer is <m>(-1)^{[L:K]} pu \in \Norm_{L/K} L^*</m>,
+          since <m>\Norm_{L/K}(\zeta-1) = (-1)^{[L:K]}(p)</m>.
+        </p>
+        <p>
+          The punch line is that the splitting field of <m>P(x)</m> is precisely <m>M</m>!
+          Here is where the Lubin-Tate construction comes to the rescue... and where I will stop this sketch.
+          See <xref ref="bib-Neukirch"/> V.2, V.4 and/or <xref ref="bib-Milne-CFT"/> I.3.
+        </p>
+      </proof>
+    </lemma>
+  </subsection>
+  <subsection>
+    <title>Compatibility for general extensions</title>
     <lemma xml:id="lem-compare-reciprocity-ramified">
       <statement>
         <p>
@@ -124,9 +199,10 @@
   <subsection>
     <title>Globalization of local abelian extensions</title>
     <p>
-      As a complement to <xref ref="prop-reciprocity-trivial-on-diagonal2"/>, we show that every local abelian extension is the completion of a global abelian extension;
-      over <m>\QQ</m>, note that this holds because the local Kronecker-Weber theorem (<xref ref="T_local_Kronecker-Weber2"/>)
-      and the Kronecker-Weber theorem (<xref ref="T_Kronecker-Weber"/>) are expressed in terms of the same family of extension of <m>\QQ</m>, namely the cyclotomic extensions.
+      As a complement to <xref ref="prop-reciprocity-trivial-on-diagonal2"/>, we show that every local abelian extension is the completion of a global abelian extension.
+      Over <m>\QQ</m>, this holds because the local Kronecker-Weber theorem (<xref ref="T_local_Kronecker-Weber2"/>)
+      and the Kronecker-Weber theorem (<xref ref="T_Kronecker-Weber"/>) are expressed in terms of the same family of extension of <m>\QQ</m>, namely the cyclotomic extensions;
+      however, in the general case we must take a less explicit approach.
     </p>
     <theorem xml:id="L_auxiliary_existence">
       <statement>

@@ -62,9 +62,10 @@
         (<xref ref="T_local_Kronecker-Weber1"/>),
         the statement of <xref ref="T_local_reciprocity"/> can be explicitly verified for <m>K=\QQ_p</m>.
         To wit, we have <m>K^{\ab} = K_1 K_2</m> where <m>K_1 = \bigcup_n \QQ_p(\zeta_{p^n})</m>
-        and <m>K_2 = \bigcup_n \QQ_p(\zeta_{p^n-1})</m>, and <m>\Gal(K^{\ab}/K) \cong \Gal(K_1/K) \times \Gal(K_2/K)</m>.
+        and <m>K_2 = \bigcup_n \QQ_p(\zeta_{p^n-1})</m>, and 
+        <m>\Gal(K^{\ab}/K) \cong \Gal(K_1/K) \times \Gal(K_2/K)</m>.
         Since <m>p</m> is totally ramified in <m>K_1</m>, we have 
-        <me>\Gal(K_1/K) \cong \Gal(\left(\bigcup_n \QQ(\zeta_{p^n})\right)/\QQ) \cong \ZZ_p^*.
+        <me>\Gal(K_1/K) \cong \Gal(\QQ(\zeta_{p^\infty})/\QQ) \cong \ZZ_p^*.
         </me>
         Since <m>p</m> is unramified in <m>K_2</m>, we have
         <me>
@@ -72,12 +73,14 @@
         </me>
         However, it will be more convenient to think of the image as sitting inside
         <me>
-        \Gal(\QQ^{\ab}/\QQ) \cong \widehat{\ZZ}^* \cong \ZZ_p^* \times \prod_{q \neq p} \ZZ_q^*
+        \Gal(\bigcup_n \QQ(\zeta_{p^n-1})/\QQ) \cong \widehat{\ZZ}^*/\ZZ_p^* \cong \prod_{q \neq p} \ZZ_q^*
         </me>
         (here using global Kronecker-Weber and Artin reciprocity).
-        The factor <m>\Gal(K_2/K) \cong \widehat{\ZZ}</m> maps to <m>\prod_{q \neq p} \ZZ_q^*</m> via
-        <m>e \mapsto p^e</m>, noting that this makes sense in the target.
-        For the rest, see <xref ref="exer-Qp-reciprocity-map"/>.
+        That is, we are looking for a map
+        <me>
+          \phi_K: \ZZ_p^* \times p^{\ZZ} \cong \QQ_p^* \to \Gal(K_1/K) \times \Gal(K_2/K) \subset \ZZ_p^* \times \prod_{q \neq p} \ZZ_q^*;
+        </me>
+        the map we want is the identity on the first factor and the map <m>p \mapsto p</m> on the second factor. See <xref ref="exer-Qp-reciprocity-map"/>.
       </p>
     </example>
     <p>
@@ -144,7 +147,7 @@
         the inclusion <m>M \subseteq N</m> is actually an equality.
       </p>
     </remark>
-    <remark>
+    <remark xml:id="rem-Lubin-Tate-splitting">
       <p>
         For each uniformizer <m>\pi</m> of <m>K</m>,
         let <m>K_\pi</m> be the composite of all finite abelian extensions <m>L</m> such that <m>\pi \in \Norm_{L/K} L^*</m>.
@@ -244,16 +247,12 @@
         </p>
       </proof>
     </theorem>
-    <definition>
+    <definition xml:id="def-Brauer-group">
       <p>
         For any field <m>K</m>,
         the group <m>H^2(\Gal(\overline{K}/K), \overline{K}^*)</m> is called the
         <term>Brauer group</term> of <m>K</m>.
-        It is an important invariant of <m>K</m>;
-        it can be realized also in terms of certain noncommutative algebras over <m>K</m>
-        (central simple algebras).
-        I won't pursue this connection further,
-        nor study many of the interesting properties and applications of Brauer groups.
+        See <xref ref="sec_brauer"/> for further discussion.
       </p>
     </definition>
   </subsection>
@@ -285,12 +284,22 @@
           Building on <xref ref="exa-local-recip-Qp"/>,
           verify <xref ref="T_local_reciprocity"/> in the case <m>K = \QQ_p</m>.
         </statement>
+        <hint>
+          <p>
+            The first assertion of <xref ref="T_local_reciprocity"/> follows from global Artin reciprocity (<xref ref="D_cyclotomic_reciprocity"/>).
+            To check the second assertion for <m>L = \QQ(\zeta_n)</m>, use the fact that <m>\Norm_{\QQ_p(\zeta_{p^m})/\QQ_p} (1 - \zeta_{p^m}) = p</m> for any positive integer <m>m</m>.
+            Alternatively, see <xref ref="L_cyclotomic_explicit_reciprocity"/>.
+          </p>
+        </hint>
       </exercise>
       <exercise>
         <statement>
-          For <m>K = \QQ_p</m>, take <m>\pi = p</m>.
+          For <m>K = \QQ_p</m>, take <m>\pi = p</m> in <xref ref="rem-Lubin-Tate-splitting"/>.
           Determine <m>K_\pi</m>, again using local Kronecker-Weber.
         </statement>
+        <hint>
+          You should get <m>K_\pi = \QQ(\zeta_{p^\infty}).</m>
+        </hint>
       </exercise>
       <exercise xml:id="exer-norm-subgroup-is-open">
         <statement>

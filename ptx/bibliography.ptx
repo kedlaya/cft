@@ -45,6 +45,10 @@
     A. Grothendieck, <articletitle>Sur quelques points d'alg&#xe8;bre homologique</articletitle>, <journal>T&#xf4;hoku Mathematical Journal</journal> <volume>9</volume>
     (1957), 119<ndash/>221.
   </biblio>
+  <biblio type="raw" xml:id="bib-Grothendieck-Brauer">
+    A. Grothendieck, <articletitle>Le groupe de Brauer I, II, III</articletitle>, in <pubtitle> Dix Exposés sur la Cohomologie des Schémas</pubtitle>,
+    North-Holland, Amsterdam, 1968.
+  </biblio>
   <biblio type="raw" xml:id="bib-Grunwald">
     W. Grunwald, <articletitle>Ein allgemeiner Existenzsatz f&#xfc;r algebraische Zahlk&#xf6;rper</articletitle>, <journal>Journal f&#xfc;r die reine und angewandte Mathematik</journal>
     <volume>169</volume> (1933), 103<ndash/>107.

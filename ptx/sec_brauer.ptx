@@ -4,182 +4,130 @@
     <paragraphs>
       <title>Reference</title>
       <p>
-        <xref ref="bib-Milne-CFT"/> VII.5.
+        <xref ref="bib-Milne-CFT"/> IV (for the general theory of Brauer groups); VII.7 and VII.8 (for the application to reciprocity).
       </p>
     </paragraphs>
     <p>
-      We sketch another, cohomological approach to the reciprocity isomorphism
-      using <m>H^2</m> and an explicit computation in local class field theory.
-      One of the sketchy points is that this computation requires a little of the Lubin-Tate construction,
-      which makes the local existence theorem rather explicit but will not be discussed herein.
+      We discuss Brauer groups of fields, especially number fields. On one hand these can be used to give an alternate construction of the global reciprocity map,
+      not based on abstract class field theory; on the other hand, they carry important information from class field theory which is useful in numerous
+      applications.
     </p>
   </introduction>
   <subsection>
-    <title>An explicit computation in local CFT</title>
+    <title>The Brauer group of a field</title>
+    <definition>
+      <p>
+        Recall from <xref ref="def-Brauer-group"/> that we have defined the <term>Brauer group</term> of a field <m>K</m> as the group 
+        <me>
+          \Br(K) = H^2(\Gal(\overline{K}/K), \overline{K}^*) = \varinjlim_{L/K} H^2(\Gal(L/K), L^*)
+        </me>
+        where <m>L</m> runs over finite Galois extensions of <m>K</m> and the transition maps in the direct limit are inflation maps.
+        By <xref ref="L_theorem_90"/> and <xref ref="P_inflation_restriction"/>, these maps are all injective, so the direct limit is actually a union..
+      </p>
+    </definition>
     <p>
-      We sketch an alternate approach for comparing the
-      <q>abstract</q>
-      reciprocity map <m>r'_{L/K}</m> with the product <m>r_{L/K}</m> of the local reciprocity maps,
-      following <xref ref="bib-Milne-CFT"/>. (See also <xref ref="bib-Neukirch"/> V.2.)
+      This definition of Brauer groups is not the original one; we give that next.
     </p>
-    <p>
-      We first verify that <m>r = r'</m> for cyclotomic extensions of <m>\QQ</m>,
-      using an explicit computation in local class field theory.
-    </p>
-    <lemma xml:id="L_cyclotomic_explicit_reciprocity">
+    <lemma>
       <statement>
         <p>
-          Via the identifications <m>\Gal(\QQ(\zeta_{p^m})/\QQ)</m> with <m>(\ZZ/p^m\ZZ)^*</m>, we have
-          <me>
-            r_{\QQ_{\ell}(\zeta_{p^m})/\QQ_{\ell}}(a) = \begin{cases}\sign(a) \amp  \ell = \infty \\ \ell^{v_{\ell}}(a) \amp  \ell \neq \infty, p \\ u^{-1} \amp  \ell = p. \end{cases}
-          </me>
+          For any field <m>K</m>, there is a natural bijection between <m>\Br(K)</m> and the isomorphism classes of division algebras with center <m>K</m>.
         </p>
       </statement>
       <proof>
         <p>
-          This is straightforward for <m>\ell = \infty</m>.
-          For <m>\ell \neq \infty,
-          p</m>, we have an unramified extension of local fields,
-          where we know the local reciprocity map takes a uniformizer to a Frobenius.
-          In this case the latter is simply <m>\ell</m>.
-        </p>
-        <p>
-          The hard work is in the case <m>\ell=p</m>.
-          For that computation one uses what amounts to a very special case of the Lubin-Tate construction of explicit class field theory for local fields,
-          using formal groups.
-          Put <m>K = \QQ_p</m>,
-          <m>\zeta = \zeta_{p^m}</m> and <m>L = \QQ_p(\zeta)</m>.
-        </p>
-        <p>
-          Suppose without loss of generality that <m>u</m> is a positive integer,
-          and let <m>\sigma \in \Gal(L/K)</m> be the automorphism corresponding to <m>u^{-1}</m>.
-          Since <m>L/K</m> is totally ramified at <m>p</m>,
-          we have <m>\Gal(L/K) \cong \Gal(L^{\unr}/K^{\unr})</m>,
-          and we can view <m>\sigma</m> as an element of <m>\Gal(L^{\unr}/K)</m>.
-          Let <m>\phi_L \in \Gal(L^{\unr}/L)</m> denote the Frobenius,
-          and put <m>\tau = \sigma \phi_L</m>.
-          Then <m>\tau</m> restricts to the Frobenius in
-          <m>\Gal(K^{\unr}/K)</m> and to <m>\sigma</m> in <m>\Gal(L/K)</m>.
-          By Neukirch's definition of the reciprocity map,
-          we may compute <m>r^{-1}_{L/K}(\sigma)</m> as <m>\Norm_{M/K} \pi_M</m>,
-          where <m>M</m> is the fixed field of <m>\tau</m> and <m>\pi_M</m> is a uniformizer.
-          We want that norm to be <m>u</m> times a norm from <m>L</m> to <m>K</m>, i.e.,
-          <me>
-            r^{-1}_{L/K}(\sigma) \in u \Norm_{L/K} L^*
-          </me>.
-        </p>
-        <p>
-          Define the polynomial
-          <me>
-            e(x) = x^p + upx
-          </me>
-          and put
-          <me>
-            P(x) = e^{(n-1)}(x)^{p-1} + pu
-          </me>,
-          where <m>e^{(k+1)}(x) = e(e^{(k)}(u))</m>.
-          Then <m>P(x)</m> satisfies Eisenstein's criterion,
-          so its splitting field over <m>\QQ_p</m> is totally ramified,
-          any root of <m>P</m> is a uniformizer,
-          and the norm of said uniformizer is <m>(-1)^{[L:K]} pu \in \Norm_{L/K} L^*</m>,
-          since <m>\Norm_{L/K}(\zeta-1) = (-1)^{[L:K]}(p)</m>.
-        </p>
-        <p>
-          The punch line is that the splitting field of <m>P(x)</m> is precisely <m>M</m>!
-          Here is where the Lubin-Tate construction comes to the rescue... and where I will stop this sketch.
-          See <xref ref="bib-Neukirch"/> V.2 and V.4 and/or <xref ref="bib-Milne-CFT"/> I.3.
+          See <xref ref="bib-Milne-CFT"/>, Corollary IV.3.16 or <xref ref="bib-Serre-LocalFields"/>, Chapter X, Proposition 9.
         </p>
       </proof>
     </lemma>
+    <example>
+      <p>
+        For <m>K</m> a finite field, <m>\Br(K)</m> is trivial. In the classical interpretation, this is Wedderburn's theorem that every finite division algebra
+        is commutative. In the cohomological interpretation, it follows from <xref ref="P_finite_norm_surjective"/> via the periodicity of Tate groups
+        <xref ref="T_cyclic_group_periodicity"/>.
+      </p>
+    </example>
+    <remark>
+      <p>
+        One can also associate Brauer groups to arbitrary rings and even to schemes in algebraic geometry, by replacing division algebras (or more precisely,
+        central simple algebras) with <term>Azumaya algebras</term> and Galois cohomology with <term>&#xe9;tale cohomology</term>.
+        See <xref ref="bib-Grothendieck-Brauer"/>.
+      </p>
+    </remark>
   </subsection>
   <subsection>
-    <title>A bit about Brauer groups</title>
+    <title>Local-global compatibility via Brauer groups</title>
     <p>
-      We complete the cohomological approach to comparing reciprocity maps using some considerations about groups of the form <m>H^2(L/K)</m>.
-      Remember that these are <term>Brauer groups</term>; for background,
-      see <xref ref="bib-Milne-CFT"/>, IV. We'll be following <xref ref="bib-Milne-CFT"/> VII.8,
-      and omitting many details.
+      Recall that in the cohomological approach to local class field theory, the crucial computation was that of the Brauer groups of local fields,
+      which involved first studying unramified extensions and then transferring the knowledge to general extensions (see the proof of <xref ref="P_H2_lower_bound"/>).
+      We can use a similar approach
+      to recover local-global compatibility in global class field theory, using Brauer groups to transfer the fact that the reciprocity maps defined out of local
+      factors are trivial on prinicipal id&#xe8;les from the cyclotomic case to the general case. Since this is not logically necessary for our treatment,
+      we will take leave to skip a few details that do not fit neatly into our narrative.
     </p>
     <proposition xml:id="prop-diagonal-cyclotomic">
       <statement>
         <p>
-          Put <m>L = K(\zeta_n)</m>.
+          Let <m>K</m> be a number field and put <m>L = K(\zeta_n)</m>.
           Then <m>r_{L/K}: I_K \to \Gal(L/K)</m> maps all principal id&#xe8;les to the identity.
         </p>
       </statement>
+      <proof>
+        <p>
+          For <m>K = \QQ</m>, this follows from the explicit description of the Artin map given in <xref ref="D_cyclotomic_reciprocity"/> 
+          (or from <xref ref="L_cyclotomic_explicit_reciprocity"/>).
+          In general, we have a commutative diagram
+          <figure xml:id="fig-connection-2">
+          <image>
+          <latex-image>
+          \xymatrix{
+          I_L \ar[r] \ar^{\Norm_{L_w/\QQ_p}}[d] &amp; \Gal(L_w(\zeta_n)/L_w) \ar[d]\\
+          I_{\QQ} \ar[r] &amp; \Gal(\QQ_p(\zeta_n)/\QQ_p)
+          }
+          </latex-image>
+          </image>
+          </figure>
+          and we know the bottom row kills principal id&#xe8;les and the right column is injective.
+          Thus the top row kills principal id&#xe8;les too.
+        </p>
+      </proof>
     </proposition>
-    <proof>
-      <p>
-        For <m>K = \QQ</m>, this follows from <xref ref="L_cyclotomic_explicit_reciprocity"/>
-        (factor <m>n</m> into prime powers and apply the previous argument to each factor).
-        In general, we have a compatibility
-      </p>
-      <figure xml:id="fig-connection-2">
-      <image>
-      <latex-image>
-      \xymatrix{
-      I_L \ar[r] \ar^{\Norm_{L_w/\QQ_p}}[d] &amp; \Gal(L_w(\zeta_n)/L_w) \ar[d]\\
-      I_{\QQ} \ar[r] &amp; \Gal(\QQ_p(\zeta_n)/\QQ_p)
-      }
-      </latex-image>
-      </image>
-      </figure>
-      <p>
-        and we know the bottom row kills principal id&#xe8;les and the right column is injective.
-        Thus the top row kills principal id&#xe8;les too.
-      </p>
-    </proof>
     <p>
-      To make more progress, we need to bring in <m>H^2</m>,
-      as we did in local reciprocity.
-      Unfortunately,
-      trying to compute <m>H^2</m> of the id&#xe8;le class group is a headache,
-      so we can't imitate the argument perfectly (or else we would have done so already).
-    </p>
-    <p>
-      What we can do is imitate the argument that in the local case, every element of <m>H^2(L/K)</m> could be
-      <q>brought in</q>
-      from a suitable unramified extension of <m>K</m> (see the proof of <xref ref="P_H2_lower_bound"/>).
-      We have a similar situation here with <q>unramified</q> replaced by <q>cyclotomic</q>.
+      The following is closely analogous to <xref ref="P_H2_lower_bound"/>, in the sense that it says that each class in <m>H^2</m> of an extension of number fields
+      can be <q>imported</q> from a cyclotomic extension; the principal difference is that the extension has to be chosen depending on the class.
+      (The reason for this will be apparent once we describe Brauer groups in full; see <xref ref="def-fundamental-exact-sequence"/>.)
     </p>
     <proposition xml:id="prop-H2-class-absorb-by-cyclotomic">
       <statement>
         <p>
           Let <m>L/K</m> be a Galois extension of number fields.
-          Then for any element <m>x</m> of
-          <m>H^2(\Gal(L/K), L^*)</m>, there exists a cyclic,
-          cyclotomic extension <m>M</m> of <m>K</m> and an element <m>y</m> of
-          <m>H^2(\Gal(M/K), M^*)</m> such that <m>x</m> and <m>y</m> map to the same element of <m>H^2(\Gal(ML/K), ML^*)</m>.
+          Then for any element <m>x</m> of <m>H^2(L/K)</m>, there exists a cyclic cyclotomic extension <m>M</m> of <m>K</m> and an element <m>y</m> of
+          <m>H^2(M/K)</m> such that <m>x</m> and <m>y</m> map to the same element of <m>H^2(ML/K)</m>.
+          (Here we reprise the shorthand of writing <m>H^i(L/K)</m> to mean <m>H^i(\Gal(L/K), L^*)</m>.)
         </p>
       </statement>
     <proof>
       <p>
-        By <xref ref="T_Albert-Brauer-Hasse-Noether"/> (a consequence of the Second Inequality), any class in <m>H^2(\Gal(L/K), L^*)</m> is determined by its
-        images in <m>H^2(\Gal(L_w/K_v), L_w^*)</m> for all places <m>v</m> in <m>K</m> (where <m>w</m> denotes any place of <m>L</m> above <m>v</m>.)
-        Moreover, only finitely many of these quantities are nonzero. It thus suffices to find a cyclic cyclotomic extension for which, for some fixed finite set of finite places 
-        <m>S</m> of <m>K</m>, the degrees <m>[L_w:K_v]</m> for all <m>v \in S</m> are conveniently large. See <xref ref="exer-large-cyclotomic-degree"/>.
+        By <xref ref="T_Albert-Brauer-Hasse-Noether"/> (a consequence of the Second Inequality), any class in <m>H^2(L/K)</m> is determined by its
+        images in <m>H^2(L_w/K_v)</m> for all places <m>v</m> in <m>K</m> (where <m>w</m> denotes any place of <m>L</m> above <m>v</m>), with only finitely many of these being
+        nonzero. Moreover, a class in <m>H^2(L_w/K_v)</m> of some order <m>m</m> is killed by replacing <m>K_v</m> by any extension of degree <m>m</m>
+        (by <xref ref="L_local_invariant_map"/>; see also <xref ref="bib-Milne-CFT"/>, Theorem III.2.1).
+        It thus suffices to find a cyclic cyclotomic extension for which, for some fixed finite set of finite places 
+        <m>S</m> of <m>K</m>, the degrees <m>[L_w:K_v]</m> for all <m>v \in S</m> are conveniently large; for this, see <xref ref="exer-large-cyclotomic-degree"/>.
         (Compare also <xref ref="bib-Milne-CFT"/>, Proposition VII.7.2.)
       </p>
     </proof>
     </proposition>
     <definition>
       <p>
-        Let <m>L/K</m> be an abelian extension of number fields.
-        From the exact sequence
+        Let <m>L/K</m> be an abelian extension of number fields. By <xref ref="T_Albert-Brauer-Hasse-Noether"/> (or rather its proof), we have an injective map
         <me>
-          0 \to L^* \to I_L \to C_L \to 0
-        </me>
-        we get an exact sequence
-        <me>
-          1 = H^1(\Gal(L/K), C_L) \to H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L),
-        </me>
-        from which we see that the map 
-        <me>
-          H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L) = \bigoplus H^2(\Gal(L/K), I_L)
+          H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L) = \bigoplus_v H^2(L_w/K_v).
         </me> 
-        is injective.
-        Each factor in the direct sum is canonically a subgroup of <m>\QQ/\ZZ</m>,
-        so we get a sum map <m>H^2(\Gal(L/K), I_L) \to \QQ/\ZZ</m>.
+        is injective. For <m>v</m> a place of <m>K</m>, the group <m>H^2(L_w/K_v)</m> is contained in <m>\frac{1}{2}\ZZ/\ZZ</m> if <m>v</m> is an infinite place,
+        and is isomorphic to <m>\frac{1}{[L_w:K_v]} \ZZ/\ZZ</m> if <m>v</m> is a finite place (<xref ref="L_local_invariant_map"/>). 
+        By embedding each of these groups into <m>\QQ/\ZZ</m>,
+        we get a sum map <m>H^2(\Gal(L/K), I_L) \to \QQ/\ZZ</m>.
       </p>
     </definition>
     <lemma xml:id="lem-H2-map-global">
@@ -193,7 +141,7 @@
           <latex-image>
           \xymatrix{
           K^* \ar[r] \ar[d] &amp; I_K \ar^{r_{L/K}}[r] \ar[d] &amp;\Gal(L/K) \ar[d] \\
-          H^2(L^*) \ar[r] &amp; H^2(I_L) \ar[r] &amp; \QQ/\ZZ
+          H^2(L/K) \ar[r] &amp; H^2(\Gal(L/K), I_L) \ar[r] &amp; \QQ/\ZZ
           }
           </latex-image>
           </image>
@@ -202,6 +150,7 @@
       </statement>
       <proof>
         <p>
+          This is a calculation involving cup products in Galois cohomology which we prefer not to describe in detail.
           See <xref ref="bib-Milne-CFT"/>, Lemma VII.8.5.
         </p>
       </proof>
@@ -235,29 +184,31 @@
         </p>
       </proof>
     </proposition>
-    <p>
-      To conclude, let <m>L/K</m> be a cyclic extension of number fields.
-      At this point, <m>r_{L/K}</m> kills both principal id&#xe8;les (by <xref ref="prop-reciprocity-trivial-on-diagonal"/>
-      and norms (since it does so locally), so it induces a map <m>C_K/\Norm_{L/K} C_L \to \Gal(L/K)</m>.
-      By the First Inequality (<xref ref="T_first_inequality"/>), this map is surjective; by comparing orders using the Second Inequality
-      (<xref ref="T_first_and_second_inequality"/>), we see that the map is also an isomorphism.
-      This establishes the reciprocity law for cyclic extensions, from which it directly follows also for abelian extensions.
-      Hooray again!
-    </p>
+    <remark>
+      <p>
+        Let <m>L/K</m> be a cyclic extension of number fields.
+        At this point, <m>r_{L/K}</m> kills both principal id&#xe8;les (by <xref ref="prop-reciprocity-trivial-on-diagonal"/>
+        and norms (since it does so locally), so it induces a map <m>C_K/\Norm_{L/K} C_L \to \Gal(L/K)</m>.
+        By the First Inequality (<xref ref="T_first_inequality"/>), this map is surjective; by comparing orders using the Second Inequality
+        (<xref ref="T_first_and_second_inequality"/>), we see that the map is also an isomorphism.
+        This establishes the reciprocity law for cyclic extensions, from which it directly follows also for abelian extensions.
+        Hooray again!
+      </p>
+    </remark>
   </subsection>
   <subsection>
     <title>More remarks about Brauer groups</title>
     <definition xml:id="def-fundamental-exact-sequence">
       <p>
         Combining the previous discussion with <xref ref="T_Albert-Brauer-Hasse-Noether"/>, 
-        we see that for any number field <m>K</m>, the group <m>H^2(K^*) = H^2(\Gal(\overline{K}/K), \overline{K}^*)</m> fits into an exact sequence of the form
+        we see that for any number field <m>K</m>, the group <m>\Br(K)</m> fits into an exact sequence of the form
         <me>
-          0 \to H^2(K^*) \to \bigoplus_v H^2(K_v^*) \to \QQ/\ZZ \to 0
+          0 \to \Br(K^*) \to \bigoplus_v \Br(K_v^*) \to \QQ/\ZZ \to 0
         </me>
         in which 
         <me>
-          H^2(K_v^*) = \begin{cases} \QQ/\ZZ &amp; \mbox{for $v$ finite} \\
-          \frac{1}{2} \ZZ &amp; \mbox{for $v$ real} \\
+          \Br(K_v^*) = \begin{cases} \QQ/\ZZ &amp; \mbox{for $v$ finite} \\
+          \frac{1}{2} \ZZ/\ZZ &amp; \mbox{for $v$ real} \\
           0 &amp; \mbox{for $v$ complex}. \end{cases}
         </me>
         This exact sequence (sometimes called the <term>Fundamental Exact Sequence</term>) plays a key role in various applications of Brauer groups, such as their use to detect obstructions to the existence of rational points

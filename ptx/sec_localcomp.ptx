@@ -292,7 +292,7 @@
       compare <xref ref="exer-S3-cohomology-example"/>.
     </p>
     <proposition xml:id="P_inflation_restriction">
-      <title>Inflation-Restriction Exact Sequence</title>
+      <title>Inflation-restriction exact sequence</title>
       <statement>
         <p>
           Let <m>G</m> be a finite group, let <m>H</m> be a normal subgroup, and let <m>M</m> be a <m>G</m>-module.

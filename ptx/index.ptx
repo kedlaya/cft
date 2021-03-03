@@ -19,6 +19,7 @@
 \def\gothr{\mathfrak{r}}
 \DeclareMathOperator{\ab}{ab}
 \DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Cl}{Cl}
 \DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\Cor}{Cor}
