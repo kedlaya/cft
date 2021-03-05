@@ -8,5 +8,5 @@ images:
 
 pdf:
 	xsltproc --xinclude -o cft-ptx.tex ~/code/mathbook/xsl/pretext-latex.xsl ptx/index.ptx; \
-	pdflatex cft-ptx; \
-	pdflatex cft-ptx
+	pdflatex cft-ptx -interaction batchmode; \
+	pdflatex cft-ptx -interaction batchmode
