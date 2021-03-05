@@ -325,7 +325,7 @@
           but you can use this to your advantage to make an explicit calculation.
         </hint>
       </exercise>
-      <exercise>
+      <exercise xml:id="exer-quaternion-algebras">
         <statement>
           A <term>quaternion algebra</term> over a field <m>K</m> is a central simple algebra over <m>K</m> of dimension 4.
           If <m>K</m> is not of characteristic 2, any such algebra has the form
@@ -338,10 +338,15 @@
           A quaternion algebra is <term>split</term>
           if it is isomorphic to the ring of
           <m>2 \times 2</m> matrices over <m>K</m>.
-          Give a direct proof of the following consequence of <xref ref="T_Brauer_group_identification"/>:
-          if <m>K</m> is a local field,
+          Show that if <m>K</m> is a local field,
           then any two quaternion algebras which are not split are isomorphic to each other.
         </statement>
+        <hint>
+          <p>
+            While this can be done using elementary methods, it will also follow from <xref ref="T_Brauer_group_identification"/> via the cohomological
+            description of Brauer groups; see <xref ref="lem-brauer-defs"/>.
+          </p>
+        </hint>
       </exercise>
       <exercise xml:id="exer-subspace-top">
         <statement>

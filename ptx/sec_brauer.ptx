@@ -5,6 +5,7 @@
       <title>Reference</title>
       <p>
         <xref ref="bib-Milne-CFT"/> IV (for the general theory of Brauer groups); VII.7 and VII.8 (for the application to reciprocity).
+        For the general theory, see also <xref ref="bib-Jacobson-2"/>, Chapter 4.
       </p>
     </paragraphs>
     <p>
@@ -28,7 +29,7 @@
     <p>
       This definition of Brauer groups is not the original one; we give that next.
     </p>
-    <lemma>
+    <lemma xml:id="lem-brauer-defs">
       <statement>
         <p>
           For any field <m>K</m>, there is a natural bijection between <m>\Br(K)</m> and the isomorphism classes of division algebras with center <m>K</m>.
@@ -36,7 +37,8 @@
       </statement>
       <proof>
         <p>
-          See <xref ref="bib-Milne-CFT"/>, Corollary IV.3.16 or <xref ref="bib-Serre-LocalFields"/>, Chapter X, Proposition 9.
+          See <xref ref="bib-Milne-CFT"/>, Corollary IV.3.16; <xref ref="bib-Serre-LocalFields"/>, Chapter X, Proposition 9;
+          or <xref ref="bib-Jacobson-2"/>, Theorem 8.11.
         </p>
       </proof>
     </lemma>
@@ -49,6 +51,35 @@
     </example>
     <remark>
       <p>
+        While <xref ref="lem-brauer-defs"/> only characterizes the Brauer group as a set, the original construction of Brauer included the group structure.
+        Namely, for any two division algebras <m>D_1</m> and <m>D_2</m> with center <m>K</m>, we have an isomorphism of <m>K</m>-algebras
+        <me>
+          D_1 \otimes_K D_2 \cong M_n(D)
+        </me>
+        for some positive integer <m>n</m> and some division algebra <m>D</m> with center <m>K</m>, and <m>D</m> is the product of <m>D_1</m> and <m>D_2</m> in <m>\Br(K)</m>
+        (in particular, it is characterized by this construction up to isomorphism).
+      </p>
+      <p>
+        In this construction, the identity element in <m>\Br(K)</m> is <m>K</m> viewed as a division algebra with itself as the center. The inverse element of a division algebra
+        <m>D</m> is the <term>opposite algebra</term> in which multiplication is reversed.
+      </p>
+    </remark>
+    <remark xml:id="rmk-schur-index">
+      <p>
+        The property of a field <m>K</m> of characteristic 0 having trivial Brauer group is useful in the theory of finite group representations:
+        for such a field, any <m>K</m>-valued character of a finite group arises from a representation defined over <m>K</m>. (This follows from <term>Schur's lemma</term>:
+        the character in question appears within some irreducible <m>K</m>-linear representation, whose endomorphism ring is a division algebra;
+        the triviality of the Brauer group forces this to split without any base extension.)
+      </p>
+      <p>
+        By contrast,
+        for <m>G = \{\pm 1, \pm i, \pm j, \pm k\}</m> the unit quaternion group, the standard 2-dimensional representation of <m>G</m> 
+        has a <m>\QQ</m>-valued character but cannot be realized
+        as a representation over <m>\QQ</m>. In other words, this representation has nontrivial <term>Schur index</term>.
+      </p>
+    </remark>
+    <remark>
+      <p>
         One can also associate Brauer groups to arbitrary rings and even to schemes in algebraic geometry, by replacing division algebras (or more precisely,
         central simple algebras) with <term>Azumaya algebras</term> and Galois cohomology with <term>&#xe9;tale cohomology</term>.
         See <xref ref="bib-Grothendieck-Brauer"/>.
@@ -56,14 +87,133 @@
     </remark>
   </subsection>
   <subsection>
-    <title>Local-global compatibility via Brauer groups</title>
+    <title>The Brauer group of a number field</title>
+    <p>
+      We state the formula for the Brauer group of a number field, and prove it modulo one key step.
+    </p>
+    <lemma xml:id="lem-H2-map-global-cyclic">
+      <statement>
+        <p>
+          Let <m>L/K</m> be a cyclic extension of number fields of degree <m>n</m>.
+          Then there is a commutative diagram as in <xref ref="fig-connection-5"/>
+          in which the vertical arrows are isomorphisms.
+        </p>
+      </statement>
+          <figure xml:id="fig-connection-5">
+          <image>
+          <latex-image>
+          \xymatrix{
+          K^*/\Norm_{L/K} L^* \ar[r] \ar[d] &amp; I_K/\Norm_{L/K} I_L \ar^{r_{L/K}}[r] \ar[d] &amp;\Gal(L/K) \ar[d] \\
+          H^2(L/K) \ar[r] &amp; \bigoplus_v H^2(L_w/K_v) \ar[r] &amp; \frac{1}{n}\ZZ/\ZZ
+          }
+          </latex-image>
+          </image>
+          </figure>
+      <proof>
+        <p>
+          The left square comes from applying <xref ref="T_cyclic_group_periodicity"/> to the morphism
+          <m>L^* \to I_L</m> of <m>\Gal(L/K)</m>-modules. Since <m>r_{L/K}</m> is defined in terms of local reciprocity maps,
+          the right square comes from <xref ref="L_local_invariant_map"/>.
+        </p>
+      </proof>
+    </lemma>
+    <theorem xml:id="def-fundamental-exact-sequence">
+      <statement>
+        <p>
+          For any number field <m>K</m>, the group <m>\Br(K)</m> fits into an exact sequence of the form
+          <me>
+            0 \to \Br(K) \to \bigoplus_v \Br(K_v) \to \QQ/\ZZ \to 0
+          </me>
+          in which 
+          <me>
+            \Br(K_v) = \begin{cases} \QQ/\ZZ &amp; \mbox{for $v$ finite} \\
+            \frac{1}{2} \ZZ/\ZZ &amp; \mbox{for $v$ real} \\
+            0 &amp; \mbox{for $v$ complex} \end{cases}
+          </me>
+          and the map on the right is summation.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The map <m>\Br(K) \to \bigoplus_v \Br(K_v)</m> is the injection from <xref ref="T_Albert-Brauer-Hasse-Noether"/>.
+          The value of <m>\Br(K_v)</m> for <m>v</m> finite is given by <xref ref="L_local_invariant_map"/>.
+          For <m>v</m> complex, it is evident that <m>\Br(K_v) = 0</m>.
+          For <m>v</m> real, by <xref ref="T_cyclic_group_periodicity"/> we have
+          <md>
+            <mrow>\Br(\RR) &amp;= H^2(\Gal(\CC/\RR), \CC^*)</mrow>
+            <mrow>&amp;\cong H^0_T(\Gal(\CC/\RR), \CC^*)</mrow>
+            <mrow>&amp;\cong \RR^* / \Norm_{\CC/\RR} \CC^* = \RR^*/\RR^+ \cong \frac{1}{2} \ZZ/\ZZ.</mrow>
+          </md>
+          Since the values of <m>\Br(K_v)</m> are the ones given, the surjectivity of the map <m>\bigoplus_v \Br(K_v) \to \QQ/\ZZ</m> is evident.
+        </p>
+        <p>
+          It remains to establish exactness at the middle of the sequence. For any finite Galois extension <m>L/K</m>,
+          we have the exact sequence
+          <me>
+            H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L) \to H^2(\Gal(L/K), C_L).
+          </me>
+          If <m>L/K</m> is cyclic, then by reciprocity (<xref ref="T_abstract_adelic_reciprocity"/>),
+          the top row of the commutative diagram in <xref ref="lem-H2-map-global-cyclic"/> is exact, as then is the bottom row.
+          Consequently, we could conclude the proof if we knew that every class in <m>\Br(K)</m> is the image of a class in <m>H^2(\Gal(L/K), L^*)</m>
+          for some finite <em>cyclic</em> extension <m>L</m> of <m>K</m>. In fact, something even stronger is true; see 
+          <xref ref="prop-H2-class-absorb-by-cyclotomic"/>.
+        </p>
+      </proof>
+    </theorem>
+    <definition>
+      <p>
+        For <m>K</m> a number field and <m>\alpha \in \Br(K^*)</m>, the image of <m>\alpha</m> in <m>\Br(K_v)</m> is often called the <term>local invariant</term> of <m>\alpha</m> at <m>v</m>.
+        The exact sequence appearing in <xref ref="def-fundamental-exact-sequence"/> is sometimes called the <term>fundamental exact sequence</term> associated to <m>K</m>;
+        it can be viewed as another source of <q>reciprocity</q> in class field theory. For example, applying the fundamental exact sequence to a quaternion algebra over <m>\QQ</m>
+        (see <xref ref="exer-quaternion-algebras"/>) gives rise to Hilbert's reformulation of the law of quadratic reciprocity using <term>Hilbert symbols</term>.
+      </p>
+      <p>
+        The fundamental exact sequence also plays a key role in various applications of Brauer groups in number theory. One of these is the detection of obstructions to the existence of rational points
+        on algebraic varieties over number fields (called <term>Brauer-Manin obstructions</term>).
+      </p>
+    </definition>
+  </subsection>
+  <subsection>
+    <title>All Brauer classes are (cyclic) cyclotomic</title>
     <p>
       Recall that in the cohomological approach to local class field theory, the crucial computation was that of the Brauer groups of local fields,
       which involved first studying unramified extensions and then transferring the knowledge to general extensions (see the proof of <xref ref="P_H2_lower_bound"/>).
-      We can use a similar approach
-      to recover local-global compatibility in global class field theory, using Brauer groups to transfer the fact that the reciprocity maps defined out of local
-      factors are trivial on prinicipal id&#xe8;les from the cyclotomic case to the general case. Since this is not logically necessary for our treatment,
-      we will take leave to skip a few details that do not fit neatly into our narrative.
+      The missing step in <xref ref="def-fundamental-exact-sequence"/> is of a very similar nature, except that we have to vary the extension based on the class.
+    </p>
+    <proposition xml:id="prop-H2-class-absorb-by-cyclotomic">
+      <statement>
+        <p>
+          Let <m>L/K</m> be a Galois extension of number fields.
+          Then for any element <m>x</m> of <m>H^2(L/K)</m>, there exists a cyclic cyclotomic extension <m>M</m> of <m>K</m> and an element <m>y</m> of
+          <m>H^2(M/K)</m> such that <m>x</m> and <m>y</m> map to the same element of <m>H^2(ML/K)</m>.
+          (Here we reprise the shorthand of writing <m>H^i(L/K)</m> to mean <m>H^i(\Gal(L/K), L^*)</m>.)
+        </p>
+      </statement>
+      <proof>
+        <p>
+          By <xref ref="T_Albert-Brauer-Hasse-Noether"/>, any class in <m>H^2(L/K)</m> is determined by its
+          images in <m>H^2(L_w/K_v)</m> for all places <m>v</m> in <m>K</m> (where <m>w</m> denotes any place of <m>L</m> above <m>v</m>), with only finitely many of these being
+          nonzero. Moreover, a class in <m>H^2(L_w/K_v)</m> of some order <m>m</m> is killed by replacing <m>K_v</m> by any extension of degree <m>m</m>
+          (by <xref ref="L_local_invariant_map"/>; see also <xref ref="bib-Milne-CFT"/>, Theorem III.2.1).
+          It thus suffices to find a cyclic cyclotomic extension for which, for some fixed finite set of finite places 
+          <m>S</m> of <m>K</m>, the degrees <m>[L_w:K_v]</m> for all <m>v \in S</m> are conveniently large; for this, see <xref ref="exer-large-cyclotomic-degree"/>.
+          (Compare also <xref ref="bib-Milne-CFT"/>, Proposition VII.7.2.)
+        </p>
+      </proof>
+    </proposition>
+    <remark>
+      <p>
+        By <xref ref="prop-H2-class-absorb-by-cyclotomic"/>, the field <m>\QQ^{\ab}</m> has trivial Brauer group. Since in addition every complex character of a finite group
+        has values in <m>\QQ^{\ab}</m>, it follows that every irreducible complex representation of a finite group can be realized over <m>\QQ^{\ab}</m>;
+        for a more direct proof of this, see <xref ref="bib-Serre-LinRep"/>, Chapter 12, Theorem 24.
+      </p>
+    </remark>
+  </subsection>
+  <subsection>
+    <title>Local-global compatibility via Brauer groups</title>
+    <p>
+      To conclude, we turn things around and show that <xref ref="prop-H2-class-absorb-by-cyclotomic"/> can be used to recover local-global compatibility
+      for the reciprocity map.
     </p>
     <proposition xml:id="prop-diagonal-cyclotomic">
       <statement>
@@ -92,143 +242,32 @@
         </p>
       </proof>
     </proposition>
-    <p>
-      The following is closely analogous to <xref ref="P_H2_lower_bound"/>, in the sense that it says that each class in <m>H^2</m> of an extension of number fields
-      can be <q>imported</q> from a cyclotomic extension; the principal difference is that the extension has to be chosen depending on the class.
-      (The reason for this will be apparent once we describe Brauer groups in full; see <xref ref="def-fundamental-exact-sequence"/>.)
-    </p>
-    <proposition xml:id="prop-H2-class-absorb-by-cyclotomic">
-      <statement>
-        <p>
-          Let <m>L/K</m> be a Galois extension of number fields.
-          Then for any element <m>x</m> of <m>H^2(L/K)</m>, there exists a cyclic cyclotomic extension <m>M</m> of <m>K</m> and an element <m>y</m> of
-          <m>H^2(M/K)</m> such that <m>x</m> and <m>y</m> map to the same element of <m>H^2(ML/K)</m>.
-          (Here we reprise the shorthand of writing <m>H^i(L/K)</m> to mean <m>H^i(\Gal(L/K), L^*)</m>.)
-        </p>
-      </statement>
-    <proof>
-      <p>
-        By <xref ref="T_Albert-Brauer-Hasse-Noether"/> (a consequence of the Second Inequality), any class in <m>H^2(L/K)</m> is determined by its
-        images in <m>H^2(L_w/K_v)</m> for all places <m>v</m> in <m>K</m> (where <m>w</m> denotes any place of <m>L</m> above <m>v</m>), with only finitely many of these being
-        nonzero. Moreover, a class in <m>H^2(L_w/K_v)</m> of some order <m>m</m> is killed by replacing <m>K_v</m> by any extension of degree <m>m</m>
-        (by <xref ref="L_local_invariant_map"/>; see also <xref ref="bib-Milne-CFT"/>, Theorem III.2.1).
-        It thus suffices to find a cyclic cyclotomic extension for which, for some fixed finite set of finite places 
-        <m>S</m> of <m>K</m>, the degrees <m>[L_w:K_v]</m> for all <m>v \in S</m> are conveniently large; for this, see <xref ref="exer-large-cyclotomic-degree"/>.
-        (Compare also <xref ref="bib-Milne-CFT"/>, Proposition VII.7.2.)
-      </p>
-    </proof>
-    </proposition>
-    <definition>
-      <p>
-        Let <m>L/K</m> be an abelian extension of number fields. By <xref ref="T_Albert-Brauer-Hasse-Noether"/> (or rather its proof), we have an injective map
-        <me>
-          H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L) = \bigoplus_v H^2(L_w/K_v).
-        </me> 
-        is injective. For <m>v</m> a place of <m>K</m>, the group <m>H^2(L_w/K_v)</m> is contained in <m>\frac{1}{2}\ZZ/\ZZ</m> if <m>v</m> is an infinite place,
-        and is isomorphic to <m>\frac{1}{[L_w:K_v]} \ZZ/\ZZ</m> if <m>v</m> is a finite place (<xref ref="L_local_invariant_map"/>). 
-        By embedding each of these groups into <m>\QQ/\ZZ</m>,
-        we get a sum map <m>H^2(\Gal(L/K), I_L) \to \QQ/\ZZ</m>.
-      </p>
-    </definition>
-    <lemma xml:id="lem-H2-map-global">
-      <statement>
-        <p>
-          Let <m>L/K</m> be an abelian extension of number fields.
-          For any map <m>\Gal(L/K) \to \QQ/\ZZ</m>,
-          there is a commuting diagram
-          <figure xml:id="fig-connection-3">
-          <image>
-          <latex-image>
-          \xymatrix{
-          K^* \ar[r] \ar[d] &amp; I_K \ar^{r_{L/K}}[r] \ar[d] &amp;\Gal(L/K) \ar[d] \\
-          H^2(L/K) \ar[r] &amp; H^2(\Gal(L/K), I_L) \ar[r] &amp; \QQ/\ZZ
-          }
-          </latex-image>
-          </image>
-          </figure>
-        </p>
-      </statement>
-      <proof>
-        <p>
-          This is a calculation involving cup products in Galois cohomology which we prefer not to describe in detail.
-          See <xref ref="bib-Milne-CFT"/>, Lemma VII.8.5.
-        </p>
-      </proof>
-    </lemma>
-    <remark xml:id="rmk-H2-map-global-composite">
-      <p>
-        In <xref ref="lem-H2-map-global"/>, suppose that <m>L/K</m> is cyclic.
-        We may then choose the map <m>\Gal(L/K) \to \QQ/\ZZ</m> to be injective,
-        and then the first vertical arrow will be surjective; concretely, 
-        it is the composition of <m>K^* \to K^*/\Norm_{L/K} L^* = H^0_T(L^*)</m> with the periodicity isomorphism
-        <m>H^0_T(L^*) \to H^2_T(L^*)</m>. If we already knew that <m>r_{L/K}</m> kills principal id&#xe8;les, it would follow that the composite <m>H^2(L^*) \to \QQ/\ZZ</m> is the zero map.
-     </p>
-    </remark>
-    <p>
-      Let us now apply <xref ref="rmk-H2-map-global-composite"/> in reverse to recover <xref ref="prop-reciprocity-trivial-on-diagonal"/>.
-    </p>
     <proposition xml:id="prop-reciprocity-trivial-on-diagonal3">
       <statement>
         <p>
-          For any Galois extension <m>L/K</m> of number fields, the map <m>r_{L/K}</m> kills principal id&#xe8;les.
+          For any cyclic extension <m>L/K</m> of number fields, the map <m>r_{L/K}: I_K \to \Gal(L/K)</m> kills principal id&#xe8;les.
         </p>
       </statement>
       <proof>
         <p>
           To begin with, <xref ref="prop-diagonal-cyclotomic"/> implies that <m>r_{L/K}</m> kills principal id&#xe8;les whenever <m>L/K</m> is a cyclotomic extension,
-          and <xref ref="rmk-H2-map-global-composite"/> implies that in this case <m>H^2(L^*) \to \QQ/\ZZ</m> vanishes.
-          By <xref ref="prop-H2-class-absorb-by-cyclotomic"/>, the same then holds for any Galois extension <m>L/K</m>.
-          Now we can use <xref ref="fig-connection-3"/> <q>in reverse</q> to see that for <m>a \in K^*</m>,
-          <m>r_{L/K}(a)</m> is killed by any homomorphism <m>\Gal(L/K) \to \QQ/\ZZ</m>.
-          Since <m>\Gal(L/K)</m> is an abelian group, that implies <m>r_{L/K}(a)</m> is trivial.
+          and <xref ref="lem-H2-map-global-cyclic"/> implies that in this case the composite <m>H^2(L/K) \to \QQ/\ZZ</m> along the bottom row of
+          <xref ref="fig-connection-5"/> vanishes.
+          By <xref ref="prop-H2-class-absorb-by-cyclotomic"/>, the same then holds for any cyclic extension <m>L/K</m>.
+          By <xref ref="lem-H2-map-global-cyclic"/> again, the composition along the top row of <xref ref="fig-connection-5"/> vanishes, proving the claim.
         </p>
       </proof>
     </proposition>
-    <remark>
+    <remark xml:id="rmk-local-global-via-brauer">
       <p>
         Let <m>L/K</m> be a cyclic extension of number fields.
-        At this point, <m>r_{L/K}</m> kills both principal id&#xe8;les (by <xref ref="prop-reciprocity-trivial-on-diagonal"/>
+        At this point, <m>r_{L/K}</m> kills both principal id&#xe8;les (by <xref ref="prop-reciprocity-trivial-on-diagonal"/>)
         and norms (since it does so locally), so it induces a map <m>C_K/\Norm_{L/K} C_L \to \Gal(L/K)</m>.
-        By the First Inequality (<xref ref="T_first_inequality"/>), this map is surjective; by comparing orders using the Second Inequality
+        By the surjectivity of the Artin map, as deduced from the 
+        First Inequality (<xref ref="prop-artin-map-surjects"/>), this map is surjective; by comparing orders using the Second Inequality
         (<xref ref="T_first_and_second_inequality"/>), we see that the map is also an isomorphism.
-        This establishes the reciprocity law for cyclic extensions, from which it directly follows also for abelian extensions.
+        This establishes local-global compabitibility for cyclic extensions, from which it directly follows also for abelian extensions.
         Hooray again!
-      </p>
-    </remark>
-  </subsection>
-  <subsection>
-    <title>More remarks about Brauer groups</title>
-    <definition xml:id="def-fundamental-exact-sequence">
-      <p>
-        Combining the previous discussion with <xref ref="T_Albert-Brauer-Hasse-Noether"/>, 
-        we see that for any number field <m>K</m>, the group <m>\Br(K)</m> fits into an exact sequence of the form
-        <me>
-          0 \to \Br(K^*) \to \bigoplus_v \Br(K_v^*) \to \QQ/\ZZ \to 0
-        </me>
-        in which 
-        <me>
-          \Br(K_v^*) = \begin{cases} \QQ/\ZZ &amp; \mbox{for $v$ finite} \\
-          \frac{1}{2} \ZZ/\ZZ &amp; \mbox{for $v$ real} \\
-          0 &amp; \mbox{for $v$ complex}. \end{cases}
-        </me>
-        This exact sequence (sometimes called the <term>Fundamental Exact Sequence</term>) plays a key role in various applications of Brauer groups, such as their use to detect obstructions to the existence of rational points
-        on algebraic varieties over number fields (called <term>Brauer-Manin obstructions</term>).
-      </p>
-    </definition>
-    <remark>
-      <p>
-        The property of a field <m>K</m> of characteristic 0 having trivial Brauer group is useful in the theory of finite group representations:
-        for such a field, any <m>K</m>-valued character of a finite group arises from a representation defined over <m>K</m>. (This follows from <term>Schur's lemma</term>:
-        the character in question appears within some irreducible <m>K</m>-linear representation, whose endomorphism ring is a division algebra;
-        the triviality of the Brauer group forces this to split without any base extension.)
-        By contrast,
-        for <m>G = \{\pm 1, \pm i, \pm j, \pm k\}</m>, the standard 2-dimensional representation has a <m>\QQ</m>-valued character but cannot be realized
-        as a representation over <m>\QQ</m>.
-      </p>
-      <p>
-        By <xref ref="prop-H2-class-absorb-by-cyclotomic"/>, the field <m>\QQ^{\ab}</m> has trivial Brauer group. Since in addition every complex character of a finite group
-        has values in <m>\QQ^{\ab}</m>, it follows that every irreducible complex representation of a finite group can be realized over <m>\QQ^{\ab}</m>;
-        for a more direct proof of this, see <xref ref="bib-Serre-LinRep"/>, Chapter 12, Theorem 24.
       </p>
     </remark>
   </subsection>
@@ -247,5 +286,23 @@
         </p>
       </hint>
     </exercise>
+      <exercise>
+        <statement>
+          Let <m>D</m> be a quaternion algebra over a field <m>K</m> (see <xref ref="exer-quaternion-algebras"/>).
+          <ol>
+            <li>
+              <p>
+                Prove that <m>D</m> is isomorphic to its opposite algebra.
+              </p>
+            </li>
+            <li>
+              <p>
+                Prove that there is an isomorphism <m>D \otimes_K D \cong M_4(K)</m> of <m>K</m>-algebras. Consequently, if <m>D</m> is not split, then it represents an element of 
+                <m>\Br(K)</m> of order 2.
+              </p>
+            </li>
+          </ol>
+        </statement>
+      </exercise>
   </exercises>
 </section>

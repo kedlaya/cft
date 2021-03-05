@@ -231,7 +231,7 @@
         there is a unique positive rational with the same norms at the finite places.
         Thus
         <me>
-          C_\QQ \cong \RR^* \times \prod_p \ZZ_p^*
+          C_\QQ \cong \RR^+ \times \prod_p \ZZ_p^*
         </me>.
        </p>
        <p>

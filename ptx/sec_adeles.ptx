@@ -336,9 +336,8 @@
     <title>Adelic <m>S</m>-integers</title>
     <definition xml:id="def-adelic-S-integers">
     <p>
-      For any finite set <m>S</m> of places, let <m>\AA_{K,S}</m> (resp.
-      <m>\AA^{\fin}_{K,S}</m>) be the subring of <m>\AA_K</m> (resp.
-      <m>\AA^{\fin}_K</m>) consisting of those ad&#xe8;les which are integral at all finite places not contained in <m>S</m>.
+      For any finite set <m>S</m> of places, let <m>\AA_{K,S}</m> (resp. <m>\AA^{\fin}_{K,S}</m>) be the subring of <m>\AA_K</m> (resp. <m>\AA^{\fin}_K</m>) 
+      consisting of those ad&#xe8;les which are integral at all finite places not contained in <m>S</m>.
       The elements of <m>\AA_S</m> might be thought of as <q>adelic <m>S</m>-integers</q>.
     </p>
     </definition>
@@ -348,8 +347,7 @@
     <proposition xml:id="P_adelic_CRT">
       <statement>
         <p>
-          For any finite set <m>S</m> of places,
-          <m>K + \AA_{K,S}^{\fin} = \AA_K^{\fin}</m> and <m>K + \AA_{K,S} = \AA_K</m>.
+          For any finite set <m>S</m> of places, <m>K + \AA_{K,S}^{\fin} = \AA_K^{\fin}</m> and <m>K + \AA_{K,S} = \AA_K</m>.
         </p>
       </statement>
       <proof>
@@ -371,17 +369,14 @@
     <proof>
       <p>
         Choose a compact subset <m>T</m> of the Minkowski space <m>M</m> containing a fundamental domain for the lattice <m>\gotho_K</m>.
-        Then every element of <m>M \times \AA^{\fin}_K</m> is congruent modulo
-        <m>\gotho_K</m> to an element of <m>T \times \AA^{\fin}_K</m>.
-        By the proposition, the compact set
-        <m>T \times \AA^{\fin}_K</m> surjects onto <m>\AA_K/K</m>,
-        so the latter is also compact.
+        Then every element of <m>M \times \AA^{\fin}_K</m> is congruent modulo <m>\gotho_K</m> to an element of <m>T \times \AA^{\fin}_K</m>.
+        By the proposition, the compact set <m>T \times \AA^{\fin}_K</m> surjects onto <m>\AA_K/K</m>, so the latter is also compact.
       </p>
     </proof>
     <remark>
       <p>
         We mention in passing that just as the various completions of <m>\QQ</m> are <q>rigid</q> in the sense that they have no nontrivial automorphisms even if you ignore the topology
-        (<xref ref="exer-no-local-automorphism-Q"/>), the ring <m>\AA_\QQ</m> also has  no nontrivial automorphisms even if you ignore the topology (<xref ref="exer-automorphisms-AQ"/>).
+        (<xref ref="exer-no-local-automorphisms-K"/>), the ring <m>\AA_\QQ</m> also has  no nontrivial automorphisms even if you ignore the topology (<xref ref="exer-automorphisms-AQ"/>).
       </p>
     </remark>
   </subsection>
@@ -421,51 +416,67 @@
         </p>
       </statement>
     </exercise>
-    <exercise xml:id="exer-no-local-automorphism-Q">
+    <exercise xml:id="exer-no-local-automorphisms-K">
       <statement>
-        Let <m>v</m> be a place of <m>\QQ</m>. Prove that every automorphism of the field <m>\QQ_v</m>, <em>not necessarily continuous</em>, is trivial.
+        <p>
+          Let <m>K</m> be a number field and let <m>v</m> be a place of <m>K</m>. Prove that 
+          every automorphism of the field <m>K_v</m> (as a ring without topology) is continuous.
+        </p>
       </statement>
       <hint>
         <p>
-          For <m>\RR</m>, this follows from the fact that an element is positive iff it has a square root, so any automorphism preserves both <m>\QQ</m> and the order relation. 
-          To make an analogous argument for <m>\QQ_p</m>, check that an element of <m>\QQ_p^*</m> belongs to <m>\ZZ_p^*</m> if and only if it has an <m>m</m>-th root for every positive integer <m>m</m> coprime to <m>p(p-1)</m>;
-          then note that an element of <m>\QQ_p</m> belongs to <m>\ZZ_p</m> iff it is a difference of two elements of <m>\ZZ_p^*</m>.
+          Let <m>q</m> be the cardinality of the residue field of <m>v</m>.
+          Show first that an element of <m>K_v^*</m> belongs to <m>\gotho_{K_v}^*</m> if and only if it has an 
+          <m>m</m>-th root for every positive integer <m>m</m> coprime to <m>p(q-1)</m>.
+          Then note that an element of <m>K_v</m> belongs to <m>\gotho_{K_v}</m> iff it is a difference of two elements of <m>\gotho_{K_v}^*</m>.
         </p>
       </hint>
     </exercise>
-    <exercise xml:id="exer-no-semilocal-automorphism-Q">
+    <exercise xml:id="exer-no-semilocal-automorphism-K">
       <statement>
         <p>
-          Let <m>S</m> be a finite set of places of the ring <m>\QQ</m>. Prove that every automorphism of <m>\prod_{v \in S} \QQ_v</m>, <em>not necessarily continuous</em>, is trivial.
+          Let <m>S</m> be a finite set of places of a number field <m>K</m>, none of which is complex. 
+          Prove that every automorphism of <m>\prod_{v \in S} K_v</m> (as a ring without topology) is continuous.
         </p>
       </statement>
       <hint>
         <p>
-          Using <xref ref="exer-no-local-automorphism-Q"/>, reduce to checking that for two distinct places <m>v</m> and <m>w</m> of <m>\QQ</m>, 
-          the completions <m>\QQ_v</m> and <m>\QQ_w</m> are not isomorphic as underlying rings.
-          To prove this, consider the set of <m>x \in \QQ</m> which are squares in <m>\QQ_v</m>, and similarly for <m>w</m>.
+          Using <xref ref="exer-no-local-automorphisms-K"/>, reduce to checking that for two noncomplex places <m>v</m> and <m>w</m> of <m>K</m>, 
+          lying over distinct places of <m>\QQ</m>, 
+          the completions <m>K_v</m> and <m>K_w</m> are not isomorphic as underlying rings.
+          To prove this, consider the set of <m>x \in K</m> which are squares in <m>K_v</m>, and similarly for <m>w</m>.
         </p>
       </hint>
     </exercise>
     <exercise xml:id="exer-binary-quadratic-form">
       <statement>
         <p>
-          For <m>a \in \QQ</m>, let <m>S_a</m> be the image of the map <m>(x,y) \mapsto x^2 + ay^2</m> on <m>\AA_\QQ</m>.
-          Let <m>T_a</m> be the set of <m>x \in \AA_\QQ</m> such that <m>cx \in S_a</m> for all <m>c \in \QQ</m>.
+          Let <m>K</m> be a number field and let <m>v</m> be a place of <m>K</m> which is not complex.
+          Let <m>Q(x,y,z)</m> be a quadratic form over <m>K</m> defined as follows.
+          <ul>
+            <li>
+              <p>
+                If <m>v</m> is real, put <m>Q(x,y,z) = x^2 + y^2 + z^2</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>v</m> is finite lying over the rational prime <m>p</m>, 
+                choose <m>a \in K \cap \gotho_{K_v}^*</m> whose image in the residue field of <m>v</m> is not a quadratic residue,
+                and put <m>Q(x,y,z) = x^2 - ay^2 + pz^2</m>.
+              </p>
+            </li>
+          </ul>
+          Let <m>T</m> be the intersection of the images of the maps <m>cQ: \AA_K^3 \to \AA_K</m> over all <m>c \in K^*</m>.
+          Prove that <m>T = \ker(\AA_K \to \prod_{w \in S} K_w)</m> for some finite set <m>S</m> of places of <m>K</m> containing <m>v</m>.
         </p>
-        <ol>
-          <li>
-            <p>
-              Show that <m></m><m>T_1 = \ker(\AA_\QQ \to \RR \times \QQ_2)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Show that for <m>p</m> an odd prime, <m>T_{-p} = \ker(\AA_\QQ \to \QQ_2 \times \QQ_p)</m>.
-            </p>
-          </li>
-        </ol>
       </statement>
+      <hint>
+        <p>
+          Use Hensel's lemma to show that for <m>w</m> a finite place not lying above 2, <m>a,b,c \in \gotho_{K_w}^*</m>, and <m>t \in K_w^*</m>, 
+          the equation <m>ax^2 + by^2 + cz^2 = t</m> always has a solution with <m>a,b,c \in K_w^*</m>.
+        </p>
+      </hint>
     </exercise>
     <exercise xml:id="exer-automorphisms-AQ">
       <statement>
@@ -475,7 +486,7 @@
       </statement>
       <hint>
         <p>
-          Use <xref ref="exer-no-semilocal-automorphism-Q"/> and <xref ref="exer-binary-quadratic-form"/> to prove that the map <m>\AA_\QQ \to \prod_v \QQ_v</m> is equivariant for any automorphism
+          Use <xref ref="exer-no-semilocal-automorphism-K"/> and <xref ref="exer-binary-quadratic-form"/> to prove that the map <m>\AA_\QQ \to \prod_v \QQ_v</m> is equivariant for any automorphism
           of <m>\AA_\QQ</m> and the trivial action on <m>\prod_v \QQ_v</m>.
         </p>
       </hint>

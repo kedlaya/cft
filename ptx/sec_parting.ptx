@@ -68,11 +68,6 @@
       </li>
       <li>
         <p>
-          The Brauer group of a field (i.e., <m>H^2(\Gal(\overline{K}/K), K^*)</m>) and its relationship with central simple algebras.
-        </p>
-      </li>
-      <li>
-        <p>
           More details about zeta functions and <m>L</m>-functions,
           including the class number formula and the distribution of norms in ideal classes.
         </p>
@@ -153,6 +148,11 @@
           Higher-dimensional class field theory (see <xref ref="bib-Kato"/>).
         </p>
       </li>
+      <li>
+        <p>
+          Brauer-Manin obstructions to the existence of rational points on algebraic varieties (see <xref ref="bib-Poonen"/>, Chapter 8).
+        </p>
+      </li>
     </ul>
   </p>
   <p>
@@ -191,7 +191,7 @@
     leading to fruitful transfers of ideas in both directions. See <xref ref="bib-Kapustin-Witten"/> for the starting point.
   </p>
   <p>
-    This discussion could be continued almost indefinitely, so I have made the arbitrary decision to stop here.
+    This discussion could continue <em>ad infinitum</em>, so I had to make an arbitrary decision to stop somewhere, and this is that point.
     Thanks for reading!
   </p>
 </appendix>

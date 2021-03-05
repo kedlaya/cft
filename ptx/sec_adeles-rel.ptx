@@ -45,8 +45,10 @@
   </remark>
   <remark>
     <p>
-      It is possible to show that every automorphism of <m>\AA_K</m> is induced by an automorphism of <m>K</m> over <m>\QQ</m>, even if we ignore topology and consider
+      When <m>K</m> is totally real, it is possible to show that every automorphism of <m>\AA_K</m> is induced by an automorphism of <m>K</m> over <m>\QQ</m>, even if we ignore topology and consider
       automorphisms of the underlying ring which need not be continuous. See <xref ref="exer-automorphisms-AK"/>.
+      This breaks down when <m>K</m> has complex places because <m>\CC</m> has many automorphisms as a field without topology: the automorphism group
+      acts transitively on <m>\CC \setminus \overline{\QQ}</m>.
     </p>
   </remark>
   </subsection>
@@ -196,12 +198,15 @@
     <exercise xml:id="exer-automorphisms-AK">
       <statement>
         <p>
-          Let <m>K</m> be a Galois number field. Prove that the automorphism group of <m>\AA_K</m> as a bare ring (ignoring its topology) equals <m>\Gal(K/\QQ).</m>
+          Let <m>K</m> be a totally real Galois number field. Prove that the automorphism group of <m>\AA_K</m> as a bare ring (ignoring its topology) equals <m>\Gal(K/\QQ)</m>.
         </p>
       </statement>
       <hint>
         <p>
-          Combine <xref ref="exer-automorphisms-AQ"/> with <xref ref="exer-integral-closure-adelic"/>.
+          By <xref ref="exer-integral-closure-adelic"/>, any automorphism of <m>\AA_K</m> acts on <m>K</m>. 
+          We thus have homomorphisms <m>\Gal(K/\QQ) \to \Aut(\AA_K) \to \Gal(K/\QQ)</m> whose composition is the identity;
+          it thus remains to check that <m>\Aut(\AA_K) \to \Gal(K/\QQ)</m> is injective.
+          For this, apply <xref ref="exer-binary-quadratic-form"/> as in <xref ref="exer-automorphisms-AQ"/>.
         </p>
       </hint>
     </exercise>

@@ -11,7 +11,7 @@
   <title>Construction of the reciprocity map</title>
     <p>
       In order to define a candidate <m>r: \Gal(L/K) \to A_K/\Norm_{L/K} A_L</m> for the reciprocity map,
-      we must first give a partial definition using a different domain.
+      we must first give a partial definition using a different domain. See <xref ref="rmk-shape-of-reciprocity-def"/> for motivation.
     </p>
     <definition xml:id="def-abstract-recip-candidate">
       <p>
@@ -170,6 +170,15 @@
         </p>
       </proof>
     </proposition>
+    <remark xml:id="rmk-shape-of-reciprocity-def">
+      <p>
+        Note that <xref ref="P_abstract_functorialities"/> dictates the form of <xref ref="def-abstract-recip-candidate"/>:
+        we want to be able to compute the map <m>r: \Gal(L/K) \to A_K/\Norm_{L/K} A_L</m> by first computing the map
+        <m>r: \Gal(ML/M) \to A_M/\Norm_{ML/M} A_{ML}</m>, which should take Frobenius to a uniformizer (as <m>ML/M</m> is an unramified extension), 
+        and then applying <m>\Norm_{M/L}</m>.
+        We will use this picture again in <xref ref="lem-abstract-recip-case2"/>.
+      </p>
+    </remark>
     <proposition xml:id="P_abstract_functorialities2">
       <statement>
         <p>

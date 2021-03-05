@@ -72,7 +72,10 @@
     D. Hilbert, <pubtitle>The Theory of Algebraic Number Fields</pubtitle>, Springer-Verlag, Berlin, 1998.
   </biblio>
   <biblio type="raw" xml:id="bib-Holt">
-    D.F. Holt, <pubtitle>An interpretation of the cohomology groups <m>H_n(G, M)</m></pubtitle>, <journal>J. Algebra</journal> <volume>60</volume> (1979), no. 2, 307<ndash/>320. 
+    D.F. Holt, <articletitle>An interpretation of the cohomology groups <m>H_n(G, M)</m></articletitle>, <journal>J. Algebra</journal> <volume>60</volume> (1979), no. 2, 307<ndash/>320. 
+  </biblio>
+  <biblio type="raw" xml:id="bib-Jacobson-2">
+    N. Jacobson, <pubtitle>Basic Algebra, II</pubtitle>, W. H. Freeman, San Francisco, 1980.
   </biblio>
   <biblio type="raw" xml:id="bib-Janusz">
     G. Janusz, <pubtitle>Algebraic Number Fields</pubtitle>, American Mathematical Society, 1996.
@@ -128,6 +131,9 @@
   </biblio>
   <biblio type="raw" xml:id="bib-Noether">
     E. Noether, <articletitle>Der Hauptgeschlechtssatz für relativ-galoissche Zahlkörper</articletitle>, <journal>Mathematische Annalen</journal> <journal>108</journal> (1933), 411<ndash/>419.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Poonen">
+    B. Poonen, <pubtitle>Rational Points on Varieties</pubtitle>, Graduate Studies in Mathematics 186, American Mathematical Society, Providence, RI, 2017.
   </biblio>
   <biblio type="raw" xml:id="bib-Scholze">
     P. Scholze, <articletitle>The local Langlands correspondence for <m>\GL_n</m> over <m>p</m>-adic fields</articletitle>,

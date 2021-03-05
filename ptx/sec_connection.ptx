@@ -36,6 +36,7 @@
     </definition>
     <p>
       As a base case for our work, we need to know that <m>r_{L/K} = r'_{L/K}</m> when <m>L</m> is contained in a small cyclotomic extension.
+      Note that this is very similar to the proof that the map <m>v</m> is an abstract henselian valuation (<xref ref="lem-global-abstract-valuation"/>).
     </p>
     <lemma xml:id="lem-compare-reciprocity-small-cyclotomic">
       <statement>
@@ -158,6 +159,7 @@
     </lemma>
     <p>
       At last, we obtain the desired compatibility of reciprocity maps, and with it the completion of the proofs from global class field theory. Hooray!
+      (See <xref ref="rmk-local-global-via-brauer"/> for another approach.)
     </p>
     <proposition xml:id="prop-reciprocity-trivial-on-diagonal2">
       <statement>
@@ -223,25 +225,28 @@
       <p>
         By the existence theorem (<xref ref="T_adelic_existence_theorem2"/>)
         plus local-to-global compatibility (<xref ref="prop-reciprocity-trivial-on-diagonal2"/>),
-        it suffices to produce an open subgroup <m>U</m> of <m>C_K</m> of finite index such that the preimage of <m>U</m> under
+        it suffices to produce an open subgroup <m>V</m> of <m>C_K</m> of finite index such that the preimage of <m>V</m> under
         <m>K_v^* \to C_K</m> is contained in <m>N = \Norm_{M/K_v} M^*</m>.
-        Let <m>S</m> be the set of infinite places, let <m>T = S \cup \{v\}</m>,
-        and let <m>G = \gotho_{K,T}^* \cap N</m>.
-        Then one can choose an additional place <m>u</m>
-        (finite and distinct from <m>v</m>)
-        and an open subgroup <m>V</m> of
-        <m>\gotho_{K_u}^*</m> such that <m>V \cap \gotho_{K,T}^* \subseteq G</m>.
+        Let <m>S</m> be the set of infinite places and let <m>T = S \cup \{v\}</m>.
+        By <xref ref="cor-S-units-theorem"/>, <m>\gotho_{K,T}^*</m> is a finitely generated abelian group and
+        <m>G = \gotho_{K,T}^* \cap N</m> is a subgroup of <m>\gotho_{K,T}^*</m> of finite index.
+      </p>
+      <p>
+        Pick a finite place <m>u \notin T</m>.
+        The image of <m>G</m> in <m>K_u</m> is a finitely generated subgroup of <m>\gotho_{K_u}^*</m>.
+        Hence we can choose a sufficiently small neighborhood <m>U</m> of the identity in <m>\gotho_{K_u}^*</m>
+        so as to ensure that <m>U \cap \gotho_{K,T}^* \subseteq G</m>.
+      </p>
+      <p>
         Now put
         <me>
-          W = N \times V \times \prod_{w \in S} K_w^* \times \prod_{w \notin S \cup \{u,v\}} \gotho_K^*
+          W = N \times U \times \prod_{w \in S} K_w^* \times \prod_{w \notin S \cup \{u,v\}} \gotho_K^*, \qquad V = K^* W/K^*.
         </me>
-        and <m>U = W K^*/K^*</m>.
         If <m>\alpha_v \in K_v^*</m> maps into <m>U</m>,
         then there exists <m>\beta \in K^*</m> such that <m>\alpha_v \beta \in W</m>.
-        That means first of all that
-        <m>\beta \in \gotho_{K,T}^*</m> and then that <m>\beta \in V</m>,
-        so that <m>\beta \in G</m> and so also <m>\beta \in N</m>;
-        it also means that <m>\alpha_v \beta \in N</m>.
+        On one hand, this implies that <m>\alpha_v \beta_v \in N</m>.
+        On the other hand, it implies that <m>\beta \in \gotho_{K,T}^*</m> and <m>\beta_u \in U</m>,
+        so <m>\beta \in G</m> and so <m>\beta_v \in N</m>.
         Thus <m>\alpha_v \in N</m>, as desired.
       </p>
     </proof>

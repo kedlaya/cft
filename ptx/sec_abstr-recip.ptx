@@ -24,9 +24,8 @@
     </p>
     <definition xml:id="def-global-abstract-units">
       <p>
-        Set <m>A = \bigcup_K C_K</m>, so that <m>A_K = C_K</m> for every number field <m>K</m>.
-        Our earlier calculations (<xref ref="T_first_inequality"/>,
-        <xref ref="T_first_and_second_inequality"/>)
+        Set <m>A = \bigcup_K C_K</m>; by <xref ref="cor-idele-group-galois-descent"/>, <m>A_K = C_K</m> for every number field <m>K</m>.
+        Our earlier calculations (<xref ref="T_first_inequality"/>, <xref ref="T_first_and_second_inequality"/>)
         imply that the class field axiom is satisfied:
         for <m>L/K</m> a cyclic extension of number fields,
         <me>
@@ -49,7 +48,7 @@
       (<xref ref="T_Kronecker-Weber"/>); instead, we will recover it as part of the reciprocity law.
     </p>
     <p>
-      We first make a distinction which is of limited significance in the totality of number theory, but is critical for our use of the machinery of abstract class field theory.
+      We first make a distinction which is of marginal significance in the totality of number theory, but is critical for our use of the machinery of abstract class field theory.
     </p>
     <definition>
       <p>
@@ -75,23 +74,23 @@
       With this definition in hand, we can set up the homomorphism <m>d</m> needed to define abstract ramification theory for the base field <m>k = \QQ</m>.
     </p>
     <definition xml:id="def-global-abstract-ramification">
-    <p>
-      Choose an isomorphism of <m>\Gal(\QQ^{\smcy}/\QQ)</m> with <m>\widehat{\ZZ}</m>;
-      our results are not going to depend on the choice (see <xref ref="rmk-remove-identification"/>).
-      That gives a continuous surjection
-      <me>
-        d: \Gal(\overline{\QQ}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ};
-      </me>
-      recall that this means we are going to regard <m>\QQ^{\smcy}/\QQ</m> as the <q>maximal unramified extension</q>
-      of <m>\QQ</m>.
-    </p>
-    <p>
-      As in the general setup, for any finite extension <m>L/K</m> of number fields, we define the
-      <term>abstract ramification index</term> <m>e_{L/K}</m> and the <term>abstract inertia degree</term> <m>f_{L/K}</m> by setting
-      <me>
-        f_{L/K} = [L \cap \QQ^{\smcy}:K \cap \QQ^{\smcy}], \qquad e_{L/K} = \frac{[L:K]}{f_{L/K}}.
-      </me>
-    </p>
+      <p>
+        Choose an isomorphism of <m>\Gal(\QQ^{\smcy}/\QQ)</m> with <m>\widehat{\ZZ}</m>;
+        our results are not going to depend on the choice (see <xref ref="rmk-remove-identification"/>).
+        That gives a continuous surjection
+        <me>
+          d: \Gal(\overline{\QQ}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ};
+        </me>
+        recall that this means we are going to regard <m>\QQ^{\smcy}/\QQ</m> as the <q>maximal unramified extension</q>
+        of <m>\QQ</m>.
+      </p>
+      <p>
+        As in the general setup, for any finite extension <m>L/K</m> of number fields, we define the
+        <term>abstract ramification index</term> <m>e_{L/K}</m> and the <term>abstract inertia degree</term> <m>f_{L/K}</m> by setting
+        <me>
+          f_{L/K} = [L \cap \QQ^{\smcy}:K \cap \QQ^{\smcy}], \qquad e_{L/K} = \frac{[L:K]}{f_{L/K}}.
+        </me>
+      </p>
     </definition>
   </subsection>
   <subsection>
@@ -113,19 +112,19 @@
       </ol>
     </p>
     <definition xml:id="def-global-abstract-valuation">
-    <p>
-      To define the map <m>v</m>, we write 
-      <me>
-        I_{\QQ} = \QQ^* \times \RR^* \times \widehat{\ZZ}^*
-      </me>
-      as in <xref ref="rmk-idele-group-presentation-for-Q"/>. We then define <m>v</m> as the projection onto the third factor
-      followed by the projection 
-      <me>
-        \widehat{\ZZ}^* \cong \Gal(\QQ^{\cyc}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}.
-      </me>
-      The first condition of <xref ref="def-abstract-henselian-valuation"/> holds by construction.
-      We will check the second condition using Artin reciprocity for cyclotomic extensions.
-    </p>
+      <p>
+        To define the map <m>v</m>, we write 
+        <me>
+          I_{\QQ} = \QQ^* \times \RR^+ \times \widehat{\ZZ}^*
+        </me>
+        as in <xref ref="rmk-idele-group-presentation-for-Q"/>. We then define <m>v</m> as the projection onto the third factor
+        followed by the projection 
+        <me>
+          \widehat{\ZZ}^* \cong \Gal(\QQ^{\cyc}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}.
+        </me>
+        The first condition of <xref ref="def-abstract-henselian-valuation"/> holds by construction.
+        We will check the second condition using Artin reciprocity for cyclotomic extensions.
+      </p>
     </definition>
     <lemma xml:id="lem-global-abstract-valuation">
       <statement>
@@ -163,13 +162,13 @@
           For <m>L/K</m> an abelian extension of number fields, the Artin map always surjects onto <m>\Gal(L/K)</m>.
         </p>
       </statement>
+      <proof>
+        <p>
+          Let <m>H</m> be the image of the Artin map; the fixed field <m>M</m> of <m>H</m> has the property that all but finitely many primes of <m>K</m> split completely in <m>M</m>.
+          We've already seen that this contradicts the First Inequality unless <m>M = K</m> (<xref ref="C_split_completely"/>).
+        </p>
+      </proof>
     </proposition>
-    <proof>
-      <p>
-        Let <m>H</m> be the image of the Artin map; the fixed field <m>M</m> of <m>H</m> has the property that all but finitely many primes of <m>K</m> split completely in <m>M</m>.
-        We've already seen that this contradicts the First Inequality unless <m>M = K</m> (<xref ref="C_split_completely"/>).
-      </p>
-    </proof>
   </subsection>
   <subsection>
     <title>Consequences of abstract CFT</title>
