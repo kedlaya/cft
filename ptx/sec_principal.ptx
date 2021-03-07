@@ -31,12 +31,12 @@
         </p>
       </statement>
       <proof>
-      </proof>
         <p>
           This will follow by combining <xref ref="T_transfer_homomorphism"/> (construction of the transfer homomorphism),
           <xref ref="L_transfer_Frobenius"/> (implication that vanishing of the transfer homomorphism implies the desired result), and
           <xref ref="T_transfer_vanishes"/> (vanishing of the transfer homomorphism).
         </p>
+      </proof>
     </theorem>
     <example>
       <p>
@@ -58,14 +58,14 @@
       in which the horizontal arrows are Artin maps).
     </p>
       <figure xml:id="fig-principal-1">
-      <image xml:id="img-principal-1">
-      <latex-image>
-      \xymatrix{
-      \Cl(K) \ar[r] \ar[d] &amp; \Gal(L/K) \ar^{V}[d] \\
-      \Cl(L) \ar[r] &amp; \Gal(M/L)
-      }
-      </latex-image>
-      </image>
+        <image xml:id="img-principal-1">
+        <latex-image>
+        \xymatrix{
+        \Cl(K) \ar[r] \ar[d] &amp; \Gal(L/K) \ar^{V}[d] \\
+        \Cl(L) \ar[r] &amp; \Gal(M/L)
+        }
+        </latex-image>
+        </image>
       </figure>
     <p>
       In order to proceed further, we must extract more information about the Galois groups in question.
@@ -97,14 +97,14 @@
         We may thus relabel <xref ref="fig-principal-1"/> as in <xref ref="fig-principal-2"/>.
       </p>
       <figure xml:id="fig-principal-2">
-      <image xml:id="img-principal-2">
-      <latex-image>
-      \xymatrix{
-      \Cl(K) \ar[r] \ar[d] &amp; \Gal(L/K) = \Gal(M/K)^{\ab} \ar^{V}[d] \\
-      \Cl(L) \ar[r] &amp; \Gal(M/L) = \Gal(M/L)^{\ab}
-      }
-      </latex-image>
-      </image>
+        <image xml:id="img-principal-2">
+        <latex-image>
+        \xymatrix{
+        \Cl(K) \ar[r] \ar[d] &amp; \Gal(L/K) = \Gal(M/K)^{\ab} \ar^{V}[d] \\
+        \Cl(L) \ar[r] &amp; \Gal(M/L) = \Gal(M/L)^{\ab}
+        }
+        </latex-image>
+        </image>
       </figure>
     </definition>
     <p>
@@ -188,7 +188,9 @@
         </p>
       </statement>
       <proof>
-        See <xref ref="exc-transfer-Frobenius"/>.
+        <p>
+          See <xref ref="exc-transfer-Frobenius"/>.
+        </p>
       </proof>
     </lemma>
   </subsection>
@@ -301,16 +303,16 @@
           prove that the diagram in <xref ref="fig-principal-3"/> commutes, 
           where <m>S</m> is given by <m>S(x) = x ([g_1] + \cdots + [g_n])</m>.
           </p>
-      <figure xml:id="fig-principal-3">
-      <image xml:id="img-principal-3">
-      <latex-image>
-      \xymatrix{
-      G/G' \ar^{V}[r] \ar^{\delta}[d] &amp; H/H' \ar^{\delta}[d] \\
-      I_G/I_G^2 \ar^(.3){S}[r] &amp; (I_{H}+I_GI_{H})/I_GI_{H},
-      }
-      </latex-image>
-      </image>
-      </figure>
+          <figure xml:id="fig-principal-3">
+          <image xml:id="img-principal-3">
+          <latex-image>
+          \xymatrix{
+          G/G' \ar^{V}[r] \ar^{\delta}[d] &amp; H/H' \ar^{\delta}[d] \\
+          I_G/I_G^2 \ar^(.3){S}[r] &amp; (I_{H}+I_GI_{H})/I_GI_{H},
+          }
+          </latex-image>
+          </image>
+          </figure>
         </statement>
       </exercise>
       <exercise xml:id="exc-transfer-vanishes">

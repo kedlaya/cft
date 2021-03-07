@@ -194,7 +194,7 @@
           By <xref ref="T_Albert-Brauer-Hasse-Noether"/>, any class in <m>H^2(L/K)</m> is determined by its
           images in <m>H^2(L_w/K_v)</m> for all places <m>v</m> in <m>K</m> (where <m>w</m> denotes any place of <m>L</m> above <m>v</m>), with only finitely many of these being
           nonzero. Moreover, a class in <m>H^2(L_w/K_v)</m> of some order <m>m</m> is killed by replacing <m>K_v</m> by any extension of degree <m>m</m>
-          (by <xref ref="L_local_invariant_map"/>; see also <xref ref="bib-Milne-CFT"/>, Theorem III.2.1).
+          (by <xref ref="rmk-local-classes-unramified"/> and <xref ref="rmk-local-Brauer-transfer"/>; see also <xref ref="bib-Milne-CFT"/>, Theorem III.2.1).
           It thus suffices to find a cyclic cyclotomic extension for which, for some fixed finite set of finite places 
           <m>S</m> of <m>K</m>, the degrees <m>[L_w:K_v]</m> for all <m>v \in S</m> are conveniently large; for this, see <xref ref="exer-large-cyclotomic-degree"/>.
           (Compare also <xref ref="bib-Milne-CFT"/>, Proposition VII.7.2.)

@@ -17,22 +17,22 @@
   <subsection>
     <title>Homology</title>
     <definition>
-      Let <m>M_G</m> denote the maximal quotient of <m>M</m> on which <m>G</m> acts trivially.
-      In other words,
-      <m>M_G</m> is the quotient of <m>M</m> by the submodule spanned by <m>m^g-m</m> for all <m>m \in M</m> and <m>g \in G</m>.
-      In yet other words, <m>M_G = M/M I_G</m>,
-      where <m>I_G</m> is the <term>augmentation ideal</term>
-      of the group algebra <m>\ZZ[G]</m>:
-      <me>
-        I_G = \left\{\sum_{g \in G} z_g[g]: \sum_g z_g = 0\right\}
-      </me>.
+      <p>
+        Let <m>M_G</m> denote the maximal quotient of <m>M</m> on which <m>G</m> acts trivially.
+        In other words,
+        <m>M_G</m> is the quotient of <m>M</m> by the submodule spanned by <m>m^g-m</m> for all <m>m \in M</m> and <m>g \in G</m>.
+        In yet other words, <m>M_G = M/M I_G</m>,
+        where <m>I_G</m> is the <term>augmentation ideal</term>
+        of the group algebra <m>\ZZ[G]</m>:
+        <me>
+          I_G = \left\{\sum_{g \in G} z_g[g]: \sum_g z_g = 0\right\}.
+        </me>
+        Or if you like, <m>M_G = M \otimes_{\ZZ[G]} \ZZ</m>.
+        Since <m>M^G</m> is the group of <m>G</m>-invariants,
+        we call <m>M_G</m> the group of
+        <term><m>G</m>-coinvariants</term>.
+      </p>
     </definition>
-    <p>
-      Or if you like, <m>M_G = M \otimes_{\ZZ[G]} \ZZ</m>.
-      Since <m>M^G</m> is the group of <m>G</m>-invariants,
-      we call <m>M_G</m> the group of
-      <term><m>G</m>-coinvariants</term>.
-    </p>
     <p>
       The functor <m>M \to M^G</m> is right exact but not left exact:
       if <m>0 \to M' \to M \to M'' \to 0</m>,
@@ -40,66 +40,68 @@
       Again, we can fill in the exact sequence by defining homology groups.
     </p>
     <definition>
-      A <m>G</m>-module <m>M</m> is <term>projective</term>
-      if for any surjection <m>N \to N'</m> of <m>G</m>-modules and any map <m>\phi: M \to N'</m>,
-      there exists a map <m>\psi: M \to N</m> lifting <m>\phi</m>.
-      This definition is dual to the definition of an injective <m>G</m>-module, but this symmetry is a bit misleading:
-      it is much easier to find projectives than injectives.
-      For example,  any <m>G</m>-module which is a free module over the ring <m>\ZZ[G]</m> is projective
-      such as <m>\ZZ[G]</m> itself!
+      <p>
+        A <m>G</m>-module <m>M</m> is <term>projective</term>
+        if for any surjection <m>N \to N'</m> of <m>G</m>-modules and any map <m>\phi: M \to N'</m>,
+        there exists a map <m>\psi: M \to N</m> lifting <m>\phi</m>.
+        This definition is dual to the definition of an injective <m>G</m>-module, but this symmetry is a bit misleading:
+        it is much easier to find projectives than injectives.
+        For example,  any <m>G</m>-module which is a free module over the ring <m>\ZZ[G]</m> is projective
+        such as <m>\ZZ[G]</m> itself!
+      </p>
     </definition>
     <definition>
-    <p>
-      A <term>projective resolution</term> of <m>M</m> is an exact sequence
-      <m>\cdots \to P_1 \to P_0 \to M \to 0</m> of <m>G</m>-modules
-      in which the <m>P_i</m> are projective.
-      Given such a resolution,
-      take coinvariants to get a complex
-      <me>
-        \cdots \stackrel{d_2}{\to} P_2 \stackrel{d_1}{\to} P_1 \stackrel{d_0}{\to} P_0 \to 0
-      </me>,
-      then put <m>H_i(G, M) = \ker(d_{i-1})/\im(d_i)</m>.
-      Again, this is canonically independent of the resolution and functorial,
-      and there is a long exact sequence which starts out
-      <me>
-        \cdots \to H_1(G, M'') \stackrel{\delta}{\to} H_0(G, M') \to H_0(G, M) \to H_0(G, M'') \to 0.
-      </me>
-    </p>
+      <p>
+        A <term>projective resolution</term> of <m>M</m> is an exact sequence
+        <m>\cdots \to P_1 \to P_0 \to M \to 0</m> of <m>G</m>-modules
+        in which the <m>P_i</m> are projective.
+        Given such a resolution,
+        take coinvariants to get a complex
+        <me>
+          \cdots \stackrel{d_2}{\to} P_2 \stackrel{d_1}{\to} P_1 \stackrel{d_0}{\to} P_0 \to 0,
+        </me>
+        then put <m>H_i(G, M) = \ker(d_{i-1})/\im(d_i)</m>.
+        Again, this is canonically independent of the resolution and functorial,
+        and there is a long exact sequence which starts out
+        <me>
+          \cdots \to H_1(G, M'') \stackrel{\delta}{\to} H_0(G, M') \to H_0(G, M) \to H_0(G, M'') \to 0.
+        </me>
+      </p>
     </definition>
     <definition>
-    <p>
-      We say that <m>M</m> is <term>acyclic (for homology)</term> if 
-      <m>H_i(G,M) =0</m> for <m>i>0</m>.
-      As with group cohomology, we can replace a projective resolution with an acyclic resolution and get the same homology groups.
-      For example, induced modules are again acyclic and the analogue of Shapiro's lemma holds
-      (key point: any free <m>\ZZ[H]</m>-module induces to a free <m>\ZZ[G]</m>-module).
-    </p>
+      <p>
+        We say that <m>M</m> is <term>acyclic (for homology)</term> if 
+        <m>H_i(G,M) =0</m> for <m>i>0</m>.
+        As with group cohomology, we can replace a projective resolution with an acyclic resolution and get the same homology groups.
+        For example, induced modules are again acyclic and the analogue of Shapiro's lemma holds
+        (key point: any free <m>\ZZ[H]</m>-module induces to a free <m>\ZZ[G]</m>-module).
+      </p>
     </definition>
     <remark xml:id="rmk-first-homology">
-    <p>
-      One can give a concrete description of homology as well,
-      but we won't need it for our purposes.
-      Even without one, though,
-      we can calculate <m>H_1(G, \ZZ)</m>, using the exact sequence
-      <me>
-        0 \to I_G \to \ZZ[G] \to \ZZ \to 0
-      </me>.
-    </p>
-    <p>
-      By the long exact sequence in homology,
-      <me>
-        0 = H_1(G, \ZZ[G]) \to H_1(G, \ZZ) \to H_0(G, I_G) \to H_0(G, \ZZ[G])
-      </me>
-      is exact, i.e.
-      <m>0 \to H_1(G, \ZZ) \to I_G/I_G^2 \to \ZZ[G]/I_G</m> is exact.
-      The last map is induced by
-      <m>I_G \hookrightarrow \ZZ[G]</m> and so is the zero map.
-      Thus <m>H_1(G, \ZZ) \cong I_G/I_G^2</m>;
-      recall that in <xref ref="exc-augmentation"/>,
-      it was shown that the map <m>g \mapsto [g] - 1</m> defines an isomorphism <m>G^{\ab} \to I_G/I_G^2</m>.
-      This can be thought of as an algebraic analogue of the fact that the first homology group of a (reasonable)
-      topological space equals the abelianization of the fundamental group.
-    </p>
+      <p>
+        One can give a concrete description of homology as well,
+        but we won't need it for our purposes.
+        Even without one, though,
+        we can calculate <m>H_1(G, \ZZ)</m>, using the exact sequence
+        <me>
+          0 \to I_G \to \ZZ[G] \to \ZZ \to 0
+        </me>.
+      </p>
+      <p>
+        By the long exact sequence in homology,
+        <me>
+          0 = H_1(G, \ZZ[G]) \to H_1(G, \ZZ) \to H_0(G, I_G) \to H_0(G, \ZZ[G])
+        </me>
+        is exact, i.e.
+        <m>0 \to H_1(G, \ZZ) \to I_G/I_G^2 \to \ZZ[G]/I_G</m> is exact.
+        The last map is induced by
+        <m>I_G \hookrightarrow \ZZ[G]</m> and so is the zero map.
+        Thus <m>H_1(G, \ZZ) \cong I_G/I_G^2</m>;
+        recall that in <xref ref="exc-augmentation"/>,
+        it was shown that the map <m>g \mapsto [g] - 1</m> defines an isomorphism <m>G^{\ab} \to I_G/I_G^2</m>.
+        This can be thought of as an algebraic analogue of the fact that the first homology group of a (reasonable)
+        topological space equals the abelianization of the fundamental group.
+      </p>
     </remark>
   </subsection>
   <subsection>
@@ -110,72 +112,72 @@
       the long exact sequences of cohomology and homology to get a doubly infinite exact sequence.
     </p>
     <definition>
-    <p>
-      Let <m>M</m> be a <m>G</m>-module.
-      Define the map <m>\Norm_G: M \to M</m> by
-      <me>
-        \Norm_G(m) = \sum_{g \in G} m^g
-      </me>.
-    </p>
-    <p>
-      Then <m>\Norm_G</m> induces a homomorphism
-      <me>
-        \Norm_G: H_0(G,M) = M_G \to M^G = H^0(G,M)
-      </me>.
-    </p>
+      <p>
+        Let <m>M</m> be a <m>G</m>-module.
+        Define the map <m>\Norm_G: M \to M</m> by
+        <me>
+          \Norm_G(m) = \sum_{g \in G} m^g.
+        </me>
+      </p>
+      <p>
+        Then <m>\Norm_G</m> induces a homomorphism
+        <me>
+          \Norm_G: H_0(G,M) = M_G \to M^G = H^0(G,M).
+        </me>
+      </p>
     </definition>
     <remark>
-    <p>
-    You might be wondering why <m>\Norm_G</m> is called a <q>norm</q> rather than a <q>trace</q>.
-    The reason is that in practice, our modules <m>M</m> will most often be groups which are most naturally written
-     multiplicatively, e.g., the nonzero elements of a field.
-     </p>
+      <p>
+        You might be wondering why <m>\Norm_G</m> is called a <q>norm</q> rather than a <q>trace</q>.
+        The reason is that in practice, our modules <m>M</m> will most often be groups which are most naturally written
+        multiplicatively, e.g., the nonzero elements of a field.
+      </p>
     </remark>
     <definition>
-    <p>
-      We now define the <term>Tate cohomology groups</term> (or <term>Tate homology groups</term> if you prefer) as follows:
-      <me>
-        H_T^i = \begin{cases}H^i(G, M) \amp  i > 0 \\ M^G/\Norm_G M \amp  i=0 \\ \ker(\Norm_G)/MI_G \amp  i=-1 \\ H_{-i-1}(G,M) \amp  i\lt -1. \end{cases}
-      </me>
-    </p>
-    </definition>
+      <p>
+        We now define the <term>Tate cohomology groups</term> (or <term>Tate homology groups</term> if you prefer) as follows:
+        <me>
+          H_T^i = \begin{cases}H^i(G, M) \amp  i > 0 \\ M^G/\Norm_G M \amp  i=0 \\ \ker(\Norm_G)/MI_G \amp  i=-1 \\ H_{-i-1}(G,M) \amp  i\lt -1. \end{cases}
+        </me>
+      </p>
+      </definition>
     <lemma>
       <statement>
-      <p>
-      For any short exact sequence
-      <m>0 \to M' \to M \to M'' \to 0</m> of <m>G</m>-modules, we have a canonical exact sequence
-      <me>
-        \cdots \to H^{i-1}_T(G, M'') \to H^i_T(G, M') \to H^i_T(G, M) \to H^i_T(G, M'') \to H^{i+1}_T(G, M') \to \cdots
-      </me>
-      which extends infinitely in both directions.
-      </p>
+        <p>
+        For any short exact sequence
+        <m>0 \to M' \to M \to M'' \to 0</m> of <m>G</m>-modules, we have a canonical exact sequence
+        <me>
+          \cdots \to H^{i-1}_T(G, M'') \to H^i_T(G, M') \to H^i_T(G, M) \to H^i_T(G, M'') \to H^{i+1}_T(G, M') \to \cdots
+        </me>
+        which extends infinitely in both directions.
+        </p>
       </statement>
       <proof>
-      <p>
-        Since we already have long exact sequences for homology and cohomology, the only remaining issue is exactness between
-        <m>H^{-2}_T(G, M'')</m> and <m>H^1_T(G, M')</m> inclusive.
-        This follows by diagram-chasing, as in the proof of the snake lemma (<xref ref="L_snake_lemma"/>)
-        on the commutative diagram <xref ref="fig-homology-1"/>
-        with exact rows, noting that the diagram remains commutative with the dashed arrows added.
-      </p>
+        <p>
+          Since we already have long exact sequences for homology and cohomology, the only remaining issue is exactness between
+          <m>H^{-2}_T(G, M'')</m> and <m>H^1_T(G, M')</m> inclusive.
+          This follows by diagram-chasing, as in the proof of the snake lemma (<xref ref="L_snake_lemma"/>)
+          on the commutative diagram <xref ref="fig-homology-1"/>
+          with exact rows, noting that the diagram remains commutative with the dashed arrows added.
+        </p>
       </proof>
     </lemma>
       <figure xml:id="fig-homology-1">
-      <image>
-      <latex-image>
-      \xymatrix{
-      H_1(G, M'') \ar[r] \ar@{-->}[d] &amp; H_0(G, M') \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M) \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M'') \ar[r] \ar^{\Norm_G}[d] &amp; 0 \ar@{-->}[d] \\
-      0 \ar[r] &amp; H^0(G, M') \ar[r]  &amp; H^0(G, M) \ar[r] &amp;  H^0(G, M') \ar[r] &amp; H^1(G, M')
-      }
-      </latex-image>
-      </image>
+        <image>
+        <latex-image>
+        \xymatrix{
+        H_1(G, M'') \ar[r] \ar@{-->}[d] &amp; H_0(G, M') \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M) \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M'') \ar[r] \ar^{\Norm_G}[d] &amp; 0 \ar@{-->}[d] \\
+        0 \ar[r] &amp; H^0(G, M') \ar[r]  &amp; H^0(G, M) \ar[r] &amp;  H^0(G, M') \ar[r] &amp; H^1(G, M')
+        }
+        </latex-image>
+        </image>
       </figure>
-      <remark>
-    <p>
-      If <m>M</m> is an induced <m>G</m>-module,
-      then <m>H^i_T(G,M) = 0</m> for all <m>i</m> (see <xref ref="exer-induced-acyclic-Tate"/>. 
-      That is, induced modules are acyclic for all of cohomology, homology, and Tate (co)homology.
-    </p>
+    <remark>
+      <p>
+        If <m>M</m> is an induced <m>G</m>-module,
+        then <m>H^i_T(G,M) = 0</m> for all <m>i</m> (see <xref ref="exer-induced-acyclic-Tate"/>. 
+        That is, induced modules are acyclic for all of cohomology, homology, and Tate (co)homology.
+      </p>
     </remark>
   </subsection>
   <subsection>
@@ -185,22 +187,22 @@
       but under more restrictive conditions.
     </p>
     <definition xml:id="D-extended-functoriality-homology">
-    <p>
-      Again, let <m>M</m> be a <m>G</m>-module and <m>M'</m> a <m>G'</m>-module,
-      and consider a homomorphism
-      <m>\alpha: G' \to G</m> of groups and a homomorphism
-      <m>\beta: M \to M'</m> of abelian which are compatible in the sense of <xref ref="D-extended-functoriality"/>.
-      We would like to obtain canonical homomorphisms
-      <m>H_i(G, M) \to H_i(G', M')</m>,
-      but for this we need to add an additional condition to ensure that
-      <m>M \to M'</m> induces a well-defined map <m>M_G \to M'_{G'}</m>.
-      For instance, this holds if <m>\alpha</m> is surjective.
-    </p>
-    <p>
-      For Tate cohomology groups, there is a further complication that the map <m>M^G \to (M')^{G'}</m> does not necessarily induce
-      a map <m>\Norm(M) \to \Norm(M')</m>. However, this does occur if <m>\alpha</m> is injective, so for instance we have well-defined
-      restriction maps <m>\Res: H^0_T(G, M) \to H^0_T(H, M)</m> whenever <m>H</m> is a subgroup of <m>G</m>.
-    </p>
+      <p>
+        Again, let <m>M</m> be a <m>G</m>-module and <m>M'</m> a <m>G'</m>-module,
+        and consider a homomorphism
+        <m>\alpha: G' \to G</m> of groups and a homomorphism
+        <m>\beta: M \to M'</m> of abelian which are compatible in the sense of <xref ref="D-extended-functoriality"/>.
+        We would like to obtain canonical homomorphisms
+        <m>H_i(G, M) \to H_i(G', M')</m>,
+        but for this we need to add an additional condition to ensure that
+        <m>M \to M'</m> induces a well-defined map <m>M_G \to M'_{G'}</m>.
+        For instance, this holds if <m>\alpha</m> is surjective.
+      </p>
+      <p>
+        For Tate cohomology groups, there is a further complication that the map <m>M^G \to (M')^{G'}</m> does not necessarily induce
+        a map <m>\Norm(M) \to \Norm(M')</m>. However, this does occur if <m>\alpha</m> is injective, so for instance we have well-defined
+        restriction maps <m>\Res: H^0_T(G, M) \to H^0_T(H, M)</m> whenever <m>H</m> is a subgroup of <m>G</m>.
+      </p>
     </definition>
     <remark xml:id="rmk-torsion-H0T">
       <p>
@@ -220,30 +222,30 @@
           If <m>H^0_T(G/H, M^H) = 0</m>, then <m>\Res: H^0_T(G,M) \stackrel{\Res}{\to} H^0_T(H,M)</m> is injective.
         </p>
       </statement>
+      <proof>
+        <p>
+          Choose <m>N</m> so that <m>0 \to N \to \Ind^G_{1} M \to M \to 0</m> is exact (where again
+          <m>\Ind^G_1 M \to M</m> is the map <m>m \otimes [g] \mapsto m^g</m>);
+          then by the usual inflation-restriction exact sequence (<xref ref="P_inflation_restriction"/>),
+          <me>
+            0 \to H^1_T(G/H, N^H) \stackrel{\Inf}{\to} H^1_T(G,N) \stackrel{\Res}{\to} H^1_T(H,N)
+          </me>
+          is exact.
+          Now <m>\Ind^G_{1} M</m> is acyclic for <m>G</m> and for <m>H</m>,
+          and <m>(\Ind^G_1 M)^H</m> is acyclic for <m>G/H</m>.
+          Moreover, if we take <m>H</m>-invariants, we have an exact sequence
+          <me>
+            0 \to N^H \to (\Ind^G_1 M)^H \to M^H \to 0;
+          </me>
+          namely, exactness on the right holds because any
+          <m>m \in M^H</m> lifts to <m>m \otimes [1] \in (\Ind^G_1 M)^H</m>.
+          Using long exact sequences,
+          we now see first that <m>H^1_T(G/H, N^H) = H^0_T(G/H, M^H) = 0</m>,
+          then deduce that <m>\Res: H^1_T(G,N) \to H^1_T(H,N)</m> is injective,
+          then finally deduce the desired result.
+        </p>
+      </proof>
     </lemma>
-    <proof>
-      <p>
-        Choose <m>N</m> so that <m>0 \to N \to \Ind^G_{1} M \to M \to 0</m> is exact (where again
-        <m>\Ind^G_1 M \to M</m> is the map <m>m \otimes [g] \mapsto m^g</m>);
-        then by the usual inflation-restriction exact sequence (<xref ref="P_inflation_restriction"/>),
-        <me>
-          0 \to H^1_T(G/H, N^H) \stackrel{\Inf}{\to} H^1_T(G,N) \stackrel{\Res}{\to} H^1_T(H,N)
-        </me>
-        is exact.
-        Now <m>\Ind^G_{1} M</m> is acyclic for <m>G</m> and for <m>H</m>,
-        and <m>(\Ind^G_1 M)^H</m> is acyclic for <m>G/H</m>.
-        Moreover, if we take <m>H</m>-invariants, we have an exact sequence
-        <me>
-          0 \to N^H \to (\Ind^G_1 M)^H \to M^H \to 0;
-        </me>
-        namely, exactness on the right holds because any
-        <m>m \in M^H</m> lifts to <m>m \otimes [1] \in (\Ind^G_1 M)^H</m>.
-        Using long exact sequences,
-        we now see first that <m>H^1_T(G/H, N^H) = H^0_T(G/H, M^H) = 0</m>,
-        then deduce that <m>\Res: H^1_T(G,N) \to H^1_T(H,N)</m> is injective,
-        then finally deduce the desired result.
-      </p>
-    </proof>
   </subsection>
   <exercises>
     <title>Exercises</title>

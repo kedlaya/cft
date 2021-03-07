@@ -1,0 +1,196 @@
+﻿<section xml:id="sec_adelic-fourier">
+  <title>Ad&#xe8;lic Fourier analysis after Tate</title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        <xref ref="bib-Cassels-Frohlich"/>, XV. Note that the <q>valuation vectors</q> used therein are our ad&#xe8;les; see <xref ref="rmk-adele-spelling"/>.
+      </p>
+    </paragraphs>
+    <p>
+      As an aside, we describe another classic use of ad&#xe8;les in algebraic number theory: the derivation of the analytic continuation and functional equation of Dedekind zeta functions
+      and Dirichlet <m>L</m>-functions via Fourier analysis on the ad&#xe8;les, as described by Tate in his PhD thesis.
+      This is meant merely as a guide to the latter, so we omit essentially all proofs.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Additive characters</title>
+    <lemma xml:id="lem-additive-characters-local">
+      <statement>
+        <p>
+          Let <m>K</m> be a number field and let <m>v</m> be a place of <m>K</m>.
+          Then the dual group <m>(K_v^+)^\vee</m> of continuous characters from <m>K_v^+</m> to <m>\{z \in \CC: |z| = 1\}</m> is a locally compact topological group.
+          Moreover, for any nontrivial element <m>X \in (K_v^+)^\vee</m>, the map
+          <me>
+            K_v^+ \to X, \qquad \eta \mapsto (\xi \mapsto X(\eta \xi))
+          </me>
+          defines a continuous isomorphism <m>K_v^+ \to (K_v^+)^{\vee}</m>.
+        </p>
+      </statement>
+    </lemma>
+    <proof>
+      <p>
+        See <xref ref="bib-Cassels-Frohlich"/>, XV, Lemma 2.2.1.
+      </p>
+    </proof>
+    <remark xml:id="rmk-additive-characters-explicit">
+      <p>
+        To choose a character <m>X</m> as in <xref ref="lem-additive-characters-local"/>, 
+        we may precompose with a trace map to reduce to the case <m>K = \QQ</m>.
+        In that case, for <m>v = \infty</m> we may take <m>X</m> to be the character <m>t \mapsto e^{-2 \pi i t}</m>;
+        for <m>v = p</m>, we may take it to be <m>t \mapsto e^{-2 \pi i \lambda(t)}</m> where <m>\lambda(t) \in \ZZ_{(p)}</m> is congruent to <m>t</m> modulo <m>\ZZ_p</m>.
+      </p>
+    </remark>
+    <p>
+      This discussion globalizes directly to the ad&#xe8;les, as long as we are careful about normalization.
+    </p>
+    <theorem xml:id="thm-additive-characters-local">
+      <statement>
+        <p>
+          Let <m>K</m> be a number field. For each place <m>v</m> of <m>K</m>, let <m>X_v</m> be a nontrivial additive character on <m>K_v^+</m> as in
+          <xref ref="rmk-additive-characters-explicit"/>, and define the additive character <m>X</m> on <m>\AA_K^+</m> via
+          <me>
+            X(\alpha) = \prod_v X_v(\alpha_v).
+          </me>
+          Then the dual group <m>(\AA_K^+)^\vee</m> is a locally compact topological group, and the map
+          <me>
+            \alpha \mapsto (\beta \mapsto X(\alpha \beta))
+          </me>
+          defines a continuous isomorphism <m>\AA_K^+ \to (\AA_K^+)^\vee</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          See <xref ref="bib-Cassels-Frohlich"/>, XV, Theorem 4.1.1.
+        </p>
+      </proof>
+    </theorem>
+  </subsection>
+  <subsection>
+    <title>Fourier inversion</title>
+    <theorem>
+      <title>Local Fourier inversion</title>
+      <statement>
+        <p>
+          Let <m>K</m> be a number field and let <m>v</m> be a place of <m>K</m>.
+          Fix a Haar measure on <m>K_v^+</m> and a nontrivial character <m>X \in (K_v^+)^\vee</m>. For <m>f \in L_1(K_v^+)</m>, define the <term>Fourier transform</term>
+          <me>
+            \hat{f}(\eta) = \int f(\xi) X(\eta \xi)\,d\xi.
+          </me>
+          If <m>\hat(f) \in L_1(K_v^+)</m> also, then
+          <me>
+            f(\xi) = c \int \hat{f}(\eta) X(-\eta \xi) \,d\eta = c \hat{\hat{f}}(-\xi)
+          </me>
+          for some <m>c > 0</m> which depends only on the Haar measure and the character <m>X</m>. In particular, these can be normalized so that <m>c = 1</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          See <xref ref="bib-Cassels-Frohlich"/>, XV, Theorem 2.2.2.
+        </p>
+      </proof>
+    </theorem>
+    <theorem>
+      <title>Global Fourier inversion</title>
+      <statement>
+        <p>
+          Let <m>K</m> be a number field, fix a Haar measure on <m>\AA_K</m>, and define the additive character <m>X</m> on <m>\AA_K^+</m> as in 
+          <xref ref="thm-additive-characters-local"/>.
+          For <m>f \in L_1(\AA_K^+)</m>, define the <term>Fourier transform</term>
+          <me>
+            \hat{f}(\eta) = \int f(\xi) X(\eta \xi)\,d\xi.
+          </me>
+          If <m>\hat(f) \in L_1(K_v^+)</m> also, then
+          <me>
+            f(\xi) = c \int \hat{f}(\eta) X(-\eta \xi) \,d\eta = c \hat{\hat{f}}(-\xi)
+          </me>
+          for some <m>c > 0</m> which depends only on the Haar measure and the character <m>X</m>. In particular, these can be normalized so that <m>c = 1</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          See <xref ref="bib-Cassels-Frohlich"/>, XV, Theorem 4.1.2.
+        </p>
+      </proof>
+    </theorem>
+    <remark>
+      <p>
+        Crucially, there is also a version of the <term>Poisson summation formula</term> in this context. 
+        In classical Fourier analysis, this involves summing a function and its Fourier transform over the lattice <m>\ZZ</m> in <m>\RR</m>.
+        In the adelic setup, the <q>lattice</q> is the subgroup <m>K</m> of <m>\AA_K</m>, and the result can also be viewed as an analogue of the Riemann-Roch theorem
+        in complex geometry! See <xref ref="bib-Cassels-Frohlich"/>, XV, Theorem 4.2.1.
+      </p>
+    </remark>
+  </subsection>
+  <subsection>
+    <title>The space of quasi-characters</title>
+    <definition>
+      <p>
+        Let <m>K</m> be a number field.
+        By a <term>quasi-character</term> on the id&#xe8;le class group <m>C_K</m>, we will mean any continuous homomorphism from this group into <m>\CC^*</m>.
+        By contrast, a <term>character</term> is required to map into the unit circle.
+      </p>
+      <p>
+        For each quasi-character <m>c</m>, there exists a unique real number <m>s</m> such that <m>|c(\alpha)| = |\alpha|^s</m> for all <m>\alpha \in I_K</m>.
+        We call <m>s</m> the <term>exponent</term> of <m>c</m>.
+      </p>
+      <p>
+        The space of quasicharacters on <m>C_K</m> contains a distinguished copy of <m>\CC</m>: each complex number <m>s</m> corresponds to the character
+        <m>\alpha \mapsto |c(\alpha)|^s</m>. The exponent of this character is precisely the real part of <m>s</m>.
+      </p>
+    </definition>
+    <remark>
+      <p>
+        The adelic zeta function of <m>K</m> will be a function on the space of quasi-characters. Its restriction to the distinguished copy of <m>\CC</m>
+        will give the usual zeta function. If we take the translate of this copy of <m>\CC</m> by some other quasi-character, we will end up computing 
+        the <m>L</m>-function associated to some Hecke character. The idea of the adelic setup is to package all of these Hecke <m>L</m>-functions together
+        into a single object, which can be studied by an adelic analogue of the classical proof of analytic continuation for the Riemann zeta function. More
+        on this below.
+      </p>
+    </remark>
+  </subsection>
+  <subsection>
+    <title>Zeta functions and <m>L</m>-functions</title>
+    <p>
+      The classical approach to deriving the analytic continuation and functional equation for a Dedekind zeta function, or for Dirichlet <m>L</m>-functions, 
+      is to interpret via an integral representation
+      (technically, as a <term>Mellin transform</term> of a theta series). The functional equation then follows from Poisson summation.
+      Something similar is possible in the adelic situation, with the additional advantage of admitting a <q>local-global compatibility</q>.
+    </p>
+    <theorem xml:id="thm-adelic-zeta">
+      <statement>
+        <p>
+          For suitable functions <m>f: \AA_K \to \CC</m>, define the associated <term>zeta function</term> as the following function of quasicharacters on <m>C_K</m>
+          with exponent greater than <m>1</m>: 
+          <me>
+            \zeta(f, c)= \int f(\alpha)c(\alpha)\,d\alpha.
+          </me>
+          This function is single-valued and holomorphic except at the points corresponding to <m>s=0</m> and <m>s=1</m> where it has simple poles with residues
+          <m>-\kappa f(0)</m> and <m>\kappa \hat{f}(0)</m>, respectively, where
+          <me>
+            \kappa = 2^{r_1} (2\pi)^{r_2} \frac{h R}{\sqrt{|\Delta_K| \omega_K}}
+          </me>
+          (with <m>r_1</m> the number of real places, <m>r_2</m> the number of complex places, <m>h</m> the class number, <m>R</m> the unit regulator,
+          <m>\Delta_K</m> the discriminant, and <m>\omega_K</m> the order of the group of roots of unity). Moreover, we have the functional equation
+          <me>
+            \zeta(f, c) = \zeta(\hat{f}, \hat{c})
+          </me>
+          where <m>\hat{c}(\alpha) = \alpha c(\alpha)^{-1}</m> (so in particular <m>s \mapsto 1-s</m>).
+        </p>
+      </statement>
+      <proof>
+        <p>
+          See <xref ref="bib-Cassels-Frohlich"/>, XV, Theorem 4.4.1.
+        </p>
+      </proof>
+    </theorem>
+    <remark>
+      <p>
+        <xref ref="thm-adelic-zeta"/> looks a lot like what we are expecting except for the presence of the mysterious test function <m>f</m>.
+        To get back to more classical statements like <xref ref="T_meromorphic_continuation"/> and <xref ref="T_analytic_continuation"/>,
+        one must choose <m>f</m> so that one can evaluate <m>\hat{f}</m> and have it come out to be something similar to <m>f</m>.
+        See the very end of <xref ref="bib-Cassels-Frohlich"/>, XV for further discussion.
+      </p>
+    </remark>
+  </subsection>
+</section>

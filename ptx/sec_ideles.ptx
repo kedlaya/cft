@@ -238,7 +238,7 @@
          Returning to the case of general <m>K</m>, there is a natural way to define a volume measure on <m>C_K</m> in such a way that the volume of the kernel of
          <m>C^0_K \to \Cl(K)</m> is exactly the unit regulator of <m>K</m>. Consequently, the total volume of <m>C^0_K</m> equals the product of the class number
          and the unit regulator, and it is this product which shows up in the analytic class number formula (based on the residue of the Dedekind zeta function
-         of <m>K</m> at the point <m>s=1</m>).
+         of <m>K</m> at the point <m>s=1</m>; see <xref ref="thm-adelic-zeta"/>).
        </p>
     </remark>
   </subsection>

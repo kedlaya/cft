@@ -58,6 +58,9 @@
     </ul>
   </p>
   <p>
+    We also gave brief summaries of Brauer groups of number fields (<xref ref="sec_brauer"/>) and of adelic Fourier analysis (<xref ref="sec_adelic-fourier"/>).
+  </p>
+  <p>
     Now, some things that we haven't covered.
     When this course was first taught, these topics were assigned as final projects to individual students in the course.
     <ul>
@@ -136,11 +139,6 @@
       <li>
         <p>
           Clausen's <m>K</m>-theoretic approach to Artin reciprocity (see <xref ref="bib-Clausen"/>).
-        </p>
-      </li>
-      <li>
-        <p>
-          Adelic Fourier analysis and Tate's thesis (see <xref ref="bib-Cassels-Frohlich"/>, XV).
         </p>
       </li>
       <li>

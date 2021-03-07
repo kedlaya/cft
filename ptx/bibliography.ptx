@@ -74,6 +74,9 @@
   <biblio type="raw" xml:id="bib-Holt">
     D.F. Holt, <articletitle>An interpretation of the cohomology groups <m>H_n(G, M)</m></articletitle>, <journal>J. Algebra</journal> <volume>60</volume> (1979), no. 2, 307<ndash/>320. 
   </biblio>
+  <biblio type="raw" xml:id="bib-Isaacs">
+    I.M. Isaacs, <pubtitle>Character Theory of Finite Groups</pubtitle>, American Mathematical Society, Providence, RI, 2006.
+  </biblio>
   <biblio type="raw" xml:id="bib-Jacobson-2">
     N. Jacobson, <pubtitle>Basic Algebra, II</pubtitle>, W. H. Freeman, San Francisco, 1980.
   </biblio>

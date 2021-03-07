@@ -183,10 +183,6 @@
           one contained in <m>K^{\smcy}</m> and the others linearly disjoint from <m>K^{\smcy}</m>. Applying <xref ref="lem-compare-reciprocity-small-cyclotomic"/> to the first
           extension and <xref ref="lem-compare-reciprocity-ramified"/> to the others, we deduce the desired compatibility for abelian extensions.
         </p>
-        <p>
-          It follows that for any abelian extension <m>L/K</m> of number fields, the maps <m>r_{L/K}</m> and <m>r'_{L/K}</m> coincide.
-          Using the .
-        </p>
       </proof>
     </proposition>
     <remark>
@@ -215,41 +211,41 @@
           <m>L_w</m> contains <m>M</m>.
         </p>
       </statement>
-    <proof>
-      <p>
-        We can quickly dispatch the cases where <m>v</m> is infinite:
-        if <m>v</m> is complex there is nothing to prove,
-        and if <m>v</m> is real then we may take <m>L = K(\sqrt{-1})</m>.
-        So assume hereafter that <m>v</m> is finite.
-      </p>
-      <p>
-        By the existence theorem (<xref ref="T_adelic_existence_theorem2"/>)
-        plus local-to-global compatibility (<xref ref="prop-reciprocity-trivial-on-diagonal2"/>),
-        it suffices to produce an open subgroup <m>V</m> of <m>C_K</m> of finite index such that the preimage of <m>V</m> under
-        <m>K_v^* \to C_K</m> is contained in <m>N = \Norm_{M/K_v} M^*</m>.
-        Let <m>S</m> be the set of infinite places and let <m>T = S \cup \{v\}</m>.
-        By <xref ref="cor-S-units-theorem"/>, <m>\gotho_{K,T}^*</m> is a finitely generated abelian group and
-        <m>G = \gotho_{K,T}^* \cap N</m> is a subgroup of <m>\gotho_{K,T}^*</m> of finite index.
-      </p>
-      <p>
-        Pick a finite place <m>u \notin T</m>.
-        The image of <m>G</m> in <m>K_u</m> is a finitely generated subgroup of <m>\gotho_{K_u}^*</m>.
-        Hence we can choose a sufficiently small neighborhood <m>U</m> of the identity in <m>\gotho_{K_u}^*</m>
-        so as to ensure that <m>U \cap \gotho_{K,T}^* \subseteq G</m>.
-      </p>
-      <p>
-        Now put
-        <me>
-          W = N \times U \times \prod_{w \in S} K_w^* \times \prod_{w \notin S \cup \{u,v\}} \gotho_K^*, \qquad V = K^* W/K^*.
-        </me>
-        If <m>\alpha_v \in K_v^*</m> maps into <m>U</m>,
-        then there exists <m>\beta \in K^*</m> such that <m>\alpha_v \beta \in W</m>.
-        On one hand, this implies that <m>\alpha_v \beta_v \in N</m>.
-        On the other hand, it implies that <m>\beta \in \gotho_{K,T}^*</m> and <m>\beta_u \in U</m>,
-        so <m>\beta \in G</m> and so <m>\beta_v \in N</m>.
-        Thus <m>\alpha_v \in N</m>, as desired.
-      </p>
-    </proof>
+      <proof>
+        <p>
+          We can quickly dispatch the cases where <m>v</m> is infinite:
+          if <m>v</m> is complex there is nothing to prove,
+          and if <m>v</m> is real then we may take <m>L = K(\sqrt{-1})</m>.
+          So assume hereafter that <m>v</m> is finite.
+        </p>
+        <p>
+          By the existence theorem (<xref ref="T_adelic_existence_theorem2"/>)
+          plus local-to-global compatibility (<xref ref="prop-reciprocity-trivial-on-diagonal2"/>),
+          it suffices to produce an open subgroup <m>V</m> of <m>C_K</m> of finite index such that the preimage of <m>V</m> under
+          <m>K_v^* \to C_K</m> is contained in <m>N = \Norm_{M/K_v} M^*</m>.
+          Let <m>S</m> be the set of infinite places and let <m>T = S \cup \{v\}</m>.
+          By <xref ref="cor-S-units-theorem"/>, <m>\gotho_{K,T}^*</m> is a finitely generated abelian group and
+          <m>G = \gotho_{K,T}^* \cap N</m> is a subgroup of <m>\gotho_{K,T}^*</m> of finite index.
+        </p>
+        <p>
+          Pick a finite place <m>u \notin T</m>.
+          The image of <m>G</m> in <m>K_u</m> is a finitely generated subgroup of <m>\gotho_{K_u}^*</m>.
+          Hence we can choose a sufficiently small neighborhood <m>U</m> of the identity in <m>\gotho_{K_u}^*</m>
+          so as to ensure that <m>U \cap \gotho_{K,T}^* \subseteq G</m>.
+        </p>
+        <p>
+          Now put
+          <me>
+            W = N \times U \times \prod_{w \in S} K_w^* \times \prod_{w \notin S \cup \{u,v\}} \gotho_K^*, \qquad V = K^* W/K^*.
+          </me>
+          If <m>\alpha_v \in K_v^*</m> maps into <m>U</m>,
+          then there exists <m>\beta \in K^*</m> such that <m>\alpha_v \beta \in W</m>.
+          On one hand, this implies that <m>\alpha_v \beta_v \in N</m>.
+          On the other hand, it implies that <m>\beta \in \gotho_{K,T}^*</m> and <m>\beta_u \in U</m>,
+          so <m>\beta \in G</m> and so <m>\beta_v \in N</m>.
+          Thus <m>\alpha_v \in N</m>, as desired.
+        </p>
+      </proof>
     </theorem>
   </subsection>
 </section>

@@ -6,8 +6,7 @@
       <p>
         <xref ref="bib-Lang"/>, Chapter VIII for starters;
         see also <xref ref="bib-Milne-CFT"/>, Chapter VI and <xref ref="bib-Neukirch"/>, Chapter VII. For advanced reading,
-        see Tate's thesis (last chapter of <xref ref="bib-Cassels-Frohlich"/>),
-        but wait until we introduce the ad&#xe8;les (<xref ref="sec_adeles"/>).
+        see Tate's thesis (<xref ref="bib-Cassels-Frohlich"/>, Chapter XV), but wait until we introduce the ad&#xe8;les (<xref ref="sec_adeles"/>).
       </p>
     </paragraphs>
   </introduction>
@@ -103,13 +102,12 @@
     <theorem xml:id="T_nonvanishing_of_L">
       <statement>
         <p>
-          If <m>\chi_\gothm</m> is not the trivial character,
-          then <m>L(1, \chi_\gothm) \neq 0</m>.
+          If <m>\chi_\gothm</m> is not the trivial character, then <m>L(1, \chi_\gothm) \neq 0</m>.
         </p>
       </statement>
       <proof>
         <p>
-          See <xref ref="bib-Neukirch"/>, Theorem VII.2.9
+          See <xref ref="bib-Neukirch"/>, Theorem VII.2.9.
         </p>
       </proof>
     </theorem>
@@ -127,18 +125,20 @@
         and <term>upper Dirichlet density</term> using the limits inferior and superior.
       </p>
     </definition>
-    <p>
-      <xref ref="T_nonvanishing_of_L"/> implies that the Dirichlet density of the set of primes congruent to <m>a</m> modulo <m>m</m>
-      is <m>1/\phi(m)</m> if <m>a</m> is coprime to <m>m</m> (and <m>0</m> otherwise).
-      The key point is that for any nontrivial <m>\chi_\gothm</m>,
-      <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> remains bounded as <m>s \to \infty</m>.
-    </p>
-    <p>
-      The fact also implies that for any number field <m>K</m> and any formal product of places <m>\gothm</m>,
-      there are infinitely many primes in each class of the ray class group of conductor <m>\gothm</m>,
-      the set of such primes having Dirichlet density <m>1/\#\Cl^\gothm(K)</m>.
-      (See <xref ref="exc-density-of-ray-classes"/>.)
-    </p>
+    <remark>
+      <p>
+        <xref ref="T_nonvanishing_of_L"/> implies that the Dirichlet density of the set of primes congruent to <m>a</m> modulo <m>m</m>
+        is <m>1/\phi(m)</m> if <m>a</m> is coprime to <m>m</m> (and <m>0</m> otherwise).
+        The key point is that for any nontrivial <m>\chi_\gothm</m>,
+        <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> remains bounded as <m>s \to \infty</m>.
+      </p>
+      <p>
+        The fact also implies that for any number field <m>K</m> and any formal product of places <m>\gothm</m>,
+        there are infinitely many primes in each class of the ray class group of conductor <m>\gothm</m>,
+        the set of such primes having Dirichlet density <m>1/\#\Cl^\gothm(K)</m>.
+        (See <xref ref="exc-density-of-ray-classes"/>.)
+      </p>
+    </remark>
   </subsection>
   <subsection>
     <title>The Chebotar&#xeb;v density theorem</title>
@@ -176,7 +176,7 @@
           then we know that the set of primes of <m>K'</m> with Frobenius
           <m>g \in \Gal(L/K') \subset G</m> has Dirichlet density <m>1/f</m>.
           The same is true if we restrict to primes of absolute degree 1
-          (see exercises).
+          (see <xref ref="exc-density-split-1"/>).
         </p>
         <p>
           Let <m>Z</m> be the centralizer of <m>g</m> in <m>G</m>;
@@ -247,6 +247,15 @@
       <p>
         As with the prime number theorem, one can obtain effective power-saving error estimates conditional on the Generalized Riemann Hypothesis for 
         appropriate Artin <m>L</m>-functions. See <xref ref="bib-Lagarias-Odlyzko"/>.
+      </p>
+    </remark>
+    <remark>
+      <p>
+        For fun, we mention a lesser-known result of Chebotar&#xeb;v here: the character table of a finite cyclic group, viewed as a square matrix, has the property that every minor is nonzero.        
+      </p>
+      <p>
+        By contrast, for a group which is abelian but not cyclic there exists a <m>2 \times 2</m> submatrix with all entries equal to 1,
+        whereas for a nonabelian group any nonabelian character takes the value 0 somewhere (a result of Burnside; see <xref ref="bib-Isaacs"/>, Theorem 3.15).
       </p>
     </remark>
   </subsection>

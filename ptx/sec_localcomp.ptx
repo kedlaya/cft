@@ -8,12 +8,12 @@
       </p>
     </paragraphs>
     <paragraphs>
-    <title>Notation convention</title>
-    <p>
-      If you catch me writing <m>H^i(L/K)</m> for <m>L/K</m> a Galois extension of fields,
-      that's shorthand for <m>H^i(\Gal(L/K), L^*)</m>.
-      Likewise for <m>H_i</m> or <m>H^i_T</m>.
-    </p>
+      <title>Notation convention</title>
+      <p>
+        If you catch me writing <m>H^i(L/K)</m> for <m>L/K</m> a Galois extension of fields,
+        that's shorthand for <m>H^i(\Gal(L/K), L^*)</m>.
+        Likewise for <m>H_i</m> or <m>H^i_T</m>.
+      </p>
     </paragraphs>
   </introduction>
   <subsection>
@@ -246,8 +246,6 @@
           <me>
             \exp(x) = \sum_{i=0}^\infty \frac{x^i}{i!}
           </me>
-        </p>
-        <p>
           (you need <m>v_p(x) > 1/(p-1)</m>,
           to be precise), and we may take <m>W = \exp(V)</m>.
         </p>
@@ -417,14 +415,16 @@
     <proposition xml:id="P_H2_lower_bound">
       <statement>
         <p>
-          For any finite Galois extension <m>L/K</m> of local fields,
+          Let <m>L/K</m> be a finite Galois extension of local fields.
+          Let <m>M/K</m> be an unramified extension of degree <m>[L:K]</m>.
+          Then the image of <m>H^2(L/K)</m> in <m>H^2(ML/K)</m> contains the image of <m>H^2(M/K)</m> in <m>H^2(ML/K)</m>.
+          Consequently (by <xref ref="P_H2_unramified"/> and <xref ref="C_inflation_restriction_h2"/>),
           the group <m>H^2(\Gal(L/K), L^*)</m> contains a cyclic subgroup of order <m>[L:K]</m>.
         </p>
       </statement>
       <proof>
         <p>
-          Let <m>M/K</m> be an unramified extension of degree <m>[L:K]</m>.
-          Then we have a diagram
+          Consider the diagram
           <figure xml:id="fig-localcomp-2">
           <image>
           <latex-image>
@@ -479,20 +479,12 @@
         </p>
       </proof>
     </proposition>
-    <remark>
-      <p>
-        If <m>L/K</m> is a finite extension of degree <m>n</m>,
-        then the map <m>\Res: H^2(K^{\unr}/K) \to H^2(L^{\unr}/L)</m> translates,
-        via the local reciprocity map, into a map from <m>\QQ/\ZZ</m> to itself.
-        This map turns out to be multiplication by <m>n</m> (see <xref ref="bib-Milne-CFT"/>, Proposition II.2.7).
-      </p>
-    </remark>
   </subsection>
   <subsection>
     <title>The local invariant map</title>
     <p>
-    We have now proved the first assertion of <xref ref="P_local_h2"/> (by combining <xref ref="P_H2_upper_bound"/> and <xref ref="P_H2_lower_bound"/>).
-    We now turn to the second assertion. In the process, we will also see that <m>H^2(\overline{K}/K) \cong \QQ/\ZZ</m>.
+      We have now proved the first assertion of <xref ref="P_local_h2"/> (by combining <xref ref="P_H2_upper_bound"/> and <xref ref="P_H2_lower_bound"/>).
+      We now turn to the second assertion. In the process, we will also see that <m>H^2(\overline{K}/K) \cong \QQ/\ZZ</m>.
     </p>
     <lemma xml:id="L_local_invariant_map">
       <statement>
@@ -520,6 +512,43 @@
         </p>
       </proof>
     </lemma>
+    <remark xml:id="rmk-local-classes-unramified">
+      <p>
+        By combining <xref ref="P_H2_lower_bound"/> with <xref ref="L_local_invariant_map"/>, we see that for any local field <m>K</m>, the map <m>H^2(K^{\unr}/K) \to H^2(\overline{K}/K)</m>
+        is an isomorphism. We can use this to see the effect of changing <m>K</m> on this group; see <xref ref="rmk-local-Brauer-transfer"/> below.
+      </p>
+    </remark>
+    <proposition xml:id="rmk-local-Brauer-transfer">
+      <statement>
+        <p>
+        For <m>L/K</m> a finite extension of local fields of degree <m>n</m>,
+        the map <m>\Res: H^2(K^{\unr}/K) \to H^2(L^{\unr}/L)</m> translates,
+        via the local reciprocity map, into the map from <m>\QQ/\ZZ</m> to itself given by multiplication by <m>n</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          We compute the map following <xref ref="bib-Milne-CFT"/>, Proposition III.1.8.
+          Put <m>e = e_{L/K}, f = f_{L/K}</m>. We form a commutative diagram
+            <figure xml:id="fig-localcomp-4">
+            <image>
+            <latex-image>
+            \xymatrix{
+            H^2(K^{\unr}/K) \ar^{\Res}[d] \ar^{v_K}[r] &amp; H^2(\Gal(K^{\unr}/K), \ZZ) \ar^{e \Res}[d] &amp; H^1(\Gal(K^{\unr}/K), \QQ/\ZZ) \ar_{\delta}[l] \ar^{e\Res}[d] \ar[r] &amp; \QQ/\ZZ \ar^{\times ef}[d] \\
+            H^2(L^{\unr}/L) \ar^{v_L}[r] &amp; H^2(\Gal(L^{\unr}/L), \ZZ) &amp; H^1(\Gal(L^{\unr}/L), \QQ/\ZZ) \ar_{\delta}[l] \ar[r] &amp; \QQ/\ZZ
+            }
+            </latex-image>
+            </image>
+            </figure>
+          as follows. The left square comes from the valuation maps. The middle square comes from the connecting homomorphisms for the sequence
+          <m>
+            0 \to \ZZ \to \QQ \to \QQ/\ZZ \to 0
+          </m>
+          with the trivial actions; note that these connecting homomorphisms are isomorphisms by <xref ref="exer-trivial-module-injective"/>.
+          The right square comes from evaluating crossed homomorphisms at Frobenius. Since <m>ef = n</m>, this yields the claim.
+        </p>
+      </proof>
+    </proposition>
   </subsection>
   <exercises>
     <title>Exercises</title>
@@ -533,7 +562,7 @@
         </hint>
       </exercise>
       <exercise xml:id="exer-trivial-module-injective">
-      <statement>
+      <statement>\times
         Let <m>G</m> be a finite group. Let <m>M</m> be a <m>G</m>-module whose underlying abelian group is a <m>\QQ</m>-vector space. 
         Prove that <m>M</m> is an acyclic <m>G</m>-module.
       </statement>
