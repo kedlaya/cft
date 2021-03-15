@@ -9,14 +9,6 @@
         so he doesn't put the subscript <q>T</q> on them.
       </p>
     </paragraphs>
-    <paragraphs>
-      <title>Caveat</title>
-      <p>
-        Certain words you thought you knew what they meant, such as
-        <q>unramified</q>, are going to be reassigned more abstract meanings.
-        But these meanings will coincide with the correct definitions over a local field.
-      </p>
-    </paragraphs>
   </introduction>
   <subsection>
     <title>Abstract multiplicative groups and the class field axiom</title>
@@ -118,7 +110,7 @@
         in particular, <m>G_K</m> is normal in <m>G_L</m> and <m>\Gal(L/K) = G_L/G_K</m> is cyclic.
         (Note also that <m>K^{\unr}</m> is the compositum of <m>K</m> and <m>k^{\unr}</m>; see <xref ref="exa-abstract-CFT-local"/>.)
       </p>
-      </definition>
+    </definition>
     <p>
       If <m>K \neq k</m>,
       then <m>d</m> need not map <m>G_K</m> onto <m>\widehat{\ZZ}</m>,

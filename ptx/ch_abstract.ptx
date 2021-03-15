@@ -9,6 +9,14 @@
       and gives an outline of how to proceed to global class field theory. We conclude with a preview of how the method will apply in the global case;
       see <xref ref="sec_look_ahead"/>.
     </p>
+    <paragraphs>
+      <title>Caveat</title>
+      <p>
+        In the context of abstract class field theory, we will assign certain words (e.g., <term>unramified</term>) new meanings that will coincide with their
+        existing definitions when the abstract setup is specialized to local class field theory. We will then transfer these meanings to the global application
+        of abstract class field theory, where we will usually use scare quotes (i.e., <q>unramified</q>).
+      </p>
+    </paragraphs>
   </introduction>
   <xi:include href="sec_abstractcft1.ptx"/>
   <xi:include href="sec_abstractcft2.ptx"/>

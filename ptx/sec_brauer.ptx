@@ -13,6 +13,9 @@
       not based on abstract class field theory; on the other hand, they carry important information from class field theory which is useful in numerous
       applications.
     </p>
+    <p>
+      In this lecture, we reprise a bit of shorthand from <xref ref="sec_localcomp"/>, writing <m>H^i(L/K)</m> to mean <m>H^i(\Gal(L/K), L^*)</m>.
+    </p>
   </introduction>
   <subsection>
     <title>The Brauer group of a field</title>
@@ -20,10 +23,10 @@
       <p>
         Recall from <xref ref="def-Brauer-group"/> that we have defined the <term>Brauer group</term> of a field <m>K</m> as the group 
         <me>
-          \Br(K) = H^2(\Gal(\overline{K}/K), \overline{K}^*) = \varinjlim_{L/K} H^2(\Gal(L/K), L^*)
+          \Br(K) = H^2(\overline{K}/K) = \varinjlim_{L/K} H^2(L/K)
         </me>
         where <m>L</m> runs over finite Galois extensions of <m>K</m> and the transition maps in the direct limit are inflation maps.
-        By <xref ref="L_theorem_90"/> and <xref ref="P_inflation_restriction"/>, these maps are all injective, so the direct limit is actually a union..
+        By <xref ref="L_theorem_90"/> and <xref ref="P_inflation_restriction"/>, these maps are all injective, so the direct limit is actually a union.
       </p>
     </definition>
     <p>
@@ -32,7 +35,8 @@
     <lemma xml:id="lem-brauer-defs">
       <statement>
         <p>
-          For any field <m>K</m>, there is a natural bijection between <m>\Br(K)</m> and the isomorphism classes of division algebras with center <m>K</m>.
+          For any field <m>K</m>, there is a natural bijection between <m>\Br(K)</m> and the isomorphism classes of division algebras which are finite-dimensional <m>K</m>-algebras
+          with center <m>K</m>.
         </p>
       </statement>
       <proof>
@@ -44,6 +48,14 @@
     </lemma>
     <example>
       <p>
+        For <m>K</m> an algebraically closed field, every division algebra which is finite dimensional over <m>K</m> is trivial. Namely, if <m>D</m> is such an algebra,
+        then for each <m>x \in D</m>, multiplication by <m>x</m> defines a <m>K</m>-linear endomorphism of <m>D</m>, which necessarily has at least one eigenvalue <m>y \in K</m>.
+        Then <m>x-y</m> is an element of <m>D</m> which cannot be invertible (since multiplication by this element is a <m>K</m>-linear endomorphism of <m>D</m> with 0
+        as an eigenvalue), so it must be zero; hence <m>x \in K</m>.
+      </p>
+    </example>
+    <example>
+      <p>
         For <m>K</m> a finite field, <m>\Br(K)</m> is trivial. In the classical interpretation, this is Wedderburn's theorem that every finite division algebra
         is commutative. In the cohomological interpretation, it follows from <xref ref="P_finite_norm_surjective"/> via the periodicity of Tate groups
         <xref ref="T_cyclic_group_periodicity"/>.
@@ -52,7 +64,7 @@
     <remark>
       <p>
         While <xref ref="lem-brauer-defs"/> only characterizes the Brauer group as a set, the original construction of Brauer included the group structure.
-        Namely, for any two division algebras <m>D_1</m> and <m>D_2</m> with center <m>K</m>, we have an isomorphism of <m>K</m>-algebras
+        Namely, for any two central simple algebras <m>D_1, D_2</m> over <m>K</m>, we have an isomorphism of <m>K</m>-algebras
         <me>
           D_1 \otimes_K D_2 \cong M_n(D)
         </me>
@@ -122,7 +134,7 @@
         <p>
           For any number field <m>K</m>, the group <m>\Br(K)</m> fits into an exact sequence of the form
           <me>
-            0 \to \Br(K) \to \bigoplus_v \Br(K_v) \to \QQ/\ZZ \to 0
+            0 \to \Br(K) \to \Br(\AA_K) = \bigoplus_v \Br(K_v) \to \QQ/\ZZ \to 0
           </me>
           in which 
           <me>
@@ -162,14 +174,26 @@
     </theorem>
     <definition>
       <p>
-        For <m>K</m> a number field and <m>\alpha \in \Br(K^*)</m>, the image of <m>\alpha</m> in <m>\Br(K_v)</m> is often called the <term>local invariant</term> of <m>\alpha</m> at <m>v</m>.
+        For <m>K</m> a number field and <m>\alpha \in \Br(K)</m>, the image of <m>\alpha</m> in <m>\Br(K_v)</m> is often called the <term>local invariant</term> of <m>\alpha</m> at <m>v</m>.
         The exact sequence appearing in <xref ref="def-fundamental-exact-sequence"/> is sometimes called the <term>fundamental exact sequence</term> associated to <m>K</m>;
         it can be viewed as another source of <q>reciprocity</q> in class field theory. For example, applying the fundamental exact sequence to a quaternion algebra over <m>\QQ</m>
         (see <xref ref="exer-quaternion-algebras"/>) gives rise to Hilbert's reformulation of the law of quadratic reciprocity using <term>Hilbert symbols</term>.
       </p>
       <p>
         The fundamental exact sequence also plays a key role in various applications of Brauer groups in number theory. One of these is the detection of obstructions to the existence of rational points
-        on algebraic varieties over number fields (called <term>Brauer-Manin obstructions</term>).
+        on algebraic varieties over number fields, called <term>Brauer-Manin obstructions</term>. This construction is based on the following observation: for 
+        <m>X</m> an algebraic variety over a number field <m>K</m>, each class in <m>\Br(X)</m> gives rise to a commutative diagram
+          <figure xml:id="fig-connection-7">
+          <image>
+          <latex-image>
+          \xymatrix{
+          &amp; X(K) \ar[r] \ar[d] &amp; X(\AA_K) \ar[d] \\
+          0 \ar[r] &amp; \Br(K) \ar[r] &amp; \Br(\AA_K) \ar[r] &amp; \QQ/\ZZ \ar[r] &amp; 0
+          }
+          </latex-image>
+          </image>
+          </figure>
+          in which the vertical maps are evaluation maps and the bottom row is the fundamental exact sequence.
       </p>
     </definition>
   </subsection>
@@ -184,9 +208,8 @@
       <statement>
         <p>
           Let <m>L/K</m> be a Galois extension of number fields.
-          Then for any element <m>x</m> of <m>H^2(L/K)</m>, there exists a cyclic cyclotomic extension <m>M</m> of <m>K</m> and an element <m>y</m> of
+          Then for any element <m>x</m> of <m>H^2(L/K)</m>, there exist a cyclic cyclotomic extension <m>M</m> of <m>K</m> and an element <m>y</m> of
           <m>H^2(M/K)</m> such that <m>x</m> and <m>y</m> map to the same element of <m>H^2(ML/K)</m>.
-          (Here we reprise the shorthand of writing <m>H^i(L/K)</m> to mean <m>H^i(\Gal(L/K), L^*)</m>.)
         </p>
       </statement>
       <proof>
@@ -213,7 +236,8 @@
     <title>Local-global compatibility via Brauer groups</title>
     <p>
       To conclude, we turn things around and show that <xref ref="prop-H2-class-absorb-by-cyclotomic"/> can be used to recover local-global compatibility
-      for the reciprocity map.
+      for the reciprocity map (<xref ref="prop-reciprocity-trivial-on-diagonal"/>). This makes no use of abstract class field theory, 
+      although it does use the same inputs (notably the First and Second Inequality).
     </p>
     <proposition xml:id="prop-diagonal-cyclotomic">
       <statement>
@@ -266,10 +290,35 @@
         By the surjectivity of the Artin map, as deduced from the 
         First Inequality (<xref ref="prop-artin-map-surjects"/>), this map is surjective; by comparing orders using the Second Inequality
         (<xref ref="T_first_and_second_inequality"/>), we see that the map is also an isomorphism.
-        This establishes local-global compabitibility for cyclic extensions, from which it directly follows also for abelian extensions.
+        This establishes local-global compatibility (<xref ref="prop-reciprocity-trivial-on-diagonal"/>) for cyclic extensions, from which it directly follows also for abelian extensions.
         Hooray again!
       </p>
     </remark>
+    <remark xml:id="rmk-no-abstract-cft">
+      <p>
+        Note that for a cyclic extension <m>L/K</m> of number fields, <xref ref="rmk-local-global-via-brauer"/> establishes not just local-global compatbility,
+        but the entire reciprocity isomorphism
+        <me>
+          C_K/\Norm_{L/K} C_L \cong \Gal(L/K)^{\ab}
+        </me>
+        without use of abstract class field theory. One can say the same for an abelian extension: in this case, local reciprocity (<xref ref="T_local_reciprocity"/>)
+        and <xref ref="rmk-local-global-via-brauer"/> together imply that we have a well-defined map. Using the cyclic case, we may see that this map is surjective;
+        by <xref ref="C_second_inequality_analytic"/> (a side effect of our proof of the Second Inequality), the map is forced to be an isomorphism.
+      </p>
+      <p>
+        It is less clear how to recover the norm limitation theorem, which is needed to prove the existence theorem.
+        The difficulty is that if <m>L/K</m> is not abelian and <m>M/K</m> is its maximal abelian subextension, then the maximal abelian subextension of a completion of <m>L</m>
+        can be strictly larger than the corresponding completion of <m>M</m>; so we cannot simply apply the local norm limitation theorem.
+        Instead, one first uses the fundamental exact sequence (<xref ref="def-fundamental-exact-sequence"/>, whose proof depended on reciprocity only for cyclic extensions)
+        to argue that <m>C_L</m> satisfies the hypotheses of Tate's theorem
+        (<xref ref="T_tate_thm2"/>), which yields an isomorphism
+        <me>
+          \Gal(L/K)^{\ab} \cong H^{-2}_T(\Gal(L/K), \ZZ) \to H^0_T(\Gal(L/K), C_L) = C_K/\Norm_{L/K} C_L.
+        </me>
+        By comparing with the construction of the local reciprocity map, we see that the inverse of this isomorphism is exactly <m>r_{L/K}</m>,
+        which yields the norm limitation theorem. See <xref ref="bib-Milne-CFT"/>, Theorem VIII.4.8 for more details.
+      </p>
+   </remark>
   </subsection>
   <exercises>
     <exercise xml:id="exer-large-cyclotomic-degree">
@@ -289,15 +338,16 @@
       <exercise>
         <statement>
           Let <m>D</m> be a quaternion algebra over a field <m>K</m> (see <xref ref="exer-quaternion-algebras"/>).
+          Prove the following statements directly (without using <xref ref="lem-brauer-defs"/>).
           <ol>
             <li>
               <p>
-                Prove that <m>D</m> is isomorphic to its opposite algebra.
+                <m>D</m> is isomorphic to its opposite algebra.
               </p>
             </li>
             <li>
               <p>
-                Prove that there is an isomorphism <m>D \otimes_K D \cong M_4(K)</m> of <m>K</m>-algebras. Consequently, if <m>D</m> is not split, then it represents an element of 
+                There is an isomorphism <m>D \otimes_K D \cong M_4(K)</m> of <m>K</m>-algebras. Consequently, if <m>D</m> is not split, then it represents an element of 
                 <m>\Br(K)</m> of order 2.
               </p>
             </li>

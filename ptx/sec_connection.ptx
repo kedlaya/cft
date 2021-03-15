@@ -144,7 +144,7 @@
           <image>
           <latex-image>
           \xymatrix{
-          C_{N_0}/\Norm_{N/N_0} C_{N} \ar^{r'_{N/N_0}}[r] \ar^{\Norm_{N_0/K}}[d] &amp; \Gal(N/N_0) \ar[d] \\
+          C_{M}/\Norm_{N/M} C_{N} \ar^{r'_{N/M}}[r] \ar^{\Norm_{M/K}}[d] &amp; \Gal(N/M) \ar[d] \\
           C_{K}/\Norm_{L/K} C_{L} \ar^{r'_{L/K}}[r] &amp;\Gal(L/K)
           }
           </latex-image>
@@ -152,8 +152,19 @@
           </figure>
           in which the horizontal arrows are isomorphisms (<xref ref="T_abstract_adelic_reciprocity"/>) and the right vertical arrow is an isomorphism,
           as then is the left vertical arrow.
-          We also have a corresponding diagram on the local side. This means that we can reduce checking the compatibility for <m>L/K</m> to the corresponding 
-          statement for <m>N/N_0</m>, to which <xref ref="lem-compare-reciprocity-small-cyclotomic"/> applies.
+          We also have a corresponding diagram on the local side:
+          <figure xml:id="fig-connection-6">
+          <image>
+          <latex-image>
+          \xymatrix{
+          I_{M} \ar^{r_{N/M}}[r] \ar^{\Norm_{M/K}}[d] &amp; \Gal(N/M) \ar[d] \\
+          I_{K} \ar^{r_{L/K}}[r] &amp;\Gal(L/K)
+          }
+          </latex-image>
+          </image>
+          </figure>
+          This means that we can reduce checking the compatibility for <m>L/K</m> to the corresponding 
+          statement for the <q>unramified</q> extension <m>N/M</m>, to which <xref ref="lem-compare-reciprocity-small-cyclotomic"/> applies.
         </p>
       </proof>
     </lemma>
@@ -199,7 +210,7 @@
     <p>
       As a complement to <xref ref="prop-reciprocity-trivial-on-diagonal2"/>, we show that every local abelian extension is the completion of a global abelian extension.
       Over <m>\QQ</m>, this holds because the local Kronecker-Weber theorem (<xref ref="T_local_Kronecker-Weber2"/>)
-      and the Kronecker-Weber theorem (<xref ref="T_Kronecker-Weber"/>) are expressed in terms of the same family of extension of <m>\QQ</m>, namely the cyclotomic extensions;
+      and the Kronecker-Weber theorem (<xref ref="T_Kronecker-Weber"/>) are expressed in terms of the same family of extensions of <m>\QQ</m>, namely the cyclotomic extensions;
       however, in the general case we must take a less explicit approach.
     </p>
     <theorem xml:id="L_auxiliary_existence">
@@ -208,7 +219,7 @@
           Let <m>K</m> be a number field,
           let <m>v</m> a place of <m>K</m>, and let <m>M</m> a finite abelian extension of <m>K_v</m>.
           Then there exists a finite abelian extension <m>L</m> of <m>K</m> such that for any place <m>w</m> of <m>L</m> above <m>v</m>,
-          <m>L_w</m> contains <m>M</m>.
+          <m>L_w</m> contains <m>M</m>. (This conclusion can be formally improved; see <xref ref="exer-local-global-existence"/>.)
         </p>
       </statement>
       <proof>
@@ -229,7 +240,7 @@
         </p>
         <p>
           Pick a finite place <m>u \notin T</m>.
-          The image of <m>G</m> in <m>K_u</m> is a finitely generated subgroup of <m>\gotho_{K_u}^*</m>.
+          The image of <m>\gotho_{K,T}^*</m> in <m>K_u^*</m> is a finitely generated subgroup of <m>\gotho_{K_u}^*</m>.
           Hence we can choose a sufficiently small neighborhood <m>U</m> of the identity in <m>\gotho_{K_u}^*</m>
           so as to ensure that <m>U \cap \gotho_{K,T}^* \subseteq G</m>.
         </p>
@@ -248,4 +259,18 @@
       </proof>
     </theorem>
   </subsection>
+  <exercises>
+    <exercise xml:id="exer-local-global-existence">
+      <statement>
+        <p>
+          Prove that <xref ref="L_auxiliary_existence"/> can be formally promoted to the conclusion that <m>L_w= M</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Since <m>L/K</m> is abelian, the kernel of the map <m>\Gal(L_w/K_v) \to \Gal(M/K_v)</m> is normal in <m>\Gal(L/K)</m>; take its fixed field.
+        </p>
+      </hint>
+    </exercise>
+  </exercises>
 </section>

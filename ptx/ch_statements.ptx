@@ -7,6 +7,28 @@
       We will have to discuss plenty of other material before returning to the proofs, but the reader who wishes to peek ahead for a glimpse of the strategy
       is directed to <xref ref="sec_look_ahead"/>.
     </p>
+    <definition>
+    <title>Jargon watch</title>
+      <p>
+        By a <term>place</term> of a number field <m>K</m>,
+        we mean either an archimedean completion
+        <m>K \hookrightarrow \RR</m> or <m>K \hookrightarrow \CC</m>
+        (an <term>infinite place</term>),
+        or a <m>\gothp</m>-adic completion
+        <m>K \hookrightarrow K_\gothp</m> for some nonzero prime ideal <m>\gothp</m> of <m>\gotho_K</m> (a
+        <term>finite place</term>). (Note:
+        there is only one place for each pair of complex embeddings of <m>K</m>.)
+      </p>
+      <p>
+         Each place corresponds to an equivalence class of absolute values on <m>K</m>;
+        if <m>v</m> is a place,
+        we write <m>K_v</m> for the corresponding completion,
+        which is either <m>\RR</m>, <m>\CC</m>, or <m>K_\gothp</m> for some prime <m>\gothp</m>.
+      </p>
+      <p>
+        This form of parity between finite and infinite places will be a recurring theme throughtout this book.
+      </p>
+    </definition>
   </introduction>
   <xi:include  href="sec_hilbert.ptx"/>
   <xi:include  href="sec_artinrec.ptx"/>

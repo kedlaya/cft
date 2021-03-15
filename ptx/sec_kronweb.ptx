@@ -3,22 +3,22 @@
   <introduction>
     <paragraphs>
       <title>Reference</title>
-      <p>
-        Our approach follows <xref ref="bib-Washington"/>, Chapter 14.
-        A variety of other methods can be found in other texts.
-      </p>
+        <p>
+          Our approach follows <xref ref="bib-Washington"/>, Chapter 14.
+          A variety of other methods can be found in other texts.
+        </p>
     </paragraphs>
   </introduction>
   <subsection>
     <title>Abelian extensions of <m>\QQ</m></title>
     <definition xml:id="D_abelian_extension">
-    <p>
-      An <term>abelian extension</term> of a field is a Galois extension with abelian Galois group.
-      An example of an abelian extension of <m>\QQ</m> is the cyclotomic field <m>\QQ(\zeta_n)</m>
-      (where <m>n</m> is a positive integer and <m>\zeta_n</m> is a primitive <m>n</m>-th root of unity),
-      whose Galois group is <m>(\ZZ/n\ZZ)^*</m>, or any subfield thereof.
-      Amazingly, <xref ref="T_Kronecker-Weber"/> implies that there are no other examples!
-    </p>
+      <p>
+        An <term>abelian extension</term> of a field is a Galois extension with abelian Galois group.
+        An example of an abelian extension of <m>\QQ</m> is the cyclotomic field <m>\QQ(\zeta_n)</m>
+        (where <m>n</m> is a positive integer and <m>\zeta_n</m> is a primitive <m>n</m>-th root of unity),
+        whose Galois group is <m>(\ZZ/n\ZZ)^*</m>, or any subfield thereof.
+        Amazingly, <xref ref="T_Kronecker-Weber"/> implies that there are no other examples!
+      </p>
     </definition>
     <theorem xml:id="T_Kronecker-Weber">
       <title>Kronecker-Weber</title>
@@ -52,16 +52,13 @@
     </definition>
     <p>
       We will prove <xref ref="T_Kronecker-Weber"/> in the next few lectures.
-      Our approach will be to deduce it from a local analogue
-      (see <xref ref="T_local_Kronecker-Weber2"/>).
+      Our approach will be to deduce it from a local analogue (see <xref ref="T_local_Kronecker-Weber2"/>).
     </p>
     <theorem xml:id="T_local_Kronecker-Weber1">
       <title>Local Kronecker-Weber</title>
       <statement>
         <p>
-          If <m>K/\QQ_p</m> is a finite abelian extension,
-          then <m>K \subseteq \QQ_p(\zeta_n)</m> for some <m>n</m>,
-          where <m>\zeta_n</m> is a primitive <m>n</m>-th root of unity.
+          If <m>K/\QQ_p</m> is a finite abelian extension, then <m>K \subseteq \QQ_p(\zeta_n)</m> for some <m>n</m>, where <m>\zeta_n</m> is a primitive <m>n</m>-th root of unity.
         </p>
       </statement>
       <proof>
@@ -71,25 +68,19 @@
       </proof>
     </theorem>
     <p>
-      Before proceeding,
-      it is worth noting explicitly a nice property of abelian extensions that we will exploit below.
+      Before proceeding, it is worth noting explicitly a nice property of abelian extensions that we will exploit below.
     </p>
     <remark xml:id="R-decomposition-inertia">
       <p>
         Let <m>L/K</m> be a Galois extension with Galois group <m>G</m>,
-        let <m>\gothp</m> be a prime of <m>K</m>,
-        let <m>\gothq</m> be a prime of <m>L</m> over <m>\gothp</m>,
-        and let <m>G_{\gothq}</m> and
-        <m>I_{\gothq}</m> be the decomposition and inertia groups of <m>\gothq</m>,
-        respectively.
-        Then any other prime <m>\gothq'</m> over <m>\gothp</m> can be written as
-        <m>\gothq^g</m> for some <m>g \in G</m>,
-        and the decomposition and inertia groups of <m>\gothq'</m> are the conjugates
-        <m>g^{-1} G_{\gothq} g</m> and <m>g^{-1} I_{\gothq} g</m>,
-        respectively.
+        let <m>\gothp</m> be a prime of <m>K</m>, let <m>\gothq</m> be a prime of <m>L</m> over <m>\gothp</m>,
+        and let <m>G_{\gothq}</m> and <m>I_{\gothq}</m> be the decomposition and inertia groups of <m>\gothq</m>, respectively.
+        Then any other prime <m>\gothq'</m> over <m>\gothp</m> can be written as <m>\gothq^g</m> for some <m>g \in G</m>,
+        and the decomposition and inertia groups of <m>\gothq'</m> are the conjugates <m>g^{-1} G_{\gothq} g</m> and <m>g^{-1} I_{\gothq} g</m>, respectively.
         (Note: my Galois actions will always be <em>right</em> actions, denoted by superscripts.)
-        </p>
-        <p>If <m>L/K</m> is <em>abelian</em>, though, these conjugations have no effect.
+      </p>
+      <p>
+        If <m>L/K</m> is <em>abelian</em>, though, these conjugations have no effect.
         So it makes sense to talk about <em>the</em> decomposition and inertia groups of <m>\gothp</m> itself!
       </p>
     </remark>
@@ -105,68 +96,61 @@
         Suppose <m>K/\QQ</m> is abelian, with conductor <m>m</m>.
         Then we get a surjective homomorphism
         <me>
-          (\ZZ/m\ZZ)^* \cong \Gal(\QQ(\zeta_m)/\QQ) \to \Gal(K/\QQ)
-        </me>.
-        </p><p>
+          (\ZZ/m\ZZ)^* \cong \Gal(\QQ(\zeta_m)/\QQ) \to \Gal(K/\QQ).
+        </me>
+      </p>
+      <p>
         On the other hand, suppose <m>p</m> is a prime not dividing <m>m</m>,
         so that <m>K/\QQ</m> is unramified above <m>p</m>.
         As noted above,
         there is a well-defined decomposition group <m>G_p \subseteq \Gal(K/\QQ)</m>.
         Since there is no ramification above <m>p</m>,
-        the corresponding inertia group is trivial,
-        so <m>G_p</m> is generated by a Frobenius element <m>F_p</m>,
-        which modulo any prime above <m>p</m>,
-        acts as <m>x \mapsto x^p</m>.
-        We can formally extend the map
-        <m>p \mapsto F_p</m> to a homomorphism from <m>S_m</m>,
-        the subgroup of <m>\QQ</m> generated by all primes not dividing <m>m</m>,
-        to <m>\Gal(K/\QQ)</m>.
+        the corresponding inertia group is trivial, so <m>G_p</m> is generated by a Frobenius element <m>F_p</m>, which modulo any prime above <m>p</m>, acts as <m>x \mapsto x^p</m>.
+        We can formally extend the map <m>p \mapsto F_p</m> to a homomorphism from <m>S_m</m>, the subgroup of <m>\QQ</m> generated by all primes not dividing <m>m</m>, to <m>\Gal(K/\QQ)</m>.
         This is called the <term>Artin map</term> of <m>K/\QQ</m>.
       </p>
+      <p>
+        The punchline is that the Artin map factors through the map <m>(\ZZ/m\ZZ)^* \to \Gal(K/\QQ)</m> we wrote down above!
+        Namely, note that the image of <m>r</m> under the latter map takes <m>\zeta_m</m> to <m>\zeta_m^r</m>.
+        For this image to be equal to <m>F_p</m>,
+        we must have <m>\zeta_m^r \equiv \zeta_m^p \pmod{\gothp}</m> for some prime <m>\gothp</m> of <m>K</m> above <m>p</m>.
+        But <m>\zeta_m^r (1 - \zeta_m^{r-p})</m> is only divisible by primes above <m>m</m>
+        (see <xref ref="exer-factors-of-1-minus-zeta"/>) unless <m>r-p \equiv 0 \pmod{m}</m>.
+        Thus <m>F_p</m> must be equal to the image of <m>p</m> under the map <m>(\ZZ/m\ZZ)^* \to \Gal(K/\QQ)</m>.
+      </p>
     </definition>
-    <p>
-      The punchline is that the Artin map factors through the map <m>(\ZZ/m\ZZ)^* \to \Gal(K/\QQ)</m> we wrote down above!
-      Namely, note that the image of <m>r</m> under the latter map takes <m>\zeta_m</m> to <m>\zeta_m^r</m>.
-      For this image to be equal to <m>F_p</m>,
-      we must have <m>\zeta_m^r \equiv \zeta_m^p \pmod{\gothp}</m> for some prime <m>\gothp</m> of <m>K</m> above <m>p</m>.
-      But <m>\zeta_m^r (1 - \zeta_m^{r-p})</m> is only divisible by primes above <m>m</m>
-      (see <xref ref="exer-factors-of-1-minus-zeta"/>)
-      unless <m>r-p \equiv 0 \pmod{m}</m>.
-      Thus <m>F_p</m> must be equal to the image of <m>p</m> under the map <m>(\ZZ/m\ZZ)^* \to \Gal(K/\QQ)</m>.
-    </p>
     <remark>
       <p>
         The <term>Artin reciprocity law</term>
         states that a similar phenomenon arises for any abelian extension of any number field;
         that is, the Frobenius elements corresponding to various primes are governed by the way the primes
-        <q>reduce</q>
-        modulo some other quantity.
+        <q>reduce</q> modulo some other quantity.
         There are several complicating factors in the general case, though.
       </p>
-        <ul>
-          <li>
-            <p>
-              Prime ideals in a general number field are not always principal,
-              so we can't always take a generator and reduce it modulo something.
-            </p>
-          </li>
-          <li>
-            <p>
-              There can be lots of units in a general number field,
-              so even when a prime ideal is principal,
-              it is unclear which generator to choose.
-            </p>
-          </li>
-          <li>
-            <p>
-              It is not known in general how to explicitly construct generators for all of the abelian extensions of a general number field.
-            </p>
-          </li>
-        </ul>
+      <ul>
+        <li>
+          <p>
+            Prime ideals in a general number field are not always principal,
+            so we can't always take a generator and reduce it modulo something.
+          </p>
+        </li>
+        <li>
+          <p>
+            There can be lots of units in a general number field,
+            so even when a prime ideal is principal,
+            it is unclear which generator to choose.
+          </p>
+        </li>
+        <li>
+          <p>
+            It is not known in general how to explicitly construct generators for all of the abelian extensions of a general number field.
+          </p>
+        </li>
+      </ul>
       <p>
         Thus our approach will have to be a bit more indirect. See <xref ref="ch_statements"/> for the beginning of the story.
       </p>
-  </remark>
+    </remark>
   </subsection>
   <subsection>
     <title>Reduction to the local case</title>
@@ -218,8 +202,8 @@
           and so <m>I_p \cong \Gal(L_\gothq/U) \subseteq (\ZZ/p^{e_p}\ZZ)^*</m>.
           Let <m>I</m> be the group generated by all of the <m>I_p</m>; then
           <me>
-            |I| \leq \prod |I_p| \leq \prod \phi(p^{e_p}) = \phi(n) = [\QQ(\zeta_n):\QQ]
-          </me>.
+            |I| \leq \prod |I_p| \leq \prod \phi(p^{e_p}) = \phi(n) = [\QQ(\zeta_n):\QQ].
+          </me>
         </p>
         <p>
           On the other hand,
@@ -228,8 +212,8 @@
           That is, <m>I = \Gal(L/\QQ)</m>.
           But then
           <me>
-            [L:\QQ] = |I| \leq [\QQ(\zeta_n):\QQ]
-          </me>,
+            [L:\QQ] = |I| \leq [\QQ(\zeta_n):\QQ],
+          </me>
           and <m>\QQ(\zeta_n) \subseteq L</m>,
           so we must have <m>\QQ(\zeta_n) = L</m> and <m>K \subseteq \QQ(\zeta_n)</m>,
           as desired.
@@ -241,53 +225,71 @@
     <title>Exercises</title>
       <exercise>
         <statement>
-          Prove that the ring of integers in <m>\QQ(\zeta_n)</m> equals <m>\ZZ[\zeta_n]</m>.
+          <p>
+            Prove that the ring of integers in <m>\QQ(\zeta_n)</m> equals <m>\ZZ[\zeta_n]</m>.
+          </p>
         </statement>
         <hint>
-          For <m>n</m> a power of a prime <m>p</m>, the minimal polynomial of <m>\zeta_n</m> is the cyclotomic polynomial
-          <m>\Phi_n(x) = x^{(p-1)n/p} + \cdots + x^{n/p} + 1</m>; use the polynomial <m>\Phi_n(x-1)</m> to show that
-          <m>1-\zeta_n</m> generates a prime ideal. For the general case, show that if <m>K</m> and <m>L</m> are linearly disjoint
-          extensions of <m>\QQ</m> with coprime discriminants, then <m>\gotho_{KL} = \gotho_K \gotho_L</m>.
-        </hint>
+          <p>
+            For <m>n</m> a power of a prime <m>p</m>, the minimal polynomial of <m>\zeta_n</m> is the cyclotomic polynomial
+            <m>\Phi_n(x) = x^{(p-1)n/p} + \cdots + x^{n/p} + 1</m>; use the polynomial <m>\Phi_n(x-1)</m> to show that
+            <m>1-\zeta_n</m> generates a prime ideal. For the general case, show that if <m>K</m> and <m>L</m> are linearly disjoint
+            extensions of <m>\QQ</m> with coprime discriminants, then <m>\gotho_{KL} = \gotho_K \gotho_L</m>.
+          </p>
+       </hint>
     </exercise>
     <exercise xml:id="exer-Gauss-sums">
         <statement>
-          For <m>m \in \ZZ</m> not a perfect square,
-          determine the conductor of <m>\QQ(\sqrt{m})</m>.
+          <p>
+            For <m>m \in \ZZ</m> not a perfect square, determine the conductor of <m>\QQ(\sqrt{m})</m>.
+          </p>
         </statement>
         <hint>
-          First show that for <m>p</m> prime, <m>\QQ(\sqrt{(-1)^{(p-1)/2} p})</m> has conductor <m>p</m>.
+          <p>
+            First show that for <m>p</m> prime, <m>\QQ(\sqrt{(-1)^{(p-1)/2} p})</m> has conductor <m>p</m>.
+          </p>
         </hint>
       </exercise>
       <exercise xml:id="exer-Artin-to-quadratic">
         <statement>
-          Using the previous exercise, recover the law of quadratic reciprocity from the Artin reciprocity law.
+          <p>
+            Using the previous exercise, recover the law of quadratic reciprocity from the Artin reciprocity law.
+          </p>
          </statement>
       </exercise>
       <exercise xml:id="exer-factors-of-1-minus-zeta">
         <statement>
-          Prove that if <m>m,n</m> are coprime integers in <m>\ZZ</m>,
-          then <m>1 - \zeta_m</m> and <m>n</m> are coprime in <m>\ZZ[\zeta_m]</m>.
+          <p>
+            Prove that if <m>m,n</m> are coprime integers in <m>\ZZ</m>,
+            then <m>1 - \zeta_m</m> and <m>n</m> are coprime in <m>\ZZ[\zeta_m]</m>.
+          </p>
         </statement>
         <hint>
-          Look at the polynomial <m>(1-x)^m-1</m> modulo a prime divisor of <m>n</m>.
+          <p>
+            Look at the polynomial <m>(1-x)^m-1</m> modulo a prime divisor of <m>n</m>.
+          </p>
         </hint>
       </exercise>
       <exercise>
         <statement>
-          Prove that if <m>m</m> is not a prime power, then
-          <m>1-\zeta_m</m> is a unit in <m>\ZZ[\zeta_m]</m>.
+          <p>
+            Prove that if <m>m</m> is not a prime power, then <m>1-\zeta_m</m> is a unit in <m>\ZZ[\zeta_m]</m>.
+          </p>
          </statement>
       </exercise>
       <exercise>
         <statement>
-          Let <m>p</m> be an odd prime. Prove that <m>\ZZ[\zeta_p]^*</m> is generated by
-          <m>\zeta_p</m> and <m>\ZZ[\zeta_p + \zeta_p^{-1}]^*</m>.
+          <p>
+            Let <m>p</m> be an odd prime. Prove that <m>\ZZ[\zeta_p]^*</m> is generated by
+            <m>\zeta_p</m> and <m>\ZZ[\zeta_p + \zeta_p^{-1}]^*</m>.
+          </p>
         </statement>
         <hint>
-          By Dirichlet's units theorem, the index <m>[\ZZ[\zeta_p]^*:\ZZ[\zeta_p+\zeta_p^{-1}]^*]</m> is finite.
-          For <m>\alpha \in \ZZ[\zeta_p]^*</m>, the ratio <m>\alpha/\overline{\alpha}</m> is an algebraic integer having absolute value <m>1</m>
-          under each complex embedding, and hence is a root of unity by Kronecker's theorem.
+          <p>
+            By Dirichlet's units theorem, the index <m>[\ZZ[\zeta_p]^*:\ZZ[\zeta_p+\zeta_p^{-1}]^*]</m> is finite.
+            For <m>\alpha \in \ZZ[\zeta_p]^*</m>, the ratio <m>\alpha/\overline{\alpha}</m> is an algebraic integer having absolute value <m>1</m>
+            under each complex embedding, and hence is a root of unity by Kronecker's theorem.
+          </p>
         </hint>
       </exercise>
   </exercises>

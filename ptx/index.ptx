@@ -60,6 +60,7 @@
 \usetikzlibrary{through,intersections,decorations,shadows,fadings}
 \usepackage{pgfplots}
 \usepackage[all]{xy}
+\usepackage{accents}
 </latex-image-preamble>
   </docinfo>
   <book>

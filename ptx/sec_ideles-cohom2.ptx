@@ -253,6 +253,10 @@
         (<xref ref="T_adelic_reciprocity_law"/>) and the norm limitation theorem (<xref ref="T_adelic_norm_limitation1"/>),
         <xref ref="C_second_inequality_analytic"/> will also follow from those two statements together.
       </p>
+      <p>
+        On the other hand, if one wants to avoid abstract class field theory, then it is helpful to have <xref ref="C_second_inequality_analytic"/> in hand.
+        See <xref ref="rmk-no-abstract-cft"/>.
+      </p>
     </remark>
     <theorem xml:id="T_first_and_second_inequality">
       <title>Second Inequality</title>

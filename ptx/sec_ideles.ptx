@@ -108,7 +108,7 @@
   </subsection>
   <subsection>
     <title>Compactness and consequences</title>
-    <definition>
+    <definition xml:id="def-idele-class-norm">
     <p>
       By the product formula (<xref ref="prop-product-formula"/>), we get a well-defined norm map <m>|\cdot|: C_K \to \RR^*_+</m>.
       Let <m>C_K^0</m> be the kernel of the norm map;

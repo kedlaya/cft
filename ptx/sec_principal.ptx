@@ -214,10 +214,10 @@
     </theorem>
     <remark>
        <p>
-       The fact that <xref ref="T_transfer_vanishes"/> is so general means that we can easily obtain some extensions of <xref ref="T_principal_ideal_theorem"/>.
-       For example, it was observed by Iyanaga that if <m>L</m> is the ray class field of <m>K</m> of some modulus <m>\gothm</m>, and <m>\gothm \gotho_L</m>
-       is the extension of this modulus to <m>L</m> (that is, extend the finite part and take all places of <m>L</m> above the infinite places in <m>\gothm</m>),
-       then the induced map <m>\Cl^{\gothm}(K) \to \Cl^{\gothm}(L)</m> again vanishes.
+         The fact that <xref ref="T_transfer_vanishes"/> is so general means that we can easily obtain some extensions of <xref ref="T_principal_ideal_theorem"/>.
+         For example, it was observed by Iyanaga that if <m>L</m> is the ray class field of <m>K</m> of some modulus <m>\gothm</m>, and <m>\gothm \gotho_L</m>
+         is the extension of this modulus to <m>L</m> (that is, extend the finite part and take all places of <m>L</m> above the infinite places in <m>\gothm</m>),
+         then the induced map <m>\Cl^{\gothm}(K) \to \Cl^{\gothm}(L)</m> again vanishes.
        </p>
     </remark>
   </subsection>
@@ -256,82 +256,98 @@
     <title>Exercises</title>
       <exercise xml:id="exc-transfer-homomorphism">
         <statement>
-          Prove <xref ref="T_transfer_homomorphism"/>.
+          <p>
+            Prove <xref ref="T_transfer_homomorphism"/>.
+          </p>
         </statement>
         <hint>
-          One approach to proving independence from choices is to change one <m>g_i</m> at a time.
-          Also, notice that <m>\phi(gg_1), \dots, \phi(gg_n)</m> are a permutation of <m>g_1, \dots, g_n</m>.
+          <p>
+            One approach to proving independence from choices is to change one <m>g_i</m> at a time.
+            Also, notice that <m>\phi(gg_1), \dots, \phi(gg_n)</m> are a permutation of <m>g_1, \dots, g_n</m>.
+          </p>
         </hint>
       </exercise>
       <exercise xml:id="exc-transfer-Frobenius">
         <statement>
-          Prove <xref ref="L_transfer_Frobenius"/>.
+          <p>
+            Prove <xref ref="L_transfer_Frobenius"/>.
+          </p>
         </statement>
         <hint>
-          See <xref ref="bib-Neukirch"/>, Proposition IV.5.9.
+          <p>
+            See <xref ref="bib-Neukirch"/>, Proposition IV.5.9.
+          </p>
         </hint>
       </exercise>
       <exercise xml:id="exc-augmentation">
         <statement>
-          Let <m>H \subseteq G</m> be an inclusion of finite groups.
-          Let <m>G'</m> and <m>H'</m> be the commutator subgroups of <m>G</m> and <m>H</m>.
-          Let <m>\ZZ[G]</m> be the group algebra of <m>G</m>, i.e., the (noncommutative) ring of formal linear combinations
-          <m>\sum_{g \in G} n_g [g]</m> with <m>n_g \in \ZZ</m>,
-          multiplied by putting <m>[g][h] = [gh]</m>.
-          Let <m>I_G \subset \ZZ[G]</m> be the ideal of sums <m>\sum n_g[g]</m> with <m>\sum n_g = 0</m>
-          (called the <term>augmentation ideal</term>; see <xref ref="sec_homology"/>).
-          Let
-          <me>
-            \delta: H/H' \to (I_{H}+I_GI_{H})/I_GI_{H}
-          </me>
-          be the homomorphism taking the class of <m>h</m> to the class of <m>[h]-1</m>.
-          Prove that <m>\delta</m> is an isomorphism.
+          <p>
+            Let <m>H \subseteq G</m> be an inclusion of finite groups.
+            Let <m>G'</m> and <m>H'</m> be the commutator subgroups of <m>G</m> and <m>H</m>.
+            Let <m>\ZZ[G]</m> be the group algebra of <m>G</m>, i.e., the (noncommutative) ring of formal linear combinations
+            <m>\sum_{g \in G} n_g [g]</m> with <m>n_g \in \ZZ</m>,
+            multiplied by putting <m>[g][h] = [gh]</m>.
+            Let <m>I_G \subset \ZZ[G]</m> be the ideal of sums <m>\sum n_g[g]</m> with <m>\sum n_g = 0</m>
+            (called the <term>augmentation ideal</term>; see <xref ref="sec_homology"/>).
+            Let
+            <me>
+              \delta: H/H' \to (I_{H}+I_GI_{H})/I_GI_{H}
+            </me>
+            be the homomorphism taking the class of <m>h</m> to the class of <m>[h]-1</m>.
+            Prove that <m>\delta</m> is an isomorphism.
+          </p>
         </statement>
         <hint>
-          Show that the elements
-          <me>
-            [g]([h]-1) \qquad \mbox{for \(g \in \{g_1,\dots,g_n\}, h \in H\)}
-          </me>
-          form a basis of <m>I_H + I_G I_H</m> as a <m>\ZZ</m>-module.
-          For more clues, see <xref ref="bib-Neukirch"/>, Lemma VI.7.7.
+          <p>
+            Show that the elements
+            <me>
+              [g]([h]-1) \qquad \mbox{for \(g \in \{g_1,\dots,g_n\}, h \in H\)}
+            </me>
+            form a basis of <m>I_H + I_G I_H</m> as a <m>\ZZ</m>-module.
+            For more clues, see <xref ref="bib-Neukirch"/>, Lemma VI.7.7.
+          </p>
         </hint>
       </exercise>
       <exercise>
         <statement>
           <p>
-          With notation as in <xref ref="exc-augmentation"/>,
-          prove that the diagram in <xref ref="fig-principal-3"/> commutes, 
-          where <m>S</m> is given by <m>S(x) = x ([g_1] + \cdots + [g_n])</m>.
+            With notation as in <xref ref="exc-augmentation"/>,
+            prove that the diagram in <xref ref="fig-principal-3"/> commutes, 
+            where <m>S</m> is given by <m>S(x) = x ([g_1] + \cdots + [g_n])</m>.
           </p>
           <figure xml:id="fig-principal-3">
-          <image xml:id="img-principal-3">
-          <latex-image>
-          \xymatrix{
-          G/G' \ar^{V}[r] \ar^{\delta}[d] &amp; H/H' \ar^{\delta}[d] \\
-          I_G/I_G^2 \ar^(.3){S}[r] &amp; (I_{H}+I_GI_{H})/I_GI_{H},
-          }
-          </latex-image>
-          </image>
+            <image xml:id="img-principal-3">
+            <latex-image>
+            \xymatrix{
+            G/G' \ar^{V}[r] \ar^{\delta}[d] &amp; H/H' \ar^{\delta}[d] \\
+            I_G/I_G^2 \ar^(.3){S}[r] &amp; (I_{H}+I_GI_{H})/I_GI_{H},
+            }
+            </latex-image>
+            </image>
           </figure>
         </statement>
       </exercise>
       <exercise xml:id="exc-transfer-vanishes">
         <statement>
-          Prove <xref ref="T_transfer_vanishes"/>.
+          <p>
+            Prove <xref ref="T_transfer_vanishes"/>.
+          </p>
         </statement>
         <hint>
-          Quotient by the commutator subgroup of <m>H</m> to reduce to the case where <m>H</m> is abelian.
-          Apply the classification of finite abelian groups to write <m>G/H</m> as a product of cyclic groups <m>\ZZ/e_1 \ZZ \times \cdots \times \ZZ/e_m \ZZ</m>.
-          Let <m>f_i</m> be an element of <m>G</m> lifting a generator of
-          <m>\ZZ/e_i \ZZ</m> and put <m>h_i = f_i^{-e_i} \in H</m>;
-          then <m>0 = \delta(f_i^{e_i} h_i)</m>,
-          which can be rewritten as <m>\delta(f_i) \mu_i</m> for some
-          <m>\mu_i \in \ZZ[G]</m> congruent to <m>e_i</m> modulo <m>I_G</m>.
-          Now check that
-          <me>
-            n \mu_1 \cdots \mu_m \equiv [g_1] + \cdots + [g_n] \pmod{I_H \ZZ[G]}
-          </me>.
-          For more details, see <xref ref="bib-Neukirch"/>, Theorem VI.7.6.
+          <p>
+            Quotient by the commutator subgroup of <m>H</m> to reduce to the case where <m>H</m> is abelian.
+            Apply the classification of finite abelian groups to write <m>G/H</m> as a product of cyclic groups <m>\ZZ/e_1 \ZZ \times \cdots \times \ZZ/e_m \ZZ</m>.
+            Let <m>f_i</m> be an element of <m>G</m> lifting a generator of
+            <m>\ZZ/e_i \ZZ</m> and put <m>h_i = f_i^{-e_i} \in H</m>;
+            then <m>0 = \delta(f_i^{e_i} h_i)</m>,
+            which can be rewritten as <m>\delta(f_i) \mu_i</m> for some
+            <m>\mu_i \in \ZZ[G]</m> congruent to <m>e_i</m> modulo <m>I_G</m>.
+            Now check that
+            <me>
+              n \mu_1 \cdots \mu_m \equiv [g_1] + \cdots + [g_n] \pmod{I_H \ZZ[G]}
+            </me>.
+            For more details, see <xref ref="bib-Neukirch"/>, Theorem VI.7.6.
+          </p>
         </hint>
       </exercise>
   </exercises>

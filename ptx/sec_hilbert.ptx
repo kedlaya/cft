@@ -4,7 +4,7 @@
     <paragraphs>
       <title>Reference</title>
       <p>
-      <xref ref="bib-Milne-CFT"/>, Introduction; <xref ref="bib-Neukirch"/>, VI.6.
+        <xref ref="bib-Milne-CFT"/>, Introduction; <xref ref="bib-Neukirch"/>, VI.6.
       </p>
     </paragraphs>
   </introduction>
@@ -41,13 +41,11 @@
       It turns out these are not unrelated events.
     </p>
     <definition>
+      <title>Jargon watch</title>
       <p>
-        Caution: until further notice, the phrase
-        <q><m>L/K</m> is unramified</q>
-        will mean that <m>L/K</m> is unramified over all finite places in the usual sense,
+        In class field theory, the phrase <q><m>L/K</m> is unramified</q> is conventionally interpreted to mean that
+        <m>L/K</m> is unramified over all finite places in the usual sense,
         <em>and</em> that every real embedding of <m>K</m> extends to a real embedding of <m>L</m>.
-        (Get used to this.
-        The real and complex embeddings of a number field will be treated like primes consistently throughout this text.)
       </p>
     </definition>
     <theorem xml:id="T_Hilbert_class_field">
@@ -61,96 +59,122 @@
       </statement>
       <proof>
         <p>
-        A canonical isomorphism will be given by the Artin reciprocity law (<xref ref="T-Artin-reciprocity"/>).
+          A canonical isomorphism will be given by the Artin reciprocity law (<xref ref="T-Artin-reciprocity"/>).
         </p>
       </proof>
     </theorem>
     <remark>
       <p>
-      While <xref ref="T_Hilbert_class_field"/> implies that an abelian unramified extension must be finite,
-      there can be infinite unramified <em>nonabelian</em> extensions.
-      See <xref ref="R-class-field-towers"/>.
+        While <xref ref="T_Hilbert_class_field"/> implies that an abelian unramified extension must be finite,
+        there can be infinite unramified <em>nonabelian</em> extensions.
+        See <xref ref="R-class-field-towers"/>.
+      </p>
+    </remark>
+    <remark>
+      <p>
+        At this point, it should now be apparent that <term>class field theory</term> is <q>class field</q> theory, i.e., the theory of <term>class fields</term> such 
+        as the Hilbert class fields (and other examples described in <xref ref="def-ray-class-field"/>) rather than a special type of <q>field theory</q>. Whether this
+        affects your pronunciation of the entire phrase is up to you!
       </p>
     </remark>
   </subsection>
   <exercises>
     <title>Exercises</title>
-      <exercise>
+      <exercise xml:id="exer-genus-theory">
         <statement>
-          Let <m>K</m> be an imaginary quadratic extension of <m>\QQ</m> in which <m>t</m> finite primes ramify.
-          Assuming <xref ref="T_Hilbert_class_field"/>,
-          prove that <m>\#(\Cl(K)/2\Cl(K)) = 2^{t-1}</m>;
-          this recovers a theorem of Gauss originally proved using binary quadratic forms.
+          <p>
+            Let <m>K</m> be an imaginary quadratic extension of <m>\QQ</m> in which <m>t</m> finite primes ramify.
+            Assuming <xref ref="T_Hilbert_class_field"/>,
+            prove that <m>\#(\Cl(K)/2\Cl(K)) = 2^{t-1}</m>;
+            this recovers a theorem of Gauss originally proved using binary quadratic forms.
+          </p>
         </statement>
         <hint>
-          If an odd prime <m>p</m> ramifies in <m>K</m>,
-          show that <m>K(\sqrt{p^*})/K</m> is unramified for <m>p^* = (-1)^{(p-1)/2} p</m>;
-          if 2 ramifies in <m>K</m>,
-          show that <m>K(p^*)/K</m> is unramified for one of <m>p^* = -1, 2, -2</m>.
+          <p>
+            If an odd prime <m>p</m> ramifies in <m>K</m>,
+            show that <m>K(\sqrt{p^*})/K</m> is unramified for <m>p^* = (-1)^{(p-1)/2} p</m>;
+            if 2 ramifies in <m>K</m>,
+            show that <m>K(p^*)/K</m> is unramified for one of <m>p^* = -1, 2, -2</m>.
+          </p>
         </hint>
       </exercise>
       <exercise>
         <statement>
-          Give an example, using a real quadratic field, to illustrate that:
-          <ol>
-            <li>
-              <p>
-                <xref ref="T_Hilbert_class_field"/>
-                fails if we don't require the extensions to be unramified above the real place;
-              </p>
-            </li>
-            <li>
-              <p>
-                the previous exercise fails for real quadratic fields.
-              </p>
-            </li>
-          </ol>
+          <p>
+            Give an example, using a real quadratic field, to illustrate that:
+            <ol>
+              <li>
+                <p>
+                  <xref ref="T_Hilbert_class_field"/> fails if we don't require the extensions to be unramified above the real place;
+                </p>
+              </li>
+              <li>
+                <p>
+                  the previous exercise fails for real quadratic fields.
+                </p>
+              </li>
+            </ol>
+          </p>
         </statement>
       </exercise>
       <exercise>
         <statement>
-          Prove that Exercise<nbsp/>1 extends to real quadratic fields if one replaces the class group by the
-          <term>narrow class group</term>,
-          in which you only mod out by principal ideals having a totally positive generator.
-          This gives an example of a <term>ray class group</term>;
-          more on those in the next chapter.
+          <p>
+            Prove that <xref ref="exer-genus-theory"/> extends to real quadratic fields if one replaces the class group by the
+            <term>narrow class group</term>,
+            in which you only mod out by principal ideals having a totally positive generator.
+            This gives an example of a <term>ray class group</term>;
+            more on those in <xref ref="sec_artinrec"/>.
+          </p>
         </statement>
       </exercise>
       <exercise>
         <statement>
-          The field <m>\QQ(\sqrt{-23})</m> admits an ideal of order 3 in the class group and an unramified abelian extension of degree 3.
-          Find both.
+          <p>
+            The field <m>\QQ(\sqrt{-23})</m> admits an ideal of order 3 in the class group and an unramified abelian extension of degree 3.
+            Find both.
+          </p>
         </statement>
         <hint>
-          The extension contains a cubic field of discriminant -23.
+          <p>
+            The extension contains a cubic field of discriminant -23.
+          </p>
         </hint>
       </exercise>
-      <exercise>
+      <exercise xml:id="exer-relative-class1">
         <statement>
-          Let <m>L/K</m> be an extension of number fields admitting no nontrivial abelian subextension <m>M/K</m> which is everywhere
-          unramified (including at archimedean places). Assuming <xref ref="T_Hilbert_class_field"/>, prove
-          that the class number of <m>K</m> divides the class number of <m>L</m>.
+          <p>
+            Let <m>L/K</m> be an extension of number fields admitting no nontrivial abelian subextension <m>M/K</m> which is everywhere
+            unramified (including at archimedean places). Assuming <xref ref="T_Hilbert_class_field"/>, prove
+            that the class number of <m>K</m> divides the class number of <m>L</m>.
+          </p>
         </statement>
       </exercise>
       <exercise>
         <statement>
-          A number field <m>K</m> is called a <term>CM field</term> if it is a totally complex quadratic extension of a totally real number field
-          <m>K_+</m>. Using the previous exercise, show that the class number of <m>K_+</m> divides the class number of <m>K</m>. The ratio is 
-          called the <term>relative class number</term>.
+          <p>
+            A number field <m>K</m> is called a <term>CM field</term> if it is a totally complex quadratic extension of a totally real number field
+            <m>K_+</m>. Using <xref ref="exer-relative-class1"/>, show that the class number of <m>K_+</m> divides the class number of <m>K</m>. The ratio is 
+            called the <term>relative class number</term>.
+          </p>
         </statement>
       </exercise>
       <exercise>
         <statement>
-          Let <m>K</m> be a number field of degree <m>n</m> with Galois group <m>S_n</m> whose discriminant <m>D</m> is squarefree.
-          Prove that the Galois closure of <m>K</m> is unramified over all finite places of <m>\QQ(\sqrt{D})</m>. This gives an ample supply
-          of everywhere unramified extensions (of various fields) which are nonabelian for <m>n > 3</m>.
+          <p>
+            Let <m>K</m> be a number field of degree <m>n</m> with Galois group <m>S_n</m> whose discriminant <m>D</m> is squarefree.
+            Prove that the Galois closure of <m>K</m> is unramified over all finite places of <m>\QQ(\sqrt{D})</m>. This gives an ample supply
+            of everywhere unramified extensions (of various fields) which are nonabelian for <m>n > 3</m>.
+          </p>
         </statement>
         <hint>
-          Let <m>M</m> be the Galois closure of <m>K</m>.
-          For any odd prime <m>p</m> dividing the discriminant, use the restriction on <m>D</m> to show that 
-          there is exactly one prime of <m>K</m> above <m>p</m> which is ramified and that its ramification index is 2.
-          Then deduce that the inertia group of a prime of <m>M</m> above <m>p</m> has order 2, and finally argue that said prime is unramified over
-          its restriction to <m>\QQ(\sqrt{D})</m>.
+          <p>
+            Let <m>M</m> be the Galois closure of <m>K</m>.
+            For any odd prime <m>p</m> dividing the discriminant, use the restriction on <m>D</m> to show that 
+            there is exactly one prime of <m>K</m> above <m>p</m> which is ramified and that its ramification index is 2.
+            Then deduce that the inertia group of a prime of <m>M</m> above <m>p</m> has order 2, and finally argue that said prime is unramified over
+            its restriction to <m>\QQ(\sqrt{D})</m>.
+          </p>
         </hint>
       </exercise>
   </exercises>

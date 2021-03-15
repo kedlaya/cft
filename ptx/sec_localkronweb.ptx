@@ -6,11 +6,11 @@
       <p>
         <xref ref="bib-Washington"/>, Chapter 14.
       </p>
+    </paragraphs>
     <p>
       We now prove the local Kronecker-Weber theorem (<xref ref="T_local_Kronecker-Weber1"/>), modulo some steps which will be left as exercises.
       As shown previously, this will imply the original Kronecker-Weber theorem.
     </p>
-    </paragraphs>
   </introduction>
   <subsection>
     <title>Extensions of local fields</title>
@@ -262,9 +262,10 @@
           As for <m>u^g/u^{\omega(g)}</m>, note that <m>U_1^p</m> is precisely the set of units congruent to 1 modulo <m>\pi^{p+1}</m> (see <xref ref="exer-1units-power"/>).
           Since <m>\zeta_p = 1 + \pi + O(\pi^2)</m>, we can write <m>u = \zeta_p^b(1 + c\pi^d + O(\pi^{d+1}))</m>, with <m>c \in \ZZ</m> and <m>d \geq 2</m>.
           Since <m>\pi^g/\pi \equiv \omega(g) \pmod{\pi}</m>, we get
-          <me>
-            u^g = \zeta_p^{b\omega(g)} (1 + c \omega(g)^d \pi^d + O(\pi^{d+1})),  u^{\omega(g)} = \zeta_p^{b\omega(g)} (1 + c \omega(g) \pi^d + O(\pi^{d+1})).
-          </me>
+          <md>
+            <mrow>u^g &amp;= \zeta_p^{b\omega(g)} (1 + c \omega(g)^d \pi^d + O(\pi^{d+1})),</mrow> 
+            <mrow>u^{\omega(g)} &amp;= \zeta_p^{b\omega(g)} (1 + c \omega(g) \pi^d + O(\pi^{d+1})).</mrow> 
+          </md>
         </p>
         <p>
           But these two have to be congruent modulo <m>\pi^{p+1}</m>.
@@ -283,61 +284,80 @@
       <exercise xml:id="exer-lem_zetap">
         <statement>
           <p>
-          Prove <xref ref="lem_zetap"/>.
+            Prove <xref ref="lem_zetap"/>.
           </p>
         </statement>
         <hint>
-          Prove that <m>(\zeta_p-1)^{p-1}/p - 1</m> belongs to the maximal ideal of <m>\ZZ_p[\zeta_p]</m>.
+          <p>
+            Prove that <m>(\zeta_p-1)^{p-1}/p - 1</m> belongs to the maximal ideal of <m>\ZZ_p[\zeta_p]</m>.
+          </p>
         </hint>
       </exercise>
       <exercise xml:id="exer-1units-power">
         <statement>
-          Prove that (in the notation of <xref ref="lem_three"/>) <m>U_1^p</m> is the set of units congruent to 1 modulo <m>\pi^{p+1}</m>.
+          <p>
+            Prove that (in the notation of <xref ref="lem_three"/>) <m>U_1^p</m> is the set of units congruent to 1 modulo <m>\pi^{p+1}</m>.
+          </p>
         </statement>
         <hint>
-          In one direction, write <m>u \in U_1</m> as a power of <m>\zeta_p</m> times a unit congruent to 1 modulo <m>\pi^2</m>.
-          In the other direction, use the binomial series for <m>(1+x)^{1/p}</m>.
+          <p>
+            In one direction, write <m>u \in U_1</m> as a power of <m>\zeta_p</m> times a unit congruent to 1 modulo <m>\pi^2</m>.
+            In the other direction, use the binomial series for <m>(1+x)^{1/p}</m>.
+            (See <xref ref="exer-local-pth-powers"/> for a generalization of this result.)
+          </p>
         </hint>
       </exercise>
       <exercise xml:id="exer-2power-extension">
         <statement>
-          Prove that for any <m>r>0</m>, there is an extension of <m>\QQ_2</m> with Galois group
-          <m>\ZZ/2\ZZ \times (\ZZ/2^r\ZZ)^2</m> contained in <m>\QQ_2(\zeta_n)</m> for some <m>n>0</m>.
+          <p>
+            Prove that for any <m>r>0</m>, there is an extension of <m>\QQ_2</m> with Galois group
+            <m>\ZZ/2\ZZ \times (\ZZ/2^r\ZZ)^2</m> contained in <m>\QQ_2(\zeta_n)</m> for some <m>n>0</m>.
+          </p>
         </statement>
         <hint>
-          Consider <m>L = \mathbb{Q}_2(\zeta_{2^{r+1}}, \zeta_{2^r-1})</m>.
+          <p>
+            Consider <m>L = \mathbb{Q}_2(\zeta_{2^{r+1}}, \zeta_{2^r-1})</m>.
+          </p>
         </hint>
       </exercise>
       <exercise xml:id="exer-local-kronweb-part1">
         <statement>
           <p>
-          Suppose that <m>K/\QQ_2</m> is a <m>\ZZ/2^r\ZZ</m>-extension not contained in <m>\QQ_2(\zeta_n)</m> for any <m>n>0</m>.
-          Prove that there exists an extension of <m>\QQ_2</m> with Galois group <m>(\ZZ/2\ZZ)^4</m> or <m>(\ZZ/4\ZZ)^3</m>.
+            Suppose that <m>K/\QQ_2</m> is a <m>\ZZ/2^r\ZZ</m>-extension not contained in <m>\QQ_2(\zeta_n)</m> for any <m>n>0</m>.
+            Prove that there exists an extension of <m>\QQ_2</m> with Galois group <m>(\ZZ/2\ZZ)^4</m> or <m>(\ZZ/4\ZZ)^3</m>.
           </p>
         </statement>
         <hint>
           <p>
-          Compare <m>K</m> with its compositum with some field <m>L</m> as in <xref ref="exer-2power-extension"/>.
-          Use the structure of finite abelian groups to show that if <m>LK \neq L</m>, then <m>\Gal(LK/\mathbb{Q}_2)</m> is forced to have 
-          a quotient of the specified form.
+            Compare <m>K</m> with its compositum with some field <m>L</m> as in <xref ref="exer-2power-extension"/>.
+            Use the structure of finite abelian groups to show that if <m>LK \neq L</m>, then <m>\Gal(LK/\mathbb{Q}_2)</m> is forced to have 
+            a quotient of the specified form.
           </p>
         </hint>
       </exercise>
-              <exercise xml:id="exer-local-kronweb-part2">
+      <exercise xml:id="exer-local-kronweb-part2">
         <statement>
-          Prove that there is no extension of <m>\QQ_2</m> with Galois group <m>(\ZZ/2\ZZ)^4</m>.
+          <p>
+            Prove that there is no extension of <m>\QQ_2</m> with Galois group <m>(\ZZ/2\ZZ)^4</m>.
+          </p>
         </statement>
         <hint>
-          Use Kummer theory to show that every quadratic extension of <m>\QQ_2</m> is contained in <m>\QQ_2(\zeta_{24})</m>.
+          <p>
+            Use Kummer theory to show that every quadratic extension of <m>\QQ_2</m> is contained in <m>\QQ_2(\zeta_{24})</m>.
+          </p>
         </hint>
       </exercise>
       <exercise xml:id="exer-local-kronweb-part3">
         <statement>
-          Prove that there is no extension of <m>\QQ_2</m> with Galois group <m>(\ZZ/4\ZZ)^3</m>.
+          <p>
+            Prove that there is no extension of <m>\QQ_2</m> with Galois group <m>(\ZZ/4\ZZ)^3</m>.
+          </p>
         </statement>
         <hint>
-          Reduce to showing that there exists no extension of <m>\QQ_2</m> containing <m>\QQ_2(\sqrt{-1})</m> with Galois group <m>\ZZ/4\ZZ</m>. 
-          Prove this by following the argument of <xref ref="lem_three"/>.
+          <p>
+            Reduce to showing that there exists no extension of <m>\QQ_2</m> containing <m>\QQ_2(\sqrt{-1})</m> with Galois group <m>\ZZ/4\ZZ</m>. 
+            Prove this by following the argument of <xref ref="lem_three"/>.
+          </p>
         </hint>
       </exercise>
   </exercises>

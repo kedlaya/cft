@@ -1,10 +1,11 @@
 ﻿<section xml:id="sec_adelic-fourier">
-  <title>Ad&#xe8;lic Fourier analysis after Tate</title>
+  <title>Adelic Fourier analysis after Tate</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
       <p>
-        <xref ref="bib-Cassels-Frohlich"/>, XV. Note that the <q>valuation vectors</q> used therein are our ad&#xe8;les; see <xref ref="rmk-adele-spelling"/>.
+        The original source is <xref ref="bib-Cassels-Frohlich"/>, XV; note that the <q>valuation vectors</q> used therein are our ad&#xe8;les, as per <xref ref="rmk-adele-spelling"/>.
+        For a modern (and much less terse) treatment, see <xref ref="bib-Ramakrishnan-Valenza"/>.
       </p>
     </paragraphs>
     <p>
@@ -77,9 +78,9 @@
           <me>
             \hat{f}(\eta) = \int f(\xi) X(\eta \xi)\,d\xi.
           </me>
-          If <m>\hat(f) \in L_1(K_v^+)</m> also, then
+          If <m>\hat{f} \in L_1(K_v^+)</m> also, then
           <me>
-            f(\xi) = c \int \hat{f}(\eta) X(-\eta \xi) \,d\eta = c \hat{\hat{f}}(-\xi)
+            f(\xi) = c \int \hat{f}(\eta) X(-\eta \xi) \,d\eta = c \widehat{\hat{f}}(-\xi)
           </me>
           for some <m>c > 0</m> which depends only on the Haar measure and the character <m>X</m>. In particular, these can be normalized so that <m>c = 1</m>.
         </p>
@@ -102,7 +103,7 @@
           </me>
           If <m>\hat(f) \in L_1(K_v^+)</m> also, then
           <me>
-            f(\xi) = c \int \hat{f}(\eta) X(-\eta \xi) \,d\eta = c \hat{\hat{f}}(-\xi)
+            f(\xi) = c \int \hat{f}(\eta) X(-\eta \xi) \,d\eta = c \widehat{\hat{f}}(-\xi)
           </me>
           for some <m>c > 0</m> which depends only on the Haar measure and the character <m>X</m>. In particular, these can be normalized so that <m>c = 1</m>.
         </p>
@@ -131,12 +132,13 @@
         By contrast, a <term>character</term> is required to map into the unit circle.
       </p>
       <p>
-        For each quasi-character <m>c</m>, there exists a unique real number <m>s</m> such that <m>|c(\alpha)| = |\alpha|^s</m> for all <m>\alpha \in I_K</m>.
+        For each quasi-character <m>c</m>, there exists a unique real number <m>s</m> such that <m>|c(\alpha)| = |\alpha|^s</m> for all <m>\alpha \in I_K</m>
+        (where <m>|\alpha|</m> is defined as in <xref ref="def-idele-class-norm"/>).
         We call <m>s</m> the <term>exponent</term> of <m>c</m>.
       </p>
       <p>
         The space of quasicharacters on <m>C_K</m> contains a distinguished copy of <m>\CC</m>: each complex number <m>s</m> corresponds to the character
-        <m>\alpha \mapsto |c(\alpha)|^s</m>. The exponent of this character is precisely the real part of <m>s</m>.
+        <m>\alpha \mapsto |\alpha|^s</m>. The exponent of this character is precisely the real part of <m>s</m>.
       </p>
     </definition>
     <remark>
