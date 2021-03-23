@@ -154,7 +154,7 @@
           then the diagram in <xref ref="fig-abstractcft-4"/> commutes.
         </p>
           <figure xml:id="fig-abstractcft-4">
-          <image>
+          <image width="50%">
           <latex-image>
           \xymatrix{
           \Gal(L'/K')^{\ab} \ar^{r_{L'/K'}}[r] \ar[d] &amp; A_{K'}/\Norm_{L'/K'} A_{L'} \ar^{\Norm_{K'/K}}[d] \\
@@ -189,7 +189,7 @@
           <m>\Gal(L/K') \subseteq \Gal(L/K)</m> (<xref ref="T_transfer_homomorphism"/>).
         </p>
           <figure xml:id="fig-abstractcft-5">
-          <image>
+          <image width="50%">
           <latex-image>
           \xymatrix{
           \Gal(L/K)^{\ab} \ar^{r_{L/K}}[r] \ar^{V}[d] &amp; A_{K}/\Norm_{L/K} A_{L} \ar[d] \\

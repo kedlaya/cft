@@ -212,7 +212,7 @@
       if <m>M/K</m> is another finite Galois extension containing <m>L</m>,
       we need to know that the diagram
       <figure xml:id="fig-tatethm-1">
-        <image>
+        <image width="50%">
         <latex-image>
         \xymatrix{
           K^*/\Norm_{M/K} M^* \ar[r] \ar[d]  &amp; \Gal(M/K)^{\ab} \ar[d] \\
@@ -224,7 +224,7 @@
       commutes, so that the maps <m>K^* \to \Gal(L/K)^{\ab}</m> fit together to give a map <m>K^* \to \Gal(K^{\sep}/K)^{\ab}</m>.
       In other words, we need a commuting diagram
       <figure xml:id="fig-tatethm-2">
-        <image>
+        <image width="50%">
         <latex-image>
         \xymatrix{
           H^0_T(\Gal(M/K), M^*)  \ar[r] \ar[d] &amp; H^{-1}_T(\Gal(M/K), I_{\Gal(M/K)}) \ar[d] \ar[r] &amp; H^0_T(\Gal(M/K), \ZZ) \ar[d] \\
@@ -235,7 +235,7 @@
       </figure>
       The right square in <xref ref="fig-tatethm-2"/> comes from taking long exact sequences in the commutative diagram with exact rows:
       <figure xml:id="fig-tatethm-3">
-        <image>
+        <image width="50%">
         <latex-image>
         \xymatrix{
           0 \ar[r] &amp; I_{\Gal(M/K)} \ar[r] \ar[d] &amp; \ZZ[\Gal(M/K)] \ar[r] \ar[d] &amp; \ZZ \ar[r] \ar[d] &amp; 0 \\
@@ -246,7 +246,7 @@
       </figure>
       To construct the left square in <xref ref="fig-tatethm-2"/>, we similarly need to construct a commutative diagram with exact rows:
       <figure xml:id="fig-tatethm-4">
-        <image>
+        <image width="50%">
         <latex-image>
         \xymatrix{
           0 \ar[r] &amp; M^* \ar[r] \ar^{\Norm_{M/L}}[d] &amp; M^*[\phi_M] \ar[r] \ar[d] &amp; I_{\Gal(M/K)} \ar[r] \ar[d] &amp; 0 \\
@@ -258,7 +258,7 @@
       I claim we can arrange for this as follows. First choose a cocycle <m>\phi_M: \Gal(M/K)^3 \to M^*</m> representing the preferred generator of <m>H^2(M/K)</m>.
       Then there exists a unique map <m>\phi_L</m> fitting into the following commuting square:
       <figure xml:id="fig-tatethm-5">
-        <image>
+        <image width="50%">
         <latex-image>
         \xymatrix{
           \Gal(M/K)^3 \ar^(.7){\phi_M}[r] \ar[d] &amp; M^* \ar^{\Norm_{M/L}}[d] \\

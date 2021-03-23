@@ -1,195 +1,196 @@
 ﻿<references>
   <title>Bibliography</title>
   <biblio type="raw" xml:id="bib-Artin-Tate">
-    E. Artin and J. Tate, <pubtitle>Class Field Theory</pubtitle>, AMS Chelsea Publishing, Providence, RI, 2009.
+    E. Artin and J. Tate, <pubtitle>Class Field Theory</pubtitle>, AMS Chelsea Publishing, Providence, RI, <year>2009</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-BCDT">
     C. Breuil, B. Conrad, F. Diamond, and R. Taylor, <articletitle>On the modularity of elliptic curves over <m>\QQ</m>: wild 3-adic exercises</articletitle>,
-    <journal>Journal of the American Mathematical Society</journal> <volume>14</volume> (2001), 843--939.
+    <journal>Journal of the American Mathematical Society</journal> <volume>14</volume> <year>2001</year>, 843--939.
   </biblio>
   <biblio type="raw" xml:id="bib-AWS">
     B. Cais, B. Bhatt, A. Caraiani, K.S. Kedlaya, P. Scholze, and J. Weinstein, <pubtitle>Perfectoid Spaces: Lectures from the 2017 Arizona Winter School</pubtitle>,
-    American Mathematical Society, 2019.
+    American Mathematical Society, <year>2019</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Cassels-Frohlich">
-    J.W.S. Cassels and A. Fr&#xf6;hlich, <pubtitle>Algebraic Number Theory</pubtitle>, Academic Press, London, 1967. 
+    J.W.S. Cassels and A. Fr&#xf6;hlich, <pubtitle>Algebraic Number Theory</pubtitle>, Academic Press, London, <year>1967</year>. 
   </biblio>
   <biblio type="raw" xml:id="bib-Chabert">
-    J.-L. Chabert, <articletitle>From P&#xf3;lya fields to P&#xf3;lya groups, I: Galois extensions</articletitle>, <journal>Journal of Number Theory</journal> <volume>203</volume> (2019), 360<ndash/>375.
+    J.-L. Chabert, <articletitle>From P&#xf3;lya fields to P&#xf3;lya groups, I: Galois extensions</articletitle>, <journal>Journal of Number Theory</journal> 
+    <volume>203</volume> <year>2019</year>, 360<ndash/>375.
   </biblio>
   <biblio type="raw" xml:id="bib-Chevalley">
-    C. Chevalley, <articletitle>La th&#xe9;orie du corps de classes</articletitle>, <journal>Annals of Mathematics</journal> <volume>41</volume> (1940), 394<ndash/>418.
+    C. Chevalley, <articletitle>La th&#xe9;orie du corps de classes</articletitle>, <journal>Annals of Mathematics</journal> <volume>41</volume> <year>1940</year>, 394<ndash/>418.
   </biblio>
   <biblio type="raw" xml:id="bib-Clausen">
-    D. Clausen, <articletitle>A <m>K</m>-theoretic approach to Artin maps</articletitle>, arXiv:1703.07842.
+    D. Clausen, <articletitle>A <m>K</m>-theoretic approach to Artin maps</articletitle>, arXiv:1703.07842v2, <year>2017</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Cohen">
-    H. Cohen, <pubtitle>A Course in Computational Algebraic Number Theory</pubtitle>, Graduate Texts in Mathematics 138, Springer-Verlag, Berlin, 1993.
+    H. Cohen, <pubtitle>A Course in Computational Algebraic Number Theory</pubtitle>, Graduate Texts in Mathematics 138, Springer-Verlag, Berlin, <year>1993</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Cohen2">
-    H. Cohen, <pubtitle>Advanced Topics in Computational Number Theory</pubtitle>, Graduate Texts in Mathematics 193, Springer-Verlag, New York, 2000.
+    H. Cohen, <pubtitle>Advanced Topics in Computational Number Theory</pubtitle>, Graduate Texts in Mathematics 193, Springer-Verlag, New York, <year>2000</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Cox">
-    D.A. Cox, <pubtitle>Primes of the Form <m>x^2 + ny^2</m></pubtitle>, second edition, John Wiley &amp; Sons, Hoboken, NJ, 2013.
+    D.A. Cox, <pubtitle>Primes of the Form <m>x^2 + ny^2</m></pubtitle>, second edition, John Wiley &amp; Sons, Hoboken, NJ, <year>2013</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Frohlich-Taylor">
-    A. Fröhlich and M.J. Taylor, <pubtitle>Algebraic Number Theory</pubtitle>, Cambridge University Press, 1991.
+    A. Fröhlich and M.J. Taylor, <pubtitle>Algebraic Number Theory</pubtitle>, Cambridge University Press, <year>1991</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Gelbart">
-    S. Gelbart, <pubtitle>Automorphic Forms on Adèle Groups</pubtitle>, Annals of Mathematics Studies 83, Princeton University Press, Princeton, NJ, 1975.
+    S. Gelbart, <pubtitle>Automorphic Forms on Adèle Groups</pubtitle>, Annals of Mathematics Studies 83, Princeton University Press, Princeton, NJ, <year>1975</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Gras">
-    G. Gras, <pubtitle>Class Field Theory: From Theory to Practice</pubtitle>, Springer Monographs in Mathematics, Springer-Verlag, Berlin, 2003.
+    G. Gras, <pubtitle>Class Field Theory: From Theory to Practice</pubtitle>, Springer Monographs in Mathematics, Springer-Verlag, Berlin, <year>2003</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Grothendieck-Tohoku">
     A. Grothendieck, <articletitle>Sur quelques points d'alg&#xe8;bre homologique</articletitle>, <journal>T&#xf4;hoku Mathematical Journal</journal> <volume>9</volume>
-    (1957), 119<ndash/>221.
+    <year>1957</year>, 119<ndash/>221.
   </biblio>
   <biblio type="raw" xml:id="bib-Grothendieck-Brauer">
     A. Grothendieck, <articletitle>Le groupe de Brauer I, II, III</articletitle>, in <pubtitle> Dix Exposés sur la Cohomologie des Schémas</pubtitle>,
-    North-Holland, Amsterdam, 1968.
+    North-Holland, Amsterdam, <year>1968</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Grunwald">
     W. Grunwald, <articletitle>Ein allgemeiner Existenzsatz f&#xfc;r algebraische Zahlk&#xf6;rper</articletitle>, <journal>Journal f&#xfc;r die reine und angewandte Mathematik</journal>
-    <volume>169</volume> (1933), 103<ndash/>107.
+    <volume>169</volume> <year>1933</year>, 103<ndash/>107.
   </biblio>
   <biblio type="raw" xml:id="bib-Harari">
-    D. Harari, <pubtitle>Galois Cohomology and Class Field Theory</pubtitle>, Universitext, Springer, Cham, 2020.
+    D. Harari, <pubtitle>Galois Cohomology and Class Field Theory</pubtitle>, Universitext, Springer, Cham, <year>2020</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Harris-Taylor">
     M. Harris and R. Taylor, <pubtitle>The Geometry and Cohomology of Some Simple Shimura Varieties</pubtitle>,
-    with an appendix by Vladimir G. Berkovich, Annals of Mathematics Studies 151, Princeton University Press, Princeton, NJ, 2001.
+    with an appendix by Vladimir G. Berkovich, Annals of Mathematics Studies 151, Princeton University Press, Princeton, NJ, <year>2001</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Hayes-Drinfeld">
     D. Hayes, <articletitle>A brief introduction to Drinfeld modules</articletitle>, in <pubtitle>The Arithmetic of Function Fields (Columbus, OH, 1991)</pubtitle>,
-    de Gruyter, Berlin, 1992, 1<ndash/>32.
+    de Gruyter, Berlin, <year>1992</year>, 1<ndash/>32.
   </biblio>
   <biblio type="raw" xml:id="bib-Henniart">
     G. Henniart, <articletitle>Une preuve simple des conjectures de Langlands pour <m>\GL(n)</m> sur un corps <m>p</m>-adique</articletitle>,
-    <journal>Inventiones Mathematicae</journal> <volume>139</volume> (2000), 439<ndash/>455.
+    <journal>Inventiones Mathematicae</journal> <volume>139</volume> <year>2000</year>, 439<ndash/>455.
   </biblio>
   <biblio type="raw" xml:id="bib-Hilbert-Zahlbericht">
-    D. Hilbert, <pubtitle>The Theory of Algebraic Number Fields</pubtitle>, Springer-Verlag, Berlin, 1998.
+    D. Hilbert, <pubtitle>The Theory of Algebraic Number Fields</pubtitle>, Springer-Verlag, Berlin, <year>1998</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Holt">
-    D.F. Holt, <articletitle>An interpretation of the cohomology groups <m>H_n(G, M)</m></articletitle>, <journal>J. Algebra</journal> <volume>60</volume> (1979), no. 2, 307<ndash/>320. 
+    D.F. Holt, <articletitle>An interpretation of the cohomology groups <m>H_n(G, M)</m></articletitle>, <journal>J. Algebra</journal> <volume>60</volume> <year>1979</year>, no. 2, 307<ndash/>320. 
   </biblio>
   <biblio type="raw" xml:id="bib-Isaacs">
-    I.M. Isaacs, <pubtitle>Character Theory of Finite Groups</pubtitle>, American Mathematical Society, Providence, RI, 2006.
+    I.M. Isaacs, <pubtitle>Character Theory of Finite Groups</pubtitle>, American Mathematical Society, Providence, RI, <year>2006</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Jacobson-2">
-    N. Jacobson, <pubtitle>Basic Algebra, II</pubtitle>, W. H. Freeman, San Francisco, 1980.
+    N. Jacobson, <pubtitle>Basic Algebra, II</pubtitle>, W. H. Freeman, San Francisco, <year>1980</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Janusz">
-    G. Janusz, <pubtitle>Algebraic Number Fields</pubtitle>, American Mathematical Society, 1996.
+    G. Janusz, <pubtitle>Algebraic Number Fields</pubtitle>, American Mathematical Society, <year>1996</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Jarvis">
-    F. Jarvis, <pubtitle>Algebraic Number Fields</pubtitle>, Springer, Cham, 2014.
+    F. Jarvis, <pubtitle>Algebraic Number Fields</pubtitle>, Springer, Cham, <year>2014</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Kapustin-Witten">
     A. Kapustin and E. Witten, <articletitle>Electric-magnetic duality and the geometric Langlands program</articletitle>,
-    <journal>Communications in Number Theory and Physics</journal>  <volume>1</volume> (2007), 1<ndash/>236.
+    <journal>Communications in Number Theory and Physics</journal>  <volume>1</volume> <year>2007</year>, 1<ndash/>236.
   </biblio>
   <biblio type="raw" xml:id="bib-Kato">
     K. Kato, <articletitle>A generalization of local class field theory by using <m>K</m>-groups, I</articletitle>, 
-    <journal>Proceedings of the Japan Academy, Series A, Mathematical Sciences</journal> <volume>53</volume> (1977), 140<ndash/>143.
+    <journal>Proceedings of the Japan Academy, Series A, Mathematical Sciences</journal> <volume>53</volume> <year>1977</year>, 140<ndash/>143.
   </biblio>
   <biblio type="raw" xml:id="bib-Lafforgue_L">
     L. Lafforgue, <articletitle>Chtoucas de Drinfeld et correspondance de Langlands</articletitle>,
-    <journal>Inventiones Mathematicae</journal> <volume>147</volume> (2002), 1<ndash/>241.
+    <journal>Inventiones Mathematicae</journal> <volume>147</volume> <year>2002</year>, 1<ndash/>241.
   </biblio>
   <biblio type="raw" xml:id="bib-Lafforgue-V">
     V. Lafforgue, <articletitle>Chtoucas pour les groupes réductifs et paramétrisation de Langlands globale</articletitle>,
-    <journal>Journal of the American Mathematical Society</journal> <volume>31</volume> (2018), 719<ndash/>891.
+    <journal>Journal of the American Mathematical Society</journal> <volume>31</volume> <year>2018</year>, 719<ndash/>891.
   </biblio>
   <biblio type="raw" xml:id="bib-Lagarias-Odlyzko">
     J.C. Lagarias and A.M. Odlyzko, <articletitle>Effective versions of the Chebotarev density theorem</articletitle>, in 
-    <pubtitle>Algebraic Number Fields: L-Functions and Galois Representations</pubtitle>, Academic Press, London, 1977, 409<ndash/>464.
+    <pubtitle>Algebraic Number Fields: L-Functions and Galois Representations</pubtitle>, Academic Press, London, <year>1977</year>, 409<ndash/>464.
   </biblio>
   <biblio type="raw" xml:id="bib-Lang-algebra">
-    S. Lang, <pubtitle>Algebra</pubtitle>, revised third edition, Graduate Texts in Mathematics 211, Springer-Verlag, New York, 2002.
+    S. Lang, <pubtitle>Algebra</pubtitle>, revised third edition, Graduate Texts in Mathematics 211, Springer-Verlag, New York, <year>2002</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Lang">
-    S. Lang, <pubtitle>Algebraic Number Theory</pubtitle>, second edition, Graduate Texts in Mathematics 110, Springer-Verlag, New York, 1994.
+    S. Lang, <pubtitle>Algebraic Number Theory</pubtitle>, second edition, Graduate Texts in Mathematics 110, Springer-Verlag, New York, <year>1994</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Laumon-Ngo">
     G. Laumon and B.C. Ng&#xf4;, <articletitle>Le lemme fondamental pour les groupes unitaires</articletitle>,
-    <journal>Annals of Mathematics</journal> <volume>168</volume> (2008), 477<ndash/>573.    
+    <journal>Annals of Mathematics</journal> <volume>168</volume> <year>2008</year> 477<ndash/>573.
   </biblio>
   <biblio type="raw" xml:id="bib-Leriche">
-    A. Leriche, <articletitle>About the embedding of a number field in a P&#xf3;lya field</articletitle>, <journal>Journal of Number Theory</journal> <volume>145</volume> (2014), 210<ndash/>229.
+    A. Leriche, <articletitle>About the embedding of a number field in a P&#xf3;lya field</articletitle>, <journal>Journal of Number Theory</journal> <volume>145</volume> <year>2014</year>, 210<ndash/>229.
   </biblio>
   <biblio type="raw" xml:id="bib-Milne-CFT">
     J. Milne, <pubtitle>Class Field Theory</pubtitle>, version 4.04, <url href="http://jmilne.org/math/CourseNotes/cft.html"/>.
   </biblio>
   <biblio type="raw" xml:id="bib-Neukirch">
-    J. Neukirch, <pubtitle>Algebraic Number Theory</pubtitle>, Springer-Verlag, Berlin, 1999.
+    J. Neukirch, <pubtitle>Algebraic Number Theory</pubtitle>, Springer-Verlag, Berlin, <year>1999</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Neukirch-CFT">
-    J. Neukirch, <pubtitle>Class Field Theory, the Bonn Lectures</pubtitle>, Springer, Heidelberg, 2013.
+    J. Neukirch, <pubtitle>Class Field Theory, the Bonn Lectures</pubtitle>, Springer, Heidelberg, <year>2013</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Nikolov-Segal">
     N. Nikolov and D. Segal, <articletitle>On finitely generated profinite groups, I: strong completeness and uniform bounds</articletitle>,
-    <journal>Annals of Mathematics</journal> <volume>165</volume> (2007), 171--238.
+    <journal>Annals of Mathematics</journal> <volume>165</volume> <year>2007</year>, 171--238.
   </biblio>
   <biblio type="raw" xml:id="bib-Noether">
-    E. Noether, <articletitle>Der Hauptgeschlechtssatz für relativ-galoissche Zahlkörper</articletitle>, <journal>Mathematische Annalen</journal> <journal>108</journal> (1933), 411<ndash/>419.
+    E. Noether, <articletitle>Der Hauptgeschlechtssatz für relativ-galoissche Zahlkörper</articletitle>, <journal>Mathematische Annalen</journal> <journal>108</journal> <year>1933</year>, 411<ndash/>419.
   </biblio>
   <biblio type="raw" xml:id="bib-Poonen">
-    B. Poonen, <pubtitle>Rational Points on Varieties</pubtitle>, Graduate Studies in Mathematics 186, American Mathematical Society, Providence, RI, 2017.
+    B. Poonen, <pubtitle>Rational Points on Varieties</pubtitle>, Graduate Studies in Mathematics 186, American Mathematical Society, Providence, RI, <year>2017</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Ramakrishnan-Valenza">
-    D. Ramakrishnan and R.J. Valenza, <pubtitle>Fourier Analysis on Number Fields</pubtitle>, Graduate Texts in Mathematics 186, Springer, New York, 1999.
+    D. Ramakrishnan and R.J. Valenza, <pubtitle>Fourier Analysis on Number Fields</pubtitle>, Graduate Texts in Mathematics 186, Springer, New York, <year>1999</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Scholze">
     P. Scholze, <articletitle>The local Langlands correspondence for <m>\GL_n</m> over <m>p</m>-adic fields</articletitle>,
-    <journal>Inventiones Mathematicae</journal> <journal>192</journal> (2013), 663<ndash/>715.
+    <journal>Inventiones Mathematicae</journal> <journal>192</journal> <year>2013</year>, 663<ndash/>715.
   </biblio>
   <biblio type="raw" xml:id="bib-Serre-CourseInArithmetic">
-    J.-P. Serre, <pubtitle>A Course in Arithmetic</pubtitle>, Graduate Texts in Mathematics 7, Springer-Verlag, New York-Heidelberg, 1973.
+    J.-P. Serre, <pubtitle>A Course in Arithmetic</pubtitle>, Graduate Texts in Mathematics 7, Springer-Verlag, New York-Heidelberg, <year>1973</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Serre-LinRep">
-    J.-P. Serre, <pubtitle>Linear Representations of Finite Groups</pubtitle>, Graduate Texts in Mathematics 42, Springer-Verlag, New York, 1977.
+    J.-P. Serre, <pubtitle>Linear Representations of Finite Groups</pubtitle>, Graduate Texts in Mathematics 42, Springer-Verlag, New York, <year>1977</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Serre-LocalFields">
-    J.-P. Serre, <pubtitle>Local Fields</pubtitle>, Graduate Texts in Mathematics 67, Springer-Verlag, New York-Berlin, 1979.
+    J.-P. Serre, <pubtitle>Local Fields</pubtitle>, Graduate Texts in Mathematics 67, Springer-Verlag, New York-Berlin, <year>1979</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Serre-AGCF">
-    J.-P. Serre, <pubtitle>Algebraic Groups and Class Fields</pubtitle>, Graduate Texts in Mathematics 117, Springer-Verlag, New York, 1988.
+    J.-P. Serre, <pubtitle>Algebraic Groups and Class Fields</pubtitle>, Graduate Texts in Mathematics 117, Springer-Verlag, New York, <year>1988</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Serre-GaloisCohomology">
-    J.-P. Serre, <pubtitle>Galois Cohomology</pubtitle>, corrected reprint of the 1997 English edition, Springer-Verlag, Berlin, 2002.
+    J.-P. Serre, <pubtitle>Galois Cohomology</pubtitle>, corrected reprint of the 1997 English edition, Springer-Verlag, Berlin, <year>2002</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Serre-NXp">
-    J.-P. Serre, <pubtitle>Lectures on <m>N_X(p)</m></pubtitle>, CRC Press, Boca Raton, FL, 2012.
+    J.-P. Serre, <pubtitle>Lectures on <m>N_X(p)</m></pubtitle>, CRC Press, Boca Raton, FL, <year>2012</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Serre-Curves">
     J.-P. Serre, <pubtitle>Rational Points on Curves over Finite Fields</pubtitle>, with contributions by Everett Howe, Joseph Oesterlé, and Christophe Ritzenthaler,
-    Documents Mathématiques, Société Mathématique de France, 2020.
+    Documents Mathématiques, Société Mathématique de France, <year>2020</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Silverman-AEC">
-    J. Silverman, <pubtitle>The Arithmetic of Elliptic Curves</pubtitle>, second edition, Graduate Texts in Mathematics 106, Springer, Dordrecht, 2009.
+    J. Silverman, <pubtitle>The Arithmetic of Elliptic Curves</pubtitle>, second edition, Graduate Texts in Mathematics 106, Springer, Dordrecht, <year>2009</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Taylor-Wiles">
     R. Taylor and A. Wiles, <articletitle>Ring-theoretic properties of certain Hecke algebras</articletitle>, <journal>Annals of Mathematics</journal> <volume>141</volume> (1995), 553<ndash/>572.
   </biblio>
   <biblio type="raw" xml:id="bib-Wang">
-    S. Wang, <articletitle>A counter-example to Grunwald's theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>49</volume> (1948), 1008<ndash/>1009.
+    S. Wang, <articletitle>A counter-example to Grunwald's theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>49</volume> <year>1948</year> 1008<ndash/>1009.
   </biblio>
   <biblio type="raw" xml:id="bib-Waldspurger">
     J.-L. Waldspurger, <articletitle>Sur les intégrales orbitales tordues pour les groupes linéaires: un lemme fondamental</articletitle>,
-    <journal>Canadian Journal of Mathematics</journal> <volume>43</volume> (1991), 852<ndash/>896.
+    <journal>Canadian Journal of Mathematics</journal> <volume>43</volume> <year>1991</year>, 852<ndash/>896.
   </biblio>
   <biblio type="raw" xml:id="bib-Wang2">
-    S. Wang, <articletitle>On Grunwald's theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>51</volume> (1950), 471<ndash/>484.
+    S. Wang, <articletitle>On Grunwald's theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>51</volume> <year>1950</year>, 471<ndash/>484.
   </biblio>
   <biblio type="raw" xml:id="bib-Washington">
-    L. Washington, <pubtitle>Introduction to Cyclotomic Fields</pubtitle>, second edition, Graduate Texts in Mathematics 83, Springer-Verlag, New York, 1997.
+    L. Washington, <pubtitle>Introduction to Cyclotomic Fields</pubtitle>, second edition, Graduate Texts in Mathematics 83, Springer-Verlag, New York, <year>1997</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Wiles">
-    A. Wiles, <articletitle>Modular elliptic curves and Fermat’s Last Theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>141</volume> (1995), 443<ndash/>551.
+    A. Wiles, <articletitle>Modular elliptic curves and Fermat’s Last Theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>141</volume> <year>1995</year>, 443<ndash/>551.
   </biblio>
   <biblio type="raw" xml:id="bib-Zantema">
-    H. Zantema, <articletitle>Integer valued polynomials over a number field</articletitle>, <journal>Manuscripta Mathematica</journal> <volume>40</volume> (1982), 155<ndash/>203.
+    H. Zantema, <articletitle>Integer valued polynomials over a number field</articletitle>, <journal>Manuscripta Mathematica</journal> <volume>40</volume> <year>1982</year>, 155<ndash/>203.
   </biblio>
 </references>

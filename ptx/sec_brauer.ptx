@@ -252,7 +252,7 @@
           (or from <xref ref="L_cyclotomic_explicit_reciprocity"/>).
           In general, we have a commutative diagram
           <figure xml:id="fig-connection-2">
-          <image>
+          <image width="50%">
           <latex-image>
           \xymatrix{
           I_L \ar[r] \ar^{\Norm_{L_w/\QQ_p}}[d] &amp; \Gal(L_w(\zeta_n)/L_w) \ar[d]\\

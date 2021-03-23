@@ -56,7 +56,7 @@
           the dashed lines represent unramified extensions, and each label indicates one or more generators of the Galois group <m>g</m>.
         </p>
           <figure xml:id="fig-abstractcft-6">
-          <image>
+          <image width="50%">
           <latex-image>
           \xymatrix{
           &amp; N \ar@{--}_{\phi}[ld] \ar@{--}^{\tau}[d] \ar@{-}^g[rd] &amp; \\
@@ -163,7 +163,7 @@
         <p>
           Let <m>M</m> be the maximal abelian subextension of <m>L/K</m>. We have the following commutative diagram:
           <figure xml:id="fig-abstractcft-2">
-          <image>
+          <image width="50%">
           <latex-image>
           \xymatrix{
           \Gal(L/K)^{\ab} \ar^{r_{L/K}}[r] \ar[d] &amp; A_K / \Norm_{L/K} A_L \ar[d] \\
@@ -248,7 +248,7 @@
         <p>
           By <xref ref="P_abstract_functorialities"/> and <xref ref="T_abstract_reciprocity_law"/>, we have a commutative diagram
           <figure xml:id="fig-abstractcft-3">
-          <image>
+          <image width="50%">
           <latex-image>
           \xymatrix{
           \Gal(L/K)^{\ab} \ar[r] \ar@{=}[d] &amp; A_K/\Norm_{L/K} A_L \ar[d] \\

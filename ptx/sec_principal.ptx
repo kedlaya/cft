@@ -58,7 +58,7 @@
       in which the horizontal arrows are Artin maps).
     </p>
       <figure xml:id="fig-principal-1">
-        <image xml:id="img-principal-1">
+        <image width="50%" xml:id="img-principal-1">
         <latex-image>
         \xymatrix{
         \Cl(K) \ar[r] \ar[d] &amp; \Gal(L/K) \ar^{V}[d] \\
@@ -97,7 +97,7 @@
         We may thus relabel <xref ref="fig-principal-1"/> as in <xref ref="fig-principal-2"/>.
       </p>
       <figure xml:id="fig-principal-2">
-        <image xml:id="img-principal-2">
+        <image width="50%" xml:id="img-principal-2">
         <latex-image>
         \xymatrix{
         \Cl(K) \ar[r] \ar[d] &amp; \Gal(L/K) = \Gal(M/K)^{\ab} \ar^{V}[d] \\
@@ -316,7 +316,7 @@
             where <m>S</m> is given by <m>S(x) = x ([g_1] + \cdots + [g_n])</m>.
           </p>
           <figure xml:id="fig-principal-3">
-            <image xml:id="img-principal-3">
+            <image width="50%" xml:id="img-principal-3">
             <latex-image>
             \xymatrix{
             G/G' \ar^{V}[r] \ar^{\delta}[d] &amp; H/H' \ar^{\delta}[d] \\

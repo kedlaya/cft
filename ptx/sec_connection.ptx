@@ -141,7 +141,7 @@
           In the setting of abstract class field theory, <m>L/K</m> is viewed as a <q>totally ramified</q> extension. Consequently,
           we may set notation as in the proof of <xref ref="lem-abstract-recip-case2"/>, then apply <xref ref="P_abstract_functorialities"/> to obtain a commutative diagram
           <figure xml:id="fig-connection-4">
-          <image>
+          <image width="50%">
           <latex-image>
           \xymatrix{
           C_{M}/\Norm_{N/M} C_{N} \ar^{r'_{N/M}}[r] \ar^{\Norm_{M/K}}[d] &amp; \Gal(N/M) \ar[d] \\
@@ -154,7 +154,7 @@
           as then is the left vertical arrow.
           We also have a corresponding diagram on the local side:
           <figure xml:id="fig-connection-6">
-          <image>
+          <image width="50%">
           <latex-image>
           \xymatrix{
           I_{M} \ar^{r_{N/M}}[r] \ar^{\Norm_{M/K}}[d] &amp; \Gal(N/M) \ar[d] \\
