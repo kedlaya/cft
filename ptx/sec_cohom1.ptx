@@ -123,12 +123,16 @@
     </lemma>
     <definition>
       <p>
-        An <term>injective resolution</term> of a <m>G</m>-module <m>M</m> is an exact sequence
+        An <term>injective resolution</term> of a <m>G</m>-module <m>M</m> is a sequence 
+        <me>
+          I^0 \stackrel{d^0}{\to} I^1 \stackrel{d^1}{\to} \dots
+        </me>
+        in which the objects <m>I^0, I^1, \dots</m> are injective <m>G</m>-modules and the <term>augmented sequence</term>
         <me>
           0 \to M \to I^0 \stackrel{d^0}{\to} I^1 \stackrel{d^1}{\to} \dots
         </me>
-        in which the objects <m>I^0, I^1, \dots</m> are injective <m>G</m>-modules.
-     </p>
+        is exact.
+      </p>
       <p>
         From <xref ref="L_enough_injectives"/>, it follows that injective resolutions always exist.
         To wit, first embed <m>M</m> into an injective <m>G</m>-module <m>I^0</m>,
