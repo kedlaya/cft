@@ -1,10 +1,12 @@
-.PHONY : all pdf images html install
-all: pdf images html install
+.PHONY : all latex pdf images html install
+all: pdf latex images html install
+
+latex:
+	xsltproc --xinclude -o cft-ptx.tex ~/code/mathbook/xsl/pretext-latex.xsl ptx/index.ptx
 
 pdf:
-	xsltproc --xinclude -o cft-ptx.tex ~/code/mathbook/xsl/pretext-latex.xsl ptx/index.ptx; \
-	pdflatex cft-ptx -interaction batchmode; \
-	pdflatex cft-ptx -interaction batchmode
+	pdflatex -halt-on-error cft-ptx || [$$? -eq 0];
+	pdflatex cft-ptx
 	
 images:
 	~/code/mathbook/pretext/pretext -c latex-image -f svg -d html/images/ ptx/index.ptx
@@ -13,7 +15,8 @@ html:
 	xsltproc -stringparam publisher publication.xml -xinclude -o html/unused.html.ignore ~/code/mathbook/xsl/pretext-html.xsl ptx/index.ptx
 
 install:
-	scp cft-ptx.pdf ~/www/papers/; \
-	scp cft-ptx.pdf web:www/papers/; \
-	scp -r html/* web:www/cft/
+	cp cft-ptx.pdf ~/www/papers/;
+	scp cft-ptx.pdf web:www/papers/;
+	rsync -au html/ ~/www/cft/;
+	rsync -au -e "ssh" html/ web:www/cft/
 
