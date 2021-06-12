@@ -6,17 +6,19 @@ Hints for processing PreTeXt:
 
 - To convert XML to LaTeX:
 ```
-xsltproc --xinclude -o cft-ptx.tex ~/code/mathbook/xsl/pretext-latex.xsl ptx/index.ptx
+make latex
 ```
 - To convert the resulting LaTeX to PDF:
 ```
-pdflatex cft-ptx
+make pdf
 ```
 - To prepare images:
 ```
-~/code/mathbook/pretext/pretext -c latex-image -f svg -d html/images/ ptx/index.ptx
+make images
 ```
 - To convert XML to HTML:
 ```
-xsltproc -xinclude -o html/unused.html.ignore ~/code/mathbook/xsl/pretext-html.xsl ptx/index.ptx
+make html
 ```
+
+You should ignore the `make install` option, as this is for my personal use.
