@@ -46,7 +46,6 @@
 \DeclareMathOperator{\Trace}{Trace}
 \DeclareMathOperator{\unr}{unr}
 \DeclareMathOperator{\Ver}{Ver}
-
 </macros>
 <latex-image-preamble>
 \usepackage{tikz}

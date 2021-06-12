@@ -1,5 +1,5 @@
 .PHONY : all latex pdf images html install
-all: pdf latex images html install
+all: latex pdf images html install
 
 latex:
 	xsltproc -stringparam publisher publication.xml --xinclude -o cft-ptx.tex ~/code/mathbook/xsl/pretext-latex.xsl ptx/index.ptx
