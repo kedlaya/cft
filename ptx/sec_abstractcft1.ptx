@@ -327,25 +327,6 @@
         </p>
       </proof>
     </corollary>
-    <p>
-      We can formally promote <xref ref="C_abstract_unramified"/> as follows.
-    </p>
-    <lemma xml:id="lem-intermediate-norm">
-      <statement>
-        <p>
-          Under <xref ref="hypo-abstract-cft"/>, let <m>M/L/K</m> be finite subextensions of <m>\kbar/k</m> with <m>M/K</m> Galois and <m>L/K</m> unramified.
-          Then <m>U_K \cap \Norm_{M/L} U_M \subseteq \Norm_{M/K} U_M</m>.
-          (Note that the case <m>M=L</m> recovers <xref ref="C_abstract_unramified"/>.)
-        </p>
-      </statement>
-      <proof>
-        <p>
-          Put <m>G = \Gal(M/K), H = \Gal(M/L)</m>; the claim is that the map <m>\Res: H^0_T(G, U_M) \to H^0_T(H, U_M)</m> is injective.
-          Since <m>H^0_T(G/H, U_L) = 0</m> by <xref ref="C_abstract_unramified"/>, we may apply <xref ref="lem-inflation-restriction-H0"/> to conclude.
-          (If you prefer a less cohomological argument, see instead <xref ref="bib-Neukirch"/>, Lemma IV.5.4.)
-        </p>
-      </proof>
-    </lemma>
   </subsection>
   <exercises>
     <title>Exercises</title>
