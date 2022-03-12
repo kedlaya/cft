@@ -2,21 +2,20 @@
 all: latex pdf images html install
 
 latex:
-	xsltproc -stringparam publisher publication.xml --xinclude -o cft-ptx.tex ~/code/mathbook/xsl/pretext-latex.xsl ptx/index.ptx
+	pretext build latex --clean
 
 pdf:
-	pdflatex -halt-on-error cft-ptx || [$$? -eq 0];
-	pdflatex cft-ptx
+	pretext build pdf
 	
 images:
-	~/code/mathbook/pretext/pretext -c latex-image -f svg -d html/images/ ptx/index.ptx
+	pretext build -d
 
-html: 
-	xsltproc -stringparam publisher publication.xml --xinclude -o html/unused.html.ignore ~/code/mathbook/xsl/pretext-html.xsl ptx/index.ptx
+html:
+	pretext build html
 
 install:
-	cp cft-ptx.pdf ~/www/papers/;
-	scp cft-ptx.pdf web:www/papers/;
-	rsync -au html/ ~/www/cft/;
-	rsync -au -e "ssh" html/ web:www/cft/
+	cp output/pdf/index.pdf ~/www/papers/cft-ptx.pdf;
+	scp output/pdf/index.pdf web:www/papers/cft-ptx.pdf;
+	rsync -au output/html/ ~/www/cft/;
+	rsync -au -e "ssh" output/html/ web:www/cft/
 
