@@ -108,9 +108,9 @@
     </p>
   </subsection>
   <subsection>
-    <title>A special case of Chebotarëv density</title>
+    <title>A special case of Chebotaryov density</title>
     <p>
-      We will need a special case of the Chebotarëv density theorem,
+      We will need a special case of the Chebotaryov density theorem,
       which fortunately we can prove without already having all of class field theory.
       We use the notion of <term>Dirichlet density</term> for sets of prime ideals in a number field; see <xref ref="def-dirichlet-density"/>
       and the remainder of the discussion in <xref ref="sec_zeta"/>.

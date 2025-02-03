@@ -95,6 +95,10 @@
     K. Kato, <articletitle>A generalization of local class field theory by using <m>K</m>-groups, I</articletitle>, 
     <journal>Proceedings of the Japan Academy, Series A, Mathematical Sciences</journal> <volume>53</volume> <year>1977</year>, 140<ndash/>143.
   </biblio>
+  <biblio type="raw" xml:id="bib-Kondo">
+    T. Kondo, <articletitle>Algebraic number fields with the discriminant equal to that of a quadratic number field</articletitle>,
+    <journal>Journal of the Mathematical Society of Japan</journal> <volume>47</volume> <year>1995</year>, 31<ndash/>36.
+  </biblio>
   <biblio type="raw" xml:id="bib-Lafforgue_L">
     L. Lafforgue, <articletitle>Chtoucas de Drinfeld et correspondance de Langlands</articletitle>,
     <journal>Inventiones Mathematicae</journal> <volume>147</volume> <year>2002</year>, 1<ndash/>241.
@@ -121,7 +125,7 @@
     A. Leriche, <articletitle>About the embedding of a number field in a P&#xf3;lya field</articletitle>, <journal>Journal of Number Theory</journal> <volume>145</volume> <year>2014</year>, 210<ndash/>229.
   </biblio>
   <biblio type="raw" xml:id="bib-Milne-CFT">
-    J. Milne, <pubtitle>Class Field Theory</pubtitle>, version 4.04, <url href="http://jmilne.org/math/CourseNotes/cft.html"/>.
+    J. Milne, <pubtitle>Class Field Theory</pubtitle>, version 4.03, <url href="http://jmilne.org/math/CourseNotes/cft.html"/>.
   </biblio>
   <biblio type="raw" xml:id="bib-Neukirch">
     J. Neukirch, <pubtitle>Algebraic Number Theory</pubtitle>, Springer-Verlag, Berlin, <year>1999</year>.
@@ -184,11 +188,19 @@
   <biblio type="raw" xml:id="bib-Wang2">
     S. Wang, <articletitle>On Grunwald's theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>51</volume> <year>1950</year>, 471<ndash/>484.
   </biblio>
+  <biblio type="raw" xml:id="bib-Wang-tower">
+    V.Y. Wang, <articletitle>On Hilbert 2-class fields and 2-towers of imaginary quadratic number fields</articletitle>,
+    <journal>Journal of Number Theory</journal> <volume>160</volume> <year>2016</year>, 492<ndash/>515.
+  </biblio>
   <biblio type="raw" xml:id="bib-Washington">
     L. Washington, <pubtitle>Introduction to Cyclotomic Fields</pubtitle>, second edition, Graduate Texts in Mathematics 83, Springer-Verlag, New York, <year>1997</year>.
   </biblio>
   <biblio type="raw" xml:id="bib-Wiles">
     A. Wiles, <articletitle>Modular elliptic curves and Fermat’s Last Theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>141</volume> <year>1995</year>, 443<ndash/>551.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Yamamoto">
+    Y. Yamamoto, <articletitle>On unramified Galois extensions of quadratic number fields</articletitle>,
+    <journal>Osaka Journal of Mathematics</journal> <volume>7</volume> <year>1970</year>, 57<ndash/>76.
   </biblio>
   <biblio type="raw" xml:id="bib-Zantema">
     H. Zantema, <articletitle>Integer valued polynomials over a number field</articletitle>, <journal>Manuscripta Mathematica</journal> <volume>40</volume> <year>1982</year>, 155<ndash/>203.

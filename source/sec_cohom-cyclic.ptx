@@ -17,7 +17,7 @@
     <title>The periodicity theorem</title>
     <p>
       In general, for any given <m>G</m> and <m>M</m>,
-      it is at worst a tedious exercise to compute
+      it is at worst a tedious exercise (or a computer calculation) to compute
       <m>H^i_T(G,M)</m> for any single value of <m>i</m>,
       but try to compute all of these at once and you discover that they exhibit very little evident structure.
       Thankfully, there is an exception to that dreary rule when <m>G</m> is cyclic.
@@ -45,11 +45,9 @@
           <me>
             0 \to M \to M \otimes_\ZZ \ZZ[G] \to M \otimes_\ZZ \ZZ[G] \to M \to 0
           </me>.
+          The terms in the middle are just <m>\Ind^G_{1} \Res^G_{1} M</m>, so their Tate groups are all zero.
         </p>
         <p>
-          The terms in the middle are just <m>\Ind^G_{1} M</m>,
-          where we first restrict <m>M</m> to a module for the trivial group and then induce back up.
-          Thus their Tate groups are all zero.
           The desired result now follows from the following general fact: if
           <me>
             0 \to A \stackrel{f}{\to} B \stackrel{g}{\to} C \stackrel{h}{\to} D \to 0
@@ -57,12 +55,12 @@
           is exact and <m>B</m> and <m>C</m> have all Tate groups zero,
           then there is a canonical isomorphism <m>H^{i+2}_T(G, A) \to H^i_T(G, D)</m>.
           To see this,
-          apply the long exact sequence to the short exact sequences
+          form the long exact sequence associated to the short exact sequences
           <md>
             <mrow>0 \to A \to B \to B/\im(f) \to 0</mrow>
             <mrow>0 \to B/\ker(g) \to C \to D \to 0</mrow>
           </md>
-          to get
+          and combine the resulting isomorphisms to get
           <me>
             H^{i+2}(G, A) \cong H^{i+1}(G, B/\im(f)) = H^{i+1}(G, B/\ker(g)) \cong H^i(G,D).
           </me>
@@ -133,15 +131,15 @@
     </remark>
     <remark>
       <p>
-        If <m>M</m> is finite, then <m>h(M) = 1</m>.
+        If <m>M</m> is finite, then the groups <m>H^i_T(G,M)</m> are finite and <m>h(M) = 1</m>.
         To wit, the sequences
         <md>
           <mrow>0 \to M^G \to M \to M \to M_G \to 0</mrow>
           <mrow>0 \to H^{-1}_T(G,M) \to M_G \stackrel{\Norm_G}{\to} M^G \to H^0_T(G,M) \to 0</mrow>
         </md>
         are exact, where <m>M \to M</m> is the map <m>m \mapsto m^g - m</m>;
-        thus <m>M_G</m> and <m>M^G</m> have the same order,
-        as do <m>H^{-1}_T</m> and <m>H^0_T</m>.
+        thus <m>M_G</m> and <m>M^G</m> are finite groups of the same order,
+        as then are <m>H^{-1}_T</m> and <m>H^0_T</m>.
       </p>
     </remark>
   </subsection>
@@ -149,41 +147,49 @@
     <title>Exercises</title>
       <exercise>
         <statement>
-          The periodicity of the Tate groups for <m>G</m> cyclic means that there is a canonical
-          (up to the choice of a generator of <m>G</m>)
-          isomorphism between <m>H^{-1}_T(G, M)</m> and <m>H^1_T(G,M)</m>,
-          i.e., between <m>\ker(\Norm_G)/MI_G</m> and the set of equivalence classes of 1-cocycles.
-          What is this isomorphism explicitly?
-          In other words, given an element of <m>\ker(\Norm_G)/MI_G</m>,
-          what is the corresponding 1-cocycle?
+          <p>
+            The periodicity of the Tate groups for <m>G</m> cyclic means that there is a canonical
+            (up to the choice of a generator of <m>G</m>)
+            isomorphism between <m>H^{-1}_T(G, M)</m> and <m>H^1_T(G,M)</m>,
+            i.e., between <m>\ker(\Norm_G)/MI_G</m> and the set of equivalence classes of 1-cocycles.
+            What is this isomorphism explicitly?
+            In other words, given an element of <m>\ker(\Norm_G)/MI_G</m>,
+            what is the corresponding 1-cocycle?
+          </p>
         </statement>
       </exercise>
       <exercise>
         <statement>
-          Put <m>K = \QQ_p(\sqrt{p})</m>.
-          Compute the Herbrand quotient of <m>K^*</m> as a <m>G</m>-module for <m>G = \Gal(\QQ_p(\sqrt{p})/\QQ_p)</m>.
+          <p>
+            Put <m>K = \QQ_p(\sqrt{p})</m>.
+            Compute the Herbrand quotient of <m>K^*</m> as a <m>G</m>-module for <m>G = \Gal(\QQ_p(\sqrt{p})/\QQ_p)</m>.
+          </p>
         </statement>
         <hint>
-          Use the exact sequence <m>1 \to \gotho_K^* \to K^* \to \ZZ \to 1</m>.
+          <p>
+            Use the exact sequence <m>1 \to \gotho_K^* \to K^* \to \ZZ \to 1</m>.
+          </p>
         </hint>
       </exercise>
       <exercise xml:id="exer-S3-cohomology-example">
         <statement>
-          Let <m>G = S_3</m>
-          (the symmetric group on three letters),
-          let <m>M = \ZZ^3</m> with the natural <m>G</m>-action permuting the factors,
-          and let <m>N = M^G</m>.
-          Compute <m>H^i(G, M/N)</m> for <m>i=1,2</m> however you want:
-          you can explicitly compute cochains,
-          use the alternate interpretations given above,
-          or use the exact sequence <m>0 \to N \to M \to M/N \to 0</m>.
-          Better yet, use more than one method and make sure that you get the same answer.
+          <p>
+            Let <m>G = S_3</m>
+            (the symmetric group on three letters),
+            let <m>M = \ZZ^3</m> with the natural <m>G</m>-action permuting the factors,
+            and let <m>N = M^G</m>.
+            Compute <m>H^i(G, M/N)</m> for <m>i=1,2</m> however you want:
+            you can explicitly compute cochains,
+            use the alternate interpretations given above,
+            or use the exact sequence <m>0 \to N \to M \to M/N \to 0</m>.
+            Better yet, use more than one method and make sure that you get the same answer.
+          </p>
         </statement>
         <hint>
           <p>
             Part of the point of this exercise is that even in this relatively simple-looking situation, it is not all that easy to do the computation.
             One approach that minimizes the computational complexity is to use the <term>Hochschild-Serre spectral sequence</term> 
-            (see <xref ref="bib-Milne-CFT"/>, Remark II.1.35>) to reduce to working with the cyclic groups
+            (see <xref ref="bib-Milne-CFT"/>, Remark II.1.35) to reduce to working with the cyclic groups
             <m>H = A_3 \cong \ZZ/3\ZZ</m> and <m>G/H = S_3/A_3 \cong \ZZ/2\ZZ</m>, for which periodicity is applicable.
           </p>
         </hint>

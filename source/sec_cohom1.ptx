@@ -6,7 +6,7 @@
       <p>
         <xref ref="bib-Milne-CFT"/>, II.1.
         See <xref ref="bib-Serre-GaloisCohomology"/> for a much more general presentation.
-        (We will generalize ourselves from finite to profinite groups a bit later on; see <xref ref="sec_profinite"/>).
+        (We will generalize ourselves from finite to profinite groups a bit later on; see <xref ref="sec_profinite"/>.)
       </p>
       <p>
         For the broader context of homological algebra, the original reference is <xref ref="bib-Grothendieck-Tohoku"/>.
@@ -69,7 +69,7 @@
         Given a <m>G</m>-module <m>M</m>,
         let <m>M^G</m> be the abelian group of <m>G</m>-invariant elements of <m>M</m>:
         <me>
-          M^G = \{m \in M: m^g = m  \forall g \in G\}
+          M^G := \{m \in M\colon m^g = m \text{ for all } g \in G\}
         </me>.
         The functor <m>M \to M^G</m> from <m>G</m>-modules to abelian groups is <term>left exact</term> but not <term>right exact</term>.
         That is, say we start with an <term>exact sequence</term>
@@ -84,8 +84,8 @@
         <m>M^G \to (M'')^G</m> may not be surjective.
       </p>
       <p>
-        More generally, if <m>0 \to M' \to M \to M'' \to 0</m> is an exact sequence,
-        then <m>0 \to (M')^G \to M^G \to (M'')^G</m> is exact,
+        More generally, if <m>0 \to M' \to M \to M''</m> is an exact sequence (without a final 0),
+        then <m>0 \to (M')^G \to M^G \to (M'')^G</m> is exact.
       </p>
     </definition>
     <example>
@@ -104,8 +104,8 @@
     <definition>
       <p>
         A <m>G</m>-module <m>M</m> is <term>injective</term>
-        if for every inclusion <m>A \subset B</m> of <m>G</m>-modules and every <m>G</m>-module homomorphism <m>\phi: A \to M</m>,
-        there is a homomorphism <m>\psi: B \to M</m> that extends <m>\phi</m>.
+        if for every inclusion <m>A \subset B</m> of <m>G</m>-modules and every <m>G</m>-module homomorphism <m>\phi\colon A \to M</m>,
+        there is a homomorphism <m>\psi\colon B \to M</m> that extends <m>\phi</m>.
       </p>
     </definition>
     <lemma xml:id="L_enough_injectives">
@@ -149,24 +149,24 @@
         (That is, we still have inclusions <m>\im(d^i) \subseteq \ker(d^{i+1})</m>, but these need not be equalities.)
         We turn this failure into success by defining the <m>i</m>-th <term>cohomology group</term> as the quotient
         <me>
-          H^i(G, M) = \ker(d^i)/\im(d^{i-1}),
-        </me>
+          H^i(G, M) = \ker(d^i)/\im(d^{i-1})
+        </me>,
         with the temporary proviso that this appears to depend not just on <m>M</m> but also on the injective resolution.
         By convention, we let <m>d^{-1}</m> be the map
         <m>0 \to I_0^G</m>, so <m>H^0(G,M)=M^G</m>.
       </p>
       <p>
-        Given a homomorphism <m>f: M \to N</m> and another injective resolution <m>0 \to N \to J_0 \to J_1 \to \cdots</m>,
+        Given a homomorphism <m>f\colon M \to N</m> and another injective resolution <m>0 \to N \to J^0 \to J^1 \to \cdots</m>,
         <xref ref="L_enough_injectives"/> again implies the existence of a commutative diagram as in <xref ref="fig-cohom1-1"/>
         with exact rows. When we apply the functor of <m>G</m>-invariants, we again get a commutative diagram, but the rows are only
         complexes rather than exact sequences. However, the vertical arrows in the resulting diagram induce maps
-        <m>H^i(f): H^i(G, M) \to H^i(G, N)</m>.
+        <m>H^i(f)\colon H^i(G, M) \to H^i(G, N)</m>.
       </p>
       <figure xml:id="fig-cohom1-1">
         <image xml:id="img-cohom1-1">
         <latex-image>
-        \xymatrix{ 0 \ar[r] &amp; M \ar[r] \ar_f[d] &amp; I_0 \ar^{d_0}[r] \ar_{f_0}[d] &amp; I_1  \ar_{f_1}[d] \ar^{d_1}[r] &amp; I_2 \ar_{f_2}[d] \ar^{d_2}[r] &amp; \cdots \\
-        0 \ar[r] &amp; N \ar[r] &amp; J_0 \ar^{d_0}[r] &amp; J_1 \ar^{d_1}[r] &amp;  J_2 \ar^{d_2}[r] &amp; \cdots}
+        \xymatrix{ 0 \ar[r] &amp; M \ar[r] \ar_f[d] &amp; I^0 \ar^{d^0}[r] \ar_{f^0}[d] &amp; I^1  \ar_{f^1}[d] \ar^{d^1}[r] &amp; I^2 \ar_{f^2}[d] \ar^{d^2}[r] &amp; \cdots \\
+        0 \ar[r] &amp; N \ar[r] &amp; J^0 \ar^{d^0}[r] &amp; J^1 \ar^{d^1}[r] &amp;  J^2 \ar^{d^2}[r] &amp; \cdots}
         </latex-image>
         </image>
       </figure>
@@ -187,27 +187,27 @@
       <proof>
         <p>
           This proof is a standard example of <q>abstract nonsense</q>. It suffices to check that if <m>f=0</m>,
-          then the <m>H^i(f)</m> are all zero regardless of what the <m>f_i</m> are.
-          In that case, it turns out one can construct maps <m>g_i: I_{i+1} \to J_i</m>
-          (and by convention <m>g_{-1} = 0</m>)
-          such that <m>f_i = g_i \circ d_i + d_{i-1} \circ g_{i-1}</m>,
+          then the <m>H^i(f)</m> are all zero regardless of what the <m>f^i</m> are.
+          In that case, it turns out one can construct maps <m>g_i: I^{i+1} \to J^i</m>
+          (and by convention <m>g^{-1} = 0</m>)
+          such that <m>f^i = g^i \circ d^i + d^{i-1} \circ g^{i-1}</m>,
           as illustrated in <xref ref="fig-cohom1-2"/>. (Beware that this figure is not a commutative diagram!)
           Details left as an exercise (see <xref ref="exer-resolutions-to-maps"/>).
         </p>
+        <figure xml:id="fig-cohom1-2">
+          <image xml:id="img-cohom1-2">
+          <latex-image>
+          \xymatrix{ 0 \ar[r] &amp; M \ar[r] \ar_f[d] &amp; I^0 \ar^{d^0}[r] \ar_{f^0}[d] &amp; I^1  \ar_{g^0}[dl] \ar_{f^1}[d] \ar^{d^1}[r] &amp; \ar_{g^1}[dl] I^2 \ar_{f^2}[d] \ar^{d^2}[r] &amp; \cdots \\
+          0 \ar[r] &amp; N \ar[r] &amp; J^0 \ar^{d^0}[r] &amp; J^1 \ar^{d^1}[r] &amp;  J^2 \ar^{d^2}[r] &amp; \cdots}
+          </latex-image>
+          </image>
+        </figure>
       </proof>
     </lemma>
-    <figure xml:id="fig-cohom1-2">
-      <image xml:id="img-cohom1-2">
-      <latex-image>
-      \xymatrix{ 0 \ar[r] &amp; M \ar[r] \ar_f[d] &amp; I_0 \ar^{d_0}[r] \ar_{f_0}[d] &amp; I_1  \ar_{g_0}[dl] \ar_{f_1}[d] \ar^{d_1}[r] &amp; \ar_{g_1}[dl] I_2 \ar_{f_2}[d] \ar^{d_2}[r] &amp; \cdots \\
-      0 \ar[r] &amp; N \ar[r] &amp; J_0 \ar^{d_0}[r] &amp; J_1 \ar^{d_1}[r] &amp;  J_2 \ar^{d_2}[r] &amp; \cdots}
-      </latex-image>
-      </image>
-    </figure>
     <remark>
       <p>
         The diagonal arrows depicted in <xref ref="fig-cohom1-2"/> with the property described in the proof of <xref ref="L_injective_resolutions_to_cohomology_maps"/>
-        (namely, that <m>f_i = g_i \circ d_i + d_{i-1} \circ g_{i-1}</m>), are collectively called a <term>chain homotopy</term> for the map <m>f</m>.
+        (namely, that <m>f^i = g^i \circ d^i + d^{i-1} \circ g^{i-1}</m>), are collectively called a <term>chain homotopy</term> for the map <m>f</m>.
       </p>
     </remark>
     <definition>
@@ -306,7 +306,7 @@
             If <m>M</m> is an injective <m>G</m>-module,
             then <m>H^i(G,M) = 0</m> for all <m>i>0</m>.
             (Use <m>0 \to M \to M \to 0 \to \cdots</m> as an injective resolution.)
-            This fact has a sort of converse: see next bullet.
+            This fact has a sort of converse: see next bullet point.
           </p>
         </li>
         <li>
@@ -329,57 +329,75 @@
     <title>Exercises</title>
       <exercise>
         <statement>
-          Let <m>G</m> be the one-element group.
-          Show that a <m>G</m>-module (i.e., abelian group) is injective if and only if it is divisible,
-          i.e., the map <m>x \mapsto nx</m> is surjective for any nonzero integer <m>n</m>.
+          <p>
+            Let <m>G</m> be the one-element group.
+            Show that a <m>G</m>-module (i.e., abelian group) is injective if and only if it is divisible,
+            i.e., the map <m>x \mapsto nx</m> is surjective for any nonzero integer <m>n</m>.
+          </p>
         </statement>
         <hint>
-          You'll need Zorn's lemma or equivalent in one direction.
+          <p>
+            You'll need Zorn's lemma or equivalent in one direction.
+          </p>
         </hint>
       </exercise>
       <exercise>
         <statement>
-          Let <m>A</m> be an abelian group,
-          regarded as a <m>G</m>-module for <m>G</m> the trivial group.
-          Prove that <m>A</m> can be embedded in an injective <m>G</m>-module.
+          <p>
+            Let <m>A</m> be an abelian group,
+            regarded as a <m>G</m>-module for <m>G</m> the trivial group.
+            Prove that <m>A</m> can be embedded in an injective <m>G</m>-module.
+          </p>
         </statement>
       </exercise>
       <exercise xml:id="exer-enough-injectives">
         <statement>
-          Prove <xref ref="L_enough_injectives"/>.
+          <p>
+            Prove <xref ref="L_enough_injectives"/>.
+          </p>
         </statement>
         <hint>
-          For <m>M</m> a <m>G</m>-module,
-          the previous exercises show that the underlying abelian group of <m>M</m> embeds into a divisible group <m>N</m>.
-          Now map <m>M</m> into <m>\Hom_{\ZZ}(\ZZ[G], N)</m> and check that the latter is an injective <m>G</m>-module.
+          <p>
+            For <m>M</m> a <m>G</m>-module,
+            the previous exercises show that the underlying abelian group of <m>M</m> embeds into a divisible group <m>N</m>.
+            Now map <m>M</m> into <m>\Hom_{\ZZ}(\ZZ[G], N)</m> and check that the latter is an injective <m>G</m>-module.
+          </p>
         </hint>
       </exercise>
       <exercise xml:id="exer-resolutions-to-maps">
         <statement>
-          Prove <xref ref="L_injective_resolutions_to_cohomology_maps"/> following the sketch given.
+          <p>
+            Prove <xref ref="L_injective_resolutions_to_cohomology_maps"/> following the sketch given.
+          </p>
         </statement>
         <hint>
-          Construct <m>g_i</m> given <m>f_{i-1}</m> and <m>g_{i-1}</m>,
-          using that the <m>J</m>'s are injective <m>G</m>-modules.
+          <p>
+            Construct <m>g_i</m> given <m>f_{i-1}</m> and <m>g_{i-1}</m>,
+            using that the <m>J</m>'s are injective <m>G</m>-modules.
+          </p>
         </hint>
       </exercise>
       <exercise xml:id="exer-acyclic-res">
         <statement>
-          Prove that if <m>0 \to M \to M^0 \to M^1 \to \cdots</m> is an exact sequence of <m>G</m>-modules and each <m>M_i</m> is acyclic,
-          then the cohomology groups of the complex
-          <m>0 \to M^{0G} \to M^{1G} \to \cdots</m> coincide with <m>H^i(G, M)</m>.
+          <p>
+            Prove that if <m>0 \to M \to M^0 \to M^1 \to \cdots</m> is an exact sequence of <m>G</m>-modules and each <m>M_i</m> is acyclic,
+            then the cohomology groups of the complex
+            <m>0 \to M^{0G} \to M^{1G} \to \cdots</m> coincide with <m>H^i(G, M)</m>.
+          </p>
         </statement>
         <hint>
-          Construct the canonical long exact sequence from the exact sequence
-          <me>
-            0 \to M \to M^0 \to M^0/M \to 0
-          </me>,
-          then do dimension shifting using the fact that
-          <me>
-            0 \to M^0/M \to M^1 \to M^2 \to \cdots
-          </me>
-          is again exact.
-          Don't forget to be careful about <m>H^1</m>!)
+          <p>
+            Construct the canonical long exact sequence from the exact sequence
+            <me>
+              0 \to M \to M^0 \to M^0/M \to 0
+            </me>,
+            then do dimension shifting using the fact that
+            <me>
+              0 \to M^0/M \to M^1 \to M^2 \to \cdots
+            </me>
+            is again exact.
+            Don't forget to be careful about <m>H^1</m>!)
+          </p>
         </hint>
       </exercise>
   </exercises>

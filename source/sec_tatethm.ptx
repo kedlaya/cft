@@ -189,7 +189,7 @@
       </proof>
     </lemma>
   </subsection>
-  <subsection xml:id="subsec-proof-local-reciprocity">
+  <subsection>
     <title>Local reciprocity and norm limitation</title>
     <p>
       Let <m>L/K</m> be a finite Galois extension of local fields.

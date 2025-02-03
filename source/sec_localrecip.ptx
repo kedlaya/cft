@@ -45,7 +45,7 @@
       </statement>
       <proof>
         <p>
-          See the discussion in <xref ref="subsec-proof-local-reciprocity"/>.
+          See the discussion in <xref ref="sec_tatethm"/>.
         </p>
       </proof>
     </theorem>
@@ -134,7 +134,7 @@
         </statement>
         <proof>
           <p>
-            See the discussion in <xref ref="subsec-proof-local-reciprocity"/>.
+            See the discussion in <xref ref="sec_tatethm"/>.
           </p>
         </proof>
     </theorem>
@@ -179,7 +179,7 @@
       </statement>
       <proof>
         <p>
-          See the discussion in <xref ref="subsec-proof-local-reciprocity"/>.
+          See the discussion in <xref ref="sec_tatethm"/>.
         </p>
       </proof>
     </theorem>

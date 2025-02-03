@@ -1,43 +1,95 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!-- This is the main file of the pretext template book provided -->
-<!-- by the `pretext new book` command.  The main.ptx here always-->
-<!-- starts with <pretext> tags.  In this example, the main file -->
-<!-- just imports other .ptx files which contain content. Open   -->
-<!-- those files to see more pretext features                    -->
-
-<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
-
-  <!-- we first include a file which contains the docinfo element: -->
-  <xi:include href="./docinfo.ptx" />
-
-  <!-- The <book> tags wrap all the content.  Change the @xml:id   -->
-  <!-- to some short (non-spaced) description of your book         -->
-  <book xml:id="my-great-book">
-    <!-- The book needs a title and can have a subtitle  -->
-    <title>My Great Book</title>
-    <subtitle>An example to be modified</subtitle>
-
-    <!-- Now we include files containing each main devision.       -->
-
-    <!-- First a frontmatter for prefaces and such. Maybe comment  -->
-    <!-- out for now and write this when the book is more complete -->
-    <xi:include href="./frontmatter.ptx" />
-
-    <!-- The first chapter will be bare bones to illustrate the    -->
-    <!-- possible structure of the book.  Once you know what the   -->
-    <!-- title of the chapter is, rename the file something based  -->
-    <!-- on the title (ch-shorttitle.ptx) both here and on disk    -->
-    <xi:include href="./ch_first-chapter.ptx" />
-    <xi:include href="./ch_empty.ptx"/>
-    <!-- Of course you will want to add more chapters as you proceed-->
-
-    <!-- The final chapter contains a wide variety of elements to  -->
-    <!-- illustrate what pretext can do, plus links to more help.  -->
-    <!-- We recommend keeping this handy, and commenting it out    -->
-    <!-- when you show off your own work.                          -->
-    <xi:include href="./ch_pretext-features.ptx" />
-
-    <!-- Finaly we place the backmatter in its own file and inlcude-->
-    <xi:include href="./backmatter.ptx" />
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+  <docinfo>
+<macros>
+\def\AA{\mathbb{A}}
+\def\CC{\mathbb{C}}
+\def\FF{\mathbb{F}}
+\def\PP{\mathbb{P}}
+\def\QQ{\mathbb{Q}}
+\def\RR{\mathbb{R}}
+\def\ZZ{\mathbb{Z}}
+\def\kbar{\overline{k}}
+\def\gotha{\mathfrak{a}}
+\def\gothb{\mathfrak{b}}
+\def\gothm{\mathfrak{m}}
+\def\gotho{\mathfrak{o}}
+\def\gothp{\mathfrak{p}}
+\def\gothq{\mathfrak{q}}
+\def\gothr{\mathfrak{r}}
+\DeclareMathOperator{\ab}{ab}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Cor}{Cor}
+\DeclareMathOperator{\cyc}{cyc}
+\DeclareMathOperator{\disc}{Disc}
+\DeclareMathOperator{\fin}{fin}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Inf}{Inf}
+\DeclareMathOperator{\inv}{inv}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Norm}{Norm}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\sep}{sep}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\smcy}{smcy}
+\DeclareMathOperator{\Trace}{Trace}
+\DeclareMathOperator{\unr}{unr}
+\DeclareMathOperator{\Ver}{Ver}
+</macros>
+<latex-image-preamble>
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{tkz-euclide}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usetikzlibrary{through,intersections,decorations,shadows,fadings}
+\usepackage{pgfplots}
+\usepackage[all]{xy}
+\usepackage{accents}
+</latex-image-preamble>
+  </docinfo>
+  <book>
+    <title>Notes on class field theory</title>
+    <frontmatter>
+      <bibinfo>
+        <author>
+          <personname>Kiran S. Kedlaya</personname>
+          <department>Department of Mathematics</department>
+          <institution>University of California San Diego</institution>
+          <email>kedlaya@ucsd.edu</email>
+        </author>
+        <address>https://kskedlaya.org/cft</address>
+        <copyright>
+          <year>2002<ndash/>2021</year>
+          <holder>Kiran S. Kedlaya</holder>
+        </copyright>
+      </bibinfo>
+      <xi:include href="./sec_preface.ptx"/>
+    </frontmatter>
+    <xi:include href="./ch_trailer.ptx"/>
+    <xi:include href="./ch_statements.ptx"/>
+    <xi:include href="./ch_cohomology.ptx"/>
+    <xi:include href="./ch_local.ptx"/>
+    <xi:include href="./ch_abstract.ptx"/>
+    <xi:include href="./ch_adelic.ptx"/>
+    <xi:include href="./ch_main_results.ptx"/>
+    <backmatter>
+      <xi:include href="./sec_parting.ptx"/>
+      <xi:include href="./bibliography.ptx"/>
+    </backmatter>
   </book>
 </pretext>

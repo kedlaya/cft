@@ -10,7 +10,7 @@
     <p>
       Class field theory, the study of abelian extensions of number fields, was a crowning achievement of number theory in the first half of the 20th century. 
       It brings together, in a unified fashion, the quadratic and higher reciprocity laws of Gauss, Legendre et al, and vastly generalizes them. 
-      Some of its consequences (e.g., the Chebotar&#xeb;v density theorem) apply even to nonabelian extensions.
+      Some of its consequences (e.g., the Chebotaryov density theorem) apply even to nonabelian extensions.
     </p>
     <p>
       Our approach in this course will be to begin with the formulations of the statements of class field theory, omitting the proofs (except for the Kronecker-Weber theorem, which we prove first). 

@@ -25,12 +25,11 @@
         where <m>I_G</m> is the <term>augmentation ideal</term>
         of the group algebra <m>\ZZ[G]</m>:
         <me>
-          I_G = \left\{\sum_{g \in G} z_g[g]: \sum_g z_g = 0\right\}.
-        </me>
+          I_G = \left\{\sum_{g \in G} z_g[g]\colon \sum_g z_g = 0\right\}
+        </me>.
         Or if you like, <m>M_G = M \otimes_{\ZZ[G]} \ZZ</m>.
         Since <m>M^G</m> is the group of <m>G</m>-invariants,
-        we call <m>M_G</m> the group of
-        <term><m>G</m>-coinvariants</term>.
+        we call <m>M_G</m> the group of <term><m>G</m>-coinvariants</term>.
       </p>
     </definition>
     <p>
@@ -46,7 +45,7 @@
         there exists a map <m>\psi: M \to N</m> lifting <m>\phi</m>.
         This definition is dual to the definition of an injective <m>G</m>-module, but this symmetry is a bit misleading:
         it is much easier to find projectives than injectives.
-        For example,  any <m>G</m>-module which is a free module over the ring <m>\ZZ[G]</m> is projective
+        For example, any <m>G</m>-module which is a free module over the ring <m>\ZZ[G]</m> is projective
         such as <m>\ZZ[G]</m> itself!
       </p>
     </definition>
@@ -58,14 +57,14 @@
         Given such a resolution,
         take coinvariants to get a complex
         <me>
-          \cdots \stackrel{d_2}{\to} P_2 \stackrel{d_1}{\to} P_1 \stackrel{d_0}{\to} P_0 \to 0,
-        </me>
+          \cdots \stackrel{d_2}{\to} P_2 \stackrel{d_1}{\to} P_1 \stackrel{d_0}{\to} P_0 \to 0
+        </me>,
         then put <m>H_i(G, M) = \ker(d_{i-1})/\im(d_i)</m>.
         Again, this is canonically independent of the resolution and functorial,
         and there is a long exact sequence which starts out
         <me>
-          \cdots \to H_1(G, M'') \stackrel{\delta}{\to} H_0(G, M') \to H_0(G, M) \to H_0(G, M'') \to 0.
-        </me>
+          \cdots \to H_1(G, M'') \stackrel{\delta}{\to} H_0(G, M') \to H_0(G, M) \to H_0(G, M'') \to 0
+        </me>.
       </p>
     </definition>
     <definition>
@@ -82,12 +81,10 @@
         One can give a concrete description of homology as well,
         but we won't need it for our purposes.
         Even without one, though,
-        we can calculate <m>H_1(G, \ZZ)</m>, using the exact sequence
+        we can calculate <m>H_1(G, \ZZ)</m> using the exact sequence
         <me>
           0 \to I_G \to \ZZ[G] \to \ZZ \to 0
         </me>.
-      </p>
-      <p>
         By the long exact sequence in homology,
         <me>
           0 = H_1(G, \ZZ[G]) \to H_1(G, \ZZ) \to H_0(G, I_G) \to H_0(G, \ZZ[G])
@@ -107,23 +104,23 @@
   <subsection>
     <title>The Tate groups</title>
     <p>
-      We now
-      <q>fit together</q>
-      the long exact sequences of cohomology and homology to get a doubly infinite exact sequence.
+      We now <q>stitch together</q> the long exact sequences of cohomology and homology to get a doubly infinite exact sequence.
+      The value of doing this may be unclear at first, but will become apparent when we compute the Tate cohomology of cyclic groups
+      (<xref ref="T_cyclic_group_periodicity"/>).
     </p>
     <definition>
       <p>
         Let <m>M</m> be a <m>G</m>-module.
-        Define the map <m>\Norm_G: M \to M</m> by
+        Define the map <m>\Norm_G\colon M \to M</m> by
         <me>
-          \Norm_G(m) = \sum_{g \in G} m^g.
-        </me>
+          \Norm_G(m) = \sum_{g \in G} m^g
+        </me>.
       </p>
       <p>
         Then <m>\Norm_G</m> induces a homomorphism
         <me>
-          \Norm_G: H_0(G,M) = M_G \to M^G = H^0(G,M).
-        </me>
+          \Norm_G\colon H_0(G,M) = M_G \to M^G = H^0(G,M)
+        </me>.
       </p>
     </definition>
     <remark>
@@ -144,12 +141,12 @@
     <lemma>
       <statement>
         <p>
-        For any short exact sequence
-        <m>0 \to M' \to M \to M'' \to 0</m> of <m>G</m>-modules, we have a canonical exact sequence
-        <me>
-          \cdots \to H^{i-1}_T(G, M'') \to H^i_T(G, M') \to H^i_T(G, M) \to H^i_T(G, M'') \to H^{i+1}_T(G, M') \to \cdots
-        </me>
-        which extends infinitely in both directions.
+          For any short exact sequence
+          <m>0 \to M' \to M \to M'' \to 0</m> of <m>G</m>-modules, we have a canonical exact sequence
+          <me>
+            \cdots \to H^{i-1}_T(G, M'') \to H^i_T(G, M') \to H^i_T(G, M) \to H^i_T(G, M'') \to H^{i+1}_T(G, M') \to \cdots
+          </me>
+          which extends infinitely in both directions.
         </p>
       </statement>
       <proof>
@@ -160,22 +157,22 @@
           on the commutative diagram <xref ref="fig-homology-1"/>
           with exact rows, noting that the diagram remains commutative with the dashed arrows added.
         </p>
+        <figure xml:id="fig-homology-1">
+          <image>
+          <latex-image>
+          \xymatrix{
+          H_1(G, M'') \ar[r] \ar@{-->}[d] &amp; H_0(G, M') \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M) \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M'') \ar[r] \ar^{\Norm_G}[d] &amp; 0 \ar@{-->}[d] \\
+          0 \ar[r] &amp; H^0(G, M') \ar[r]  &amp; H^0(G, M) \ar[r] &amp;  H^0(G, M') \ar[r] &amp; H^1(G, M')
+          }
+          </latex-image>
+          </image>
+        </figure>
       </proof>
     </lemma>
-      <figure xml:id="fig-homology-1">
-        <image>
-        <latex-image>
-        \xymatrix{
-        H_1(G, M'') \ar[r] \ar@{-->}[d] &amp; H_0(G, M') \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M) \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M'') \ar[r] \ar^{\Norm_G}[d] &amp; 0 \ar@{-->}[d] \\
-        0 \ar[r] &amp; H^0(G, M') \ar[r]  &amp; H^0(G, M) \ar[r] &amp;  H^0(G, M') \ar[r] &amp; H^1(G, M')
-        }
-        </latex-image>
-        </image>
-      </figure>
     <remark>
       <p>
         If <m>M</m> is an induced <m>G</m>-module,
-        then <m>H^i_T(G,M) = 0</m> for all <m>i</m> (see <xref ref="exer-induced-acyclic-Tate"/>. 
+        then <m>H^i_T(G,M) = 0</m> for all <m>i</m> (see <xref ref="exer-induced-acyclic-Tate"/>). 
         That is, induced modules are acyclic for all of cohomology, homology, and Tate (co)homology.
       </p>
     </remark>
@@ -190,8 +187,8 @@
       <p>
         Again, let <m>M</m> be a <m>G</m>-module and <m>M'</m> a <m>G'</m>-module,
         and consider a homomorphism
-        <m>\alpha: G' \to G</m> of groups and a homomorphism
-        <m>\beta: M \to M'</m> of abelian which are compatible in the sense of <xref ref="D-extended-functoriality"/>.
+        <m>\alpha\colon G' \to G</m> of groups and a homomorphism
+        <m>\beta\colon M \to M'</m> of abelian which are compatible in the sense of <xref ref="D-extended-functoriality"/>.
         We would like to obtain canonical homomorphisms
         <m>H_i(G, M) \to H_i(G', M')</m>,
         but for this we need to add an additional condition to ensure that
@@ -201,13 +198,13 @@
       <p>
         For Tate cohomology groups, there is a further complication that the map <m>M^G \to (M')^{G'}</m> does not necessarily induce
         a map <m>\Norm(M) \to \Norm(M')</m>. However, this does occur if <m>\alpha</m> is injective, so for instance we have well-defined
-        restriction maps <m>\Res: H^0_T(G, M) \to H^0_T(H, M)</m> whenever <m>H</m> is a subgroup of <m>G</m>.
+        restriction maps <m>\Res\colon H^0_T(G, M) \to H^0_T(H, M)</m> whenever <m>H</m> is a subgroup of <m>G</m>.
       </p>
     </definition>
     <remark xml:id="rmk-torsion-H0T">
       <p>
         In <xref ref="exa-extended-functoriality"/>, we used the restriction and corestriction maps to show that for <m>G</m> a finite group and
-        <m>M</m> a <M>G</M>-module, the groups <m>H^i(G, M)</m> are torsion groups killed by <m>\#G</m> for all <m>i > 0</m>.
+        <m>M</m> a <m>G</m>-module, the groups <m>H^i(G, M)</m> are torsion groups killed by <m>\#G</m> for all <m>i \gt 0</m>.
         While we cannot extend the corestriction map to Tate cohomology, we may still argue directly that <m>H^0_T(G, M)</m> is killed by <m>\#G</m>.
       </p>
     </remark>
@@ -216,20 +213,25 @@
     <title>Exercises</title>
       <exercise xml:id="exer-induced-acyclic-Tate">
         <statement>
-          Prove that if <m>M</m> is an induced <m>G</m>-module, then <m>H^i_T(G,M) = 0</m> for all <m>i \in \ZZ</m>.
+          <p>
+            Prove that if <m>M</m> is an induced <m>G</m>-module, then <m>H^i_T(G,M) = 0</m> for all <m>i \in \ZZ</m>.
+          </p>
         </statement>
         <hint>
-        <p>
-          Use the fact that induced <m>G</m>-modules are acyclic for both cohomology and homology to reduce to checking the cases <m>i = -1, 0</m>.
-          Another option is to extend Shapiro's lemma to Tate cohomology groups.</p> 
+          <p>
+            Use the fact that induced <m>G</m>-modules are acyclic for both cohomology and homology to reduce to checking the cases <m>i = -1, 0</m>.
+            Another option is to extend Shapiro's lemma to Tate cohomology groups.
+          </p> 
         </hint>
       </exercise>
       <exercise xml:id="exer-transfer-as-homology">
         <statement>
-          Let <m>G \subseteq H</m> be an inclusion of finite groups.
-          Show that via the identification from <xref ref="rmk-first-homology"/>,
-          the map <m>\Res: H^{-2}_T(G, \ZZ) \to H^{-2}_T(H,\ZZ)</m> corresponds to the transfer (Verlagerung) map <m>V: G^{\ab} \to H^{\ab}</m>.
-          This provides another way to derive the existence of the latter.
+          <p>
+            Let <m>G \subseteq H</m> be an inclusion of finite groups.
+            Show that via the identification from <xref ref="rmk-first-homology"/>,
+            the map <m>\Res\colon H^{-2}_T(G, \ZZ) \to H^{-2}_T(H,\ZZ)</m> corresponds to the transfer (Verlagerung) map <m>V\colon G^{\ab} \to H^{\ab}</m>.
+            This provides another way to derive the existence of the latter.
+          </p>
         </statement>
       </exercise>
   </exercises>

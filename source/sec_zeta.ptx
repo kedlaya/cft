@@ -1,5 +1,5 @@
 ﻿<section xml:id="sec_zeta">
-  <title>Zeta functions and the Chebotar&#xeb;v density theorem</title>
+  <title>Zeta functions and the Chebotaryov density theorem</title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
@@ -20,15 +20,15 @@
       <p>
         Let <m>K</m> be a number field.
         The <term>Dedekind zeta function</term> <m>\zeta_K(s)</m> is a function on the complex plane given,
-        for <m>\Real(s) > 1</m>, by the absolutely convergent product and sum
+        for <m>\Real(s) \gt 1</m>, by the absolutely convergent product and sum
         <me>
-          \zeta_K(s) = \prod_\gothp (1 - \Norm(\gothp)^{-s})^{-1} = \zeta_K(s) = \sum_{\gotha} \Norm(\gotha)^{-s}
+          \zeta_K(s) = \prod_\gothp (1 - \Norm(\gothp)^{-s})^{-1} = \sum_{\gotha} \Norm(\gotha)^{-s}
         </me>
         where <m>\gothp</m> runs over the nonzero prime ideals of <m>\gotho_K</m> 
         and <m>\gotha</m> runs over the nonzero ideals of <m>\gotho_K</m>.
       </p>
       <p>
-        For exmaple, if <m>K = \QQ</m>, then <m>\zeta_K</m> equals the Riemann zeta function.
+        For example, if <m>K = \QQ</m>, then <m>\zeta_K</m> equals the Riemann zeta function.
       </p>
     </definition>
     <p>
@@ -64,13 +64,13 @@
       <p>
       More generally,
       let <m>\gothm</m> be a formal product of places of <m>K</m>,
-      and let <m>\chi_\gothm: \Cl^\gothm(K) \to \CC^*</m> be a character of the ray class group of conductor <m>\gothm</m>.
+      and let <m>\chi_\gothm\colon \Cl^\gothm(K) \to \CC^*</m> be a character of the ray class group of conductor <m>\gothm</m>.
       Extend <m>\chi_\gothm</m> to a function on all ideals of <m>K</m> by declaring its value to be 0 on ideals not coprime to <m>\gothm</m>.
       Then we define the <term><m>L</m>-function</term>
       <me>
-        L(s, \chi_\gothm) = \prod_{\gothp \not| \gothm} (1 - \chi(\gothp) \Norm(\gothp)^{-s})^{-1} = \sum_{(\gotha, \gothm) = 1} \chi(\gotha) \Norm(\gotha)^{-s};
-      </me>
-      again the product converges absolutely for <m>\Real(s) > 1</m>.
+        L(s, \chi_\gothm) = \prod_{\gothp \not| \gothm} (1 - \chi(\gothp) \Norm(\gothp)^{-s})^{-1} = \sum_{(\gotha, \gothm) = 1} \chi(\gotha) \Norm(\gotha)^{-s}
+      </me>;
+      again the product converges absolutely for <m>\Real(s) \gt 1</m>.
       </p>
     </definition>
     <theorem xml:id="T_analytic_continuation">
@@ -119,8 +119,8 @@
       <p>
         A set of primes <m>S</m> in a number field <m>K</m> has <term>Dirichlet density</term> <m>d</m> if
         <me>
-          \lim_{s \to 1^+} \frac{\sum_{\gothp \in S} \Norm(\gothp)^{-s}}{\log \frac{1}{s-1}} = d.
-        </me>
+          \lim_{s \to 1^+} \frac{\sum_{\gothp \in S} \Norm(\gothp)^{-s}}{\log \frac{1}{s-1}} = d
+        </me>.
         This in particular presumes the existence of the limit; otherwise, we may still define the <term>lower Dirichlet density</term>
         and <term>upper Dirichlet density</term> using the limits inferior and superior.
       </p>
@@ -141,7 +141,7 @@
     </remark>
   </subsection>
   <subsection>
-    <title>The Chebotar&#xeb;v density theorem</title>
+    <title>The Chebotaryov density theorem</title>
     <p>
       Finally, we point out a result of class field theory that also applies to nonabelian extensions.
     </p>
@@ -158,7 +158,7 @@
       </p>
     </definition>
     <theorem xml:id="T_Chebotarev">
-      <title>Chebotar&#xeb;v density theorem</title>
+      <title>Chebotaryov density theorem</title>
       <statement>
         <p>
           Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>.
@@ -180,20 +180,23 @@
         </p>
         <p>
           Let <m>Z</m> be the centralizer of <m>g</m> in <m>G</m>;
-          that is, <m>Z = \{z \in G: zg = gz\}</m>.
-          Then for each prime of <m>K</m> of absolute degree 1)
-          with Frobenius in the conjugacy class of <m>g</m>,
-          there are <m>\#Z/f</m> primes of <m>K'</m> above it
-          (also of absolute degree 1)
-          with Frobenius <m>g</m>.
-          (Say <m>\gothp</m> is such a prime and <m>\gothq</m> is a prime of <m>L</m> above <m>\gothp</m> with Frobenius <m>g</m>.
-          Then for <m>h \in G</m>,
-          the Frobenius of <m>\gothq^h</m> is <m>hgh^{-1}</m>,
-          so the number of primes <m>\gothq</m> with Frobenius <m>g</m> is <m>\#Z</m>.
-          But each prime of <m>L'</m> below one of these is actually below <m>f</m> of them.)
-          Thus the density of primes of <m>K</m> with Frobenius in the conjugacy class of <m>g</m> is <m>(1/f)(1/(\#Z/f)) = 1/\#Z</m>.
-          To conclude,
-          note that the order of the conjugacy class of <m>G</m> is <m>\#G/\#Z</m>.
+          that is, <m>Z = \{z \in G\colon zg = gz\}</m>.
+          The order of the conjugacy class of <m>g</m> is <m>\#G/\#Z</m>, so we are trying to prove that the set of primes of <m>K</m>
+          (of absolute degree 1) with Frobenius in the conjugacy class of <m>g</m> has Dirichlet density <m>\frac{\#G/\#Z}{\#G} = \frac{1}{\#Z}</m>.
+        </p>
+        <p>
+          To begin with, we apply the abelian case to the extension <m>L/K'</m>, to see that the set of primes of <m>K'</m>
+          (of absolute degree 1) with Frobenius <m>g</m> equals <m>1/f</m>.
+          Next, note that a prime <m>\gothp</m> of <m>K</m> (of absolute degree 1)
+          has Frobenius in the conjugacy class of <m>g</m> if and only if there is a prime <m>\gothq</m>
+          of <m>L</m> with Frobenius <m>g</m>; note that <m>\gothq</m> has inertia degree <m>f</m> over both <m>K'</m> and <m>K</m>,
+          so <m>K' \cap \gothq</m> is a prime of <m>K'</m> of absolute degree 1.
+          Finally, note that for each <m>h \in G</m>, the Frobenius of <m>\gothq^h</m> is <m>hgh^{-1}</m>,
+          so only the elements of <m>Z</m> correspond to cases where this Frobenius is again equal to <m>g</m>.
+          However, the <m>f</m> elements of the subgroup generated by <m>g</m> do not even move <m>\gothq</m>,
+          so there are in all <m>\#Z/f</m> primes of <m>K'</m> above <m>\gothp</m> with Frobenius <m>g</m>.
+          Consequently, the density of primes of <m>K</m> with Frobenius in the conjugacy class of <m>g</m> is 
+          <m>\frac{1}{f} \frac{1}{\#Z/f} = \frac{1}{\#Z}</m> as desired.
         </p>
       </proof>
     </theorem>
@@ -239,7 +242,7 @@
         if Dirichlet density is replaced by natural density. The <term>natural density</term> of a set <m>S</m> of prime ideals of a number field <m>K</m>
         is the limit (if it exists)
         <me>
-           \lim_{X \to \infty} \frac{\#\{\gothp: \gothp \in S, \Norm(\gothp) \leq X\}}{\#\{\gothp: \Norm(\gothp) \leq X\}}
+           \lim_{X \to \infty} \frac{\#\{\gothp\colon \gothp \in S, \Norm(\gothp) \leq X\}}{\#\{\gothp\colon \Norm(\gothp) \leq X\}}
         </me>
         where in both sets <m>\gothp</m> runs over all prime ideals of <m>K</m>. (Again, if the limit does not exist, we may still define the <term>lower natural density</term>
         and <term>upper natural density</term> using the limits inferior and superior.)
@@ -251,7 +254,7 @@
     </remark>
     <remark>
       <p>
-        For fun, we mention a lesser-known result of Chebotar&#xeb;v here: the character table of a finite cyclic group, viewed as a square matrix, has the property that every minor is nonzero.        
+        For fun, we mention a lesser-known result of Chebotaryov here: the character table of a finite cyclic group, viewed as a square matrix, has the property that every minor is nonzero.
       </p>
       <p>
         By contrast, for a group which is abelian but not cyclic there exists a <m>2 \times 2</m> submatrix with all entries equal to 1,
@@ -264,84 +267,123 @@
       <exercise xml:id="exc-density-1">
         <statement>
           <p>
-          Show that the Dirichlet density of the set of all primes of a number field is 1.
+            Show that the Dirichlet density of the set of all primes of a number field is 1.
           </p>
         </statement>
+        <hint>
+          <p>
+            Write
+            <me>
+              \log \zeta_K(s) = \sum_{\gothp} \sum_{m=1}^\infty \frac{\Norm(\gothp)^{-sm}}{m}
+            </me>
+            and check that the sum over all terms with <m>m \gt 1</m> converges absolutely for <m>s=1</m>.
+            Then apply <xref ref="T_meromorphic_continuation"/>.
+          </p>
+        </hint>
       </exercise>
       <exercise xml:id="exc-density-split-1">
         <statement>
-          Show that in any number field,
-          the Dirichlet density of the set of primes <m>\gothp</m> of absolute degree greater than 1 is zero.
+          <p>
+            Show that in any number field,
+            the Dirichlet density of the set of primes <m>\gothp</m> of absolute degree greater than 1 is zero.
+          </p>
         </statement>
+        <hint>
+          <p>
+            As in <xref ref="exc-density-1"/>, show that the sum <m>\sum_{\gothp} \Norm(\gothp)^{-s}</m> over all <m>\gothp</m> of absolute degree greater than 1
+            converges absolutely for <m>s=1</m>.
+          </p>
+        </hint>
       </exercise>
       <exercise xml:id="exc-density-of-ray-classes">
         <statement>
-          Let <m>\gothm</m> be a formal product of places of the number field <m>K</m>.
-          Using <xref ref="T_meromorphic_continuation"/>,
-          <xref ref="T_analytic_continuation"/>,
-          and <xref ref="T_nonvanishing_of_L"/>,
-          prove that the set of primes of <m>K</m> lying in any specified class of the generalized ideal class group of conductor <m>\gothm</m> has Dirichlet density <m>1/\#\Cl^\gothm(K)</m>.
+          <p>
+            Let <m>\gothm</m> be a formal product of places of the number field <m>K</m>.
+            Using <xref ref="T_meromorphic_continuation"/>,
+            <xref ref="T_analytic_continuation"/>,
+            and <xref ref="T_nonvanishing_of_L"/>,
+            prove that the set of primes of <m>K</m> lying in any specified class of the generalized ideal class group of conductor <m>\gothm</m> has Dirichlet density <m>1/\#\Cl^\gothm(K)</m>.
+          </p>
         </statement>
         <hint>
-          Combine the quantities <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> to cancel out all but one class.
-        </hint>
-      </exercise>
-      <exercise>
-        <statement>
-          Let <m>L/K</m> be an extension of number fields. Suppose that for every prime <m>\gothp</m> of <m>K</m> which does not ramify in <m>L</m>,
-          all of the primes of <m>L</m> above <m>\gothp</m> have isomorphic residue fields. Using <xref ref="T_Chebotarev"/>, prove that <m>L/K</m> is Galois.
-        </statement>
-        <hint>
-          Let <m>M</m> be the Galois closure of <m>L/K</m>.
-          Put <m>G = \Gal(M/K)</m> and <m>H = \Gal(M/L)</m>.
-          For <m>\gothq</m> a prime of <m>M</m> with decomposition group <m>G_{\gothq}</m> lying above the prime <m>\gothp</m> of <m>K</m>, relate the orders of the
-          residue fields of the primes of <m>L</m> to the intersections of <m>G_{\gothq}</m> with the conjugates of <m>H</m> in <m>G</m>
-          (see <xref ref="R-decomposition-inertia"/>).
-          Use the fact that these conjugates have trivial intersection to deduce that <m>G_{\gothq}</m> must be trivial, and invoke <xref ref="T_Chebotarev"/> to conclude.
-        </hint>
-      </exercise>
-      <exercise xml:id="exc-Artin-map-surjective">
-        <statement>
-          Let <m>L/K</m> be an abelian extension of number fields.
-          Using <xref ref="cor-some-primes-split"/>, show that the homomorphism <m>I_K^\gothm \to \Gal(L/K)</m> is surjective.
-        </statement>
-      </exercise>
-      <exercise>
-        <statement>
-          Let <m>K</m> be a number field and let <m>\gothm</m> be a formal product of places of <m>K</m>.
-          Use <xref ref="cor-some-primes-split"/> to show that the ray class field of <m>\gothm</m> is unique.
-        </statement>
-        <hint>
-          Show that if <m>L_1, L_2</m> are both ray class fields of <m>\gothm</m>, then all but finitely many primes of <m>L_1</m> split
-          completely in the compositum <m>L_1L_2</m> (namely, those which do not ramify in the compositum).
+          <p>
+            As in <xref ref="exc-density-1"/>, write
+            <me>
+              \log L(s, \chi) = \sum_{\gothp} \sum_{m=1}^\infty \frac{\chi(\gothp)^m \Norm(\gothp)^{-sm}}{m}
+            </me>
+            and observe that the sum over all terms with <m>m \gt 1</m> converges absolutely for <m>s=1</m>.
+            Then apply <xref ref="T_analytic_continuation"/> and <xref ref="T_nonvanishing_of_L"/>
+            to deduce that for <m>\chi</m> nontrivial, <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> converges to a finite limit as <m>s \to 1^+</m>.
+            Then combine the quantities <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> to cancel out all but one class.
+          </p>
         </hint>
       </exercise>
       <exercise>
         <statement>
           <p>
-          Here is an example to illustrate the difference between Dirichlet density and natural density, albeit not for primes.
-          Let <m>S</m> be the set of positive integers whose decimal expansion begins with 1.
+            Let <m>L/K</m> be an extension of number fields. Suppose that for every prime <m>\gothp</m> of <m>K</m> which does not ramify in <m>L</m>,
+            all of the primes of <m>L</m> above <m>\gothp</m> have isomorphic residue fields. Using <xref ref="T_Chebotarev"/>, prove that <m>L/K</m> is Galois.
           </p>
-          <ol>
-            <li>
-              <p>
-                Prove that <m>S</m> does not have a natural density, in the sense that
-                <me>
-                  \lim_{X \to \infty} \frac{1}{X} \# (S \cap \{1,\dots,X\})
-                </me>
-                does not exist.
-              </p>
-            </li>
-            <li>
-              <p>
-                On the other hand, prove that <m>S</m> has a Dirichlet density in the sense that
-                <me>
-                  \lim_{s \to 1^+} \frac{\sum_{n \in S} n^{-s}}{\sum_{n=1}^\infty n^{-s}}
-                </me>
-                exists, and compute this value.
-              </p>
-            </li>
-          </ol>
+        </statement>
+        <hint>
+          <p>
+            Let <m>M</m> be the Galois closure of <m>L/K</m>.
+            Put <m>G := \Gal(M/K)</m> and <m>H := \Gal(M/L)</m>.
+            For <m>\gothq</m> a prime of <m>M</m> with decomposition group <m>G_{\gothq}</m> lying above the prime <m>\gothp</m> of <m>K</m>, relate the orders of the
+            residue fields of the primes of <m>L</m> to the intersections of <m>G_{\gothq}</m> with the conjugates of <m>H</m> in <m>G</m>
+            (see <xref ref="R-decomposition-inertia"/>).
+            Use the fact that these conjugates have trivial intersection to deduce that <m>G_{\gothq}</m> must be trivial, and invoke <xref ref="T_Chebotarev"/> to conclude.
+          </p>
+        </hint>
+      </exercise>
+      <exercise xml:id="exc-Artin-map-surjective">
+        <statement>
+          <p>
+            Let <m>L/K</m> be an abelian extension of number fields.
+            Using <xref ref="cor-some-primes-split"/>, show that the homomorphism <m>J_K^\gothm \to \Gal(L/K)</m> is surjective.
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Let <m>K</m> be a number field and let <m>\gothm</m> be a formal product of places of <m>K</m>.
+            Use <xref ref="cor-some-primes-split"/> to show that the ray class field of <m>\gothm</m> is unique.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Show that if <m>L_1, L_2</m> are both ray class fields of <m>\gothm</m>, then all but finitely many primes of <m>L_1</m> split
+            completely in the compositum <m>L_1L_2</m> (namely, those which do not ramify in the compositum).
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Here is an example to illustrate the difference between Dirichlet density and natural density, albeit not for primes.
+            Let <m>S</m> be the set of positive integers whose decimal expansion begins with 1.
+            <ol>
+              <li>
+                <p>
+                  Prove that <m>S</m> does not have a natural density, in the sense that
+                  <me>
+                    \lim_{X \to \infty} \frac{1}{X} \# (S \cap \{1,\dots,X\})
+                  </me>
+                  does not exist.
+                </p>
+              </li>
+              <li>
+                <p>
+                  On the other hand, prove that <m>S</m> has a Dirichlet density in the sense that
+                  <me>
+                    \lim_{s \to 1^+} \frac{\sum_{n \in S} n^{-s}}{\sum_{n=1}^\infty n^{-s}}
+                  </me>
+                  exists, and compute this value.
+                </p>
+              </li>
+            </ol>
+          </p>
         </statement>
         <hint>
           <p>

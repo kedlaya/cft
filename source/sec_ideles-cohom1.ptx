@@ -330,7 +330,7 @@
     <title>Splitting of primes</title>
     <p>
       As a consequence of the First Inequality,
-      we record the following fact which was previously stated as a consequence of the Chebotar&#xeb;v density theorem 
+      we record the following fact which was previously stated as a consequence of the Chebotaryov density theorem 
       (<xref ref="T_Chebotarev"/>), but which will be needed logically earlier in the arguments. (See <xref ref="bib-Neukirch"/>, Corollary VI.3.8 for more details.)
     </p>
     <corollary xml:id="C_split_completely">

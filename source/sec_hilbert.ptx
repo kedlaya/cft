@@ -94,7 +94,7 @@
             If an odd prime <m>p</m> ramifies in <m>K</m>,
             show that <m>K(\sqrt{p^*})/K</m> is unramified for <m>p^* = (-1)^{(p-1)/2} p</m>;
             if 2 ramifies in <m>K</m>,
-            show that <m>K(p^*)/K</m> is unramified for one of <m>p^* = -1, 2, -2</m>.
+            show that <m>K(\sqrt{p^*})/K</m> is unramified for one of <m>p^* = -1, 2, -2</m>.
           </p>
         </hint>
       </exercise>
@@ -137,7 +137,8 @@
         </statement>
         <hint>
           <p>
-            The extension contains a cubic field of discriminant -23.
+            The unramified abelian extension contains a cubic number field of discriminant -23.
+            Compare <xref ref="exer-unramified-An"/>.
           </p>
         </hint>
       </exercise>
@@ -159,21 +160,64 @@
           </p>
         </statement>
       </exercise>
-      <exercise>
+      <exercise xml:id="exer-unramified-An">
         <statement>
           <p>
-            Let <m>K</m> be a number field of degree <m>n</m> with Galois group <m>S_n</m> whose discriminant <m>D</m> is squarefree.
-            Prove that the Galois closure of <m>K</m> is unramified over all finite places of <m>\QQ(\sqrt{D})</m>. This gives an ample supply
-            of everywhere unramified extensions (of various fields) which are nonabelian for <m>n > 3</m>.
+            Let <m>P(x) \in \ZZ[x]</m> be a polynomial whose discriminant <m>D</m> is squarefree (and hence odd).
+            <ol>
+              <li>
+                Prove that the field <m>K = \QQ[x]/(P(x))</m> has Galois group <m>S_n</m> over <m>\QQ</m>.
+              </li>
+              <li>
+                Prove that the Galois closure of <m>K/\QQ</m> is unramified over all finite places of <m>\QQ(\sqrt{D})</m>.
+              </li>
+            </ol>
+            This gives an ample supply
+            of everywhere unramified extensions (of various fields) which are nonabelian for <m>n \gt 3</m>, and nonsolvable for <m>n \gt 4</m>.
           </p>
         </statement>
         <hint>
           <p>
-            Let <m>M</m> be the Galois closure of <m>K</m>.
-            For any odd prime <m>p</m> dividing the discriminant, use the restriction on <m>D</m> to show that 
-            there is exactly one prime of <m>K</m> above <m>p</m> which is ramified and that its ramification index is 2.
-            Then deduce that the inertia group of a prime of <m>M</m> above <m>p</m> has order 2, and finally argue that said prime is unramified over
-            its restriction to <m>\QQ(\sqrt{D})</m>.
+            We follow an argument of Yamamoto (<xref ref="bib-Yamamoto"/>, p. 69, proof of Proposition 1).
+            Let <m>M</m> be the Galois closure of <m>K/\QQ</m>.
+            Recall that <m>M/K</m> is unramified over a prime <m>\gothp</m> of <m>K</m> if and only if <m>L/K</m> is:
+            if the decomposition group of some (hence any) prime of <m>M</m> above <m>\gothp</m> is nontrivial, then I can choose that prime so that the decomposition group
+            is not contained in <m>\Gal(M/K)</m>.
+            Next, note that for each odd prime <m>p</m> dividing <m>K</m>, there is a unique prime <m>\gothp</m> above <m>p</m>
+            which is ramified with ramification index 2.
+            Finally, using the different to compute the discriminant, show that <m>L</m> also has a unique
+            prime ramified over <m>p</m> and that the ramification index is again 2, then deduce that this prime cannot ramify over <m>\gothp</m>.
+            (This also shows that the decomposition group has order 2, so the Galois group is a transitive subgroup of <m>S_n</m> containing a transposition.)
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Show that the conclusion of <xref ref="exer-unramified-An"/> remains true if we only require <m>K</m>
+            to be a number field of degree <m>n</m> with Galois group <m>S_n</m> whose discriminant <m>D</m> is squarefree, 
+            but not necessarily of the form <m>\QQ[x]/(P(x))</m> where <m>P(x) \in \ZZ[x]</m> has discriminant <m>D</m>.
+            This even holds when <m>D</m> is not squarefree but is the discriminant of a quadratic number field; see <xref ref="bib-Kondo"/>.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            First show that if there are two distinct primes of <m>L</m> that ramify over <m>p</m>, then <m>p^2</m> must divide <m>D</m>.
+            Then use the fact that <m>L</m> is <em>locally</em> monogenic at the unique ramified prime over <m>p</m> to emulate
+            the solution of <xref ref="exer-unramified-An"/>.
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Let <m>D</m> be a squarefree integer divisible by at least three distinct primes.
+            Prove that <m>\Cl(\QQ(\sqrt{D}))</m> is nontrivial.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Use the prime factors of <m>D</m> to produce an everywhere unramified quadratic extension.
           </p>
         </hint>
       </exercise>

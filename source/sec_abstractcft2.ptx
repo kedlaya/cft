@@ -7,7 +7,7 @@
       local class field theory, but we will not expand on this point.
     </p>
   </introduction>
-  <subsection xml:id="subsec-abstract-recip-definition">
+  <subsection>
   <title>Construction of the reciprocity map</title>
     <p>
       In order to define a candidate <m>r: \Gal(L/K) \to A_K/\Norm_{L/K} A_L</m> for the reciprocity map,

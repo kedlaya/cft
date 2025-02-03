@@ -29,7 +29,7 @@
     <p>
       We start with a fundamental result from field theory, which will crop up time and again in our work.
       To state it, let me introduce some terminology which marks the tip of the iceberg of group cohomology,
-      which we will treat in a more comprehensive way <xref ref="ch_cohomology"/>.
+      which we will treat in a more comprehensive way in <xref ref="ch_cohomology"/>.
     </p>
     <definition>
       <p>
@@ -125,8 +125,8 @@
       <p>
         Another way to state <xref ref="T_Kummer"/> is as a bijection
         <me>
-          \mbox{\((\ZZ/n\ZZ)^r\)-extensions of \(K\)}  \longleftrightarrow \mbox{\((\ZZ/n\ZZ)^r\)-subgroups of \(K^*/(K^*)^n\)},
-        </me>
+          (\ZZ/n\ZZ)^r\text{-extensions of } K \longleftrightarrow (\ZZ/n\ZZ)^r \text{-subgroups of } K^*/(K^*)^n
+        </me>,
         where <m>(K^*)^n</m> is the group of <m>n</m>-th powers in <m>K^*</m>.
         (What we proved above was the case <m>r=1</m>, but the general case follows at once.)
         Another way is in terms of the absolute Galois group of <m>K</m>, as in <xref ref="T_Kummer_reformulated"/> below.

@@ -138,9 +138,9 @@
           </me>
           in which 
           <me>
-            \Br(K_v) = \begin{cases} \QQ/\ZZ &amp; \mbox{for $v$ finite} \\
-            \frac{1}{2} \ZZ/\ZZ &amp; \mbox{for $v$ real} \\
-            0 &amp; \mbox{for $v$ complex} \end{cases}
+            \Br(K_v) = \begin{cases} \QQ/\ZZ &amp; \text{for } v \text{ finite} \\
+            \frac{1}{2} \ZZ/\ZZ &amp; \text{for } v \text{ real} \\
+            0 &amp; \text{for } v \text{ complex} \end{cases}
           </me>
           and the map on the right is summation.
         </p>
@@ -152,18 +152,24 @@
           For <m>v</m> complex, it is evident that <m>\Br(K_v) = 0</m>.
           For <m>v</m> real, by <xref ref="T_cyclic_group_periodicity"/> we have
           <md>
-            <mrow>\Br(\RR) &amp;= H^2(\Gal(\CC/\RR), \CC^*)</mrow>
-            <mrow>&amp;\cong H^0_T(\Gal(\CC/\RR), \CC^*)</mrow>
-            <mrow>&amp;\cong \RR^* / \Norm_{\CC/\RR} \CC^* = \RR^*/\RR^+ \cong \frac{1}{2} \ZZ/\ZZ.</mrow>
-          </md>
+            <mrow>
+              \Br(\RR) &amp;= H^2(\Gal(\CC/\RR), \CC^*)
+            </mrow>
+            <mrow>
+              &amp;\cong H^0_T(\Gal(\CC/\RR), \CC^*)
+            </mrow>
+            <mrow>
+              &amp;\cong \RR^* / \Norm_{\CC/\RR} \CC^* = \RR^*/\RR^+ \cong \frac{1}{2} \ZZ/\ZZ
+            </mrow>
+          </md>.
           Since the values of <m>\Br(K_v)</m> are the ones given, the surjectivity of the map <m>\bigoplus_v \Br(K_v) \to \QQ/\ZZ</m> is evident.
         </p>
         <p>
           It remains to establish exactness at the middle of the sequence. For any finite Galois extension <m>L/K</m>,
           we have the exact sequence
           <me>
-            H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L) \to H^2(\Gal(L/K), C_L).
-          </me>
+            H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L) \to H^2(\Gal(L/K), C_L)
+          </me>.
           If <m>L/K</m> is cyclic, then by reciprocity (<xref ref="T_abstract_adelic_reciprocity"/>),
           the top row of the commutative diagram in <xref ref="lem-H2-map-global-cyclic"/> is exact, as then is the bottom row.
           Consequently, we could conclude the proof if we knew that every class in <m>\Br(K)</m> is the image of a class in <m>H^2(\Gal(L/K), L^*)</m>
@@ -269,7 +275,7 @@
     <proposition xml:id="prop-reciprocity-trivial-on-diagonal3">
       <statement>
         <p>
-          For any cyclic extension <m>L/K</m> of number fields, the map <m>r_{L/K}: I_K \to \Gal(L/K)</m> kills principal id&#xe8;les.
+          For any cyclic extension <m>L/K</m> of number fields, the map <m>r_{L/K}\colon I_K \to \Gal(L/K)</m> kills principal id&#xe8;les.
         </p>
       </statement>
       <proof>
@@ -313,8 +319,8 @@
         to argue that <m>C_L</m> satisfies the hypotheses of Tate's theorem
         (<xref ref="T_tate_thm2"/>), which yields an isomorphism
         <me>
-          \Gal(L/K)^{\ab} \cong H^{-2}_T(\Gal(L/K), \ZZ) \to H^0_T(\Gal(L/K), C_L) = C_K/\Norm_{L/K} C_L.
-        </me>
+          \Gal(L/K)^{\ab} \cong H^{-2}_T(\Gal(L/K), \ZZ) \to H^0_T(\Gal(L/K), C_L) = C_K/\Norm_{L/K} C_L
+        </me>.
         By comparing with the construction of the local reciprocity map, we see that the inverse of this isomorphism is exactly <m>r_{L/K}</m>,
         which yields the norm limitation theorem. See <xref ref="bib-Milne-CFT"/>, Theorem VIII.4.8 for more details.
       </p>
@@ -347,8 +353,8 @@
             </li>
             <li>
               <p>
-                There is an isomorphism <m>D \otimes_K D \cong M_4(K)</m> of <m>K</m>-algebras. Consequently, if <m>D</m> is not split, then it represents an element of 
-                <m>\Br(K)</m> of order 2.
+                There is an isomorphism <m>D \otimes_K D \cong M_4(K)</m> of <m>K</m>-algebras. 
+                Consequently, if <m>D</m> is not split, then it represents an element of <m>\Br(K)</m> of order 2.
               </p>
             </li>
           </ol>
