@@ -1,21 +1,18 @@
-.PHONY : all latex pdf images html install
-all: latex pdf images html install
-
-latex:
-	pretext build latex --clean
+.PHONY : all pdf images web install
+all: pdf web install
 
 pdf:
-	pretext build pdf
+	pretext build print --clean
 	
 images:
-	pretext build -d
+	pretext generate latex-image
 
-html:
-	pretext build html
+web:
+	pretext build web
 
 install:
-	cp output/pdf/index.pdf ~/www/papers/cft-ptx.pdf;
-	scp output/pdf/index.pdf web:www/papers/cft-ptx.pdf;
-	rsync -au output/html/ ~/www/cft/;
-	rsync -au -e "ssh" output/html/ web:www/cft/
+	cp output/print/main.pdf ~/www/papers/cft-ptx.pdf;
+	scp output/print/main.pdf web:www/papers/cft-ptx.pdf;
+	rsync -au output/web/ ~/www/cft/;
+	rsync -au -e "ssh" output/web/ web:www/cft/
 
