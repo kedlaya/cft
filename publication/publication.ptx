@@ -2,21 +2,25 @@
 <publication>
 
   <source webwork-problems="../generated-assets/webwork/webwork-representations.ptx">
-    <directories external="../assets" generated="../generated-assets"/>
+    <directories external="../external" generated="../generated-assets"/>
   </source>
 
     <!-- Common options -->
     <common>
         <tableofcontents level="2"/>
+        <chunking level="2"/>
     </common>
+    <numbering>
+       <divisions level="2"/>
+       <blocks level="2"/>
+    </numbering>
     <!-- HTML-specific options -->
     <html>
-        <chunking level="2"/>
         <baseurl href="https://kskedlaya.org/cft/"/>
         <knowl example="no" remark="no"/>
     </html>
     <!-- LaTeX-specific options-->
     <!-- Set print to "yes" to generate a PDF for printing-->
-    <latex print="no" sides="two"/>
+    <latex print="no" sides="one"/>
 
 </publication>
