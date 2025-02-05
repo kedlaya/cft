@@ -15,15 +15,15 @@
     <title>Id&#xe8;les</title>
     <definition>
       <p>
-      Let <m>K</m> be a number field and let <m>\AA_K</m> be the ring of ad&#xe8;les associated to <m>K</m> (<xref ref="def-adeles-K"/>).
-      We define the <term>group of id&#xe8;les</term> <m>I_K</m> associated to <m>K</m> as the group of units of the ring <m>\AA_K</m>.
-      In other words, an element of <m>I_K</m> is a tuple <m>(\alpha_v)</m>,
-      one element of <m>K_v^*</m> for each place <m>v</m> of <m>K</m>,
-      such that <m>\alpha_v \in \gotho_{K_v}^*</m> for all but finitely many finite places <m>v</m>.
+        Let <m>K</m> be a number field and let <m>\AA_K</m> be the ring of ad&#xe8;les associated to <m>K</m> (<xref ref="def-adeles-K"/>).
+        We define the <term>group of id&#xe8;les</term> <m>I_K</m> associated to <m>K</m> as the group of units of the ring <m>\AA_K</m>.
+        In other words, an element of <m>I_K</m> is a tuple <m>(\alpha_v)</m>,
+        one element of <m>K_v^*</m> for each place <m>v</m> of <m>K</m>,
+        such that <m>\alpha_v \in \gotho_{K_v}^*</m> for all but finitely many finite places <m>v</m>.
       </p>
       <p>
-      As a set, <m>I_K</m> is the restricted product of the pairs <m>(K_v^*, \{1\})</m> for infinite places <m>v</m> and <m>(K_v, \gotho_{K_v}^*)</m> for finite places <m>v</m>.
-      We use this interpretation to give <m>I_K</m> the structure of a locally compact topological group.
+        As a set, <m>I_K</m> is the restricted product of the pairs <m>(K_v^*, \{1\})</m> for infinite places <m>v</m> and <m>(K_v, \gotho_{K_v}^*)</m> for finite places <m>v</m>.
+        We use this interpretation to give <m>I_K</m> the structure of a locally compact topological group.
       </p>
     </definition>
     <definition>
@@ -83,7 +83,7 @@
           <li>
             <p>
               if <m>v</m> is a real place occurring in <m>\gothm</m>,
-              then <m>\alpha_v > 0</m>;
+              then <m>\alpha_v \gt 0</m>;
             </p>
           </li>
           <li>
@@ -110,7 +110,7 @@
     <title>Compactness and consequences</title>
     <definition xml:id="def-idele-class-norm">
     <p>
-      By the product formula (<xref ref="prop-product-formula"/>), we get a well-defined norm map <m>|\cdot|: C_K \to \RR^*_+</m>.
+      By the product formula (<xref ref="prop-product-formula"/>), we get a well-defined norm map <m>|\cdot|\colon C_K \to \RR^*_+</m>.
       Let <m>C_K^0</m> be the kernel of the norm map;
       then <m>C_K^0</m> also surjects onto <m>\Cl(K)</m>. (The surjection onto <m>\Cl(K)</m> ignores the infinite places,
       so you can adjust there to force norm 1.)
@@ -193,7 +193,7 @@
       </statement>
       <proof>
         <p>
-          Define the map <m>\log: I_{K,S} \to \RR^{\#S}</m> by taking log of the absolute value of the norm of each component in <m>S</m>
+          Define the map <m>\log\colon I_{K,S} \to \RR^{\#S}</m> by taking log of the absolute value of the norm of each component in <m>S</m>
           (normalizing as in <xref ref="def-normalized-adele-norm"/>).
           By the product formula (<xref ref="prop-product-formula"/>),
           this map carries <m>\gotho_{K,S}^*</m> into the trace-zero hyperplane <m>H</m> in <m>\RR^{\#S}</m>.
@@ -211,8 +211,8 @@
           and hence has rank <m>\dim H = \#S - 1</m>.
           We may check this after enlarging <m>S</m>; by <xref ref="lem-generate-ideles-with-S-units"/>, we can assume that <m>I_{K,S} K^* = I_K</m> and hence
           <me>
-            C_K = I_K/K^* \cong I_{K,S} / \gotho_{K,S}^*.
-          </me>
+            C_K = I_K/K^* \cong I_{K,S} / \gotho_{K,S}^*
+          </me>.
           Using this isomorphism, we obtain a continuous homomorphism <m>C_K^0 \to H/W</m> whose image generates <m>H/W</m>.
           Since <m>C_K^0</m> is compact (<xref ref="P_idele_group_compact"/>), so is its image; 
           this is a contradiction unless <m>H/W</m> is the zero vector space.

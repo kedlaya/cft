@@ -521,7 +521,10 @@
         <m>\alpha\colon G' \to G</m> of groups and a homomorphism <m>\beta\colon M \to M'</m> of abelian groups
         (note that they go in opposite directions!).
         We say these are <term>compatible</term>
-        if <m>\beta(m^{\alpha(g)}) = \beta(m)^g</m> for all <m>g \in G</m> and <m>m \in M</m>.
+        if 
+        <men xml:id="eq-extended-functoriality-compatibility">
+          \beta(m^{\alpha(g')}) = \beta(m)^{g'} \text{ for all } g' \in G', m \in M
+        </men>.
         In this case,
         one gets canonical homomorphisms <m>H^i(G, M) \to H^i(G', M')</m>:
         one firsts constructs these on pairs of injective resolutions,
@@ -529,6 +532,15 @@
         We will refer to the construction of such homomorphisms as the <term>extended functoriality</term> of group cohomology.
       </p>
     </definition>
+    <remark>
+      <p>
+        In <xref ref="D-extended-functoriality"/>, we can verify directly that <xref ref="eq-extended-functoriality-compatibility"/>
+        implies that the map <m>M \to M'</m> induces a map <m>M^G \to (M')^{G'}</m> which is functorial with respect to the map <m>\beta</m>
+        (keeping <m>\alpha</m> fixed). We can then argue by general considerations of derived functors
+        that this natural transformation <m>H^0(G, M) \to H^0(G',M')</m> extends to give natural transformations <m>H^i(G,M) \to H^i(G',M')</m>
+        <em>and</em> corresponding transformations of the connecting homomorphisms in short exact sequences.
+      </p>
+    </remark>
     <example xml:id="exa-extended-functoriality">
       <p>
         The principal examples of extended functoriality we will be using are the following.

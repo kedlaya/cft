@@ -15,8 +15,8 @@
       we want to prove that for <m>L/K</m> a cyclic extension of number fields 
       and <m>C_K, C_L</m> the respective id&#xe8;le class groups of <m>K</m> and <m>L</m>,
       <me>
-        H^1(\Gal(L/K), C_L) = 1, \qquad H^2(\Gal(L/K), C_L) = \ZZ/[L:K]\ZZ.
-      </me>
+        H^1(\Gal(L/K), C_L) = 1, \qquad H^2(\Gal(L/K), C_L) = \ZZ/[L:K]\ZZ
+      </me>.
       Our first step is to calculate the Herbrand quotient.
     </p>
     <theorem xml:id="T_first_inequality1">
@@ -24,8 +24,8 @@
         <p>
           For <m>L/K</m> a cyclic extension of number fields,
          <me>
-          h(C_L) = [L:K].
-         </me>
+          h(C_L) = [L:K]
+         </me>.
         </p>
       </statement>
       <proof>
@@ -76,8 +76,8 @@
         Note that each <m>I_{L,S}</m> is stable under the action of <m>G</m> and that <m>I_L</m> is the direct limit of the <m>I_{L,S}</m> over all <m>S</m>.
         Moreover, by <xref ref="lem-generate-ideles-with-S-units"/>, for <m>S</m> sufficiently large we have
         <me>
-          I_L = I_{L,S} L^*.
-        </me>
+          I_L = I_{L,S} L^*
+        </me>.
       </p>
     </definition>
     <proposition xml:id="prop-idele-cohomology-local">
@@ -86,12 +86,12 @@
           Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>.
           For each <m>i>0</m>, 
           <me>
-            H^i(G, I_L) = \bigoplus_v H^i(G_w, L_w^*),
-          </me>
+            H^i(G, I_L) = \bigoplus_v H^i(G_w, L_w^*)
+          </me>,
           where <m>v</m> runs over places of <m>K</m> and <m>w</m> denotes a single place of <m>L</m> above <m>v</m>. Similarly, for each <m>i</m>,
           <me>
-            H^i_T(G, I_L) = \bigoplus_v H^i_T(G_w, L_w^*).
-          </me>
+            H^i_T(G, I_L) = \bigoplus_v H^i_T(G_w, L_w^*)
+          </me>.
         </p>
       </statement>
     <proof>
@@ -113,8 +113,8 @@
         <p>
           Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>. Then
           <me>
-            H^1(G, I_L) = 0, \qquad H^2(G, I_L) = \bigoplus_v \frac{1}{[L_w:K_v]} \ZZ/\ZZ.
-          </me>
+            H^1(G, I_L) = 0, \qquad H^2(G, I_L) = \bigoplus_v \frac{1}{[L_w:K_v]} \ZZ/\ZZ
+          </me>.
         </p>
       </statement>
       <proof>
@@ -122,8 +122,8 @@
           This follows by combining <xref ref="prop-idele-cohomology-local"/>, the computation of cohomology of local fields
           (<xref ref="L_theorem_90"/> and <xref ref="P_local_h2"/>), and the equality
           <me>
-            H^2(\Gal(\CC/\RR), \CC^*) \cong H^0_T(\Gal(\CC/\RR), \CC^*) = \RR^*/\RR^+ \cong \ZZ/2\ZZ.
-          </me>
+            H^2(\Gal(\CC/\RR), \CC^*) \cong H^0_T(\Gal(\CC/\RR), \CC^*) = \RR^*/\RR^+ \cong \ZZ/2\ZZ
+          </me>.
         </p>
       </proof>
     </corollary>
@@ -174,14 +174,14 @@
         </me>
         we have an equality of Herbrand quotients
         <me>
-          h(C_L) = h(I_{L,S})/h(\gotho_{L,S}^*).
-        </me>
+          h(C_L) = h(I_{L,S})/h(\gotho_{L,S}^*)
+        </me>.
       </p>
       <p>
         By <xref ref="cor-idele-cohomology-local"/>,
         <me>
-          h(I_{L,S}) = \prod_{v \in S} \#H^0_T(G_v, L_w^*)= \prod_{v \in S} [L_w:K_v].
-        </me>
+          h(I_{L,S}) = \prod_{v \in S} \#H^0_T(G_v, L_w^*)= \prod_{v \in S} [L_w:K_v]
+        </me>.
         (Since <m>G</m> is abelian, we write <m>G_v</m> instead of <m>G_w</m>.)
         To get <m>h(C_L) = [L:K]</m>, it will thus suffice to establish <xref ref="lem-Herbrand-S-units"/> below.
       </p>
@@ -192,8 +192,8 @@
           Let <m>L/K</m> be a cyclic extension of number fields.
           Let <m>S</m> be a finite set of places of <m>K</m> containing all infinite places. Then
           <me>
-            h(\gotho_{L,S}^*) = \frac{1}{[L:K]} \prod_{v \in S} [L_w:K_v].
-          </me>
+            h(\gotho_{L,S}^*) = \frac{1}{[L:K]} \prod_{v \in S} [L_w:K_v]
+          </me>.
         </p>
       </statement>
       <proof>
@@ -251,8 +251,8 @@
       notice that the projection of this lattice onto the coordinates corresponding to the places <m>w \in T</m> above some <m>v \in S</m> form a copy of <m>\Ind^G_{G_v} \ZZ</m>.
       Thus
       <me>
-        h(G, M') = \prod_{v \in S} h(G, \Ind^G_{G_v} \ZZ) = \prod_{v \in S} h(G_v, \ZZ) = \prod_{v \in S} \#G_v = \prod_{v \in S} [L_w:K_v].
-      </me>
+        h(G, M') = \prod_{v \in S} h(G, \Ind^G_{G_v} \ZZ) = \prod_{v \in S} h(G_v, \ZZ) = \prod_{v \in S} \#G_v = \prod_{v \in S} [L_w:K_v]
+      </me>.
       </p>
     </definition>
     <p>
@@ -299,20 +299,20 @@
         <p>
           By hypothesis, the <m>F</m>-vector space 
           <me>
-            W_F = \Hom_{F}(V_1 \otimes_{E} F, V_2 \otimes_{E} F),
-          </me>
+            W_F = \Hom_{F}(V_1 \otimes_{E} F, V_2 \otimes_{E} F)
+          </me>,
           on which <m>G</m> acts by the formula <m>T^g(x) = T(x^{g^{-1}})^g</m>,
           contains an invariant vector which, as a linear transformation, is invertible.
           Now <m>W_F</m> can also be written as
           <me>
-            W \otimes_E F, \qquad W = \Hom_{E}(V_1, V_2).
-          </me>
+            W \otimes_E F, \qquad W = \Hom_{E}(V_1, V_2)
+          </me>.
           The fact that <m>W_F</m> has an invariant vector says that a certain set of linear equations has a nonzero solution over <m>F</m>,
           namely the equations that express the fact that the action of <m>G</m> leaves the vector invariant.
           But those equations have coefficients in <m>E</m>, so 
           <me>
-            W^G \otimes_E F = W_F^G;
-          </me>
+            W^G \otimes_E F = W_F^G
+          </me>;
           in particular, the space of invariant vectors in <m>W</m> is also nonzero.
         </p>
         <p>

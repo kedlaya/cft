@@ -17,10 +17,10 @@
     </p>
     <definition xml:id="def-Minkowski-lattice">
       <p>
-        Let <m>K</m> be a number field of degree <m>n</m>. It then has <m>n</m> distinct embeddings <m>\tau: K \to \CC</m>.
+        Let <m>K</m> be a number field of degree <m>n</m>. It then has <m>n</m> distinct embeddings <m>\tau\colon K \to \CC</m>.
         The product embedding
         <me>
-          j: K \to \prod_\tau \CC, \qquad a \mapsto (\tau(a))_\tau
+          j\colon K \to \prod_\tau \CC, \qquad a \mapsto (\tau(a))_\tau
         </me>
         induces an isomorphism of <m>K_{\CC} = K \otimes_{\QQ} \CC</m> with <m>\prod_\tau \CC</m>.
       </p>
@@ -36,8 +36,8 @@
       <p>
         Equip <m>K_\CC \cong \prod_\tau \CC</m> with the standard Hermitian inner product, that is,
         <me>
-          \langle z_1, z_2 \rangle = \sum_\tau z_{1,\tau} \overline{z_{2,\tau}}.
-        </me>
+          \langle z_1, z_2 \rangle = \sum_\tau z_{1,\tau} \overline{z_{2,\tau}}
+        </me>.
         This restricts to a positive definite inner product on <m>K_\RR</m>.
       </p>
       <p>
@@ -202,8 +202,8 @@
       <p>
       We may also view <m>\AA_\QQ</m> as a restricted direct product of the pairs
       <me>
-        (\RR, \{0\}), (\QQ_2, \ZZ_2), (\QQ_3, \ZZ_3), \dots;
-      </me>
+        (\RR, \{0\}), (\QQ_2, \ZZ_2), (\QQ_3, \ZZ_3), \dots
+      </me>;
       note that taking the subgroup <m>\{0\}</m> of <m>\RR</m> has no real effect because the definition of the restricted product involves checking membership
       in the chosen subgroup for <em>all but finitely many</em> indices.
       </p>
@@ -221,7 +221,7 @@
         a continous map from a compact topological space to Hausdorff topological space has compact image),
         the quotient group <m>\AA_\QQ/\QQ</m> is covered by a compact subset
         <me>
-          [0,1] \times \prod_p \ZZ_p.
+          [0,1] \times \prod_p \ZZ_p
         </me>
         (see <xref ref="exer-cover-adeles"/>).
       </p>
@@ -375,7 +375,7 @@
       <statement>
         <p>
           Let <m>S</m> be a finite set of places of <m>K</m>. For each <m>v \in S</m>, let <m>U_v</m> be an open subgroup of <m>K_v</m>.
-          Then <m>K \cap \bigcap_{v \in S} U_v \neq \emptyset.</m>
+          Then <m>K \cap \bigcap_{v \in S} U_v \neq \emptyset</m>.
        </p>
       </statement>
       <proof>
@@ -486,8 +486,8 @@
         <p>
           Prove by induction on <m>n</m> that given any pairwise distinct places <m>v_1, \dots, v_n</m>, we can find <m>x \in K</m> with
           <me>
-            |x|_{v_1} @gt; 1, |x|_{v_2} @lt; 1, \dots, |x|_{v_n} @lt; 1.
-          </me>
+            |x|_{v_1} \gt 1, |x|_{v_2} \lt 1, \dots, |x|_{v_n} \lt 1
+          </me>.
           Then make a careful linear combination of powers of such elements. For more details, see <xref ref="bib-Neukirch"/>, Theorem II.3.4.
         </p>
       </hint>

@@ -51,8 +51,8 @@
           Let <m>K</m> be a number field. For each place <m>v</m> of <m>K</m>, let <m>X_v</m> be a nontrivial additive character on <m>K_v^+</m> as in
           <xref ref="rmk-additive-characters-explicit"/>, and define the additive character <m>X</m> on <m>\AA_K^+</m> via
           <me>
-            X(\alpha) = \prod_v X_v(\alpha_v).
-          </me>
+            X(\alpha) = \prod_v X_v(\alpha_v)
+          </me>.
           Then the dual group <m>(\AA_K^+)^\vee</m> is a locally compact topological group, and the map
           <me>
             \alpha \mapsto (\beta \mapsto X(\alpha \beta))
@@ -74,10 +74,11 @@
       <statement>
         <p>
           Let <m>K</m> be a number field and let <m>v</m> be a place of <m>K</m>.
-          Fix a Haar measure on <m>K_v^+</m> and a nontrivial character <m>X \in (K_v^+)^\vee</m>. For <m>f \in L_1(K_v^+)</m>, define the <term>Fourier transform</term>
+          Fix a Haar measure on <m>K_v^+</m> and a nontrivial character <m>X \in (K_v^+)^\vee</m>. 
+          For <m>f \in L_1(K_v^+)</m>, define the <term>Fourier transform</term>
           <me>
-            \hat{f}(\eta) = \int f(\xi) X(\eta \xi)\,d\xi.
-          </me>
+            \hat{f}(\eta) = \int f(\xi) X(\eta \xi)\,d\xi
+          </me>.
           If <m>\hat{f} \in L_1(K_v^+)</m> also, then
           <me>
             f(\xi) = c \int \hat{f}(\eta) X(-\eta \xi) \,d\eta = c \widehat{\hat{f}}(-\xi)
@@ -99,8 +100,8 @@
           <xref ref="thm-additive-characters-local"/>.
           For <m>f \in L_1(\AA_K^+)</m>, define the <term>Fourier transform</term>
           <me>
-            \hat{f}(\eta) = \int f(\xi) X(\eta \xi)\,d\xi.
-          </me>
+            \hat{f}(\eta) = \int f(\xi) X(\eta \xi)\,d\xi
+          </me>.
           If <m>\hat(f) \in L_1(K_v^+)</m> also, then
           <me>
             f(\xi) = c \int \hat{f}(\eta) X(-\eta \xi) \,d\eta = c \widehat{\hat{f}}(-\xi)
@@ -165,8 +166,8 @@
           For suitable functions <m>f: \AA_K \to \CC</m>, define the associated <term>zeta function</term> as the following function of quasicharacters on <m>C_K</m>
           with exponent greater than <m>1</m>: 
           <me>
-            \zeta(f, c)= \int f(\alpha)c(\alpha)\,d\alpha.
-          </me>
+            \zeta(f, c)= \int f(\alpha)c(\alpha)\,d\alpha
+          </me>.
           This function is single-valued and holomorphic except at the points corresponding to <m>s=0</m> and <m>s=1</m> where it has simple poles with residues
           <m>-\kappa f(0)</m> and <m>\kappa \hat{f}(0)</m>, respectively, where
           <me>

@@ -29,8 +29,8 @@
         imply that the class field axiom is satisfied:
         for <m>L/K</m> a cyclic extension of number fields,
         <me>
-          \#H^0_T(\Gal(L/K), C_L) = [L:K], \qquad \#H^1_T(\Gal(L/K), C_L) = 1.
-        </me>
+          \#H^0_T(\Gal(L/K), C_L) = [L:K], \qquad \#H^1_T(\Gal(L/K), C_L) = 1
+        </me>.
       </p>
     </definition>
     <remark>
@@ -79,8 +79,8 @@
         our results are not going to depend on the choice (see <xref ref="rmk-remove-identification"/>).
         That gives a continuous surjection
         <me>
-          d: \Gal(\overline{\QQ}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ};
-        </me>
+          d\colon \Gal(\overline{\QQ}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}
+        </me>;
         recall that this means we are going to regard <m>\QQ^{\smcy}/\QQ</m> as the <q>maximal unramified extension</q>
         of <m>\QQ</m>.
       </p>
@@ -88,8 +88,8 @@
         As in the general setup, for any finite extension <m>L/K</m> of number fields, we define the
         <term>abstract ramification index</term> <m>e_{L/K}</m> and the <term>abstract inertia degree</term> <m>f_{L/K}</m> by setting
         <me>
-          f_{L/K} = [L \cap \QQ^{\smcy}:K \cap \QQ^{\smcy}], \qquad e_{L/K} = \frac{[L:K]}{f_{L/K}}.
-        </me>
+          f_{L/K} = [L \cap \QQ^{\smcy}:K \cap \QQ^{\smcy}], \qquad e_{L/K} = \frac{[L:K]}{f_{L/K}}
+        </me>.
       </p>
     </definition>
   </subsection>
@@ -120,8 +120,8 @@
         as in <xref ref="rmk-idele-group-presentation-for-Q"/>. We then define <m>v</m> as the projection onto the third factor
         followed by the projection 
         <me>
-          \widehat{\ZZ}^* \cong \Gal(\QQ^{\cyc}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}.
-        </me>
+          \widehat{\ZZ}^* \cong \Gal(\QQ^{\cyc}/\QQ) \to \Gal(\QQ^{\smcy}/\QQ) \cong \widehat{\ZZ}
+        </me>.
         The first condition of <xref ref="def-abstract-henselian-valuation"/> holds by construction.
         We will check the second condition using Artin reciprocity for cyclotomic extensions.
       </p>
@@ -181,8 +181,8 @@
         <p>
           For every Galois extension <m>L/K</m> of number fields, we obtain an isomorphism
           <me>
-            r'_{L/K}: C_K/\Norm_{L/K} C_L \stackrel{\sim}{\to} \Gal(L/K)^{\ab}.
-          </me>
+            r'_{L/K}: C_K/\Norm_{L/K} C_L \stackrel{\sim}{\to} \Gal(L/K)^{\ab}
+          </me>.
         </p>
       </statement>
       <proof>

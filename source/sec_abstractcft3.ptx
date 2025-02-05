@@ -19,7 +19,7 @@
         <p>
           Under <xref ref="hypo-abstract-cft"/>, 
           for <m>L/K</m> an unramified extension of finite subextensions of <m>\kbar/k</m>,
-          <m>r_{L/K}: \Gal(L/K) \to A_K / \Norm_{L/K} A_L</m> is an isomorphism
+          <m>r_{L/K}\colon \Gal(L/K) \to A_K / \Norm_{L/K} A_L</m> is an isomorphism
           sending the Frobenius of <m>\Gal(L/K)</m> to a uniformizer of <m>K</m>.
         </p>
       </statement>
@@ -41,7 +41,7 @@
         <p>
           Under <xref ref="hypo-abstract-cft"/>,
           for <m>L/K</m> a cyclic, totally ramified extension of finite subextensions of <m>\kbar/k</m>,
-          the map <m>r_{L/K}: \Gal(L/K) \to A_K / \Norm_{L/K} A_L</m> is an isomorphism.
+          the map <m>r_{L/K}\colon \Gal(L/K) \to A_K / \Norm_{L/K} A_L</m> is an isomorphism.
         </p>
       </statement>
       <proof>
@@ -83,18 +83,18 @@
         <p>
           Applying the class field axiom to <m>N/N_0</m> yields
           <me>
-            0 = H^{-1}_T(\Gal(N/N_0), A_N) = \frac{\ker(\Norm_{N/N_0}: A_N \to A_{N_0})}{ \{ a^{g-1}: a \in A_N \}}.
-          </me>
+            0 = H^{-1}_T(\Gal(N/N_0), A_N) = \frac{\ker(\Norm_{N/N_0}: A_N \to A_{N_0})}{ \{ a^{g-1}: a \in A_N \}}
+          </me>.
           Since <m>\Norm_{N/N_0}(u/v) = \Norm_{L^{\unr}/K^{\unr}}(u/v) = 1</m>, we can write <m>u/v</m> in the form
           <m>a^{g-1} = a^g/a</m> for some <m>a \in A_N</m>. Then
           <me>
-            (\pi_L^j v)^{g-1} = (\pi_L^j v)^{\tau-1} = (\pi_M^j v/u)^{\tau - 1} = (v/u)^{\tau-1} = (a/a^\tau)^{g-1}.
-          </me>
+            (\pi_L^j v)^{g-1} = (\pi_L^j v)^{\tau-1} = (\pi_M^j v/u)^{\tau - 1} = (v/u)^{\tau-1} = (a/a^\tau)^{g-1}
+          </me>.
           If we put <m>x = (\pi_L^j v)(a^\tau/a)</m>, then <m>x^g = x</m> and so <m>x \in A_{N_0}</m>.
           Hence 
           <me>
-            j = v_N(x) = nv_{N_0}(x) \in n \widehat{\ZZ}.
-          </me>
+            j = v_N(x) = nv_{N_0}(x) \in n \widehat{\ZZ}
+          </me>.
           That is, the order of <m>r_{L/K}(g)</m> in <m>A_K/\Norm_{L/K} A_L</m> is divisible by <m>n</m> in <m>\widehat{\ZZ}</m>, and hence also in <m>\ZZ</m>.
         </p>
         <p>
@@ -128,7 +128,7 @@
         <p>
           Under <xref ref="hypo-abstract-cft"/>, 
           for <m>L/K</m> an abelian extension of finite subextensions of <m>\kbar/k</m>,
-          the map <m>r_{L/K}: \Gal(L/K) \to A_K / \Norm_{L/K} A_L</m> is an isomorphism.
+          the map <m>r_{L/K}\colon \Gal(L/K) \to A_K / \Norm_{L/K} A_L</m> is an isomorphism.
         </p>
       </statement>
       <proof>

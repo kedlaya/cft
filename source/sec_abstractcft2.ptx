@@ -19,14 +19,14 @@
         Let <m>H</m> be the semigroup of
         <m>g \in \Gal(L^{\unr}/K)</m> such that <m>d_K(g)</m> is a positive integer.
         Define the map 
-        <me>r': H \to A_K/\Norm_{L/K} A_{L}</me> 
+        <me>r'\colon H \to A_K/\Norm_{L/K} A_{L}</me> 
         as follows.
         For <m>g \in \Gal(L^{\unr}/K)</m>,
         let <m>M</m> be the fixed field of <m>g</m>,
         so that
         <me>
-          e(M/K) = e((M \cap L)/K), \qquad f(M/K) = d_K(g).
-        </me>
+          e(M/K) = e((M \cap L)/K), \qquad f(M/K) = d_K(g)
+        </me>.
         We may set <m>r'(g) = \Norm_{M/K} (\pi_M)</m> for some uniformizer <m>\pi_M</m> for <m>M</m>,
         once we check that this doesn't depend on the choice of <m>\pi_M</m>.
         To wit, if <m>\pi'_M</m> is another uniformizer for <m>M</m>,
@@ -68,8 +68,8 @@
           With notation as in <xref ref="def-abstract-recip-candidate"/>, put <m>n = d_K(g)</m> and choose <m>\phi \in H</m> with <m>d_K(\phi) = 1</m>.
           Then for <m>x \in A_M</m>,
           <me>
-            \Norm_{M/K}(x) = \Norm_{L^{\unr}/K^{\unr}}(x x^\phi \cdots x^{\phi^{n-1}}).
-          </me>
+            \Norm_{M/K}(x) = \Norm_{L^{\unr}/K^{\unr}}(x x^\phi \cdots x^{\phi^{n-1}})
+          </me>.
         </p>
       </statement>
       <proof>
@@ -99,39 +99,39 @@
           By hypothesis, <m>x</m> is the class of some <m>u \in U_M</m> for which there exist <m>u_1,\dots,u_r \in U_M</m> and <m>\tau_1,\dots,\tau_r \in G</m>
           such that 
           <me>
-            u^{\phi=1} = \prod_{i=1}^r u_i^{\tau_i - 1}.
-          </me>
+            u^{\phi=1} = \prod_{i=1}^r u_i^{\tau_i - 1}
+          </me>.
           Put <m>n = [M:K]</m> and <m>\sigma = \phi^n</m>, and let <m>\Sigma</m> be the fixed field of <m>\sigma</m>, which contains <m>M</m>.
           Let <m>\Sigma_n</m> be the unramified extension of <m>\Sigma</m> of degree <m>n</m>; it is the fixed field of <m>\sigma^n</m>.
           Since <m>H^0_T(\Gal(\Sigma_n/\Sigma), U_{\Sigma_n})</m> vanishes by <xref ref="P_abstract_H0H1"/>, we can find <m>\tilde{u}, \tilde{u}_i \in U_{\Sigma_n}</m> such that
           <md>
             <mrow>
-              u = \Norm_{\Sigma_n/\Sigma}(\tilde{u}) = \tilde{u} \tilde{u}^{\sigma} \cdots \tilde{u}^{\sigma^{n-1}}
+              u &amp;= \Norm_{\Sigma_n/\Sigma}(\tilde{u}) = \tilde{u} \tilde{u}^{\sigma} \cdots \tilde{u}^{\sigma^{n-1}}
             </mrow>
             <mrow>
-              u_i= \Norm_{\Sigma_n/\Sigma}(\tilde{u}_i) = \tilde{u}_i \tilde{u}_i^{\sigma} \cdots \tilde{u}_i^{\sigma^{n-1}}.
+              u_i &amp;= \Norm_{\Sigma_n/\Sigma}(\tilde{u}_i) = \tilde{u}_i \tilde{u}_i^{\sigma} \cdots \tilde{u}_i^{\sigma^{n-1}}
             </mrow>
-          </md>
+          </md>.
           Since <m>H^{-1}_T(\Gal(\Sigma_n/\Sigma), U_{\Sigma_n})</m> vanishes by <xref ref="P_abstract_H0H1"/> again, we can find <m>\tilde{y} \in U_{\Sigma_n}</m> with
           <me>
-            \tilde{u}^{\phi-1} / \prod_{i=1}^r \tilde{u}_i^{\tau_i-1} = \tilde{y}^{\sigma-1},
-          </me>
+            \tilde{u}^{\phi-1} / \prod_{i=1}^r \tilde{u}_i^{\tau_i-1} = \tilde{y}^{\sigma-1}
+          </me>,
           and so (because <m>\sigma = \phi^n</m>)
           <me>
-            \tilde{u}^{\phi-1} = (\tilde{y} \tilde{y}^{\phi} \cdots \tilde{y}^{\phi^{n-1}})^{\phi-1} \prod_{i=1}^r \tilde{u}_i^{\tau_i-1}.
-          </me>
+            \tilde{u}^{\phi-1} = (\tilde{y} \tilde{y}^{\phi} \cdots \tilde{y}^{\phi^{n-1}})^{\phi-1} \prod_{i=1}^r \tilde{u}_i^{\tau_i-1}
+          </me>.
           Applying <m>\Norm_G</m> yields
           <me>
-            \Norm_G(\tilde{u})^{\phi-1} = \Norm_G(\tilde{y} \tilde{y}^{\phi} \cdots \tilde{y}^{\phi^{n-1}})^{\phi-1}.
-          </me>
+            \Norm_G(\tilde{u})^{\phi-1} = \Norm_G(\tilde{y} \tilde{y}^{\phi} \cdots \tilde{y}^{\phi^{n-1}})^{\phi-1}
+          </me>.
           That is, if we set 
           <me>
-            z = \Norm_G(\tilde{u}) / \Norm_G(\tilde{y} \tilde{y}^{\phi} \cdots \tilde{y}^{\phi^{n-1}}),
-          </me>
+            z = \Norm_G(\tilde{u}) / \Norm_G(\tilde{y} \tilde{y}^{\phi} \cdots \tilde{y}^{\phi^{n-1}})
+          </me>,
           we have <m>z^{\phi-1} = 1</m> and so <m>z \in U_K</m>. Put
           <me>
-            y = \tilde{y} \tilde{y}^\sigma \cdots \tilde{y}^{\sigma^n-1} = \Norm_{\Sigma_n/\Sigma}(\tilde{y}) \in U_\Sigma;
-          </me>
+            y = \tilde{y} \tilde{y}^\sigma \cdots \tilde{y}^{\sigma^n-1} = \Norm_{\Sigma_n/\Sigma}(\tilde{y}) \in U_\Sigma
+          </me>;
           using <xref ref="prop_norm"/> we obtain
           <md>
             <mrow>
@@ -141,9 +141,9 @@
               &amp; = \Norm_G(y y^{\phi} \cdots y^{\phi^{n-1}}) z^n
             </mrow>
             <mrow>
-              &amp; = \Norm_{\Sigma/K}(y) \Norm_{M/K}(u) \in \Norm_{M/K} U_M,
+              &amp; = \Norm_{\Sigma/K}(y) \Norm_{M/K}(u) \in \Norm_{M/K} U_M
             </mrow>
-          </md>
+          </md>,
           proving the claim.
           (Compare <xref ref="bib-Neukirch"/>, Lemma IV.5.4.)
         </p>
@@ -152,7 +152,7 @@
     <lemma xml:id="lem-abstract-recip-multiplicative">
       <statement>
         <p>
-          The map <m>r': H \to A_K/\Norm_{L/K} A_L</m> exhibited in <xref ref="def-abstract-recip-candidate"/> is a homomorphism of semigroups.
+          The map <m>r'\colon H \to A_K/\Norm_{L/K} A_L</m> exhibited in <xref ref="def-abstract-recip-candidate"/> is a homomorphism of semigroups.
         </p>
       </statement>
       <proof>
@@ -207,8 +207,8 @@
         With notation as in <xref ref="def-abstract-recip-candidate"/>,
         by combining <xref ref="def-abstract-recip-candidate"/>, <xref ref="rmk-abstract-recip-properties"/>, and
         <xref ref="lem-abstract-recip-multiplicative"/>, we obtain a semigroup homomorphism
-        <m>r': H \to A_K/\Norm_{L/K}A_L</m> which kills <m>\Gal(L^{\unr}/L)</m>
-        and thus induces a homomorphism <m>r = r_{L/K}: \Gal(L/K) \to A_K/\Norm_{L/K}A_L</m>.
+        <m>r'\colon H \to A_K/\Norm_{L/K}A_L</m> which kills <m>\Gal(L^{\unr}/L)</m>
+        and thus induces a homomorphism <m>r = r_{L/K}\colon \Gal(L/K) \to A_K/\Norm_{L/K}A_L</m>.
         We call <m>r_{L/K}</m> the <term>reciprocity map</term>.
       </p>
     </definition>

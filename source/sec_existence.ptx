@@ -38,8 +38,8 @@
           and all places above <m>p</m>,
           <m>I_K = K^* I_{K,S}</m> and the preimage of <m>U</m> in <m>I_{K,S}</m> contains
           <me>
-            W_S = \prod_{v \in S} (K_v^*)^p \times \prod_{v \notin S} \gotho_{K_v}^*.
-          </me>
+            W_S = \prod_{v \in S} (K_v^*)^p \times \prod_{v \notin S} \gotho_{K_v}^*
+          </me>.
         </p>
       </statement>
       <proof>
@@ -65,8 +65,8 @@
         <p>
           With notation as in <xref ref="lem-adelic-exponent-p-subgroup"/>, 
           <me>
-            W_S \cap K^* = (\gotho_{K,S}^*)^p.
-          </me>
+            W_S \cap K^* = (\gotho_{K,S}^*)^p
+          </me>.
         </p>
       </statement>
       <proof>
@@ -75,8 +75,8 @@
           for any <m>y \in W_S \cap K^*</m>, if we set <m>L = K(y^{1/p})</m>, then every place <m>v \in S</m> is split in <m>L</m> and 
           every place <m>v \notin S</m> is unramified in <m>L</m>, yielding
           <me>
-            \Norm_{L/K} I_{L,S} = I_{K,S}.
-          </me>
+            \Norm_{L/K} I_{L,S} = I_{K,S}
+          </me>.
           Since <m>I_K = K^* I_{K,S}</m>, this implies <m>\Norm_{L/K} C_L = C_K</m>.
           By the First Inequality (<xref ref="T_first_inequality"/>), this implies <m>L = K</m> and so <m>y \in (K^*)^p</m>.
         </p>
@@ -90,12 +90,12 @@
         <p>
           With notation as in <xref ref="lem-adelic-exponent-p-subgroup"/>, put <m>s = \#S</m> and
           <me>
-            L = K(u^{1/p}: u \in \gotho_{K,S}^*).
-          </me>
+            L = K(u^{1/p}: u \in \gotho_{K,S}^*)
+          </me>.
           Then <m>[L:K] = p^s</m> and
           <me>
-            \Norm_{L/K} C_L = K^* W_S/K^* \subset C_K.
-          </me>
+            \Norm_{L/K} C_L = K^* W_S/K^* \subset C_K
+          </me>.
         </p>
       </statement>
       <proof>
@@ -108,14 +108,14 @@
         <p>
           Consider now the exact sequence
           <me>
-            1 \to \frac{\gotho_{K,S}^*}{\gotho_{K,S}^* \cap W_S} \to \frac{I_{K,S}}{W_S} \to \frac{C_K}{K^* W_S/K^*} \to 1.
-          </me>
+            1 \to \frac{\gotho_{K,S}^*}{\gotho_{K,S}^* \cap W_S} \to \frac{I_{K,S}}{W_S} \to \frac{C_K}{K^* W_S/K^*} \to 1
+          </me>.
           By <xref ref="lem-local-pth-power"/>, the group on the left has order <m>[\gotho_{K,S}^*:(\gotho_{K,S}^*)^p] = p^s</m>.
           By <xref ref="L_local-pth-powers-index"/>, the group in the middle has order <m>p^{2s}</m>.
           Thus using the abstract global reciprocity isomorphism (<xref ref="T_abstract_adelic_reciprocity"/>), we obtain
           <me>
-            [C_K:K^* W_S/K^*] = p^s = [L:K] = [C_K:\Norm_{L/K} C_L],
-          </me>
+            [C_K:K^* W_S/K^*] = p^s = [L:K] = [C_K:\Norm_{L/K} C_L]
+          </me>,
           as desired.
         </p>
       </proof>
@@ -128,8 +128,8 @@
         <p>
           For <m>K</m> a number field, <m>v</m> a place of <m>K</m>, and <m>p</m> a prime such that <m>\zeta_p \in K</m>, 
           <me>
-            [K_v^* : (K_v^*)^p] = \frac{p^2}{|p|_v}.
-          </me>
+            [K_v^* : (K_v^*)^p] = \frac{p^2}{|p|_v}
+          </me>.
         </p>
       </statement>
       <proof>
@@ -140,8 +140,8 @@
               <p>
                 If <m>v</m> is a real place, then <m>p=2</m>, <m>p^2/|p|_v = 2</m>, and 
                 <me>
-                  K_v^*/(K_v^*)^p = \RR^*/(\RR^*)^2 = \RR^*/\RR^+ \cong \ZZ/2\ZZ.
-                </me>
+                  K_v^*/(K_v^*)^p = \RR^*/(\RR^*)^2 = \RR^*/\RR^+ \cong \ZZ/2\ZZ
+                </me>.
               </p>
             </li>
             <li>
@@ -222,13 +222,13 @@
           <m>V</m> contains <m>N = \Norm_{L/K} C_L</m> for some finite extension <m>L</m> of <m>K</m>.
           Then
           <me>
-            [N : (U \cap N)] = [UN : U] \leq [V:U].
-          </me>
+            [N : (U \cap N)] = [UN : U] \leq [V:U]
+          </me>.
           Let <m>W</m> be the subgroup of <m>C_L</m> consisting of those <m>x</m> whose norms lie in <m>U</m>.
           Then
           <me>
-            [C_L:W] \leq [N:U \cap N] \leq [V:U],
-          </me>
+            [C_L:W] \leq [N:U \cap N] \leq [V:U]
+          </me>,
           so by the induction hypothesis <m>W</m> contains <m>\Norm_{M/L} C_M</m> for some finite extension <m>M/L</m>.
           Thus <m>U</m> contains <m>\Norm_{M/K} C_M</m>, as desired.
         </p>
@@ -308,8 +308,8 @@
           Put <m>N = K((\gotho_{K,S}^*)^{1/p})</m>.
           By Kummer theory again
           <me>
-            \Gal(N/K) \cong \Hom(\gotho_{K,S}^*/(\gotho_{K,S}^*)^p, \ZZ/p\ZZ).
-          </me>
+            \Gal(N/K) \cong \Hom(\gotho_{K,S}^*/(\gotho_{K,S}^*)^p, \ZZ/p\ZZ)
+          </me>.
           By <xref ref="cor-S-units-theorem"/>, <m>\gotho_{K,S}^*/(\gotho_{K,S}^*)^p \cong (\ZZ/p\ZZ)^s</m>.
           Choose generators <m>g_1, \dots, g_{s-1}</m> of <m>\Gal(N/L)</m>;
           these correspond in <m>\Hom(\gotho_{K,S}^*/(\gotho_{K,S}^*)^p, \ZZ/p\ZZ)</m> to a set of homomorphisms whose common kernel is precisely <m>\Delta/(\gotho_{K,S}^*)^p</m>.
@@ -353,12 +353,12 @@
         <p>
           With notation as in <xref ref="lem-second-inequality-algebraic-setup"/>, write
           <me>
-            W_{S,T} = \prod_{v \in S} (K_v^*)^p \times \prod_{v \in T} K_v^* \times \prod_{v \notin S \cup T} \gotho_{K_v}^*.
-          </me>
+            W_{S,T} = \prod_{v \in S} (K_v^*)^p \times \prod_{v \in T} K_v^* \times \prod_{v \notin S \cup T} \gotho_{K_v}^*
+          </me>.
           Then
           <me>
-            W_{S,T} \cap K^* = (\gotho_{K,S \cup T}^*)^p.
-          </me>
+            W_{S,T} \cap K^* = (\gotho_{K,S \cup T}^*)^p
+          </me>.
         </p>
       </statement>
       <proof>
@@ -387,13 +387,13 @@
         <p>
           By <xref ref="lem-local-pth-power-T"/>, we have an exact sequence
           <me>
-            1 \to \frac{\gotho_{K,S\cup T}^*}{(\gotho_{K,S \cup T}^*)^p} \to \frac{I_{K,S \cup T}}{W_{S,T}} \to \frac{C_K}{K^* W_{S,T}/K^*} \to 1,
-          </me>
+            1 \to \frac{\gotho_{K,S\cup T}^*}{(\gotho_{K,S \cup T}^*)^p} \to \frac{I_{K,S \cup T}}{W_{S,T}} \to \frac{C_K}{K^* W_{S,T}/K^*} \to 1
+          </me>,
           with which we may compute as in <xref ref="lem-Kummer-norm-subgroup"/>: the left group has order <m>p^{\#(S \cup T)} = p^{2s-1}</m> by <xref ref="cor-S-units-theorem"/> 
           while the middle group has order <m>p^{2s}</m> by <xref ref="L_local-pth-powers-index"/>, so
           <me>
-            [C_K: K^* W_{S,T}/K^*] = p.
-          </me>
+            [C_K: K^* W_{S,T}/K^*] = p
+          </me>.
           Meanwhile, we can check by local reciprocity that <m>\Norm_{L/K} I_{L,S} = I_{K,S}</m> (compare the proof of <xref ref="lem-local-pth-power-T"/>).
           <ul>
             <li>
@@ -469,8 +469,8 @@
         <p>
           As in the proof of <xref ref="T_first_and_second_inequality"/>, we use an induction argument to reduce to proving that for <m>L/K</m> cyclic,
           <me>
-            H^0_T(\Gal(L/K), C_L) \leq [L:K].
-          </me>
+            H^0_T(\Gal(L/K), C_L) \leq [L:K]
+          </me>.
           In fact, the same induction (considering <m>H^2</m> in place of <m>H^0_T</m>) allows us to further reduce to the case where <m>[L:K] = p</m> is prime.
         </p>
         <p>

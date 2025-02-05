@@ -21,20 +21,20 @@
       We treat the class field axiom in two steps. The first step is to show that for <m>L/K</m> cyclic, the Herbrand quotient of <m>C_L</m> as a <m>\Gal(L/K)</m>-module is <m>[L:K]</m>.
       This implies the <term>First Inequality</term> (<xref ref="T_first_inequality"/>):
       <me>
-        \#H^0_T(\Gal(L/K), C_L) \geq [L:K].
-      </me>
+        \#H^0_T(\Gal(L/K), C_L) \geq [L:K]
+      </me>.
       The argument will be to replace the group <m>I_L</m> with the subgroup <m>I_{L,T}</m> for some suitable set of places <m>T</m> of <m>L</m>,
       and reduce to studying lattices in the manner of the proof of Dirichlet's units theorem <xref ref="cor-S-units-theorem"/>).
     </p>
     <p>
       The next step will to prove the <term>Second Inequality</term> (<xref ref="T_first_and_second_inequality"/>):
       <me>
-        \#H^0_T(\Gal(L/K), C_L) \leq [L:K],
-      </me>
+        \#H^0_T(\Gal(L/K), C_L) \leq [L:K]
+      </me>,
       which combined with the previous point yields
       <me>
-        \#H^0_T(\Gal(L/K), C_L) = [L:K], \qquad \#H^1_T(\Gal(L/K), C_L) = 1.
-      </me>
+        \#H^0_T(\Gal(L/K), C_L) = [L:K], \qquad \#H^1_T(\Gal(L/K), C_L) = 1
+      </me>.
       This step is trivial in local CFT by Theorem 90 (<xref ref="L_theorem_90"/>),
       but is pretty subtle in the global case.
       We will first describe a proof using analytic methods (properties of <m>L</m>-functions); there is also an algebraic approach, more on which below.

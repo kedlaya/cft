@@ -61,8 +61,8 @@
         Let <m>P^{\gothm}_K</m> be the subgroup of <m>J^{\gothm}_K</m> consisting of principal ideals admitting a generator <m>\alpha \in K^* \cap I^{\gothm}_L</m>; 
         define <m>P^{\gothm}_L</m> similarly. In this notation,
         <me>
-          \Cl^{\gothm}(K) = J^{\gothm}_K/P^{\gothm}_K, \qquad \Cl^{\gothm}(L) = J^{\gothm}_L / P^{\gothm}_L.
-        </me>
+          \Cl^{\gothm}(K) = J^{\gothm}_K/P^{\gothm}_K, \qquad \Cl^{\gothm}(L) = J^{\gothm}_L / P^{\gothm}_L
+        </me>.
       </p>
       <p>
         The homomorphism <m>I_K \to J_K</m> from <xref ref="def-ideles-to-ideals-hom"/> restricts to a homomorphism
@@ -103,8 +103,8 @@
     <p>
       With <xref ref="lem-norm-quotient-classical"/> in hand, we can reduce the Second Inequality to proving that
       <me>
-        [J^{\gothm}_K : P^{\gothm}_{K} \Norm_{L/K} J^{\gothm}_L] \leq [L:K].
-      </me>
+        [J^{\gothm}_K : P^{\gothm}_{K} \Norm_{L/K} J^{\gothm}_L] \leq [L:K]
+      </me>.
     </p>
   </subsection>
   <subsection>
@@ -173,23 +173,23 @@
           </me>.
           By <xref ref="T_meromorphic_continuation"/>,
           <me>
-            \log L(s, 1) \sim \log \zeta_K(s) \sim \log \frac{1}{s-1} \qquad s \searrow 1,
-          </me>
+            \log L(s, 1) \sim \log \zeta_K(s) \sim \log \frac{1}{s-1} \qquad s \searrow 1
+          </me>,
           while if <m>\chi</m> is not the trivial character, by <xref ref="T_analytic_continuation"/>,
           <m>L(s, \chi)</m> is holomorphic at <m>s=1</m>.
           If <m>L(s, \chi) = (s-1)^{m(\chi)} g(s)</m> where <m>g</m> is holomorphic and nonvanishing at <m>s=1</m>,
           then <m>m(\chi) \geq 0</m>, and
           <me>
-            \log L(s, \chi) \sim m(\chi) \log(s-1) = - m(\chi) \log \frac{1}{s-1}.
-          </me>
+            \log L(s, \chi) \sim m(\chi) \log(s-1) = - m(\chi) \log \frac{1}{s-1}
+          </me>.
           By discrete Fourier analysis (or equivalently orthogonality of characters),
           <me>
             \sum_{\chi: J^{\gothm}_{K}/H \to \CC^*} \log L(s, \chi) \sim [J^{\gothm}_K:H] \sum_{\gothp \in H} \frac{1}{\Norm(\gothp)^{-s}}.
-          </me>
+          </me>.
           We conclude that the set of primes in <m>H</m> has Dirichlet density
           <me>
-            \frac{1 - \sum_{\chi \neq 1} m(\chi)}{[J^{\gothm}_K:H]};
-          </me>
+            \frac{1 - \sum_{\chi \neq 1} m(\chi)}{[J^{\gothm}_K:H]}
+          </me>;
           this is <m>1/[J^{\gothm}_{K}:H]</m> if the <m>m(\chi)</m> are all zero and 0 otherwise.
         </p>
       </proof>
@@ -216,8 +216,8 @@
         <p>
           With notation as in <xref ref="def-second-inequality-analytic"/>, we have
           <me>
-            [J^{\gothm}_K : P^{\gothm}_K \Norm_{L/K} J^{\gothm}_{L}] \leq [L:K].
-          </me>
+            [J^{\gothm}_K : P^{\gothm}_K \Norm_{L/K} J^{\gothm}_{L}] \leq [L:K]
+          </me>.
         </p>
       </statement>
       <proof>
@@ -236,8 +236,8 @@
         <p>
           Let <m>L/K</m> be a Galois extension of number fields. Then
           <me>
-            \# H^0_T(\Gal(L/K), C_L) \leq [L:K].
-          </me>
+            \# H^0_T(\Gal(L/K), C_L) \leq [L:K]
+          </me>.
         </p>
       </statement>
       <proof>
@@ -297,7 +297,7 @@
           For <m>L/K</m> general, put <m>G = \Gal(L/K)</m>, let <m>p</m> be a prime, and let <m>G_p</m> be a Sylow <m>p</m>-subgroup of <m>G</m>.
           Then for any <m>i&gt;0</m>, <m>H^i(G,C_L)</m> is killed by the order of <m>G</m> and
           <me>
-            \Res: H^i(G, C_L) \to H^i(G_p, C_L)
+            \Res\colon H^i(G, C_L) \to H^i(G_p, C_L)
           </me>
           is injective on <m>p</m>-primary components (both by the relationship between restriction and corestriction, from <xref ref="exa-extended-functoriality"/>).
           Since <m>G_p</m> is solvable, we may deduce both assertions from the solvable case.

@@ -31,9 +31,9 @@
       <title>Adelic reciprocity law</title>
       <statement>
         <p>
-          There is a canonical map <m>r_K: C_K \to \Gal(K^{\ab}/K)</m> which induces,
+          There is a canonical map <m>r_K\colon C_K \to \Gal(K^{\ab}/K)</m> which induces,
           for each Galois extension <m>L/K</m> of number fields,
-          an isomorphism <m>r_{L/K}: C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}</m>.
+          an isomorphism <m>r_{L/K}\colon C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}</m>.
           Moreover, <m>\Norm_{L/K} C_L</m> is an open subgroup of <m>C_K</m>.
         </p>
       </statement>
@@ -94,7 +94,7 @@
       the set of <m>g \in G</m> such that <m>v^g = v</m>.
       Then for any place <m>w</m> above <m>v</m>,
       <m>G_v \cong \Gal(L_w/K_v)</m>.
-      We will define a map <m>r_{K, v}: K_v^* \to G_v \subseteq G</m> as follows.
+      We will define a map <m>r_{K, v}\colon K_v^* \to G_v \subseteq G</m> as follows.
       <ul>
         <li>
           <p>
@@ -116,8 +116,8 @@
       <p>
         We obtain a well-defined product map
         <me>
-        \tilde{r}_K: I_K \to G, \qquad (\alpha_v) \mapsto \prod_v r_{K,v}(\alpha_v):
-        </me>
+        \tilde{r}_K: I_K \to G, \qquad (\alpha_v) \mapsto \prod_v r_{K,v}(\alpha_v)
+        </me>:
         for <m>(\alpha_v) \in I_K</m>,
         <m>\alpha_v</m> is a unit for almost all <m>v</m> and <m>L_w/K_v</m> is unramified for almost all <m>v</m> (we may ignore infinite places here).
         For the (almost all) <m>v</m> in both categories,
@@ -126,7 +126,7 @@
       <p>
         Since each of the maps <m>r_{K,v}</m> is continuous,
         so is the map <m>\tilde{r}_K</m>.
-        That means the kernel of <m>\tilde{r}_K: I_K \to \Gal(L/K)</m> is an open subgroup of <m>I_K</m>.
+        That means the kernel of <m>\tilde{r}_K\colon I_K \to \Gal(L/K)</m> is an open subgroup of <m>I_K</m>.
       </p>
     </definition>
     <p>

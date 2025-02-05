@@ -18,7 +18,7 @@
     </p>
     <definition xml:id="def-abstract-units">
       <p>
-        Let <m>k</m> be a field, let <m>\kbar</m> be an algebraic extension of <m>k</m>, and put <m>G = \Gal(\kbar/k)</m>.
+        Let <m>k</m> be a field, let <m>\kbar</m> be an algebraic extension of <m>k</m>, and put <m>G := \Gal(\kbar/k)</m>.
         Let <m>A</m> be a <m>G</m>-module;
         for any subextension <m>K</m> of <m>\kbar/k</m>, define <m>A_K = A^{\Gal(\kbar/K)}</m>.
         (In the example where <m>k</m> is a local field, we will take <m>\kbar</m> to be the separable closure and <m>A = \kbar^*</m>.)
@@ -36,7 +36,7 @@
     <definition>
       <p>
       For <m>L/K</m> a finite extension of subextensions of <m>\kbar/k</m>, 
-      define the <term>norm map</term> <m>\Norm_{L/K}: A_L \to A_K</m> by <m>\Norm_{L/K}(a) = \prod_g a^g</m>,
+      define the <term>norm map</term> <m>\Norm_{L/K}\colon A_L \to A_K</m> by <m>\Norm_{L/K}(a) = \prod_g a^g</m>,
       where <m>g</m> runs over a set of right coset representatives of <m>G_L</m> in <m>G_K</m>. 
       In the Galois case this coincides with the norm map used in the definition
       of the Tate cohomology groups, except that we are using multiplicative notation rather than additive notation.
@@ -66,7 +66,7 @@
       Under the class field axiom and the other conditions of abstract class field theory, for each finite Galois extension <m>L/K</m> of finite subextensions of <m>\kbar/k</m>,
       we will define a canonical isomorphism 
       <me>
-        r_{L/K}: \Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L
+        r_{L/K}\colon \Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L
       </me>
       (<xref ref="T_abstract_reciprocity_law"/>), which will moreover satisfy some compatibilities as we vary the field extension
       (<xref ref="P_abstract_functorialities2"/>, <xref ref="P_abstract_functorialities2"/>).
@@ -83,7 +83,7 @@
     <definition xml:id="def-abstract-frobenius">
       <p>
         With notation as in <xref ref="def-abstract-units"/>,
-        let <m>d: G \to \widehat{\ZZ}</m> be a continuous surjective homomorphism.
+        let <m>d\colon G \to \widehat{\ZZ}</m> be a continuous surjective homomorphism.
         The example we have in mind is when <m>k</m> is a local field and <m>d</m> is the surjection of <m>G</m> onto <m>\Gal(k^{\unr}/k) \cong \widehat{\ZZ}</m>.
       </p>
       <p>
@@ -120,9 +120,9 @@
       <p>
         Put
         <me>
-          d_K = \frac{1}{[\widehat{\ZZ}: d(G_K)]}d;
-        </me>
-        then <m>d_K: G_K \to \widehat{\ZZ}</m> is surjective and induces an isomorphism <m>\Gal(K^{\unr}/K) \cong \widehat{\ZZ}</m>.
+          d_K = \frac{1}{[\widehat{\ZZ}: d(G_K)]}d
+        </me>;
+        then <m>d_K\colon G_K \to \widehat{\ZZ}</m> is surjective and induces an isomorphism <m>\Gal(K^{\unr}/K) \cong \widehat{\ZZ}</m>.
       </p>
       <p>
         Given a finite extension <m>L/K</m> of subextensions of <m>\kbar/k</m>,
@@ -136,18 +136,18 @@
         </me>
         By design we have multiplicativity:
         <me>
-          e_{M/K} = e_{M/L}e_{L/K}, \qquad f_{M/K} = f_{M/L}f_{L/K}.
-        </me>
+          e_{M/K} = e_{M/L}e_{L/K}, \qquad f_{M/K} = f_{M/L}f_{L/K}
+        </me>.
         Moreover, if <m>L/K</m> is Galois, we have an exact sequence
         <me>
-          1 \to I_K/I_L \to \Gal(L/K) \to d(G_K)/d(G_L) \to 1,
-        </me>
+          1 \to I_K/I_L \to \Gal(L/K) \to d(G_K)/d(G_L) \to 1
+        </me>,
         so the
         <q>fundamental identity</q>
         holds:
         <me>
-          e_{L/K}f_{L/K} = [L:K].
-        </me>
+          e_{L/K}f_{L/K} = [L:K]
+        </me>.
         The fundamental identity also holds if <m>L/K</m> is not Galois:
         let <m>M</m> be a Galois extension of <m>K</m> containing <m>L</m>,
         then apply the fundamental identity to <m>M/L</m> and <m>M/K</m> and use multiplicativity.
@@ -181,10 +181,10 @@
       </p>
       <p>
         In this case, for each finite subextension <m>K</m> of <m>\kbar/k</m>, we obtain a henselian valuation
-        <m>v_K: A_K \to Z</m> by setting
+        <m>v_K\colon A_K \to Z</m> by setting
         <me>
-          v_K = \frac{1}{f_{K/k}} \Norm_{K/k}.
-        </me>
+          v_K = \frac{1}{f_{K/k}} \Norm_{K/k}
+        </me>.
         Then <m>v_{K}(a) = v_{K^g}(a^g)</m> for any <m>a \in A</m> and <m>g \in G</m>,
         and for <m>L/K</m> a finite extension of finite subextensions of <m>\kbar/k</m>,
         <m>v_K(\Norm_{L/K}(a)) = f_{L/K} v_L(a)</m> for any <m>a \in A_L</m>.
@@ -206,12 +206,12 @@
           </li>
           <li>
             <p>
-              <m>d: \Gal(\kbar/k) \to \widehat{\ZZ}</m> the map coming from the identification of <m>\Gal(k^{\unr}/k)</m> with <m>\widehat{\ZZ}</m>;
+              <m>d\colon \Gal(\kbar/k) \to \widehat{\ZZ}</m> the map coming from the identification of <m>\Gal(k^{\unr}/k)</m> with <m>\widehat{\ZZ}</m>;
             </p>
           </li>
           <li>
             <p>
-              <m>v: A_k \to \widehat{\ZZ}</m> is the composition of the valuation <m>k^* \to \ZZ</m> with the inclusion <m>\ZZ \to \widehat{\ZZ}</m>.
+              <m>v\colon A_k \to \widehat{\ZZ}</m> is the composition of the valuation <m>k^* \to \ZZ</m> with the inclusion <m>\ZZ \to \widehat{\ZZ}</m>.
             </p>
           </li>
         </ul>
@@ -291,8 +291,8 @@
         <p>
           Consider the short exact sequence 
           <me>
-            0 \to U_L \to A_L \to A_L/U_L \to 0.
-          </me>
+            0 \to U_L \to A_L \to A_L/U_L \to 0
+          </me>.
           In this sequence, <m>A_L/U_L</m> is isomorphic to
           <m>Z = \im(v)</m> with trivial group action,
           so <m>H^0_T(Z) = Z/\Norm(Z)</m> is cyclic of order <m>[L:K]</m> generated by <m>\pi_L</m> and
@@ -342,7 +342,7 @@
               </li>
               <li>
                 <p>
-                  <m>d: \Gal(\overline{k}/k) \to \widehat{\ZZ}</m> is the usual isomorphism;
+                  <m>d\colon \Gal(\overline{k}/k) \to \widehat{\ZZ}</m> is the usual isomorphism;
                 </p>
               </li>
               <li>
@@ -352,7 +352,7 @@
               </li>
               <li>
                 <p>
-                  <m>v: A_k \to \widehat{\ZZ}</m> is the inclusion of <m>\ZZ</m> into its profinite completion.
+                  <m>v\colon A_k \to \widehat{\ZZ}</m> is the inclusion of <m>\ZZ</m> into its profinite completion.
                 </p>
               </li>
             </ul>

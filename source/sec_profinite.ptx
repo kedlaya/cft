@@ -354,9 +354,10 @@
         </statement>
         <hint>
           <p>
-            Let <m>K^{\sep}</m> be a separable closure of <m>K</m> containing <m>L</m>,
-            and consider the short exact sequence <m>0 \to \FF_p \to K^{\sep} \to K^{\sep} \to 0</m> in which the map
-            <m>K^{\sep} \to K^{\sep}</m> is given by <m>x \mapsto x^p - x</m>.
+            Let <m>K^{\sep}</m> be a separable closure of <m>K</m> containing <m>L</m>.
+            Then construct a short exact sequence <m>0 \to \FF_p \to K^{\sep} \to K^{\sep} \to 0</m> of <m>\Gal(K^{\sep}/K)</m>-modules 
+            in which the map <m>K^{\sep} \to K^{\sep}</m> is given by <m>x \mapsto x^p - x</m>,
+            and pass to the associated long exact sequence.
           </p>
         </hint>
       </exercise>

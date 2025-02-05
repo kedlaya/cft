@@ -24,12 +24,12 @@
       <p>
         Let <m>L/K</m> be a Galois extension of number fields. Let
         <me>
-          r_{L/K}: I_K \to \Gal(L/K)^{\ab}
+          r_{L/K}\colon I_K \to \Gal(L/K)^{\ab}
         </me> 
         be the product of the local reciprocity maps <xref ref="def-adelic-reciprocity-candidate"/>.
         Meanwhile, let
         <me>
-          r'_{L/K}: I_K \to \Gal(L/K)^{\ab}
+          r'_{L/K}\colon I_K \to \Gal(L/K)^{\ab}
         </me>
         be the map obtained by inverting the isomorphism <m>\Gal(L/K)^{\ab} \to C_K/\Norm_{L/K} C_L</m> given by <xref ref="T_abstract_adelic_reciprocity"/>.
       </p>
@@ -48,8 +48,8 @@
       <proof>
         <p>
           In the setting of abstract class field theory, <m>L/K</m> is viewed as an <q>unramified</q> extension. Consequently,
-          the reciprocity map <m>r'_{L/K}: C_K/\Norm_{L/K} C_L \to \Gal(L/K)</m> is described completely by <xref ref="lem-abstract-recip-case1"/>:
-          it is given by composing the valuation map <m>v_K: C_K \to \widehat{\ZZ}</m> with the inverse of the map <m>d_K: \Gal(K^{\smcy}/K) \cong \widehat{\ZZ}</m>,
+          the reciprocity map <m>r'_{L/K}\colon C_K/\Norm_{L/K} C_L \to \Gal(L/K)</m> is described completely by <xref ref="lem-abstract-recip-case1"/>:
+          it is given by composing the valuation map <m>v_K\colon C_K \to \widehat{\ZZ}</m> with the inverse of the map <m>d_K\colon \Gal(K^{\smcy}/K) \cong \widehat{\ZZ}</m>,
           then projecting from <m>\Gal(K^{\smcy}/K)</m> to <m>\Gal(L/K)</m>. (Note that as per <xref ref="rmk-remove-identification"/>, this does not depend on the 
           artificial choice of the isomorphism <m>d_K</m>, because <m>v_K</m> is defined using the same choice.)
           Consequently, in this case we end up with the usual Artin map for a cyclotomic extension (<xref ref="D_cyclotomic_reciprocity"/>), which is compatible with local reciprocity
@@ -247,8 +247,8 @@
         <p>
           Now put
           <me>
-            W = N \times U \times \prod_{w \in S} K_w^* \times \prod_{w \notin S \cup \{u,v\}} \gotho_K^*, \qquad V = K^* W/K^*.
-          </me>
+            W = N \times U \times \prod_{w \in S} K_w^* \times \prod_{w \notin S \cup \{u,v\}} \gotho_K^*, \qquad V = K^* W/K^*
+          </me>.
           If <m>\alpha_v \in K_v^*</m> maps into <m>U</m>,
           then there exists <m>\beta \in K^*</m> such that <m>\alpha_v \beta \in W</m>.
           On one hand, this implies that <m>\alpha_v \beta_v \in N</m>.

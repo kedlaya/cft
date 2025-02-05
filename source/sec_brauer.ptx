@@ -249,7 +249,7 @@
       <statement>
         <p>
           Let <m>K</m> be a number field and put <m>L = K(\zeta_n)</m>.
-          Then <m>r_{L/K}: I_K \to \Gal(L/K)</m> maps all principal id&#xe8;les to the identity.
+          Then <m>r_{L/K}\colon I_K \to \Gal(L/K)</m> maps all principal id&#xe8;les to the identity.
         </p>
       </statement>
       <proof>
