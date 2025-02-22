@@ -96,7 +96,7 @@
   <subsection>
     <title>An abstract henselian valuation</title>
     <p>
-      To complete the setup of abstract class field theory, we need an <term>abstract henselian valuation</term> <m>v: C_{\QQ} \to \widehat{\ZZ}</m> with respect to <m>d</m>.
+      To complete the setup of abstract class field theory, we need an <term>abstract henselian valuation</term> <m>v\colon C_{\QQ} \to \widehat{\ZZ}</m> with respect to <m>d</m>.
       Recall from <xref ref="def-abstract-henselian-valuation"/> that this means:
       <ol>
         <li>
@@ -181,7 +181,7 @@
         <p>
           For every Galois extension <m>L/K</m> of number fields, we obtain an isomorphism
           <me>
-            r'_{L/K}: C_K/\Norm_{L/K} C_L \stackrel{\sim}{\to} \Gal(L/K)^{\ab}
+            r'_{L/K}\colon C_K/\Norm_{L/K} C_L \stackrel{\sim}{\to} \Gal(L/K)^{\ab}
           </me>.
         </p>
       </statement>
@@ -190,8 +190,8 @@
           The hypotheses of abstract class field theory are satisfied by taking 
           <m>k = \QQ</m> <m>\kbar = \overline{\QQ}</m>; <m>A = \bigcup_K C_K</m> as in <xref ref="def-global-abstract-units"/> (using <xref ref="T_first_inequality"/> and
           <xref ref="T_first_and_second_inequality"/> to verify the class field axiom);
-          <m>d: \Gal(\overline{\QQ}/\QQ) \to \widehat{\ZZ}</m> as in <xref ref="def-global-abstract-ramification"/>;
-          and <m>v: C_{\QQ} \to \widehat{\ZZ}</m> as in <xref ref="def-global-abstract-valuation"/> (using <xref ref="lem-global-abstract-valuation"/>).
+          <m>d\colon \Gal(\overline{\QQ}/\QQ) \to \widehat{\ZZ}</m> as in <xref ref="def-global-abstract-ramification"/>;
+          and <m>v\colon C_{\QQ} \to \widehat{\ZZ}</m> as in <xref ref="def-global-abstract-valuation"/> (using <xref ref="lem-global-abstract-valuation"/>).
           We may thus apply <xref ref="T_abstract_reciprocity_law"/> to conclude.
         </p>
       </proof>

@@ -188,7 +188,7 @@
         Again, let <m>M</m> be a <m>G</m>-module and <m>M'</m> a <m>G'</m>-module,
         and consider a homomorphism
         <m>\alpha\colon G' \to G</m> of groups and a homomorphism
-        <m>\beta\colon M \to M'</m> of abelian which are compatible in the sense of <xref ref="D-extended-functoriality"/>.
+        <m>\beta\colon M \to M'</m> of abelian groups which are compatible in the sense of <xref ref="D-extended-functoriality"/>.
         We would like to obtain canonical homomorphisms
         <m>H_i(G, M) \to H_i(G', M')</m>,
         but for this we need to add an additional condition to ensure that

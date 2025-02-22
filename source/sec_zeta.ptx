@@ -164,7 +164,7 @@
           Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>.
           Then for any <m>g \in G</m>,
           there exist infinitely many primes <m>\gothp</m> of <m>K</m> such that there is a prime <m>\gothq</m> of <m>L</m> above <m>\gothp</m> with Frobenius <m>g</m>.
-          In fact, the Dirichlet density of such primes <m>\gothp</m> is the order of the conjugacy class of <m>G</m> divided by <m>\#G</m>.
+          In fact, the Dirichlet density of such primes <m>\gothp</m> is the order of the conjugacy class of <m>g</m> divided by <m>\#G</m>.
         </p>
       </statement>
       <proof>
@@ -347,8 +347,7 @@
       <exercise>
         <statement>
           <p>
-            Let <m>K</m> be a number field and let <m>\gothm</m> be a formal product of places of <m>K</m>.
-            Use <xref ref="cor-some-primes-split"/> to show that the ray class field of <m>\gothm</m> is unique.
+            Use <xref ref="cor-some-primes-split"/> to give an alternate solution to <xref ref="exer-unique-ray-class-field"/>.
           </p>
         </statement>
         <hint>

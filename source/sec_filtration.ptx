@@ -166,12 +166,13 @@
       <statement>
         <p>
           Let <m>L/K</m> be a finite Galois extension of finite extensions of <m>\QQ_p</m> with Galois group <m>G</m>.
-          Let <m>H</m> be a normal subgroup of <m>G</m> with fixed field <m>K'</m>.
+          Let <m>H</m> be a normal subgroup of <m>G</m>.
           For all <m>i \geq -1</m>, <m>(G/H)^i = G^i H/H</m>.
         </p>
       </statement>
       <proof>
         <p>
+          Let <m>K'</m> be the fixed field of <m>H</m>.
           Using <xref ref="lem-Herbrand-transition"/> and <xref ref="lem-numbering-functions-composition"/>, we see that
           <md>
             <mrow>(G/H)^i \amp = (G/H)_{\psi_{K'/K}(i)}</mrow>
@@ -232,7 +233,7 @@
       <statement>
         <p>
           Let <m>L/K</m> be an abelian extension of finite extensions of <m>\QQ_p</m> with Galois group <m>G</m>.
-          Let <m>r_{L/K}: K^* / \Norm_{L/K} L^* \to G</m> be the local reciprocity isomorphism.
+          Let <m>r_{L/K}\colon K^* / \Norm_{L/K} L^* \to G</m> be the local reciprocity isomorphism.
           Then for each positive integer <m>i</m>, the inverse image of <m>G^i</m> in <m>\gotho_K^*</m> equals <m>U_K^i</m>.
         </p>
       </statement>

@@ -34,16 +34,16 @@
       </p>
     </definition>
     <remark xml:id="rmk-idele-topology"> 
-    <title>Warning</title>
-    <p>
-      While the embedding of the id&#xe8;le group <m>I_K</m> into the ad&#xe8;le group <m>\AA_K</m> is continuous,
-      the restricted product topology on <m>I_K</m> does not coincide with the subspace topology for the embedding!
-      For example, each set <m>I_{K,S}</m> is open in <m>I_K</m> but is not the intersection with an open subset of <m>\AA_K</m>.
-    </p>
-    <p>
-      This is a more serious version of the same issue that came up in <xref ref="exer-subspace-top"/>,
-      and the same fix applies: namely, identify <m>I_K</m> with <m>\GL_1(\AA_K)</m> and topologize it accordingly (<xref ref="exer-subspace-top-ideles"/>).
-    </p>
+      <title>Warning</title>
+      <p>
+        While the embedding of the id&#xe8;le group <m>I_K</m> into the ad&#xe8;le group <m>\AA_K</m> is continuous,
+        the restricted product topology on <m>I_K</m> does not coincide with the subspace topology for the embedding!
+        For example, each set <m>I_{K,S}</m> is open in <m>I_K</m> but is not the intersection with an open subset of <m>\AA_K</m>.
+      </p>
+      <p>
+        This is a more serious version of the same issue that came up in <xref ref="exer-subspace-top"/>,
+        and the same fix applies: namely, identify <m>I_K</m> with <m>\GL_1(\AA_K)</m> and topologize it accordingly (<xref ref="exer-subspace-top-ideles"/>).
+      </p>
     </remark>
   </subsection>
   <subsection>
@@ -53,12 +53,12 @@
         For each <m>\alpha \in K^*</m>, the principal ad&#xe8;le <m>\alpha \in \AA_K</m> is an id&#xe8;le,
         so we have an embedding <m>K^* \hookrightarrow I_K</m>. We refer to elements of the image of this embedding as <term>principal id&#xe8;les</term>.
         Define the <term>id&#xe8;le class group</term> of <m>K</m> as the quotient
-        <m>C_K = I_K/K^*</m> of the id&#xe8;les by the principal id&#xe8;les.
+        <m>C_K := I_K/K^*</m> of the id&#xe8;les by the principal id&#xe8;les.
       </p>
     </definition>
-      <p>
-        The terminology <term>id&#xe8;le class group</term> is justified on account of the following construction.
-      </p>
+    <p>
+      The terminology <term>id&#xe8;le class group</term> is justified on account of the following construction.
+    </p>
     <definition xml:id="def-ideles-to-ideals-hom">
       <p>
         There is a homomorphism from <m>I_K</m> to the group of fractional ideals of <m>K</m>:
@@ -109,12 +109,12 @@
   <subsection>
     <title>Compactness and consequences</title>
     <definition xml:id="def-idele-class-norm">
-    <p>
-      By the product formula (<xref ref="prop-product-formula"/>), we get a well-defined norm map <m>|\cdot|\colon C_K \to \RR^*_+</m>.
-      Let <m>C_K^0</m> be the kernel of the norm map;
-      then <m>C_K^0</m> also surjects onto <m>\Cl(K)</m>. (The surjection onto <m>\Cl(K)</m> ignores the infinite places,
-      so you can adjust there to force norm 1.)
-    </p>
+      <p>
+        By the product formula (<xref ref="prop-product-formula"/>), we get a well-defined norm map <m>|\cdot|\colon C_K \to \RR^*_+</m>.
+        Let <m>C_K^0</m> be the kernel of the norm map;
+        then <m>C_K^0</m> also surjects onto <m>\Cl(K)</m>. (The surjection onto <m>\Cl(K)</m> ignores the infinite places,
+        so you can adjust there to force norm <m>1</m>.)
+      </p>
     </definition>
     <proposition xml:id="P_idele_group_compact">
       <statement>
@@ -124,7 +124,7 @@
       </statement>
       <proof>
         <p>
-          We first show (see <xref ref="exer-idele-group-compact"/>) that there exists a real number <m>c>1</m> 
+          We first show (see <xref ref="exer-idele-group-compact"/>) that there exists a real number <m>c \gt 1</m> 
           with the following property: every id&#xe8;le of norm <m>1</m> is (multiplicatively) congruent modulo <m>K^*</m> to an id&#xe8;le whose components all have norms in <m>[c^{-1}, c]</m>.
         </p>
         <p>
@@ -162,8 +162,8 @@
         <p>
           There exists a finite set <m>S</m> of places of <m>K</m> such that
           <me>
-           I_K = I_{K,S} K^*.
-          </me>
+            I_K = I_{K,S} K^*
+          </me>.
           In particular, for any such <m>S</m>, <m>C_K</m> is a quotient of <m>I_{K,S}</m>.
         </p>
       </statement>
@@ -177,19 +177,19 @@
     <corollary xml:id="cor-S-units-theorem">
       <title>Dirichlet's units theorem</title>
       <statement>
-          <p>
-            The group of units of <m>\gotho_K</m> fits into an exact sequence
-            <me>
-              0 \to \mu_K \to \gotho_K^* \to \ZZ^{r+s-1} \to 0
-            </me>
-            in which <m>\mu_K</m> is the (finite cyclic) group of roots of unity of <m>K</m> and
-            <m>r</m> and <m>s</m> are the number of real and complex places, respectively.
-            More generally, for any finite set <m>S</m> of places containing all infinite places, the group of units of the ring 
-            <m>\gotho_{K,S}</m> of <m>S</m>-integers fits into an exact sequence
-            <me>
-              0 \to \mu_K \to \gotho_{K,S}^* \to \ZZ^{\#S-1} \to 0.
-            </me>
-          </p>
+        <p>
+          The group of units of <m>\gotho_K</m> fits into an exact sequence
+          <me>
+            0 \to \mu_K \to \gotho_K^* \to \ZZ^{r+s-1} \to 0
+          </me>
+          in which <m>\mu_K</m> is the (finite cyclic) group of roots of unity of <m>K</m> and
+          <m>r</m> and <m>s</m> are the number of real and complex places, respectively.
+          More generally, for any finite set <m>S</m> of places containing all infinite places, the group of units of the ring 
+          <m>\gotho_{K,S}</m> of <m>S</m>-integers fits into an exact sequence
+          <me>
+            0 \to \mu_K \to \gotho_{K,S}^* \to \ZZ^{\#S-1} \to 0
+          </me>.
+        </p>
       </statement>
       <proof>
         <p>
@@ -216,7 +216,6 @@
           Using this isomorphism, we obtain a continuous homomorphism <m>C_K^0 \to H/W</m> whose image generates <m>H/W</m>.
           Since <m>C_K^0</m> is compact (<xref ref="P_idele_group_compact"/>), so is its image; 
           this is a contradiction unless <m>H/W</m> is the zero vector space.
-          Thus 
         </p>
       </proof>
     </corollary>
@@ -227,8 +226,7 @@
       </p>
       <p>
         This of course does not say anything in the case <m>K=\QQ</m>, and in this case one can give a more direct description of <m>C_K</m>.
-        Namely, given an arbitrary id&#xe8;le in <m>I_\QQ</m>,
-        there is a unique positive rational with the same norms at the finite places.
+        Namely, given an arbitrary id&#xe8;le in <m>I_\QQ</m>, there is a unique positive rational with the same norms at the finite places.
         Thus
         <me>
           C_\QQ \cong \RR^+ \times \prod_p \ZZ_p^*
@@ -245,33 +243,39 @@
   <subsection>
     <title>Aside: beyond class field theory</title>
     <remark xml:id="rmk-beyond-CFT">
-    <p>
-      Via the identification <m>I_K \cong \GL_1(\AA_K)</m> from <xref ref="rmk-idele-topology"/>, 
-      class field theory can be viewed as a correspondence between one-dimensional representations of
-      <m>\Gal(\overline{K}/K)</m> and certain representations of <m>\GL_1(\AA_K)</m>.
-      This is the form in which class field theory generalizes to the nonabelian case:
-      the Langlands program predicts a correspondence between <m>n</m>-dimensional representations of
-      <m>\Gal(\overline{K}/K)</m> and certain representations of <m>\GL_n(\AA_K)</m>.
-      See <xref ref="sec_parting"/> for further discussion.
-    </p>
-  </remark>
+      <p>
+        Via the identification <m>I_K \cong \GL_1(\AA_K)</m> from <xref ref="rmk-idele-topology"/>, 
+        class field theory can be viewed as a correspondence between one-dimensional representations of
+        <m>\Gal(\overline{K}/K)</m> and certain representations of <m>\GL_1(\AA_K)</m>.
+        This is the form in which class field theory generalizes to the nonabelian case:
+        the Langlands program predicts a correspondence between <m>n</m>-dimensional representations of
+        <m>\Gal(\overline{K}/K)</m> and certain representations of <m>\GL_n(\AA_K)</m>.
+        See <xref ref="sec_parting"/> for further discussion.
+      </p>
+    </remark>
   </subsection>
   <exercises>
     <title>Exercises</title>
       <exercise xml:id="exer-subspace-top-ideles">
         <statement>
-          Show that the restricted direct product topology on <m>I_K</m> is the subspace topology for the embedding into
-          <m>\AA_K \times \AA_K</m> given by the map <m>x \mapsto (x,x^{-1})</m>, and moreover this embedding has closed image.
+          <p>
+            Show that the restricted direct product topology on <m>I_K</m> is the subspace topology for the embedding into
+            <m>\AA_K \times \AA_K</m> given by the map <m>x \mapsto (x,x^{-1})</m>, and moreover this embedding has closed image.
+          </p>
         </statement>
       </exercise>
       <exercise xml:id="exer-idele-group-compact">
         <statement>
-          Complete the proof of <xref ref="P_idele_group_compact"/> by establishing the existence of the constant <m>c</m>.
-          This can be done using the finiteness of the class group (<xref ref="cor-class-group-finite"/>) or the units theorem (<xref ref="cor-S-units-theorem"/>);
-          alternatively, with more work one can give a direct proof via which both of the aforementioned results become corollaries of <xref ref="P_idele_group_compact"/>.
+          <p>
+            Complete the proof of <xref ref="P_idele_group_compact"/> by establishing the existence of the constant <m>c</m>.
+            This can be done using the finiteness of the class group (<xref ref="cor-class-group-finite"/>) or the units theorem (<xref ref="cor-S-units-theorem"/>);
+            alternatively, with more work one can give a direct proof via which both of the aforementioned results become corollaries of <xref ref="P_idele_group_compact"/>.
+          </p>
         </statement>
         <hint>
-          For the direct approach, see for example <xref ref="bib-Lang"/>, Section V.1, Theorem 0.
+          <p>
+            For the direct approach, see for example <xref ref="bib-Lang"/>, Section V.1, Theorem 0.
+          </p>
         </hint>
       </exercise>
   </exercises>

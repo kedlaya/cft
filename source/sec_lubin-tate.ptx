@@ -1,0 +1,319 @@
+﻿<section xml:id="sec_lubin-tate">
+  <title>Abelian extensions via the Lubin-Tate construction</title>
+  <introduction>
+    <paragraphs>
+      <title>Reference</title>
+      <p>
+        <xref ref="bib-Milne-CFT"/>, I.2 and I.3; <xref ref="bib-Cassels-Frohlich"/>, IV.
+      </p>
+    </paragraphs>
+  </introduction>
+  <subsection>
+    <title>Formal group laws</title>
+    <p>
+      The idea here is to imitate Kronecker-Weber by identifying some kind of group object whose torsion points generate abelian extensions
+      of a local field. We define the group object first.
+    </p>
+    <definition xml:id="def-one-param-formal-group">
+      <p>
+        A <term>one-parameter commutative formal group law</term> over a commutative ring <m>A</m> is a formal power series
+        <m>F \in A \llbracket X,Y \rrbracket</m> such that:
+        <ol>
+          <li>
+            <m>F \equiv X + Y \pmod{(X,Y)^2}</m>;
+          </li>
+          <li>
+            <m>F(X, F(Y,Z)) = F(F(X,Y),Z)</m> (associativity);
+          </li>
+          <li>
+            there exists a unique series <m>i_F \in X A \llbracket X \rrbracket</m> such that <m>F(X, i_F(X)) = 0</m> (existence of inverses);
+          </li>
+          <li>
+            <m>F(X,Y) = F(Y,X)</m> (commutativity).
+          </li>
+        </ol>
+        Note that throughout this definition, we are using the fact that we can substitute a power series 
+        with constant term 0 (in any number of variables) into another power series to get a meaningful result.
+      </p>
+      <p>
+        Suppose now that <m>A = \gotho_K</m> where <m>K</m> is a local field. Then we can also substitute elements of the maximal ideal <m>\gothm_K</m>
+        into <m>F</m>, and this will define an exotic group structure on this set.
+      </p>
+    </definition>
+    <example>
+      <p>
+        Take <m>F = X + Y</m> (the <term>formal additive group</term>). When <m>A = \gotho_K</m>, this recovers the usual group structure on <m>\gothm_K</m>.
+      </p>
+    </example>
+    <example>
+      <p>
+        Take <m>F = X+Y+XY</m> (the <term>formal multiplicative group</term>). When <m>A = \gotho_K</m>, this corresponds to the group structure on <m>1+\gothm_K</m>
+        via the bijection <m>x \mapsto x+1</m> from <m>\gothm_K</m> to <m>1+\gothm_K</m>.
+      </p>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Lubin-Tate formal groups</title>
+    <p>
+      We next introduce a condition on a formal group law analogous to complex multiplication for an elliptic curve.
+    </p>
+    <definition>
+      <p>
+        Let <m>F_1, F_2</m> be a formal group law over a ring <m>A</m>. A <term>homomorphism</term> from <m>F_1</m> to <m>F_2</m>
+        is a power series <m>h \in T A \llbracket T \rrbracket</m> such that 
+        <me>
+          h(F_1(X,Y)) = F_2(h(X), h(Y))
+        </me>.
+        When <m>F_1 = F_2 = F</m> we call this an <term>endomorphism</term> of <m>F</m>. 
+      </p>
+      <p>
+        There is a natural notion of <term>addition</term> of endomorphisms: if <m>f_1</m> and <m>f_2</m> are endomorphisms of <m>F</m>,
+        then so is
+        <me>
+          f_1 +_F f_2 = F(f_1, f_2)
+        </me>.
+        There is also a notion of <term>multiplication</term> of endomorphisms, which coincides with composition of formal power series.
+        In particular this is in general not commutative.
+      </p>
+    </definition>
+    <example>
+      <p>
+        For any formal group law <m>F</m>, there exist unique endomorphisms <m>[n]</m> for <m>n \in \ZZ</m> such that:
+        <ol>
+          <li>
+            <m>[0] = 0</m> and <m>[1] = T</m>;
+          </li>
+          <li>
+            <m>[n_1] + [n_2] = [n_1 + n_2]</m>;
+          </li>
+          <li>
+            <m>[n_1] \circ [n_2] = [n_1 n_2]</m>.
+          </li>
+        </ol>
+      </p>
+    </example>
+    <definition xml:id="def_LT_candidate_endo">
+      <p>
+        Let <m>K</m> be a local field with residue field of order <m>q</m> and fix a generator <m>\pi</m> of <m>\gothm_K</m>.
+        Let <m>\calF_\pi</m> be the subset of <m>f \in T \gotho_K \llbracket T \rrbracket</m> satisfying the following conditions:
+        <ol>
+          <li>
+            <m>f \equiv \pi T \pmod{T^2}</m>;
+          </li>
+          <li>
+            <m>f \equiv T^q \pmod{\pi}</m>.
+          </li>
+        </ol>
+      </p>
+    </definition>
+    <proposition xml:id="prop-formal-group-with-endomorphism">
+      <statement>
+        <p>
+          Let <m>K</m> be a local field with residue field of order <m>q</m> and fix a generator <m>\pi</m> of <m>\gothm_K</m>.
+          Let <m>f,g \in T \gotho_K \llbracket T \rrbracket</m> be two series such that
+          <m>f,g \equiv \pi T \pmod{T^2}</m> and <m>f,g \equiv T^q \pmod{\pi}</m>.
+          Then for any homogeneous linear polynomial <m>\phi_1</m> in the variables <m>X_1,\dots,X_n</m> over <m>\gotho_K</m>,
+          there exists a unique power series <m>\phi \in \gotho_K \llbracket X_1,\dots,X_n \rrbracket</m>
+          such that:
+          <ol>
+            <li>
+              <m>\phi \equiv \phi_1 \pmod{(X_1,\dots,X_n)^2}</m>;
+            </li>
+            <li>
+              <m>f(\phi(X_1,\dots,X_n)) = \phi(g(X_1),\dots,g(X_n))</m>.
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Writing <m>\phi = \sum_{i=1}^\infty \phi_i</m> where <m>\phi_i</m> is homogeneous of degree <m>i</m>,
+          we construct the <m>\phi_i</m> inductively. Suppose that <m>\phi_1,\dots,\phi_i</m> are already specified (initially with <m>i=1</m>), 
+          and set <m>\phi_{\leq i} = \phi_1 + \cdots + \phi_i</m>.
+          By looking at Taylor expansions, we obtain
+          <md>
+            <mrow>
+              f((\phi_{\leq_i} + \phi_{i+1})(X_1, \dots, X_N)) &amp;\equiv f(\phi_{\leq i}(X_1,\dots,X_n)) + \pi \phi_{i+1} \pmod{(X_1,\dots,X_n)^{i+2}}
+            </mrow>
+            <mrow>
+              (\phi_{\leq_i} + \phi_{i+1})(g(X_1),\dots,g(X_n)) &amp;\equiv \phi_{\leq i}(g(X_1),\dots,g(X_n)) + \pi^{i+1} \phi_{i+1} \pmod{(X_1,\dots,X_n)^{i+2}}
+            </mrow>
+          </md>.
+          This means that we must ensure that
+          <me>
+            \phi_{i+1} \equiv \frac{f(\phi_{\leq i}(X_1,\dots,X_n)) - \phi_{\leq i}(g(X_1),\dots,g(X_n))}{(\pi^i-1)\pi} \pmod{(X_1,\dots,X_n)^{i+2}}.
+          </me>
+          But in fact the numerator of the fraction is divisible by <m>\pi</m>: modulo <m>\pi</m> both <m>f</m>
+          and <m>g</m> are congruent to <m>T^q</m> and this map is a ring homomorphism.
+          We thus obtain a unique choice of <m>\phi_{i+1}</m> that allows the construction to continue.
+        </p>
+      </proof>
+    </proposition>
+    <corollary xml:id="cor-formal-group-with-endomorphism">
+      <statement>
+        <p>
+          Let <m>K</m> be a local field with residue field of order <m>q</m> and fix a generator <m>\pi</m> of <m>\gothm_K</m>.
+          Let <m>f \in T \gotho_K \llbracket T \rrbracket</m> be a series such that
+          <m>f \equiv \pi T \pmod{T^2}</m> and <m>f \equiv T^q \pmod{\pi}</m>.
+          Then there exists a unique formal group <m>F</m> over <m>\gotho_K</m> admitting <m>f</m> as an endomorphism.
+          Moreover, for every <m>a \in \gotho_K</m>, <m>F</m> admits a unique endomorphism <m>[a] \equiv \alpha T \pmod{T^2}</m>
+          which commutes with <m>f</m> (in particular, <m>[\pi] = f</m>), and these satisfy
+          <me>
+            [a+b] = [a] +_F [b], \qquad [ab] = [a] \circ [b]
+          </me>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          We get <m>F</m> by applying <xref ref="prop-formal-group-with-endomorphism"/> with <m>g=f</m> and <m>\phi_1(X,Y) = X+Y</m>.
+          Since <m>\phi_1(X,Y)</m> also equals <m>Y+X</m>, the uniqueness aspect of <xref ref="prop-formal-group-with-endomorphism"/> implies commutativity.
+          We deduce existence of inverses by similarly taking <m>\phi_1(X) = -X</m>. 
+          We deduce associativity by similarly taking <m>\phi_1(X,Y,Z) = X+Y+Z</m> and invoking the uniqueness aspect.
+          We produce <m>[a]</m> by similarly taking <m>\phi_1(X) = aX</m>; we check that <m>[a+b] = [a] +_F [b]</m> and <m>[ab] = [a] \circ [b]</m>
+          by invoking the uniqueness aspect.
+          (Compare <xref ref="bib-Milne-CFT"/>, Proposition I.2.12 and I.2.14.)
+        </p>
+      </proof>
+    </corollary>
+    <remark>
+      <p>
+        For each <m>f \in \calF_\pi</m>, we can find a unit <m>u \in \gotho_K \llbracket T \rrbracket^\times</m> with <m>u \equiv 1 \pmod{\pi}</m>
+        such that <m>uf</m> (which is also in <m>\calF_\pi)</m> is a monic polynomial of degree <m>q</m>. This follows for example from the Weierstrass preparation theorem.
+      </p>
+      <p>
+        Similarly, if we were to relax the second condition in <xref ref="def_LT_candidate_endo"/> to require only that <m>f \equiv T^q \pmod{\pi, T^{q+1}}</m>,
+        then we could again always find a unit <m>u \in \gotho_K \llbracket T \rrbracket^\times</m> with <m>u \equiv 1 \pmod{\pi,T}</m>
+        such that <m>uf</m> is a monic polynomial of degree <m>q</m>. (This relaxation would correspond to the definition of the <term>height</term>
+        of a formal group.)
+      </p>
+    </remark>
+  </subsection>
+  <subsection>
+    <title>Abelian extensions from a Lubin-Tate formal group</title>
+    <definition xml:id="def-LT-extension">
+      <p>
+        Choose <m>K, f, F</m> as in <xref ref="cor-formal-group-with-endomorphism"/>.
+        Let <m>\Lambda_f</m> be the <m>\gotho_K</m>-module whose underlying set consists of all <m>\alpha \in \overline{K}</m> of absolute value less than 1,
+        with addition given by <m>\alpha + \beta := F(\alpha,\beta)</m> and the action of <m>a \in \gotho_K</m> on <m>\beta</m> given by <m>[a](\beta)</m>.
+        Let <m>K_\pi</m> be the subfield of <m>\overline{K}</m> generated by the <m>[\pi^k]</m>-torsion elements of <m>\Lambda_f</m> as <m>k</m>
+        runs over all positive integers.
+      </p>
+    </definition>
+    <remark xml:id="rmk-LT-change-f">
+      <p>
+        When applying <xref ref="def-LT-extension"/>, we may use the fact that by <xref ref="prop-formal-group-with-endomorphism"/>,
+        for any other series <m>g</m> satisfying <m>g \equiv \pi T \pmod{T^2}</m> and <m>g \equiv T^q \pmod{\pi}</m>,
+        we get a canonical isomorphism <m>\Lambda_f \cong \Lambda_g</m> of <m>\gotho_K</m>-modules; in particular, this isomorphism is compatible
+        with the action of <m>\Gal(\overline{K}/K)</m>.
+        This lets us simplify some arguments by reducing to the case where <m>f</m> is a polynomial, or even to the case <m>f = \pi T + T^q</m>.
+      </p>
+    </remark>
+    <lemma xml:id="lem-lubin-tate-torsion">
+      <statement>
+        <p>
+          With notation as in <xref ref="def-LT-extension"/>, 
+          the <m>[\pi^k]</m>-torsion submodule of <m>\Lambda_f</m> is isomorphic to <m>\gotho_K/\pi^k</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          For <m>k=1</m> we see that the <m>[\pi]</m>-torsion submodule consists of <m>q</m> elements
+          (by <xref ref="rmk-LT-change-f"/> we need only check this for <m>f = \pi T + T^q</m> for which it is obvious),
+          and hence is a one-dimensional <m>\gotho_K/(\pi)</m>-vector space. Since <m>[\pi]\colon \Lambda_f \to \Lambda_f</m> is surjective, 
+          the general case now follows using Nakayama's lemma
+          (or see <xref ref="bib-Milne-CFT"/>, lemma I.3.3).
+        </p>
+      </proof>
+    </lemma>
+    <corollary xml:id="cor-lubin-tate-totally-ramified">
+      <statement>
+        <p>
+          The extension <m>K_\pi/K</m> is abelian and totally ramified; more precisely, there is a canonical isomorphism <m>\Gal(K_\pi/K) \to \gotho_K^\times</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The inclusion <m>\Gal(K_\pi/K) \to \gotho_K^\times</m> is immediate from <xref ref="lem-lubin-tate-torsion"/>.
+          To check surjectivity and the totally ramified property, 
+          we check that the torsion points of exact order <m>\pi^k</m> are the roots of an Eisenstein polynomial over <m>\gotho_K</m>.
+          Again by <xref ref="rmk-LT-change-f"/> we need only check this for <m>f = \pi T + T^q</m>, in which case we can write
+          <me>
+            [\pi]^k = \sum_{i=0}^k \pi^{k-i} T^{q^i} + \cdots
+          </me>
+          and the omitted monomials do not contribute to the Newton polygon (each one is strictly divisible by one of the summands).
+          By factoring according to the slopes of the Newton polygons (using Hensel's lemma), we see that the roots of <m>[\pi^k]</m>
+          which are not roots of <m>[\pi^{k-1}]</m> are the roots of an Eisenstein polynomial over <m>\gotho_K</m>.
+        </p>
+      </proof>
+    </corollary>
+    <example>
+      <p>
+        For <m>K = \QQ_p</m>, we can take <m>\pi=p</m> and <m>f = (1+T)^p - 1</m>.
+        In this case <m>K_\pi = \bigcup_k \QQ(\zeta_{p^k})</m> is the <m>p</m>-part of the cyclotomic tower.
+      </p>
+    </example>
+    <p>
+      For the following statement, we will use local reciprocity but not the existence theorem.
+      It is also possible to give an <q>elementary</q> proof more in the style of the proof of local Kronecker-Weber (<xref ref="T_local_Kronecker-Weber1"/>),
+      but we will not do this here.
+    </p>
+    <theorem xml:id="T_Lubin-Tate">
+      <title>Lubin<ndash/>Tate</title>
+      <statement>
+        <p>
+          With notation as in <xref ref="def-LT-extension"/>, <m>K^{\ab} = K_\pi K^{\unr}</m>.
+          Moreover, the local reciprocity map may be written in the form 
+          <me>
+            \phi_K\colon \gotho_K^\times \times \pi^\ZZ \to \Gal(K_\pi/K) \times \Gal(K^{\unr}/K)
+          </me>
+          with the first factor mapping via the isomorphism <m>\gotho_K^\times \to \Gal(K_\pi/K)</m> from <xref ref="cor-lubin-tate-totally-ramified"/>
+          and the second factor mapping <m>\pi</m> to the Frobenius in <m>\Gal(K^{\unr}/K)</m>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          By <xref ref="cor-lubin-tate-totally-ramified"/>, <m>K_\pi</m> is a totally ramified abelian extension of <m>K</m> which is linearly disjoint from <m>K^{\unr}</m>
+          with Galois group <m>\gotho_K^\times</m>. Hence <m>K_\pi K^{\unr}</m> is an abelian extension of <m>K</m> with Galois group
+          <m>\ZZ \times \gotho_K^\times</m>; using local reciprocity (<xref ref="T_local_reciprocity"/>)
+          we see that this extension must be all of <m>K^{\ab}</m>.
+        </p>
+        <p>
+          Now note that if <m>\alpha \in \Lambda_f</m> is a <m>\pi^k</m>-torsion point, then <m>\Norm_{K(\alpha)/K}(\alpha) = \pi</m>.
+          Meanwhile, we see from the congruence <m>f \equiv T^q \pmod{\pi}</m> that the action of the local reciprocity map on <m>\gotho_K^\times</m>
+          agrees with the map from <xref ref="cor-lubin-tate-totally-ramified"/>.
+        </p>
+      </proof>
+    </theorem>
+    <remark>
+      <p>
+        In general, there is no analogue of the Lubin-Tate construction over a number field, except when <m>K = \QQ</m> for which the multiplicative group can be used
+        (recovering the Kronecker-Weber theorem) or when <m>K</m> is imaginary quadratic for which an elliptic curve with complex multiplication by <m>K</m> can be used
+        (see <xref ref="bib-Cox"/>).
+        However, when <m>K</m> is a function field then there does exist such an analogue, which was originally discovered by Carlitz and then rediscovered (and extended) by Drinfeld
+        (see <xref ref="bib-Hayes-Drinfeld"/>).
+      </p>
+    </remark>
+  </subsection>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          Prove that in <xref ref="def-one-param-formal-group"/>, the existence of inverses is a consequence of the other conditions.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that in <xref ref="def-one-param-formal-group"/>, if the ring <m>A</m> has characteristic 0, then commutativity is a consequence of the other conditions.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          First note that we can check commutativity after replacing <m>A</m> by <m>A</m>, so we may assume that <m>A</m> is a <m>\QQ</m>-algebra.
+          In that case, show that <m>F</m> is isomorphic to the formal additive group.
+        </p>
+      </hint>
+    </exercise>
+  </exercises>
+</section>

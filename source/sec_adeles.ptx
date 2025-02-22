@@ -4,7 +4,7 @@
     <paragraphs>
       <title>Reference</title>
       <p>
-        <xref ref="bib-Milne-CFT" />; <xref ref="bib-Neukirch" />, VI.1 and VI.2; <xref ref="bib-Lang" />, VII.
+        <xref ref="bib-Milne-CFT" />; <xref ref="bib-Neukirch" />, VI.1 and VI.2; <xref ref="bib-Lang"/>, VII.
       </p>
     </paragraphs>
   </introduction>
@@ -93,25 +93,27 @@
       </proof>
     </lemma>
     <remark>
-      We cannot help mentioning a variant of <xref ref="rmk-group-quotient-is-ring"/> that plays a key role in <m>p</m>-adic Hodge theory.
-      Let <m>\CC_p</m> be a completed algebraic closure of <m>\QQ_p</m>. Consider the inverse system
-      <me>
-        \cdots \stackrel{x \mapsto x^p}{\to} \gotho_{\CC_p} \stackrel{x \mapsto x^p}{\to} \gotho_{\CC_p}.
-      </me>
-      Since the maps are multiplicative but not additive, the inverse limit only appears to carry the structure of a multiplicative monoid.
-      However, it was originally observed by Fontaine that the natural map from this inverse system to the inverse system
-      <me>
-        \cdots \stackrel{x \mapsto x^p}{\to} \gotho_{\CC_p}/p\gotho_{\CC_p} \stackrel{x \mapsto x^p}{\to} \gotho_{\CC_p}/p\gotho_{\CC_p}
-      </me>
-      is an isomorphism. In this inverse system, the maps upgrade to ring homomorphisms because <m>(x+y)^p = x^p + y^p</m> in any ring
-      in which <m>p=0</m>; consequently, the original inverse limit is upgraded to a ring! This then implies that the inverse limit of the system
-      <me>
-        \cdots \stackrel{x \mapsto x^p}{\to} \CC_p \stackrel{x \mapsto x^p}{\to} \CC_p
-      </me>
-      is again a ring; it is in fact an algebraically closed field which is complete with respect to a certain nonarchimedean absolute value.
-      This construction has come to be known as forming the <term>tilt</term> of <m>\CC_p</m>, and generalizes to a large class of fields
-      which are complete with respect to nonarchimedean absolute values (the <term>perfectoid fields</term>). See <xref ref="bib-AWS"/> for an introduction
-      to this circle of ideas.
+      <p>
+        We cannot help mentioning a variant of <xref ref="rmk-group-quotient-is-ring"/> that plays a key role in <m>p</m>-adic Hodge theory.
+        Let <m>\CC_p</m> be a completed algebraic closure of <m>\QQ_p</m>. Consider the inverse system
+        <me>
+          \cdots \stackrel{x \mapsto x^p}{\to} \gotho_{\CC_p} \stackrel{x \mapsto x^p}{\to} \gotho_{\CC_p}
+        </me>.
+        Since the maps are multiplicative but not additive, the inverse limit only appears to carry the structure of a multiplicative monoid.
+        However, it was originally observed by Fontaine that the natural map from this inverse system to the inverse system
+        <me>
+          \cdots \stackrel{x \mapsto x^p}{\to} \gotho_{\CC_p}/p\gotho_{\CC_p} \stackrel{x \mapsto x^p}{\to} \gotho_{\CC_p}/p\gotho_{\CC_p}
+        </me>
+        is an isomorphism. In this inverse system, the maps upgrade to ring homomorphisms because <m>(x+y)^p = x^p + y^p</m> in any ring
+        in which <m>p=0</m>; consequently, the original inverse limit is upgraded to a ring! This then implies that the inverse limit of the system
+        <me>
+          \cdots \stackrel{x \mapsto x^p}{\to} \CC_p \stackrel{x \mapsto x^p}{\to} \CC_p
+        </me>
+        is again a ring; it is in fact an algebraically closed field which is complete with respect to a certain nonarchimedean absolute value.
+        This construction has come to be known as forming the <term>tilt</term> of <m>\CC_p</m>, and generalizes to a large class of fields
+        which are complete with respect to nonarchimedean absolute values (the <term>perfectoid fields</term>). See <xref ref="bib-AWS"/> for an introduction
+        to this circle of ideas.
+      </p>
     </remark>
   </subsection>
   <subsection>
@@ -226,6 +228,14 @@
         (see <xref ref="exer-cover-adeles"/>).
       </p>
     </remark>
+    <remark>
+      <p>
+        In general, the restricted direct product of pairs <m>(G_i, H_i)</m> does not carry the subspace topology from the ordinary product <m>\prod_i G_i</m>.
+        We may see a concrete example using <m>\AA^{\fin}_\QQ</m>: for each prime <m>p</m>, let <m>e_p</m> be the element consisting of <m>\frac{1}{p}</m> in the place <m>v=p</m>
+        and 0 elsewhere. Then the sequence <m>\{e_p\}</m> converges to zero in <m>\prod_i G_i</m> but <em>not</em> in the restricted product: no cofinite subset of the sequence
+        belongs to any neighborhood of 0.
+      </p>
+    </remark>
   </subsection>
   <subsection>
     <title>The ad&#xe8;les (general case)</title>
@@ -289,8 +299,8 @@
       </ul>
       We then have a well-defined function <m>|\bullet|</m> on <m>\AA_K</m> given by
       <me>
-        |x|_K = \prod_v |x|_v;
-      </me>
+        |x|_K = \prod_v |x|_v
+      </me>;
       this makes sense because by virtue of the definition of a restricted direct product, all but finitely many of the values <m>|x|_v</m> are equal to 1.
     </p>
     </definition>
@@ -298,7 +308,7 @@
     <title>Product formula</title>
       <statement>
         <p>
-          If <m>\alpha \in K</m>, then <m>|\alpha|_K = 1</m>.
+          If <m>\alpha \in K^*</m>, then <m>|\alpha|_K = 1</m>. (By contrast, <m>|0|_K = 0</m>.)
         </p>
       </statement>
       <proof>
@@ -306,8 +316,13 @@
           The normalizations have been chosen so that for each place <m>v</m> of <m>\QQ</m>, for each <m>\alpha \in K</m>, the product of
           <m>|\alpha|_w</m> over all places <m>w</m> of <m>K</m> above <m>p</m> equals <m>|\Norm_{L/K}(\alpha)|_v</m>. Taking the product over <m>v</m>,
           we deduce that <m>|\alpha|_K = |\Norm_{L/K}(\alpha)|_{\QQ}</m>. That is, the product formula reduces to the case <m>K = \QQ</m>, which we may check directly:
-          if we write <m>\alpha = \pm p_1^{e_1} \cdots p_r^{e_r}</m>, then <m>|\alpha|_v</m> equals <m>p_1^{e_1} \cdots p_r^{e_r}</m> if <m>v = \infty</m>,
-          <m>p_i^{-e_i}</m> if <m>v = p_i</m>, and <m>1</m> otherwise.
+          for <m>\alpha = \pm p_1^{e_1} \cdots p_r^{e_r}</m>, 
+          <me>
+            |\alpha|_v = \begin{cases} p_1^{e_1} \cdots p_r^{e_r} &amp; \text{if } v = \infty \\
+            p_i^{-e_i} &amp; \text{if } v = p_i \text{ for some } i \\
+            0 &amp; \text{otherwise.}
+            \end{cases}
+          </me>
         </p>
       </proof>
     </proposition>
@@ -355,7 +370,23 @@
       <p>
         Choose a compact subset <m>T</m> of the Minkowski space <m>M</m> containing a fundamental domain for the lattice <m>\gotho_K</m>.
         Then every element of <m>M \times \AA^{\fin}_K</m> is congruent modulo <m>\gotho_K</m> to an element of <m>T \times \AA^{\fin}_K</m>.
-        By the proposition, the compact set <m>T \times \AA^{\fin}_K</m> surjects onto <m>\AA_K/K</m>, so the latter is also compact.
+        However, we can also interpret <m>M \times \AA^{\fin}_K</m> as <m>\AA_{K,S}</m> where <m>S</m> is the set of infinite places of <m>K</m>.
+        We may thus apply <xref ref="P_adelic_CRT"/> to see that
+        <md>
+          <mrow>
+            M/\gotho_K \times \AA^{\fin}_K &amp;\cong (M \times \AA^{\fin}_K)/\gotho_K
+          </mrow>
+          <mrow>
+            &amp; \cong \AA_{K,S}/\gotho_K = \AA_{K,S}/(K \cap \AA_{K,S})
+          </mrow>
+          <mrow>
+            &amp; = (K + \AA^{K,S})/K \to \AA_K/K
+          </mrow>
+        </md>
+        is surjective.
+        Consequently, 
+        the compact set <m>T \times \AA^{\fin}_K</m> surjects onto <m>\AA_K/K</m>; the latter is Hausdorff by <xref ref="cor-adeles-discrete"/>,
+        so it being covered by a compact set makes it also compact.
       </p>
     </proof>
     <remark>
@@ -404,13 +435,15 @@
     <exercise xml:id="exer-no-local-automorphisms-K">
       <statement>
         <p>
-          Let <m>K</m> be a number field and let <m>v</m> be a place of <m>K</m>. Prove that 
+          Let <m>K</m> be a number field and let <m>v</m> be a place of <m>K</m> which is not complex. Prove that 
           every automorphism of the field <m>K_v</m> (as a ring without topology) is continuous.
+          (See <xref ref="rem-too-many-automs"/> for discussion of how this breaks down when <m>v</m> is complex.)
         </p>
       </statement>
       <hint>
         <p>
-          Let <m>q</m> be the cardinality of the residue field of <m>v</m>.
+          For a real place, note that any automorphism of <m>\RR</m> preserves the perfect squares and hence the order relation.
+          For a finite place, let <m>q</m> be the cardinality of the residue field of <m>v</m>.
           Show first that an element of <m>K_v^*</m> belongs to <m>\gotho_{K_v}^*</m> if and only if it has an 
           <m>m</m>-th root for every positive integer <m>m</m> coprime to <m>p(q-1)</m>.
           Then note that an element of <m>K_v</m> belongs to <m>\gotho_{K_v}</m> iff it is a difference of two elements of <m>\gotho_{K_v}^*</m>.
@@ -441,18 +474,18 @@
           <ul>
             <li>
               <p>
-                If <m>v</m> is real, put <m>Q(x,y,z) = x^2 + y^2 + z^2</m>.
+                If <m>v</m> is real, put <m>Q(x,y,z) := x^2 + y^2 + z^2</m>.
               </p>
             </li>
             <li>
               <p>
                 If <m>v</m> is finite lying over the rational prime <m>p</m>, 
                 choose <m>a \in K \cap \gotho_{K_v}^*</m> whose image in the residue field of <m>v</m> is not a quadratic residue,
-                and put <m>Q(x,y,z) = x^2 - ay^2 + pz^2</m>.
+                and put <m>Q(x,y,z) := x^2 - ay^2 + pz^2</m>.
               </p>
             </li>
           </ul>
-          Let <m>T</m> be the intersection of the images of the maps <m>cQ: \AA_K^3 \to \AA_K</m> over all <m>c \in K^*</m>.
+          Let <m>T</m> be the intersection of the images of the maps <m>cQ\colon  \AA_K^3 \to \AA_K</m> over all <m>c \in K^*</m>.
           Prove that <m>T = \ker(\AA_K \to \prod_{w \in S} K_w)</m> for some finite set <m>S</m> of places of <m>K</m> containing <m>v</m>.
         </p>
       </statement>
@@ -472,7 +505,7 @@
       <hint>
         <p>
           Use <xref ref="exer-no-semilocal-automorphism-K"/> and <xref ref="exer-binary-quadratic-form"/> to prove that the map <m>\AA_\QQ \to \prod_v \QQ_v</m> is equivariant for any automorphism
-          of <m>\AA_\QQ</m> and the trivial action on <m>\prod_v \QQ_v</m>.
+          of <m>\AA_\QQ</m> and the trivial action on <m>\prod_v \QQ_v</m>. Luckily <m>\QQ</m> has no complex places!
         </p>
       </hint>
     </exercise>

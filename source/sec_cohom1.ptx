@@ -6,7 +6,7 @@
       <p>
         <xref ref="bib-Milne-CFT"/>, II.1.
         See <xref ref="bib-Serre-GaloisCohomology"/> for a much more general presentation.
-        (We will generalize ourselves from finite to profinite groups a bit later on; see <xref ref="sec_profinite"/>.)
+        (We ourselves will generalize from finite to profinite groups a bit later on; see <xref ref="sec_profinite"/>.)
       </p>
       <p>
         For the broader context of homological algebra, the original reference is <xref ref="bib-Grothendieck-Tohoku"/>.

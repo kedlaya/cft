@@ -1,4 +1,4 @@
-﻿<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_abstract">
+﻿<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch_abstract">
   <title>Abstract class field theory</title>
   <introduction>
     <p>
@@ -14,7 +14,8 @@
       <p>
         In the context of abstract class field theory, we will assign certain words (e.g., <term>unramified</term>) new meanings that will coincide with their
         existing definitions when the abstract setup is specialized to local class field theory. We will then transfer these meanings to the global application
-        of abstract class field theory, where we will usually use scare quotes (i.e., <q>unramified</q>).
+        of abstract class field theory, where we will use scare quotes (i.e., <q>unramified</q>) to indicate the transferred usage
+        when it conflicts with a standard meaning.
       </p>
     </paragraphs>
   </introduction>

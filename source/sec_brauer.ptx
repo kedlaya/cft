@@ -58,7 +58,7 @@
       <p>
         For <m>K</m> a finite field, <m>\Br(K)</m> is trivial. In the classical interpretation, this is Wedderburn's theorem that every finite division algebra
         is commutative. In the cohomological interpretation, it follows from <xref ref="P_finite_norm_surjective"/> via the periodicity of Tate groups
-        <xref ref="T_cyclic_group_periodicity"/>.
+        (<xref ref="T_cyclic_group_periodicity"/>).
       </p>
     </example>
     <remark>
@@ -109,8 +109,8 @@
           Let <m>L/K</m> be a cyclic extension of number fields of degree <m>n</m>.
           Then there is a commutative diagram as in <xref ref="fig-connection-5"/>
           in which the vertical arrows are isomorphisms.
+          Moreover, both rows of the diagram are exact.
         </p>
-      </statement>
           <figure xml:id="fig-connection-5">
           <image>
           <latex-image>
@@ -121,11 +121,20 @@
           </latex-image>
           </image>
           </figure>
+      </statement>
       <proof>
         <p>
           The left square comes from applying <xref ref="T_cyclic_group_periodicity"/> to the morphism
           <m>L^* \to I_L</m> of <m>\Gal(L/K)</m>-modules. Since <m>r_{L/K}</m> is defined in terms of local reciprocity maps,
           the right square comes from <xref ref="L_local_invariant_map"/>.
+        </p>
+        <p>
+          To deduce that both rows of the diagram are exact, it now suffices to check for the top row.
+          This follows by identifying the terms with the exact sequence
+          <me>
+            H^0_T(\Gal(L/K), L^*) \to H^0_T(\Gal(L/K), I_L) \to  H^0_T(\Gal(L/K), C_L)
+          </me>
+          where the last identification uses global reciprocity (<xref ref="T_adelic_reciprocity_law"/>).
         </p>
       </proof>
     </lemma>
@@ -163,17 +172,21 @@
             </mrow>
           </md>.
           Since the values of <m>\Br(K_v)</m> are the ones given, the surjectivity of the map <m>\bigoplus_v \Br(K_v) \to \QQ/\ZZ</m> is evident.
+          It thus remains to establish exactness at the middle of the sequence;
+          that is, we must check that a class in <m>\bigoplus_v \Br(K_v)</m> maps to zero in <m>\QQ/\ZZ</m> if and only if it arises from some element of <m>\Br(K)</m>.
         </p>
         <p>
-          It remains to establish exactness at the middle of the sequence. For any finite Galois extension <m>L/K</m>,
-          we have the exact sequence
-          <me>
-            H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L) \to H^2(\Gal(L/K), C_L)
-          </me>.
-          If <m>L/K</m> is cyclic, then by reciprocity (<xref ref="T_abstract_adelic_reciprocity"/>),
-          the top row of the commutative diagram in <xref ref="lem-H2-map-global-cyclic"/> is exact, as then is the bottom row.
-          Consequently, we could conclude the proof if we knew that every class in <m>\Br(K)</m> is the image of a class in <m>H^2(\Gal(L/K), L^*)</m>
-          for some finite <em>cyclic</em> extension <m>L</m> of <m>K</m>. In fact, something even stronger is true; see 
+          Fix such a class <m>(\alpha_v)_v \in \bigoplus_v \Br(K_v)</m> and let <m>S</m> be the finite set of places <m>v</m> at which <m>\alpha_v \neq 0</m>.
+          Let <m>n</m> be the least common multiple of the orders of the <m>\alpha_v</m>.
+          Using <xref ref="exer-large-cyclotomic-degree"/>, we can then find a cyclic extension <m>L/K</m> such that for each <m>v \in S</m>,
+          for some (hence any) place <m>w</m> of <m>L</m> over <m>v</m>, the degree <m>[L_w:K_v]</m> is divisible by <m>n</m>.
+          By <xref ref="L_local_invariant_map"/>, this means that <m>\alpha_v \in H^2(L_w/K_v)</m> for all <m>v</m>.
+          We can now use <xref ref="lem-H2-map-global-cyclic"/> to argue in one direction: 
+          if <m>\alpha</m> maps to zero in <m>\QQ/\ZZ</m>, then it lifts to <m>H^2(L/K) \subset \Br(K)</m>.
+        </p>
+        <p>
+          To argue in the opposite direction, we need a bit more: we need to know that every class of <m>\Br(K)</m>
+          belongs to <m>H^2(L/K)</m> for some <em>cyclic</em> extension <m>L</m> of <m>K</m>. In fact, something even stronger is true; see 
           <xref ref="prop-H2-class-absorb-by-cyclotomic"/>.
         </p>
       </proof>
@@ -220,13 +233,16 @@
       </statement>
       <proof>
         <p>
-          By <xref ref="T_Albert-Brauer-Hasse-Noether"/>, any class in <m>H^2(L/K)</m> is determined by its
-          images in <m>H^2(L_w/K_v)</m> for all places <m>v</m> in <m>K</m> (where <m>w</m> denotes any place of <m>L</m> above <m>v</m>), with only finitely many of these being
-          nonzero. Moreover, a class in <m>H^2(L_w/K_v)</m> of some order <m>m</m> is killed by replacing <m>K_v</m> by any extension of degree <m>m</m>
-          (by <xref ref="rmk-local-classes-unramified"/> and <xref ref="rmk-local-Brauer-transfer"/>; see also <xref ref="bib-Milne-CFT"/>, Theorem III.2.1).
-          It thus suffices to find a cyclic cyclotomic extension for which, for some fixed finite set of finite places 
-          <m>S</m> of <m>K</m>, the degrees <m>[L_w:K_v]</m> for all <m>v \in S</m> are conveniently large; for this, see <xref ref="exer-large-cyclotomic-degree"/>.
-          (Compare also <xref ref="bib-Milne-CFT"/>, Proposition VII.7.2.)
+          As in the proof of <xref ref="def-fundamental-exact-sequence"/>, we can find a cyclic cyclotomic extension <m>M</m> of <m>K</m> such that
+          for each place <m>v</m> of <m>K</m>, for some place <m>w</m> of <m>M</m> above <m>v</m>, the image of <m>x</m> in <m>\Br(K_v)</m> 
+          belongs to <m>H^2(M_w/K_v)</m>; we will prove the claim for this choice of <m>M</m>.
+          By inflation-restriction (<xref ref="P_inflation_restriction"/>),
+          <me>
+            0 \to H^2(M/K) \stackrel{\Inf}{\to} H^2(ML/K) \stackrel{\Res}{\to} H^2(ML/M)
+          </me>
+          is exact; it thus suffices to check that the image of <m>x</m> via <m>H^2(L/K) \stackrel{\Inf}{\to} H^2(ML/K)</m> maps to zero in <m>H^2(ML/M)</m>.
+          By <xref ref="T_Albert-Brauer-Hasse-Noether"/> it suffices to check that we get the zero class in <m>\Br(M_w)</m> for each place <m>w</m> of <m>M</m>,
+          but this follows from our choice of <m>M</m> as in the proof of <xref ref="P_H2_lower_bound"/>.
         </p>
       </proof>
     </proposition>
@@ -242,7 +258,7 @@
     <title>Local-global compatibility via Brauer groups</title>
     <p>
       To conclude, we turn things around and show that <xref ref="prop-H2-class-absorb-by-cyclotomic"/> can be used to recover local-global compatibility
-      for the reciprocity map (<xref ref="prop-reciprocity-trivial-on-diagonal"/>). This makes no use of abstract class field theory, 
+      for the reciprocity map (<xref ref="prop-reciprocity-trivial-on-diagonal"/>). This can be done without the use of abstract class field theory, 
       although it does use the same inputs (notably the First and Second Inequality).
     </p>
     <proposition xml:id="prop-diagonal-cyclotomic">
@@ -258,14 +274,14 @@
           (or from <xref ref="L_cyclotomic_explicit_reciprocity"/>).
           In general, we have a commutative diagram
           <figure xml:id="fig-connection-2">
-          <image width="50%">
-          <latex-image>
-          \xymatrix{
-          I_L \ar[r] \ar^{\Norm_{L_w/\QQ_p}}[d] &amp; \Gal(L_w(\zeta_n)/L_w) \ar[d]\\
-          I_{\QQ} \ar[r] &amp; \Gal(\QQ_p(\zeta_n)/\QQ_p)
-          }
-          </latex-image>
-          </image>
+            <image width="50%">
+              <latex-image>
+                \xymatrix{
+                  I_L \ar[r] \ar^{\Norm_{L_w/\QQ_p}}[d] &amp; \Gal(L_w(\zeta_n)/L_w) \ar[d]\\
+                  I_{\QQ} \ar[r] &amp; \Gal(\QQ_p(\zeta_n)/\QQ_p)
+                }
+              </latex-image>
+            </image>
           </figure>
           and we know the bottom row kills principal id&#xe8;les and the right column is injective.
           Thus the top row kills principal id&#xe8;les too.
@@ -283,6 +299,8 @@
           To begin with, <xref ref="prop-diagonal-cyclotomic"/> implies that <m>r_{L/K}</m> kills principal id&#xe8;les whenever <m>L/K</m> is a cyclotomic extension,
           and <xref ref="lem-H2-map-global-cyclic"/> implies that in this case the composite <m>H^2(L/K) \to \QQ/\ZZ</m> along the bottom row of
           <xref ref="fig-connection-5"/> vanishes.
+          (Note that the proof of <xref ref="lem-H2-map-global-cyclic"/> does depend on local-global compatibility, but in this case for a cyclotomic extension
+          where it can be verified directly.)
           By <xref ref="prop-H2-class-absorb-by-cyclotomic"/>, the same then holds for any cyclic extension <m>L/K</m>.
           By <xref ref="lem-H2-map-global-cyclic"/> again, the composition along the top row of <xref ref="fig-connection-5"/> vanishes, proving the claim.
         </p>
@@ -296,7 +314,8 @@
         By the surjectivity of the Artin map, as deduced from the 
         First Inequality (<xref ref="prop-artin-map-surjects"/>), this map is surjective; by comparing orders using the Second Inequality
         (<xref ref="T_first_and_second_inequality"/>), we see that the map is also an isomorphism.
-        This establishes local-global compatibility (<xref ref="prop-reciprocity-trivial-on-diagonal"/>) for cyclic extensions, from which it directly follows also for abelian extensions.
+        This establishes local-global compatibility (<xref ref="prop-reciprocity-trivial-on-diagonal"/>) for cyclic extensions, 
+        from which it directly follows also for abelian extensions.
         Hooray again!
       </p>
     </remark>
@@ -326,6 +345,50 @@
       </p>
    </remark>
   </subsection>
+  <subsection>
+    <title>An application to rational points on varieties</title>
+    <p>
+      The computation of the Brauer groups of number fields has many interesting applications, including to the study of rational points on varieties.
+      We remark on this point here. 
+    </p>
+    <remark>
+      <p>
+        Let <m>X</m> be an algebraic variety over a number field <m>K</m>.
+        For each place <m>v</m> of <m>K</m>, one can ask whether the set of <m>K_v</m>-rational points <m>X(K_v)</m> is empty.
+        If this holds for some <m>v</m>, then evidently <m>X(K)</m> is also empty.
+        However, the converse is generally not true; that is, there is no <term>local-to-global principle</term> for the existence of rational points
+        on a general algebraic variety.
+      </p>
+      <p>
+        It was first observed by Manin that this failure can sometimes be overcome using the <term>Brauer group</term> <m>\Br(X)</m> associated to <m>X</m>, 
+        whose definition we do not reproduce here (<xref ref="bib-Poonen"/>, section 6.6).
+        The key relevant point for now is that 
+        the construction of <m>\Br(X)</m> is contravariantly functorial, so any <m>K</m>-rational point <m>x \in X(K)</m> gives rise to a
+        homomorphism <m>\Br(X) \to \Br(K)</m>. We can view this construction as a <q>pairing</q> <m>X(K) \times \Br(X) \to \Br(K)</m>, although
+        it is only linear in the second argument as there is no natural group structure on <m>X(K)</m> in general.
+      </p>
+      <p>
+        For each place <m>v</m> of <m>K</m>, we can form the base extension <m>X_v := X \times_K K_v</m>, so that <m>X_v(K_v) = X(K_v)</m>.
+        In particular, for each <m>x \in X(K)</m>, we get a corresponding point <m>x_v \in K_v</m>.
+        Meanwhile, for each class <m>y \in \Br(X)</m>, 
+        and define <m>y_v \in \Br(X_v)</m> as the image of <m>y</m> under the functoriality map <m>\Br(X_v) \to \Br(X)</m>.
+        We again get a local pairing <m>X(K_v) \times \Br(X_v) \to \Br(K_v)</m>.
+        Note that the map <m>X(K_v) \to \Br(K_v)</m> induced by pairing with a given <m>x</m> is locally constant for the <m>v</m>-adic topology on <m>X(K_v)</m>
+        (<xref ref="bib-Poonen"/>, Proposition 8.2.9).
+      </p>
+      <p>
+        Now let <m>\inv_v\colon \Br(K_v) \to \QQ/\ZZ</m> be the local invariant map at the place <m>v</m>.
+        The key point is now to apply <xref ref="def-fundamental-exact-sequence"/>: given a class <m>y \in \Br(X)</m>, a necessary condition
+        for a tuple <m>(x_v)_v \in \prod_v X(K_v)</m> to come from a global point <m>x \in X(K)</m> is that the sum of the local invariants
+        <m>\inv_v(x_v, y_n)</m> must vanish. Applying this condition for all <m>y \in \Br(X)</m> picks out a subset of <m>\prod_v X(K_v)</m>,
+        the <term>Brauer set</term>, which must contain all of <m>X(K)</m>; when this happens,
+        <m>X</m> is said to have a <term>Brauer-Manin obstruction</term> forcing <m>X(K) = \emptyset</m>.
+        More commonly, one says that <m>X</m> admits a <term>Brauer-Manin obstruction to the local-global principle</term>
+        if each <m>X(K_v)</m> to be nonempty but the Brauer set is empty.
+        See <xref ref="bib-Poonen"/>, Chapter 8 for some examples where this occurs.
+      </p>
+    </remark>
+  </subsection>
   <exercises>
     <exercise xml:id="exer-large-cyclotomic-degree">
       <statement>
@@ -337,7 +400,9 @@
       </statement>
       <hint>
         <p>
-          See <xref ref="bib-Milne-CFT"/>, Lemma VII.7.3.
+          It suffices to check the case <m>K = \QQ</m> (with <m>m</m> replaced by a suitably larger value).
+          We may also assume that <m>m</m> is a power of some prime <m>\ell</m>.
+          For more details, see <xref ref="bib-Milne-CFT"/>, Lemma VII.7.3.
         </p>
       </hint>
     </exercise>

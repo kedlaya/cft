@@ -40,6 +40,11 @@
       </li>
       <li>
         <p>
+          The Lubin-Tate explicit construction of the maximal abelian extensions of local fields (<xref ref="T_Lubin-Tate"/>).
+        </p>
+      </li>
+      <li>
+        <p>
           The Artin-Tate framework of abstract class field theory, including the abstract reciprocity law (<xref ref="T_abstract_reciprocity_law"/>)
           and the abstract norm limitation theorem (<xref ref="C_abstract_norm_limitation"/>).
         </p>
@@ -64,11 +69,6 @@
     Now, some things that we haven't covered.
     When this course was first taught, these topics were assigned as final projects to individual students in the course.
     <ul>
-      <li>
-        <p>
-          The Lubin-Tate construction of explicit class field theory for local fields (see <xref ref="bib-Cassels-Frohlich"/>, IV).
-        </p>
-      </li>
       <li>
         <p>
           More details about zeta functions and <m>L</m>-functions,
@@ -123,7 +123,7 @@
       <li>
         <p>
           Class field theory for function fields (see <xref ref="bib-Serre-AGCF"/>) and its use to produce curves over finite fields with unusually many points
-          (see <url href="http://manypoints.org">manypoints.org</url> and the forthcoming <xref ref="bib-Serre-Curves"/>).
+          (see <url href="http://manypoints.org">manypoints.org</url> and <xref ref="bib-Serre-Curves"/>).
         </p>
       </li>
       <li>
@@ -166,7 +166,7 @@
     there should be a correspondence between <m>n</m>-dimensional representations of
     <m>\Gal(\overline{K}/K)</m> and representations of <m>\GL_n(\AA_K)</m>.
     This correspondence is the heart of the so-called
-    <term>Langlands Program</term>, an unbelievably deep web of statements which has driven much of the mathematical establishment for the last few decades.
+    <term>Langlands program(me)</term>, an unbelievably deep web of statements which has driven much of the mathematical establishment for the last few decades.
     For example, for <m>n=2</m>,
     this correspondence includes on one hand the <m>2</m>-dimensional Galois representations coming from elliptic curves,
     and on the other hand representations of

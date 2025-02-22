@@ -8,8 +8,8 @@
       </p>
     </paragraphs>
     <p>
-      In the previous chapter,
-      we associated to a finite group <m>G</m> and a (right) <m>G</m>-module <m>M</m> a sequence of abelian groups <m>H^i(G, M)</m>,
+      In <xref ref="sec_cohom1"/>,
+      we associated to a finite group <m>G</m> and a (right) <m>G</m>-module <m>M</m> a sequence of abelian groups <m>H^i(G, M)</m>
       called the <term>cohomology groups</term> of <m>M</m>.
       (They're also called the <term>Galois cohomology</term> groups because in number theory,
       <m>G</m> will invariably be the Galois group of some extension of number fields,
@@ -49,6 +49,13 @@
       <p>
         In the opposite direction, if <m>M</m> is a <m>G</m>-module, let <m>\Res^G_H M</m> denote <m>M</m> viewed as an <m>H</m>-module
         by forgetting the rest of the group action. (We will sometimes simply write this as <m>M</m> when context makes things clear.)
+      </p>
+      <p>
+        If <m>M</m> is an <m>H</m>-module, then
+        <me>
+          \Res^G_H \Ind^G_H M \cong \bigoplus_{i=1}^{[G:H]} M
+        </me>.
+        The composition in the other direction is more interesting; see <xref ref="P_adjoint_property"/>.
       </p>
     </definition>
     <lemma xml:id="L_Shapiro">
@@ -95,13 +102,21 @@
         </p>
       </proof>
     </lemma>
-    <definition>
+    <definition xml:id="def-induced-module">
       <p>
         We say <m>M</m> is an <term>induced</term> <m>G</m>-module if it has the form
         <m>\Ind^G_{1} N</m> for some abelian group <m>N</m>,
         i.e., it can be written as <m>N \otimes_\ZZ \ZZ[G]</m>.
         (The subscript 1 stands for the trivial group,
         since <m>G</m>-modules for <m>G = 1</m> are just abelian groups.)
+      </p>
+      <p>
+        Note that for any subgroup <m>H</m> of <m>G</m>, if <m>M</m> is an induced <m>G</m>-module then it is also an induced <m>H</m>-module:
+        we have
+        <me>
+          \Res^G_H \Ind^G_1 \Res^G_1 M = \Res^G_H \Ind^G_H \Ind^H_1 \Res^G_1 M
+        </me>
+        and this is a sum of <m>[G:H]</m> copies of <m>\Ind^H_1 \Res^G_1 M</m>.
       </p>
     </definition>
     <corollary xml:id="C_induced_acyclic">
@@ -189,7 +204,7 @@
         </p>
       </proof>
     </proposition>
-    <remark>
+    <remark xml:id="rem-coh-finite-mod">
       <p>
         <xref ref="P_adjoint_property"/> asserts that 
         the restriction functor <m>\Res^G_H</m> from <m>G</m>-modules to <m>H</m>-modules 
@@ -200,19 +215,29 @@
         then the proof of <xref ref="P_adjoint_property"/> only shows that 
         <m>\Hom_G(\Ind^G_H N, M) \cong \Hom_H(N,M)</m>.
       </p>
-    </remark>
-    <remark xml:id="rem-coh-finite-mod">
       <p>
         The point of all of this is that it is much easier to embed <m>M</m> into an acyclic <m>G</m>-module than into an injective <m>G</m>-module:
         use the map <m>M \to \Ind^G_1 \Res^G_H M</m> constructed in <xref ref="P_adjoint_property"/>!
         An immediate consequence is that if <m>M</m> is finite,
         it can be embedded into a finite acyclic <m>G</m>-module,
         and thus <m>H^i(G,M)</m> is finite for all <m>i</m>. 
-      </p>
-      <p>
         However, contrary to what you might expect,
         for fixed <m>M</m>, even if <m>M</m> is finite, the groups <m>H^i(G,M)</m> do not necessarily become zero for <m>i</m> large.
-        We'll see explicit examples in the next section.
+        This will follow from periodicity for cyclic groups (<xref ref="T_cyclic_group_periodicity"/>).
+      </p>
+      <p>
+        Another useful fact is that the map <m>M \to \Ind^G_1 \Res^G_H M</m> is a <em>split</em> inclusion:
+        if I identify the target with <m>M \otimes_\ZZ \ZZ[G]</m>, I get a splitting by taking the coefficient of the identity element of <m>G</m>.
+        This means that the resulting exact sequence
+        <me>
+          0 \to M \to \Ind^G_1 \Res^G_H M \to N \to 0
+        </me>
+        remains exact upon applying any functor, whether or not that functor is exact. Unfortunately, the corresponding sequence in the opposite direction
+        <me>
+          0 \to N \to \Ind^G_1 \Res^G_H M \to M \to 0
+        </me>
+        does not split, and indeed can fail to remain exact after applying a left exact functor (e.g., taking <m>H</m>-invariants where <m>H</m> is a subgroup of <m>G</m>).
+        However, the map of underlying abelian groups does split.
       </p>
     </remark>
     <p>
@@ -232,7 +257,7 @@
       <proof>
         <p>
           Put <m>G = \Gal(L/K)</m>.
-          The normal basis theorem
+          The <term>normal basis theorem</term>
           (see Lang, <pubtitle>Algebra</pubtitle> or <xref ref="bib-Milne-CFT"/>, Lemma II.1.24)
           states that there exists <m>\alpha \in L</m> whose conjugates form a basis of <m>L</m> as a <m>K</m>-vector space.
           This implies that <m>L \cong \Ind^{G}_{1} K</m>,
@@ -474,7 +499,7 @@
         which we recognize from <xref ref="rem-H1-as-crossed"/> as the image of a homogeneous 1-cochain under <m>d^1</m>.
         (Here we are again using the fact that <m>\psi(*)</m> commutes across any element of <m>M</m>;
         this applies to the terms that end up on the outside of the product, but <m>\psi(cb^{-1})</m> must first be commuted across
-        <m>s(ba^{-1})^{-1}</m> and this is how it picks up the group action.)        
+        <m>s(ba^{-1})^{-1}</m> and this is how it picks up the group action.)
       </p>
       <p>
         In principle we should also check that <m>\phi</m> is a homogeneous 2-cocycle, but we can use a trick to avoid making the computation.
@@ -483,7 +508,7 @@
         <m>H^2(G,M) \to H^2(G,M')</m> corresponds to the <term>pushout</term> map shown in <xref ref="fig-cohom2-2"/>,
         in which <m>E'</m> is the coequalizer of <m>M \to E</m> and <m>M \to M'</m>.
         Finally, recall that I can always find an injective morphism <m>M \to M'</m> such that <m>H^2(G,M') = 0</m>,
-        say by taking <m>M' = \Ind^G_1 M</m>; this means I can check the cocycle property after replacing <m>M</m> with <m>M'</m>,
+        say by taking <m>M' = \Ind^G_1 \Res^G_1 M</m> (or see the proof of <xref ref="T_tate_thm2"/>); this means I can check the cocycle property after replacing <m>M</m> with <m>M'</m>,
         in which case I even have a coboundary.
       </p>
       <figure xml:id="fig-cohom2-2">
@@ -499,7 +524,7 @@
     </remark>
     <remark>
       <p>
-        One can similarly interpret <m>H^i(G,M)</m> for <m>i > 2</m> in terms of longer exact sequences; this is similar to the construction of higher Yoneda extension groups.
+        One can similarly interpret <m>H^i(G,M)</m> for <m>i \gt 2</m> in terms of longer exact sequences; this is similar to the construction of higher Yoneda extension groups.
         See <xref ref="bib-Holt"/>.
       </p>
     </remark>
@@ -534,7 +559,13 @@
     </definition>
     <remark>
       <p>
-        In <xref ref="D-extended-functoriality"/>, we can verify directly that <xref ref="eq-extended-functoriality-compatibility"/>
+        In <xref ref="D-extended-functoriality"/>, we can factor the homomorphism <m>H^i(G, M) \to H^i(G', M')</m>
+        as <m>H^i(G, M) \to H^i(G', M) \to H^i(G', M')</m> where the second map is ordinary functoriality
+        and the first map involves changing the group but not the module. In terms of cochains, the first map can for instance
+        be expressed as restriction of homogeneous cochains.
+      </p>
+      <p>
+        Alternatively, we can verify directly that <xref ref="eq-extended-functoriality-compatibility"/>
         implies that the map <m>M \to M'</m> induces a map <m>M^G \to (M')^{G'}</m> which is functorial with respect to the map <m>\beta</m>
         (keeping <m>\alpha</m> fixed). We can then argue by general considerations of derived functors
         that this natural transformation <m>H^0(G, M) \to H^0(G',M')</m> extends to give natural transformations <m>H^i(G,M) \to H^i(G',M')</m>
@@ -598,17 +629,19 @@
               Thus <m>\Cor \circ \Res</m> acts as multiplication by <m>[G:H]</m> on each (co)homology group.
             </p>
             <p>
-              Bonus consequence (hereafter excluding the case of <m>H^0</m>):
-              if we take <m>H</m> to be the trivial group,
-              then the group in the middle is isomorphic to <m>H^i(H, M) = 0</m>.
-              So every cohomology group for <m>G</m> is killed by <m>\#G</m>,
+              Bonus consequence:
+              if we take <m>H</m> to be the trivial group, then for <m>i \gt 0</m> we get a composition
+              <me>
+                H^i(G, M) \to H^i(G, \Ind^G_1 \Res^G_1 M) \to H^i(G, M)
+              </me>
+              which is multiplication by <m>[G:H] = \#G</m>, but the group in the middle is isomorphic to <m>H^i(H, M) = 0</m>.
+              Consequently, <m>H^i(G,M)</m> is killed by <m>\#G</m>,
               and in particular is a torsion group.
             </p>
             <p>
               In fact, if <m>M</m> is finitely generated as an abelian group,
-              this means <m>H^i(G, M)</m> is always finite,
-              because each of these will be finitely generated and torsion. Of course,
-              this won't happen in many of our favorite examples,
+              this means <m>H^i(G, M)</m> is in fact finite for <m>i \gt 0</m>. That said,
+              this logic won't apply to many of our favorite examples,
               e.g., <m>H^i(\Gal(L/K), L^*)</m> for <m>L/K</m> a finite Galois extension of fields.
             </p>
           </li>

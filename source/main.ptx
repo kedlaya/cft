@@ -17,6 +17,9 @@
 \def\gothp{\mathfrak{p}}
 \def\gothq{\mathfrak{q}}
 \def\gothr{\mathfrak{r}}
+\def\calF{\mathcal{F}}
+\def\llbracket{[[}
+\def\rrbracket{]]}
 \DeclareMathOperator{\ab}{ab}
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\Br}{Br}

@@ -22,4 +22,5 @@
   <xi:include  href="sec_tatethm.ptx"/>
   <xi:include  href="sec_filtration.ptx"/>
   <xi:include  href="sec_explicit-rec.ptx"/>
+  <xi:include  href="sec_lubin-tate.ptx"/>
 </chapter>

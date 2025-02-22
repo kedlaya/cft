@@ -13,10 +13,8 @@
   <paragraphs>
     <title>Convention note</title>
     <p>
-      We are going to fix an algebraic closure
-      <m>\overline{\QQ}</m> of <m>\QQ</m>, and regard
-      <q>number fields</q>
-      as finite subextensions of <m>\overline{\QQ}/\QQ</m>.
+      We are going to fix an algebraic closure <m>\overline{\QQ}</m> of <m>\QQ</m>, 
+      and regard <q>number fields</q> as finite subextensions of <m>\overline{\QQ}/\QQ</m>.
       That is, we are fixing the embeddings of number fields into <m>\overline{\QQ}</m>.
       We'll use these embeddings to decide how to embed one number field in another.
     </p>
@@ -27,14 +25,51 @@
       Here are the adelic reciprocity law and existence theorem;
       notice that they look just like the local case except that the multiplicative group has been replaced by the id&#xe8;le class group.
     </p>
+    <lemma xml:id="L_adelic_norm_is_open">
+      <statement>
+        <p>
+          For <m>L/K</m> an extension of number fields, <m>\Norm_{L/K} C_L</m> is an open subgroup of <m>C_K</m> of finite index.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>S</m> be any finite set of places of <m>K</m> containing all infinite places and all places that ramify in <m>L</m>.
+          Let <m>T</m> be the set of places of <m>L</m> lying above places in <m>S</m>. 
+          We first compute that
+          <me>
+            \Norm_{L/K} I_{L,S} = \prod_{v \in S} U_v \times \prod_{v \notin S} \gotho_{K_v}^*
+          </me>;
+          this amounts to a separate computation for each <m>v</m>.
+          For <m>v \in S</m> finite, we apply <xref ref="T_local_existence"/> (or <xref ref="exer-norm-subgroup-is-open"/>).
+          For <m>v \in S</m> finite, we note that <m>\Norm\colon \CC^* \to \RR^*</m> has image <m>\RR^+</m> of index <m>2</m>.
+          For <m>v \notin S</m>, we apply <xref ref="P_unramified_norm_surjective"/>.
+        </p>
+        <p>
+          Taking the union over <m>S</m>, we see that <m>\Norm_{L/K} I_L</m> is an open subgroup of <m>I_K</m> of finite index.
+          By quotienting down to <m>C_K</m>, we see that <m>\Norm_{L/K} C_K</m> is open;
+          in fact, the snake lemma on the diagram <xref ref="fig-ideles-cohom1-1"/>
+          implies that the quotient <m>I_K/(K^* \times \Norm_{L/K} I_L)</m> is isomorphic to <m>C_K/\Norm_{L/K} C_L</m>.
+        </p>
+        <figure xml:id="fig-ideles-cohom1-1">
+          <image>
+            <latex-image>
+              \xymatrix{
+                0 \ar[r] &amp; L^* \ar[r] \ar^{\Norm_{L/K}}[d] &amp; I_L \ar[r] \ar^{\Norm_{L/K}}[d] &amp; C_L \ar[r] \ar^{\Norm_{L/K}}[d] &amp; 0 \\
+                0 \ar[r] &amp; K^* \ar[r] &amp; I_K \ar[r] &amp; C_K \ar[r] &amp; 0
+              }
+            </latex-image>
+          </image>
+        </figure>
+      </proof>
+    </lemma>
     <theorem xml:id="T_adelic_reciprocity_law">
       <title>Adelic reciprocity law</title>
       <statement>
         <p>
-          There is a canonical map <m>r_K\colon C_K \to \Gal(K^{\ab}/K)</m> which induces,
+          For each number field <m>K</m>,
+          there is a canonical map <m>r_K\colon C_K \to \Gal(K^{\ab}/K)</m> which induces,
           for each Galois extension <m>L/K</m> of number fields,
           an isomorphism <m>r_{L/K}\colon C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}</m>.
-          Moreover, <m>\Norm_{L/K} C_L</m> is an open subgroup of <m>C_K</m>.
         </p>
       </statement>
       <proof>
@@ -42,7 +77,7 @@
           We will first prove an <q>abstract</q> form of this theorem, in which we do not say much about the identity of the map <m>r_K</m>;
           see <xref ref="T_abstract_adelic_reciprocity"/>. We then prove a more precise version including a more specific recipe for the map; see <xref ref="prop-reciprocity-trivial-on-diagonal"/> for the
           recipe and <xref ref="prop-reciprocity-trivial-on-diagonal2"/> for the comparison with the abstract version.
-          (For the assertion that <m>\Norm_{L/K} C_L</m> is open in <m>C_K</m>, see <xref ref="rmk-adelic-norm-open"/>.)
+          See also <xref ref="sec_adelic-overview"/> for a more detailed summary of the argument.
         </p>
       </proof>
     </theorem>
@@ -57,6 +92,7 @@
       <proof>
         <p>
           See <xref ref="T_adelic_existence_theorem2"/>.
+          Again, see also <xref ref="sec_adelic-overview"/> for a more detailed summary of the argument.
         </p>
       </proof>
     </theorem>
@@ -69,63 +105,60 @@
       <title>Adelic norm limitation theorem</title>
       <statement>
         <p>
-          Let <m>L/K</m> be an extension of number fields and put <m>M = L \cap K^{\ab}</m>.
+          Let <m>L/K</m> be a (not necessarily Galois) extension of number fields and put <m>M = L \cap K^{\ab}</m>.
           Then <m>\Norm_{L/K} C_L = \Norm_{M/K} C_M</m>.
         </p>
       </statement>
       <proof>
         <p>
-          See <xref ref="T_adelic_norm_limitation"/>.
+          As in the local setting, this follows directly from <xref ref="T_adelic_reciprocity_law"/>
+          by the logic of <xref ref="rem-deduce-local-norm-limitation"/>.
+          See also <xref ref="T_adelic_norm_limitation"/>.
         </p>
       </proof>
     </theorem>
-    </subsection>
-    <subsection>
-      <title>More on the reciprocity map</title>
-      <p>
-        We next use local class field theory and the principle of <term>local-global compatibility</term> to come up with a candidate for the map <m>r_K</m> in 
-        the adelic reciprocity law (<xref ref="T_adelic_reciprocity_law"/>). We note in passing that this principle also lies at the heart of the extension of class field theory envisioned in the 
-        Langlands program (<xref ref="rmk-beyond-CFT"/>).
-      </p>
+  </subsection>
+  <subsection>
+    <title>More on the reciprocity map</title>
+    <p>
+      We next use local class field theory and the principle of <term>local-global compatibility</term> to come up with a candidate for the map <m>r_K</m> in 
+      the adelic reciprocity law (<xref ref="T_adelic_reciprocity_law"/>). 
+      We note in passing that this principle also lies at the heart of the extension of class field theory envisioned in the 
+      Langlands program (<xref ref="rmk-beyond-CFT"/>).
+    </p>
     <definition xml:id="def-adelic-reciprocity-candidate">
       <p>
-      Let <m>L/K</m> be an abelian extension of number fields and <m>v</m> a place of <m>K</m>.
-      Put <m>G = \Gal(L/K)</m> and let <m>G_v</m> be the <term>decomposition group</term> of <m>v</m>, that is,
-      the set of <m>g \in G</m> such that <m>v^g = v</m>.
-      Then for any place <m>w</m> above <m>v</m>,
-      <m>G_v \cong \Gal(L_w/K_v)</m>.
-      We will define a map <m>r_{K, v}\colon K_v^* \to G_v \subseteq G</m> as follows.
-      <ul>
-        <li>
-          <p>
-          If <m>v</m> is a finite place, use the local reciprocity map (<xref ref="T_local_reciprocity"/>).
-          </p>
-        </li>
-        <li>
-          <p>
-          If <m>v</m> is a real place, use the sign map <m>\RR^* \to \{\pm 1\} \cong G_v</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-          If <m>v</m> is a complex place, then <m>G_v</m> is trivial and so there is nothing left to specify.
-          </p>
-        </li>
-      </ul>
+        Let <m>L/K</m> be an abelian extension of number fields and <m>v</m> a place of <m>K</m>.
+        Put <m>G = \Gal(L/K)</m> and let <m>G_v</m> be the <term>decomposition group</term> of <m>v</m>, that is,
+        the set of <m>g \in G</m> such that <m>v^g = v</m>.
+        Then for any place <m>w</m> above <m>v</m>,
+        <m>G_v \cong \Gal(L_w/K_v)</m>.
+        We will define a map <m>r_{K, v}\colon K_v^* \to G_v \subseteq G</m> as follows.
+        <ul>
+          <li>
+            If <m>v</m> is a finite place, use the local reciprocity map (<xref ref="T_local_reciprocity"/>).
+          </li>
+          <li>
+            If <m>v</m> is a real place, use the sign map <m>\RR^* \to \{\pm 1\} \cong G_v</m>.
+          </li>
+          <li>
+            If <m>v</m> is a complex place, then <m>G_v</m> is trivial and so there is nothing left to specify.
+          </li>
+        </ul>
       </p>
       <p>
         We obtain a well-defined product map
         <me>
-        \tilde{r}_K: I_K \to G, \qquad (\alpha_v) \mapsto \prod_v r_{K,v}(\alpha_v)
-        </me>:
-        for <m>(\alpha_v) \in I_K</m>,
+          \tilde{r}_K\colon I_K \to G, \qquad (\alpha_v) \mapsto \prod_v r_{K,v}(\alpha_v)
+        </me>
+        by arguing as follows.
+        For <m>(\alpha_v) \in I_K</m>,
         <m>\alpha_v</m> is a unit for almost all <m>v</m> and <m>L_w/K_v</m> is unramified for almost all <m>v</m> (we may ignore infinite places here).
         For the (almost all) <m>v</m> in both categories,
         <m>r_{K,v}</m> maps <m>\alpha_v</m> to the identity.
       </p>
       <p>
-        Since each of the maps <m>r_{K,v}</m> is continuous,
-        so is the map <m>\tilde{r}_K</m>.
+        Since each of the maps <m>r_{K,v}</m> is continuous, so is the map <m>\tilde{r}_K</m>.
         That means the kernel of <m>\tilde{r}_K\colon I_K \to \Gal(L/K)</m> is an open subgroup of <m>I_K</m>.
       </p>
     </definition>
@@ -135,8 +168,8 @@
     <proposition xml:id="prop-reciprocity-trivial-on-diagonal">
       <statement>
         <p>
-          For <m>L/K</m> an abelian extension of number fields, the map <m>\tilde{r}_K: I_K \to \Gal(L/K)</m> is trivial on <m>K^*</m>.
-          It thus factors through a map <m>r_K: C_K \to \Gal(L/K)</m>.
+          For <m>L/K</m> an abelian extension of number fields, the map <m>\tilde{r}_K\colon I_K \to \Gal(L/K)</m> is trivial on <m>K^*</m>
+          and the induced map <m>r_K\colon C_K \to \Gal(L/K)</m> coincides with the one induced by the abstract reciprocity map (<xref ref="T_adelic_reciprocity_law"/>).
         </p>
       </statement>
       <proof>
@@ -147,7 +180,7 @@
     </proposition>
     <remark xml:id="rmk-cyclotomic-Artin">
       <p>
-        In case <m>L = K(\zeta_n)</m> for some <m>n</m>, we can verify <xref ref="prop-reciprocity-trivial-on-diagonal"/> by an explicit computation,
+        In case <m>L = K(\zeta_n)</m> for some <m>n</m>, we can verify the first assertion of <xref ref="prop-reciprocity-trivial-on-diagonal"/> by an explicit computation,
         similar to the direct verification of Artin reciprocity for these extensions. This suggests that in general, we must first prove the adelic existence
         theorem (<xref ref="T_adelic_existence_theorem1"/>) before establishing <xref ref="prop-reciprocity-trivial-on-diagonal"/>. In the interim, we will derive
         a makeshift form of adelic reciprocity from the framework of abstract class field theory.
@@ -183,14 +216,10 @@
         Second, we can <em>exactly</em> describe the kernel of the classical Artin map: it is generated by
         <ul>
           <li>
-            <p>
               all principal ideals congruent to 1 modulo <m>\gothm</m>;
-            </p>
           </li>
           <li>
-            <p>
               norms of ideals of <m>L</m> not divisible by any ramified primes.
-            </p>
           </li>
         </ul>
       </p>

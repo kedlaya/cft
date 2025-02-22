@@ -32,22 +32,25 @@
     After the course ended, I kept the lecture notes posted on my web site in their originally written, totally uncorrected state.
     Despite their roughness, I heard back from many people over the years who had found them useful;
     in response to this, I decided to prepare a corrected version of the notes. 
-    This project gained some steam when I had the opportunity to teach <url href="https://kskedlaya.org/math204b-win21/">another class</url> on class field theory in winter 2021.
+    This project gained some steam when I had the opportunity to teach <url href="https://kskedlaya.org/math204b-win21/">another class</url> on class field theory in winter 2021,
+    and more recently in winter 2025.
     This occasioned some more significant revisions than I had previously dared, including a small degree of rearrangement of the material;
     however, I have tried to retain most of the original structure, on the grounds that the
-    informality of the original notes contributed to their readibility. In other words, this document is not intended as a standalone
-    replacement for a good book on class field theory!
+    informality of the original notes contributed to their readibility. 
+    In other words, this document is not intended as a standalone replacement for a good book on class field theory!
   </p>
  <p>
     I maintain very few claims of originality concerning the presentation of the material. 
-    Besides <xref ref="bib-Neukirch"/>, the main source of inspiration was Milne's lecture notes on class field theory <xref ref="bib-Milne-CFT"/>
-    (and by extension the original development by Artin and Tate <xref ref="bib-Artin-Tate"/>).
-    The basic approach may be summarized as follows: I follow Milne's treatment of local class field theory using group cohomology, then follow Neukirch to  recast local class field theory in the style of Artin-Tate's class formations, then reuse the same framework to obtain global class field theory. 
+    Besides <xref ref="bib-Neukirch"/>, the main source of inspiration was Milne's lecture notes on class field theory <xref ref="bib-Milne-CFT"/>, 
+    and by extension the original development by Artin and Tate <xref ref="bib-Artin-Tate"/>.
+    The basic approach may be summarized as follows: I follow Milne's treatment of local class field theory using group cohomology,
+    then follow Neukirch to recast local class field theory in the style of Artin-Tate's class formations, then reuse the same framework to obtain global class field theory. 
     Since the original draft of these notes was written, several treatments have appeared in a similar vein: <xref ref="bib-Neukirch-CFT"/>, <xref ref="bib-Harari"/>.
-    (See also <xref ref="bib-Gras"/> for a modern exposition of a more classical approach.)
+    See also <xref ref="bib-Gras"/> for a modern exposition of a more classical approach.
   </p>
   <p>
-    My winter 2021 class, having taken place during the COVID-19 pandemic, was given online with recorded lectures. The recordings continue to be available from the <url href="https://kskedlaya.org/math204b-win21/">course web site</url>.
+    My winter 2021 class, having taken place during the COVID-19 pandemic, was given online with recorded lectures.
+    The recordings continue to be available from the <url href="https://kskedlaya.org/math204b-win21/">course web site</url>.
   </p>
   <acknowledgment>
     <p>

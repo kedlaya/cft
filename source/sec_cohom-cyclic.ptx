@@ -166,7 +166,7 @@
           </p>
         </statement>
       </exercise>
-      <exercise>
+      <exercise xml:id="exer-Qp-sqrt-p">
         <statement>
           <p>
             Put <m>K = \QQ_p(\sqrt{p})</m>.

@@ -48,16 +48,19 @@
   <subsection>
     <title>The existence theorem and local-global compatibility</title>
     <p>
-      Our next step is to prove the adelic existence theorem (<xref ref="T_adelic_existence_theorem1"/>). As in the local setting, having the reciprocity law (even only in abstract form,
+      Our next step is to prove the adelic existence theorem (<xref ref="T_adelic_existence_theorem1"/>). 
+      As in the local setting, having the reciprocity law (even only in abstract form,
       and even without any compatibility with the Artin map) and the norm limitation theorem in hand
       allows us to reduce to showing that every open subgroup of <m>C_K</m> of finite index contains a norm group (<xref ref="T_adelic_existence_theorem2"/>).
       This can be done after enlarging <m>K</m>, so we can get into the realm of Kummer theory; this is closely related to the algebraic proof
       of the Second Inequality mentioned above.
     </p>
     <p>
-      We then turn around and use the existence theorem to deduce that for every finite abelian extension of the completion of a number field at some place is itself the completion
+      We then turn around and use the existence theorem to deduce that,
+      by analogy with the relationship between the local and global Kronecker-Weber theorems over <m>\QQ</m>,
+      every finite abelian extension of the completion of a number field at some place is itself the completion
       of a finite extension of the number field (<xref ref="L_auxiliary_existence"/>).
-      This will allow us to show, making careful use of cyclotomic extensions, that the
+      This will allow us to show, by making careful use of cyclotomic extensions, that the
       <q>abstract</q> global reciprocity map restricts to the usual reciprocity map from local class field theory (<xref ref="prop-reciprocity-trivial-on-diagonal2"/>).
       This will finally imply <xref ref="prop-reciprocity-trivial-on-diagonal"/>, thus yielding the adelic reciprocity map
       (and also showing that it coincides with the abstract reciprocity map).

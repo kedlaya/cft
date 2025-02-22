@@ -25,7 +25,7 @@
         <p>
           Let <m>K</m> be a local field.
           Then there is a unique map
-          <m>\phi_K: K^* \to \Gal(K^{\ab}/K)</m> satisfying the following conditions:
+          <m>\phi_K\colon K^* \to \Gal(K^{\ab}/K)</m> satisfying the following conditions:
           <ol>
             <li>
               <p>
@@ -45,7 +45,8 @@
       </statement>
       <proof>
         <p>
-          See the discussion in <xref ref="sec_tatethm"/>.
+          See the discussion in <xref ref="sec_tatethm"/>,
+          particularly <xref ref="rem-assemble-local-reciprocity"/> and <xref ref="rem-assemble-local-reciprocity-compatibility"/>.
         </p>
       </proof>
     </theorem>
@@ -65,12 +66,13 @@
         and <m>K_2 = \bigcup_n \QQ_p(\zeta_{p^n-1})</m>, and 
         <m>\Gal(K^{\ab}/K) \cong \Gal(K_1/K) \times \Gal(K_2/K)</m>.
         Since <m>p</m> is totally ramified in <m>K_1</m>, we have 
-        <me>\Gal(K_1/K) \cong \Gal(\QQ(\zeta_{p^\infty})/\QQ) \cong \ZZ_p^*.
-        </me>
+        <me>
+          \Gal(K_1/K) \cong \Gal(\QQ(\zeta_{p^\infty})/\QQ) \cong \ZZ_p^*
+        </me>.
         Since <m>p</m> is unramified in <m>K_2</m>, we have
         <me>
-        \Gal(K_2/K) \cong \Gal(\overline{\FF}_p/\FF_p) \cong \widehat{\ZZ}.
-        </me>
+        \Gal(K_2/K) \cong \Gal(\overline{\FF}_p/\FF_p) \cong \widehat{\ZZ}
+        </me>.
         However, it will be more convenient to think of the image as sitting inside
         <me>
         \Gal(\bigcup_n \QQ(\zeta_{p^n-1})/\QQ) \cong \widehat{\ZZ}^*/\ZZ_p^* \cong \prod_{q \neq p} \ZZ_q^*
@@ -78,8 +80,8 @@
         (here using global Kronecker-Weber and Artin reciprocity).
         That is, we are looking for a map
         <me>
-          \phi_K: \ZZ_p^* \times p^{\ZZ} \cong \QQ_p^* \to \Gal(K_1/K) \times \Gal(K_2/K) \subset \ZZ_p^* \times \prod_{q \neq p} \ZZ_q^*;
-        </me>
+          \phi_K\colon \ZZ_p^* \times p^{\ZZ} \cong \QQ_p^* \to \Gal(K_1/K) \times \Gal(K_2/K) \subset \ZZ_p^* \times \prod_{q \neq p} \ZZ_q^*
+        </me>;
         the map we want is the identity on the first factor and the map <m>p \mapsto p</m> on the second factor. See <xref ref="exer-Qp-reciprocity-map"/>.
       </p>
     </example>
@@ -91,6 +93,7 @@
       <title>Local existence theorem</title>
       <statement>
         <p>
+          Let <m>K</m> be a local field.
           For every finite (not necessarily abelian) extension <m>L</m> of <m>K</m>,
           <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m> of finite index.
           Conversely, for every (open) subgroup <m>U</m> of <m>K^*</m> of finite index,
@@ -128,20 +131,25 @@
       <title>Norm limitation theorem</title>
         <statement>
           <p>
+            Let <m>L/K</m> be a (not necessarily Galois) extension of local fields.
             Let <m>M</m> be the maximal abelian subextension of <m>L/K</m>.
             Then <m>\Norm_{L/K} L^* = \Norm_{M/K} M^*</m>.
           </p>
         </statement>
         <proof>
           <p>
-            See the discussion in <xref ref="sec_tatethm"/>.
+            See the discussion in <xref ref="sec_tatethm"/>,
+            particularly <xref ref="rem-deduce-local-norm-limitation"/>.
           </p>
         </proof>
     </theorem>
     <remark>
       <p>
-        In <xref ref="T_norm_limitation"/>, it is evident that <m>\Norm_{L/K} L^* \subseteq \Norm_{M/K} M^*</m> because
-        <m>\Norm_{L/K} = \Norm_{M/K} \circ \Norm_{L/M}</m>. Since the group <m>\Norm_{L/K} L^*</m> can be shown directly to be an open subgroup of finite index 
+        In <xref ref="T_norm_limitation"/>, we have <m>\Norm_{L/K} L^* \subseteq \Norm_{M/K} M^*</m> because
+        <me>
+          \Norm_{L/K} = \Norm_{M/K} \circ \Norm_{L/M}
+        </me>. 
+        Since the group <m>\Norm_{L/K} L^*</m> can be shown directly to be an open subgroup of finite index 
         (see <xref ref="exer-norm-subgroup-is-open"/>), <xref ref="T_local_existence"/> implies that it has the form <m>\Norm_{N/K} N^*</m> for some finite abelian 
         extension <m>N</m> of <m>K</m>. <xref ref="T_local_reciprocity"/> then implies that <m>M \subseteq N</m>. The subtle point that remains to be proven is that
         the inclusion <m>M \subseteq N</m> is actually an equality.
@@ -149,6 +157,7 @@
     </remark>
     <remark xml:id="rem-Lubin-Tate-splitting">
       <p>
+        Let <m>K</m> be a local field.
         For each uniformizer <m>\pi</m> of <m>K</m>,
         let <m>K_\pi</m> be the composite of all finite abelian extensions <m>L</m> such that <m>\pi \in \Norm_{L/K} L^*</m>.
         Then the local reciprocity map implies that <m>K^{\ab} = K_\pi \cdot K^{\unr}</m>.
@@ -173,20 +182,21 @@
     <theorem xml:id="T_cup_product_isomorphism">
       <statement>
         <p>
-          For any finite Galois extension <m>L/K</m> of local fields with Galois group <m>G</m>,
+          For any Galois extension <m>L/K</m> of local fields with Galois group <m>G</m>,
           there is a canonical isomorphism <m>H^i_T(G, \ZZ) \to H^{i+2}_T(G, L^*)</m>.
         </p>
       </statement>
       <proof>
         <p>
-          See the discussion in <xref ref="sec_tatethm"/>.
+          See the discussion in <xref ref="sec_tatethm"/>,
+          particularly <xref ref="rem-assemble-local-reciprocity"/>.
         </p>
       </proof>
     </theorem>
     <remark>
       <p>
-        The map in <xref ref="T_cup_product_isomorphism"/> can be written in terms of the <term>cup product</term> in group cohomology
-        (see <xref ref="bib-Milne-CFT"/>, Proposition II.1.38). We will not develop this point of view here.
+        The map in <xref ref="T_cup_product_isomorphism"/> can be written in terms of the <term>cup product</term> in group cohomology;
+        see <xref ref="prop-cup-product"/>.
       </p>
     </remark>
   </subsection>
@@ -202,8 +212,8 @@
           there exist canonical isomorphisms
           <md>
             <mrow>H^2(\Gal(K^{\unr}/K), (K^{\unr})^*) \to H^2(\Gal(\overline{K}/K), \overline{K}^*)</mrow>
-            <mrow>\inv_K: H^2(\Gal(\overline{K}/K), \overline{K}^*) \to \QQ/\ZZ.</mrow>
-          </md>
+            <mrow>\inv_K\colon H^2(\Gal(\overline{K}/K), \overline{K}^*) \to \QQ/\ZZ</mrow>
+          </md>.
         </p>
       </statement>
       <proof>
@@ -218,11 +228,11 @@
         the second map is called the <term>local invariant map</term>.
         More precisely, for <m>L/K</m> finite of degree <m>n</m>, we have an isomorphism
         <me>
-          \inv_{L/K}: H^2(\Gal(L/K), L^*) \to \frac{1}{n}\ZZ/\ZZ,
-        </me>
+          \inv_{L/K}\colon H^2(\Gal(L/K), L^*) \to \frac{1}{n}\ZZ/\ZZ
+        </me>,
         and these isomorphisms are compatible with inflation.
         (In particular, we don't need to prove the first isomorphism separately.
-        But that can be done, by considerations involving the Brauer group; see below.)
+        But that can be done, by considerations involving the Brauer group; see <xref ref="def-Brauer-group"/>.)
       </p>
     </definition>
     <p>
@@ -258,24 +268,26 @@
   </subsection>
   <subsection>
     <title>Abstract class field theory</title>
-    <p>
-      Having derived local class field theory once,
-      we will do it again a slightly different way in <xref ref="ch_abstract"/>.
-      In the course of proving the above results,
-      we will show (among other things) that if <m>L/K</m> is a cyclic extension of local fields,
-      <me>
-        \#H^0_T(\Gal(L/K), L^*) = [L:K], \qquad \#H^{-1}_T(\Gal(L/K), L^*) =1.
-      </me>
-    </p>
-    <p>
-      It turns out that this alone is enough number-theoretic input to prove local class field theory!
-      More precisely,
-      we will identify <q>minimal</q> properties of a field <m>K</m> with <m>G = \Gal(\overline{K}/K)</m>,
-      a surjective continuous homomorphism <m>d: G \to \widehat{\ZZ}</m> (defining <q>unramified</q> extensions of <m>K</m>),
-      a continuous <m>G</m>-module <m>A</m> (playing the role of <m>\overline{K}^*</m>),
-      and a homomorphism <m>v: A^G \to \widehat{\ZZ}</m> (playing the role of the valuation map)
-      that will suffice to yield the reciprocity map. See <xref ref="sec_look_ahead"/> for the continuation of this discussion.
-    </p>
+    <remark xml:id="subsec-abstract-cft-preview">
+      <p>
+        Having derived local class field theory once,
+        we will do it again a slightly different way in <xref ref="ch_abstract"/>.
+        In the course of proving the above results,
+        we will show (among other things) that if <m>L/K</m> is a cyclic extension of local fields,
+        <me>
+          \#H^0_T(\Gal(L/K), L^*) = [L:K], \qquad \#H^{-1}_T(\Gal(L/K), L^*) = 1
+        </me>.
+      </p>
+      <p>
+        It turns out that this alone is enough number-theoretic input to prove local class field theory!
+        More precisely,
+        we will identify <q>minimal</q> properties of a field <m>K</m> with <m>G = \Gal(\overline{K}/K)</m>,
+        a surjective continuous homomorphism <m>d\colon G \to \widehat{\ZZ}</m> (defining <q>unramified</q> extensions of <m>K</m>),
+        a continuous <m>G</m>-module <m>A</m> (playing the role of <m>\overline{K}^*</m>),
+        and a homomorphism <m>v\colon A^G \to \widehat{\ZZ}</m> (playing the role of the valuation map)
+        that will suffice to yield the reciprocity map. See <xref ref="sec_look_ahead"/> for the continuation of this discussion.
+      </p>
+    </remark>
   </subsection>
   <exercises>
     <title>Exercises</title>
@@ -294,52 +306,64 @@
       </exercise>
       <exercise>
         <statement>
-          For <m>K = \QQ_p</m>, take <m>\pi = p</m> in <xref ref="rem-Lubin-Tate-splitting"/>.
-          Determine <m>K_\pi</m>, again using local Kronecker-Weber.
+          <p>   
+            For <m>K = \QQ_p</m>, take <m>\pi = p</m> in <xref ref="rem-Lubin-Tate-splitting"/>.
+            Determine <m>K_\pi</m>, again using local Kronecker-Weber.
+          </p> 
         </statement>
         <hint>
-          You should get <m>K_\pi = \QQ(\zeta_{p^\infty}).</m>
+          <p>
+            You should get <m>K_\pi = \QQ(\zeta_{p^\infty})</m>.
+          </p>
         </hint>
       </exercise>
       <exercise xml:id="exer-norm-subgroup-is-open">
         <statement>
-          Prove that for any finite extension <m>L/K</m> of finite extensions of <m>\QQ_p</m>,
-          <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m>.
+          <p>
+            Prove that for any finite extension <m>L/K</m> of finite extensions of <m>\QQ_p</m>,
+            <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m> of finite index.
+          </p>
         </statement>
         <hint>
-          Show that already <m>\Norm_{L/K} K^*</m> is open!
-          The corresponding statement in positive characteristic is more subtle; see <xref ref="exer-norm-subgroup-is-open-charp"/>.
+          <p>
+            In fact already <m>\Norm_{L/K} K^*</m> is open; compare <xref ref="exer-finite-power-quotient"/>.
+            The corresponding statement in positive characteristic is more subtle; see <xref ref="exer-norm-subgroup-is-open-charp"/>.
+          </p>
         </hint>
       </exercise>
       <exercise xml:id="exer-norm-subgroup-is-open-charp">
         <statement>
           Prove that for any finite extension <m>L/K</m> of finite separable extensions of <m>\FF_p((t))</m>,
-          <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m>.
+          <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m> of finite index.
         </statement>
         <hint>
-          Reduce to the case of a cyclic extension of prime degree.
-          If the degree is prime to <m>p</m>,
-          you may imitate <xref ref="exer-norm-subgroup-is-open"/>;
-          otherwise, that approach fails because
-          <m>\Norm_{L/K} K^*</m> lands inside the subfield <m>K^p</m>,
-          but you can use this to your advantage to make an explicit calculation.
+          <p>
+            Reduce to the case of a cyclic extension of prime degree.
+            If the degree is prime to <m>p</m>,
+            you may imitate <xref ref="exer-norm-subgroup-is-open"/>;
+            otherwise, that approach fails because
+            <m>\Norm_{L/K} K^*</m> lands inside the subfield <m>K^p</m>,
+            but you can use this to your advantage to make an explicit calculation.
+          </p>
         </hint>
       </exercise>
       <exercise xml:id="exer-quaternion-algebras">
         <statement>
-          A <term>quaternion algebra</term> over a field <m>K</m> is a central simple algebra over <m>K</m> of dimension 4.
-          If <m>K</m> is not of characteristic 2, any such algebra has the form
-          <me>
-            K \oplus Ki \oplus Kj \oplus Kk, \qquad i^2 = a, j^2 = b, ij = -ji = k
-          </me>
-          for some <m>a,b \in K^*</m>.
-          (For example, the case <m>K = \RR</m>,
-          <m>a=b=-1</m> gives the standard Hamilton quaternions.)
-          A quaternion algebra is <term>split</term>
-          if it is isomorphic to the ring of
-          <m>2 \times 2</m> matrices over <m>K</m>.
-          Show that if <m>K</m> is a local field,
-          then any two quaternion algebras which are not split are isomorphic to each other.
+          <p>
+            A <term>quaternion algebra</term> over a field <m>K</m> is a central simple algebra over <m>K</m> of dimension 4.
+            If <m>K</m> is not of characteristic 2, any such algebra has the form
+            <me>
+              K \oplus Ki \oplus Kj \oplus Kk, \qquad i^2 = a, j^2 = b, ij = -ji = k
+            </me>
+            for some <m>a,b \in K^*</m>.
+            (For example, the case <m>K = \RR</m>,
+            <m>a=b=-1</m> gives the standard Hamilton quaternions.)
+            A quaternion algebra is <term>split</term>
+            if it is isomorphic to the ring of
+            <m>2 \times 2</m> matrices over <m>K</m>.
+            Show that if <m>K</m> is a local field,
+            then any two quaternion algebras which are not split are isomorphic to each other.
+          </p>
         </statement>
         <hint>
           <p>
@@ -350,11 +374,13 @@
       </exercise>
       <exercise xml:id="exer-subspace-top">
         <statement>
+          <p>
            Let <m>K</m> be a finite extension of <m>\QQ_p</m>.
            Show that <m>K^*</m> can be viewed as a closed subspace of <m>K \times K</m> via the inclusion <m>x \mapsto (x,x^{-1})</m>,
-           and deduce from this that <m>K^*</m> is a locally compact abelian group for the subspace topology
+           and deduce from this that <m>K^*</m> is a locally compact abelian group for the subspace topology.
            It can also be viewed as a subspace of <m>K</m>, but not as a closed subspace; this distinction will show up more seriously when we talk about 
            ad&#xe8;les and id&#xe8;les (<xref ref="rmk-idele-topology"/>).
+          </p>
         </statement>
       </exercise>
   </exercises>

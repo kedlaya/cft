@@ -90,7 +90,7 @@
         <p>
           With notation as in <xref ref="lem-adelic-exponent-p-subgroup"/>, put <m>s = \#S</m> and
           <me>
-            L = K(u^{1/p}: u \in \gotho_{K,S}^*)
+            L = K(u^{1/p}\colon u \in \gotho_{K,S}^*)
           </me>.
           Then <m>[L:K] = p^s</m> and
           <me>
@@ -245,7 +245,7 @@
       </statement>
       <proof>
         <p>
-          For any finite abelian extension <m>L/K</m>, <m>\Norm_{L/K} C_L</m> is a subgroup of <m>C_K</m> which is open (by <xref ref="rmk-adelic-norm-open"/>)
+          For any finite abelian extension <m>L/K</m>, <m>\Norm_{L/K} C_L</m> is a subgroup of <m>C_K</m> which is open (by <xref ref="L_adelic_norm_is_open"/>)
           of index <m>[L:K]</m> (by <xref ref="T_abstract_adelic_reciprocity"/>).
           Moreover, by <xref ref="cor-uniqueness-in-existence-theorem"/>, 
           the correspondence <m>L \mapsto \Norm_{L/K} C_L</m> is injective.
@@ -412,7 +412,7 @@
               </p>
             </li>
           </ul>
-          Dence <m>K^* W_{S,T} \subseteq \Norm_{L/K} C_L</m>, completing the proof.
+          Hence <m>K^* W_{S,T} \subseteq \Norm_{L/K} C_L</m>, completing the proof.
         </p>
       </proof>
     </lemma>
@@ -434,7 +434,7 @@
         </p>
         <p>
           Suppose <m>x \in C_K</m> maps to the identity in <m>H^0_T(\Gal(L'/K'), C_{L'})</m>.
-          We can then choose a representative of class of <m>x</m> in
+          We can then choose a representative of the class of <m>x</m> in
           <m>H^0_T(\Gal(L/K), C_L)</m> of the form <m>y^d</m>;
           then <m>y</m> also maps to the identity in <m>H^0_T(\Gal(L'/K'), C_{L'})</m>.
           That is, <m>y = \Norm_{L'/K'}(z')</m> for some <m>z' \in C_{L'}</m>, and
