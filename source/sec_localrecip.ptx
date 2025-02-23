@@ -84,7 +84,14 @@
         </me>;
         the map we want is the map <m>a \mapsto a^{-1}</m> on the first factor and the map <m>p \mapsto p</m> on the second factor. See <xref ref="exer-Qp-reciprocity-map"/>.
       </p>
+      <p>
+        From this, we can infer an explicit description of the local reciprocity map for any cyclotomic extension.
+        See <xref ref="prop-norm-compatibility-of-local-reciprocity"/>.
+      </p>
     </example>
+  </subsection>
+  <subsection>
+    <title>The local existence theorem</title>
     <p>
       The local reciprocity law is an analogue of the Artin reprocity law for number fields.
       We also get an analogue of the existence of ray class fields.
@@ -306,9 +313,9 @@
           <p>
             The first assertion of <xref ref="T_local_reciprocity"/> follows from global Artin reciprocity for cyclotomic fields (<xref ref="D_cyclotomic_reciprocity"/>).
             To check the second assertion for <m>L = \QQ(\zeta_n)</m>, write <m>n = p^e m</m> with <m>m</m> coprime to <m>p</m>;
-            compute norms from <m>\QQ_p(\zeta_n)</m> to <m>\QQ_p(\zeta_{p^e})}</m> as an unramified extension
-            (compare <xref ref="P_unramified_norm_surjective"/>);
-            and compute normrs from <m>\QQ_p(\zeta_{p^e})</m> to <m>\QQ_p</m>
+            compute norms from <m>\QQ_p(\zeta_n)</m> to <m>\QQ_p(\zeta_{p^e})</m> using the fact that this is an unramified extension
+            (see <xref ref="P_unramified_norm_surjective"/> for the general method);
+            and compute norms from <m>\QQ_p(\zeta_{p^e})</m> to <m>\QQ_p</m>
             using the fact that <m>\Norm_{\QQ_p(\zeta_{p^e})/\QQ_p} (1 - \zeta_{p^e}) = p</m>.
           </p>
         </hint>

@@ -182,7 +182,7 @@
         similar to the direct verification of Artin reciprocity for these extensions; this will play a key role in both approaches to adelic reciprocity.
       </p>
       <p>
-        Let us spell this out explicitly for <m>K = \QQ, L = K(\QQ_{p^m})</m>, where we have a concrete identification <m>\Gal(L/K) \cong (\ZZ/p^m\ZZ)^*</m>.
+        Let us spell this out explicitly for <m>K = \QQ, L = K(\zeta_{p^m})</m>, where we have a concrete identification <m>\Gal(L/K) \cong (\ZZ/p^m\ZZ)^*</m>.
         In this case, we are claiming that for any place <m>\ell</m> of <m>\QQ</m> and any <m>a \in \QQ^*</m>,
         <me>
           r_{\QQ_{\ell}(\zeta_{p^m})/\QQ_{\ell}}(a) = \begin{cases}\sign(a) \amp  \ell = \infty \\ \ell^{v_{\ell}(a)} \amp  \ell \neq \infty, p \\ p^{v_p(a)} a^{-1} \amp  \ell = p. \end{cases}
@@ -191,6 +191,10 @@
         where the effect of local reciprocity is to take any uniformizer (i.e., <m>\ell</m>) to the local Frobenius at <m>\ell</m> (i.e., the automorphism <m>\zeta_n \mapsto \zeta_n^\ell</m>).
         The interesting case is when <m>\ell = p</m>, for which we consult <xref ref="exa-local-recip-Qp"/>:
         we get <m>1</m> for <m>a = p</m> and <m>a^{-1}</m> for <m>a</m> coprime to <m>p</m>.
+      </p>
+      <p>
+        Fom the previous paragraph, we directly obtain the first assertion of <xref ref="prop-reciprocity-trivial-on-diagonal"/> for <m>K = \QQ, L = K(\zeta_n)</m>.
+        The case where <m>K</m> is general and <m>L = K(\zeta_n)</m> then follows from <xref ref="prop-norm-compatibility-of-local-reciprocity"/>.
       </p>
     </remark>
   </subsection>

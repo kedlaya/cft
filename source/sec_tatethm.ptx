@@ -389,6 +389,41 @@
         </p>
       </proof>
     </lemma>
+    <p>
+      Using similar ideas, we can read off a compatibility of the local reciprocity map with changing the base field.
+    </p>
+    <proposition xml:id="prop-norm-compatibility-of-local-reciprocity">
+      <statement>
+        <p>
+          For an extension <m>L/K</m> of local fields, the following diagram commutes:
+          <figure xml:id="fig-localrecip-1">
+            <image>
+              <latex-image>
+                \xymatrix{
+                  L^* \ar^{r_L}[r] \ar^{\Norm_{L/K}}[d] &amp; \Gal((K^{\ab}L)/L) \ar[d] \\
+                  K^* \ar^{r_K}[r] &amp; \Gal(K^{\ab}/K)
+                }
+              </latex-image>
+            </image>
+          </figure>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>M/K</m> be an abelian extension of local fields.
+          Then <m>\Norm_{L/K}</m> carries <m>\Norm_{ML/L} (ML)^*</m> to <m>\Norm_{ML/K} (ML)^* \subseteq \Norm_{M/K} M^*</m>
+          and thus induces a map <m>L^*/\Norm_{ML/L} (ML)^* \to K^*/\Norm_{M/K} K^*</m>; the claim is that this is compatible with the natural map
+          <m>\Gal(ML/L) \to \Gal(M/K)</m>.
+        </p>
+        <p>
+          For this, it is convenient to replace <m>L^*</m> with the group <m>(L \otimes_K M)^*</m> and identify the latter with <m>\Ind^G_H L^*</m>
+          for <m>G = \Gal(M/K), H = \Gal(ML/L)</m>. We can then build a diagram that looks like the one we want by applying ordinary functoriality
+          for the map <m>\Norm_{L/K}\colon (L \otimes_K M)^* \to M^*</m> to the construction of <xref ref="rem-assemble-local-reciprocity"/>,
+          translating back into the terms we want using Shapiro's lemma (<xref ref="L_Shapiro"/>),
+          and observing the relationship between the local invariant maps for <m>K</m> and <m>L</m> (as in the proof of <xref ref="P_H2_lower_bound"/>).
+        </p>
+      </proof>
+    </proposition>
   </subsection>
   <subsection>
     <title>The local existence theorem</title>
