@@ -119,7 +119,7 @@
       <statement>
         <p>
           Let <m>L</m> be a finite extension of <m>K</m> and let <m>M/K</m> be its Galois closure.
-          Then the set <m>S</m> of prime ideals of <m>K</m> that split completely in <m>L</m> has Dirichlet density <m>1/[M:K]</m>
+          Then the set <m>S</m> of prime ideals of <m>K</m> that split completely in <m>L</m> has Dirichlet density <m>\frac{1}{[M:K]}</m>
           (in the sense of <xref ref="def-dirichlet-density"/>).
         </p>
       </statement>
@@ -127,84 +127,31 @@
         <p>
           A prime of <m>K</m> splits completely in <m>L</m> if and only if it splits completely in <m>M</m>,
           so we may assume <m>L=M</m> is Galois.
-          Recall that the set <m>T</m> of unramfied primes <m>\gothq</m> of <m>L</m> of absolute degree 1 has Dirichlet density 1
+          Recall that the set <m>T</m> of unramified primes <m>\gothq</m> of <m>L</m> of absolute degree 1 has Dirichlet density 1
           (see <xref ref="exc-density-1"/> and <xref ref="exc-density-split-1"/>);
           each such prime lies over an unramified prime <m>\gothp</m> of <m>K</m> of absolute degree 1 which splits completely in <m>L</m>.
         </p>
         <p>
           The set <m>T</m> having Dirichlet density 1 means that
           <me>
-            \sum_{\gothq \in T} \frac{1}{\Norm(\gothq)^s} \sim \frac{1}{s-1} \qquad s \searrow  1
-          </me>
-          (<m>s</m> approaching 1 from above, that is).
+            \sum_{\gothq \in T} \frac{1}{\Norm(\gothq)^s} \sim \frac{1}{s-1} \qquad s \to 1^-
+          </me>.
           If we group the primes in <m>T</m> by which prime of <m>S</m> they lie over,
           then we get
           <me>
-            [L:K] \sum_{\gothp \in T} \frac{1}{\Norm(\gothp)^s} \sim \frac{1}{s-1}.
-          </me>
-          That is, the Dirichlet density of <m>S</m> is <m>1/[L:K]</m>.
+            [L:K] \sum_{\gothp \in T} \frac{1}{\Norm(\gothp)^s} \sim \frac{1}{s-1} \qquad s \to 1^-
+          </me>.
+          That is, the Dirichlet density of <m>S</m> is <m>\frac{1}{[L:K]}</m>.
         </p>
       </proof>
     </proposition>
     <example>
       <p>
         For <m>L/\QQ</m> a quadratic extension, <xref ref="prop-splitting-primes-density"/> states that the set of prime ideals of <m>\QQ</m>
-        that split completely in <m>L</m> has Dirichlet density <m>1/2</m>. As this splitting is governed by a congruence condition thanks to quadratic
+        that split completely in <m>L</m> has Dirichlet density <m>\frac{1}{2}</m>. As this splitting is governed by a congruence condition thanks to quadratic
         reciprocity, this assertion also follows from Dirichlet's theorem on primes in arithmetic progressions.
       </p>
     </example>
-    <p>
-      This gives the following result about splitting of primes, which may be of independent interest.
-    </p>
-    <lemma xml:id="lem-subgroup-density">
-      <statement>
-        <p>
-          With notation as in <xref ref="def-second-inequality-analytic"/>,
-          for any subgroup <m>H</m> of <m>J^{\gothm}_{K}</m> of finite index containing <m>P^{\gothm}_K</m>,
-          the set of primes in <m>H</m> has Dirichlet density equal to either <m>0</m> or <m>1/[J^{\gothm}_{K}:H]</m>.
-        </p>
-      </statement>
-      <proof>
-        <p>
-          For <m>\chi: J^{\gothm}_K/P^{\gothm}_K \to \CC^*</m> a character,
-          we defined in <xref ref="def-L-function"/> the <term><m>L</m>-function</term>
-          <me>
-            L(s, \chi) = \prod_{\gothp \not| \gothm} \frac{1}{1 - \chi(\gothp) \Norm(\gothp)^{-s}}
-          </me>.
-          By <xref ref="T_meromorphic_continuation"/>,
-          <me>
-            \log L(s, 1) \sim \log \zeta_K(s) \sim \log \frac{1}{s-1} \qquad s \searrow 1
-          </me>,
-          while if <m>\chi</m> is not the trivial character, by <xref ref="T_analytic_continuation"/>,
-          <m>L(s, \chi)</m> is holomorphic at <m>s=1</m>.
-          If <m>L(s, \chi) = (s-1)^{m(\chi)} g(s)</m> where <m>g</m> is holomorphic and nonvanishing at <m>s=1</m>,
-          then <m>m(\chi) \geq 0</m>, and
-          <me>
-            \log L(s, \chi) \sim m(\chi) \log(s-1) = - m(\chi) \log \frac{1}{s-1}
-          </me>.
-          By discrete Fourier analysis (or equivalently orthogonality of characters),
-          <me>
-            \sum_{\chi: J^{\gothm}_{K}/H \to \CC^*} \log L(s, \chi) \sim [J^{\gothm}_K:H] \sum_{\gothp \in H} \frac{1}{\Norm(\gothp)^{-s}}.
-          </me>.
-          We conclude that the set of primes in <m>H</m> has Dirichlet density
-          <me>
-            \frac{1 - \sum_{\chi \neq 1} m(\chi)}{[J^{\gothm}_K:H]}
-          </me>;
-          this is <m>1/[J^{\gothm}_{K}:H]</m> if the <m>m(\chi)</m> are all zero and 0 otherwise.
-        </p>
-      </proof>
-    </lemma>
-    <remark>
-      <p>
-        Using <xref ref="T_nonvanishing_of_L"/> one can see that in the proof of <xref ref="lem-subgroup-density"/>, we must have <m>m(\chi) = 0</m> for all <m>\chi \neq 1</m>;
-        consequently, the set of primes in <m>H</m> cannot in fact have density 0. However, we will not need this refinement for the proof of the Second Inequality.
-      </p>
-      <p>
-        From the proof of <xref ref="lem-subgroup-density"/>, we see incidentally that at most one of the <m>m(\chi)</m> can be nonzero, in which case it equals <m>1</m>.
-        This already implies that <m>m(\chi) = 0</m> when <m>\chi</m> is of order greater than 2, as in this case <m>\chi</m> is distinct from its complex conjugate <m>\overline{\chi}</m>
-        but <m>m(\chi) = m(\overline{\chi})</m>.
-      </p>
-    </remark>
   </subsection>
   <subsection>
     <title>The Second Inequality</title>
@@ -222,11 +169,15 @@
       </statement>
       <proof>
         <p>
-          Define the group <m>H = P^{\gothm}_K \Norm_{L/K} J^{\gothm}_L \subseteq J^{\gothm}_K</m>.
+          Define the group 
+          <me>
+            H := P^{\gothm}_K \Norm_{L/K} J^{\gothm}_L \subseteq J^{\gothm}_K
+          </me>.
           The group <m>H</m> includes every prime of <m>K</m> that splits completely,
-          since such a prime is the norm of any prime of <m>L</m> lying over it.
-          Thus on one hand, by <xref ref="prop-splitting-primes-density"/> the set of primes in <m>H</m> has Dirichlet density at least <m>1/[L:K]</m>.
-          On the other hand, by <xref ref="lem-subgroup-density"/> the same set has density either zero or <m>1/[J^{\gothm}_K:H]</m>.
+          since such a prime is the norm of any prime of <m>L</m> lying over it;
+          thus on one hand, by <xref ref="prop-splitting-primes-density"/> the set of primes in <m>H</m> has Dirichlet density at least <m>\frac{1}{[L:K]}</m>.
+          On the other hand, by Dirichlet's theorem for number fields (<xref ref="rmk-dirichlet-for-number-fields"/>),
+          the same set has density <m>\frac{1}{[J^{\gothm}_K:H]}</m>.
           We conclude that <m>[J^{\gothm}_K:H] \leq [L:K]</m>, as desired.
         </p>
       </proof>

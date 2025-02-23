@@ -24,7 +24,7 @@
     </p>
     <definition xml:id="def-global-abstract-units">
       <p>
-        Set <m>A = \bigcup_K C_K</m>; by <xref ref="cor-idele-group-galois-descent"/>, <m>A_K = C_K</m> for every number field <m>K</m>.
+        Set <m>A := \bigcup_K C_K</m>; by <xref ref="cor-idele-group-galois-descent"/>, <m>A_K = C_K</m> for every number field <m>K</m>.
         Our earlier calculations (<xref ref="T_first_inequality"/>, <xref ref="T_first_and_second_inequality"/>)
         imply that the class field axiom is satisfied:
         for <m>L/K</m> a cyclic extension of number fields,
@@ -88,7 +88,7 @@
         As in the general setup, for any finite extension <m>L/K</m> of number fields, we define the
         <term>abstract ramification index</term> <m>e_{L/K}</m> and the <term>abstract inertia degree</term> <m>f_{L/K}</m> by setting
         <me>
-          f_{L/K} = [L \cap \QQ^{\smcy}:K \cap \QQ^{\smcy}], \qquad e_{L/K} = \frac{[L:K]}{f_{L/K}}
+          f_{L/K} := [L \cap \QQ^{\smcy}:K \cap \QQ^{\smcy}], \qquad e_{L/K} := \frac{[L:K]}{f_{L/K}}
         </me>.
       </p>
     </definition>

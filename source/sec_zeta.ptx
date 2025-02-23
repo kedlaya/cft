@@ -125,17 +125,17 @@
         and <term>upper Dirichlet density</term> using the limits inferior and superior.
       </p>
     </definition>
-    <remark>
+    <remark xml:id="rmk-dirichlet-for-number-fields">
       <p>
         <xref ref="T_nonvanishing_of_L"/> implies that the Dirichlet density of the set of primes congruent to <m>a</m> modulo <m>m</m>
-        is <m>1/\phi(m)</m> if <m>a</m> is coprime to <m>m</m> (and <m>0</m> otherwise).
+        is <m>\frac{1}{\phi(m)}</m> if <m>a</m> is coprime to <m>m</m> (and <m>0</m> otherwise).
         The key point is that for any nontrivial <m>\chi_\gothm</m>,
         <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> remains bounded as <m>s \to \infty</m>.
       </p>
       <p>
         The fact also implies that for any number field <m>K</m> and any formal product of places <m>\gothm</m>,
         there are infinitely many primes in each class of the ray class group of conductor <m>\gothm</m>,
-        the set of such primes having Dirichlet density <m>1/\#\Cl^\gothm(K)</m>.
+        the set of such primes having Dirichlet density <m>\frac{1}{\#\Cl^\gothm(K)}</m>.
         (See <xref ref="exc-density-of-ray-classes"/>.)
       </p>
     </remark>
@@ -302,7 +302,8 @@
             Using <xref ref="T_meromorphic_continuation"/>,
             <xref ref="T_analytic_continuation"/>,
             and <xref ref="T_nonvanishing_of_L"/>,
-            prove that the set of primes of <m>K</m> lying in any specified class of the generalized ideal class group of conductor <m>\gothm</m> has Dirichlet density <m>1/\#\Cl^\gothm(K)</m>.
+            prove that the set of primes of <m>K</m> lying in any specified class of the generalized ideal class group of conductor <m>\gothm</m> has Dirichlet density 
+            <m>\frac{1}{\#\Cl^\gothm(K)}</m>.
           </p>
         </statement>
         <hint>

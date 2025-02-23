@@ -102,6 +102,7 @@
     <title>The Brauer group of a number field</title>
     <p>
       We state the formula for the Brauer group of a number field, and prove it modulo one key step.
+      Note that for the moment we will avail ourselves of global reciprocity.
     </p>
     <lemma xml:id="lem-H2-map-global-cyclic">
       <statement>
@@ -257,7 +258,7 @@
   <subsection>
     <title>Local-global compatibility via Brauer groups</title>
     <p>
-      To conclude, we turn things around and show that <xref ref="prop-H2-class-absorb-by-cyclotomic"/> can be used to recover local-global compatibility
+      We now turn things around and show that <xref ref="prop-H2-class-absorb-by-cyclotomic"/> can be used to recover local-global compatibility
       for the reciprocity map (<xref ref="prop-reciprocity-trivial-on-diagonal"/>). This can be done without the use of abstract class field theory, 
       although it does use the same inputs (notably the First and Second Inequality).
     </p>
@@ -270,8 +271,7 @@
       </statement>
       <proof>
         <p>
-          For <m>K = \QQ</m>, this follows from the explicit description of the Artin map given in <xref ref="D_cyclotomic_reciprocity"/> 
-          (or from <xref ref="L_cyclotomic_explicit_reciprocity"/>).
+          For <m>K = \QQ</m>, this follows from the explicit description of the Artin map given in <xref ref="D_cyclotomic_reciprocity"/>.
           In general, we have a commutative diagram
           <figure xml:id="fig-connection-2">
             <image width="50%">
@@ -300,7 +300,7 @@
           and <xref ref="lem-H2-map-global-cyclic"/> implies that in this case the composite <m>H^2(L/K) \to \QQ/\ZZ</m> along the bottom row of
           <xref ref="fig-connection-5"/> vanishes.
           (Note that the proof of <xref ref="lem-H2-map-global-cyclic"/> does depend on local-global compatibility, but in this case for a cyclotomic extension
-          where it can be verified directly.)
+          where it can be verified directly as in <xref ref="exer-Qp-reciprocity-map"/>.)
           By <xref ref="prop-H2-class-absorb-by-cyclotomic"/>, the same then holds for any cyclic extension <m>L/K</m>.
           By <xref ref="lem-H2-map-global-cyclic"/> again, the composition along the top row of <xref ref="fig-connection-5"/> vanishes, proving the claim.
         </p>
@@ -330,20 +330,52 @@
         and <xref ref="rmk-local-global-via-brauer"/> together imply that we have a well-defined map. Using the cyclic case, we may see that this map is surjective;
         by <xref ref="C_second_inequality_analytic"/> (a side effect of our proof of the Second Inequality), the map is forced to be an isomorphism.
       </p>
+    </remark>
+  </subsection>
+  <subsection>
+    <title><m>H^2</m> and global reciprocity</title>
+    <p>
+      We calculate <m>H^2(\Gal(L/K), C_L)</m> and use it to recover global reciprocity and the norm limitation theorem without abstract class field theory
+      (but again using the First and Second Inequality).
+    </p>
+    <proposition xml:id="prop-global-H2-cyclic">
+      <statement>
+        <p>
+          For <m>L/K</m> a Galois extension of number fields, <m>H^2(\Gal(L/K), C_L)</m> is cyclic of order <m>[L:K]</m> with a canonical generator.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          From the Second Inequality (<xref ref="T_first_and_second_inequality"/>) we have that <m>\#H^2(\Gal(L/K), C_L) \leq [L:K]</m>,
+          so it suffices to produce a cyclic subgroup of order <m>[L:K]</m> with a canonical generator.
+          For this, note that by taking cohomology of the exact sequence
+          <me>
+            0 \to L^* \to I_L \to C_L \to 0
+          </me>
+          and using the vanishing of <m>H^1(\Gal(L/K), C_L)</m> (<xref ref="T_first_and_second_inequality"/> again), we obtain an exact sequence
+          <me>
+            0 \to H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L) \to  H^2(\Gal(L/K), C_L)
+          </me>.
+          Using <xref ref="def-fundamental-exact-sequence"/> we see that the cokernel of <m>H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L)</m> admits a canonical
+          isomorphism with <m>\frac{1}{[L:K]}\ZZ/\ZZ</m>, proving the claim.
+        </p>
+      </proof>
+    </proposition>
+    <remark xml:id="rmk-global-reciprocity-via-cup-product">
       <p>
-        It is less clear how to recover the norm limitation theorem, which is needed to prove the existence theorem.
-        The difficulty is that if <m>L/K</m> is not abelian and <m>M/K</m> is its maximal abelian subextension, then the maximal abelian subextension of a completion of <m>L</m>
-        can be strictly larger than the corresponding completion of <m>M</m>; so we cannot simply apply the local norm limitation theorem.
-        Instead, one first uses the fundamental exact sequence (<xref ref="def-fundamental-exact-sequence"/>, whose proof depended on reciprocity only for cyclic extensions)
-        to argue that <m>C_L</m> satisfies the hypotheses of Tate's theorem
-        (<xref ref="T_tate_thm2"/>), which yields an isomorphism
+        At this point, we can construct a new map
         <me>
-          \Gal(L/K)^{\ab} \cong H^{-2}_T(\Gal(L/K), \ZZ) \to H^0_T(\Gal(L/K), C_L) = C_K/\Norm_{L/K} C_L
-        </me>.
-        By comparing with the construction of the local reciprocity map, we see that the inverse of this isomorphism is exactly <m>r_{L/K}</m>,
-        which yields the norm limitation theorem. See <xref ref="bib-Milne-CFT"/>, Theorem VIII.4.8 for more details.
+          \Gal(L/K)^{\ab} \cong H^-2_T(\Gal(L/K), \ZZ) \to H^0_T(\Gal(L/K), C_L) \cong C_K/\Norm_{L/K} C_L
+        </me>
+        by taking the cup product with the canonical generator of <m>H^2(\Gal(L/K), C_L)</m> produced in <xref ref="prop-global-H2-cyclic"/>.
+        Since the hypotheses of Tate's theorem (<xref ref="T_tate_thm2"/>) are satisfied (the vanishing of <m>H^1</m> by <xref ref="T_first_and_second_inequality"/>,
+        the value of <m>H^2</m> by <xref ref="prop-global-H2-cyclic"/>) this map is an isomorphism.
+        By local-to-global compatibility, this is in fact the inverse of the reciprocity map;
+        we thus recover the reciprocity isomorphism. As usual, this formally implies the norm limitation theorem 
+        as in <xref ref="rem-deduce-local-norm-limitation"/>; we can then recover the existence theorem
+        by the same argument as the one using abstract class field theory (<xref ref="T_adelic_existence_theorem2"/>).
       </p>
-   </remark>
+    </remark>
   </subsection>
   <subsection>
     <title>An application to rational points on varieties</title>

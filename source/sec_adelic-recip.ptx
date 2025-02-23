@@ -175,6 +175,7 @@
       <proof>
         <p>
           See <xref ref="prop-reciprocity-trivial-on-diagonal2"/>.
+          Alternatively, see <xref ref="rmk-local-global-via-brauer"/> for a treatment of the first assertion that does not go through abstract class field theory.
         </p>
       </proof>
     </proposition>

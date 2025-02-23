@@ -300,7 +300,6 @@
           <p>
             The first assertion of <xref ref="T_local_reciprocity"/> follows from global Artin reciprocity (<xref ref="D_cyclotomic_reciprocity"/>).
             To check the second assertion for <m>L = \QQ(\zeta_n)</m>, use the fact that <m>\Norm_{\QQ_p(\zeta_{p^m})/\QQ_p} (1 - \zeta_{p^m}) = p</m> for any positive integer <m>m</m>.
-            Alternatively, see <xref ref="L_cyclotomic_explicit_reciprocity"/>.
           </p>
         </hint>
       </exercise>
