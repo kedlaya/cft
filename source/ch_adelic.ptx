@@ -9,8 +9,8 @@
       To this end,
       we construct a topological object that includes all of the completions of a number field,
       including both the archimedean and nonarchimedean ones.
-      This object will be the ring of <term>ad&#xe8;les</term>,
-      and it will lead us to the right target group for use in the abstract class field theory we have just set up.
+      This object will be the ring of <term>ad&#xe8;les</term>, and it will lead us to the right target group for a statement of global reciprocity
+      more parallel to the local theory.
     </p>
     <remark xml:id="rmk-adele-spelling">
       <title>Spelling note</title>

@@ -232,7 +232,7 @@
           <me>
             \exp(x) = \sum_{i=0}^\infty \frac{x^i}{i!}
           </me>
-          (you need <m>v_p(x) > 1/(p-1)</m>,
+          (you need <m>v_p(x) \gt 1/(p-1)</m>,
           to be precise), and we may take <m>W = \exp(V)</m>.
         </p>
       </proof>
@@ -320,8 +320,8 @@
             <image>
               <latex-image>
                 \xymatrix{
-                0 \ar[r] &amp; H^{r-1}(G/H, N^H) \ar^{\Inf}[r] \ar[d] &amp; H^{r-1}(G, N) \ar^{\Res}[r] \ar[d] &amp; H^{r-1}(H,N) \ar[d] \\
-                0 \ar[r] &amp; H^{r}(G/H, M^H) \ar^{\Inf}[r] &amp; H^{r}(G, M) \ar^{\Res}[r] &amp; H^{r}(H,M)
+                  0 \ar[r] &amp; H^{r-1}(G/H, N^H) \ar^{\Inf}[r] \ar[d] &amp; H^{r-1}(G, N) \ar^{\Res}[r] \ar[d] &amp; H^{r-1}(H,N) \ar[d] \\
+                  0 \ar[r] &amp; H^{r}(G/H, M^H) \ar^{\Inf}[r] &amp; H^{r}(G, M) \ar^{\Res}[r] &amp; H^{r}(H,M)
                 }
               </latex-image>
             </image>
@@ -375,16 +375,13 @@
     <proposition xml:id="P_H2_upper_bound">
       <statement>
         <p>
-          For any finite Galois extension <m>L/K</m> of local fields,
-          the group <m>H^2(L/K)</m> has order at most <m>[L:K]</m>.
+          For any finite Galois extension <m>L/K</m> of local fields, the group <m>H^2(L/K)</m> has order at most <m>[L:K]</m>.
         </p>
       </statement>
       <proof>
         <p>
-          We've checked the case of <m>L/K</m> cyclic,
-          so we may use it as the basis for an induction.
-          If <m>L/K</m> is not cyclic,
-          since it is solvable (<xref ref="rmk-local-galois-solvable"/>), we can find a Galois subextension <m>M/K</m>.
+          We've checked the case of <m>L/K</m> cyclic, so we may use it as the basis for an induction.
+          If <m>L/K</m> is not cyclic, since it is solvable (<xref ref="rmk-local-galois-solvable"/>), we can find a Galois subextension <m>M/K</m>.
           Now the exact sequence
           <me>
             0 \to H^2(M/K) \to H^2(L/K) \to H^2(L/M)
@@ -416,14 +413,14 @@
         <p>
           Consider the diagram
           <figure xml:id="fig-localcomp-2">
-          <image>
-          <latex-image>
-          \xymatrix{
-          &amp; &amp; H^2(M/K) \ar[d]^{\Inf} \ar[rd] &amp;  \\
-          0 \ar[r] &amp; H^2(L/K) \ar^{\Inf}[r] &amp; H^2(ML/K) \ar^{\Res}[r] &amp; H^2(ML/L)
-          }
-          </latex-image>
-          </image>
+            <image>
+              <latex-image>
+                \xymatrix{
+                  &amp; &amp; H^2(M/K) \ar[d]^{\Inf} \ar[rd] &amp;  \\
+                  0 \ar[r] &amp; H^2(L/K) \ar^{\Inf}[r] &amp; H^2(ML/K) \ar^{\Res}[r] &amp; H^2(ML/L)
+                }
+              </latex-image>
+            </image>
           </figure>
           in which the bottom row is exact and the vertical arrow is injective,
           both by <xref ref="C_inflation_restriction_h2"/>.
@@ -510,9 +507,9 @@
     <proposition xml:id="rmk-local-Brauer-transfer">
       <statement>
         <p>
-        For <m>L/K</m> a finite extension of local fields of degree <m>n</m>,
-        the map <m>\Res\colon H^2(K^{\unr}/K) \to H^2(L^{\unr}/L)</m> corresponds,
-        via the local reciprocity map, to the map from <m>\QQ/\ZZ</m> to itself given by multiplication by <m>n</m>.
+          For <m>L/K</m> a finite extension of local fields of degree <m>n</m>,
+          the map <m>\Res\colon H^2(K^{\unr}/K) \to H^2(L^{\unr}/L)</m> corresponds,
+          via the local reciprocity map, to the map from <m>\QQ/\ZZ</m> to itself given by multiplication by <m>n</m>.
         </p>
       </statement>
       <proof>

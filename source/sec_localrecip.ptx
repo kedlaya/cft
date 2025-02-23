@@ -45,7 +45,8 @@
       </statement>
       <proof>
         <p>
-          See the discussion in <xref ref="sec_tatethm"/>,
+          For uniqueness, see <xref ref="rem-Lubin-Tate-splitting"/>.
+          For existence, see the discussion in <xref ref="sec_tatethm"/>,
           particularly <xref ref="rem-assemble-local-reciprocity"/> and <xref ref="rem-assemble-local-reciprocity-compatibility"/>.
         </p>
       </proof>
@@ -53,8 +54,7 @@
     <definition>
       <p>
         The map <m>\phi_K</m> in <xref ref="T_local_reciprocity"/> is variously called the
-        <term>local reciprocity map</term>
-        or the <term>norm residue symbol</term>.
+        <term>local reciprocity map</term> or the <term>norm residue symbol</term>.
       </p>
     </definition>
     <example xml:id="exa-local-recip-Qp">
@@ -71,18 +71,18 @@
         </me>.
         Since <m>p</m> is unramified in <m>K_2</m>, we have
         <me>
-        \Gal(K_2/K) \cong \Gal(\overline{\FF}_p/\FF_p) \cong \widehat{\ZZ}
+          \Gal(K_2/K) \cong \Gal(\overline{\FF}_p/\FF_p) \cong \widehat{\ZZ}
         </me>.
         However, it will be more convenient to think of the image as sitting inside
         <me>
-        \Gal(\bigcup_n \QQ(\zeta_{p^n-1})/\QQ) \cong \widehat{\ZZ}^*/\ZZ_p^* \cong \prod_{q \neq p} \ZZ_q^*
+          \Gal\left(\bigcup_n \QQ(\zeta_{p^n-1})/\QQ\right) \cong \widehat{\ZZ}^*/\ZZ_p^* \cong \prod_{q \neq p} \ZZ_q^*
         </me>
         (here using global Kronecker-Weber and Artin reciprocity).
         That is, we are looking for a map
         <me>
           \phi_K\colon \ZZ_p^* \times p^{\ZZ} \cong \QQ_p^* \to \Gal(K_1/K) \times \Gal(K_2/K) \subset \ZZ_p^* \times \prod_{q \neq p} \ZZ_q^*
         </me>;
-        the map we want is the identity on the first factor and the map <m>p \mapsto p</m> on the second factor. See <xref ref="exer-Qp-reciprocity-map"/>.
+        the map we want is the map <m>a \mapsto a^{-1}</m> on the first factor and the map <m>p \mapsto p</m> on the second factor. See <xref ref="exer-Qp-reciprocity-map"/>.
       </p>
     </example>
     <p>
@@ -165,8 +165,12 @@
       <p>
         It turns out that <m>K_\pi</m> can be explicitly constructed as the extension of <m>K</m> by certain elements,
         thus giving a generalization of local Kronecker-Weber to arbitrary local fields!
-        These elements come from <term>Lubin-Tate formal groups</term>,
-        which we will not discuss further.
+        These elements come from <term>Lubin-Tate formal groups</term>; see <xref ref="sec_lubin-tate"/>.
+      </p>
+      <p>
+        In any case, we see that the requirements of <xref ref="T_local_reciprocity"/> uniquely determine
+        the image of the map <m>\phi_K</m> on <term>every</term> uniformizer <m>\pi</m> of <m>K</m>.
+        Since these uniformizers generate <m>K^*</m>, we deduce the uniqueness aspect of <xref ref="T_local_reciprocity"/>.
       </p>
     </remark>
     <p>
@@ -293,13 +297,19 @@
     <title>Exercises</title>
       <exercise xml:id="exer-Qp-reciprocity-map">
         <statement>
-          Building on <xref ref="exa-local-recip-Qp"/>,
-          verify <xref ref="T_local_reciprocity"/> in the case <m>K = \QQ_p</m>.
+          <p>
+            Verify that the map defined in <xref ref="exa-local-recip-Qp"/>
+            satisfies the statement of local reciprocity (<xref ref="T_local_reciprocity"/>) in the case <m>K = \QQ_p</m>.
+          </p>
         </statement>
         <hint>
           <p>
-            The first assertion of <xref ref="T_local_reciprocity"/> follows from global Artin reciprocity (<xref ref="D_cyclotomic_reciprocity"/>).
-            To check the second assertion for <m>L = \QQ(\zeta_n)</m>, use the fact that <m>\Norm_{\QQ_p(\zeta_{p^m})/\QQ_p} (1 - \zeta_{p^m}) = p</m> for any positive integer <m>m</m>.
+            The first assertion of <xref ref="T_local_reciprocity"/> follows from global Artin reciprocity for cyclotomic fields (<xref ref="D_cyclotomic_reciprocity"/>).
+            To check the second assertion for <m>L = \QQ(\zeta_n)</m>, write <m>n = p^e m</m> with <m>m</m> coprime to <m>p</m>;
+            compute norms from <m>\QQ_p(\zeta_n)</m> to <m>\QQ_p(\zeta_{p^e})}</m> as an unramified extension
+            (compare <xref ref="P_unramified_norm_surjective"/>);
+            and compute normrs from <m>\QQ_p(\zeta_{p^e})</m> to <m>\QQ_p</m>
+            using the fact that <m>\Norm_{\QQ_p(\zeta_{p^e})/\QQ_p} (1 - \zeta_{p^e}) = p</m>.
           </p>
         </hint>
       </exercise>
@@ -332,8 +342,10 @@
       </exercise>
       <exercise xml:id="exer-norm-subgroup-is-open-charp">
         <statement>
-          Prove that for any finite extension <m>L/K</m> of finite separable extensions of <m>\FF_p((t))</m>,
-          <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m> of finite index.
+         <p>
+            Prove that for any finite extension <m>L/K</m> of finite separable extensions of <m>\FF_p((t))</m>,
+            <m>\Norm_{L/K} L^*</m> is an open subgroup of <m>K^*</m> of finite index.
+         </p>
         </statement>
         <hint>
           <p>

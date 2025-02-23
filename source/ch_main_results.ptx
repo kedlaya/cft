@@ -5,6 +5,14 @@
       We finally embark on the proof of the main results of global class field theory, via the adelic reformulation
       (<xref ref="sec_adelic-recip"/>) and specifically the outline from <xref ref="sec_adelic-overview"/>.
     </p>
+    <p>
+      As explained in the preface,
+      the reader who has arrived at this point having skipped <xref ref="ch_abstract"/> still has the ability to obtain complete proofs of the main results.
+      To do so, read <xref ref="sec_ideles-cohom1"/> and <xref ref="sec_ideles-cohom2"/> in their entirety
+      (for the First Inequality and the Second Inequality);
+      then skip ahead to <xref ref="sec_brauer"/> (for local-to-global compatibility, the reciprocity isomorphism,
+      and the norm limitation theorem); then return to <xref ref="sec_existence"/> (for the existence theorem).
+    </p>
   </introduction>
   <xi:include  href="sec_ideles-cohom1.ptx"/>
   <xi:include  href="sec_ideles-cohom2.ptx"/>

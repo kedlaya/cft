@@ -9,6 +9,11 @@
       and gives an outline of how to proceed to global class field theory. We conclude with a preview of how the method will apply in the global case;
       see <xref ref="sec_look_ahead"/>.
     </p>
+    <p>
+      This chapter can be skipped on first reading, as <xref ref="ch_adelic"/> is logically independent of it.
+      In fact the reader who wishes to avoid class formations entirely can do so with some care;
+      see the introduction to <xref ref="ch_main_results"/> for instructions.
+    </p>
     <paragraphs>
       <title>Caveat</title>
       <p>

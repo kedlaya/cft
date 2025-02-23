@@ -15,6 +15,7 @@
     </p>
     <p>
       In this lecture, we reprise a bit of shorthand from <xref ref="sec_localcomp"/>, writing <m>H^i(L/K)</m> to mean <m>H^i(\Gal(L/K), L^*)</m>.
+      Beware that <xref ref="bib-Milne-CFT"/> uses a different convention here, writing <m>H^i(L/K)</m> to mean <m>H^i(\Gal(L/K), C_L)</m>.
     </p>
   </introduction>
   <subsection>
@@ -31,6 +32,7 @@
     </definition>
     <p>
       This definition of Brauer groups is not the original one; we give that next.
+      (The standard definition is not needed for the results of class field theory, but is important in other contexts.)
     </p>
     <lemma xml:id="lem-brauer-defs">
       <statement>
@@ -101,8 +103,8 @@
   <subsection>
     <title>The Brauer group of a number field</title>
     <p>
-      We state the formula for the Brauer group of a number field, and prove it modulo one key step.
-      Note that for the moment we will avail ourselves of global reciprocity.
+      We state the formula for the Brauer group of a number field, and prove it modulo one key step which we will cover a bit later.
+      Note that for the moment we will avail ourselves of global reciprocity for the sake of exposition; we will clear this up later.
     </p>
     <lemma xml:id="lem-H2-map-global-cyclic">
       <statement>
@@ -113,14 +115,14 @@
           Moreover, both rows of the diagram are exact.
         </p>
           <figure xml:id="fig-connection-5">
-          <image>
-          <latex-image>
-          \xymatrix{
-          K^*/\Norm_{L/K} L^* \ar[r] \ar[d] &amp; I_K/\Norm_{L/K} I_L \ar^{r_{L/K}}[r] \ar[d] &amp;\Gal(L/K) \ar[d] \\
-          H^2(L/K) \ar[r] &amp; \bigoplus_v H^2(L_w/K_v) \ar[r] &amp; \frac{1}{n}\ZZ/\ZZ
-          }
-          </latex-image>
-          </image>
+            <image>
+            <latex-image>
+              \xymatrix{
+                K^*/\Norm_{L/K} L^* \ar[r] \ar[d] &amp; I_K/\Norm_{L/K} I_L \ar^{r_{L/K}}[r] \ar[d] &amp;\Gal(L/K) \ar[d] \\
+                H^2(L/K) \ar[r] &amp; \bigoplus_v H^2(L_w/K_v) \ar[r] &amp; \frac{1}{n}\ZZ/\ZZ
+              }
+            </latex-image>
+            </image>
           </figure>
       </statement>
       <proof>
@@ -300,7 +302,7 @@
           and <xref ref="lem-H2-map-global-cyclic"/> implies that in this case the composite <m>H^2(L/K) \to \QQ/\ZZ</m> along the bottom row of
           <xref ref="fig-connection-5"/> vanishes.
           (Note that the proof of <xref ref="lem-H2-map-global-cyclic"/> does depend on local-global compatibility, but in this case for a cyclotomic extension
-          where it can be verified directly as in <xref ref="exer-Qp-reciprocity-map"/>.)
+          where it can be verified directly as in <xref ref="rmk-cyclotomic-Artin"/>.)
           By <xref ref="prop-H2-class-absorb-by-cyclotomic"/>, the same then holds for any cyclic extension <m>L/K</m>.
           By <xref ref="lem-H2-map-global-cyclic"/> again, the composition along the top row of <xref ref="fig-connection-5"/> vanishes, proving the claim.
         </p>
@@ -365,7 +367,7 @@
       <p>
         At this point, we can construct a new map
         <me>
-          \Gal(L/K)^{\ab} \cong H^-2_T(\Gal(L/K), \ZZ) \to H^0_T(\Gal(L/K), C_L) \cong C_K/\Norm_{L/K} C_L
+          \Gal(L/K)^{\ab} \cong H^{-2}_T(\Gal(L/K), \ZZ) \to H^0_T(\Gal(L/K), C_L) \cong C_K/\Norm_{L/K} C_L
         </me>
         by taking the cup product with the canonical generator of <m>H^2(\Gal(L/K), C_L)</m> produced in <xref ref="prop-global-H2-cyclic"/>.
         Since the hypotheses of Tate's theorem (<xref ref="T_tate_thm2"/>) are satisfied (the vanishing of <m>H^1</m> by <xref ref="T_first_and_second_inequality"/>,

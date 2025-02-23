@@ -8,8 +8,7 @@
       </p>
     </paragraphs>
     <p>
-      Let <m>L/K</m> be a Galois extension of number fields.
-      So far, we've used abstract class field theory to construct reciprocity isomorphisms
+      So far, we've used abstract class field theory to construct reciprocity isomorphisms (<xref ref="T_abstract_adelic_reciprocity"/>)
       and to establish the adelic form of the existence theorem (<xref ref="T_adelic_existence_theorem2"/>).
     </p>
     <p>

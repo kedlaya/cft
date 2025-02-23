@@ -6,12 +6,11 @@
       to be presented in <xref ref="ch_main_results"/>.
       Many of these steps will be analogous to the steps in local class field theory;
       however, we do <em>not</em> directly attempt to verify <xref ref="prop-deduce-Artin"/>
-      except for cyclotomic extensions, for which the explicit calculation suggested in <xref ref="rmk-cyclotomic-Artin"/> will be an important input into the machine.
-      Instead, we postpone this step all the way until the end.
+      except for cyclotomic extensions, for which the explicit calculation indicated in <xref ref="rmk-cyclotomic-Artin"/> will be an important input into the machine.
     </p>
   </introduction>
   <subsection>
-    <title>Abstract reciprocity</title>
+    <title>The abstract approach to reciprocity</title>
     <p>
       Our first goal is to establish the conditions for abstract class field theory (<xref ref="sec_abstractcft1"/>),
       in the setup described at the end of <xref ref="sec_abstractcft3"/> using the id&#xe8;le class groups <m>C_K</m>.
@@ -42,22 +41,25 @@
     <p>
       Finally, we check the compatibility between <m>d</m> and <m>v</m> using the explicit nature of Artin reciprocity for cyclotomic extensions.
       Plugging into the machine then gives an <q>abstract</q> reciprocity map (<xref ref="T_abstract_adelic_reciprocity"/>), 
-      not yet known to be related to Artin reciprocity except for cyclotomic extensions. We also establish the norm limitation theorem (<xref ref="T_adelic_norm_limitation"/>).
+      not yet known to be related to Artin reciprocity except for cyclotomic extensions. 
     </p>
   </subsection>
   <subsection>
-    <title>The existence theorem and local-global compatibility</title>
+    <title>Norm limitation and the existence theorem</title>
     <p>
-      Our next step is to prove the adelic existence theorem (<xref ref="T_adelic_existence_theorem1"/>). 
-      As in the local setting, having the reciprocity law (even only in abstract form,
-      and even without any compatibility with the Artin map) and the norm limitation theorem in hand
-      allows us to reduce to showing that every open subgroup of <m>C_K</m> of finite index contains a norm group (<xref ref="T_adelic_existence_theorem2"/>).
+      From the existence of the reciprocity map, we formally deduce the norm limitation theorem (<xref ref="T_adelic_norm_limitation"/>) as in local class field theory.
+      This in turn gives us a topological approach to proving the adelic existence theorem (<xref ref="T_adelic_existence_theorem1"/>),
+      even without local-global compatibility: we just need to show that every open subgroup of <m>C_K</m> of finite index contains a norm group (<xref ref="T_adelic_existence_theorem2"/>).
       This can be done after enlarging <m>K</m>, so we can get into the realm of Kummer theory; this is closely related to the algebraic proof
       of the Second Inequality mentioned above.
     </p>
+  </subsection>
+  <subsection>
+    <title>Local-global compatibility</title>
     <p>
-      We then turn around and use the existence theorem to deduce that,
-      by analogy with the relationship between the local and global Kronecker-Weber theorems over <m>\QQ</m>,
+      As the abstract construction of the reciprocity map does not directly yield local-global compatibility, we use a somewhat indirect approach.
+      By analogy with the relationship between the local and global Kronecker-Weber theorems over <m>\QQ</m>,
+      we can use the existence theorem to show that
       every finite abelian extension of the completion of a number field at some place is itself the completion
       of a finite extension of the number field (<xref ref="L_auxiliary_existence"/>).
       This will allow us to show, by making careful use of cyclotomic extensions, that the
@@ -67,22 +69,22 @@
     </p>
   </subsection>
   <subsection>
-    <title>Another approach via Brauer groups</title>
+    <title>The approach via Brauer groups</title>
     <p>
-      We will also briefly sketch the approach taken in <xref ref="bib-Milne-CFT"/>,
-      in which one uses Galois cohomology in place of abstract class field theory.
-      Specifically, one first checks that
-      <m>H^2(\Gal(L/K), C_L)</m> is cyclic of order <m>[L:K]</m> in certain
-      <q>unramified</q>
-      (i.e., cyclotomic) cases; as in the local case,
-      one can then deduce this result in general by induction on degree.
+      The reader who has chosen to skip <xref ref="ch_abstract"/> can instead follow the proofs of global class field theory as follows.
+      We first make some computations of <m>H^2(\Gal(L/K), L^*)</m> to describe the <term>Brauer group</term> of the number field <m>K</m> (<xref ref="def-fundamental-exact-sequence"/>).
+      This in turn allows us to compute that <m>H^2(\Gal(L/K), C_L)</m> is cyclic of order <m>[L:K]</m> using a strategy borrowed from local class field theory:
+      we combine an upper bound on the size of this group (derived from the First and Second Inequality) with a lower bound obtained by transferring elements
+      from cyclotomic extensions (<xref ref="prop-H2-class-absorb-by-cyclotomic"/>).
       Using Tate's theorem (<xref ref="T_tate_thm1"/>),
       one gets a reciprocity map 
       <me>
         \Gal(L/K)^{\ab} = H^{-2}_T(\Gal(L/K), \ZZ) \to H^0_T(\Gal(L/K), C_K/\Norm_{L/K} C_L)
       </me>
       which again can be reconciled with local reciprocity to get the Artin reciprocity map (<xref ref="prop-reciprocity-trivial-on-diagonal3"/>).
-      This approach will also yield some additional information, notably a description of the Brauer group of a number field (<xref ref="def-fundamental-exact-sequence"/>).
+      Note that in this approach we build local-global compatibility into the definitions, rather than having to check it separately.
+      Also, the proofs of the norm limitation theorem and the existence theorem are agnostic as to the source of the reciprocity map,
+      so they apply in this approach without change.
     </p>
   </subsection>
 </section>
