@@ -189,8 +189,7 @@
         </me>
         This is clear when <m>\ell = \infty</m>. For <m>\ell</m> finite and distinct from <m>p</m>, we are in an unramified situation,
         where the effect of local reciprocity is to take any uniformizer (i.e., <m>\ell</m>) to the local Frobenius at <m>\ell</m> (i.e., the automorphism <m>\zeta_n \mapsto \zeta_n^\ell</m>).
-        The interesting case is when <m>\ell = p</m>, for which we consult <xref ref="exa-local-recip-Qp"/>:
-        we get <m>1</m> for <m>a = p</m> and <m>a^{-1}</m> for <m>a</m> coprime to <m>p</m>.
+        The interesting case is when <m>\ell = p</m>, for which we consult <xref ref="exa-local-recip-Qp"/>.
       </p>
       <p>
         Fom the previous paragraph, we directly obtain the first assertion of <xref ref="prop-reciprocity-trivial-on-diagonal"/> for <m>K = \QQ, L = K(\zeta_n)</m>.
@@ -217,11 +216,9 @@
         <p>
           The id&#xe8;le <m>\alpha = (1,1, \dots, \pi, \dots)</m> with a uniformizer <m>\pi</m> of
           <m>\gotho_{K_\gothp}</m> in the <m>\gothp</m> component and <m>1</m> elsewhere maps onto the class of <m>\gothp</m> in <m>C_K/U</m>.
-          On the other hand, <m>r_K(\alpha) = r_{K, \gothp}(\pi)</m> is
-          (because <m>L</m> is unramified over <m>K</m>)
-          precisely the Frobenius of <m>\gothp</m>.
-          So indeed, <m>\gothp</m> is being mapped to its Frobenius,
-          so the map <m>C_K/U \to \Gal(L/K)</m> is indeed Artin reciprocity.
+          On the other hand, <m>r_K(\alpha) = r_{K, \gothp}(\pi)</m> is precisely the Frobenius of <m>\gothp</m>
+          (because <m>L</m> is unramified over <m>K</m>).
+          So indeed <m>\gothp</m> is being mapped to its Frobenius, and the map <m>C_K/U \to \Gal(L/K)</m> is indeed Artin reciprocity.
         </p>
       </proof>
     </proposition>

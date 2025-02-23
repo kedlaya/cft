@@ -266,7 +266,7 @@
           <me>
             \phi_K\colon \gotho_K^\times \times \pi^\ZZ \to \Gal(K_\pi/K) \times \Gal(K^{\unr}/K)
           </me>
-          with the first factor mapping via the isomorphism <m>\gotho_K^\times \to \Gal(K_\pi/K)</m> from <xref ref="cor-lubin-tate-totally-ramified"/>
+          with the first factor mapping via the inverse of the isomorphism <m>\gotho_K^\times \to \Gal(K_\pi/K)</m> from <xref ref="cor-lubin-tate-totally-ramified"/>
           and the second factor mapping <m>\pi</m> to the Frobenius in <m>\Gal(K^{\unr}/K)</m>.
         </p>
       </statement>
@@ -279,8 +279,8 @@
         </p>
         <p>
           Now note that if <m>\alpha \in \Lambda_f</m> is a <m>\pi^k</m>-torsion point, then <m>\Norm_{K(\alpha)/K}(\alpha) = \pi</m>.
-          Meanwhile, we see from the congruence <m>f \equiv T^q \pmod{\pi}</m> that the action of the local reciprocity map on <m>\gotho_K^\times</m>
-          agrees with the map from <xref ref="cor-lubin-tate-totally-ramified"/>.
+          We may now argue as in the case <m>K = \QQ_p</m> (see <xref ref="exer-Qp-reciprocity-map"/>) to confirm that the reciprocity map
+          must take the desired form.
         </p>
       </proof>
     </theorem>

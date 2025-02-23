@@ -50,7 +50,7 @@
     <p>
       We first make a distinction which is of marginal significance in the totality of number theory, but is critical for our use of the machinery of abstract class field theory.
     </p>
-    <definition>
+    <definition xml:id="def-small-cyclotomic">
       <p>
         The extension <m>\bigcup_n \QQ(\zeta_n)</m> of <m>\QQ</m> obtained by adjoining all roots of unity has Galois group <m>\widehat{\ZZ}^* = \prod_p \ZZ_p^*</m>.
         That group has a lot of torsion,
@@ -198,7 +198,7 @@
     </theorem>
     <definition>
       <p>
-        By <xref ref="P_abstract_functorialities"/>, the maps <m>r'_{L/K}</m> from <xref ref="T_abstract_adelic_reciprocity"/> fit together to give a map <m>r'_K: C_K \to \Gal(K^{\ab}/K)</m>;
+        By <xref ref="P_abstract_functorialities"/>, the maps <m>r'_{L/K}</m> from <xref ref="T_abstract_adelic_reciprocity"/> fit together to give a map <m>r'_K\colon C_K \to \Gal(K^{\ab}/K)</m>;
         but we do not yet know that this coincides with the product of the local reciprocity maps, so we cannot yet recover Artin reciprocity.
         However, we can at least deduce the norm limitation theorem (<xref ref="T_adelic_norm_limitation1"/>). See also <xref ref="rmk-remove-identification"/> below.
       </p>
@@ -219,9 +219,8 @@
     <remark xml:id="rmk-remove-identification">
       <p>
         Although we do not have a complete description of the isomorphism <m>r'_{L/K}</m> coming from abstract class field theory,
-        we do know one specific fact about this map: for <q>unramified</q> extensions <m>L/K</m> (i.e., <m>L \subseteq K^{\smcy}</m>), the
-        <q>Frobenius</q> in <m>\Gal(L/K)</m> maps to a <q>uniformizer</q>
-        in <m>C_K</m>.
+        we do know one specific fact about this map: for <q>unramified</q> extensions <m>L/K</m> (i.e., <m>L \subseteq K^{\smcy}</m>), 
+        the <q>Frobenius</q> in <m>\Gal(L/K)</m> maps to a <q>uniformizer</q> in <m>C_K</m>.
         That is, the element of <m>\Gal(L/K)</m> coming from the element of
         <m>\Gal(K^{\smcy}/K)</m> which maps to 1 under <m>d_K</m> corresponds via reciprocity to the element of <m>C_K</m> which maps to 1 under <m>v_K</m>.
       </p>

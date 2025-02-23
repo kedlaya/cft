@@ -65,6 +65,7 @@
   <subsection>
     <title>Some basic observations</title>
     <definition>
+      <title>Notational shorthand</title>
       <p>
         Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>.
         (We do not yet need <m>G</m> to be cyclic.)
@@ -99,12 +100,10 @@
         <p>
           View <m>I_L</m> as the direct limit of the <m>I_{L,S}</m> over all finite sets <m>S</m> of places of <m>K</m> containing all infinite places
           and all ramified places; then <m>H^i(G,I_L)</m> is the direct limit of the <m>H^i(G, I_{L,S})</m>.
-          The latter is the product of
-          <m>H^i(G, \prod_{w|v} L_w^*)</m> over all <m>v \in S</m> and
+          The latter is the product of <m>H^i(G, \prod_{w|v} L_w^*)</m> over all <m>v \in S</m> and
           <m>H^i(G, \prod_{w|v} \gotho_{L_w}^*)</m> over all <m>v \notin S</m>,
           but the latter is trivial because <m>v \notin S</m> cannot ramify.
-          By Shapiro's lemma (<xref ref="L_Shapiro"/>),
-          <m>H^i(G, \prod_{w|v} L_w^*) = H^i(G_w, L_w^*)</m>, so we have what we want.
+          By Shapiro's lemma (<xref ref="L_Shapiro"/>), <m>H^i(G, \prod_{w|v} L_w^*) = H^i(G_w, L_w^*)</m>, so we have what we want.
           The argument for Tate groups is analogous.
         </p>
       </proof>

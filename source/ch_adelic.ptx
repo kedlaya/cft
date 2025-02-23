@@ -16,16 +16,14 @@
       <title>Spelling note</title>
       <p>
         There is a lack of consensus regarding the presence or absence of accents in the words
-        <em>ad&#xe8;le</em> and <em>id&#xe8;le</em>.
-        The term <em>id&#xe8;le</em> is thought to be a contraction of
-        <q>ideal element</q>; it makes its first appearance,
-        with the accent, in Chevalley's 1940 paper <xref ref="bib-Chevalley" />.
-        The term <em>ad&#xe8;le</em> appeared in the 1950s, possibly as a contraction of
-        <q>additive id&#xe8;le</q>; it appears to have been suggested by Weil as a replacement for Tate's term
-        <q>valuation vector</q>
-        and Chevalley's term
-        <q>repartition</q>. Based on this history, we have opted for the accented spellings here;
-        however, we drop the accent in inflected forms such as <q>adelic</q>.
+        <term>ad&#xe8;le</term> and <term>id&#xe8;le</term>, in either English or French.
+        The term <term>id&#xe8;le</term> appears to be a contraction of <term>ideal element</term>; it makes its first appearance,
+        with the accent, in Chevalley's 1940 paper <xref ref="bib-Chevalley" /> written in French.
+        The term <term>ad&#xe8;le</term> appeared in the 1950s, possibly as a contraction of
+        <term>additive id&#xe8;le</term>; it appears to have been suggested by Weil as a replacement for Tate's term
+        <term>valuation vector</term> and Chevalley's term <term>repartition</term>. 
+        Based on this history, we have opted for the accented spellings here;
+        however, we drop the accent in inflected forms such as <term>adelic</term>.
       </p>
     </remark>
   </introduction>

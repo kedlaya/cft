@@ -276,7 +276,7 @@
       </statement>
       <proof>
         <p>
-          For <m>K = \QQ</m>, this follows from the explicit description of the Artin map given in <xref ref="D_cyclotomic_reciprocity"/>.
+          For <m>K = \QQ</m>, this follows from the explicit description of the local reciprocity maps given in <xref ref="rmk-cyclotomic-Artin"/>.
           In general, from <xref ref="prop-norm-compatibility-of-local-reciprocity"/> we have a commutative diagram
           <figure xml:id="fig-connection-2">
             <image width="50%">
@@ -335,13 +335,18 @@
         and <xref ref="rmk-local-global-via-brauer"/> together imply that we have a well-defined map. Using the cyclic case, we may see that this map is surjective;
         by <xref ref="C_second_inequality_analytic"/> (a side effect of our proof of the Second Inequality), the map is forced to be an isomorphism.
       </p>
+      <p>
+        However, this is not enough to recover the norm limitation theorem. For this, we take a slightly different approach; see <xref ref="prop-global-H2-cyclic"/>
+        and <xref ref="rmk-global-reciprocity-via-cup-product"/>.
+      </p>
     </remark>
   </subsection>
   <subsection>
     <title><m>H^2</m> and global reciprocity</title>
     <p>
-      We calculate <m>H^2(\Gal(L/K), C_L)</m> and use it to recover global reciprocity and the norm limitation theorem without abstract class field theory
-      (but again using the First and Second Inequality).
+      As noted in <xref ref="rmk-no-abstract-cft"/>, we have a bit more work to do to establish global reciprocity;
+      so far we only have it for abelian extensions, but we need the stronger version for arbitrary extensions to deduce the norm limitation theorem.
+      We get this by calculating <m>H^2(\Gal(L/K), C_L)</m>, again without abstract class field theory (but again using the First and Second Inequality).
     </p>
     <proposition xml:id="prop-global-H2-cyclic">
       <statement>
@@ -376,9 +381,13 @@
         Since the hypotheses of Tate's theorem (<xref ref="T_tate_thm2"/>) are satisfied (the vanishing of <m>H^1</m> by <xref ref="T_first_and_second_inequality"/>,
         the value of <m>H^2</m> by <xref ref="prop-global-H2-cyclic"/>) this map is an isomorphism.
         By local-to-global compatibility, this is in fact the inverse of the reciprocity map;
-        we thus recover the reciprocity isomorphism. As usual, this formally implies the norm limitation theorem 
-        as in <xref ref="rem-deduce-local-norm-limitation"/>; we can then recover the existence theorem
-        by the same argument as the one using abstract class field theory (<xref ref="T_adelic_existence_theorem2"/>).
+        we thus recover the reciprocity isomorphism for arbitrary (not necessarily abelian) extensions. 
+        As usual, this formally implies the norm limitation theorem as in <xref ref="rem-deduce-local-norm-limitation"/>.
+      </p>
+      <p>
+        At this point, the reader who is avoiding abstract class field theory can now return to <xref ref="sec_existence"/>
+        for the proof of the existence theorem: the argument given therein (<xref ref="T_adelic_existence_theorem2"/>)
+        depends only on the formulation of global reciprocity, not any particular method of proof.
       </p>
     </remark>
   </subsection>
@@ -430,7 +439,8 @@
     <exercise xml:id="exer-large-cyclotomic-degree">
       <statement>
         <p>
-          Let <m>K</m> be a number field, let <m>S</m> be a finite set of finite places of <m>K</m>, and let <m>m</m> be a positive integer.
+          Let <m>K</m> be a number field, define the small cyclotomic extension <m>K^{\smcy}/K</m> as in <xref ref="def-small-cyclotomic"/>,
+          let <m>S</m> be a finite set of finite places of <m>K</m>, and let <m>m</m> be a positive integer.
           Prove that there exists a subextension <m>L</m> of <m>K^{\smcy}/K</m> (which is necessarily cyclic) such that for all <m>v \in S</m>, for some place <m>w</m> of <m>L</m> above <m>K</m>,
           <m>[L_w:K_v]</m> is divisible by <m>m</m>.
         </p>

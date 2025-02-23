@@ -10,19 +10,14 @@
       </p>
     </paragraphs>
     <p>
-      In <xref ref="sec_ideles-cohom1"/>,
-      we proved that for <m>L/K</m> a cyclic extension of number fields,
-      the Herbrand quotient <m>h(C_L)</m> of the id&#xe8;le class group of <m>L</m> is equal to <m>[L:K]</m>
-      (<xref ref="T_first_inequality1"/>)
-      and deduced that <m>\#H^0_T(\Gal(L/K), C_L) \geq [L:K]</m>
-      (the <q>First Inequality</q>; <xref ref="T_first_inequality"/>).
+      In <xref ref="sec_ideles-cohom1"/>, we proved that for <m>L/K</m> a cyclic extension of number fields,
+      the Herbrand quotient <m>h(C_L)</m> of the id&#xe8;le class group of <m>L</m> is equal to <m>[L:K]</m> (<xref ref="T_first_inequality1"/>)
+      and deduced that <m>\#H^0_T(\Gal(L/K), C_L) \geq [L:K]</m> (the <q>First Inequality</q>; <xref ref="T_first_inequality"/>).
       This time we'll prove the reverse inequality, and even a somewhat stronger statement (see <xref ref="T_first_and_second_inequality"/> below).
     </p>
     <p>
-      For this step, we have no local analogue to draw upon: the corresponding assertion in local class field theory
-      is covered by Theorem 90 (<xref ref="L_theorem_90"/>). Unfortunately, there seems to be no direct approach to computing either
-      <m>H^{-1}_T(\Gal(L/K), C_L)</m> or <m>H^1(\Gal(L/K), C_L)</m>,
-      so some alternate strategy is needed.
+      For this step, we have no local analogue to draw upon: the corresponding assertion in local class field theory is covered by Theorem 90 (<xref ref="L_theorem_90"/>).
+      Unfortunately, there seems to be no direct approach to computing either <m>H^{-1}_T(\Gal(L/K), C_L)</m> or <m>H^1(\Gal(L/K), C_L)</m>, so some alternate strategy is needed.
     </p>
     <p>
       We take an analytic approach motivated by the proof of Dirichlet's theorem on primes in arithmetic progressions; see <xref ref="L_second_inequality_analytic"/>. There is also an algebraic approach, but we prefer to postpone discussing it
@@ -43,18 +38,14 @@
       </p>
       <p>
         Let <m>I^{\gothm}_K</m> be the subset of <m>\alpha \in I_K</m> such that:
-          <ol>
-            <li>
-              <p>
-                for each finite prime <m>\gothp</m> of <m>K</m>, <m>\alpha_v \equiv 1 \pmod{\gothp^e}</m> where <m>e</m> is the exponent of <m>\gothp</m> in <m>\gothm</m>;
-              </p>
-            </li>
-            <li>
-              <p>
-                for each real place <m>v</m> in <m>\gothm</m>, <m>\alpha_v &gt; 0</m>.
-              </p>
-            </li>
-          </ol>
+        <ol>
+          <li>
+            for each finite prime <m>\gothp</m> of <m>K</m>, <m>\alpha_v \equiv 1 \pmod{\gothp^e}</m> where <m>e</m> is the exponent of <m>\gothp</m> in <m>\gothm</m>;
+          </li>
+          <li>
+            for each real place <m>v</m> in <m>\gothm</m>, <m>\alpha_v &gt; 0</m>.
+          </li>
+        </ol>
         Define <m>I^{\gothm}_L</m> similarly.
       </p>
       <p>
@@ -286,7 +277,8 @@
     </remark>
     <remark xml:id="rmk-Grunwald-Wang">
       <p>
-        Another related fact is the <term>Grunwald-Wang theorem</term>. It was originally announced (and published) in an incorrect form by Grunwald <xref ref="bib-Grunwald"/>, 
+        Another related fact is the <term>Grunwald-Wang theorem</term>. 
+        It was originally announced (and published) in an incorrect form by Grunwald <xref ref="bib-Grunwald"/>, 
         who asserted that
         for <m>K</m> a number field and <m>n</m> a positive integer, an element <m>x \in K^*</m> is an <m>n</m>-th power if and only if it is an <m>n</m>-th power in <m>K_v</m>
         for all but finitely many places <m>v</m> of <m>K</m>. 
@@ -316,6 +308,7 @@
             H^2(\Gal(\overline{K}/K), \overline{K}^*) \to \bigoplus_v H^2(\Gal(\overline{K_v}/K_v), \overline{K_v}^*)
           </me>
           is injective, where the sum runs over places <m>v</m> of <m>K</m>.
+          (We will compute the cokernel later; see <xref ref="def-fundamental-exact-sequence"/>.)
         </p>
       </statement>
       <proof>
