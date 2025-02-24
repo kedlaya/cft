@@ -179,16 +179,22 @@
         Since these uniformizers generate <m>K^*</m>, we deduce the uniqueness aspect of <xref ref="T_local_reciprocity"/>.
       </p>
     </remark>
-    <p>
-      Note that for <m>L/K</m> a finite extension of local fields, the map
-      <me>
-        K^*/\Norm_{L/K} L^* \to \Gal(L/K) = G
-      </me>
-      obtained by combining the local reciprocity law with the norm limitation theorem is in fact an isomorphism of
-      <m>G = G^{\ab} = H^{-2}_T(G, \ZZ)</m> with <m>K^*/\Norm_{L/K} L^* = H^0_T(G, L^*)</m>.
-      We will in fact show something stronger,
-      from which we will deduce both the local reciprocity law and the norm limitation theorem.
-    </p>
+    <remark>
+      <p>
+        At this point, for <m>L/K</m> a finite extension of local fields, 
+        we can combine the local reciprocity law with the norm limitation theorem to obtain an isomorphism
+        <me>
+          K^*/\Norm_{L/K} L^* \to \Gal(L/K)^{\ab} = G^{\ab}
+        </me>;
+        this can be reinterpreted as an isomorphism
+        <me>
+          H^0_T(G, L^*) \to H^{-2}_T(G, \ZZ)
+        </me>.
+        In fact we will run this backward: we will use cup products (<xref ref="prop-cup-product"/>)
+        to construct an isomorphism of this form (<xref ref="T_cup_product_isomorphism"/>)
+        and then deduce both the local reciprocity law and the norm limitation theorem.
+      </p>
+    </remark>
     <theorem xml:id="T_cup_product_isomorphism">
       <statement>
         <p>
@@ -198,17 +204,10 @@
       </statement>
       <proof>
         <p>
-          See the discussion in <xref ref="sec_tatethm"/>,
-          particularly <xref ref="rem-assemble-local-reciprocity"/>.
+          See the discussion in <xref ref="sec_tatethm"/>, particularly <xref ref="rem-assemble-local-reciprocity"/>.
         </p>
       </proof>
     </theorem>
-    <remark>
-      <p>
-        The map in <xref ref="T_cup_product_isomorphism"/> can be written in terms of the <term>cup product</term> in group cohomology;
-        see <xref ref="prop-cup-product"/>.
-      </p>
-    </remark>
   </subsection>
   <subsection>
     <title>The local invariant map</title>
@@ -218,12 +217,15 @@
     <theorem xml:id="T_Brauer_group_identification">
       <statement>
         <p>
-          For any local field <m>K</m>,
-          there exist canonical isomorphisms
-          <md>
-            <mrow>H^2(\Gal(K^{\unr}/K), (K^{\unr})^*) \to H^2(\Gal(\overline{K}/K), \overline{K}^*)</mrow>
-            <mrow>\inv_K\colon H^2(\Gal(\overline{K}/K), \overline{K}^*) \to \QQ/\ZZ</mrow>
-          </md>.
+          For any local field <m>K</m>, there is a canonical isomorphism
+          <me>
+            \inv_K\colon H^2(\Gal(\overline{K}/K), \overline{K}^*) \to \QQ/\ZZ
+          </me>.
+          Moreover, the inflation map
+          <me>
+            H^2(\Gal(K^{\unr}/K), (K^{\unr})^*) \to H^2(\Gal(\overline{K}/K), \overline{K}^*)
+          </me>
+          is an isomorphism.
         </p>
       </statement>
       <proof>

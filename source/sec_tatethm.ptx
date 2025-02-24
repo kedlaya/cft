@@ -120,7 +120,7 @@
           can be written in the form <m>\Norm_{G/H}(y)</m> for some <m>y \in M^H</m>,
           and the vanishing of <m>H^0_T(H, \Res^G_H M)</m> means that <m>y</m> can in turn be written in the form
           <m>\Norm_H(z)</m> for some <m>z \in M</m>; we thus have <m>x = \Norm_G (z)</m> and so <m>H^0_T(G, M) = 0</m>.
-         </p>
+        </p>
         <p>
           For <m>G</m> arbitrary, we prove that <m>H^i_T(G,M) = 0</m> for all <m>i \geq 0</m> by induction on <m>\#G</m> as follows.
           For <m>i \geq 0</m>, we already know that the group <m>H^i_T(G,M)</m> is killed by <m>\#G</m> (apply <xref ref="exa-extended-functoriality"/> for <m>i \gt 0</m>
@@ -397,7 +397,7 @@
         <p>
           For an extension <m>L/K</m> of local fields, the following diagram commutes:
           <figure xml:id="fig-localrecip-1">
-            <image>
+            <image width="50%">
               <latex-image>
                 \xymatrix{
                   L^* \ar^{r_L}[r] \ar^{\Norm_{L/K}}[d] &amp; \Gal((K^{\ab}L)/L) \ar[d] \\

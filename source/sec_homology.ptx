@@ -25,7 +25,7 @@
         where <m>I_G</m> is the <term>augmentation ideal</term>
         of the group algebra <m>\ZZ[G]</m>:
         <me>
-          I_G = \left\{\sum_{g \in G} z_g[g]\colon \sum_g z_g = 0\right\}
+          I_G := \left\{\sum_{g \in G} z_g[g]\colon \sum_g z_g = 0\right\}
         </me>.
         Or if you like, <m>M_G = M \otimes_{\ZZ[G]} \ZZ</m>.
         Since <m>M^G</m> is the group of <m>G</m>-invariants,
@@ -34,18 +34,18 @@
     </definition>
     <p>
       The functor <m>M \to M^G</m> is right exact but not left exact:
-      if <m>0 \to M' \to M \to M'' \to 0</m>,
-      then <m>M'_G \to M_G \to M''_G \to 0</m> is exact but the map on the left is not injective.
+      if <m>0 \to M' \to M \to M'' \to 0</m>, is exact,
+      then <m>M'_G \to M_G \to M''_G \to 0</m> is exact but the map on the left is not necessarily injective.
       Again, we can fill in the exact sequence by defining homology groups.
     </p>
     <definition>
       <p>
         A <m>G</m>-module <m>M</m> is <term>projective</term>
-        if for any surjection <m>N \to N'</m> of <m>G</m>-modules and any map <m>\phi: M \to N'</m>,
-        there exists a map <m>\psi: M \to N</m> lifting <m>\phi</m>.
+        if for any surjection <m>N \to N'</m> of <m>G</m>-modules and any map <m>\phi\colon M \to N'</m>,
+        there exists a map <m>\psi\colon M \to N</m> lifting <m>\phi</m>.
         This definition is dual to the definition of an injective <m>G</m>-module, but this symmetry is a bit misleading:
-        it is much easier to find projectives than injectives.
-        For example, any <m>G</m>-module which is a free module over the ring <m>\ZZ[G]</m> is projective
+        it is much easier to describe projective <m>G</m>-modules than injective <m>G</m>-modules.
+        For example, any <m>G</m>-module which is a free module over the ring <m>\ZZ[G]</m> is projective,
         such as <m>\ZZ[G]</m> itself!
       </p>
     </definition>
@@ -69,8 +69,7 @@
     </definition>
     <definition>
       <p>
-        We say that <m>M</m> is <term>acyclic (for homology)</term> if 
-        <m>H_i(G,M) =0</m> for <m>i>0</m>.
+        We say that <m>M</m> is <term>acyclic (for homology)</term> if <m>H_i(G,M) =0</m> for <m>i>0</m>.
         As with group cohomology, we can replace a projective resolution with an acyclic resolution and get the same homology groups.
         For example, induced modules are again acyclic and the analogue of Shapiro's lemma holds
         (key point: any free <m>\ZZ[H]</m>-module induces to a free <m>\ZZ[G]</m>-module).
@@ -104,7 +103,7 @@
   <subsection>
     <title>The Tate groups</title>
     <p>
-      We now <q>stitch together</q> the long exact sequences of cohomology and homology to get a doubly infinite exact sequence.
+      We now stitch together the long exact sequences of cohomology and homology to get a doubly infinite exact sequence.
       The value of doing this may be unclear at first, but will become apparent when we compute the Tate cohomology of cyclic groups
       (<xref ref="T_cyclic_group_periodicity"/>).
     </p>
@@ -134,7 +133,7 @@
       <p>
         We now define the <term>Tate cohomology groups</term> (or <term>Tate homology groups</term> if you prefer) as follows:
         <me>
-          H_T^i = \begin{cases}H^i(G, M) \amp  i > 0 \\ M^G/\Norm_G M \amp  i=0 \\ \ker(\Norm_G)/MI_G \amp  i=-1 \\ H_{-i-1}(G,M) \amp  i\lt -1. \end{cases}
+          H_T^i(G,M) := \begin{cases}H^i(G, M) \amp  i \gt 0 \\ M^G/\Norm_G M \amp  i=0 \\ \ker(\Norm_G)/MI_G \amp  i=-1 \\ H_{-i-1}(G,M) \amp  i\lt -1. \end{cases}
         </me>
       </p>
       </definition>
@@ -160,10 +159,10 @@
         <figure xml:id="fig-homology-1">
           <image>
           <latex-image>
-          \xymatrix{
-          H_1(G, M'') \ar[r] \ar@{-->}[d] &amp; H_0(G, M') \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M) \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M'') \ar[r] \ar^{\Norm_G}[d] &amp; 0 \ar@{-->}[d] \\
-          0 \ar[r] &amp; H^0(G, M') \ar[r]  &amp; H^0(G, M) \ar[r] &amp;  H^0(G, M') \ar[r] &amp; H^1(G, M')
-          }
+            \xymatrix{
+              H_1(G, M'') \ar[r] \ar@{-->}[d] &amp; H_0(G, M') \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M) \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M'') \ar[r] \ar^{\Norm_G}[d] &amp; 0 \ar@{-->}[d] \\
+              0 \ar[r] &amp; H^0(G, M') \ar[r]  &amp; H^0(G, M) \ar[r] &amp;  H^0(G, M') \ar[r] &amp; H^1(G, M')
+            }
           </latex-image>
           </image>
         </figure>

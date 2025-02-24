@@ -107,7 +107,7 @@
       </statement>
       <proof>
         <p>
-          See <xref ref="bib-Neukirch"/>, Theorem VII.2.9.
+          See <xref ref="bib-Neukirch"/>, Theorem VII.2.9 or <xref ref="rmk-nonvanishing-via-CFT"/>.
         </p>
       </proof>
     </theorem>

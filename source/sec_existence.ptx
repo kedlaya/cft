@@ -274,7 +274,7 @@
         <p>
           Let <m>K</m> be a number field containing <m>\zeta_p</m> for some prime <m>p</m>.
           Let <m>L/K</m> be a cyclic extension of number fields of degree <m>p</m>.
-          We can then choose the following.
+          For some positive integer <m>s</m>, we can then choose the following.
           <ol>
             <li>
               <p>

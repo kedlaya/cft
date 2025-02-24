@@ -58,10 +58,8 @@
         </p>
         <p>
           The only cases left are <m>\gothp = (2, 1+\sqrt{-5})</m>,
-          which does not split
-          (see above),
-          and <m>\gothp = (\sqrt{-5})</m>, which does split
-          (since <m>-1</m> has a square root mod 5).
+          which does not split (see above),
+          and <m>\gothp = (\sqrt{-5})</m>, which does split (since <m>-1</m> has a square root mod 5).
         </p>
       </proof>
     </proposition>
@@ -117,7 +115,7 @@
     <title>The Artin reciprocity law</title>
     <p>
       We imitate the <q>reciprocity law</q> construction we made for <m>\QQ(\zeta_m)/\QQ</m> (<xref ref="D_cyclotomic_reciprocity"/>)
-      with a general abelian extension of number fields, but this time with no  <em>a priori</em> reason to expect it to give anything useful.
+      with a general abelian extension of number fields, but this time with no <em>a priori</em> reason to expect it to give anything useful.
     </p>
     <definition xml:id="def-Artin-map">
       <p>
@@ -141,7 +139,7 @@
       </p>
       <p>
         Now for <m>\gothm</m> divisible by all primes of <m>K</m> which ramify in <m>L</m>,
-        define a homomorphism (the <term>Artin map</term>)
+        define the <term>Artin map</term> to be the homomorphism
         <me>
           J_K^\gothm \to \Gal(L/K) \qquad \gothp \mapsto \Frob_\gothp
         </me>.
@@ -173,8 +171,7 @@
       </proof>
     </theorem>
     <p>
-      In particular, we get a map
-      <m>J_K^\gothm/P_K^\gothm \to \Gal(L/K)</m> which turns out to be surjective
+      In particular, we get a map <m>J_K^\gothm/P_K^\gothm \to \Gal(L/K)</m> which turns out to be surjective
       (see <xref ref="exc-Artin-map-surjective"/>), but now we don't have the Kronecker-Weber theorem to explain this.
     </p>
     <definition xml:id="def-ray-class-field">

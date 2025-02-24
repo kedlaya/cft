@@ -20,7 +20,8 @@
       Unfortunately, there seems to be no direct approach to computing either <m>H^{-1}_T(\Gal(L/K), C_L)</m> or <m>H^1(\Gal(L/K), C_L)</m>, so some alternate strategy is needed.
     </p>
     <p>
-      We take an analytic approach motivated by the proof of Dirichlet's theorem on primes in arithmetic progressions; see <xref ref="L_second_inequality_analytic"/>. There is also an algebraic approach, but we prefer to postpone discussing it
+      We take an analytic approach motivated by the proof of Dirichlet's theorem on primes in arithmetic progressions; see <xref ref="L_second_inequality_analytic"/>. 
+      There is also an algebraic approach, but we prefer to postpone discussing it
       until we are ready to tackle the existence theorem, as these two topics share similar ideas; see <xref ref="T_first_and_second_inequality_algebraic"/>.
     </p>
   </introduction>
@@ -164,7 +165,7 @@
           <me>
             H := P^{\gothm}_K \Norm_{L/K} J^{\gothm}_L \subseteq J^{\gothm}_K
           </me>.
-          The group <m>H</m> includes every prime of <m>K</m> that splits completely,
+          The group <m>H</m> includes every prime of <m>K</m> coprime to <m>\gothm</m> that splits completely in <m>L</m>,
           since such a prime is the norm of any prime of <m>L</m> lying over it;
           thus on one hand, by <xref ref="prop-splitting-primes-density"/> the set of primes in <m>H</m> has Dirichlet density at least <m>\frac{1}{[L:K]}</m>.
           On the other hand, by Dirichlet's theorem for number fields (<xref ref="rmk-dirichlet-for-number-fields"/>),
@@ -173,6 +174,22 @@
         </p>
       </proof>
     </lemma>
+    <remark xml:id="rmk-nonvanishing-via-CFT">
+      <p>
+        Recall that <xref ref="rmk-dirichlet-for-number-fields"/> depends on the nonvanishing of <m>L(1, \chi)</m> when <m>\chi</m> is a nontrivial character of
+        a generalized ideal class group (<xref ref="T_nonvanishing_of_L"/>). Without this, we can still deduce <xref ref="L_second_inequality_analytic"/>:
+        the discrete Fourier analysis shows that the density of <m>H</m> equals <m>\frac{1}{[J^{\gothm}_K:H]}</m> times <m>1 - \sum_\chi m(\chi)</m>
+        where <m>\chi</m> runs over all of the characters of <m>\Cl^{\gothm}(K)</m> which are not trivial on <m>H</m>
+        and <m>m(\chi)</m> denotes the order of vanishing of <m>L(s,\chi)</m> at <m>s=1</m>.
+        From the proof of <xref ref="L_second_inequality_analytic"/>, we must have <m>1 - \sum_\chi m(\chi) \gt 0</m>, whence <m>m(\chi) = 0</m> for all <m>\chi</m>
+        which are nontrivial on <m>H</m>.
+      </p>
+      <p>
+        Turning this around, we can now deduce <xref ref="T_nonvanishing_of_L"/> provided that we can choose <m>L/K</m> (depending on <m>\gothm</m>) so that
+        <m>\Norm_{L/K} J^{\gothm}_L \subseteq P^{\gothm}_K</m>, as then <m>\chi</m> runs over all nontrivial characters of <m>\Cl^{\gothm}(K)</m>.
+        This will eventually follow from the adelic existence theorem (<xref ref="T_adelic_existence_theorem1"/>).
+      </p>
+    </remark>
     <corollary xml:id="C_second_inequality_analytic">
       <statement>
         <p>
@@ -250,7 +267,7 @@
   <subsection>
     <title>Aside: the Hasse norm theorem</title>
     <p>
-    We record a byproduct of the Second Inequality (not needed in what follows).
+      We record a byproduct of the Second Inequality (not needed in what follows).
     </p>
     <theorem xml:id="T_Hasse_norm">
       <title>Hasse norm theorem</title>
@@ -265,7 +282,7 @@
         <p>
           By the Second Inequality (<xref ref="T_first_and_second_inequality"/>), <m>H^{-1}_T(G, C_L) = 1</m>.
           This implies that <m>H^0_T(G, L^*) \to H^0_T(G, I_L)</m> is injective. Now if <m>x \in K^*</m> belongs to 
-          <m>\Norm_{L_w/K_v} L_w^*</m>. then it defines the zero class in <m>H^0_T(G, I_L)</m>, so by the previous logic 
+          <m>\Norm_{L_w/K_v} L_w^*</m>, then it defines the zero class in <m>H^0_T(G, I_L)</m>, so by the previous logic 
           it must also define the zero class in <m>H^0_T(G, L^*)</m>; this proves the claim.
         </p>
       </proof>
@@ -313,11 +330,14 @@
       </statement>
       <proof>
         <p>
-          This follows from <xref ref="T_first_and_second_inequality"/> via the exact sequence
+          By <xref ref="T_first_and_second_inequality"/>, for each Galois extension <m>L/K</m> of number fields,
+          we have the exact sequence
           <me>
             1 = H^1(\Gal(L/K), C_L) \to H^2(\Gal(L/K), L^*) \to \bigoplus_v H^2(\Gal(L_w/K_v), L_w^*)
           </me>
           for any Galois extension <m>L/K</m>, where <m>w</m> denotes some place of <m>L</m> above <m>K</m>.
+          Taking the union over <m>K</m> and using the injectivity of the inflation maps (<xref ref="L_theorem_90"/> plus <xref ref="P_inflation_restriction"/>)
+          yields the stated conclusion.
         </p>
       </proof>
     </theorem>

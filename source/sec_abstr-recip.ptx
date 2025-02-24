@@ -9,10 +9,12 @@
     </paragraphs>
     <p>
       We next manufacture a canonical isomorphism
-      <m>\Gal(L/K)^{\ab} \to C_K/\Norm_{L/K} C_L</m> for any finite extension <m>L/K</m> of number fields,
-      where <m>C_K</m> and <m>C_L</m> are the corresponding id&#xe8;le class groups (<xref ref="T_abstract_adelic_reciprocity"/>).
-      However, we won't yet know it agrees with our proposed reciprocity map,
-      which is the product of the local reciprocity maps.
+      <me>
+        \Gal(L/K)^{\ab} \to C_K/\Norm_{L/K} C_L
+      </me>
+      for any finite extension <m>L/K</m> of number fields,
+      in which <m>C_K</m> and <m>C_L</m> are the corresponding id&#xe8;le class groups (<xref ref="T_abstract_adelic_reciprocity"/>).
+      However, we won't yet know it agrees with our proposed reciprocity map, which is the product of the local reciprocity maps (<xref ref="def-adelic-reciprocity-candidate"/>).
       We'll come back to this point after we establish the existence theorem (see <xref ref="sec_connection"/>).
     </p>
   </introduction>
@@ -67,7 +69,8 @@
       <p>
         For <m>K</m> a number field, define <m>K^{\smcy} = K \QQ^{\smcy}</m>.
         Then <m>\Gal(K^{\smcy}/K) \cong \widehat{\ZZ}</m> as well,
-        even if <m>K</m> contains some extra roots of unity.
+        even if <m>K</m> contains some extra roots of unity:
+        the point is that any open subgroup of <m>\widehat{\ZZ}</m> is also isomorphic to <m>\widehat{\ZZ}</m> (but again not canonically so).
       </p>
     </definition>
     <p>
