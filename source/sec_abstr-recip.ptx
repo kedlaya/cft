@@ -67,7 +67,7 @@
         Its Galois group is isomorphic to <m>\prod_p \ZZ_p = \widehat{\ZZ}</m>, but <em>not canonically so</em>.
       </p>
       <p>
-        For <m>K</m> a number field, define <m>K^{\smcy} = K \QQ^{\smcy}</m>.
+        For <m>K</m> a number field, define <m>K^{\smcy} := K \QQ^{\smcy}</m>.
         Then <m>\Gal(K^{\smcy}/K) \cong \widehat{\ZZ}</m> as well,
         even if <m>K</m> contains some extra roots of unity:
         the point is that any open subgroup of <m>\widehat{\ZZ}</m> is also isomorphic to <m>\widehat{\ZZ}</m> (but again not canonically so).
@@ -168,7 +168,8 @@
       <proof>
         <p>
           Let <m>H</m> be the image of the Artin map; the fixed field <m>M</m> of <m>H</m> has the property that all but finitely many primes of <m>K</m> split completely in <m>M</m>.
-          We've already seen that this contradicts the First Inequality unless <m>M = K</m> (<xref ref="C_split_completely"/>).
+          We've already seen that this contradicts the First Inequality unless <m>M = K</m> (<xref ref="C_split_completely"/>,
+          or if you prefer <xref ref="prop-splitting-primes-density"/>).
         </p>
       </proof>
     </proposition>

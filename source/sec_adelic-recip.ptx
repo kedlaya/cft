@@ -36,15 +36,16 @@
           We first compute that
           <me>
             \Norm_{L/K} I_{L,S} = \prod_{v \in S} U_v \times \prod_{v \notin S} \gotho_{K_v}^*
-          </me>;
+          </me>
+          for some open subgroups <m>U_v</m> of <m>K_v^*</m> of finite index;
           this amounts to a separate computation for each <m>v</m>.
           For <m>v \in S</m> finite, we apply <xref ref="T_local_existence"/> (or <xref ref="exer-norm-subgroup-is-open"/>).
-          For <m>v \in S</m> finite, we note that <m>\Norm\colon \CC^* \to \RR^*</m> has image <m>\RR^+</m> of index <m>2</m>.
+          For <m>v \in S</m> infinite, we note that <m>\Norm\colon \CC^* \to \RR^*</m> has image <m>\RR^+</m> of index <m>2</m>.
           For <m>v \notin S</m>, we apply <xref ref="P_unramified_norm_surjective"/>.
         </p>
         <p>
-          Taking the union over <m>S</m>, we see that <m>\Norm_{L/K} I_L</m> is an open subgroup of <m>I_K</m> of finite index.
-          By quotienting down to <m>C_K</m>, we see that <m>\Norm_{L/K} C_K</m> is open;
+          Taking the union over <m>S</m>, we see that <m>\Norm_{L/K} I_L</m> is an open subgroup of <m>I_K</m>.
+          By quotienting down to <m>C_K</m>, we see that <m>\Norm_{L/K} C_L</m> is open;
           in fact, the snake lemma on the diagram <xref ref="fig-ideles-cohom1-1"/>
           implies that the quotient <m>I_K/(K^* \times \Norm_{L/K} I_L)</m> is isomorphic to <m>C_K/\Norm_{L/K} C_L</m>.
         </p>
@@ -58,16 +59,30 @@
             </latex-image>
           </image>
         </figure>
+        <p>
+          We still need to check that the index <m>[C_K:\Norm_{L/K} C_L]</m> is finite. For this, we note that the inclusion <m>C_K^0 \to C_K</m> induces a homeomorphism
+          <me>
+            C_K^0/\Norm_{L/K} C_L^0 \cong C_K / \Norm_{L/K} C_L
+          </me>
+          of topological groups. Consequently, this group is both discrete (by the previous paragraph) 
+          and compact (by <xref ref="P_idele_group_compact"/>), hence finite.
+        </p>
       </proof>
     </lemma>
     <theorem xml:id="T_adelic_reciprocity_law">
       <title>Adelic reciprocity law</title>
       <statement>
         <p>
-          For each number field <m>K</m>,
-          there is a map <m>r_K\colon C_K \to \Gal(K^{\ab}/K)</m> which induces,
+          For each number field <m>K</m>, there is a map 
+          <me>
+            r_K\colon C_K \to \Gal(K^{\ab}/K) = \Gal(\overline{K}/K)^{\ab}
+          </me> 
+          which induces,
           for each Galois extension <m>L/K</m> of number fields,
-          an isomorphism <m>r_{L/K}\colon C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}</m>.
+          an isomorphism 
+          <me>
+            r_{L/K}\colon C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}
+          </me>.
         </p>
       </statement>
       <proof>
@@ -102,7 +117,7 @@
       <title>Adelic norm limitation theorem</title>
       <statement>
         <p>
-          Let <m>L/K</m> be a (not necessarily Galois) extension of number fields and put <m>M = L \cap K^{\ab}</m>.
+          Let <m>L/K</m> be a (not necessarily Galois) extension of number fields and put <m>M := L \cap K^{\ab}</m>.
           Then <m>\Norm_{L/K} C_L = \Norm_{M/K} C_M</m>.
         </p>
       </statement>
@@ -126,7 +141,7 @@
     <definition xml:id="def-adelic-reciprocity-candidate">
       <p>
         Let <m>L/K</m> be an abelian extension of number fields and <m>v</m> a place of <m>K</m>.
-        Put <m>G = \Gal(L/K)</m> and let <m>G_v</m> be the <term>decomposition group</term> of <m>v</m>, that is,
+        Put <m>G := \Gal(L/K)</m> and let <m>G_v</m> be the <term>decomposition group</term> of <m>v</m>, that is,
         the set of <m>g \in G</m> such that <m>v^g = v</m>.
         Then for any place <m>w</m> above <m>v</m>, <m>G_v \cong \Gal(L_w/K_v)</m>.
         We will define a map <m>r_{K, v}\colon K_v^* \to G_v \subseteq G</m> as follows.
@@ -150,8 +165,7 @@
         by arguing as follows.
         For <m>(\alpha_v) \in I_K</m>,
         <m>\alpha_v</m> is a unit for almost all <m>v</m> and <m>L_w/K_v</m> is unramified for almost all <m>v</m> (we may ignore infinite places here).
-        For the (almost all) <m>v</m> in both categories,
-        <m>r_{K,v}</m> maps <m>\alpha_v</m> to the identity.
+        For the (almost all) <m>v</m> in both categories, <m>r_{K,v}</m> maps <m>\alpha_v</m> to the identity.
       </p>
       <p>
         Since each of the maps <m>r_{K,v}</m> is continuous, so is the map <m>\tilde{r}_K</m>.
@@ -162,6 +176,7 @@
       Here is the subtle point, and the real source of <q>reciprocity</q> in this construction.
     </p>
     <proposition xml:id="prop-reciprocity-trivial-on-diagonal">
+      <title>Local-global compatibility</title>
       <statement>
         <p>
           For <m>L/K</m> an abelian extension of number fields, the map <m>\tilde{r}_K\colon I_K \to \Gal(L/K)</m> is trivial on <m>K^*</m>;
@@ -200,14 +215,14 @@
   <subsection>
     <title>Back to classical reciprocity</title>
     <p>
-      We now apply adelic reciprocity to recover the ideal-theoretic formulations of Artin reciprocity and the existence theorem.
+      We now apply adelic reciprocity and local-global compatibility to recover the ideal-theoretic formulations of Artin reciprocity and the existence theorem.
     </p>
     <proposition xml:id="prop-deduce-Artin">
       <statement>
         <p>
           Let <m>L/K</m> be an abelian extension of number fields.
           Given <xref ref="T_adelic_reciprocity_law"/> and <xref ref="prop-reciprocity-trivial-on-diagonal"/>,
-          let <m>U</m> be the kernel of <m>r_K</m>,
+          let <m>U</m> be the kernel of <m>r_K</m> and
           identify <m>C_K/U</m> with a generalized ideal class group (<xref ref="rmk-open-subgroup-idele"/>) of some conductor <m>\gothm</m>.
           Then the map <m>C_K/U \to \Gal(L/K)</m> is the Artin map; consequently, <xref ref="T-Artin-reciprocity"/> holds.
         </p>
@@ -225,8 +240,9 @@
     <remark xml:id="rem-classical-existence-theorem">
       <p>
         We may use similar logic to recover the ideal-theoretic formulation of the existence theorem (<xref ref="T-existence-theorem"/>):
-        each generalized ideal class group arises as a quotient of <m>C_K</m> by a generalized ideal class group (see again <xref ref="rmk-open-subgroup-idele"/>)
-        and so <xref ref="T_adelic_existence_theorem1"/>) produces the desired abelian extension.
+        each generalized ideal class group arises as a quotient of <m>C_K</m> by an open subgroup (see again <xref ref="rmk-open-subgroup-idele"/>,
+        and also <xref ref="def-second-inequality-analytic"/>)
+        and so <xref ref="T_adelic_existence_theorem1"/> produces the desired abelian extension.
       </p>
       <p>
         The argument from <xref ref="prop-deduce-Artin"/> also gives some additional information about the Artin map.
@@ -235,10 +251,10 @@
         Second, we can <em>exactly</em> describe the kernel of the classical Artin map: it is generated by
         <ul>
           <li>
-              all principal ideals congruent to 1 modulo <m>\gothm</m>;
+            all principal ideals congruent to 1 modulo <m>\gothm</m>;
           </li>
           <li>
-              norms of ideals of <m>L</m> not divisible by any ramified primes.
+            norms of ideals of <m>L</m> not divisible by any ramified primes.
           </li>
         </ul>
       </p>

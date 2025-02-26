@@ -62,15 +62,15 @@
     <title><m>L</m>-functions of abelian characters</title>
     <definition xml:id="def-L-function">
       <p>
-      More generally,
-      let <m>\gothm</m> be a formal product of places of <m>K</m>,
-      and let <m>\chi_\gothm\colon \Cl^\gothm(K) \to \CC^*</m> be a character of the ray class group of conductor <m>\gothm</m>.
-      Extend <m>\chi_\gothm</m> to a function on all ideals of <m>K</m> by declaring its value to be 0 on ideals not coprime to <m>\gothm</m>.
-      Then we define the <term><m>L</m>-function</term>
-      <me>
-        L(s, \chi_\gothm) = \prod_{\gothp \not| \gothm} (1 - \chi(\gothp) \Norm(\gothp)^{-s})^{-1} = \sum_{(\gotha, \gothm) = 1} \chi(\gotha) \Norm(\gotha)^{-s}
-      </me>;
-      again the product converges absolutely for <m>\Real(s) \gt 1</m>.
+        More generally,
+        let <m>\gothm</m> be a formal product of places of <m>K</m>,
+        and let <m>\chi_\gothm\colon \Cl^\gothm(K) \to \CC^*</m> be a character of the ray class group of conductor <m>\gothm</m>.
+        Extend <m>\chi_\gothm</m> to a function on all ideals of <m>K</m> by declaring its value to be 0 on ideals not coprime to <m>\gothm</m>.
+        Then we define the <term><m>L</m>-function</term>
+        <me>
+          L(s, \chi_\gothm) = \prod_{\gothp \not| \gothm} (1 - \chi(\gothp) \Norm(\gothp)^{-s})^{-1} = \sum_{(\gotha, \gothm) = 1} \chi(\gotha) \Norm(\gotha)^{-s}
+        </me>;
+        again the product converges absolutely for <m>\Real(s) \gt 1</m>.
       </p>
     </definition>
     <theorem xml:id="T_analytic_continuation">
@@ -201,8 +201,9 @@
       </proof>
     </theorem>
     <p>
-      We state the following here as a corollary of <xref ref="T_Chebotarev"/>; however, we will eventually prove it <em>before</em>
-      proving Artin reciprocity (see <xref ref="C_split_completely"/>).
+      We state the following here as a corollary of <xref ref="T_Chebotarev"/>; 
+      however, we will eventually prove it <em>before</em> proving Artin reciprocity (see <xref ref="C_split_completely"/>
+      and <xref ref="prop-splitting-primes-density"/>).
     </p>
     <corollary xml:id="cor-some-primes-split">
       <statement>

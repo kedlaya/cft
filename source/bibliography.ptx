@@ -146,6 +146,10 @@
   <biblio type="raw" xml:id="bib-Ramakrishnan-Valenza">
     D. Ramakrishnan and R.J. Valenza, <pubtitle>Fourier Analysis on Number Fields</pubtitle>, Graduate Texts in Mathematics 186, Springer, New York, <year>1999</year>.
   </biblio>
+  <biblio type="raw" xml:id="bib-Schoof">
+    R. Schoof, <articletitle>Infinite class field towers of quadratic fields</articletitle>,
+    <journal>Journal für die reine und angewandte Mathematik</journal> <volume>372</volume> <year>1986</year>, 209<ndash/>220.
+  </biblio>
   <biblio type="raw" xml:id="bib-Scholze">
     P. Scholze, <articletitle>The local Langlands correspondence for <m>\GL_n</m> over <m>p</m>-adic fields</articletitle>,
     <journal>Inventiones Mathematicae</journal> <journal>192</journal> <year>2013</year>, 663<ndash/>715.
@@ -178,12 +182,12 @@
   <biblio type="raw" xml:id="bib-Taylor-Wiles">
     R. Taylor and A. Wiles, <articletitle>Ring-theoretic properties of certain Hecke algebras</articletitle>, <journal>Annals of Mathematics</journal> <volume>141</volume> (1995), 553<ndash/>572.
   </biblio>
-  <biblio type="raw" xml:id="bib-Wang">
-    S. Wang, <articletitle>A counter-example to Grunwald's theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>49</volume> <year>1948</year> 1008<ndash/>1009.
-  </biblio>
   <biblio type="raw" xml:id="bib-Waldspurger">
     J.-L. Waldspurger, <articletitle>Sur les intégrales orbitales tordues pour les groupes linéaires: un lemme fondamental</articletitle>,
     <journal>Canadian Journal of Mathematics</journal> <volume>43</volume> <year>1991</year>, 852<ndash/>896.
+  </biblio>
+  <biblio type="raw" xml:id="bib-Wang">
+    S. Wang, <articletitle>A counter-example to Grunwald's theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>49</volume> <year>1948</year> 1008<ndash/>1009.
   </biblio>
   <biblio type="raw" xml:id="bib-Wang2">
     S. Wang, <articletitle>On Grunwald's theorem</articletitle>, <journal>Annals of Mathematics</journal> <volume>51</volume> <year>1950</year>, 471<ndash/>484.

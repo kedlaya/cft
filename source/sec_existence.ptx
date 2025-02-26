@@ -39,7 +39,7 @@
           and all places above <m>p</m>,
           <m>I_K = K^* I_{K,S}</m> and the preimage of <m>U</m> in <m>I_{K,S}</m> contains
           <me>
-            W_S = \prod_{v \in S} (K_v^*)^p \times \prod_{v \notin S} \gotho_{K_v}^*
+            W_S := \prod_{v \in S} (K_v^*)^p \times \prod_{v \notin S} \gotho_{K_v}^*
           </me>.
         </p>
       </statement>
@@ -49,7 +49,7 @@
           so that <m>J</m> is open in <m>I_K</m> of index <m>p</m>.
           Then <m>J</m> contains a subgroup of the form
           <me>
-            V = \prod_{v \in S} \{1\} \times \prod_{v \notin S} \gotho_{K_v}^*
+            V := \prod_{v \in S} \{1\} \times \prod_{v \notin S} \gotho_{K_v}^*
           </me>
           for some finite set <m>S</m> of places of <m>K</m> containing the infinite places,
           which by <xref ref="lem-generate-ideles-with-S-units"/> we may choose large enough so that <m>I_K = K^* I_{K,S}</m>.
@@ -104,7 +104,7 @@
           By <xref ref="cor-S-units-theorem"/> and the assumption that <m>K</m> contains a primitive <m>p</m>-th root of unity,
           the group <m>\gotho_{K,S}^*/(\gotho_{K,S}^*)^p</m> is finite of order <m>p^s</m>, yielding <m>[L:K] = p^s</m>.
           By local reciprocity (<xref ref="L_hilbert_symbol"/>), we have <m>K^* W_S/K^* \subseteq \Norm_{L/K} C_L</m>; to prove equality,
-          it will suffice to check that these groups have the same index in <m>C_K</m>.
+          it will suffice to show that these subgroups have the same finite index in <m>C_K</m>.
         </p>
         <p>
           Consider now the exact sequence
@@ -113,11 +113,11 @@
           </me>.
           By <xref ref="lem-local-pth-power"/>, the group on the left has order <m>[\gotho_{K,S}^*:(\gotho_{K,S}^*)^p] = p^s</m>.
           By <xref ref="L_local-pth-powers-index"/>, the group in the middle has order <m>p^{2s}</m>.
-          Thus using the abstract global reciprocity isomorphism (<xref ref="T_abstract_adelic_reciprocity"/>), we obtain
+          We thus have
           <me>
             [C_K:K^* W_S/K^*] = p^s = [L:K] = [C_K:\Norm_{L/K} C_L]
-          </me>,
-          as desired.
+          </me>
+          where the last equality follows from the global reciprocity isomorphism (<xref ref="T_adelic_reciprocity_law"/>).
         </p>
       </proof>
    </lemma>
@@ -194,7 +194,7 @@
       <proof>
         <p>
           Take <m>K' = K(\zeta_p)</m>. Let <m>U'</m> be the inverse image of <m>U</m> in <m>C_{K'}</m>.
-          By <xref ref="T_abstract_adelic_reciprocity"/>, <m>[C_K:\Norm_{K'/K} C_{K'}] = [K':K]</m> is coprime to <m>p</m>; consequently, <m>[C_{K'}:U'] = p</m>.
+          By <xref ref="T_adelic_reciprocity_law"/> <m>[C_K:\Norm_{K'/K} C_{K'}] = [K':K]</m> is coprime to <m>p</m>; consequently, <m>[C_{K'}:U'] = p</m>.
           By <xref ref="lem-norm-group-prime-index"/>, there exists a finite extension <m>L/K'</m> such that 
           <m>\Norm_{L/K'} C_{L} \subseteq U'</m>; then <m>\Norm_{L/K} C_L \subseteq \Norm_{K'/K} U' \subseteq U</m>.
         </p>
@@ -239,7 +239,7 @@
       <proof>
         <p>
           For any finite abelian extension <m>L/K</m>, <m>\Norm_{L/K} C_L</m> is a subgroup of <m>C_K</m> which is open (by <xref ref="L_adelic_norm_is_open"/>)
-          of index <m>[L:K]</m> (by <xref ref="T_abstract_adelic_reciprocity"/>).
+          of index <m>[L:K]</m> (by <xref ref="T_adelic_reciprocity_law"/>).
           Moreover, by <xref ref="cor-uniqueness-in-existence-theorem"/>, 
           the correspondence <m>L \mapsto \Norm_{L/K} C_L</m> is injective.
         </p>
@@ -247,7 +247,7 @@
           Conversely, let <m>U</m> be an open subgroup of <m>C_K</m> of finite index.
           By <xref ref="lem-adelic-norm-cofinal"/>, there exists a finite extension <m>L_1/K</m> such that <m>\Norm_{L_1/K} C_{L_1} \subseteq U</m>.
           By the adelic norm limitation theorem (<xref ref="T_adelic_norm_limitation1"/>), we also have <m>\Norm_{L_1/K} C_{L_1} = \Norm_{L_2/K} C_{L_2} \subseteq U</m>
-          for <m>L_2/K</m> the maximal abelian subextension of <m>L_1/K</m>. By <xref ref="T_abstract_adelic_reciprocity"/> again,
+          for <m>L_2/K</m> the maximal abelian subextension of <m>L_1/K</m>. By <xref ref="T_adelic_reciprocity_law"/> again,
           we have an isomorphism <m>\Gal(L_2/K) \cong C_K/\Norm_{L_2/K} C_{L_2}</m>, via which the subgroup <m>U/\Norm_{L_2/K} C_{L_2}</m> corresponds to a subgroup
           <m>H</m> of <m>\Gal(L_2/K)</m>. Taking <m>L</m> to be the fixed field of <m>H</m>, we deduce that <m>\Norm_{L/K} C_L = U</m> as desired.
         </p>
@@ -298,7 +298,7 @@
           This remains true after enlarging <m>S</m>, so by <xref ref="lem-generate-ideles-with-S-units"/> we can further ensure that <m>I_K = I_{K,S} K^*</m>.
         </p>
         <p>
-          Put <m>N = K((\gotho_{K,S}^*)^{1/p})</m>.
+          Put <m>N := K((\gotho_{K,S}^*)^{1/p})</m>.
           By Kummer theory again,
           <me>
             \Gal(N/K) \cong \Hom(\gotho_{K,S}^*/(\gotho_{K,S}^*)^p, \ZZ/p\ZZ)
@@ -311,7 +311,8 @@
         </p>
         <p>
           Let <m>N_i</m> be the fixed field of <m>g_i</m>;
-          by <xref ref="C_split_completely"/> (which we deduced from the First Inequality),
+          by <xref ref="C_split_completely"/> (which we deduced from the First Inequality)
+          or <xref ref="prop-splitting-primes-density"/> (which was part of the analytic proof of the Second Inequality),
           there are infinitely many primes of <m>N_i</m> that do not split in <m>N</m>.
           So we can choose a place <m>w_i</m> of each <m>N_i</m> such that their restrictions <m>v_i</m> to <m>K</m> are distinct,
           not contained in <m>S</m>, and don't divide <m>p</m>.
@@ -321,12 +322,9 @@
           <term>decomposition field</term> of <m>v_i</m>).
           On one hand, <m>v_i</m> does not split completely in <m>N</m>,
           so the decomposition field is no larger than <m>N_i</m>.
-          On the other hand,
-          the decomposition field is the fixed field of the decomposition group,
-          which has exponent <m>p</m> and is cyclic
-          (since <m>v_i</m> does not ramify in <m>N</m>).
-          Thus it must have index <m>p</m> in <m>N</m>,
-          so must be <m>N_i</m> itself.
+          On the other hand, the decomposition field is the fixed field of the decomposition group,
+          which has exponent <m>p</m> and is cyclic (since <m>v_i</m> does not ramify in <m>N</m>).
+          Thus it must have index <m>p</m> in <m>N</m>, so must be <m>N_i</m> itself.
         </p>
         <p>
           Thus <m>L = \bigcap N_i</m> is the maximal subextension of <m>N</m> in which all of the <m>v_i</m> split completely.
@@ -344,9 +342,9 @@
     <lemma xml:id="lem-local-pth-power-T">
       <statement>
         <p>
-          With notation as in <xref ref="lem-second-inequality-algebraic-setup"/>, write
+          With notation as in <xref ref="lem-second-inequality-algebraic-setup"/>, put
           <me>
-            W_{S,T} = \prod_{v \in S} (K_v^*)^p \times \prod_{v \in T} K_v^* \times \prod_{v \notin S \cup T} \gotho_{K_v}^*
+            W_{S,T} := \prod_{v \in S} (K_v^*)^p \times \prod_{v \in T} K_v^* \times \prod_{v \notin S \cup T} \gotho_{K_v}^*
           </me>.
           Then
           <me>
@@ -432,7 +430,7 @@
           then <m>y</m> also maps to the identity in <m>H^0_T(\Gal(L'/K'), C_{L'})</m>.
           That is, <m>y = \Norm_{L'/K'}(z')</m> for some <m>z' \in C_{L'}</m>, and
           <me>
-          y^d = \Norm_{K'/K}(y) = \Norm_{L'/K}(z') \in \Norm_{L/K} C_L
+            y^d = \Norm_{K'/K}(y) = \Norm_{L'/K}(z') \in \Norm_{L/K} C_L
           </me>.
           Thus <m>x \in \Norm_{L/K} C_L</m>, as needed.
         </p>

@@ -178,11 +178,14 @@
       <p>
         Recall that <xref ref="rmk-dirichlet-for-number-fields"/> depends on the nonvanishing of <m>L(1, \chi)</m> when <m>\chi</m> is a nontrivial character of
         a generalized ideal class group (<xref ref="T_nonvanishing_of_L"/>). Without this, we can still deduce <xref ref="L_second_inequality_analytic"/>:
-        the discrete Fourier analysis shows that the density of <m>H</m> equals <m>\frac{1}{[J^{\gothm}_K:H]}</m> times <m>1 - \sum_\chi m(\chi)</m>
+        the discrete Fourier analysis shows that the Dirichlet density of the set of primes in <m>H</m> equals 
+        <me>
+          \frac{1 - \sum_\chi m(\chi)}{[J^{\gothm}_K:H]}
+        </me>
         where <m>\chi</m> runs over all of the characters of <m>\Cl^{\gothm}(K)</m> which are not trivial on <m>H</m>
         and <m>m(\chi)</m> denotes the order of vanishing of <m>L(s,\chi)</m> at <m>s=1</m>.
-        From the proof of <xref ref="L_second_inequality_analytic"/>, we must have <m>1 - \sum_\chi m(\chi) \gt 0</m>, whence <m>m(\chi) = 0</m> for all <m>\chi</m>
-        which are nontrivial on <m>H</m>.
+        From the proof of <xref ref="L_second_inequality_analytic"/>, we must have <m>1 - \sum_\chi m(\chi) \gt 0</m>, 
+        whence <m>m(\chi) = 0</m> for all <m>\chi</m> which are nontrivial on <m>H</m>.
       </p>
       <p>
         Turning this around, we can now deduce <xref ref="T_nonvanishing_of_L"/> provided that we can choose <m>L/K</m> (depending on <m>\gothm</m>) so that
@@ -280,8 +283,8 @@
       </statement>
       <proof>
         <p>
-          By the Second Inequality (<xref ref="T_first_and_second_inequality"/>), <m>H^{-1}_T(G, C_L) = 1</m>.
-          This implies that <m>H^0_T(G, L^*) \to H^0_T(G, I_L)</m> is injective. Now if <m>x \in K^*</m> belongs to 
+          By the Second Inequality (<xref ref="T_first_and_second_inequality"/>) plus periodicity (<xref ref="T_cyclic_group_periodicity"/>), 
+          <m>H^{-1}_T(G, C_L) = 1</m>. This implies that <m>H^0_T(G, L^*) \to H^0_T(G, I_L)</m> is injective. Now if <m>x \in K^*</m> belongs to 
           <m>\Norm_{L_w/K_v} L_w^*</m>, then it defines the zero class in <m>H^0_T(G, I_L)</m>, so by the previous logic 
           it must also define the zero class in <m>H^0_T(G, L^*)</m>; this proves the claim.
         </p>

@@ -104,12 +104,12 @@
       </p>
       <figure xml:id="fig-principal-2">
         <image width="50%" xml:id="img-principal-2">
-        <latex-image>
-        \xymatrix{
-        \Cl(K) \ar[r] \ar[d] &amp; \Gal(L/K) = \Gal(M/K)^{\ab} \ar^{V}[d] \\
-        \Cl(L) \ar[r] &amp; \Gal(M/L) = \Gal(M/L)^{\ab}
-        }
-        </latex-image>
+          <latex-image>
+            \xymatrix{
+              \Cl(K) \ar[r] \ar[d] &amp; \Gal(L/K) = \Gal(M/K)^{\ab} \ar^{V}[d] \\
+              \Cl(L) \ar[r] &amp; \Gal(M/L) = \Gal(M/L)^{\ab}
+            }
+          </latex-image>
         </image>
       </figure>
     </definition>
@@ -121,13 +121,13 @@
         Let <m>G</m> be a finite group and <m>H</m> a (not necessarily normal) subgroup.
         Let <m>g_1, \dots, g_n</m> be left coset representatives of <m>H</m> in <m>G</m>:
         that is, <m>G = g_1H \cup \cdots \cup g_nH</m>.
-        For <m>g \in G</m>, put <m>\phi(g) = g_i</m> if
-        <m>g \in g_iH</m> (i.e., <m>g_i^{-1}g \in H</m>).
+        For <m>g \in G</m>, put <m>\phi(g) = g_i</m> if <m>g \in g_iH</m> (i.e., <m>g_i^{-1}g \in H</m>).
         Put
         <me>
           V(g) = \prod_{i=1}^n \phi(gg_i)^{-1}(gg_i)
         </me>;
-        then <m>V(g)</m> always lands in <m>H</m>. (Note that <m>\phi(gg_1), \dots, \phi(gg_n)</m> is a permutation of <m>g_1, \dots, g_n</m>.)
+        then <m>V(g)</m> always lands in <m>H</m>. 
+        (Note that <m>\phi(gg_1), \dots, \phi(gg_n)</m> is a permutation of <m>g_1, \dots, g_n</m>.)
       </p>
       <p>
         Now consider what happens when we compose the map <m>g \mapsto V(g)\colon G \to H</m>
@@ -217,12 +217,12 @@
       </proof>
     </theorem>
     <remark>
-       <p>
-         The fact that <xref ref="T_transfer_vanishes"/> is so general means that we can easily obtain some extensions of <xref ref="T_principal_ideal_theorem"/>.
-         For example, it was observed by Iyanaga that if <m>L</m> is the ray class field of <m>K</m> of some modulus <m>\gothm</m>, and <m>\gothm \gotho_L</m>
-         is the extension of this modulus to <m>L</m> (that is, extend the finite part and take all places of <m>L</m> above the infinite places in <m>\gothm</m>),
-         then the induced map <m>\Cl^{\gothm}(K) \to \Cl^{\gothm}(L)</m> again vanishes.
-       </p>
+      <p>
+        The fact that <xref ref="T_transfer_vanishes"/> is so general means that we can easily obtain some extensions of <xref ref="T_principal_ideal_theorem"/>.
+        For example, it was observed by Iyanaga that if <m>L</m> is the ray class field of <m>K</m> of some modulus <m>\gothm</m>, and <m>\gothm \gotho_L</m>
+        is the extension of this modulus to <m>L</m> (that is, extend the finite part and take all places of <m>L</m> above the infinite places in <m>\gothm</m>),
+        then the induced map <m>\Cl^{\gothm}(K) \to \Cl^{\gothm}(L)</m> again vanishes.
+      </p>
     </remark>
   </subsection>
   <subsection>
@@ -243,15 +243,16 @@
         For example, if <m>K</m> is an imaginary quadratic field in which at least six distinct finite places of <m>\QQ</m> ramify,
         or a real quadratic field in which at least eight distinct finite places of <m>\QQ</m> ramify,
         then the 2-part of the class field tower is unbounded.
-        See <xref ref="bib-Cassels-Frohlich"/>, Chapter IX for a proof of this statement and some further discussion,
-        and <xref ref="bib-Wang-tower"/> for some more results plus a survey of recent literature.
+        See <xref ref="bib-Cassels-Frohlich"/>, Chapter IX for a proof of this statement and some further discussion;
+        <xref ref="bib-Schoof"/> for a number of additional results, including some examples of quadratic fields with prime discriminant with infinite class field towers;
+        and <xref ref="bib-Wang-tower"/> for more results plus a survey of recent (as of 2016) literature.
       </p>
       <p>
         In fact, it can be shown (see <xref ref="exc-class-field-tower-stabilizes"/>) 
-        that the finiteness of the class field tower is equivalent to the existence of an extension of <m>K</m>
+        that the finiteness of the class field tower is equivalent to the existence of a finite extension of <m>K</m>
         of class number 1, which <em>a priori</em> need not be solvable or even Galois!
-        That is, if a number field <m>K</m> is contained in a number field <m>L</m> of class number 1, then we can always ensure that <m>L/K</m>
-        is Galois and solvable.
+        That is, if a number field <m>K</m> is contained in a number field <m>L</m> of class number 1, 
+        then we can always ensure that <m>L/K</m> is Galois and solvable.
         In particular, by the previous paragraph there exist number fields which admit no finite extensions of class number 1.
       </p>
     </remark>
@@ -328,8 +329,9 @@
           <p>
             Note that <m>\phi(gg_{ij}) = g_{i(j+1)}</m> for <m>j=0,\dots,m-2</m>,
             so all of the terms in the product vanish except for <m>\tau_i^{-1} g^m \tau_i</m>.
-            We directly verify that this is the desired Frobenius element by noting that the residue class degree of <m>\gothq</m> over <m>\gothp</m>
-            equals <m>m</m>. See also <xref ref="bib-Neukirch"/>, Proposition IV.5.9.
+            We directly verify that this is the desired Frobenius element by noting that 
+            the residue class degree of <m>\gothq</m> over <m>\gothp</m> equals <m>m</m>. 
+            See also <xref ref="bib-Neukirch"/>, Proposition IV.5.9.
           </p>
         </hint>
       </exercise>
@@ -339,8 +341,7 @@
             Let <m>H \subseteq G</m> be an inclusion of finite groups.
             Let <m>G'</m> and <m>H'</m> be the commutator subgroups of <m>G</m> and <m>H</m>.
             Let <m>\ZZ[G]</m> be the group algebra of <m>G</m>, i.e., the (noncommutative) ring of formal linear combinations
-            <m>\sum_{g \in G} n_g [g]</m> with <m>n_g \in \ZZ</m>,
-            multiplied according to the rule that <m>[g][h] = [gh]</m>.
+            <m>\sum_{g \in G} n_g [g]</m> with <m>n_g \in \ZZ</m>, multiplied according to the rule that <m>[g][h] = [gh]</m>.
             Let <m>I_G \subset \ZZ[G]</m> be the ideal of sums <m>\sum_{g \in G} n_g[g]</m> with <m>\sum_{g \in G} n_g = 0</m>
             (called the <term>augmentation ideal</term>; see <xref ref="sec_homology"/>).
             Let
@@ -371,12 +372,12 @@
           </p>
           <figure xml:id="fig-principal-3">
             <image width="50%" xml:id="img-principal-3">
-            <latex-image>
-            \xymatrix{
-            G/G' \ar^{V}[r] \ar^{\delta}[d] &amp; H/H' \ar^{\delta}[d] \\
-            I_G/I_G^2 \ar^(.3){S}[r] &amp; (I_{H}+I_GI_{H})/I_GI_{H}
-            }
-            </latex-image>
+              <latex-image>
+                \xymatrix{
+                  G/G' \ar^{V}[r] \ar^{\delta}[d] &amp; H/H' \ar^{\delta}[d] \\
+                  I_G/I_G^2 \ar^(.3){S}[r] &amp; (I_{H}+I_GI_{H})/I_GI_{H}
+                }
+              </latex-image>
             </image>
           </figure>
         </statement>

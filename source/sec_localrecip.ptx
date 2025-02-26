@@ -14,10 +14,10 @@
       The main theorem of local class field theory is the following.
     </p>
     <definition>
-    <p>
-      For <m>K</m> a local field,
-      let <m>K^{\ab}</m> be the maximal abelian extension of <m>K</m>.
-    </p>
+      <p>
+        For <m>K</m> a local field,
+        let <m>K^{\ab}</m> be the maximal abelian extension of <m>K</m>.
+      </p>
     </definition>
     <theorem xml:id="T_local_reciprocity">
       <title>Local Reciprocity Law</title>
@@ -28,17 +28,13 @@
           <m>\phi_K\colon K^* \to \Gal(K^{\ab}/K)</m> satisfying the following conditions:
           <ol>
             <li>
-              <p>
-                for any uniformizer <m>\pi</m> of <m>K</m> and any finite unramified extension <m>L</m> of <m>K</m>,
-                <m>\phi_K(\pi)</m> acts on <m>L</m> as the Frobenius automorphism;
-              </p>
+              for any uniformizer <m>\pi</m> of <m>K</m> and any finite unramified extension <m>L</m> of <m>K</m>,
+              <m>\phi_K(\pi)</m> acts on <m>L</m> as the Frobenius automorphism;
             </li>
             <li>
-              <p>
-                for any finite abelian extension <m>L</m> of <m>K</m>,
-                the group of norms <m>\Norm_{L/K} L^*</m> is in the kernel of <m>\phi_K</m>,
-                and the induced map <m>K^*/\Norm_{L/K} L^* \to \Gal(L/K)</m> is an isomorphism.
-              </p>
+              for any finite abelian extension <m>L</m> of <m>K</m>,
+              the group of norms <m>\Norm_{L/K} L^*</m> is in the kernel of <m>\phi_K</m>,
+              and the induced map <m>K^*/\Norm_{L/K} L^* \to \Gal(L/K)</m> is an isomorphism.
             </li>
           </ol>
         </p>

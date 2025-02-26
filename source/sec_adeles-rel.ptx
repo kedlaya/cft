@@ -15,81 +15,82 @@
   <subsection>
     <title>Ad&#xe8;les in field extensions</title>
     <definition>
-    <p>
-      If <m>L/K</m> is an extension of number fields,
-      we get an embedding <m>\AA_K \hookrightarrow \AA_L</m> as follows:
-      given <m>\alpha \in \AA_K</m>,
-      each place <m>w</m> of <m>L</m> restricts to a place <m>v</m> of <m>K</m>,
-      so it makes sense to declare that the <m>w</m>-component of the image of <m>\alpha</m> shall equal <m>\alpha_v</m>.
-      This embedding induces an inclusion <m>I_K \hookrightarrow I_L</m> of id&#xe8;le groups.
-      These embeddings are compatible with the topologies in both cases.
-    </p>
-    <p>
-      All automorphisms of <m>L/K</m> act naturally (and continuously) on <m>\AA_L</m> and <m>I_L</m>.
-      More generally, if <m>g \in \Gal(\overline{K}/K)</m>,
-      then <m>g</m> maps <m>L</m> to some other extension <m>L^g</m> of <m>K</m>,
-      and <m>g</m> induces isomorphisms 
-      <me>
-        \AA_L \to \AA_{L^g}, \qquad I_L \cong I_{L^g}, \qquad C_L \to C_{L^g}
-      </me>.
-      Explicitly, if <m>(\alpha_w)_w \in \AA_L</m> and <m>g \in G</m>,
-      then <m>g</m> maps the completion <m>L_w</m> of <m>L</m> to a completion <m>L_{w^g}</m> of <m>L^g</m>.
-      (Remember that a place <m>w</m> of <m>L</m> corresponds to an absolute value <m>|\cdot|_w</m> on <m>L</m>;
-      the absolute value <m>|\cdot|_{w^g}</m> on <m>L^g</m> is given by <m>|a^g|_{w^g} = |a|_w</m>.)
-    </p>
-  </definition>
-  <remark>
-    <p>
-      A more conceptual interpretation of the previous discussion is to identify <m>\AA_L</m> with the tensor product <m>\AA_K \otimes_K L</m>.
-      In particular, this is a good way to see the Galois action on <m>\AA_L</m>. See <xref ref="exer-adeles-tensor-product"/>.
-    </p>
-  </remark>
-  <remark xml:id="rem-too-many-automs">
-    <p>
-      When <m>K</m> is totally real, it is possible to show that every automorphism of <m>\AA_K</m> is induced by an automorphism of <m>K</m> over <m>\QQ</m>, even if we ignore topology and consider
-      automorphisms of the underlying ring which need not be continuous. See <xref ref="exer-automorphisms-AK"/>.
-      This breaks down when <m>K</m> has complex places because <m>\CC</m> has many automorphisms as a field without topology: the automorphism group
-      acts transitively on <m>\CC \setminus \overline{\QQ}</m>.
-    </p>
-  </remark>
+      <p>
+        If <m>L/K</m> is an extension of number fields,
+        we get an embedding <m>\AA_K \hookrightarrow \AA_L</m> as follows:
+        given <m>\alpha \in \AA_K</m>,
+        each place <m>w</m> of <m>L</m> restricts to a place <m>v</m> of <m>K</m>,
+        so it makes sense to declare that the <m>w</m>-component of the image of <m>\alpha</m> shall equal <m>\alpha_v</m>.
+        This embedding induces an inclusion <m>I_K \hookrightarrow I_L</m> of id&#xe8;le groups.
+        These embeddings are compatible with the topologies in both cases.
+      </p>
+      <p>
+        All automorphisms of <m>L/K</m> act naturally (and continuously) on <m>\AA_L</m> and <m>I_L</m>.
+        More generally, if <m>g \in \Gal(\overline{K}/K)</m>,
+        then <m>g</m> maps <m>L</m> to some other extension <m>L^g</m> of <m>K</m>,
+        and <m>g</m> induces isomorphisms 
+        <me>
+          \AA_L \to \AA_{L^g}, \qquad I_L \cong I_{L^g}, \qquad C_L \to C_{L^g}
+        </me>.
+        Explicitly, if <m>(\alpha_w)_w \in \AA_L</m> and <m>g \in G</m>,
+        then <m>g</m> maps the completion <m>L_w</m> of <m>L</m> to a completion <m>L_{w^g}</m> of <m>L^g</m>.
+        (Remember that a place <m>w</m> of <m>L</m> corresponds to an absolute value <m>|\cdot|_w</m> on <m>L</m>;
+        the absolute value <m>|\cdot|_{w^g}</m> on <m>L^g</m> is given by <m>|a^g|_{w^g} = |a|_w</m>.
+        Compare <xref ref="def-Minkowski-lattice"/> which was a special case of this.)
+      </p>
+    </definition>
+    <remark>
+      <p>
+        A more conceptual interpretation of the previous discussion is to identify <m>\AA_L</m> with the tensor product <m>\AA_K \otimes_K L</m>.
+        In particular, this is a good way to see the Galois action on <m>\AA_L</m>. See <xref ref="exer-adeles-tensor-product"/>.
+      </p>
+    </remark>
+    <remark xml:id="rem-too-many-automs">
+      <p>
+        When <m>K</m> is totally real, it is possible to show that every automorphism of <m>\AA_K</m> is induced by an automorphism of <m>K</m> over <m>\QQ</m>, even if we ignore topology and consider
+        automorphisms of the underlying ring which need not be continuous. See <xref ref="exer-automorphisms-AK"/>.
+        This breaks down when <m>K</m> has complex places because <m>\CC</m> has many automorphisms as a field without topology: the automorphism group
+        acts transitively on <m>\CC \setminus \overline{\QQ}</m>.
+      </p>
+    </remark>
   </subsection>
   <subsection>
-  <title>Trace and norm</title>
+    <title>Trace and norm</title>
     <definition>
-    <p>
-      For <m>L/K</m> an extension of number fields, we define the <term>trace map</term> <m>\Trace_{L/K}\colon \AA_L \to \AA_K</m>
-      and the <term>norm map</term> <m>\Norm_{L/K}\colon I_L \to I_K</m> by the formulas
-      <me>
-        \Trace_{L/K}(x) = \sum_g x^g, \qquad \Norm_{L/K}(x) = \prod_g x^g
-      </me>
-      where <m>g</m> runs over coset representatives of
-      <m>\Gal(\overline{K}/L)</m> in <m>\Gal(\overline{K}/K)</m>.
-      Here the sum and product take place in the ad&#xe8;le and id&#xe8;le rings of the Galois closure of <m>L</m> over <m>K</m>;
-      in particular, if <m>L/K</m> is Galois, <m>g</m> simply runs over <m>\Gal(L/K)</m> and the arithmetic takes place in <m>\AA_L</m>.
-    </p>
-    <p>
-      In terms of components, these definitions translate as
-      <md>
-        <mrow>(\Trace_{L/K}(\alpha))_{v} \amp = \sum_{w | v} \Trace_{L_w/K_v}(\alpha_w)</mrow>
-        <mrow>(\Norm_{L/K}(\alpha))_{v} \amp = \prod_{w | v} \Norm_{L_w/K_v}(\alpha_w)</mrow>
-      </md>.
-    </p>
-    <p>
-      The trace and norm as defined here are compatible with the usual definitions for principal ad&#xe8;les/id&#xe8;les.
-      In particular, the norm induces a map <m>\Norm_{L/K}\colon C_L \to C_K</m>.
-    </p>
-  </definition>
-  <remark>
-    <p>
-      You can also define the trace of an ad&#xe8;le
-      <m>\alpha \in \AA_L</m> as the trace of addition by <m>\alpha</m> as an endomorphism of the finite free <m>\AA_K</m>-module <m>\AA_L</m>,
-      and the norm of an id&#xe8;le
-      <m>\alpha \in I_L</m> as the determinant of multiplication by <m>\alpha</m> as an automorphism of the finite free <m>\AA_K</m>-module <m>\AA_L</m>.
-      (Yes, the action is on the <em>ad&#xe8;les</em> in both cases.
-      Remember from <xref ref="rmk-idele-topology"/> that id&#xe8;les should be thought of as automorphisms of the ad&#xe8;les,
-      not as elements of the ad&#xe8;le ring, in order to topologize them correctly.)
-    </p>
-  </remark>
+      <p>
+        For <m>L/K</m> an extension of number fields, we define the <term>trace map</term> <m>\Trace_{L/K}\colon \AA_L \to \AA_K</m>
+        and the <term>norm map</term> <m>\Norm_{L/K}\colon I_L \to I_K</m> by the formulas
+        <me>
+          \Trace_{L/K}(x) = \sum_g x^g, \qquad \Norm_{L/K}(x) = \prod_g x^g
+        </me>
+        where <m>g</m> runs over coset representatives of
+        <m>\Gal(\overline{K}/L)</m> in <m>\Gal(\overline{K}/K)</m>.
+        Here the sum and product take place in the ad&#xe8;le and id&#xe8;le rings of the Galois closure of <m>L</m> over <m>K</m>;
+        in particular, if <m>L/K</m> is Galois, <m>g</m> simply runs over <m>\Gal(L/K)</m> and the arithmetic takes place in <m>\AA_L</m>.
+      </p>
+      <p>
+        In terms of components, these definitions translate as
+        <md>
+          <mrow>(\Trace_{L/K}(\alpha))_{v} \amp = \sum_{w | v} \Trace_{L_w/K_v}(\alpha_w)</mrow>
+          <mrow>(\Norm_{L/K}(\alpha))_{v} \amp = \prod_{w | v} \Norm_{L_w/K_v}(\alpha_w)</mrow>
+        </md>.
+      </p>
+      <p>
+        The trace and norm as defined here are compatible with the usual definitions for principal ad&#xe8;les/id&#xe8;les.
+        In particular, the norm induces a map <m>\Norm_{L/K}\colon C_L \to C_K</m>.
+      </p>
+    </definition>
+    <remark>
+      <p>
+        You can also define the trace of an ad&#xe8;le
+        <m>\alpha \in \AA_L</m> as the trace of addition by <m>\alpha</m> as an endomorphism of the finite free <m>\AA_K</m>-module <m>\AA_L</m>,
+        and the norm of an id&#xe8;le
+        <m>\alpha \in I_L</m> as the determinant of multiplication by <m>\alpha</m> as an automorphism of the finite free <m>\AA_K</m>-module <m>\AA_L</m>.
+        (Yes, the action is on the <em>ad&#xe8;les</em> in both cases.
+        Remember from <xref ref="rmk-idele-topology"/> that id&#xe8;les should be thought of as automorphisms of the ad&#xe8;les,
+        not as elements of the ad&#xe8;le ring, in order to topologize them correctly.)
+      </p>
+    </remark>
   </subsection>
   <subsection>
     <title>Id&#xe8;le groups and class groups</title>
@@ -162,6 +163,7 @@
         <p>
           Let <m>L/K</m> be a finite extension of number fields. Prove that the natural map <m>\AA_K \otimes_K L \to \AA_L</m> is an isomorphism.
           In other words, if <m>\alpha_1,\dots,\alpha_n</m> form a basis of <m>L</m> as a <m>K</m>-vector space, then they also form a basis of <m>\AA_L</m> as an <m>\AA_K</m>-module.
+          (Bonus observation: if <m>L/K</m> is Galois with Galois group <m>G</m>, then <m>\AA_L</m> is an induced <m>G</m>-module.)
         </p>
       </statement>
       <hint>

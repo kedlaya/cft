@@ -81,7 +81,36 @@
         </me>.
       </p>
     </definition>
-    <proposition xml:id="prop-idele-cohomology-local">
+    <proposition xml:id="prop-idele-cohomology-local-with-places">
+      <statement>
+        <p>
+          Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>.
+          Let <m>S</m> be a finite set of places of <m>K</m> containing all infinite places and all places that ramify in <m>K</m>.
+          For each <m>i \gt 0</m>, 
+          <me>
+            H^i(G, I_{L,S}) = \bigoplus_{v \in S} H^i(G_w, L_w^*)
+          </me>
+          where <m>w</m> denotes a single place of <m>L</m> above <m>v</m>. 
+          Similarly, for each <m>i \in \ZZ</m>,
+          <me>
+            H^i_T(G, I_{L,S}) = \bigoplus_{v \in S} H^i_T(G_w, L_w^*)
+          </me>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          The group <m>H^i(G, I_{L,S})</m> is the product of <m>H^i(G, \prod_{w|v} L_w^*)</m> over all <m>v \in S</m> and
+          <m>H^i(G, \prod_{w|v} \gotho_{L_w}^*)</m> over all <m>v \notin S</m>.
+          By Shapiro's lemma (<xref ref="L_Shapiro"/>), we may reinterpret  <m>H^i(G, I_{L,S})</m>  as the product of 
+          <m>H^i(G_w, L_w^*)</m> over all <m>v \in S</m> and
+          <m>H^i(G_w, \gotho_{L_w}^*)</m> over all <m>v \notin S</m>.
+          The latter vanish for all <m>i \gt 0</m> by <xref ref="C_cohomology_of_units_unramified"/>,
+          so we get what we want.
+          The argument for Tate groups is analogous.
+        </p>
+      </proof>
+    </proposition>
+    <corollary xml:id="prop-idele-cohomology-local">
       <statement>
         <p>
           Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>.
@@ -100,18 +129,19 @@
         <p>
           View <m>I_L</m> as the direct limit of the <m>I_{L,S}</m> over all finite sets <m>S</m> of places of <m>K</m> containing all infinite places
           and all ramified places; then <m>H^i(G,I_L)</m> is the direct limit of the <m>H^i(G, I_{L,S})</m>.
-          The latter is the product of <m>H^i(G, \prod_{w|v} L_w^*)</m> over all <m>v \in S</m> and
-          <m>H^i(G, \prod_{w|v} \gotho_{L_w}^*)</m> over all <m>v \notin S</m>,
-          but the latter is trivial because <m>v \notin S</m> cannot ramify.
-          By Shapiro's lemma (<xref ref="L_Shapiro"/>), <m>H^i(G, \prod_{w|v} L_w^*) = H^i(G_w, L_w^*)</m>, so we have what we want.
-          The argument for Tate groups is analogous.
+          We may thus apply <xref ref="prop-idele-cohomology-local-with-places"/> to deduce the claims.
         </p>
       </proof>
-    </proposition>
+    </corollary>
     <corollary xml:id="cor-idele-cohomology-local">
       <statement>
         <p>
-          Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>. Then
+          Let <m>L/K</m> be a Galois extension of number fields with Galois group <m>G</m>. 
+          For any finite set of places <m>S</m> of <m>K</m> containing all infinite places and all places which ramify in <m>L</m>,
+          <me>
+            H^1(G, I_{L,S}) = 0, \qquad H^2(G, I_{L,S}) = \bigoplus_{v \in S} \frac{1}{[L_w:K_v]} \ZZ/\ZZ
+          </me>.
+          In addition,
           <me>
             H^1(G, I_L) = 0, \qquad H^2(G, I_L) = \bigoplus_v \frac{1}{[L_w:K_v]} \ZZ/\ZZ
           </me>.
@@ -119,7 +149,7 @@
       </statement>
       <proof>
         <p>
-          This follows by combining <xref ref="prop-idele-cohomology-local"/>, the computation of cohomology of local fields
+          This follows by combining <xref ref="prop-idele-cohomology-local-with-places"/>, the computation of cohomology of local fields
           (<xref ref="L_theorem_90"/> and <xref ref="P_local_h2"/>), and the equality
           <me>
             H^2(\Gal(\CC/\RR), \CC^*) \cong H^0_T(\Gal(\CC/\RR), \CC^*) = \RR^*/\RR^+ \cong \ZZ/2\ZZ
@@ -142,7 +172,9 @@
     <definition xml:id="def-idele-S-units-Herbrand">
       <p>
         Let <m>L/K</m> be a cyclic extension of number fields with Galois group <m>G</m>.
-        Apply <xref ref="lem-generate-ideles-with-S-units"/> to choose a finite set <m>S</m> of places of <m>K</m> so that <m>I_L = I_{L,S} L^*</m>.
+        Apply <xref ref="lem-generate-ideles-with-S-units"/> to choose a finite set <m>S</m> of places of <m>K</m>,
+        containing all infinite places and all places which ramify in <m>L</m>,
+        such that <m>I_L = I_{L,S} L^*</m>.
         From the exact sequence
         <me>
           1 \to \gotho_{L,S}^* \to I_{L,S} \to I_{L,S}/\gotho_{L,S}^* = C_L \to 1
@@ -155,9 +187,8 @@
       <p>
         By <xref ref="cor-idele-cohomology-local"/>,
         <me>
-          h(I_{L,S}) = \prod_{v \in S} \#H^0_T(G_v, L_w^*)= \prod_{v \in S} [L_w:K_v]
+          h(I_{L,S}) = \prod_{v \in S} [L_w:K_v]
         </me>.
-        (Since <m>G</m> is abelian, we write <m>G_v</m> instead of <m>G_w</m>.)
         To get <m>h(C_L) = [L:K]</m>, it will thus suffice to establish <xref ref="lem-Herbrand-S-units"/> below.
       </p>
     </definition>
@@ -187,29 +218,29 @@
       ideas to the proof of Dirichlet's units theorem (<xref ref="cor-S-units-theorem"/>).
     </p>
     <definition xml:id="def-Herbrand-quotient-real-lattices1">
-        <p>
-          Let <m>L/K</m> be a cyclic extension of number fields with Galois group <m>G</m>.
-          Let <m>S</m> be a finite set of places of <m>K</m> containing all infinite places, and let <m>T</m> be the set of places of <m>L</m> lying above places of <m>S</m>.
-          Let <m>V</m> be the real vector space consisting of one copy of <m>\RR</m> for each place in <m>T</m>.
-          Define the map <m>\gotho_{L,S}^* \to V</m> by
-          <me>
-            \alpha \to \prod_{w \in T} \log |\alpha|_w
-          </me>
-          with normalizations as in <xref ref="def-normalized-adele-norm"/>.
-          By the product formula (<xref ref="prop-product-formula"/>) and Dirichlet's units theorem (<xref ref="cor-S-units-theorem"/>), the kernel of this map consists of roots of unity,
-          and the image <m>M</m> is a lattice in the trace-zero hyperplane <m>H</m> of <m>V</m>.
-          Since <m>G</m> acts compatibly on <m>\gotho_{L,S}^*</m> and <m>V</m> (the latter by permuting the factors), it also acts on <m>M</m>.
-        </p>
+      <p>
+        Let <m>L/K</m> be a cyclic extension of number fields with Galois group <m>G</m>.
+        Let <m>S</m> be a finite set of places of <m>K</m> containing all infinite places, and let <m>T</m> be the set of places of <m>L</m> lying above places of <m>S</m>.
+        Let <m>V</m> be the real vector space consisting of one copy of <m>\RR</m> for each place in <m>T</m>.
+        Define the map <m>\gotho_{L,S}^* \to V</m> by
+        <me>
+          \alpha \to \prod_{w \in T} \log |\alpha|_w
+        </me>
+        with normalizations as in <xref ref="def-normalized-adele-norm"/>.
+        By the product formula (<xref ref="prop-product-formula"/>) and Dirichlet's units theorem (<xref ref="cor-S-units-theorem"/>), the kernel of this map consists of roots of unity,
+        and the image <m>M</m> is a lattice in the trace-zero hyperplane <m>H</m> of <m>V</m>.
+        Since <m>G</m> acts compatibly on <m>\gotho_{L,S}^*</m> and <m>V</m> (the latter by permuting the factors), it also acts on <m>M</m>.
+      </p>
     </definition>
     <remark>
-    <title>Caveat</title>
-    <p>
-      At this point, we deviate from <xref ref="bib-Neukirch"/> due to an error therein.
-      Namely, Lemma VI.3.4 is only proved assuming that <m>G</m> acts transitively on the coordinates of <m>V</m>,
-      but in <xref ref="def-Herbrand-quotient-real-lattices1"/> this is not the case:
-      <m>G</m> permutes the places above any given place <m>v</m> of <m>K</m> but those are separate orbits.
-      So we'll follow <xref ref="bib-Milne-CFT"/> instead.
-    </p>
+      <title>Caveat</title>
+      <p>
+        At this point, we deviate from <xref ref="bib-Neukirch"/> due to an error therein.
+        Namely, Lemma VI.3.4 is only proved assuming that <m>G</m> acts transitively on the coordinates of <m>V</m>,
+        but in <xref ref="def-Herbrand-quotient-real-lattices1"/> this is not the case:
+        <m>G</m> permutes the places above any given place <m>v</m> of <m>K</m> but those are separate orbits.
+        So we'll follow <xref ref="bib-Milne-CFT"/> instead.
+      </p>
     </remark>
     <definition xml:id="def-Herbrand-quotient-real-lattices2">
       <p>
@@ -218,9 +249,9 @@
         One of them is the lattice generated by <m>M</m> together with the all-ones vector, on which <m>G</m> acts trivially.
         As a <m>G</m>-module, the Herbrand quotient of that lattice is <m>h(M) h(\ZZ) = [L:K] h(M)</m>.
         The other is the lattice <m>M'</m> in which, in the given coordinate system, each element has integral coordinates.
-        To compute its Herbrand quotient, notice that the projection of this lattice onto the coordinates 
+        To compute the Herbrand quotient of <m>M'</m>, notice that the projection of this lattice onto the coordinates 
         corresponding to the places <m>w \in T</m> above some <m>v \in S</m> form a copy of <m>\Ind^G_{G_v} \ZZ</m>.
-        Thus
+        Writing <m>h(G, \bullet)</m> for the Herbrand quotient to emphasize the dependence on the group <m>G</m>, we have
         <md>
           <mrow>
             h(G, M') &amp;= \prod_{v \in S} h(G, \Ind^G_{G_v} \ZZ) 
@@ -285,7 +316,7 @@
           contains an invariant vector which, as a linear transformation, is invertible.
           Now <m>W_F</m> can also be written as
           <me>
-            W \otimes_E F, \qquad W = \Hom_{E}(V_1, V_2)
+            W \otimes_E F, \qquad W := \Hom_{E}(V_1, V_2)
           </me>.
           The fact that <m>W_F</m> has an invariant vector says that a certain set of linear equations has a nonzero solution over <m>F</m>,
           namely the equations that express the fact that the action of <m>G</m> leaves the vector invariant.
@@ -311,7 +342,9 @@
     <p>
       As a consequence of the First Inequality,
       we record the following fact which was previously stated as a consequence of the Chebotaryov density theorem 
-      (<xref ref="T_Chebotarev"/>), but which will be needed logically earlier in the arguments. (See <xref ref="bib-Neukirch"/>, Corollary VI.3.8 for more details.)
+      (<xref ref="T_Chebotarev"/>), but which will be needed logically earlier in the arguments. 
+      (See <xref ref="bib-Neukirch"/>, Corollary VI.3.8 for more details.)
+      Alternatively, we will get something stronger out of the analytic proof of the Second Inequality (<xref ref="prop-splitting-primes-density"/>).
     </p>
     <corollary xml:id="C_split_completely">
       <statement>
@@ -325,7 +358,7 @@
           Suppose first that <m>L/K</m> is cyclic.
           Suppose that all but finitely many primes split completely;
           we can then take a finite set <m>S</m> of places which contains all of them as well as all of the infinite places and all of the ramified places. 
-          For each <m>v \in S</m>, the group <m>U_v = \Norm_{L_w/K_v} L_w^*</m> is open of finite index in <m>K_v^*</m>.
+          For each <m>v \in S</m>, the group <m>U_v := \Norm_{L_w/K_v} L_w^*</m> is open of finite index in <m>K_v^*</m>.
           For any <m>\alpha \in I_K</m>, using the approximation theorem (<xref ref="P_adelic_CRT_0"/>)
           we can then find <m>\beta \in K^*</m> such that <m>(\alpha/\beta)_v \in U_v</m> for all <m>v \in S</m>.
           For each place <m>v \notin S</m>, we have <m>L_w = K_v</m>, so <m>\alpha/\beta \in \Norm_{L/K} I_L</m>.
