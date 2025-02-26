@@ -10,8 +10,8 @@
     <paragraphs>
       <title>Notation convention</title>
       <p>
-        If you catch me writing <m>H^i(L/K)</m> for <m>L/K</m> a Galois extension of fields,
-        that's shorthand for <m>H^i(\Gal(L/K), L^*)</m>.
+        For <m>L/K</m> a Galois extension of fields,
+        I will frequently write <m>H^i(L/K)</m> as shorthand for <m>H^i(\Gal(L/K), L^*)</m>. 
         Likewise for <m>H_i</m> or <m>H^i_T</m>.
       </p>
     </paragraphs>
@@ -197,7 +197,7 @@
     <lemma xml:id="L_open_subgroup_acyclic">
       <statement>
         <p>
-          Let <m>L/K</m> be a finite Galois extension of local fields.
+          Let <m>L/K</m> be a Galois extension of local fields.
           Then there is an open, Galois-stable subgroup <m>V</m> of <m>\gotho_L</m> such that
           <m>H^i(\Gal(L/K), V) = 0</m> for all <m>i>0</m> (i.e., <m>V</m> is acyclic for cohomology).
         </p>
@@ -219,9 +219,9 @@
     <lemma xml:id="L_open_subgroup_acyclic1">
       <statement>
         <p>
-          Let <m>L/K</m> be a finite Galois extension of local fields.
+          Let <m>L/K</m> be a Galois extension of local fields.
           Then there is an open, Galois-stable subgroup <m>W</m> of
-          <m>\gotho_L^*</m> such that <m>H^i(\Gal(L/K), W) = 0</m> for all <m>i>0</m>.
+          <m>\gotho_L^*</m> such that <m>H^i(\Gal(L/K), W) = 0</m> for all <m>i \gt 0</m>.
         </p>
       </statement>
       <proof>
@@ -232,8 +232,7 @@
           <me>
             \exp(x) = \sum_{i=0}^\infty \frac{x^i}{i!}
           </me>
-          (you need <m>v_p(x) \gt 1/(p-1)</m>,
-          to be precise), and we may take <m>W = \exp(V)</m>.
+          (you need <m>v_p(x) \gt \frac{1}{p-1}</m> to be precise), and we may take <m>W = \exp(V)</m>.
         </p>
       </proof>
     </lemma>
@@ -256,8 +255,7 @@
     <remark>
       <p>
         Notwithstanding <xref ref="P_local_cyclic_H2"/>, at this stage we cannot yet check that
-        <m>H^0_T(L/K)</m> is cyclic, because the groups
-        <m>H^1_T(\Gal(L/K), \gotho_L^*)</m> are not guaranteed to vanish;
+        <m>H^0_T(L/K)</m> is cyclic, because the groups <m>H^1_T(\Gal(L/K), \gotho_L^*)</m> are not guaranteed to vanish;
         see <xref ref="exer-units-not-acyclic"/>.
         That said, cyclicity will follow later from periodicity plus <xref ref="L_local_invariant_map"/>.
       </p>
@@ -290,8 +288,7 @@
           it becomes a constant map when restricted to <m>H</m>;
           if that constant value itself belongs to <m>M^H</m>,
           then it must be zero and so the restriction to <m>H</m> is trivial.
-          Conversely, if there exists some <m>m \in M</m> such that
-          <m>\phi(h) = m^h - m</m> for all <m>h \in H</m>,
+          Conversely, if there exists some <m>m \in M</m> such that <m>\phi(h) = m^h - m</m> for all <m>h \in H</m>,
           then <m>\phi'(g) = \phi(g) - m^g + m</m> is another crossed homomorphism representing the same class in <m>H^1(G,M)</m>,
           but taking the value 0 on each <m>h \in H</m>.
           For <m>g \in G, h \in H</m>, we have
@@ -304,8 +301,7 @@
             \phi'(g) = \phi'(gh) = \phi'(g)^h + \phi(h) = \phi'(g)^h
           </me>
           so <m>\phi'</m> takes values in <m>M^H</m>.
-          Thus the sequence is exact at <m>H^1(G,M)</m>;
-          exactness at <m>H^i(G/H,M^H)</m> is similar but easier.
+          Thus the sequence is exact at <m>H^1(G,M)</m>; exactness at <m>H^i(G/H,M^H)</m> is similar but easier.
         </p>
         <p>
           If <m>r \gt 1</m>, we induct on <m>r</m> by dimension shifting.
@@ -345,8 +341,7 @@
             0 \to M^H \to (\Ind^G_1 \Res^G_1 M)^H \to N^H \to H^1(H, M) = 0
           </me>.
           We may take the long exact sequence for <m>G/H</m>-cohomology to obtain the first vertical arrow;
-          it is an isomorphism because
-          <m>(\Ind^G_1 \Res^G_1 M)^H</m> is an induced <m>G/H</m>-module.
+          it is an isomorphism because <m>(\Ind^G_1 \Res^G_1 M)^H</m> is an induced <m>G/H</m>-module.
           More generally, for any abelian group <m>A</m>, we have an isomorphism <m>(\Ind^G_1 A)^H \cong \Ind^{G/H}_1 A</m> of <m>G/H</m>-modules.
           The point is that <m>Z[G/H] \cong Z[G]^H</m> via the map <m>[gH] \mapsto \sum_{h \in H} [gh]</m>.
         </p>
@@ -434,14 +429,14 @@
           (because the latter is cyclic and there is a unique unramified extension of <m>K</m> of any given degree).
           We can thus enlarge our previous diagram to 
           <figure xml:id="fig-localcomp-5">
-          <image>
-          <latex-image>
-          \xymatrix{
-          &amp; H^2(U/K) \ar[r]^{\Inf} \ar[d]^{\Inf} &amp; H^2(M/K) \ar[d]^{\Inf} \ar[rd] &amp;  \\
-          0 \ar[r] &amp; H^2(L/K) \ar^{\Inf}[r] &amp; H^2(ML/K) \ar^{\Res}[r] &amp; H^2(ML/L)
-          }
-          </latex-image>
-          </image>
+            <image>
+              <latex-image>
+                \xymatrix{
+                  &amp; H^2(U/K) \ar[r]^{\Inf} \ar[d]^{\Inf} &amp; H^2(M/K) \ar[d]^{\Inf} \ar[rd] &amp;  \\
+                  0 \ar[r] &amp; H^2(L/K) \ar^{\Inf}[r] &amp; H^2(ML/K) \ar^{\Res}[r] &amp; H^2(ML/L)
+                }
+              </latex-image>
+            </image>
           </figure>
           where the maps out of <m>H^2(U/K)</m> are again injective by <xref ref="C_inflation_restriction_h2"/>;
           moreover, the cokernel of <m>H^2(U/K) \stackrel{\Inf}{\to} H^2(M/K)</m> maps injectively via <m>\Res</m> into
@@ -461,8 +456,7 @@
           a uniformizer of <m>K</m>,
           and <m>L^*/\Norm_{ML/L} (ML)^*</m> is a cyclic group of order <m>[L:K]</m> generated by <m>\pi_L</m>,
           a uniformizer of <m>L</m>.
-          But because <m>L/K</m> is totally ramified, <m>\pi_K</m> is a unit of
-          <m>\gotho_L</m> times <m>\pi_L^{[L:K]}</m>,
+          But because <m>L/K</m> is totally ramified, <m>\pi_K</m> is a unit of <m>\gotho_L</m> times <m>\pi_L^{[L:K]}</m>,
           so the map in question is indeed zero.
         </p>
       </proof>

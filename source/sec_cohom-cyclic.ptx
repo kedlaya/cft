@@ -77,13 +77,13 @@
     </remark>
       <figure xml:id="fig-homology-2">
         <image>
-        <latex-image>
-          \xymatrix{
-          &amp; H^{-1}_T(G, M) \ar[r] &amp; H^{-1}_T(G, M'') \ar[dr] &amp; \\
-          H^{-1}_T(G, M') \ar[ru] &amp; &amp; &amp; H^0_T(G, M') \ar[dl] \\
-          &amp; H^{0}_T(G, M'') \ar[lu] &amp; H^{0}_T(G, M) \ar[l] &amp;
-          }
-         </latex-image>
+          <latex-image>
+            \xymatrix{
+              &amp; H^{-1}_T(G, M) \ar[r] &amp; H^{-1}_T(G, M'') \ar[dr] &amp; \\
+              H^{-1}_T(G, M') \ar[ru] &amp; &amp; &amp; H^0_T(G, M') \ar[dl] \\
+              &amp; H^{0}_T(G, M'') \ar[lu] &amp; H^{0}_T(G, M) \ar[l] &amp;
+            }
+           </latex-image>
         </image>
       </figure>
   </subsection>
@@ -107,18 +107,22 @@
     <remark>
       <p>
         Expanding on the previous point, if two of <m>M', M, M''</m> have Herbrand quotients, then so does the third.
-        For example, if <m>M'</m> and <m>M''</m> have Herbrand quotients,
-        i.e., their Tate groups are finite,
+        For example, if <m>M'</m> and <m>M''</m> have Herbrand quotients (i.e., their Tate groups are finite),
         then we have an exact sequence
         <me>
           H^{-1}_T(G, M') \to H^{-1}_T(G, M) \to H^{-1}_T(G, M'')
         </me>
         and the outer groups are all finite.
-        In particular,
-        the first map is out of a finite group and so has finite image,
-        and modulo that image,
-        <m>H^{-1}_T(G,M)</m> injects into another finite group.
+        In particular, the first map is out of a finite group and so has finite image,
+        and modulo that image, <m>H^{-1}_T(G,M)</m> injects into another finite group.
         So it's also finite, and so on.
+      </p>
+    </remark>
+    <remark>
+      <p>
+        In general, we <q>almost</q> know that the groups <m>H^i_T(G,M)</m> are finite: by extended functoriality
+        (<xref ref="exa-extended-functoriality"/>), we know they are torsion with exponent dividing <m>\#G</m>.
+        The only issue is that they could fail to be finitely generated.
       </p>
     </remark>
     <remark>
@@ -126,11 +130,11 @@
         In practice,
         it will often be much easier to compute the Herbrand quotient of a <m>G</m>-module than to compute either of its Tate groups directly.
         The Herbrand quotient will then do half of the work for free:
-        once one group is computed directly,
-        at least the order of the other will be automatically known.
+        once one group is computed directly, at least the order of the other will be automatically known.
+        The key example for our purposes will occur in <xref ref="sec_ideles-cohom1"/>.
       </p>
     </remark>
-    <remark>
+    <remark xml:id="rmk-herbrand-of-finite-is-1">
       <p>
         If <m>M</m> is finite, then the groups <m>H^i_T(G,M)</m> are finite and <m>h(M) = 1</m>.
         To wit, the sequences
@@ -141,13 +145,6 @@
         are exact, where <m>M \to M</m> is the map <m>m \mapsto m^g - m</m>;
         thus <m>M_G</m> and <m>M^G</m> are finite groups of the same order,
         as then are <m>H^{-1}_T</m> and <m>H^0_T</m>.
-      </p>
-    </remark>
-    <remark>
-      <p>
-        We already <q>almost</q> know that the groups <m>H^i(G,M)</m> are finite: by extended functoriality
-        (<xref ref="exa-extended-functoriality"/>), we know they are torsion with exponent dividing <m>\#G</m>.
-        The only issue is then that they could fail to be finitely generated.
       </p>
     </remark>
   </subsection>

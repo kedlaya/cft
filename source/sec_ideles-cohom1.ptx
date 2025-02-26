@@ -1,7 +1,5 @@
 ﻿<section xml:id="sec_ideles-cohom1">
-  <title>Cohomology of the id&#xe8;les I: the
-  <q>First Inequality</q>
-  </title>
+  <title>Cohomology of the id&#xe8;les I: the <q>First Inequality</q></title>
   <introduction>
     <paragraphs>
       <title>Reference</title>
@@ -280,8 +278,10 @@
       <statement>
         <p>
           Let <m>V</m> be a real vector space on which a finite cyclic group <m>G</m> acts linearly,
-          and let <m>L_1</m> and <m>L_2</m> be <m>G</m>-stable lattices in <m>V</m> for which at least one of <m>h(L_1)</m> and <m>h(L_2)</m> is defined.
-          Then <m>h(L_1) = h(L_2)</m> (and both are defined).
+          and let <m>L_1</m> and <m>L_2</m> be <m>G</m>-stable lattices in <m>V</m>.
+          Then <m>h(L_1) = h(L_2)</m>. 
+          (Note that both Herbrand quotients are automatically well-defined because <m>L_1</m> and <m>L_2</m> are finitely
+          generated abelian groups; see <xref ref="exa-extended-functoriality"/>.)
         </p>
       </statement>
       <proof>
@@ -293,7 +293,7 @@
         <p>
           From this isomorphism, we see that as a <m>\ZZ[G]</m>-module, <m>L_1</m> is isomorphic to some sublattice of <m>L_2</m>.
           Since a lattice has the same Herbrand quotient as any sublattice
-          (the quotient is finite, so its Herbrand quotient is 1),
+          (the quotient is finite, so its Herbrand quotient is 1 by <xref ref="rmk-herbrand-of-finite-is-1"/>),
           that means <m>h(L_1) = h(L_2)</m>.
         </p>
       </proof>
