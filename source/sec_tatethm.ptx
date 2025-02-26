@@ -596,6 +596,13 @@
         </p>
       </proof>
     </theorem>
+    <remark>
+      <p>
+        We will give an alternate, more explicit construction of abelian extensions of local fields in <xref ref="sec_lubin-tate"/>.
+        However, the approach used in <xref ref="T_local_existence2"/> is a better analogue of the global setting,
+        where we do not have a convenient explicit construction of abelian extensions to rely on.
+      </p>
+    </remark>
   </subsection>
   <exercises>
     <title>Exercises</title>

@@ -115,7 +115,7 @@
     <corollary xml:id="C_cohomology_of_units_unramified">
       <statement>
         <p>
-          For any finite unramified extensions <m>L/K</m> of local fields, <m>H^i_T(\Gal(L/K), \gotho_L^*) = 1</m> for all <m>i \in \ZZ</m>.
+          For any finite unramified extension <m>L/K</m> of local fields, <m>H^i_T(\Gal(L/K), \gotho_L^*) = 1</m> for all <m>i \in \ZZ</m>.
         </p>
       </statement>
       <proof>
@@ -532,50 +532,73 @@
   </subsection>
   <exercises>
     <title>Exercises</title>
-      <exercise xml:id="exer-norm-map-finite">
-        <statement>
-          <p>
-            Give an elementary proof (without cohomology)
-            that the norm map from one finite field to another is always surjective.
-          </p>
-        </statement>
-        <hint>
-          <p>
-            Write everything in terms of a generator of the multiplicative group of the larger field.
-          </p>
-        </hint>
-      </exercise>
-      <exercise xml:id="exer-trivial-module-injective">
-        <statement>
-          <p>
-            Let <m>G</m> be a finite group. Let <m>M</m> be a <m>G</m>-module whose underlying abelian group is a <m>\QQ</m>-vector space. 
-            Prove that <m>M</m> is an acyclic <m>G</m>-module.
-          </p>
-        </statement>
-        <hint>
-          <p>
-            First show that the groups <m>H^i(G,M)</m> are divisible, say using the description in terms of cochains. Then combine with the fact
-            that these group are killed by the order of <m>G</m> (<xref ref="exa-extended-functoriality"/>).
-          </p>
-        </hint>
-      </exercise>
-      <exercise xml:id="exer-units-not-acyclic">
-        <statement>
-          <p>
-            As in <xref ref="exer-Qp-sqrt-p"/>, take <m>K = \QQ_p</m> for some odd prime <m>p</m> and <m>L = \QQ_p(\sqrt{p})</m>.
-            Compute the groups <m>H^i_T(\Gal(L/K), \gotho_L^*)</m> and see that they are not all zero;
-            consequently, the conclusion of <xref ref="C_cohomology_of_units_unramified"/> does not apply to this ramified extension.
-          </p>
-        </statement>
-        <hint>
-          <p>
-            Use the exact sequence
-            <me>
-              0 \to \gotho_L^* \to L^* \to \ZZ \to 0
-            </me>
-            and in particular the fact that in this case, <m>\Norm_{L/K}</m> induces a surjective map <m>L^*/\gotho_L^* \to K^*/\gotho_K^*</m>.
-          </p>
-        </hint>
-      </exercise>
+    <exercise xml:id="exer-norm-map-finite">
+      <statement>
+        <p>
+          Give an elementary proof (without cohomology)
+          that the norm map from one finite field to another is always surjective.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Write everything in terms of a generator of the multiplicative group of the larger field.
+        </p>
+      </hint>
+    </exercise>
+    <exercise xml:id="exer-trivial-module-injective">
+      <statement>
+        <p>
+          Let <m>G</m> be a finite group. Let <m>M</m> be a <m>G</m>-module whose underlying abelian group is a <m>\QQ</m>-vector space. 
+          Prove that <m>M</m> is an acyclic <m>G</m>-module.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          First show that the groups <m>H^i(G,M)</m> are divisible, say using the description in terms of cochains. Then combine with the fact
+          that these group are killed by the order of <m>G</m> (<xref ref="exa-extended-functoriality"/>).
+        </p>
+      </hint>
+    </exercise>
+    <exercise xml:id="exer-units-not-acyclic">
+      <statement>
+        <p>
+          As in <xref ref="exer-Qp-sqrt-p"/>, take <m>K = \QQ_p</m> for some odd prime <m>p</m> and <m>L = \QQ_p(\sqrt{p})</m>.
+          Compute the groups <m>H^i_T(\Gal(L/K), \gotho_L^*)</m> and see that they are not all zero;
+          consequently, the conclusion of <xref ref="C_cohomology_of_units_unramified"/> does not apply to this ramified extension.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Use the exact sequence
+          <me>
+            0 \to \gotho_L^* \to L^* \to \ZZ \to 0
+          </me>
+          and in particular the fact that in this case, <m>\Norm_{L/K}</m> induces a surjective map <m>L^*/\gotho_L^* \to K^*/\gotho_K^*</m>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise xml:id="exer-sigma-linear-surj">
+      <statement>
+        <p>
+          Let <m>K</m> be a local field. Let <m>L/K</m> be the maximal unramified extension of <m>K</m>.
+          Let <m>R</m> be the completion of <m>\gotho_L</m>. Let <m>\sigma\colon R\to R</m> be the Frobenius automorphism.
+          Prove that the maps
+          <md>
+            <mrow>
+              R \to R, \qquad x \mapsto x^\sigma - x
+            </mrow>
+            <mrow>
+              R^\times \to R^\times, \qquad x \mapsto x^\sigma/x
+            </mrow>
+          </md>
+          are both surjective.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Argue inductively as in <xref ref="P_unramified_norm_surjective"/> to reduce to a statement about residue fields.
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>

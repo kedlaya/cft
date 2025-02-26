@@ -16,7 +16,8 @@
     </p>
     <p>
       For this step, we have no local analogue to draw upon: the corresponding assertion in local class field theory is covered by Theorem 90 (<xref ref="L_theorem_90"/>).
-      Unfortunately, there seems to be no direct approach to computing either <m>H^{-1}_T(\Gal(L/K), C_L)</m> or <m>H^1(\Gal(L/K), C_L)</m>, so some alternate strategy is needed.
+      Unfortunately, there seems to be no direct approach to computing either <m>H^{-1}_T(\Gal(L/K), C_L)</m> or <m>H^1(\Gal(L/K), C_L)</m>
+      (or for that matter <m>H^0_T(\Gal(L/K), L^*)</m>; see <xref ref="T_Hasse_norm"/>), so some alternate strategy is needed.
     </p>
     <p>
       We take an analytic approach motivated by the proof of Dirichlet's theorem on primes in arithmetic progressions; see <xref ref="L_second_inequality_analytic"/>. 
@@ -130,7 +131,7 @@
           If we group the primes in <m>T</m> by which prime of <m>S</m> they lie over,
           then we get
           <me>
-            [L:K] \sum_{\gothp \in T} \frac{1}{\Norm(\gothp)^s} \sim \frac{1}{s-1} \qquad s \to 1^-
+            [L:K] \sum_{\gothp \in S} \frac{1}{\Norm(\gothp)^s} \sim \frac{1}{s-1} \qquad s \to 1^-
           </me>.
           That is, the Dirichlet density of <m>S</m> is <m>\frac{1}{[L:K]}</m>.
         </p>
@@ -181,7 +182,7 @@
         <me>
           \frac{1 - \sum_\chi m(\chi)}{[J^{\gothm}_K:H]}
         </me>
-        where <m>\chi</m> runs over all of the characters of <m>\Cl^{\gothm}(K)</m> which are not trivial on <m>H</m>
+        where <m>\chi</m> runs over all of the nontrivial characters of <m>\Cl^{\gothm}(K)</m> which are trivial on <m>H</m>
         and <m>m(\chi)</m> denotes the order of vanishing of <m>L(s,\chi)</m> at <m>s=1</m>.
         From the proof of <xref ref="L_second_inequality_analytic"/>, we must have <m>1 - \sum_\chi m(\chi) \gt 0</m>, 
         whence <m>m(\chi) = 0</m> for all <m>\chi</m> which are nontrivial on <m>H</m>.
@@ -246,8 +247,9 @@
           (<xref ref="T_first_inequality"/>) yields that <m>H^1(\Gal(L/K), C_L)</m> is trivial and <m>\#H^2(\Gal(L/K), C_L) = [L:K]</m>.
         </p>
         <p>
-          For <m>L/K</m> solvable, we may proceed by induction on <m>[L:K]</m>. If <m>[L:K]</m> is not cyclic, choose an intermediate subextension
-          <m>K'/K</m> . By the induction hypothesis, <m>H^1(\Gal(L/K'), C_{K'})</m> vanishes,
+          For <m>L/K</m> solvable, we may proceed by induction on <m>[L:K]</m>. If <m>[L:K]</m> is not cyclic, choose an intermediate 
+          Galois subextension <m>K'/K</m>. 
+          By the induction hypothesis, <m>H^1(\Gal(L/K'), C_{L})</m> vanishes,
           so we may apply the inflation-restriction exact sequence (<xref ref="C_inflation_restriction_h2"/>) to see that for <m>i=1,2</m>,
           <me>
             0 \to H^i(\Gal(K'/K), C_{K'}) \stackrel{\Inf}{\to} H^i(\Gal(L/K), C_L) \stackrel{\Res}{\to} H^i(\Gal(L/K'), C_L)
@@ -255,12 +257,13 @@
           is exact. This allows us to complete the induction.
         </p>
         <p>
-          For <m>L/K</m> general, put <m>G = \Gal(L/K)</m>, let <m>p</m> be a prime, and let <m>G_p</m> be a Sylow <m>p</m>-subgroup of <m>G</m>.
+          For <m>L/K</m> general, put <m>G := \Gal(L/K)</m>, let <m>p</m> be a prime, and let <m>G_p</m> be a Sylow <m>p</m>-subgroup of <m>G</m>.
           Then for any <m>i&gt;0</m>, <m>H^i(G,C_L)</m> is killed by the order of <m>G</m> and
           <me>
             \Res\colon H^i(G, C_L) \to H^i(G_p, C_L)
           </me>
-          is injective on <m>p</m>-primary components (both by the relationship between restriction and corestriction, from <xref ref="exa-extended-functoriality"/>).
+          is injective on <m>p</m>-primary components 
+          (both by the relationship between restriction and corestriction, from <xref ref="exa-extended-functoriality"/>).
           Since <m>G_p</m> is solvable, we may deduce both assertions from the solvable case.
         </p>
       </proof>
@@ -282,10 +285,14 @@
       </statement>
       <proof>
         <p>
-          By the Second Inequality (<xref ref="T_first_and_second_inequality"/>) plus periodicity (<xref ref="T_cyclic_group_periodicity"/>), 
-          <m>H^{-1}_T(G, C_L) = 1</m>. This implies that <m>H^0_T(G, L^*) \to H^0_T(G, I_L)</m> is injective. Now if <m>x \in K^*</m> belongs to 
-          <m>\Norm_{L_w/K_v} L_w^*</m>, then it defines the zero class in <m>H^0_T(G, I_L)</m>, so by the previous logic 
-          it must also define the zero class in <m>H^0_T(G, L^*)</m>; this proves the claim.
+          We may interpret the statement as saying that
+          <me>
+            H^0_T(G, L^*) \to H^0_T(G, I_L)
+          </me>
+          is injective. (For all but finitely places <m>v</m> of <m>K</m>, we have <m>x \in \gotho_{K_v}^*</m> and so any <m>y \in L_w^*</m>
+          with <m>\Norm_{L_w/K_v}(y) = x</m> itself belongs to <m>\gotho_{L_w}^*</m>.)
+          We may deduce this injectivity from the fact that <m>H^{-1}_T(G, C_L) = 1</m>
+          thanks to the Second Inequality (<xref ref="T_first_and_second_inequality"/>) plus periodicity (<xref ref="T_cyclic_group_periodicity"/>). 
         </p>
       </proof>
     </theorem>
@@ -304,8 +311,11 @@
       </p>
       <p>
         It was then shown by Wang <xref ref="bib-Wang"/> that this statement fails in the following way: 
-        the element 16 is an <m>8</m>th power in <m>K_v</m> for any place <m>v</m>
+        for any number field <m>K</m>,
+        the element <m>16</m> is an <m>8</m>th power in <m>K_v</m> for any place <m>v</m>
         not lying above <m>2</m> (see <xref ref="exer-Wang"/>) but need not be an <m>8</m>th power in <m>K</m>.
+        Worse yet, for some choices of <m>K</m>, <m>16</m> is an <m>8</m>th power in <m>K_v</m> for <em>every</em> place <m>v</m>
+        even though <m>16</m> is not an <m>8</m>th power in <m>K</m> (see <xref ref="exer-Wang2"/>).
       </p>
       <p>
         Finally, Wang <xref ref="bib-Wang2"/> established a corrected version of the theorem, which shows that the original statement is <q>nearly</q> true.
@@ -316,7 +326,8 @@
   <subsection>
     <title>The Albert-Brauer-Hasse-Noether theorem</title>
     <p>
-      We record another byproduct of the Second Inequality, called the <term>Albert-Brauer-Hasse-Noether theorem</term>.
+      We record another byproduct of the Second Inequality.
+      We will sharpen this result later; see <xref ref="def-fundamental-exact-sequence"/>.
     </p>
     <theorem xml:id="T_Albert-Brauer-Hasse-Noether">
       <title>Albert-Brauer-Hasse-Noether theorem</title>
@@ -327,7 +338,6 @@
             H^2(\Gal(\overline{K}/K), \overline{K}^*) \to \bigoplus_v H^2(\Gal(\overline{K_v}/K_v), \overline{K_v}^*)
           </me>
           is injective, where the sum runs over places <m>v</m> of <m>K</m>.
-          (We will compute the cokernel later; see <xref ref="def-fundamental-exact-sequence"/>.)
         </p>
       </statement>
       <proof>
@@ -372,6 +382,12 @@
           Put <m>K = \QQ(\sqrt{7})</m>. Show that <m>16</m> is an <m>8</m>th power in every completion of <m>K</m>, but not in <m>K</m> itself.
         </p>
       </statement>
+      <hint>
+        <p>
+          Use <xref ref="exer-Wang"/> to deal with the plcaes not above 2. 
+          For the places above 2, check that <m>\QQ_2(\sqrt{7}) = \QQ_2(\sqrt{-1})</m>.
+        </p>
+      </hint>
     </exercise>
     <exercise xml:id="exer-Hasse-Minkowski">
       <statement>

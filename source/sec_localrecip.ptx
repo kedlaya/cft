@@ -55,10 +55,9 @@
     </definition>
     <example xml:id="exa-local-recip-Qp">
       <p>
-        Using the local Kronecker-Weber theorem
-        (<xref ref="T_local_Kronecker-Weber1"/>),
-        the statement of <xref ref="T_local_reciprocity"/> can be explicitly verified for <m>K=\QQ_p</m>.
-        To wit, we have <m>K^{\ab} = K_1 K_2</m> where <m>K_1 = \bigcup_n \QQ_p(\zeta_{p^n})</m>
+        Let us see more explicitly what <xref ref="T_local_reciprocity"/> says when <m>K=\QQ_p</m>.
+        By local Kronecker-Weber (<xref ref="T_local_Kronecker-Weber1"/>),
+        we have <m>K^{\ab} = K_1 K_2</m> where <m>K_1 = \bigcup_n \QQ_p(\zeta_{p^n})</m>
         and <m>K_2 = \bigcup_n \QQ_p(\zeta_{p^n-1})</m>, and 
         <m>\Gal(K^{\ab}/K) \cong \Gal(K_1/K) \times \Gal(K_2/K)</m>.
         Since <m>p</m> is totally ramified in <m>K_1</m>, we have 
@@ -77,11 +76,14 @@
         That is, we are looking for a map
         <me>
           \phi_K\colon \ZZ_p^* \times p^{\ZZ} \cong \QQ_p^* \to \Gal(K_1/K) \times \Gal(K_2/K) \subset \ZZ_p^* \times \prod_{q \neq p} \ZZ_q^*
-        </me>;
-        the map we want acts as <m>a \mapsto a^{-1}</m> on the first factor and as <m>p \mapsto p</m> on the second factor. See <xref ref="exer-Qp-reciprocity-map"/>.
+        </me>
+        which acts as <m>p \mapsto p</m> on the second factor.
+        The correct choice is to take the map <m>a \mapsto a^{-1}</m> on the first factor;
+        this can be verified using the Lubin-Tate construction (<xref ref="T_Lubin-Tate"/>).
       </p>
       <p>
-        From this, we can infer an explicit description of the local reciprocity map for any cyclotomic extension; see <xref ref="prop-norm-compatibility-of-local-reciprocity"/>.
+        From this example, we also obtain an explicit description of the local reciprocity map for any <em>cyclotomic</em> extension of any local field.
+        See <xref ref="prop-norm-compatibility-of-local-reciprocity"/>.
       </p>
     </example>
   </subsection>
@@ -167,7 +169,8 @@
       <p>
         It turns out that <m>K_\pi</m> can be explicitly constructed as the extension of <m>K</m> by certain elements,
         thus giving a generalization of local Kronecker-Weber to arbitrary local fields!
-        These elements come from <term>Lubin-Tate formal groups</term>; see <xref ref="sec_lubin-tate"/>.
+        These elements come from <term>Lubin-Tate formal groups</term>; see <xref ref="exer-Qp-reciprocity-map"/>
+        for the case <m>K = \QQ_p</m> and <xref ref="T_Lubin-Tate"/> for the general case.
       </p>
       <p>
         In any case, we see that the requirements of <xref ref="T_local_reciprocity"/> uniquely determine
@@ -315,42 +318,20 @@
       <exercise xml:id="exer-Qp-reciprocity-map">
         <statement>
           <p>
-            Argue as follows to show that the map defined in <xref ref="exa-local-recip-Qp"/> must coincide with the local reciprocity map for <m>K = \QQ_p</m>.
-            (This amounts to a special case of the description of the reciprocity map given by the Lubin-Tate construction; see <xref ref="sec_lubin-tate"/>.)
-            <ol>
-              <li>
-                Show that for each <m>a \in \ZZ_p</m>, the power series
-                <me>
-                  [a] := (1+T)^{a} - 1 = \sum_{n=1}^\infty \frac{a(a-1) \cdots (a-n+1)}{n!} T^n
-                </me>
-                has coefficients in <m>\ZZ_p</m> and satisfies
-                <men xml:id="eq-cyclotomic-LT-factorization">
-                  [ab] = [a] \circ [b] = [b] \circ [a]
-                </men>.
-              </li>
-              <li>
-                Use the Weierstrass preparation theorem over <m>\ZZ_p</m> to show that for <m>\pi \in \ZZ_p</m> a uniformizer and <m>e</m> a positive integer,
-                <m>[\pi^e] = u_e P_e</m>
-                where <m>P_e</m> is a monic polynomial of degree <m>p^e</m>
-                and <m>u_e</m> is a power series in <m>\ZZ_p</m> with constant term <m>1</m>.
-                Then check that <m>P_e/P_{e-1}</m> is an irreducible polynomial whose roots belong to <m>K_\pi</m>.
-              </li>
-              <li>
-                Show that for any uniformizer <m>\pi \in \ZZ_p</m>, <m>r_K(\pi)</m> fixes <m>K_\pi</m>.
-              </li>
-              <li>
-                Conclude as suggested in <xref ref="rem-Lubin-Tate-splitting"/>.
-              </li>
-            </ol>
+            Show that for each <m>a \in \ZZ_p</m>, the power series
+            <me>
+              [a] := (1+T)^{a} - 1 = \sum_{n=1}^\infty \frac{a(a-1) \cdots (a-n+1)}{n!} T^n
+            </me>
+            has coefficients in <m>\ZZ_p</m>. 
+            Then show that for <m>\pi \in \ZZ_p</m> a uniformizer and <m>e</m> a positive integer,
+            <m>[\pi^e] = u_e P_e</m> where <m>P_e</m> is a monic polynomial of degree <m>p^e</m>
+            and <m>u_e</m> is a power series in <m>\ZZ_p</m> with constant term <m>1</m>.
+            Finally, deduce that <m>P_e/P_{e-1}</m> is an irreducible polynomial whose roots belong to <m>K_\pi</m>.
           </p>
         </statement>
         <hint>
           <p>
-            For the third part, write <m>\pi = ap</m> with <m>a \in \ZZ_p^\times</m>.
-            Then use the fact that substitution into <m>[a]</m> carries the roots of <m>[p]</m> to the roots of <m>[\pi]</m>
-            (because of <xref ref="eq-cyclotomic-LT-factorization"/>)
-            <em>and</em> commutes with Galois (because it has coefficients in <m>\ZZ_p</m>) to conclude.
-            For more details, see <xref ref="bib-Milne-CFT"/>, I.3.
+            The second assertion is a special case of the <term>Weierstrass preparation theorem</term>.
           </p>
         </hint>
       </exercise>

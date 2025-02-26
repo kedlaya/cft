@@ -142,18 +142,18 @@
       <p>
         Let <m>L/K</m> be an abelian extension of number fields and <m>v</m> a place of <m>K</m>.
         Put <m>G := \Gal(L/K)</m> and let <m>G_v</m> be the <term>decomposition group</term> of <m>v</m>, that is,
-        the set of <m>g \in G</m> such that <m>v^g = v</m>.
-        Then for any place <m>w</m> above <m>v</m>, <m>G_v \cong \Gal(L_w/K_v)</m>.
-        We will define a map <m>r_{K, v}\colon K_v^* \to G_v \subseteq G</m> as follows.
+        <m>G_v := \Gal(L_w/K_v)</m> for some (hence any, because <m>G</m> is abelian) place <m>w</m> above <m>v</m>.
+        We define a map <m>r_{K, v}\colon K_v^* \to G_v \subseteq G</m> as follows.
         <ul>
           <li>
             If <m>v</m> is a finite place, use the local reciprocity map (<xref ref="T_local_reciprocity"/>).
           </li>
           <li>
-            If <m>v</m> is a real place, use the sign map <m>\RR^* \to \{\pm 1\} \cong G_v</m>.
+            If <m>v</m> is a real place, use the sign map <m>\RR^* \to \{\pm 1\} \cong \Gal(\CC/\RR)</m>
+            if <m>w</m> is complex (otherwise there is nothing to specify).
           </li>
           <li>
-            If <m>v</m> is a complex place, then <m>G_v</m> is trivial and so there is nothing left to specify.
+            If <m>v</m> is a complex place, then <m>G_v</m> is trivial and so there is nothing to specify.
           </li>
         </ul>
       </p>

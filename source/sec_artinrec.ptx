@@ -217,6 +217,7 @@
         also referred to as <term>Hilbert's 12th Problem</term>,
         will make establishing class field theory somewhat more complicated than it would be otherwise.
         In particular, the proof of <xref ref="T-existence-theorem"/> is rather inexplicit; see <xref ref="sec_existence"/>.
+        By contrast, in the local setting we do have an explicit construction; see <xref ref="sec_lubin-tate"/>.
       </p>
     </remark>
   </subsection>
