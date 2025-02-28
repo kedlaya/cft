@@ -26,7 +26,7 @@
       <p>
         Recall from <xref ref="def-Brauer-group"/> that we have defined the <term>Brauer group</term> of a field <m>K</m> as the group 
         <me>
-          \Br(K) = H^2(\overline{K}/K) = \varinjlim_{L/K} H^2(L/K)
+          \Br(K) := H^2(\overline{K}/K) = \varinjlim_{L/K} H^2(L/K)
         </me>
         where <m>L</m> runs over finite Galois extensions of <m>K</m> and the transition maps in the direct limit are inflation maps.
         By <xref ref="L_theorem_90"/> and <xref ref="P_inflation_restriction"/>, these maps are all injective, so the direct limit is actually a union.
@@ -52,7 +52,9 @@
     </lemma>
     <example>
       <p>
-        For <m>K</m> an algebraically closed field, every division algebra which is finite dimensional over <m>K</m> is trivial. Namely, if <m>D</m> is such an algebra,
+        For <m>K</m> an algebraically closed field, <xref ref="lem-brauer-defs"/> states that every division algebra which is finite dimensional over <m>K</m> is trivial.
+        We may check this directly as follows.
+        If <m>D</m> is such a division algebra,
         then for each <m>x \in D</m>, multiplication by <m>x</m> defines a <m>K</m>-linear endomorphism of <m>D</m>, which necessarily has at least one eigenvalue <m>y \in K</m>.
         Then <m>x-y</m> is an element of <m>D</m> which cannot be invertible (since multiplication by this element is a <m>K</m>-linear endomorphism of <m>D</m> with 0
         as an eigenvalue), so it must be zero; hence <m>x \in K</m>.
@@ -210,10 +212,10 @@
           For <m>v</m> real, by <xref ref="T_cyclic_group_periodicity"/> we have
           <md>
             <mrow>
-              \Br(\RR) &amp;= H^2(\CC/RR)
+              \Br(\RR) &amp;= H^2(\CC/\RR)
             </mrow>
             <mrow>
-              &amp;\cong H^0_T(\CC/RR)
+              &amp;\cong H^0_T(\CC/\RR)
             </mrow>
             <mrow>
               &amp;\cong \RR^* / \Norm_{\CC/\RR} \CC^* = \RR^*/\RR^+ \cong \tfrac{1}{2} \ZZ/\ZZ

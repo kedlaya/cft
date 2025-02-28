@@ -185,7 +185,7 @@
         where <m>\chi</m> runs over all of the nontrivial characters of <m>\Cl^{\gothm}(K)</m> which are trivial on <m>H</m>
         and <m>m(\chi)</m> denotes the order of vanishing of <m>L(s,\chi)</m> at <m>s=1</m>.
         From the proof of <xref ref="L_second_inequality_analytic"/>, we must have <m>1 - \sum_\chi m(\chi) \gt 0</m>, 
-        whence <m>m(\chi) = 0</m> for all <m>\chi</m> which are nontrivial on <m>H</m>.
+        whence <m>m(\chi) = 0</m> for all nontrivial <m>\chi</m> which are trivial on <m>H</m>.
       </p>
       <p>
         Turning this around, we can now deduce <xref ref="T_nonvanishing_of_L"/> provided that we can choose <m>L/K</m> (depending on <m>\gothm</m>) so that

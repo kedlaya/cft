@@ -55,24 +55,24 @@
           We now have the field diagram <xref ref="fig-abstractcft-6"/> in which each line denotes a <m>\ZZ/n\ZZ</m>-extension,
           the dashed lines represent unramified extensions, and each label indicates one or more generators of the Galois group <m>g</m>.
         </p>
-          <figure xml:id="fig-abstractcft-6">
+        <figure xml:id="fig-abstractcft-6">
           <image width="50%">
-          <latex-image>
-          \xymatrix{
-          &amp; N \ar@{--}_{\phi}[ld] \ar@{--}^{\tau}[d] \ar@{-}^g[rd] &amp; \\
-          L \ar@{-}_{g, \tau}[rd] &amp; M \ar@{-}^{g, \phi}[d] &amp; N_0 \ar@{--}^{\phi, \tau}[ld] \\
-          &amp; K &amp;
-          }
-          </latex-image>
+            <latex-image>
+              \xymatrix{
+                &amp; N \ar@{--}_{\phi}[ld] \ar@{--}^{\tau}[d] \ar@{-}^g[rd] &amp; \\
+                L \ar@{-}_{g, \tau}[rd] &amp; M \ar@{-}^{g, \phi}[d] &amp; N_0 \ar@{--}^{\phi, \tau}[ld] \\
+                &amp; K &amp;
+              }
+            </latex-image>
           </image>
-          </figure>
+        </figure>
         <p>
           Pick uniformizers <m>\pi_L</m> and <m>\pi_M</m> of <m>L</m> and <m>M</m>, respectively.
           Since <m>d_K(\tau) = 1</m>, by <xref ref="prop_norm"/>
           we have <m>r_{L/K}(g) = \Norm_{L^{\unr}/K^{\unr}}(\pi_M)</m>.
         </p>
         <p>
-          Let <m>j</m> be the order of <m>r_{L/K}(g)</m> in <m>A_K/\Norm_{L/K} A_L</m> and put <m>u = \pi_M^j/\pi_L^j \in U_N</m>.
+          Let <m>j</m> be the order of <m>r_{L/K}(g)</m> in <m>A_K/\Norm_{L/K} A_L</m> and put <m>u := \pi_M^j/\pi_L^j \in U_N</m>.
           Since both <m>\Norm_{L^{\unr}/K^{\unr}}(\pi_M^j)</m> and <m>\Norm_{L^{\unr}/K^{\unr}}(\pi_L^j) = \Norm_{L/K}(\pi_L^j)</m>
           belong to <m>\Norm_{L/K} A_L</m>, we can choose <m>v \in A_L</m> such that
           <me>
@@ -83,14 +83,14 @@
         <p>
           Applying the class field axiom to <m>N/N_0</m> yields
           <me>
-            0 = H^{-1}_T(\Gal(N/N_0), A_N) = \frac{\ker(\Norm_{N/N_0}: A_N \to A_{N_0})}{ \{ a^{g-1}: a \in A_N \}}
+            0 = H^{-1}_T(\Gal(N/N_0), A_N) = \frac{\ker(\Norm_{N/N_0}\colon A_N \to A_{N_0})}{ \{ a^{g-1}\colon a \in A_N \}}
           </me>.
           Since <m>\Norm_{N/N_0}(u/v) = \Norm_{L^{\unr}/K^{\unr}}(u/v) = 1</m>, we can write <m>u/v</m> in the form
           <m>a^{g-1} = a^g/a</m> for some <m>a \in A_N</m>. Then
           <me>
             (\pi_L^j v)^{g-1} = (\pi_L^j v)^{\tau-1} = (\pi_M^j v/u)^{\tau - 1} = (v/u)^{\tau-1} = (a/a^\tau)^{g-1}
           </me>.
-          If we put <m>x = (\pi_L^j v)(a^\tau/a)</m>, then <m>x^g = x</m> and so <m>x \in A_{N_0}</m>.
+          If we put <m>x := (\pi_L^j v)(a^\tau/a)</m>, then <m>x^g = x</m> and so <m>x \in A_{N_0}</m>.
           Hence 
           <me>
             j = v_N(x) = nv_{N_0}(x) \in n \widehat{\ZZ}
@@ -111,14 +111,14 @@
         For <m>L/K</m> a Galois extension of finite subextensions of <m>\kbar/k</m> and <m>M/K</m> a Galois subextension,
         the diagram
         <figure xml:id="fig-abstractcft-1">
-        <image>
-        <latex-image>
-        \xymatrix{
-        1 \ar[r] &amp; \Gal(L/M) \ar[r] \ar^{r_{L/M}}[d] &amp; \Gal(L/K) \ar[r] \ar^{r_{L/K}}[d] &amp; \Gal(M/K) \ar[r] \ar[d]^{r_{M/K}} &amp; 1 \\
-        &amp; A_M/\Norm_{L/M}A_L \ar^{\Norm_{M/K}}[r] &amp; A_K/\Norm_{L/K} A_L \ar[r] &amp; A_K / \Norm_{M/K} A_M \ar[r] &amp; 1
-        }
-        </latex-image>
-        </image>
+          <image>
+            <latex-image>
+              \xymatrix{
+                1 \ar[r] &amp; \Gal(L/M) \ar[r] \ar^{r_{L/M}}[d] &amp; \Gal(L/K) \ar[r] \ar^{r_{L/K}}[d] &amp; \Gal(M/K) \ar[r] \ar[d]^{r_{M/K}} &amp; 1 \\
+                &amp; A_M/\Norm_{L/M}A_L \ar^{\Norm_{M/K}}[r] &amp; A_K/\Norm_{L/K} A_L \ar[r] &amp; A_K / \Norm_{M/K} A_M \ar[r] &amp; 1
+              }
+            </latex-image>
+          </image>
         </figure>
         commutes (thanks to <xref ref="P_abstract_functorialities"/>) and the rows are exact.
       </p>
@@ -163,14 +163,14 @@
         <p>
           Let <m>M</m> be the maximal abelian subextension of <m>L/K</m>. We have the following commutative diagram:
           <figure xml:id="fig-abstractcft-2">
-          <image width="50%">
-          <latex-image>
-          \xymatrix{
-          \Gal(L/K)^{\ab} \ar^{r_{L/K}}[r] \ar[d] &amp; A_K / \Norm_{L/K} A_L \ar[d] \\
-          \Gal(M/K) \ar^{r_{M/K}}[r] &amp; A_K / \Norm_{M/K} A_M
-          }
-          </latex-image>
-          </image>
+            <image width="50%">
+              <latex-image>
+                \xymatrix{
+                  \Gal(L/K)^{\ab} \ar^{r_{L/K}}[r] \ar[d] &amp; A_K / \Norm_{L/K} A_L \ar[d] \\
+                  \Gal(M/K) \ar^{r_{M/K}}[r] &amp; A_K / \Norm_{M/K} A_M
+                }
+              </latex-image>
+            </image>
           </figure>
           in which the left vertical arrow and bottom horizontal arrows are isomorphisms
           (the latter by <xref ref="lem-abstract-recip-case3"/>).
@@ -248,14 +248,14 @@
         <p>
           By <xref ref="P_abstract_functorialities"/> and <xref ref="T_abstract_reciprocity_law"/>, we have a commutative diagram
           <figure xml:id="fig-abstractcft-3">
-          <image width="50%">
-          <latex-image>
-          \xymatrix{
-          \Gal(L/K)^{\ab} \ar[r] \ar@{=}[d] &amp; A_K/\Norm_{L/K} A_L \ar[d] \\
-          \Gal(M/K)^{\ab} \ar[r] &amp; A_K/\Norm_{M/K} A_M
-          }
-          </latex-image>
-          </image>
+            <image width="50%">
+              <latex-image>
+                \xymatrix{
+                  \Gal(L/K)^{\ab} \ar[r] \ar@{=}[d] &amp; A_K/\Norm_{L/K} A_L \ar[d] \\
+                  \Gal(M/K)^{\ab} \ar[r] &amp; A_K/\Norm_{M/K} A_M
+                }
+              </latex-image>
+            </image>
           </figure>
           in which the horizontal arrows are isomorphisms. This implies the claim.
         </p>

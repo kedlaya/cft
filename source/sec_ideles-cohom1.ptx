@@ -15,7 +15,7 @@
       <me>
         H^1(\Gal(L/K), C_L) = 1, \qquad H^2(\Gal(L/K), C_L) = \ZZ/[L:K]\ZZ
       </me>.
-      Our first step is to calculate the Herbrand quotient.
+      Our first step is to calculate the Herbrand quotient (in analogy with <xref ref="P_local_cyclic_H2"/>).
     </p>
     <theorem xml:id="T_first_inequality1">
       <statement>

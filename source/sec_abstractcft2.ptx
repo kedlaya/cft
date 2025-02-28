@@ -10,24 +10,19 @@
   <subsection>
   <title>Construction of the reciprocity map</title>
     <p>
-      In order to define a candidate <m>r: \Gal(L/K) \to A_K/\Norm_{L/K} A_L</m> for the reciprocity map,
+      In order to define a candidate <m>r\colon \Gal(L/K) \to A_K/\Norm_{L/K} A_L</m> for the reciprocity map,
       we must first give a partial definition using a different domain. See <xref ref="rmk-shape-of-reciprocity-def"/> for motivation.
     </p>
     <definition xml:id="def-abstract-recip-candidate">
       <p>
         Under <xref ref="hypo-abstract-cft"/>, let <m>L/K</m> be a Galois extension of finite subextensions of <m>\kbar/k</m>.
-        Let <m>H</m> be the semigroup of
-        <m>g \in \Gal(L^{\unr}/K)</m> such that <m>d_K(g)</m> is a positive integer.
-        Define the map 
-        <me>r'\colon H \to A_K/\Norm_{L/K} A_{L}</me> 
-        as follows.
-        For <m>g \in \Gal(L^{\unr}/K)</m>,
-        let <m>M</m> be the fixed field of <m>g</m>,
-        so that
+        Let <m>H</m> be the semigroup of <m>g \in \Gal(L^{\unr}/K)</m> such that <m>d_K(g)</m> is a positive integer.
+        Define the map <me>r'\colon H \to A_K/\Norm_{L/K} A_{L}</me> as follows.
+        For <m>g \in \Gal(L^{\unr}/K)</m>, let <m>M</m> be the fixed field of <m>g</m>, so that
         <me>
           e(M/K) = e((M \cap L)/K), \qquad f(M/K) = d_K(g)
         </me>.
-        We may set <m>r'(g) = \Norm_{M/K} (\pi_M)</m> for some uniformizer <m>\pi_M</m> for <m>M</m>,
+        We may set <m>r'(g) := \Norm_{M/K} (\pi_M)</m> for some uniformizer <m>\pi_M</m> for <m>M</m>,
         once we check that this doesn't depend on the choice of <m>\pi_M</m>.
         To wit, if <m>\pi'_M</m> is another uniformizer for <m>M</m>,
         then <m>\pi_M/\pi'_M \in U_L</m> belongs to <m>\Norm_{L^{\unr}/L} U_{L^{\unr}}</m> by <xref ref="C_abstract_unramified"/>,
@@ -46,14 +41,11 @@
         then its fixed field <m>M</m> is replaced by <m>M^h</m> and we can take the uniformizer <m>\pi_M^h</m>.
       </p>
       <p>
-        Next, if <m>g \in H</m> is actually in <m>\Gal(L^{\unr}/L)</m>,
-        then <m>r'(g) \in \Norm_{L/K} A_L</m>.
-        In that case, <m>M</m> contains <m>L</m>,
-        so <m>r'(g) = \Norm_{M/K}(\pi_M)</m> can be rewritten as
+        Next, if <m>g \in H</m> is actually in <m>\Gal(L^{\unr}/L)</m>, then <m>r'(g) \in \Norm_{L/K} A_L</m>.
+        In that case, <m>M</m> contains <m>L</m>, so <m>r'(g) = \Norm_{M/K}(\pi_M)</m> can be rewritten as
         <m>\Norm_{L/K} \Norm_{M/L} (\pi_M) \in \Norm_{L/K} A_L</m>.
         That is, if <m>r'</m> were known to be multiplicative,
-        it would induce a group homomorphism from
-        <m>\Gal(L/K)</m> to <m>A_K/\Norm_{L/K} A_L</m>.
+        it would induce a group homomorphism from <m>\Gal(L/K)</m> to <m>A_K/\Norm_{L/K} A_L</m>.
       </p>
     </remark>
     <p>
@@ -65,7 +57,7 @@
     <proposition xml:id="prop_norm">
       <statement>
         <p>
-          With notation as in <xref ref="def-abstract-recip-candidate"/>, put <m>n = d_K(g)</m> and choose <m>\phi \in H</m> with <m>d_K(\phi) = 1</m>.
+          With notation as in <xref ref="def-abstract-recip-candidate"/>, put <m>n := d_K(g)</m> and choose <m>\phi \in H</m> with <m>d_K(\phi) = 1</m>.
           Then for <m>x \in A_M</m>,
           <me>
             \Norm_{M/K}(x) = \Norm_{L^{\unr}/K^{\unr}}(x x^\phi \cdots x^{\phi^{n-1}})
@@ -90,7 +82,7 @@
     <lemma xml:id="lem-norm-fixed-by-phi">
       <statement>
         <p>
-          With notation as in <xref ref="def-abstract-recip-candidate"/>, put <m>G = \Gal(L^{\unr}/K^{\unr})</m> and choose <m>\phi \in H</m> with <m>d_K(\phi) = 1</m>.
+          With notation as in <xref ref="def-abstract-recip-candidate"/>, put <m>G := \Gal(L^{\unr}/K^{\unr})</m> and choose <m>\phi \in H</m> with <m>d_K(\phi) = 1</m>.
           If <m>x \in H_0(G, U_M)</m> is fixed by <m>\phi</m>, then <m>\Norm_G(x)</m> vanishes in <m>H^0(G, U_M)</m>.
         </p>
       </statement>
@@ -101,7 +93,7 @@
           <me>
             u^{\phi=1} = \prod_{i=1}^r u_i^{\tau_i - 1}
           </me>.
-          Put <m>n = [M:K]</m> and <m>\sigma = \phi^n</m>, and let <m>\Sigma</m> be the fixed field of <m>\sigma</m>, which contains <m>M</m>.
+          Put <m>n := [M:K]</m> and <m>\sigma := \phi^n</m>, and let <m>\Sigma</m> be the fixed field of <m>\sigma</m>, which contains <m>M</m>.
           Let <m>\Sigma_n</m> be the unramified extension of <m>\Sigma</m> of degree <m>n</m>; it is the fixed field of <m>\sigma^n</m>.
           Since <m>H^0_T(\Gal(\Sigma_n/\Sigma), U_{\Sigma_n})</m> vanishes by <xref ref="P_abstract_H0H1"/>, we can find <m>\tilde{u}, \tilde{u}_i \in U_{\Sigma_n}</m> such that
           <md>
@@ -126,11 +118,11 @@
           </me>.
           That is, if we set 
           <me>
-            z = \Norm_G(\tilde{u}) / \Norm_G(\tilde{y} \tilde{y}^{\phi} \cdots \tilde{y}^{\phi^{n-1}})
+            z := \Norm_G(\tilde{u}) / \Norm_G(\tilde{y} \tilde{y}^{\phi} \cdots \tilde{y}^{\phi^{n-1}})
           </me>,
           we have <m>z^{\phi-1} = 1</m> and so <m>z \in U_K</m>. Put
           <me>
-            y = \tilde{y} \tilde{y}^\sigma \cdots \tilde{y}^{\sigma^n-1} = \Norm_{\Sigma_n/\Sigma}(\tilde{y}) \in U_\Sigma
+            y := \tilde{y} \tilde{y}^\sigma \cdots \tilde{y}^{\sigma^n-1} = \Norm_{\Sigma_n/\Sigma}(\tilde{y}) \in U_\Sigma
           </me>;
           using <xref ref="prop_norm"/> we obtain
           <md>
@@ -157,11 +149,10 @@
       </statement>
       <proof>
         <p>
-          Let <m>g_1, g_2 \in H</m> be arbitrary and put <m>g_3 = g_1g_2</m>.
-          Let <m>M_i</m> be the fixed field of <m>g_i</m>,
-          let <m>\pi_i \in A_{M_i}</m> be a uniformizer of <m>M_i</m>,
+          Let <m>g_1, g_2 \in H</m> be arbitrary and put <m>g_3 := g_1g_2</m>.
+          Let <m>M_i</m> be the fixed field of <m>g_i</m>, let <m>\pi_i \in A_{M_i}</m> be a uniformizer of <m>M_i</m>,
           and put <m>\rho_i = r'(g_i) = \Norm_{M_i/K}(\pi_i) \in A_K</m>.
-          Put <m>\rho = \rho_1 \rho_2/\rho_3</m>; note that
+          Put <m>\rho := \rho_1 \rho_2/\rho_3</m>; note that
           <me>
             v_K(\rho_i) = f(M_i/K) v_{M_i}(\pi_i) = f(M_i/K) = d_K(g_i),
           </me>
@@ -171,28 +162,28 @@
         </p>
         <p>
           We first make an adjustment at the level of group elements.
-          Put <m>G = \Gal(L^{\unr}/K^{\unr})</m>. Choose <m>\phi \in H</m> such that <m>d_K(\phi) = 1</m>.
-          Put <m>d_i = d_K(g_i)</m> and <m>\tau_i = g_i^{-1} \phi^{d_i} \in G</m>; then
+          Put <m>G := \Gal(L^{\unr}/K^{\unr})</m>. Choose <m>\phi \in H</m> such that <m>d_K(\phi) = 1</m>.
+          Put <m>d_i := d_K(g_i)</m> and <m>\tau_i := g_i^{-1} \phi^{d_i} \in G</m>; then
           <me>
             \tau_3 = g_2^{-1} g_1^{-1} \phi^{d_1 + d_2} = g_2^{-1} \phi^{d_2} (\phi^{-d_2} g_1 \phi^{d_2})^{-1} \phi^{d_1}.
           </me>
           It will be convenient to replace <m>g_1</m> and <m>\tau_1</m> with 
           <me>
-            g_1' = \phi^{-d_2} g_1 \phi^{d_2}, \qquad \tau_1' = (g_1')^{-1} \phi^{g_1},
+            g_1' := \phi^{-d_2} g_1 \phi^{d_2}, \qquad \tau_1' = (g_1')^{-1} \phi^{g_1},
           </me>
           so that <m>\tau_1' \tau_2 = \tau_3</m>. We correspondingly define
-          <m>M_1'</m> to be the fixed field of <m>g_1'</m> and set <m>\pi_1' = \pi_1^{\phi^{n_2}} \in A_{M_1'}</m>,
+          <m>M_1'</m> to be the fixed field of <m>g_1'</m> and set <m>\pi_1' := \pi_1^{\phi^{n_2}} \in A_{M_1'}</m>,
           noting that <m>\Norm_{M_1'/K}(\pi_1') = \Norm_{M_1/K}(\pi_1) = \rho_1</m>.
         </p>
         <p>
           Let <m>N</m> be a finite subextension of <m>L^{\unr}/L</m> containing <m>M_1, M_2, M_3, M_1'</m>.
           Set
           <me>
-            \sigma_i = \pi_i \pi_i^\phi \cdots \pi_i^{\phi^{d_i-1}}, \qquad \sigma_1' = (\pi_1') (\pi_1')^\phi \cdots (\pi_1')^{\phi^{d_1-1}}
+            \sigma_i := \pi_i \pi_i^\phi \cdots \pi_i^{\phi^{d_i-1}}, \qquad \sigma_1' := (\pi_1') (\pi_1')^\phi \cdots (\pi_1')^{\phi^{d_1-1}}
           </me>
           and <m>u = \sigma_1' \sigma_2 / \sigma_3 \in U_N</m>; by <xref ref="prop_norm"/> we have <m>\rho = \Norm_G(u)</m>. By defining
           <me>
-            u_1 = (\pi_1')^{1-\tau_2}, u_2 = \pi_2/\pi_1', u_3 = \pi_3/\pi_1' \in U_N
+            u_1 := (\pi_1')^{1-\tau_2}, u_2 := \pi_2/\pi_1', u_3 := \pi_3/\pi_1' \in U_N
           </me>
           and using the equality <m>\tau_1' \tau_2 = \tau_3</m>, we compute that
           <me>
@@ -208,7 +199,7 @@
         by combining <xref ref="def-abstract-recip-candidate"/>, <xref ref="rmk-abstract-recip-properties"/>, and
         <xref ref="lem-abstract-recip-multiplicative"/>, we obtain a semigroup homomorphism
         <m>r'\colon H \to A_K/\Norm_{L/K}A_L</m> which kills <m>\Gal(L^{\unr}/L)</m>
-        and thus induces a homomorphism <m>r = r_{L/K}\colon \Gal(L/K) \to A_K/\Norm_{L/K}A_L</m>.
+        and thus induces a homomorphism <m>r_{L/K}\colon \Gal(L/K) \to A_K/\Norm_{L/K}A_L</m>.
         We call <m>r_{L/K}</m> the <term>reciprocity map</term>.
       </p>
     </definition>
@@ -223,16 +214,16 @@
           <m>K \subseteq K'</m> and <m>L \subseteq L'</m>,
           then the diagram in <xref ref="fig-abstractcft-4"/> commutes.
         </p>
-          <figure xml:id="fig-abstractcft-4">
+        <figure xml:id="fig-abstractcft-4">
           <image width="50%">
-          <latex-image>
-          \xymatrix{
-          \Gal(L'/K')^{\ab} \ar^{r_{L'/K'}}[r] \ar[d] &amp; A_{K'}/\Norm_{L'/K'} A_{L'} \ar^{\Norm_{K'/K}}[d] \\
-          \Gal(L/K)^{\ab} \ar^{r_{L/K}}[r] &amp; A_K/\Norm_{L/K} A_L
-          }
-          </latex-image>
+            <latex-image>
+              \xymatrix{
+                \Gal(L'/K')^{\ab} \ar^{r_{L'/K'}}[r] \ar[d] &amp; A_{K'}/\Norm_{L'/K'} A_{L'} \ar^{\Norm_{K'/K}}[d] \\
+                \Gal(L/K)^{\ab} \ar^{r_{L/K}}[r] &amp; A_K/\Norm_{L/K} A_L
+              }
+            </latex-image>
           </image>
-          </figure>
+        </figure>
       </statement>
       <proof>
         <p>
@@ -243,8 +234,8 @@
     <remark xml:id="rmk-shape-of-reciprocity-def">
       <p>
         Note that <xref ref="P_abstract_functorialities"/> dictates the form of <xref ref="def-abstract-recip-candidate"/>:
-        we want to be able to compute the map <m>r: \Gal(L/K) \to A_K/\Norm_{L/K} A_L</m> by first computing the map
-        <m>r: \Gal(ML/M) \to A_M/\Norm_{ML/M} A_{ML}</m>, which should take Frobenius to a uniformizer (as <m>ML/M</m> is an unramified extension), 
+        we want to be able to compute the map <m>r\colon \Gal(L/K) \to A_K/\Norm_{L/K} A_L</m> by first computing the map
+        <m>r\colon \Gal(ML/M) \to A_M/\Norm_{ML/M} A_{ML}</m>, which should take Frobenius to a uniformizer (as <m>ML/M</m> is an unramified extension), 
         and then applying <m>\Norm_{M/L}</m>.
         We will use this picture again in <xref ref="lem-abstract-recip-case2"/>.
       </p>
@@ -255,19 +246,19 @@
           Under <xref ref="hypo-abstract-cft"/>, 
           if <m>L/K</m> is a Galois extension of finite subextensions of <m>\kbar/k</m> 
           and <m>K'</m> is an intermediate field, then the diagram in <xref ref="fig-abstractcft-5"/> commutes.
-          Here <m>V: \Gal(L/K)^{\ab} \to \Gal(L/K')^{\ab}</m> denotes the transfer map for the inclusion
+          Here <m>V\colon \Gal(L/K)^{\ab} \to \Gal(L/K')^{\ab}</m> denotes the transfer map for the inclusion
           <m>\Gal(L/K') \subseteq \Gal(L/K)</m> (<xref ref="T_transfer_homomorphism"/>).
         </p>
-          <figure xml:id="fig-abstractcft-5">
+        <figure xml:id="fig-abstractcft-5">
           <image width="50%">
-          <latex-image>
-          \xymatrix{
-          \Gal(L/K)^{\ab} \ar^{r_{L/K}}[r] \ar^{V}[d] &amp; A_{K}/\Norm_{L/K} A_{L} \ar[d] \\
-          \Gal(L/K')^{\ab} \ar^{r_{L/K'}}[r] &amp; A_{K'}/\Norm_{L/K'} A_{L}
-          }
-          </latex-image>
+            <latex-image>
+              \xymatrix{
+                \Gal(L/K)^{\ab} \ar^{r_{L/K}}[r] \ar^{V}[d] &amp; A_{K}/\Norm_{L/K} A_{L} \ar[d] \\
+                \Gal(L/K')^{\ab} \ar^{r_{L/K'}}[r] &amp; A_{K'}/\Norm_{L/K'} A_{L}
+              }
+            </latex-image>
           </image>
-          </figure>
+        </figure>
       </statement>
       <proof>
         <p>
@@ -280,7 +271,9 @@
     <title>Exercises</title>
      <exercise xml:id="exer-abstract-functorialities">
         <statement>
-          Prove <xref ref="P_abstract_functorialities"/>.
+          <p>
+            Prove <xref ref="P_abstract_functorialities"/>.
+          </p>
         </statement>
         <hint>
           <p>
@@ -290,7 +283,9 @@
       </exercise>
      <exercise xml:id="exer-abstract-functorialities2">
         <statement>
-          Prove <xref ref="P_abstract_functorialities2"/>.
+          <p>
+            Prove <xref ref="P_abstract_functorialities2"/>.
+          </p>
         </statement>
         <hint>
           <p>
@@ -300,14 +295,18 @@
       </exercise>
       <exercise xml:id="exer-rescale-reciprocity">
         <statement>
-          Under <xref ref="hypo-abstract-cft"/>, choose <m>c \in \widehat{\ZZ}^*</m> and let <m>s_{L/K}</m> be the reciprocity map defined using <m>cd</m> instead of <m>d</m>.
-          Show that <m>s_{L/K} = c^{-1} r_{L/K}</m>.
+          <p>
+            Under <xref ref="hypo-abstract-cft"/>, choose <m>c \in \widehat{\ZZ}^*</m> and let <m>s_{L/K}</m> be the reciprocity map defined using <m>cd</m> instead of <m>d</m>.
+            Show that <m>s_{L/K} = c^{-1} r_{L/K}</m>.
+          </p>
         </statement>
       </exercise>
       <exercise xml:id="exer-rescale-reciprocity2">
         <statement>
-          Under <xref ref="hypo-abstract-cft"/>, choose <m>c \in \widehat{\ZZ}^*</m> which acts on <m>\im(v)</m>, and let <m>s_{L/K}</m> be the reciprocity map defined 
-          using <m>cd, cv</m> instead of <m>d, v</m>. Show that <m>s_{L/K} = r_{L/K}</m>.
+          <p>
+            Under <xref ref="hypo-abstract-cft"/>, choose <m>c \in \widehat{\ZZ}^*</m> which acts on <m>\im(v)</m>, and let <m>s_{L/K}</m> be the reciprocity map defined 
+            using <m>cd, cv</m> instead of <m>d, v</m>. Show that <m>s_{L/K} = r_{L/K}</m>.
+          </p>
         </statement>
       </exercise>
   </exercises>

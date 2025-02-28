@@ -156,7 +156,7 @@
           0 \to \ZZ \to \QQ \to \QQ/\ZZ \to 0
         </me>
         of modules with trivial Galois action.
-        The module <m>\QQ</m> is injective as a <m>G</m>-module for any group <m>G</m>
+        The module <m>\QQ</m> is acyclic as a <m>G</m>-module for any finite group <m>G</m>
         (<xref ref="exer-trivial-module-injective"/>);
         we thus get an isomorphism
         <me>
@@ -172,8 +172,7 @@
           H^2(L/K) \cong H^0_T(L/K) \cong H^1(\Gal(L/K), \QQ/\ZZ) \hookrightarrow \QQ/\ZZ
         </me>.
         In this special case, this is none other than the local invariant map!
-        In fact, by taking direct limits,
-        we get a canonical isomorphism
+        In fact, by taking direct limits, we get a canonical isomorphism
         <me>
           H^2(K^{\unr}/K) \cong \QQ/\ZZ
         </me>.
@@ -189,8 +188,7 @@
     <title>The cyclic case</title>
     <p>
       Let <m>L/K</m> be a cyclic but possibly ramified extension of local fields.
-      Again, <m>H^1_T(L/K)</m> is trivial by <xref ref="L_theorem_90"/>,
-      so all there is to compute is <m>H^0_T(L/K)</m>.
+      Again, <m>H^1_T(L/K)</m> is trivial by <xref ref="L_theorem_90"/>, so all there is to compute is <m>H^0_T(L/K)</m>.
       We are going to show again that it has order <m>[L:K]</m>;
       recall that this alone is the key input for the use of abstract class field theory (<xref ref="subsec-abstract-cft-preview"/>).
     </p>
@@ -207,7 +205,7 @@
           By the normal basis theorem, there exists <m>\alpha \in L</m> such that
           <m>\{\alpha^g\colon g \in \Gal(L/K)\}</m> is a basis for <m>L</m> over <m>K</m>.
           Without loss of generality, we may rescale to get <m>\alpha \in \gotho_L</m>;
-          then put <m>V = \sum \gotho_K \alpha^g</m>.
+          then put <m>V := \sum \gotho_K \alpha^g</m>.
           As in the proof of <xref ref="T_additive_theorem_90"/>,
           <m>V = \Ind^G_{1} \gotho_K</m> is induced and hence acyclic.
         </p>
@@ -232,7 +230,7 @@
           <me>
             \exp(x) = \sum_{i=0}^\infty \frac{x^i}{i!}
           </me>
-          (you need <m>v_p(x) \gt \frac{1}{p-1}</m> to be precise), and we may take <m>W = \exp(V)</m>.
+          (you need <m>v_p(x) \gt \frac{1}{p-1}</m> to be precise), and we may take <m>W := \exp(V)</m>.
         </p>
       </proof>
     </lemma>
@@ -246,6 +244,7 @@
         <p>
           Take <m>W</m> as in <xref ref="L_open_subgroup_acyclic1"/>.
           Since <m>W</m> has finite index in <m>\gotho_L^*</m>, we have <m>h(\gotho_L^*/W) = 1</m>
+          (<xref ref="rmk-herbrand-of-finite-is-1"/>)
           and hence <m>h(\gotho_L^*) = h(W) = 1</m> by <xref ref="L_open_subgroup_acyclic1"/>.
           So again we may conclude that <m>h(L^*) = h(\gotho_L^*) h(\ZZ) = [L:K]</m>,
           and so <m>H^0_T(\Gal(L/K), L^*) = [L:K]</m>.
@@ -282,12 +281,9 @@
       <proof>
         <p>
           For <m>r=1</m>, the condition on <m>H^i</m> is empty.
-          In this case,
-          <m>H^1(G,M)</m> classifies crossed homomorphisms <m>\phi\colon G \to M</m>.
-          If one of these factors through <m>G/H</m>,
-          it becomes a constant map when restricted to <m>H</m>;
-          if that constant value itself belongs to <m>M^H</m>,
-          then it must be zero and so the restriction to <m>H</m> is trivial.
+          In this case, <m>H^1(G,M)</m> classifies crossed homomorphisms <m>\phi\colon G \to M</m>.
+          If one of these factors through <m>G/H</m>, it becomes a constant map when restricted to <m>H</m>;
+          if that constant value itself belongs to <m>M^H</m>, then it must be zero and so the restriction to <m>H</m> is trivial.
           Conversely, if there exists some <m>m \in M</m> such that <m>\phi(h) = m^h - m</m> for all <m>h \in H</m>,
           then <m>\phi'(g) = \phi(g) - m^g + m</m> is another crossed homomorphism representing the same class in <m>H^1(G,M)</m>,
           but taking the value 0 on each <m>h \in H</m>.
@@ -301,7 +297,8 @@
             \phi'(g) = \phi'(gh) = \phi'(g)^h + \phi(h) = \phi'(g)^h
           </me>
           so <m>\phi'</m> takes values in <m>M^H</m>.
-          Thus the sequence is exact at <m>H^1(G,M)</m>; exactness at <m>H^i(G/H,M^H)</m> is similar but easier.
+          Thus the sequence is exact at <m>H^1(G,M)</m>; exactness at <m>H^1(G/H,M^H)</m> is similar but easier.
+          (If a crossed homomorphism <m>\phi\colon G/H \to M^H</m> has the form <m>m^g-m</m> for some <m>m \in M</m>, then in fact <m>m \in M^H</m>.)
         </p>
         <p>
           If <m>r \gt 1</m>, we induct on <m>r</m> by dimension shifting.
@@ -330,8 +327,7 @@
           since <m>\Ind^G_{1} \Res^G_1 M</m> is an induced <m>G</m>-module,
           this arrow is an isomorphism.
           Similarly, the third vertical arrow arises from the long exact sequence for <m>H</m>-cohomology,
-          and it is an isomorphism because
-          <m>\Ind^G_1 \Res^G_1 M</m> is also an induced <m>H</m>-module;
+          and it is an isomorphism because <m>\Ind^G_1 \Res^G_1 M</m> is also an induced <m>H</m>-module;
           moreover, <m>H^i(H, N) = 0</m> for <m>i=1, \dots, r-2</m>.
         </p>
         <p>
@@ -343,7 +339,7 @@
           We may take the long exact sequence for <m>G/H</m>-cohomology to obtain the first vertical arrow;
           it is an isomorphism because <m>(\Ind^G_1 \Res^G_1 M)^H</m> is an induced <m>G/H</m>-module.
           More generally, for any abelian group <m>A</m>, we have an isomorphism <m>(\Ind^G_1 A)^H \cong \Ind^{G/H}_1 A</m> of <m>G/H</m>-modules.
-          The point is that <m>Z[G/H] \cong Z[G]^H</m> via the map <m>[gH] \mapsto \sum_{h \in H} [gh]</m>.
+          The point is that we have an isomorphism <m>\ZZ[G/H] \cong \ZZ[G]^H</m> of <m>G/H</m>-modules via the map <m>[gH] \mapsto \sum_{h \in H} [gh]</m>.
         </p>
       </proof>
     </proposition>
@@ -390,8 +386,7 @@
       </proof>
     </proposition>
     <p>
-      To complete the proof that <m>H^2(L/K)</m> is cyclic of order <m>[L:K]</m>,
-      it now suffices to produce a cyclic subgroup of order <m>[L:K]</m>.
+      To complete the proof that <m>H^2(L/K)</m> is cyclic of order <m>[L:K]</m>, it now suffices to produce a cyclic subgroup of order <m>[L:K]</m>.
       We do this by comparing with an unramified extension of the same degree.
     </p>
     <proposition xml:id="P_H2_lower_bound">

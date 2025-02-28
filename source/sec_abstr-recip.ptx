@@ -37,7 +37,7 @@
     </definition>
     <remark>
       <p>
-        In <xref ref="def-global-abstract-units"/>, it will follow from the reciprocity law that the group <m>H^0_T(\Gal(L/K), C_L)</m> is cyclic.
+        In <xref ref="def-global-abstract-units"/>, it will follow from the reciprocity law (<xref ref="T_adelic_reciprocity_law"/>) that the group <m>H^0_T(\Gal(L/K), C_L)</m> is cyclic.
         However, the class field axiom does not require advance knowledge of this.
       </p>
     </remark>

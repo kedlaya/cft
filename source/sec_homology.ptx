@@ -21,20 +21,18 @@
         Let <m>M_G</m> denote the maximal quotient of <m>M</m> on which <m>G</m> acts trivially.
         In other words,
         <m>M_G</m> is the quotient of <m>M</m> by the submodule spanned by <m>m^g-m</m> for all <m>m \in M</m> and <m>g \in G</m>.
-        In yet other words, <m>M_G = M/M I_G</m>,
-        where <m>I_G</m> is the <term>augmentation ideal</term>
+        In yet other words, <m>M_G = M/M I_G</m>, where <m>I_G</m> is the <term>augmentation ideal</term>
         of the group algebra <m>\ZZ[G]</m>:
         <me>
           I_G := \left\{\sum_{g \in G} z_g[g]\colon \sum_g z_g = 0\right\}
         </me>.
         Or if you like, <m>M_G = M \otimes_{\ZZ[G]} \ZZ</m>.
-        Since <m>M^G</m> is the group of <m>G</m>-invariants,
-        we call <m>M_G</m> the group of <term><m>G</m>-coinvariants</term>.
+        Since <m>M^G</m> is the group of <m>G</m>-invariants, we call <m>M_G</m> the group of <term><m>G</m>-coinvariants</term>.
       </p>
     </definition>
     <p>
       The functor <m>M \to M^G</m> is right exact but not left exact:
-      if <m>0 \to M' \to M \to M'' \to 0</m>, is exact,
+      if <m>0 \to M' \to M \to M'' \to 0</m> is exact,
       then <m>M'_G \to M_G \to M''_G \to 0</m> is exact but the map on the left is not necessarily injective.
       Again, we can fill in the exact sequence by defining homology groups.
     </p>
@@ -158,12 +156,12 @@
         </p>
         <figure xml:id="fig-homology-1">
           <image>
-          <latex-image>
-            \xymatrix{
-              H_1(G, M'') \ar[r] \ar@{-->}[d] &amp; H_0(G, M') \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M) \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M'') \ar[r] \ar^{\Norm_G}[d] &amp; 0 \ar@{-->}[d] \\
-              0 \ar[r] &amp; H^0(G, M') \ar[r]  &amp; H^0(G, M) \ar[r] &amp;  H^0(G, M') \ar[r] &amp; H^1(G, M')
-            }
-          </latex-image>
+            <latex-image>
+              \xymatrix{
+                H_1(G, M'') \ar[r] \ar@{-->}[d] &amp; H_0(G, M') \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M) \ar[r] \ar^{\Norm_G}[d] &amp; H_0(G, M'') \ar[r] \ar^{\Norm_G}[d] &amp; 0 \ar@{-->}[d] \\
+                0 \ar[r] &amp; H^0(G, M') \ar[r]  &amp; H^0(G, M) \ar[r] &amp;  H^0(G, M') \ar[r] &amp; H^1(G, M')
+              }
+            </latex-image>
           </image>
         </figure>
       </proof>
@@ -188,8 +186,7 @@
         and consider a homomorphism
         <m>\alpha\colon G' \to G</m> of groups and a homomorphism
         <m>\beta\colon M \to M'</m> of abelian groups which are compatible in the sense of <xref ref="D-extended-functoriality"/>.
-        We would like to obtain canonical homomorphisms
-        <m>H_i(G, M) \to H_i(G', M')</m>,
+        We would like to obtain canonical homomorphisms <m>H_i(G, M) \to H_i(G', M')</m>,
         but for this we need to add an additional condition to ensure that
         <m>M \to M'</m> induces a well-defined map <m>M_G \to M'_{G'}</m>.
         For instance, this holds if <m>\alpha</m> is surjective.
