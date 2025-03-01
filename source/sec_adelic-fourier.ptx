@@ -20,7 +20,7 @@
       <statement>
         <p>
           Let <m>K</m> be a number field and let <m>v</m> be a place of <m>K</m>.
-          Then the dual group <m>(K_v^+)^\vee</m> of continuous characters from <m>K_v^+</m> to <m>\{z \in \CC: |z| = 1\}</m> is a locally compact topological group.
+          Then the dual group <m>(K_v^+)^\vee</m> of continuous characters from <m>K_v^+</m> to <m>\{z \in \CC\colon |z| = 1\}</m> is a locally compact topological group.
           Moreover, for any nontrivial element <m>X \in (K_v^+)^\vee</m>, the map
           <me>
             K_v^+ \to X, \qquad \eta \mapsto (\xi \mapsto X(\eta \xi))

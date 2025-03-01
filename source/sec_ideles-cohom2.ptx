@@ -33,7 +33,7 @@
     </p>
     <definition xml:id="def-second-inequality-analytic">
       <p>
-        Let <m>L/K</m> be a finite Galois extension and <m>\gothm</m> a formal product of places of <m>K</m>.
+        Let <m>L/K</m> be a finite extension and <m>\gothm</m> a formal product of places of <m>K</m>.
         As in <xref ref="def-generalized-ideal-class-groups"/>, let <m>J^{\gothm}_K</m> be the group of fractional ideals of <m>K</m> coprime to <m>\gothm</m>;
         similarly, let <m>J^{\gothm}_L</m> be the group of fractional ideals of <m>L</m> coprime to <m>\gothm</m>.
       </p>
@@ -384,7 +384,7 @@
       </statement>
       <hint>
         <p>
-          Use <xref ref="exer-Wang"/> to deal with the plcaes not above 2. 
+          Use <xref ref="exer-Wang"/> to deal with the places not above 2. 
           For the places above 2, check that <m>\QQ_2(\sqrt{7}) = \QQ_2(\sqrt{-1})</m>.
         </p>
       </hint>
@@ -392,14 +392,15 @@
     <exercise xml:id="exer-Hasse-Minkowski">
       <statement>
         <p>
-          Let <m>K</m> be a number field and choose <m>a,b,c \in K^*</m>. Prove that the equation <m>ax^2 + by^2 + c^2 = 0</m> has a solution with <m>x,y,z \in K</m> not all zero
+          Let <m>K</m> be a number field and choose <m>a,b,c \in K</m>. Prove that the equation <m>ax^2 + by^2 + cz^2 = 0</m> has a solution with <m>x,y,z \in K</m> not all zero
           if and only if for each place <m>v</m> of <m>K</m>, there exists a solution with <m>x,y,z \in K_v</m> not all zero.
           (This is a special case of the <term>Hasse-Minkowski theorem</term>.)
         </p>
       </statement>
       <hint>
         <p>
-          The equation has a solution in <m>K</m> if and only if <m>-c</m> is a norm from <m>K(\sqrt{-b/a})</m> to <m>K</m>.
+          We may assume that <m>a, c \neq 0</m>. Then 
+          the equation has a nonzero solution in <m>K</m> if and only if <m>-c/a</m> is a norm from <m>K(\sqrt{-b/a})</m> to <m>K</m>.
         </p>
       </hint>
     </exercise>

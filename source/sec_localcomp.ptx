@@ -254,8 +254,8 @@
     <remark>
       <p>
         Notwithstanding <xref ref="P_local_cyclic_H2"/>, at this stage we cannot yet check that
-        <m>H^0_T(L/K)</m> is cyclic, because the groups <m>H^1_T(\Gal(L/K), \gotho_L^*)</m> are not guaranteed to vanish;
-        see <xref ref="exer-units-not-acyclic"/>.
+        <m>H^0_T(L/K)</m> is cyclic: we cannot argue that the map <m>H^0_T(L/K) \to H^0_T(\Gal(L/K), \ZZ)</m> is an isomorphism
+        because the groups <m>H^i_T(\Gal(L/K), \gotho_L^*)</m> are not guaranteed to vanish (see <xref ref="exer-units-not-acyclic"/>).
         That said, cyclicity will follow later from periodicity plus <xref ref="L_local_invariant_map"/>.
       </p>
     </remark>

@@ -5,7 +5,8 @@
       <title>Reference</title>
       <p>
         <xref ref="bib-Milne-CFT"/> IV (for the general theory of Brauer groups); VII.7 and VII.8 (for the application to reciprocity).
-        For the general theory, see also <xref ref="bib-Jacobson-2"/>, Chapter 4.
+        For the general theory, see also <xref ref="bib-Poonen"/>, 1.5 for a quick presentation or <xref ref="bib-Jacobson-2"/>, Chapter 4
+        for something more thorough.
       </p>
     </paragraphs>
     <p>
@@ -34,13 +35,41 @@
     </definition>
     <p>
       This definition of Brauer groups is not the original one; we give that next.
-      (The standard definition is not needed for the results of class field theory, but is important in other contexts.)
+      The standard definition is not needed for the results of class field theory, but is important in other contexts
+      such as <xref ref="rmk-Brauer-Manin-obstruction"/>.
     </p>
+    <definition>
+      <p>
+        An <term>Azumaya algebra</term> of rank <m>n</m> (a positive integer) over a field <m>K</m>
+        is a (not necessarily commutative) <m>K</m>-algebra <m>A</m> such that <m>A \otimes_K \overline{K}</m> is isomorphic as a <m>\overline{K}</m>-algebra
+        to the matrix algebra <m>M_n(\overline{K})</m>.
+        One way this can occur is for <m>A</m> to itself be isomorphic to the matrix algebra <m>M_n(K)</m>; when this occurs we say that <m>A</m> is <term>split</term>.
+      </p>
+      <p>
+        There are various equivalent characterizations of Azumaya algebras (<xref ref="bib-Poonen"/>, Proposition 1.5.2).
+        For example, <m>A</m> is an Azumaya algebra over <m>K</m> if and only if it is isomorphic to a matrix ring over some division algebra (skew field) <m>D</m>
+        which is itself a finite dimensional <m>K</m>-algebra; and the isomorphism class of <m>D</m> is uniquely determined by that of <m>A</m>.
+      </p>
+    </definition>
     <lemma xml:id="lem-brauer-defs">
       <statement>
         <p>
           For any field <m>K</m>, there is a natural bijection between <m>\Br(K)</m> and the isomorphism classes of division algebras which are finite-dimensional <m>K</m>-algebras
           with center <m>K</m>.
+          Moreover, the group structure on <m>\Br(K)</m> corresponds as follows:
+          <ol>
+            <li>
+              The identity element of <m>\Br(K)</m> corresponds to <m>K</m>.
+            </li>
+            <li>
+              The group operation in <m>\Br(K)</m> corresponds to the operation carrying a pair <m>D_1, D_2</m> of division algebras to the unique division algebra <m>D</m> such that
+              <m>D_1 \otimes D_2 \cong M_n(D)</m> for some positive integer <m>n</m>.
+            </li>
+            <li>
+              The inverse map on <m>\Br(K)</m> corresponds to the operation taking <m>D</m> to its <term>opposite algebra</term>, i.e., the same underlying additive group
+              with multiplication taken in the reverse order.
+            </li>
+          </ol>
         </p>
       </statement>
       <proof>
@@ -50,13 +79,13 @@
         </p>
       </proof>
     </lemma>
-    <example>
+    <example xml:id="exa-brauer-alg-closed">
       <p>
-        For <m>K</m> an algebraically closed field, <xref ref="lem-brauer-defs"/> states that every division algebra which is finite dimensional over <m>K</m> is trivial.
+        For <m>K</m> an algebraically closed field, <xref ref="lem-brauer-defs"/> includes the assertion that every division algebra which is finite dimensional over <m>K</m> is trivial.
         We may check this directly as follows.
         If <m>D</m> is such a division algebra,
         then for each <m>x \in D</m>, multiplication by <m>x</m> defines a <m>K</m>-linear endomorphism of <m>D</m>, which necessarily has at least one eigenvalue <m>y \in K</m>.
-        Then <m>x-y</m> is an element of <m>D</m> which cannot be invertible (since multiplication by this element is a <m>K</m>-linear endomorphism of <m>D</m> with 0
+        Then <m>x-y</m> is an element of <m>D</m> which cannot be invertible (since multiplication by this element is a <m>K</m>-linear endomorphism of <m>D</m> with <m>0</m>
         as an eigenvalue), so it must be zero; hence <m>x \in K</m>.
       </p>
     </example>
@@ -67,21 +96,6 @@
         (<xref ref="T_cyclic_group_periodicity"/>).
       </p>
     </example>
-    <remark>
-      <p>
-        While <xref ref="lem-brauer-defs"/> only characterizes the Brauer group as a set, the original construction of Brauer included the group structure.
-        Namely, for any two central simple algebras <m>D_1, D_2</m> over <m>K</m>, we have an isomorphism of <m>K</m>-algebras
-        <me>
-          D_1 \otimes_K D_2 \cong M_n(D)
-        </me>
-        for some positive integer <m>n</m> and some division algebra <m>D</m> with center <m>K</m>, and <m>D</m> is the product of <m>D_1</m> and <m>D_2</m> in <m>\Br(K)</m>
-        (in particular, it is characterized by this construction up to isomorphism).
-      </p>
-      <p>
-        In this construction, the identity element in <m>\Br(K)</m> is <m>K</m> viewed as a division algebra with itself as the center. The inverse element of a division algebra
-        <m>D</m> is the <term>opposite algebra</term> in which multiplication is reversed.
-      </p>
-    </remark>
     <remark xml:id="rmk-schur-index">
       <p>
         The property of a field <m>K</m> of characteristic 0 having trivial Brauer group is useful in the theory of finite group representations:
@@ -96,11 +110,11 @@
         as a representation over <m>\QQ</m>. In other words, this representation has nontrivial <term>Schur index</term>.
       </p>
     </remark>
-    <remark>
+    <remark xml:id="rmk-Brauer-group-scheme">
       <p>
-        One can also associate Brauer groups to arbitrary rings and even to schemes in algebraic geometry, by replacing division algebras (or more precisely,
-        central simple algebras) with <term>Azumaya algebras</term> and Galois cohomology with <term>&#xe9;tale cohomology</term>.
-        See <xref ref="bib-Grothendieck-Brauer"/>.
+        One can also associate Brauer groups to arbitrary rings and even to schemes in algebraic geometry, by extending the definition of Azumaya algebras suitably.
+        One again has a relationship with Galois cohomology (or rather <term>&#xe9;tale cohomology</term>), but there is a bit more subtlety involved.
+        See <xref ref="bib-Grothendieck-Brauer"/> for a classical reference or <xref ref="bib-Poonen"/>, section 6.6 for a modern treatment.
       </p>
     </remark>
   </subsection>
@@ -309,7 +323,7 @@
       <proof>
         <p>
           To begin with, <xref ref="prop-diagonal-cyclotomic"/> implies that <m>r_{L/K}</m> kills principal id&#xe8;les whenever <m>L/K</m> is a cyclotomic extension,
-          and <xref ref="lem-H2-map-global-cyclic"/> implies that in this case the composite <m>H^2(L/K) \to \QQ/\ZZ</m> along the bottom row of
+          and <xref ref="lem-H2-map-global-cyclic"/> implies that in this case the composite <m>H^2(L/K) \to \frac{1}{n} \ZZ/\ZZ</m> along the bottom row of
           <xref ref="fig-connection-5"/> vanishes.
           By <xref ref="prop-H2-class-absorb-by-cyclotomic"/>, the same then holds for any cyclic extension <m>L/K</m>.
           By <xref ref="lem-H2-map-global-cyclic"/> again, the composition along the top row of <xref ref="fig-connection-5"/> vanishes, proving the claim.
@@ -412,9 +426,8 @@
         on a general algebraic variety.
       </p>
       <p>
-        It was first observed by Manin that this failure can sometimes be overcome using the <term>Brauer group</term> <m>\Br(X)</m> associated to <m>X</m>, 
-        whose definition we do not reproduce here (<xref ref="bib-Poonen"/>, section 6.6).
-        The key relevant point for now is that 
+        It was first observed by Manin that this failure can sometimes be overcome using the Brauer group <m>\Br(X)</m>
+        (<xref ref="rmk-Brauer-group-scheme"/>). The key relevant point for now is that 
         the construction of <m>\Br(X)</m> is contravariantly functorial, so any <m>K</m>-rational point <m>x \in X(K)</m> gives rise to a
         homomorphism <m>\Br(X) \to \Br(K)</m>. We can view this construction as a <q>pairing</q> <m>X(K) \times \Br(X) \to \Br(K)</m>, although
         it is only linear in the second argument as there is no natural group structure on <m>X(K)</m> in general.
@@ -434,7 +447,7 @@
         for a tuple <m>(x_v)_v \in \prod_v X(K_v)</m> to come from a global point <m>x \in X(K)</m> is that the sum of the local invariants
         <m>\inv_v(x_v, y_n)</m> must vanish. That is, each <m>y</m> gives rise to a commutative diagram as in
         <xref ref="fig-connection-7"/> 
-        in which the vertical maps are evaluation maps and the bottom row is the fundamental exact sequence.        
+        in which the vertical maps are evaluation maps and the bottom row is the fundamental exact sequence.
       </p>
       <figure xml:id="fig-connection-7">
         <image>
@@ -469,29 +482,57 @@
       <hint>
         <p>
           It suffices to check the case <m>K = \QQ</m> (with <m>m</m> replaced by a suitably larger value).
-          We may also assume that <m>m</m> is a power of some prime <m>\ell</m>.
+          We may also assume that <m>m</m> is a power of some prime <m>\ell</m>,
+          and we only need to handle one <m>v \in S</m>.
           For more details, see <xref ref="bib-Milne-CFT"/>, Lemma VII.7.3.
         </p>
       </hint>
     </exercise>
-      <exercise>
-        <statement>
+    <exercise>
+      <statement>
+        <p>
           Let <m>D</m> be a quaternion algebra over a field <m>K</m> (see <xref ref="exer-quaternion-algebras"/>).
           Prove the following statements directly (without using <xref ref="lem-brauer-defs"/>).
           <ol>
             <li>
-              <p>
-                <m>D</m> is isomorphic to its opposite algebra.
-              </p>
+              <m>D</m> is isomorphic to its opposite algebra.
             </li>
             <li>
-              <p>
-                There is an isomorphism <m>D \otimes_K D \cong M_4(K)</m> of <m>K</m>-algebras. 
-                Consequently, if <m>D</m> is not split, then it represents an element of <m>\Br(K)</m> of order 2.
-              </p>
+              There is an isomorphism <m>D \otimes_K D \cong M_4(K)</m> of <m>K</m>-algebras. 
+              Consequently, if <m>D</m> is not split, then it represents an element of <m>\Br(K)</m> of order <m>2</m>.
             </li>
           </ol>
-        </statement>
-      </exercise>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          For the first assertion, check that <m>i \mapsto -i, j \mapsto -j, k \mapsto -k</m> defines an isomorphism with the opposite algebra.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>K</m> be a number field. For <m>D</m> a quaternion algebra over <m>K</m>, let <m>S_D</m> denote the set of places <m>v</m> of <m>K</m>
+          such that <m>D \otimes_K K_v</m> is split.
+          <ol>
+            <li>
+              Prove that <m>S_D</m> is finite.
+            </li>
+            <li>
+              Prove that <m>\#S_D \geq 2</m>.
+            </li>
+            <li>
+              Prove that every two-element set of places of <m>v</m> occurs as <m>S_D</m> for some <m>D</m>.
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Deduce everything from <xref ref="def-fundamental-exact-sequence"/>.
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>
