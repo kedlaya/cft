@@ -159,15 +159,15 @@
     </p>
     <definition xml:id="def-restricted-product">
       <p>
-      Let <m>I</m> be an index set. For each <m>i \in I</m>, let <m>G_i</m> be a set and let <m>H_i</m> be a set of <m>G_i</m>.
-      The <term>restricted (direct) product</term>
-      <m>G</m> of the pairs <m>(G_i, H_i)</m> is the set of tuples <m>(g_i)_{i=1}^\infty</m> such that
-      <m>g_i \in H_i</m> for all but finitely many indices <m>i</m>.
-      Another way to say this is to define, for each finite subset <m>S \subseteq I</m>, the set
-      <me>
-        G_S = \prod_{i \in S} G_i \times \prod_{i \notin S} H_i
-      </me>
-      and take <m>G = \bigcup_S G_S</m>.
+        Let <m>I</m> be an index set. For each <m>i \in I</m>, let <m>G_i</m> be a set and let <m>H_i</m> be a set of <m>G_i</m>.
+        The <term>restricted (direct) product</term>
+        <m>G</m> of the pairs <m>(G_i, H_i)</m> is the set of tuples <m>(g_i)_{i=1}^\infty</m> such that
+        <m>g_i \in H_i</m> for all but finitely many indices <m>i</m>.
+        Another way to say this is to define, for each finite subset <m>S \subseteq I</m>, the set
+        <me>
+          G_S = \prod_{i \in S} G_i \times \prod_{i \notin S} H_i
+        </me>
+        and take <m>G = \bigcup_S G_S</m>.
       </p>
       <p>
       We upgrade this construction from sets to richer categories as follows.
@@ -196,18 +196,18 @@
     </definition>
     <definition>
       <p>
-      Define the <term>ring of ad&#xe8;les</term>
-      over <m>\QQ</m> as <m>\AA_{\QQ} = \RR \times \AA^{\fin}_{\QQ}</m>.
-      Then <m>\AA_{\QQ}</m> is a locally compact topological ring with a canonical embedding <m>\QQ \hookrightarrow \AA_{\QQ}</m>.
-      We refer to the elements of <m>\QQ</m> as <term>principal ad&#xe8;les</term> within <m>\AA_{\QQ}</m>.
+        Define the <term>ring of ad&#xe8;les</term>
+        over <m>\QQ</m> as <m>\AA_{\QQ} = \RR \times \AA^{\fin}_{\QQ}</m>.
+        Then <m>\AA_{\QQ}</m> is a locally compact topological ring with a canonical embedding <m>\QQ \hookrightarrow \AA_{\QQ}</m>.
+        We refer to the elements of <m>\QQ</m> as <term>principal ad&#xe8;les</term> within <m>\AA_{\QQ}</m>.
       </p>
       <p>
-      We may also view <m>\AA_\QQ</m> as a restricted direct product of the pairs
-      <me>
-        (\RR, \{0\}), (\QQ_2, \ZZ_2), (\QQ_3, \ZZ_3), \dots
-      </me>;
-      note that taking the subgroup <m>\{0\}</m> of <m>\RR</m> has no real effect because the definition of the restricted product involves checking membership
-      in the chosen subgroup for <em>all but finitely many</em> indices.
+        We may also view <m>\AA_\QQ</m> as a restricted direct product of the pairs
+        <me>
+          (\RR, \{0\}), (\QQ_2, \ZZ_2), (\QQ_3, \ZZ_3), \dots
+        </me>;
+        note that taking the subgroup <m>\{0\}</m> of <m>\RR</m> has no real effect because the definition of the restricted product involves checking membership
+        in the chosen subgroup for <em>all but finitely many</em> indices.
       </p>
     </definition>
     <remark>
@@ -265,10 +265,10 @@
         </li>
       </ul>
       The natural homomorphism
-        <me>
-          K/\gotho_K \to \AA^{\fin}_{K}/\widehat{\gotho_K}
-        </me>
-        is an isomorphism.
+      <me>
+        K/\gotho_K \to \AA^{\fin}_{K}/\widehat{\gotho_K}
+      </me>
+      is an isomorphism.
     </p>
     <p>
       The ring of ad&#xe8;les <m>\AA_K</m> is the product <m>K_\RR \times \AA^{\fin}_K</m>. In other words, this is the restricted product
@@ -278,30 +278,25 @@
     </p>
     </definition>
     <definition xml:id="def-normalized-adele-norm">
-    <p>
-      For each place <m>v</m> of <m>K</m>, let <m>|\bullet|_v</m> be the absolute value on the completion <m>K_v</m> normalized as follows.
-      <ul>
-        <li>
-          <p>
+      <p>
+        For each place <m>v</m> of <m>K</m>, let <m>|\bullet|_v</m> be the absolute value on the completion <m>K_v</m> normalized as follows.
+        <ul>
+          <li>
             For <m>v</m> real, take the usual real absolute value.
-          </p>
-        </li>
-        <li>
-          <p>
+          </li>
+          <li>
             For <m>v</m> complex, take the <em>square</em> of the usual absolute value. (This does not satisfy the triangle inequality; sorry.)
-          </p>
-        </li>
-        <li>
-          <p>
-            For <m>v</m> a finite place above the prime <m>p</m>, normalize so that <m>|p|_v = p^{-1}</m>.
-          </p>
+          </li>
+          <li>
+            For <m>v</m> a finite place above the prime <m>p</m>, normalize so that <m>|p|_v = p^{[K_v:\QQ_p]}</m>.
+            (This is the same renormalization relative to <m>\QQ_p</m> as for complex places relative to <m>\RR</m>, except that now the result does satisfy the triangle inequality.)
         </li>
       </ul>
-      We then have a well-defined function <m>|\bullet|</m> on <m>\AA_K</m> given by
+      We then have a well-defined function <m>|\bullet|_K</m> on <m>\AA_K</m> given by
       <me>
         |x|_K = \prod_v |x|_v
       </me>;
-      this makes sense because by virtue of the definition of a restricted direct product, all but finitely many of the values <m>|x|_v</m> are equal to 1.
+      this makes sense because by virtue of the definition of a restricted direct product, all but finitely many of the values <m>|x|_v</m> are equal to <m>1</m>.
     </p>
     </definition>
     <proposition xml:id="prop-product-formula">
@@ -314,13 +309,20 @@
       <proof>
         <p>
           The normalizations have been chosen so that for each place <m>v</m> of <m>\QQ</m>, for each <m>\alpha \in K</m>, the product of
-          <m>|\alpha|_w</m> over all places <m>w</m> of <m>K</m> above <m>p</m> equals <m>|\Norm_{L/K}(\alpha)|_v</m>. Taking the product over <m>v</m>,
+          <m>|\alpha|_w</m> over all places <m>w</m> of <m>K</m> above <m>v</m> equals <m>|\Norm_{L/K}(\alpha)|_v</m>.
+          As a sanity check, we note that for <m>\alpha \in \QQ</m>, we have <m>|\alpha|_w = |\alpha|_v^{[L_w:K_v]}</m> and so the product over <m>w</m> yields
+          <me>
+            |\alpha|_v^{\sum_w [L_w:K_v]} = |\alpha^{[L:K]}|_v = |\Norm_{L/K}(\alpha)|_v
+          </me>.
+        </p>
+        <p>
+          Taking the product over <m>v</m>,
           we deduce that <m>|\alpha|_K = |\Norm_{L/K}(\alpha)|_{\QQ}</m>. That is, the product formula reduces to the case <m>K = \QQ</m>, which we may check directly:
           for <m>\alpha = \pm p_1^{e_1} \cdots p_r^{e_r}</m>, 
           <me>
             |\alpha|_v = \begin{cases} p_1^{e_1} \cdots p_r^{e_r} &amp; \text{if } v = \infty \\
             p_i^{-e_i} &amp; \text{if } v = p_i \text{ for some } i \\
-            0 &amp; \text{otherwise.}
+            1 &amp; \text{otherwise.}
             \end{cases}
           </me>
         </p>

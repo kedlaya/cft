@@ -339,7 +339,12 @@
         First Inequality (<xref ref="prop-artin-map-surjects"/>), this map is surjective; by comparing orders using the Second Inequality
         (<xref ref="T_first_and_second_inequality"/>), we see that the map is also an isomorphism.
         This establishes local-global compatibility (<xref ref="prop-reciprocity-trivial-on-diagonal"/>) for cyclic extensions, 
-        from which it directly follows also for abelian extensions.
+        from which it directly follows also for abelian extensions (using the structure theorem for finite abelian groups).
+      </p>
+      <p>
+        For general <m>L/K</m>, <m>r_{L/K}\colon I_K \to \Gal(L/K)^{\ab}</m> agrees with <m>r_{M/K}\colon I_K \to \Gal(M/K)</m>
+        when <m>M/K</m> is the maximal abelian subextension of <m>L/K</m>.
+        In particular, <m>r_{L/K}</m> once again vanishes on <m>K^*</m>.
         Hooray again!
       </p>
     </remark>
@@ -350,12 +355,21 @@
         <me>
           C_K/\Norm_{L/K} C_L \cong \Gal(L/K)^{\ab}
         </me>
-        without use of abstract class field theory. One can say the same for an abelian extension: in this case, local reciprocity (<xref ref="T_local_reciprocity"/>)
-        and <xref ref="rmk-local-global-via-brauer"/> together imply that we have a well-defined map. Using the cyclic case, we may see that this map is surjective;
+        without use of abstract class field theory.
+      </p>
+      <p>
+        One can extend this conclusion to the case where <m>L/K</m> is abelian as follows.
+        In this case, local reciprocity (<xref ref="T_local_reciprocity"/>) and <xref ref="rmk-local-global-via-brauer"/> together imply that we have a well-defined map. 
+        Using the cyclic case, we may see that this map is surjective;
         by <xref ref="C_second_inequality_analytic"/> (a side effect of our proof of the Second Inequality), the map is forced to be an isomorphism.
       </p>
       <p>
-        However, this is not enough to recover the norm limitation theorem. For this, we take a slightly different approach; see <xref ref="prop-global-H2-cyclic"/>
+        For a general extension <m>L/K</m> with maximal abelian subextension <m>M/K</m>, we have from <xref ref="rmk-local-global-via-brauer"/>
+        a well-defined map <m>r_{L/K}\colon C_K \to \Gal(L/K)^{\ab}</m> which coincides with <m>r_{M/K}\colon C_K \to \Gal(M/K)</m>.
+        However, now we must be careful because the completion of <m>L</m> at some place might have maximal abelian subextension strictly larger
+        than the corresponding completion of <m>M</m>; consequently, we cannot directly apply local norm limitation to deduce global norm limitation.
+        In particular, we have an induced map <m>r_{L/K} \colon C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}</m> but we currently only know that it is surjective.
+        To resolve this, see <xref ref="prop-global-H2-cyclic"/>
         and <xref ref="rmk-global-reciprocity-via-cup-product"/>.
       </p>
     </remark>
@@ -363,7 +377,7 @@
   <subsection>
     <title><m>H^2</m> and global reciprocity</title>
     <p>
-      As noted in <xref ref="rmk-no-abstract-cft"/>, we have a bit more work to do to establish global reciprocity without abstract class field theory:
+      As noted in <xref ref="rmk-no-abstract-cft"/>, we have a bit more work to do to establish the global reciprocity isomorphism without abstract class field theory:
       so far we only have it for abelian extensions, but we need the stronger version for arbitrary extensions to deduce the norm limitation theorem.
       We get this by calculating <m>H^2(\Gal(L/K), C_L)</m>.
     </p>
@@ -399,10 +413,13 @@
         by taking the cup product with the canonical generator of <m>H^2(\Gal(L/K), C_L)</m> produced in <xref ref="prop-global-H2-cyclic"/>.
         Since the hypotheses of Tate's theorem (<xref ref="T_tate_thm2"/>) are satisfied (the vanishing of <m>H^1</m> by <xref ref="T_first_and_second_inequality"/>,
         the value of <m>H^2</m> by <xref ref="prop-global-H2-cyclic"/>) this map is an isomorphism.
-        By local-to-global compatibility, this is in fact the inverse of the reciprocity map;
-        we thus recover the reciprocity isomorphism for arbitrary (not necessarily abelian) extensions
-        (<xref ref="T_adelic_reciprocity_law"/>). 
-        As usual, this formally implies the norm limitation theorem as in <xref ref="rem-deduce-local-norm-limitation"/>.
+      </p>
+      <p>
+        Returning to <xref ref="rmk-no-abstract-cft"/>, we see that the map <m>r_{L/K} \colon C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}</m>
+        that we constructed from global reciprocity is a surjective map between two groups which are now known to be of the same order!
+        We conclude that this map is an isomorphism, thus confirming <xref ref="T_adelic_reciprocity_law"/>
+        and <xref ref="T_adelic_norm_limitation1"/>. (Note that we avoided having to check that the isomorphism in the previous paragraph is compatible
+        with the isomorphism coming from local-global compatibility.)
       </p>
       <p>
         At this point, the reader who is avoiding abstract class field theory can now return to <xref ref="sec_existence"/>

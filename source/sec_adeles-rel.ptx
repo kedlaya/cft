@@ -30,7 +30,7 @@
         then <m>g</m> maps <m>L</m> to some other extension <m>L^g</m> of <m>K</m>,
         and <m>g</m> induces isomorphisms 
         <me>
-          \AA_L \to \AA_{L^g}, \qquad I_L \cong I_{L^g}, \qquad C_L \to C_{L^g}
+          \AA_L \cong \AA_{L^g}, \qquad I_L \cong I_{L^g}, \qquad C_L \cong C_{L^g}
         </me>.
         Explicitly, if <m>(\alpha_w)_w \in \AA_L</m> and <m>g \in G</m>,
         then <m>g</m> maps the completion <m>L_w</m> of <m>L</m> to a completion <m>L_{w^g}</m> of <m>L^g</m>.
