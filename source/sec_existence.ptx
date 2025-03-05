@@ -103,7 +103,9 @@
         <p>
           By <xref ref="cor-S-units-theorem"/> and the assumption that <m>K</m> contains a primitive <m>p</m>-th root of unity,
           the group <m>\gotho_{K,S}^*/(\gotho_{K,S}^*)^p</m> is finite of order <m>p^s</m>, yielding <m>[L:K] = p^s</m>.
-          By local reciprocity (<xref ref="L_hilbert_symbol"/>), we have <m>K^* W_S/K^* \subseteq \Norm_{L/K} C_L</m>; to prove equality,
+          Moreover, by global reciprocity (<xref ref="T_adelic_reciprocity_law"/>), the group <m>C_K/\Norm_{L/K} C_L</m> has exponent <m>p</m>.
+          By this plus local reciprocity (<xref ref="L_hilbert_symbol"/>),
+          we see that <m>K^* W_S/K^* \subseteq \Norm_{L/K} C_L</m>; to prove equality,
           it will suffice to show that these subgroups have the same finite index in <m>C_K</m>.
         </p>
         <p>

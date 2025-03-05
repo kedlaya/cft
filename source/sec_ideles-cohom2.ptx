@@ -364,7 +364,39 @@
       </statement>
       <hint>
         <p>
-          Prove that every square in <m>L</m> is a local norm, but <m>5^2</m> is not a global norm.
+          Proceed as in <xref ref="bib-Cassels-Frohlich"/>, exercises 5.1, 5.2, 5.3 as follows.
+          (For an alternate approach, see <xref ref="bib-Janusz"/>, exercise V.9.1.)
+          <ul>
+            <li>
+              Observe that every square in <m>\QQ</m> is a local norm.
+            </li>
+            <li>
+              Set <m>a_1 := 13, a_2 := 17, a_3 := 13 \cdot 17</m>, so that <m>L_i := \QQ(\sqrt{a_i})</m> is a quadratic subextension of <m>L</m>.
+              Let <m>S_i</m> be the set of places of <m>\QQ</m> that split (and are unramified) in <m>L_i</m>. 
+              Show that <m>S_1 \cap S_2 \cap S_3</m> is the set of places that split completely in <m>L</m>,
+              and that every place not in this intersection belongs to exactly one <m>S_i</m>.
+            </li>
+            <li>
+              For <m>N_i := \Norm_{L_i/\QQ}(L_i^*)</m>, show that 
+              <me>
+                N_1 N_2 N_3 = \{x \in \QQ^*\colon x^2 \in \Norm_{L/\QQ} L^*\}
+              </me>.
+              (This comes down to some algebraic manipulation, not any class field theory.)
+            </li>
+            <li>
+              Use global reciprocity (compare <xref ref="exer-quadratic-norm-residue-symbols"/>)
+              to show that for any permutation <m>\{i,j,k\}</m> of <m>\{1,2,3\}</m>, the formula
+              <me>
+                \varphi(x) := \prod_{v \in S_i} (a_j, x)_{\QQ_v}
+              </me>,
+              where <m>(a_j,x)_{\QQ_v}</m> is the norm residue symbol (<xref ref="exer-local-norm-residue-symbol"/>),
+              defines the <em>same</em> homomorphism <m>\varphi \colon L^* \to \{\pm 1\}</m>.
+            </li>
+            <li>
+              Observe that on one hand <m>N_1 N_2 N_3 \subseteq \ker(\varphi)</m>, and on the other hand <m>\varphi(5) = -1</m>.
+              Deduce that <m>5^2</m> is a local norm but not a global norm.
+            </li>
+          </ul>
         </p>
       </hint>
     </exercise>

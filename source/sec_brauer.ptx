@@ -551,5 +551,17 @@
         </p>
       </hint>
     </exercise>
+    <exercise xml:id="exer-quadratic-norm-residue-symbols">
+      <statement>
+        <p>
+          Let <m>K</m> be a number field. For each place <m>v</m> of <m>K</m>, write <m>(x,y)_v</m> for the quadratic norm residue symbol <m>(x,y)_{K_v}</m>
+          (<xref ref="exer-local-norm-residue-symbol"/>). Deduce from <xref ref="def-fundamental-exact-sequence"/> that for <m>x,y \in K^*</m>,
+          <me>
+            \prod_v (x,y)_{v} = 1
+          </me>
+          where the product runs over all places <m>v</m> of <m>K</m>.
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

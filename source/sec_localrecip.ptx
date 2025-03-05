@@ -367,41 +367,62 @@
           </p>
         </hint>
       </exercise>
-      <exercise xml:id="exer-quaternion-algebras">
-        <statement>
-          <p>
-            A <term>quaternion algebra</term> over a field <m>K</m> is a central simple algebra over <m>K</m> of dimension 4.
-            If <m>K</m> is not of characteristic 2, any such algebra has the form
-            <me>
-              K \oplus Ki \oplus Kj \oplus Kk, \qquad i^2 = a, j^2 = b, ij = -ji = k
-            </me>
-            for some <m>a,b \in K^*</m>.
-            (For example, the case <m>K = \RR</m>,
-            <m>a=b=-1</m> gives the standard Hamilton quaternions.)
-            A quaternion algebra is <term>split</term>
-            if it is isomorphic to the ring of
-            <m>2 \times 2</m> matrices over <m>K</m>.
-            Show that if <m>K</m> is a local field,
-            then any two quaternion algebras which are not split are isomorphic to each other.
-          </p>
-        </statement>
-        <hint>
-          <p>
-            While this can be done using elementary methods, it will also follow from <xref ref="T_Brauer_group_identification"/> via the cohomological
-            description of Brauer groups; see <xref ref="lem-brauer-defs"/>.
-          </p>
-        </hint>
-      </exercise>
-      <exercise xml:id="exer-subspace-top">
-        <statement>
-          <p>
-           Let <m>K</m> be a finite extension of <m>\QQ_p</m>.
-           Show that <m>K^*</m> can be viewed as a closed subspace of <m>K \times K</m> via the inclusion <m>x \mapsto (x,x^{-1})</m>,
-           and deduce from this that <m>K^*</m> is a locally compact abelian group for the subspace topology.
-           It can also be viewed as a subspace of <m>K</m>, but not as a closed subspace; this distinction will show up more seriously when we talk about 
-           ad&#xe8;les and id&#xe8;les (<xref ref="rmk-idele-topology"/>).
-          </p>
-        </statement>
-      </exercise>
+    <exercise xml:id="exer-quaternion-algebras">
+      <statement>
+        <p>
+          A <term>quaternion algebra</term> over a field <m>K</m> is a central simple algebra over <m>K</m> of dimension 4.
+          If <m>K</m> is not of characteristic 2, any such algebra has the form
+          <me>
+            K \oplus Ki \oplus Kj \oplus Kk, \qquad i^2 = a, j^2 = b, ij = -ji = k
+          </me>
+          for some <m>a,b \in K^*</m>.
+          (For example, the case <m>K = \RR</m>,
+          <m>a=b=-1</m> gives the standard Hamilton quaternions.)
+           A quaternion algebra is <term>split</term>
+          if it is isomorphic to the ring of
+          <m>2 \times 2</m> matrices over <m>K</m>.
+          Show that if <m>K</m> is a local field,
+          then any two quaternion algebras which are not split are isomorphic to each other.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          While this can be done using elementary methods, it will also follow from <xref ref="T_Brauer_group_identification"/> via the cohomological
+          description of Brauer groups; see <xref ref="lem-brauer-defs"/>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise xml:id="exer-subspace-top">
+      <statement>
+        <p>
+         Let <m>K</m> be a finite extension of <m>\QQ_p</m>.
+         Show that <m>K^*</m> can be viewed as a closed subspace of <m>K \times K</m> via the inclusion <m>x \mapsto (x,x^{-1})</m>,
+         and deduce from this that <m>K^*</m> is a locally compact abelian group for the subspace topology.
+         It can also be viewed as a subspace of <m>K</m>, but not as a closed subspace; this distinction will show up more seriously when we talk about 
+         ad&#xe8;les and id&#xe8;les (<xref ref="rmk-idele-topology"/>).
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="exer-local-norm-residue-symbol">
+      <statement>
+        <p>
+          Let <m>K</m> be a local field. For <m>x,y \in K^*</m>, define the <term>quadratic norm residue symbol</term> <m>(x,y)_K</m> to be <m>1</m>
+          if <m>y</m> is a norm from <m>K(\sqrt{x})</m> and <m>-1</m> otherwise.
+          <ol>
+            <li>
+              Show that this is symmetric: <m>(x,y)_K = (y,x)_K</m>.
+            </li>
+            <li>
+              Use <xref ref="T_local_reciprocity"/> to see that for fixed <m>x</m>, the function <m>y \mapsto (x,y)_K</m> is a homomorphism <m>K^* \to \{\pm 1\}</m>.
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The first part is pure algebra; see <xref ref="exer-Hasse-Minkowski"/> for something similar.
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>
