@@ -63,17 +63,19 @@
         in order to have cohomology groups instead of Tate groups.
       </p>
     </definition>
-    <p>
-      Under the class field axiom and the other conditions of abstract class field theory, for each finite Galois extension <m>L/K</m> of finite subextensions of <m>\kbar/k</m>,
-      we will define a canonical isomorphism 
-      <me>
-        r_{L/K}\colon \Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L
-      </me>
-      (<xref ref="T_abstract_reciprocity_law"/>), which will moreover satisfy some compatibilities as we vary the field extension
-      (<xref ref="P_abstract_functorialities2"/>, <xref ref="P_abstract_functorialities2"/>).
-      Since we've already checked the class field axiom in the example where <m>k</m> is a local field and <m>A = \kbar^*</m>,
-      this will recover the local reciprocity law (<xref ref="T_local_reciprocity"/>).
-    </p>
+    <remark xml:id="rmk-class-field-axiom-local-case">
+      <p>
+        Under the class field axiom and the other conditions of abstract class field theory, for each finite Galois extension <m>L/K</m> of finite subextensions of <m>\kbar/k</m>,
+        we will define a canonical isomorphism 
+        <me>
+          r_{L/K}\colon \Gal(L/K)^{\ab} \to A_K / \Norm_{L/K} A_L
+        </me>
+        (<xref ref="T_abstract_reciprocity_law"/>), which will moreover satisfy some compatibilities as we vary the field extension
+        (<xref ref="P_abstract_functorialities2"/>, <xref ref="P_abstract_functorialities2"/>).
+        The necessary conditions all hold in the example where <m>k</m> is a local field and <m>A = \kbar^*</m>
+        (see <xref ref="exa-abstract-CFT-local"/>), so this will recover the local reciprocity law (<xref ref="T_local_reciprocity"/>).
+      </p>
+    </remark>
   </subsection>
   <subsection>
     <title>Abstract ramification theory</title>

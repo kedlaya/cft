@@ -250,7 +250,7 @@
           For <m>L/K</m> solvable, we may proceed by induction on <m>[L:K]</m>. If <m>[L:K]</m> is not cyclic, choose an intermediate 
           Galois subextension <m>K'/K</m>. 
           By the induction hypothesis, <m>H^1(\Gal(L/K'), C_{L})</m> vanishes,
-          so we may apply the inflation-restriction exact sequence (<xref ref="C_inflation_restriction_h2"/>) to see that for <m>i=1,2</m>,
+          so we may apply the inflation-restriction exact sequence (<xref ref="P_inflation_restriction"/>) to see that for <m>i=1,2</m>,
           <me>
             0 \to H^i(\Gal(K'/K), C_{K'}) \stackrel{\Inf}{\to} H^i(\Gal(L/K), C_L) \stackrel{\Res}{\to} H^i(\Gal(L/K'), C_L)
           </me>
