@@ -9,7 +9,7 @@
     </paragraphs>
     <p>
       We now prove the local Kronecker-Weber theorem (<xref ref="T_local_Kronecker-Weber1"/>), modulo some steps which will be left as exercises.
-      As shown previously, this will imply the original Kronecker-Weber theorem.
+      As shown previously, this will imply the original Kronecker-Weber theorem (<xref ref="T_Kronecker-Weber"/>).
     </p>
   </introduction>
   <subsection>
@@ -104,25 +104,19 @@
         </p>
         <p>
           Let <m>L</m> be the maximal unramified subextension of <m>K</m>.
-          By <xref ref="lem_unram"/>,
-          <m>L = \QQ_p(\zeta_n)</m> for some <m>n</m>.
-          Let <m>e = [K:L]</m>.
-          Since <m>e</m> is a power of <m>q</m>,
-          <m>e</m> is not divisible by <m>p</m>,
+          By <xref ref="lem_unram"/>, <m>L = \QQ_p(\zeta_n)</m> for some <m>n</m>.
+          Let <m>e := [K:L]</m>.
+          Since <m>e</m> is a power of <m>q</m>, <m>e</m> is not divisible by <m>p</m>,
           so <m>K</m> is totally and tamely ramified over <m>L</m>.
-          Thus by <xref ref="lem_tame"/>,
-          there exists <m>\pi \in L</m> generating the maximal ideal of
+          Thus by <xref ref="lem_tame"/>, there exists <m>\pi \in L</m> generating the maximal ideal of
           <m>\gotho_L</m> such that <m>K = L(\pi^{1/e})</m>.
-          Since <m>L/\QQ_p</m> is unramified,
-          <m>p</m> also generates the maximal ideal of <m>\gotho_L</m>,
+          Since <m>L/\QQ_p</m> is unramified, <m>p</m> also generates the maximal ideal of <m>\gotho_L</m>,
           so we can write <m>\pi = cu</m> for some unit <m>u \in \gotho_L^*</m>.
           Now <m>L(u^{1/e})/L</m> is unramified since <m>e</m> is prime to <m>p</m> and <m>u</m> is a unit.
-          In particular,
-          <m>L(u^{1/e})/\QQ_p</m> is unramified, hence abelian.
+          In particular, <m>L(u^{1/e})/\QQ_p</m> is unramified, hence abelian.
           Then <m>K(u^{1/e})/\QQ_p</m> is the compositum of the two abelian extensions <m>K/\QQ_p</m> and
           <m>L(u^{1/e})/\QQ_p</m>, so it's also abelian.
-          Hence any subextension is abelian,
-          in particular <m>\QQ_p(c^{1/e})/\QQ_p</m>.
+          Hence any subextension is abelian, in particular <m>\QQ_p(c^{1/e})/\QQ_p</m>.
         </p>
         <p>
           For <m>\QQ_p(c^{1/e})/\QQ_p</m> to be Galois,
@@ -131,8 +125,7 @@
           and we can divide one by another to get an <m>e</m>-th root of unity).
           But <m>\QQ_p(c^{1/e})/\QQ_p</m> is totally ramified,
           whereas <m>\QQ_p(\zeta_e)/\QQ_p</m> is unramified.
-          This is a contradiction unless
-          <m>\QQ_p(\zeta_e)</m> is actually equal to <m>\QQ_p</m>,
+          This is a contradiction unless <m>\QQ_p(\zeta_e)</m> is actually equal to <m>\QQ_p</m>,
           which only happens if <m>e|(p-1)</m> (since the residue field <m>\FF_p</m> of <m>\QQ_p</m> contains only <m>(p-1)</m>-st roots of unity).
         </p>
         <p>
@@ -160,10 +153,8 @@
           We can use roots of unity to construct two other extensions of <m>\QQ_p</m> with this Galois group.
           Namely, <m>\QQ_{p}(\zeta_{p^{p^r}-1})/\QQ_p</m> is unramified of degree <m>p^r</m>,
           and automatically has cyclic Galois group;
-          meanwhile, the index <m>p-1</m> subfield of
-          <m>\QQ_p(\zeta_{p^{r+1}})</m> is totally ramified with Galois group <m>\ZZ/p^r\ZZ</m>.
-          By assumption,
-          <m>K</m> is not contained in the compositum of these two fields,
+          meanwhile, the index <m>p-1</m> subfield of <m>\QQ_p(\zeta_{p^{r+1}})</m> is totally ramified with Galois group <m>\ZZ/p^r\ZZ</m>.
+          By assumption, <m>K</m> is not contained in the compositum of these two fields,
           so for some <m>s>0</m>,
           <me>
             \Gal(K(\zeta_{p^{p^r}-1}, \zeta_{p^{r+1}})/\QQ_p) \cong (\ZZ/p^r\ZZ)^2 \times \ZZ/p^s \ZZ \times \ZZ/(p-1)\ZZ
@@ -215,7 +206,7 @@
       </statement>
       <proof>
         <p>
-          For convenience, put <m>\pi = \zeta_p - 1</m>.
+          For convenience, put <m>\pi := \zeta_p - 1</m>.
           Then <m>\pi</m> is a uniformizer of <m>\QQ_p(\zeta_p)</m>.
         </p>
         <p>
@@ -224,7 +215,7 @@
           and <m>K(\zeta_p)</m> is abelian over <m>\QQ_p</m> with Galois group <m>(\ZZ/p\ZZ)^* \times (\ZZ/p\ZZ)^3</m>.
           Applying Kummer theory to <m>K(\zeta_p)/\QQ_p(\zeta_p)</m> produces a subgroup <m>B \subseteq \QQ_p(\zeta_p)^*/(\QQ_p(\zeta_p)^*)^p</m> isomorphic to
           <m>(\ZZ/p\ZZ)^3</m> such that <m>K(\zeta_p) = \QQ_p(\zeta_p, B^{1/p})</m>.
-          Let <m>\omega: \Gal(\QQ_p(\zeta_p)/\QQ_p) \to (\ZZ/p\ZZ)^*</m> be the canonical map;
+          Let <m>\omega\colon \Gal(\QQ_p(\zeta_p)/\QQ_p) \to (\ZZ/p\ZZ)^*</m> be the canonical map;
           since <m>\QQ_p(\zeta_p, b^{1/p}) \subseteq K(\zeta_p)</m> is also abelian over <m>\QQ_p</m>,
           by <xref ref="L_Kummer_Galois_criterion"/>,
           <me>
@@ -263,8 +254,12 @@
           Since <m>\zeta_p = 1 + \pi + O(\pi^2)</m>, we can write <m>u = \zeta_p^b(1 + c\pi^d + O(\pi^{d+1}))</m>, with <m>c \in \ZZ</m> and <m>d \geq 2</m>.
           Since <m>\pi^g/\pi \equiv \omega(g) \pmod{\pi}</m>, we get
           <md>
-            <mrow>u^g &amp;= \zeta_p^{b\omega(g)} (1 + c \omega(g)^d \pi^d + O(\pi^{d+1})),</mrow> 
-            <mrow>u^{\omega(g)} &amp;= \zeta_p^{b\omega(g)} (1 + c \omega(g) \pi^d + O(\pi^{d+1}))</mrow> 
+            <mrow>
+              u^g &amp;= \zeta_p^{b\omega(g)} (1 + c \omega(g)^d \pi^d + O(\pi^{d+1})),
+            </mrow> 
+            <mrow>
+              u^{\omega(g)} &amp;= \zeta_p^{b\omega(g)} (1 + c \omega(g) \pi^d + O(\pi^{d+1}))
+            </mrow> 
           </md>.
         </p>
         <p>

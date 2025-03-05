@@ -157,7 +157,7 @@
           We separate cases as follows.
           <ol>
             <li>
-                If <m>v</m> is a real place, then <m>p=2</m>, <m>\frac{p^2}{|p|_v} = 2</m>, and 
+                If <m>v</m> is a real place, then <m>p=2</m> (as otherwise <m>\zeta_p \notin K_v</m>), <m>\frac{p^2}{|p|_v} = 2</m>, and 
                 <me>
                   K_v^*/(K_v^*)^p = \RR^*/(\RR^*)^2 = \RR^*/\RR^+ \cong \ZZ/2\ZZ
                 </me>.
@@ -191,10 +191,10 @@
         </p>
       </statement>
       <proof>
-       <p>
-        This now follows from <xref ref="lem-adelic-exponent-p-subgroup"/> and <xref ref="lem-Kummer-norm-subgroup"/>.
-      </p>
-     </proof>
+        <p>
+          This now follows from <xref ref="lem-adelic-exponent-p-subgroup"/> and <xref ref="lem-Kummer-norm-subgroup"/>.
+        </p>
+      </proof>
     </lemma>
   </subsection>
   <subsection>
@@ -491,7 +491,7 @@
           let <m>v</m> be a place of <m>K</m> above <m>p</m>, and set <m>n := [K_v:\QQ_p]</m>.
           Show that <m>[\gotho_{K_v}^*:(\gotho_{K_v}^*)^p] = p^{n+1}</m>, as asserted in the proof of <xref ref="L_local-pth-powers-index"/>.         
         </p>
-      </statement>i
+      </statement>
       <hint>
         <p>
           Using the logarithm map, we obtain a group isomorphism <m>\gotho_{K_v}^*/\mu_{K_v} \cong \gotho_{K_v}</m> (even when <m>p=2</m>).
