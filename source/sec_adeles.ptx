@@ -407,7 +407,7 @@
       <title>Approximation theorem</title>
       <statement>
         <p>
-          Let <m>S</m> be a finite set of places of <m>K</m>. For each <m>v \in S</m>, let <m>U_v</m> be an open subgroup of <m>K_v</m>.
+          Let <m>S</m> be a finite set of places of <m>K</m>. For each <m>v \in S</m>, let <m>U_v</m> be an open subset of <m>K_v</m>.
           Then <m>K \cap \bigcap_{v \in S} U_v \neq \emptyset</m>.
        </p>
       </statement>
