@@ -41,17 +41,29 @@
         Let <m>I^{\gothm}_K</m> be the subset of <m>\alpha \in I_K</m> such that:
         <ol>
           <li>
-            for each finite prime <m>\gothp</m> of <m>K</m>, <m>\alpha_v \equiv 1 \pmod{\gothp^e}</m> where <m>e</m> is the exponent of <m>\gothp</m> in <m>\gothm</m>;
+            for each finite prime <m>v = \gothp</m> of <m>K</m>, <m>\alpha_v \equiv 1 \pmod{\gothp^e}</m> where <m>e</m> is the exponent of <m>\gothp</m> in <m>\gothm</m>;
           </li>
           <li>
             for each real place <m>v</m> in <m>\gothm</m>, <m>\alpha_v &gt; 0</m>.
           </li>
         </ol>
-        Define <m>I^{\gothm}_L</m> similarly.
+        Similarly, let <m>I^{\gothm}_L</m> be the subset of <m>\alpha \in I_L</m> such that:
+        <ol>
+          <li>
+            for each finite prime <m>w = \gothq</m> of <m>L</m>, <m>\alpha_w \equiv 1 \pmod{\gothq^e}</m> where <m>e</m> is the exponent of <m>\gothq</m> in <m>\gothm</m>
+            (that is, the exponent of <m>\gothp := \gothq \cap K</m> in <m>\gothm</m> times
+            the ramification index <m>e(\gothq/\gothp)</m>);
+          </li>
+          <li>
+            for each real place <m>w</m> of <m>L</m> lying over a real place in <m>\gothm</m>, <m>\alpha_w &gt; 0</m>.
+          </li>
+        </ol>
       </p>
       <p>
-        Let <m>P^{\gothm}_K</m> be the subgroup of <m>J^{\gothm}_K</m> consisting of principal ideals admitting a generator <m>\alpha \in K^* \cap I^{\gothm}_L</m>; 
-        define <m>P^{\gothm}_L</m> similarly. In this notation,
+        Let <m>P^{\gothm}_K</m> be the subgroup of <m>J^{\gothm}_K</m> consisting of principal ideals admitting a generator <m>\alpha \in K^* \cap I^{\gothm}_K</m>; 
+        similarly, 
+        let <m>P^{\gothm}_L</m> be the subgroup of <m>J^{\gothm}_L</m> consisting of principal ideals admitting a generator <m>\alpha \in L^* \cap I^{\gothm}_L</m>.
+        In this notation,
         <me>
           \Cl^{\gothm}(K) = J^{\gothm}_K/P^{\gothm}_K, \qquad \Cl^{\gothm}(L) = J^{\gothm}_L / P^{\gothm}_L
         </me>.
@@ -68,7 +80,7 @@
         <p>
           With notation as in <xref ref="def-second-inequality-analytic"/>, the composition
           <me>
-            C_K / \Norm_{L/K} C_L \cong I_K^{\gothm}/(K^* \Norm_{L/K} I_L^{\gothm}) \to J^{\gothm}_K / P^{\gothm}_{K} \Norm_{L/K} J^{\gothm}_L
+            \frac{C_K}{\Norm_{L/K} C_L} \cong \frac{I_K^{\gothm}}{(K^* \cap I_K^{\gothm}) \Norm_{L/K} I_L^{\gothm}} \to \frac{J^{\gothm}_K}{P^{\gothm}_{K} \Norm_{L/K} J^{\gothm}_L}
           </me>
           is an isomorphism for some <m>\gothm</m>.
         </p>

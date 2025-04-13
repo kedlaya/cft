@@ -302,8 +302,7 @@
           we see that this extension must be all of <m>K^{\ab}</m>.
         </p>
         <p>
-          Now note that if <m>\alpha \in \Lambda_f</m> has order <m>\pi^k</m> for some <m>k \gt 0</m>, then <m>\Norm_{K(\alpha)/K}(\alpha) = \pi</m>
-          unless <m>p=2,k=1</m>.
+          Now note that if <m>\alpha \in \Lambda_f</m> has order <m>\pi^k</m> for some <m>k \gt 0</m>, then <m>\Norm_{K(\alpha)/K}(-\alpha) = \pi</m>.
           Consequently, our proposed formula for <m>\phi_K</m> has the property that <m>\phi_K(\pi)</m> fixes <m>K_\pi</m>.
           It will thus suffice to show that <m>\phi_K(\varpi)</m> fixes <m>K_{\varpi}</m> for any other uniformizer <m>\varpi</m>
           of <m>K</m>, as then we can conclude as in <xref ref="rem-Lubin-Tate-splitting"/>.
