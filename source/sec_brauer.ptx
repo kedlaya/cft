@@ -464,13 +464,14 @@
         for a tuple <m>(x_v)_v \in \prod_v X(K_v)</m> to come from a global point <m>x \in X(K)</m> is that the sum of the local invariants
         <m>\inv_v(x_v, y_n)</m> must vanish. That is, each <m>y</m> gives rise to a commutative diagram as in
         <xref ref="fig-connection-7"/> 
-        in which the vertical maps are evaluation maps and the bottom row is the fundamental exact sequence.
+        in which the vertical maps are evaluation maps and the bottom row is the fundamental exact sequence;
+        it follows that the image of <m>X(K)</m> in <m>X(\AA_K) \subseteq X(K_v)</m> is contained in the preimage of <m>0</m> along the dashed arrow.
       </p>
       <figure xml:id="fig-connection-7">
         <image>
           <latex-image>
             \xymatrix{
-              &amp; X(K) \ar[r] \ar[d] &amp; X(\AA_K) \ar[d] \\
+              &amp; X(K) \ar@^{(->}[r] \ar[d] &amp; X(\AA_K) \ar[d] \ar@{-->}[rd] \\
               0 \ar[r] &amp; \Br(K) \ar[r] &amp; \Br(\AA_K) \ar[r] &amp; \QQ/\ZZ \ar[r] &amp; 0
             }
           </latex-image>

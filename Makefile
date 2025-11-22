@@ -5,7 +5,7 @@ pdf:
 	pretext build print --clean
 	
 images:
-	pretext generate latex-image --t web
+	pretext generate latex-image
 
 web:
 	pretext build web

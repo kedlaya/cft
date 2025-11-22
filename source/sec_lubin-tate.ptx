@@ -298,8 +298,13 @@
         <p>
           By <xref ref="cor-lubin-tate-totally-ramified"/>, <m>K_\pi</m> is a totally ramified abelian extension of <m>K</m> which is linearly disjoint from <m>K^{\unr}</m>
           with Galois group <m>\gotho_K^\times</m>. Hence <m>K_\pi K^{\unr}</m> is an abelian extension of <m>K</m> with Galois group
-          <m>\widehat{\ZZ} \times \gotho_K^\times</m>; using local reciprocity (<xref ref="T_local_reciprocity"/>)
-          we see that this extension must be all of <m>K^{\ab}</m>.
+          <m>\widehat{\ZZ} \times \gotho_K^\times</m>, and <m>\Gal(K_{\pi} K^{\unr}/K^{\unr}) \cong \gotho_K^\times</m>.
+          Meanwhile, by local reciprocity (<xref ref="T_local_reciprocity"/>),
+          <m>K^{\ab}</m> is itself an abelian extension of <m>K</m> containing <m>K_\pi K^{\unr}</m>
+          and <m>\Gal(K^{\ab}/K^{\unr}) \cong \gotho_K^\times</m>.
+          Since <m>\Gal(K^{\ab}/K^{\unr})</m> admits a continuous surjection onto <m>\Gal(K_{\pi}K^{\unr}/K^{\unr})</m>
+          and they are both isomorphic to <m>\gotho_K^\times</m> as profinite groups, that surjection must be an isomorphism (<xref ref="exer-quotient-of-units-group"/>).
+          We conclude that <m>K^{\ab} = K_{\pi} K^{\unr}</m>.
         </p>
         <p>
           Now note that if <m>\alpha \in \Lambda_f</m> has order <m>\pi^k</m> for some <m>k \gt 0</m>, then <m>\Norm_{K(\alpha)/K}(-\alpha) = \pi</m>.
@@ -378,6 +383,21 @@
           but this time making repeated use of <xref ref="exer-sigma-linear-surj"/> to match up
           increasingly many coefficients of <m>\theta^\sigma</m> and <m>\theta \circ [a]_{f_1}</m>.
           For more details, see <xref ref="bib-Milne-CFT"/>, Proposition I.3.10.
+        </p>
+      </hint>
+    </exercise>
+    <exercise xml:id="exer-quotient-of-units-group">
+      <statement>
+        <p>
+          Let <m>K</m> be a local field. Let <m>H</m> be a closed subgroup of <m>\gotho_K^\times</m>. Prove that if there exists an isomorphism
+          <m>\gotho_K^\times/H \cong \gotho_K^\times</m> of profinite groups, then <m>H = \{1\}</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Analyze the torsion subgroup and the torsion-free quotient of <m>\gotho_K^\times</m> separately.
+          For the latter, use the logarithm map to identify with a finite product of copies of <m>\ZZ_p</m>;
+          see <xref ref="exer-local-pth-powers"/> for a more precise version of this.
         </p>
       </hint>
     </exercise>
