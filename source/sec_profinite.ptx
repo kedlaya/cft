@@ -26,9 +26,9 @@
           Let <m>L/K</m> be a finite Galois extension of fields and put <m>G = \Gal(L/K)</m>.
           Then the (normal) subgroups <m>H</m> of <m>G</m> correspond to the (Galois) subextensions <m>M</m> of <m>L</m>,
           the correspondence in each direction being given by
-          <me>
+          <md>
             H \mapsto \Fix{H}, \qquad M \mapsto \Gal(L/M)
-          </me>.
+          </md>.
         </p>
       </statement>
       <proof>
@@ -126,9 +126,9 @@
           Let <m>L/K</m> be a Galois extension (not necessarily finite).
           Then there is a correspondence between (Galois) subextensions <m>M</m> of <m>L</m> and (normal) <em>closed</em>
           subgroups <m>H</m> of <m>\Gal(L/K)</m>, given by
-          <me>
+          <md>
             H \mapsto \Fix H, \qquad M \mapsto \Gal(L/M)
-          </me>.
+          </md>.
         </p>
       </statement>
       <proof>
@@ -229,9 +229,9 @@
       <p>
         For <m>H_1 \subseteq H_2 \subseteq G</m> inclusions of finite index,
         we have the <term>inflation homomorphism</term>
-        <me>
+        <md>
           \Inf\colon H^i(G/H_2, M^{H_2}) \to H^i(G/H_1, M^{H_1})
-        </me>.
+        </md>.
         Via these homomorphisms, the groups <m>H^i(G/H, M^H)</m> form a direct system
         and <xref ref="prop-cohomology-colimit"/> asserts that <m>H^i(G,M)</m> is the <term>direct limit</term> (or <term>inductive limit</term> or <term>colimit</term>) 
         of the <m>H^i(G/H, M^H)</m>.

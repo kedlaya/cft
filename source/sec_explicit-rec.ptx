@@ -23,9 +23,9 @@
       First recall that <m>G^{\ab} = H^{-2}_T(G, \ZZ)</m> is isomorphic to <m>H^{-1}_T(G, I_G) = I_G/I_G^2</m>,
       with <m>g \mapsto [g]-1</m>.
       Next, use the exact sequence
-      <me>
+      <md>
         0 \to M \to M[\phi] \to I_G \to 0
-      </me>
+      </md>
       and apply the
       <q>snaking</q>
       construction: pull <m>[g]-1</m> back to <m>x_g \in M[\phi]</m>,
@@ -56,9 +56,9 @@
       we recall generally how to construct the isomorphism
       <m>H^0_T(G,M) \to H^2_T(G,M)</m> for <m>G</m> cyclic with a distinguished generator <m>g</m>.
       Recall the exact sequence we used to produce the isomorphism in <xref ref="T_cyclic_group_periodicity"/>:
-      <me>
+      <md>
         0 \to M \to M \otimes_{\ZZ} \ZZ[G] \to M \otimes_{\ZZ} \ZZ[G] \to M \to 0
-      </me>.
+      </md>.
     </p>
     <p>
       (Remember, <m>G</m> acts on both factors in <m>M \otimes_{\ZZ} \ZZ[G]</m>.
@@ -74,15 +74,15 @@
       Now view this as a 0-cochain
       <m>\phi_0: G \to M \otimes_{\ZZ} \ZZ[G]</m> given by <m>\phi_0(h) = x \otimes [h]</m>.
       Apply <m>d</m> to get a 1-cocycle:
-      <me>
+      <md>
         \phi_1(h_0, h_1) = \phi_0(h_1) - \phi_0(h_0) = x \otimes ([h_1]- [h_0])
-      </me>
+      </md>
       which actually takes values in <m>A</m>.
       Now snake again:
       pull this back to a 1-cochain <m>\psi_1: G^2 \to M \otimes_{\ZZ} \ZZ[G]</m> given by
-      <me>
+      <md>
         \psi_1(g^i, g^{i+j}) = x \otimes ([g^i] + [g^{i+1}] + \cdots + [g^{j-1}])
-      </me>
+      </md>
       for <m>i,j=0, \dots, \#G-1</m>.
       Apply <m>d</m> again: now we have a 2-cocycle
       <m>\psi_2: G^3 \to M \otimes_{\ZZ} \ZZ[G]</m> given by (again for <m>i,j=0, \dots, \#G-1</m>)
@@ -95,9 +95,9 @@
     </p>
     <p>
       This pulls back to a 2-cocycle <m>\phi_2: G^3 \to M</m> given by
-      <me>
+      <md>
         \phi_2(e, g^i, g^{i+j}) = \begin{cases}0 \amp  i+j \lt  \#G \\ -x \amp  i+j \geq \#G. \end{cases}
-      </me>
+      </md>
     </p>
     <p>
       If you prefer, you can shift by a coboundary to get <m>x</m> if
@@ -119,9 +119,9 @@
       Then there exists a 1-cochain <m>\rho: \Gal(ML/K)^2 \to (ML)^*</m> such that
       <m>\phi(e, h_1, h_2h_1) /(\rho(h_1, h_2h_1) \rho(e, h_2h_1)^{-1} \rho(e, h_1))</m> belongs to <m>L^*</m> and depends only on the images of <m>h_1, h_2</m> in <m>\Gal(M/K)</m>.
       Putting <m>\sigma(h) = \rho(e, h)</m>, we thus have
-      <me>
+      <md>
         \frac{\phi(e, h_1, h_2h_1) \sigma(h_2h_1)}{\sigma(h_2)^{h_1} \sigma(h_1)}
-      </me>
+      </md>
       depends only on <m>h_1, h_2</m> modulo <m>\Gal(ML/L)</m>.
     </p>
     <p>
@@ -131,9 +131,9 @@
       to find the inverse image of <m>g \in \Gal(L/K)</m> under the Artin map,
       choose a lift <m>g_1</m> of <m>g</m> into <m>\Gal(ML/K)</m>,
       then compute
-      <me>
+      <md>
         \prod_h \frac{\phi(e, h, gh) \sigma(gh)}{\sigma(g)^h \sigma(h)}
-      </me>
+      </md>
       for <m>h</m> running over a set of lifts of the elements of
       <m>\Gal(L/K)</m> into <m>\Gal(ML/K)</m>.
     </p>

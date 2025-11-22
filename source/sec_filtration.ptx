@@ -119,17 +119,17 @@
       <p>
         Retain notation as in <xref ref="def-lower-numbering-filtration"/>.
         Define the function <m>\varphi_{L/K}: [-1, \infty) \to [-1, \infty)</m> by the formula
-        <me>
+        <md>
           \varphi_{L/K}(u) = \int_0^u \frac{dt}{[G_0:G_t]}.
-        </me>
+        </md>
         This function is continuous, piecewise linear, increasing, and concave, and satisfies <m>\varphi_{L/K}(u) = u</m> for <m>u \in [-1,0]</m>.
         Consequently, it admits an inverse <m>\psi_{L/K}: [-1, \infty) \to [-1, \infty)</m> which is continuous, piecewise linear, increasing, and convex.
       </p>
       <p>
         We define the <term>upper numbering</term> on the ramification groups by the formula
-        <me>
+        <md>
           G^i = G_{\psi(i)} \Leftrightarrow G^{\varphi(i)} = G_i.
-        </me>
+        </md>
       </p>
     </definition>
     <lemma xml:id="lem-Herbrand-transition">
@@ -151,9 +151,9 @@
         <p>
           Let <m>L/K</m> be a finite Galois extension of finite extensions of <m>\QQ_p</m> with Galois group <m>G</m>.
           Let <m>H</m> be a normal subgroup of <m>G</m> with fixed field <m>K'</m>. Then
-          <me>
+          <md>
             \varphi_{L/K} = \varphi_{K'/K} \circ \varphi_{L/K'}, \qquad \psi_{L/K} = \psi_{L/K'} \circ \psi_{K'/K}.
-          </me>
+          </md>
         </p>
       </statement>
       <proof>
@@ -276,13 +276,13 @@
             <m>G = \{\pm 1, \pm i, \pm j, \pm k\}</m>. Let <m>C = \{\pm 1\}</m> be the center of <m>G</m>.
             Suppose that <m>L/K</m> is a totally ramified Galois extension of finite extensions of <m>\QQ_2</m>
             satisfying <m>\Gal(L/K) = G</m> and <m>G_4 = \{1\}</m>. Show that 
-            <me>
+            <md>
               G = G_0 = G_1, \qquad C = G_2 = G_3
-            </me>
+            </md>
             and deduce that
-            <me>
+            <md>
               G^i = \begin{cases} G \amp i \leq 1 \\ C \amp 1 &lt; i \leq \frac{3}{2} \\ \{1\} \amp i &gt; \frac{3}{2}. \end{cases}
-            </me>
+            </md>
           </p>
         </statement>
       </exercise>

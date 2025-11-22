@@ -75,26 +75,26 @@
           Let <m>j</m> be the order of <m>r_{L/K}(g)</m> in <m>A_K/\Norm_{L/K} A_L</m> and put <m>u := \pi_M^j/\pi_L^j \in U_N</m>.
           Since both <m>\Norm_{L^{\unr}/K^{\unr}}(\pi_M^j)</m> and <m>\Norm_{L^{\unr}/K^{\unr}}(\pi_L^j) = \Norm_{L/K}(\pi_L^j)</m>
           belong to <m>\Norm_{L/K} A_L</m>, we can choose <m>v \in A_L</m> such that
-          <me>
+          <md>
             \Norm_{L^{\unr}/K^{\unr}}(u) = \Norm_{L/K}(v) = \Norm_{L^{\unr}/K^{\unr}}(v).
-          </me>
+          </md>
           Since <m>\Norm_{L/K}(v) \in A_K \cap U_N = U_K</m>, we must have <m>v \in U_L</m>.
         </p>
         <p>
           Applying the class field axiom to <m>N/N_0</m> yields
-          <me>
+          <md>
             0 = H^{-1}_T(\Gal(N/N_0), A_N) = \frac{\ker(\Norm_{N/N_0}\colon A_N \to A_{N_0})}{ \{ a^{g-1}\colon a \in A_N \}}
-          </me>.
+          </md>.
           Since <m>\Norm_{N/N_0}(u/v) = \Norm_{L^{\unr}/K^{\unr}}(u/v) = 1</m>, we can write <m>u/v</m> in the form
           <m>a^{g-1} = a^g/a</m> for some <m>a \in A_N</m>. Then
-          <me>
+          <md>
             (\pi_L^j v)^{g-1} = (\pi_L^j v)^{\tau-1} = (\pi_M^j v/u)^{\tau - 1} = (v/u)^{\tau-1} = (a/a^\tau)^{g-1}
-          </me>.
+          </md>.
           If we put <m>x := (\pi_L^j v)(a^\tau/a)</m>, then <m>x^g = x</m> and so <m>x \in A_{N_0}</m>.
           Hence 
-          <me>
+          <md>
             j = v_N(x) = nv_{N_0}(x) \in n \widehat{\ZZ}
-          </me>.
+          </md>.
           That is, the order of <m>r_{L/K}(g)</m> in <m>A_K/\Norm_{L/K} A_L</m> is divisible by <m>n</m> in <m>\widehat{\ZZ}</m>, and hence also in <m>\ZZ</m>.
         </p>
         <p>
@@ -200,9 +200,9 @@
           For general <m>L/K</m>, we instead check that <m>r_{L/K}</m> becomes a surjection upon restriction to <m>p</m>-Sylow
           subgroups for each prime <m>p</m>. That is, for <m>M</m> the fixed field of a Sylow <m>p</m>-subgroup of 
           <m>\Gal(L/K)</m> and <m>S_p</m> the Sylow <m>p</m>-subgroup of <m>A_K/\Norm_{L/K}A_L</m>, the composition
-          <me>
+          <md>
             \Gal(L/M) \to \Gal(L/K) \stackrel{r_{L/K}}{\to} A_K/\Norm_{L/K} A_L \to S_p
-          </me>
+          </md>
           is surjective. (Compare the proof of <xref ref="L_tate_thm_lemma"/>.)
         </p>
         <p>

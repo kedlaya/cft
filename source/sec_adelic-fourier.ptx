@@ -22,9 +22,9 @@
           Let <m>K</m> be a number field and let <m>v</m> be a place of <m>K</m>.
           Then the dual group <m>(K_v^+)^\vee</m> of continuous characters from <m>K_v^+</m> to <m>\{z \in \CC\colon |z| = 1\}</m> is a locally compact topological group.
           Moreover, for any nontrivial element <m>X \in (K_v^+)^\vee</m>, the map
-          <me>
+          <md>
             K_v^+ \to X, \qquad \eta \mapsto (\xi \mapsto X(\eta \xi))
-          </me>
+          </md>
           defines a continuous isomorphism <m>K_v^+ \to (K_v^+)^{\vee}</m>.
         </p>
       </statement>
@@ -50,13 +50,13 @@
         <p>
           Let <m>K</m> be a number field. For each place <m>v</m> of <m>K</m>, let <m>X_v</m> be a nontrivial additive character on <m>K_v^+</m> as in
           <xref ref="rmk-additive-characters-explicit"/>, and define the additive character <m>X</m> on <m>\AA_K^+</m> via
-          <me>
+          <md>
             X(\alpha) = \prod_v X_v(\alpha_v)
-          </me>.
+          </md>.
           Then the dual group <m>(\AA_K^+)^\vee</m> is a locally compact topological group, and the map
-          <me>
+          <md>
             \alpha \mapsto (\beta \mapsto X(\alpha \beta))
-          </me>
+          </md>
           defines a continuous isomorphism <m>\AA_K^+ \to (\AA_K^+)^\vee</m>.
         </p>
       </statement>
@@ -76,13 +76,13 @@
           Let <m>K</m> be a number field and let <m>v</m> be a place of <m>K</m>.
           Fix a Haar measure on <m>K_v^+</m> and a nontrivial character <m>X \in (K_v^+)^\vee</m>. 
           For <m>f \in L_1(K_v^+)</m>, define the <term>Fourier transform</term>
-          <me>
+          <md>
             \hat{f}(\eta) = \int f(\xi) X(\eta \xi)\,d\xi
-          </me>.
+          </md>.
           If <m>\hat{f} \in L_1(K_v^+)</m> also, then
-          <me>
+          <md>
             f(\xi) = c \int \hat{f}(\eta) X(-\eta \xi) \,d\eta = c \widehat{\hat{f}}(-\xi)
-          </me>
+          </md>
           for some <m>c > 0</m> which depends only on the Haar measure and the character <m>X</m>. In particular, these can be normalized so that <m>c = 1</m>.
         </p>
       </statement>
@@ -99,13 +99,13 @@
           Let <m>K</m> be a number field, fix a Haar measure on <m>\AA_K</m>, and define the additive character <m>X</m> on <m>\AA_K^+</m> as in 
           <xref ref="thm-additive-characters-local"/>.
           For <m>f \in L_1(\AA_K^+)</m>, define the <term>Fourier transform</term>
-          <me>
+          <md>
             \hat{f}(\eta) = \int f(\xi) X(\eta \xi)\,d\xi
-          </me>.
+          </md>.
           If <m>\hat(f) \in L_1(K_v^+)</m> also, then
-          <me>
+          <md>
             f(\xi) = c \int \hat{f}(\eta) X(-\eta \xi) \,d\eta = c \widehat{\hat{f}}(-\xi)
-          </me>
+          </md>
           for some <m>c > 0</m> which depends only on the Haar measure and the character <m>X</m>. In particular, these can be normalized so that <m>c = 1</m>.
         </p>
       </statement>
@@ -165,19 +165,19 @@
         <p>
           For suitable functions <m>f: \AA_K \to \CC</m>, define the associated <term>zeta function</term> as the following function of quasicharacters on <m>C_K</m>
           with exponent greater than <m>1</m>: 
-          <me>
+          <md>
             \zeta(f, c)= \int f(\alpha)c(\alpha)\,d\alpha
-          </me>.
+          </md>.
           This function is single-valued and holomorphic except at the points corresponding to <m>s=0</m> and <m>s=1</m> where it has simple poles with residues
           <m>-\kappa f(0)</m> and <m>\kappa \hat{f}(0)</m>, respectively, where
-          <me>
+          <md>
             \kappa = 2^{r_1} (2\pi)^{r_2} \frac{h R}{\sqrt{|\Delta_K| \omega_K}}
-          </me>
+          </md>
           (with <m>r_1</m> the number of real places, <m>r_2</m> the number of complex places, <m>h</m> the class number, <m>R</m> the unit regulator,
           <m>\Delta_K</m> the discriminant, and <m>\omega_K</m> the order of the group of roots of unity). Moreover, we have the functional equation
-          <me>
+          <md>
             \zeta(f, c) = \zeta(\hat{f}, \hat{c})
-          </me>
+          </md>
           where <m>\hat{c}(\alpha) = \alpha c(\alpha)^{-1}</m> (so in particular <m>s \mapsto 1-s</m>).
         </p>
       </statement>

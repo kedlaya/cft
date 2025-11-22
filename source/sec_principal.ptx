@@ -123,9 +123,9 @@
         that is, <m>G = g_1H \cup \cdots \cup g_nH</m>.
         For <m>g \in G</m>, put <m>\phi(g) = g_i</m> if <m>g \in g_iH</m> (i.e., <m>g_i^{-1}g \in H</m>).
         Put
-        <me>
+        <md>
           V(g) = \prod_{i=1}^n \phi(gg_i)^{-1}(gg_i)
-        </me>;
+        </md>;
         then <m>V(g)</m> always lands in <m>H</m>. 
         (Note that <m>\phi(gg_1), \dots, \phi(gg_n)</m> is a permutation of <m>g_1, \dots, g_n</m>.)
       </p>
@@ -186,9 +186,9 @@
         <p>
           If <m>L \cap \gothr^{\tau_i} = \gothq_i</m>,
           then 
-          <me>
+          <md>
             \Frob_{M/L}(\gothq_i) = \prod_{j=0}^{m-1} \phi(g g_{ij})^{-1} g g_{ij}
-          </me>.
+          </md>.
         </p>
       </statement>
       <proof>
@@ -345,9 +345,9 @@
             Let <m>I_G \subset \ZZ[G]</m> be the ideal of sums <m>\sum_{g \in G} n_g[g]</m> with <m>\sum_{g \in G} n_g = 0</m>
             (called the <term>augmentation ideal</term>; see <xref ref="sec_homology"/>).
             Let
-            <me>
+            <md>
               \delta\colon H/H' \to (I_{H}+I_GI_{H})/I_GI_{H}
-            </me>
+            </md>
             be the homomorphism taking the class of <m>h</m> to the class of <m>[h]-1</m>.
             Prove that <m>\delta</m> is an isomorphism.
           </p>
@@ -355,9 +355,9 @@
         <hint>
           <p>
             Show that the elements
-            <me>
+            <md>
               [g]([h]-1) \text{ for } g \in \{g_1,\dots,g_n\}, h \in H
-            </me>
+            </md>
             form a basis of <m>I_H + I_G I_H</m> as a <m>\ZZ</m>-module.
             For more clues, see <xref ref="bib-Neukirch"/>, Lemma VI.7.7.
           </p>
@@ -398,9 +398,9 @@
             which can be rewritten as <m>\delta(f_i) \mu_i</m> for some
             <m>\mu_i \in \ZZ[G]</m> congruent to <m>e_i</m> modulo <m>I_G</m>.
             Now check that
-            <me>
+            <md>
               n \mu_1 \cdots \mu_m \equiv [g_1] + \cdots + [g_n] \pmod{I_H \ZZ[G]}
-            </me>.
+            </md>.
             For more details, see <xref ref="bib-Neukirch"/>, Theorem VI.7.6.
           </p>
         </hint>

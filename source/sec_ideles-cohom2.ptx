@@ -64,9 +64,9 @@
         similarly, 
         let <m>P^{\gothm}_L</m> be the subgroup of <m>J^{\gothm}_L</m> consisting of principal ideals admitting a generator <m>\alpha \in L^* \cap I^{\gothm}_L</m>.
         In this notation,
-        <me>
+        <md>
           \Cl^{\gothm}(K) = J^{\gothm}_K/P^{\gothm}_K, \qquad \Cl^{\gothm}(L) = J^{\gothm}_L / P^{\gothm}_L
-        </me>.
+        </md>.
       </p>
       <p>
         The homomorphism <m>I_K \to J_K</m> from <xref ref="def-ideles-to-ideals-hom"/> restricts to a homomorphism
@@ -79,9 +79,9 @@
       <statement>
         <p>
           With notation as in <xref ref="def-second-inequality-analytic"/>, the composition
-          <me>
+          <md>
             \frac{C_K}{\Norm_{L/K} C_L} \cong \frac{I_K^{\gothm}}{(K^* \cap I_K^{\gothm}) \Norm_{L/K} I_L^{\gothm}} \to \frac{J^{\gothm}_K}{P^{\gothm}_{K} \Norm_{L/K} J^{\gothm}_L}
-          </me>
+          </md>
           is an isomorphism for some <m>\gothm</m>.
         </p>
       </statement>
@@ -106,9 +106,9 @@
     </lemma>
     <p>
       With <xref ref="lem-norm-quotient-classical"/> in hand, we can reduce the Second Inequality to proving that
-      <me>
+      <md>
         [J^{\gothm}_K : P^{\gothm}_{K} \Norm_{L/K} J^{\gothm}_L] \leq [L:K]
-      </me>.
+      </md>.
     </p>
   </subsection>
   <subsection>
@@ -137,14 +137,14 @@
         </p>
         <p>
           The set <m>T</m> having Dirichlet density 1 means that
-          <me>
+          <md>
             \sum_{\gothq \in T} \frac{1}{\Norm(\gothq)^s} \sim \frac{1}{s-1} \qquad s \to 1^-
-          </me>.
+          </md>.
           If we group the primes in <m>T</m> by which prime of <m>S</m> they lie over,
           then we get
-          <me>
+          <md>
             [L:K] \sum_{\gothp \in S} \frac{1}{\Norm(\gothp)^s} \sim \frac{1}{s-1} \qquad s \to 1^-
-          </me>.
+          </md>.
           That is, the Dirichlet density of <m>S</m> is <m>\frac{1}{[L:K]}</m>.
         </p>
       </proof>
@@ -166,17 +166,17 @@
       <statement>
         <p>
           With notation as in <xref ref="def-second-inequality-analytic"/>, we have
-          <me>
+          <md>
             [J^{\gothm}_K : P^{\gothm}_K \Norm_{L/K} J^{\gothm}_{L}] \leq [L:K]
-          </me>.
+          </md>.
         </p>
       </statement>
       <proof>
         <p>
           Define the group 
-          <me>
+          <md>
             H := P^{\gothm}_K \Norm_{L/K} J^{\gothm}_L \subseteq J^{\gothm}_K
-          </me>.
+          </md>.
           The group <m>H</m> includes every prime of <m>K</m> coprime to <m>\gothm</m> that splits completely in <m>L</m>,
           since such a prime is the norm of any prime of <m>L</m> lying over it;
           thus on one hand, by <xref ref="prop-splitting-primes-density"/> the set of primes in <m>H</m> has Dirichlet density at least <m>\frac{1}{[L:K]}</m>.
@@ -191,9 +191,9 @@
         Recall that <xref ref="rmk-dirichlet-for-number-fields"/> depends on the nonvanishing of <m>L(1, \chi)</m> when <m>\chi</m> is a nontrivial character of
         a generalized ideal class group (<xref ref="T_nonvanishing_of_L"/>). Without this, we can still deduce <xref ref="L_second_inequality_analytic"/>:
         the discrete Fourier analysis shows that the Dirichlet density of the set of primes in <m>H</m> equals 
-        <me>
+        <md>
           \frac{1 - \sum_\chi m(\chi)}{[J^{\gothm}_K:H]}
-        </me>
+        </md>
         where <m>\chi</m> runs over all of the nontrivial characters of <m>\Cl^{\gothm}(K)</m> which are trivial on <m>H</m>
         and <m>m(\chi)</m> denotes the order of vanishing of <m>L(s,\chi)</m> at <m>s=1</m>.
         From the proof of <xref ref="L_second_inequality_analytic"/>, we must have <m>1 - \sum_\chi m(\chi) \gt 0</m>, 
@@ -209,9 +209,9 @@
       <statement>
         <p>
           Let <m>L/K</m> be a Galois extension of number fields. Then
-          <me>
+          <md>
             \# H^0_T(\Gal(L/K), C_L) \leq [L:K]
-          </me>.
+          </md>.
         </p>
       </statement>
       <proof>
@@ -263,17 +263,17 @@
           Galois subextension <m>K'/K</m>. 
           By the induction hypothesis, <m>H^1(\Gal(L/K'), C_{L})</m> vanishes,
           so we may apply the inflation-restriction exact sequence (<xref ref="P_inflation_restriction"/>) to see that for <m>i=1,2</m>,
-          <me>
+          <md>
             0 \to H^i(\Gal(K'/K), C_{K'}) \stackrel{\Inf}{\to} H^i(\Gal(L/K), C_L) \stackrel{\Res}{\to} H^i(\Gal(L/K'), C_L)
-          </me>
+          </md>
           is exact. This allows us to complete the induction.
         </p>
         <p>
           For <m>L/K</m> general, put <m>G := \Gal(L/K)</m>, let <m>p</m> be a prime, and let <m>G_p</m> be a Sylow <m>p</m>-subgroup of <m>G</m>.
           Then for any <m>i&gt;0</m>, <m>H^i(G,C_L)</m> is killed by the order of <m>G</m> and
-          <me>
+          <md>
             \Res\colon H^i(G, C_L) \to H^i(G_p, C_L)
-          </me>
+          </md>
           is injective on <m>p</m>-primary components 
           (both by the relationship between restriction and corestriction, from <xref ref="exa-extended-functoriality"/>).
           Since <m>G_p</m> is solvable, we may deduce both assertions from the solvable case.
@@ -298,9 +298,9 @@
       <proof>
         <p>
           We may interpret the statement as saying that
-          <me>
+          <md>
             H^0_T(G, L^*) \to H^0_T(G, I_L)
-          </me>
+          </md>
           is injective. (For all but finitely places <m>v</m> of <m>K</m>, we have <m>x \in \gotho_{K_v}^*</m> and so any <m>y \in L_w^*</m>
           with <m>\Norm_{L_w/K_v}(y) = x</m> itself belongs to <m>\gotho_{L_w}^*</m>.)
           We may deduce this injectivity from the fact that <m>H^{-1}_T(G, C_L) = 1</m>
@@ -346,9 +346,9 @@
       <statement>
         <p>
           For any number field <m>K</m>, the map
-          <me>
+          <md>
             H^2(\Gal(\overline{K}/K), \overline{K}^*) \to \bigoplus_v H^2(\Gal(\overline{K_v}/K_v), \overline{K_v}^*)
-          </me>
+          </md>
           is injective, where the sum runs over places <m>v</m> of <m>K</m>.
         </p>
       </statement>
@@ -356,9 +356,9 @@
         <p>
           By <xref ref="T_first_and_second_inequality"/>, for each Galois extension <m>L/K</m> of number fields,
           we have the exact sequence
-          <me>
+          <md>
             1 = H^1(\Gal(L/K), C_L) \to H^2(\Gal(L/K), L^*) \to \bigoplus_v H^2(\Gal(L_w/K_v), L_w^*)
-          </me>
+          </md>
           for any Galois extension <m>L/K</m>, where <m>w</m> denotes some place of <m>L</m> above <m>K</m>.
           Taking the union over <m>K</m> and using the injectivity of the inflation maps (<xref ref="L_theorem_90"/> plus <xref ref="P_inflation_restriction"/>)
           yields the stated conclusion.
@@ -390,17 +390,17 @@
             </li>
             <li>
               For <m>N_i := \Norm_{L_i/\QQ}(L_i^*)</m>, show that 
-              <me>
+              <md>
                 N_1 N_2 N_3 = \{x \in \QQ^*\colon x^2 \in \Norm_{L/\QQ} L^*\}
-              </me>.
+              </md>.
               (This comes down to some algebraic manipulation, not any class field theory.)
             </li>
             <li>
               Use global reciprocity (compare <xref ref="exer-quadratic-norm-residue-symbols"/>)
               to show that for any permutation <m>\{i,j,k\}</m> of <m>\{1,2,3\}</m>, the formula
-              <me>
+              <md>
                 \varphi(x) := \prod_{v \in S_i} (a_j, x)_{\QQ_v}
-              </me>,
+              </md>,
               where <m>(a_j,x)_{\QQ_v}</m> is the norm residue symbol (<xref ref="exer-local-norm-residue-symbol"/>),
               defines the <em>same</em> homomorphism <m>\varphi \colon L^* \to \{\pm 1\}</m>.
             </li>

@@ -21,9 +21,9 @@
         Let <m>K</m> be a number field.
         The <term>Dedekind zeta function</term> <m>\zeta_K(s)</m> is a function on the complex plane given,
         for <m>\Real(s) \gt 1</m>, by the absolutely convergent product and sum
-        <me>
+        <md>
           \zeta_K(s) = \prod_\gothp (1 - \Norm(\gothp)^{-s})^{-1} = \sum_{\gotha} \Norm(\gotha)^{-s}
-        </me>
+        </md>
         where <m>\gothp</m> runs over the nonzero prime ideals of <m>\gotho_K</m> 
         and <m>\gotha</m> runs over the nonzero ideals of <m>\gotho_K</m>.
       </p>
@@ -67,9 +67,9 @@
         and let <m>\chi_\gothm\colon \Cl^\gothm(K) \to \CC^*</m> be a character of the ray class group of conductor <m>\gothm</m>.
         Extend <m>\chi_\gothm</m> to a function on all ideals of <m>K</m> by declaring its value to be 0 on ideals not coprime to <m>\gothm</m>.
         Then we define the <term><m>L</m>-function</term>
-        <me>
+        <md>
           L(s, \chi_\gothm) = \prod_{\gothp \not| \gothm} (1 - \chi(\gothp) \Norm(\gothp)^{-s})^{-1} = \sum_{(\gotha, \gothm) = 1} \chi(\gotha) \Norm(\gotha)^{-s}
-        </me>;
+        </md>;
         again the product converges absolutely for <m>\Real(s) \gt 1</m>.
       </p>
     </definition>
@@ -118,9 +118,9 @@
     <definition xml:id="def-dirichlet-density">
       <p>
         A set of primes <m>S</m> in a number field <m>K</m> has <term>Dirichlet density</term> <m>d</m> if
-        <me>
+        <md>
           \lim_{s \to 1^+} \frac{\sum_{\gothp \in S} \Norm(\gothp)^{-s}}{\log \frac{1}{s-1}} = d
-        </me>.
+        </md>.
         This in particular presumes the existence of the limit; otherwise, we may still define the <term>lower Dirichlet density</term>
         and <term>upper Dirichlet density</term> using the limits inferior and superior.
       </p>
@@ -242,9 +242,9 @@
         With somewhat more work, all of the previous density assertions remain true (and are indeed strictly stronger than before)
         if Dirichlet density is replaced by natural density. The <term>natural density</term> of a set <m>S</m> of prime ideals of a number field <m>K</m>
         is the limit (if it exists)
-        <me>
+        <md>
            \lim_{X \to \infty} \frac{\#\{\gothp\colon \gothp \in S, \Norm(\gothp) \leq X\}}{\#\{\gothp\colon \Norm(\gothp) \leq X\}}
-        </me>
+        </md>
         where in both sets <m>\gothp</m> runs over all prime ideals of <m>K</m>. (Again, if the limit does not exist, we may still define the <term>lower natural density</term>
         and <term>upper natural density</term> using the limits inferior and superior.)
       </p>
@@ -274,9 +274,9 @@
         <hint>
           <p>
             Write
-            <me>
+            <md>
               \log \zeta_K(s) = \sum_{\gothp} \sum_{m=1}^\infty \frac{\Norm(\gothp)^{-sm}}{m}
-            </me>
+            </md>
             and check that the sum over all terms with <m>m \gt 1</m> converges absolutely for <m>s=1</m>.
             Then apply <xref ref="T_meromorphic_continuation"/>.
           </p>
@@ -310,9 +310,9 @@
         <hint>
           <p>
             As in <xref ref="exc-density-1"/>, write
-            <me>
+            <md>
               \log L(s, \chi) = \sum_{\gothp} \sum_{m=1}^\infty \frac{\chi(\gothp)^m \Norm(\gothp)^{-sm}}{m}
-            </me>
+            </md>
             and observe that the sum over all terms with <m>m \gt 1</m> converges absolutely for <m>s=1</m>.
             Then apply <xref ref="T_analytic_continuation"/> and <xref ref="T_nonvanishing_of_L"/>
             to deduce that for <m>\chi</m> nontrivial, <m>\sum_{\gothp} \chi(\gothp) \Norm(\gothp)^{-s}</m> converges to a finite limit as <m>s \to 1^+</m>.
@@ -368,18 +368,18 @@
               <li>
                 <p>
                   Prove that <m>S</m> does not have a natural density, in the sense that
-                  <me>
+                  <md>
                     \lim_{X \to \infty} \frac{1}{X} \# (S \cap \{1,\dots,X\})
-                  </me>
+                  </md>
                   does not exist.
                 </p>
               </li>
               <li>
                 <p>
                   On the other hand, prove that <m>S</m> has a Dirichlet density in the sense that
-                  <me>
+                  <md>
                     \lim_{s \to 1^+} \frac{\sum_{n \in S} n^{-s}}{\sum_{n=1}^\infty n^{-s}}
-                  </me>
+                  </md>
                   exists, and compute this value.
                 </p>
               </li>

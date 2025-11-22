@@ -34,9 +34,9 @@
           Let <m>S</m> be any finite set of places of <m>K</m> containing all infinite places and all places that ramify in <m>L</m>.
           Let <m>T</m> be the set of places of <m>L</m> lying above places in <m>S</m>. 
           We first compute that
-          <me>
+          <md>
             \Norm_{L/K} I_{L,S} = \prod_{v \in S} U_v \times \prod_{v \notin S} \gotho_{K_v}^*
-          </me>
+          </md>
           for some open subgroups <m>U_v</m> of <m>K_v^*</m> of finite index;
           this amounts to a separate computation for each <m>v</m>.
           For <m>v \in S</m> finite, we apply <xref ref="T_local_existence"/> (or <xref ref="exer-norm-subgroup-is-open"/>).
@@ -61,9 +61,9 @@
         </figure>
         <p>
           We still need to check that the index <m>[C_K:\Norm_{L/K} C_L]</m> is finite. For this, we note that the inclusion <m>C_K^0 \to C_K</m> induces a homeomorphism
-          <me>
+          <md>
             C_K^0/\Norm_{L/K} C_L^0 \cong C_K / \Norm_{L/K} C_L
-          </me>
+          </md>
           of topological groups. Consequently, this group is both discrete (by the previous paragraph) 
           and compact (by <xref ref="P_idele_group_compact"/>), hence finite.
         </p>
@@ -74,15 +74,15 @@
       <statement>
         <p>
           For each number field <m>K</m>, there is a map 
-          <me>
+          <md>
             r_K\colon C_K \to \Gal(K^{\ab}/K) = \Gal(\overline{K}/K)^{\ab}
-          </me> 
+          </md> 
           which induces,
           for each Galois extension <m>L/K</m> of number fields,
           an isomorphism 
-          <me>
+          <md>
             r_{L/K}\colon C_K/\Norm_{L/K} C_L \to \Gal(L/K)^{\ab}
-          </me>.
+          </md>.
         </p>
       </statement>
       <proof>
@@ -159,9 +159,9 @@
       </p>
       <p>
         We obtain a well-defined product map
-        <me>
+        <md>
           \tilde{r}_K\colon I_K \to G, \qquad (\alpha_v) \mapsto \prod_v r_{K,v}(\alpha_v)
-        </me>
+        </md>
         by arguing as follows.
         For <m>(\alpha_v) \in I_K</m>,
         <m>\alpha_v</m> is a unit for almost all <m>v</m> and <m>L_w/K_v</m> is unramified for almost all <m>v</m> (we may ignore infinite places here).
@@ -199,9 +199,9 @@
       <p>
         Let us spell this out explicitly for <m>K = \QQ, L = K(\zeta_{p^m})</m>, where we have a concrete identification <m>\Gal(L/K) \cong (\ZZ/p^m\ZZ)^*</m>.
         In this case, we are claiming that for any place <m>\ell</m> of <m>\QQ</m> and any <m>a \in \QQ^*</m>,
-        <me>
+        <md>
           r_{\QQ_{\ell}(\zeta_{p^m})/\QQ_{\ell}}(a) = \begin{cases}\sign(a) \amp  \ell = \infty \\ \ell^{v_{\ell}(a)} \amp  \ell \neq \infty, p \\ p^{v_p(a)} a^{-1} \amp  \ell = p. \end{cases}
-        </me>
+        </md>
         This is clear when <m>\ell = \infty</m>. For <m>\ell</m> finite and distinct from <m>p</m>, we are in an unramified situation,
         where the effect of local reciprocity is to take any uniformizer (i.e., <m>\ell</m>) to the local Frobenius at <m>\ell</m> (i.e., the automorphism <m>\zeta_n \mapsto \zeta_n^\ell</m>).
         The interesting case is when <m>\ell = p</m>, for which we consult <xref ref="exa-local-recip-Qp"/>.

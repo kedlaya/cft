@@ -135,9 +135,9 @@
       <p>
         Now for <m>\gothm</m> divisible by all primes of <m>K</m> which ramify in <m>L</m>,
         define the <term>Artin map</term> to be the homomorphism
-        <me>
+        <md>
           J_K^\gothm \to \Gal(L/K) \qquad \gothp \mapsto \Frob_\gothp
-        </me>.
+        </md>.
       </p>
     </definition>
     <remark>

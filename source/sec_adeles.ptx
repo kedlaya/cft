@@ -19,25 +19,25 @@
       <p>
         Let <m>K</m> be a number field of degree <m>n</m>. It then has <m>n</m> distinct embeddings <m>\tau\colon K \to \CC</m>.
         The product embedding
-        <me>
+        <md>
           j\colon K \to \prod_\tau \CC, \qquad a \mapsto (\tau(a))_\tau
-        </me>
+        </md>
         induces an isomorphism of <m>K_{\CC} = K \otimes_{\QQ} \CC</m> with <m>\prod_\tau \CC</m>.
       </p>
       <p>
         The ring <m>K_{\CC} = K \otimes_{\QQ} \CC</m> admits an involution <m>F</m> which fixes <m>K</m> and acts on <m>\CC</m> via complex conjugation.
         The corresponding action on <m>\prod_\tau \CC</m> is
-        <me>
+        <md>
           (z_\tau)_\tau \mapsto (\overline{z_{\overline{\tau}}})_\tau
-        </me>
+        </md>
         where <m>\overline{\tau}</m> denotes the composition of <m>\tau</m> with complex conjugation on <m>\CC</m>. The fixed subring under <m>F</m>
         is <m>K_{\RR} = K \otimes_{\QQ} \RR</m>.
       </p>
       <p>
         Equip <m>K_\CC \cong \prod_\tau \CC</m> with the standard Hermitian inner product, that is,
-        <me>
+        <md>
           \langle z_1, z_2 \rangle = \sum_\tau z_{1,\tau} \overline{z_{2,\tau}}
-        </me>.
+        </md>.
         This restricts to a positive definite inner product on <m>K_\RR</m>.
       </p>
       <p>
@@ -68,9 +68,9 @@
     <lemma xml:id="lem-number-ring-completion">
       <statement>
         For <m>K</m> a number field, there is a natural isomorphism of compact topological rings
-        <me>
+        <md>
           \widehat{\gotho_K} \to \prod_{\gothp} \varprojlim_m \gotho_K/\gothp^m
-        </me>
+        </md>
         where <m>\gothp</m> runs over (nonzero) prime ideals of <m>\gotho_K</m>.
       </statement>
       <proof>
@@ -83,9 +83,9 @@
           To see that this map is a bijection, factor the ideal <m>n \gotho_K</m> as <m>\gothp_1^{e_1} \cdots \gothp_r^{e_r}</m> for some primes
           <m>\gothp_1,\dots,\gothp_r</m> and some positive integers <m>e_1,\dots,e_r</m>. By the Chinese remainder theorem for ideals in a Dedekind domain,
           the natural map
-          <me>
+          <md>
             \gotho_K/n\gotho_K \to \prod_{i=1}^r \gotho_K/\gothp_i^{e_i}
-          </me>
+          </md>
           is an isomorphism. This immediately implies that the original map is injective. To see that the original map is surjective, we must also observe that for
           each prime <m>\gothp</m> and each positive integer <m>m</m>, there exists a positive integer <m>n</m> such that <m>n \gotho_K</m> is divisible by <m>\gothp^m</m>;
           for instance, we may take <m>n</m> to be the absolute norm of <m>\gothp^m</m>.
@@ -96,19 +96,19 @@
       <p>
         We cannot help mentioning a variant of <xref ref="rmk-group-quotient-is-ring"/> that plays a key role in <m>p</m>-adic Hodge theory.
         Let <m>\CC_p</m> be a completed algebraic closure of <m>\QQ_p</m>. Consider the inverse system
-        <me>
+        <md>
           \cdots \stackrel{x \mapsto x^p}{\to} \gotho_{\CC_p} \stackrel{x \mapsto x^p}{\to} \gotho_{\CC_p}
-        </me>.
+        </md>.
         Since the maps are multiplicative but not additive, the inverse limit only appears to carry the structure of a multiplicative monoid.
         However, it was originally observed by Fontaine that the natural map from this inverse system to the inverse system
-        <me>
+        <md>
           \cdots \stackrel{x \mapsto x^p}{\to} \gotho_{\CC_p}/p\gotho_{\CC_p} \stackrel{x \mapsto x^p}{\to} \gotho_{\CC_p}/p\gotho_{\CC_p}
-        </me>
+        </md>
         is an isomorphism. In this inverse system, the maps upgrade to ring homomorphisms because <m>(x+y)^p = x^p + y^p</m> in any ring
         in which <m>p=0</m>; consequently, the original inverse limit is upgraded to a ring! This then implies that the inverse limit of the system
-        <me>
+        <md>
           \cdots \stackrel{x \mapsto x^p}{\to} \CC_p \stackrel{x \mapsto x^p}{\to} \CC_p
-        </me>
+        </md>
         is again a ring; it is in fact an algebraically closed field which is complete with respect to a certain nonarchimedean absolute value.
         This construction has come to be known as forming the <term>tilt</term> of <m>\CC_p</m>, and generalizes to a large class of fields
         which are complete with respect to nonarchimedean absolute values (the <term>perfectoid fields</term>). See <xref ref="bib-AWS"/> for an introduction
@@ -148,9 +148,9 @@
         </ul>
         This is a locally compact topological ring, with the groups <m>\frac{1}{n} \widehat{\ZZ}</m> forming a fundamental system of neighborhoods of 0
         consisting of compact subgroups. The natural group homomorphism
-        <me>
+        <md>
           \QQ/\ZZ \to \AA^{\fin}_{\QQ}/\widehat{\ZZ}
-        </me>
+        </md>
         is an isomorphism.
       </p>
     </definition>
@@ -164,9 +164,9 @@
         <m>G</m> of the pairs <m>(G_i, H_i)</m> is the set of tuples <m>(g_i)_{i=1}^\infty</m> such that
         <m>g_i \in H_i</m> for all but finitely many indices <m>i</m>.
         Another way to say this is to define, for each finite subset <m>S \subseteq I</m>, the set
-        <me>
+        <md>
           G_S = \prod_{i \in S} G_i \times \prod_{i \notin S} H_i
-        </me>
+        </md>
         and take <m>G = \bigcup_S G_S</m>.
       </p>
       <p>
@@ -203,9 +203,9 @@
       </p>
       <p>
         We may also view <m>\AA_\QQ</m> as a restricted direct product of the pairs
-        <me>
+        <md>
           (\RR, \{0\}), (\QQ_2, \ZZ_2), (\QQ_3, \ZZ_3), \dots
-        </me>;
+        </md>;
         note that taking the subgroup <m>\{0\}</m> of <m>\RR</m> has no real effect because the definition of the restricted product involves checking membership
         in the chosen subgroup for <em>all but finitely many</em> indices.
       </p>
@@ -222,9 +222,9 @@
         In fact, we can do somewhat better. Just as the quotient group <m>\RR/\ZZ</m> is covered by the compact subset <m>[0,1]</m> of <m>\RR</m> (and therefore is compact:
         a continous map from a compact topological space to Hausdorff topological space has compact image),
         the quotient group <m>\AA_\QQ/\QQ</m> is covered by a compact subset
-        <me>
+        <md>
           [0,1] \times \prod_p \ZZ_p
-        </me>
+        </md>
         (see <xref ref="exer-cover-adeles"/>).
       </p>
     </remark>
@@ -265,9 +265,9 @@
         </li>
       </ul>
       The natural homomorphism
-      <me>
+      <md>
         K/\gotho_K \to \AA^{\fin}_{K}/\widehat{\gotho_K}
-      </me>
+      </md>
       is an isomorphism.
     </p>
     <p>
@@ -293,9 +293,9 @@
         </li>
       </ul>
       We then have a well-defined function <m>|\bullet|_K</m> on <m>\AA_K</m> given by
-      <me>
+      <md>
         |x|_K = \prod_v |x|_v
-      </me>;
+      </md>;
       this makes sense because by virtue of the definition of a restricted direct product, all but finitely many of the values <m>|x|_v</m> are equal to <m>1</m>.
     </p>
     </definition>
@@ -311,20 +311,20 @@
           The normalizations have been chosen so that for each place <m>v</m> of <m>\QQ</m>, for each <m>\alpha \in K</m>, the product of
           <m>|\alpha|_w</m> over all places <m>w</m> of <m>K</m> above <m>v</m> equals <m>|\Norm_{L/K}(\alpha)|_v</m>.
           As a sanity check, we note that for <m>\alpha \in \QQ</m>, we have <m>|\alpha|_w = |\alpha|_v^{[L_w:K_v]}</m> and so the product over <m>w</m> yields
-          <me>
+          <md>
             |\alpha|_v^{\sum_w [L_w:K_v]} = |\alpha^{[L:K]}|_v = |\Norm_{L/K}(\alpha)|_v
-          </me>.
+          </md>.
         </p>
         <p>
           Taking the product over <m>v</m>,
           we deduce that <m>|\alpha|_K = |\Norm_{L/K}(\alpha)|_{\QQ}</m>. That is, the product formula reduces to the case <m>K = \QQ</m>, which we may check directly:
           for <m>\alpha = \pm p_1^{e_1} \cdots p_r^{e_r}</m>, 
-          <me>
+          <md>
             |\alpha|_v = \begin{cases} p_1^{e_1} \cdots p_r^{e_r} &amp; \text{if } v = \infty \\
             p_i^{-e_i} &amp; \text{if } v = p_i \text{ for some } i \\
             1 &amp; \text{otherwise.}
             \end{cases}
-          </me>
+          </md>
         </p>
       </proof>
     </proposition>
@@ -520,9 +520,9 @@
       <hint>
         <p>
           Prove by induction on <m>n</m> that given any pairwise distinct places <m>v_1, \dots, v_n</m>, we can find <m>x \in K</m> with
-          <me>
+          <md>
             |x|_{v_1} \gt 1, |x|_{v_2} \lt 1, \dots, |x|_{v_n} \lt 1
-          </me>.
+          </md>.
           Then make a careful linear combination of powers of such elements. For more details, see <xref ref="bib-Neukirch"/>, Theorem II.3.4.
         </p>
       </hint>

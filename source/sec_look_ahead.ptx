@@ -41,9 +41,9 @@
       <m>\widehat{\ZZ}</m> as the product <m>\prod_p \ZZ_p</m>,
       so that <m>\widehat{\ZZ}^* \cong \prod_p \ZZ_p^*</m>.
       Then recall that there exist isomorphisms
-      <me>
+      <md>
         \ZZ_p^* \cong \begin{cases}\ZZ/(p-1)\ZZ \times \ZZ_p \amp  p > 2 \\ \ZZ/2\ZZ \times \ZZ_p \amp  p = 2. \end{cases}
-      </me>
+      </md>
     </p>
     <p>
       In particular,

@@ -38,9 +38,9 @@
           Let <m>U</m> be an open subgroup of <m>C_K</m> of index <m>p</m>. Then for some finite set <m>S</m> of places of <m>K</m> containing the infinite places
           and all places above <m>p</m>,
           <m>I_K = K^* I_{K,S}</m> and the preimage of <m>U</m> in <m>I_{K,S}</m> contains
-          <me>
+          <md>
             W_S := \prod_{v \in S} (K_v^*)^p \times \prod_{v \notin S} \gotho_{K_v}^*
-          </me>.
+          </md>.
         </p>
       </statement>
       <proof>
@@ -48,9 +48,9 @@
           Let <m>J</m> be the preimage of <m>U</m> under the projection <m>I_K \to C_K</m>,
           so that <m>J</m> is open in <m>I_K</m> of index <m>p</m>.
           Then <m>J</m> contains a subgroup of the form
-          <me>
+          <md>
             V := \prod_{v \in S} \{1\} \times \prod_{v \notin S} \gotho_{K_v}^*
-          </me>
+          </md>
           for some finite set <m>S</m> of places of <m>K</m> containing the infinite places,
           which by <xref ref="lem-generate-ideles-with-S-units"/> we may choose large enough so that <m>I_K = K^* I_{K,S}</m>.
           The group <m>J</m> must also contain <m>I_K^p</m>, and hence <m>W_S</m>.
@@ -65,19 +65,19 @@
       <statement>
         <p>
           With notation as in <xref ref="lem-adelic-exponent-p-subgroup"/>, 
-          <me>
+          <md>
             W_S \cap K^* = (\gotho_{K,S}^*)^p
-          </me>.
+          </md>.
         </p>
       </statement>
       <proof>
         <p>
-          It is clear that <me>(\gotho_{K,S}^*)^p \subseteq W_S \cap K^*</me>. To prove the reverse inclusion, note that
+          It is clear that <md>(\gotho_{K,S}^*)^p \subseteq W_S \cap K^*</md>. To prove the reverse inclusion, note that
           for any <m>y \in W_S \cap K^*</m>, if we set <m>L = K(y^{1/p})</m>, then every place <m>v \in S</m> is split in <m>L</m> and 
           every place <m>v \notin S</m> is unramified in <m>L</m>. By <xref ref="P_unramified_norm_surjective"/> this yields
-          <me>
+          <md>
             \Norm_{L/K} I_{L,S} = I_{K,S}
-          </me>.
+          </md>.
           Since <m>I_K = K^* I_{K,S}</m>, this implies <m>\Norm_{L/K} C_L = C_K</m>.
           By the First Inequality (<xref ref="T_first_inequality"/>), this implies <m>L = K</m> and so <m>y \in (K^*)^p</m>.
         </p>
@@ -90,13 +90,13 @@
       <statement>
         <p>
           With notation as in <xref ref="lem-adelic-exponent-p-subgroup"/>, put <m>s := \#S</m> and
-          <me>
+          <md>
             L := K(u^{1/p}\colon u \in \gotho_{K,S}^*)
-          </me>.
+          </md>.
           Then <m>[L:K] = p^s</m> and
-          <me>
+          <md>
             \Norm_{L/K} C_L = K^* W_S/K^* \subset C_K
-          </me>.
+          </md>.
         </p>
       </statement>
       <proof>
@@ -110,13 +110,13 @@
         </p>
         <p>
           Consider now the exact sequence
-          <me>
+          <md>
             1 \to \frac{\gotho_{K,S}^*}{\gotho_{K,S}^* \cap W_S} \to \frac{I_{K,S}}{W_S} \to \frac{C_K}{K^* W_S/K^*} \to 1
-          </me>.
+          </md>.
           By <xref ref="lem-local-pth-power"/>, 
-          <me>
+          <md>
             [\gotho_{K,S}^*:\gotho_{K,S}^* \cap W_S] = [\gotho_{K,S}^*:(\gotho_{K,S}^*)^p] = p^s
-          </me>.
+          </md>.
           By <xref ref="L_local-pth-powers-index"/>, the product formula (<xref ref="prop-product-formula"/>),
           and the assumption that <m>S</m> contains all infinite places and all places above <m>p</m>,
           <md>
@@ -134,9 +134,9 @@
             </mrow>
           </md>.
           This implies that
-          <me>
+          <md>
             [C_K:(K^* W_S/K^*)] = p^s = [L:K] = [C_K:\Norm_{L/K} C_L]
-          </me>
+          </md>
           where the last equality follows from the global reciprocity isomorphism (<xref ref="T_adelic_reciprocity_law"/>).
         </p>
       </proof>
@@ -148,9 +148,9 @@
       <statement>
         <p>
           For <m>K</m> a number field, <m>v</m> a place of <m>K</m>, and <m>p</m> a prime such that <m>\zeta_p \in K</m>, 
-          <me>
+          <md>
             [K_v^* : (K_v^*)^p] = \frac{p^2}{|p|_v}
-          </me>
+          </md>
           for the normalization of <m>|p|_v</m> from <xref ref="def-normalized-adele-norm"/>.
         </p>
       </statement>
@@ -160,9 +160,9 @@
           <ol>
             <li>
                 If <m>v</m> is a real place, then <m>p=2</m> (as otherwise <m>\zeta_p \notin K_v</m>), <m>\frac{p^2}{|p|_v} = 2</m>, and 
-                <me>
+                <md>
                   K_v^*/(K_v^*)^p = \RR^*/(\RR^*)^2 = \RR^*/\RR^+ \cong \ZZ/2\ZZ
-                </me>.
+                </md>.
             </li>
             <li>
                 If <m>v</m> is a complex place, then <m>\frac{p^2}{|p|_v} = 1</m>, and 
@@ -235,14 +235,14 @@
           By the induction hypothesis,
           <m>V</m> contains <m>N := \Norm_{L/K} C_L</m> for some finite extension <m>L</m> of <m>K</m>.
           Then
-          <me>
+          <md>
             [N : (U \cap N)] = [UN : U] \leq [V:U]
-          </me>.
+          </md>.
           Let <m>W</m> be the subgroup of <m>C_L</m> consisting of those <m>x</m> whose norms lie in <m>U</m>.
           Then
-          <me>
+          <md>
             [C_L:W] \leq [N:U \cap N] \leq [V:U]
-          </me>,
+          </md>,
           so by the induction hypothesis again, <m>W</m> contains <m>\Norm_{M/L} C_M</m> for some finite extension <m>M/L</m>.
           Thus <m>U</m> contains <m>\Norm_{M/K} C_M</m>, as desired.
         </p>
@@ -317,9 +317,9 @@
         <p>
           Put <m>N := K((\gotho_{K,S}^*)^{1/p})</m>.
           By Kummer theory again,
-          <me>
+          <md>
             \Gal(N/K) \cong \Hom(\gotho_{K,S}^*/(\gotho_{K,S}^*)^p, \ZZ/p\ZZ)
-          </me>.
+          </md>.
           By <xref ref="cor-S-units-theorem"/>, <m>\gotho_{K,S}^*/(\gotho_{K,S}^*)^p \cong (\ZZ/p\ZZ)^s</m>.
           Choose generators <m>g_1, \dots, g_{s-1}</m> of <m>\Gal(N/L)</m>;
           these correspond in <m>\Hom(\gotho_{K,S}^*/(\gotho_{K,S}^*)^p, \ZZ/p\ZZ)</m> to a set of homomorphisms whose common kernel is precisely <m>\Delta/(\gotho_{K,S}^*)^p</m>.
@@ -360,18 +360,18 @@
       <statement>
         <p>
           With notation as in <xref ref="lem-second-inequality-algebraic-setup"/>, put
-          <me>
+          <md>
             W_{S,T} := \prod_{v \in S} (K_v^*)^p \times \prod_{v \in T} K_v^* \times \prod_{v \notin S \cup T} \gotho_{K_v}^*
-          </me>.
+          </md>.
           Then
-          <me>
+          <md>
             W_{S,T} \cap K^* = (\gotho_{K,S \cup T}^*)^p
-          </me>.
+          </md>.
         </p>
       </statement>
       <proof>
         <p>
-          It is again clear that <me>(\gotho_{K,S \cup T}^*)^p \subseteq W_{S,T} \cap K^*</me>. To prove the reverse inclusion, it will again suffice
+          It is again clear that <md>(\gotho_{K,S \cup T}^*)^p \subseteq W_{S,T} \cap K^*</md>. To prove the reverse inclusion, it will again suffice
           to prove that <m>y \in W_{S, T} \cap K^*</m>, if we set <m>L = K(y^{1/p})</m>, then <m>\Norm_{L/K} C_L = C_K</m>;
           namely, <xref ref="T_first_inequality"/> will then imply <m>L = K</m> and so <m>y \in (K^*)^p</m>.
         </p>
@@ -394,14 +394,14 @@
       <proof>
         <p>
           By <xref ref="lem-local-pth-power-T"/>, we have an exact sequence
-          <me>
+          <md>
             1 \to \frac{\gotho_{K,S\cup T}^*}{(\gotho_{K,S \cup T}^*)^p} \to \frac{I_{K,S \cup T}}{W_{S,T}} \to \frac{C_K}{K^* W_{S,T}/K^*} \to 1
-          </me>,
+          </md>,
           with which we may compute as in <xref ref="lem-Kummer-norm-subgroup"/>: the left group has order <m>p^{\#(S \cup T)} = p^{2s-1}</m> by <xref ref="cor-S-units-theorem"/> 
           while the middle group has order <m>p^{2s}</m> by <xref ref="L_local-pth-powers-index"/>, so
-          <me>
+          <md>
             [C_K: K^* W_{S,T}/K^*] = p
-          </me>.
+          </md>.
           Meanwhile, we can check by local reciprocity that <m>\Norm_{L/K} I_{L,S} = I_{K,S}</m> (compare the proof of <xref ref="lem-local-pth-power-T"/>).
           <ul>
             <li>
@@ -421,9 +421,9 @@
       <statement>
         <p>
           Let <m>L/K</m> be a cyclic extension of number fields of prime degree <m>p</m> and let <m>K' := K(\zeta_p), L' := L(\zeta_p)</m>. Then the map
-          <me>
+          <md>
             H^0_T(\Gal(L/K), C_L) \to H^0_T(\Gal(L'/K'), C_{L'})
-          </me>
+          </md>
           induced by the inclusion <m>C_L \to C_{L'}</m> is injective.
         </p>
       </statement>
@@ -439,9 +439,9 @@
           <m>H^0_T(\Gal(L/K), C_L)</m> of the form <m>y^d</m>;
           then <m>y</m> also maps to the identity in <m>H^0_T(\Gal(L'/K'), C_{L'})</m>.
           That is, <m>y = \Norm_{L'/K'}(z')</m> for some <m>z' \in C_{L'}</m>, and
-          <me>
+          <md>
             y^d = \Norm_{K'/K}(y) = \Norm_{L'/K}(z') \in \Norm_{L/K} C_L
-          </me>.
+          </md>.
           Thus <m>x \in \Norm_{L/K} C_L</m>, as needed.
         </p>
       </proof>
@@ -467,9 +467,9 @@
           As in the proof of <xref ref="T_first_and_second_inequality"/>, we use an induction argument 
           built around the inflation-restriction sequence (<xref ref="P_inflation_restriction"/>)
           to reduce to proving that for <m>L/K</m> cyclic of prime degree <m>p</m>,
-          <me>
+          <md>
             \# H^2(\Gal(L/K), C_L) \leq [L:K]
-          </me>.
+          </md>.
           By periodicity (<xref ref="T_cyclic_group_periodicity"/>), we may replace <m>H^2</m> with <m>H^0_T</m>.
         </p>
         <p>
@@ -477,9 +477,9 @@
           then <m>K'</m> and <m>L</m> are linearly disjoint over <m>K</m> (since their degrees are coprime),
           so <m>[L':K'] = [L:K] = p</m> and the Galois groups of <m>L/K</m> and <m>L'/K'</m> are canonically isomorphic.
           By <xref ref="L_second_inequality_base_case"/> and <xref ref="lem-second-inequality-reduction-to-zetap"/>,
-          <me>
+          <md>
             \#H^0_T(\Gal(L/K), C_L) \leq \#H^0_T(\Gal(L'/K'), C_{L'}) \leq [L':K'] = p
-          </me>
+          </md>
           as desired.
         </p>
       </proof>

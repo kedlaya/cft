@@ -22,14 +22,14 @@
     <definition xml:id="abstract-local-reciprocity-map">
       <p>
         Let <m>L/K</m> be a Galois extension of number fields. Let
-        <me>
+        <md>
           r_{L/K}\colon I_K \to \Gal(L/K)^{\ab}
-        </me> 
+        </md> 
         be the product of the local reciprocity maps <xref ref="def-adelic-reciprocity-candidate"/>.
         Meanwhile, let
-        <me>
+        <md>
           r'_{L/K}\colon I_K \to \Gal(L/K)^{\ab}
-        </me>
+        </md>
         be the map obtained by inverting the isomorphism <m>\Gal(L/K)^{\ab} \to C_K/\Norm_{L/K} C_L</m> given by <xref ref="T_abstract_adelic_reciprocity"/>.
       </p>
     </definition>
@@ -115,9 +115,9 @@
         </p>
         <p>
           We may split the exact sequence
-          <me>
+          <md>
             1 \to \Gal(K^{\ab}/K^{\smcy}) \to \Gal(K^{\ab}/K) \to \Gal(K^{\smcy}/K) \cong \widehat{\ZZ} \to 1
-          </me>
+          </md>
           by choosing an element of <m>\Gal(K^{\ab}/K)</m> lifting the generator <m>1 \in \widehat{\ZZ}</m>. Using this, we can
           split <m>K^{\ab}</m> as the compositum of <m>K^{\smcy}</m> and an abelian extension which is linearly disjoint from <m>K^{\smcy}</m>.
           Using the previous paragraph, we can split some finite extension of <m>L</m> as the compositum of linearly disjoint cyclic extensions,
@@ -176,9 +176,9 @@
         </p>
         <p>
           Now put
-          <me>
+          <md>
             W = N \times U \times \prod_{w \in S} K_w^* \times \prod_{w \notin S \cup \{u,v\}} \gotho_K^*, \qquad V = K^* W/K^*
-          </me>.
+          </md>.
           If <m>\alpha_v \in K_v^*</m> maps into <m>U</m>,
           then there exists <m>\beta \in K^*</m> such that <m>\alpha_v \beta \in W</m>.
           On one hand, this implies that <m>\alpha_v \beta_v \in N</m>.

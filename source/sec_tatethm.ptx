@@ -29,13 +29,13 @@
         <p>
           Let <m>G</m> be a finite group. Let <m>M,N</m> be <m>G</m>-modules.
           Then there are canonical bilinear maps
-          <me>
+          <md>
             \bullet \cup \bullet \colon H^i(G,M) \times H^j(G, N) \to H^{i+j}(G, M \otimes_\ZZ N)
-          </me>
+          </md>
           and
-          <me>
+          <md>
             \bullet \cup \bullet \colon H^i_T(G,M) \times H^j_T(G, N) \to H^{i+j}_T(G, M \otimes_\ZZ N)
-          </me>
+          </md>
           which are functorial in each argument, and compatible with long exact sequences in each argument.
         </p>
       </statement>
@@ -48,9 +48,9 @@
           <m>H^j(G,N) \to H^j(G, M \otimes_\ZZ N)</m> which are functorial in <m>N</m> and compatible with long exact sequences
           (here we are using that <m>M</m> is torsion-free and hence flat over <m>\ZZ</m>).
           For <m>i \gt 0</m>, we perform dimension shifting on <m>M</m> using the sequence
-          <me>
+          <md>
             0 \to M \to \Ind^G_1 \Res^G_1 M \to M' \to 0
-          </me>
+          </md>
           from <xref ref="P_adjoint_property"/>; recall that this sequence splits (<xref ref="rem-coh-finite-mod"/>),
           so it remains exact upon tensoring with <m>N</m>.
           Note also that we need to check functoriality and compatibility with long exact sequences in <m>M</m>; we leave this to the reader.
@@ -58,9 +58,9 @@
         <p>
           For the Tate groups, we automatically have the claim when <m>i,j \gt 0</m> from the case of cohomology groups.
           We can then dimension shift downward, using sequences of the form
-          <me>
+          <md>
             0 \to M' \to \Ind^G_1 \Res^G_1 \to M \to 0
-          </me>
+          </md>
           as in <xref ref="P_adjoint_property"/> (which splits at the level of <m>\ZZ</m>-modules), 
           to deduce the claim for smaller indices.
         </p>
@@ -70,13 +70,13 @@
       <p>
         See <xref ref="bib-Milne-CFT"/>, Proposition I.1.39 for more properties of the cup product, which are again proved by starting in degree 0 and then using dimension shifting.
         One of these is skew-symmetry: 
-        <me>
+        <md>
           x \cup y = (-1)^{ij} y \cup x \qquad (x \in H^i_T(G, M), y \in H^j_T(G,N))
-        </me>.
+        </md>.
         Another is compatibility with restriction:
-        <me>
+        <md>
           \Res(x \cup y) = \Res(x) \cup \Res(y)
-        </me>.
+        </md>.
       </p>
     </remark>
   </subsection>
@@ -109,9 +109,9 @@
           it has a proper subgroup <m>H</m> for which <m>G/H</m> is cyclic.
           By the induction hypothesis, <m>H^i_T(H,\Res^G_H M) = 0</m> for all <m>i \geq 0</m>.
           Thus by the inflation-restriction exact sequence (<xref ref="P_inflation_restriction"/>),
-          <me>
+          <md>
             0 \to H^i(G/H, M^H) \to H^i(G, M) \to H^i(H, \Res^G_H M)
-          </me>
+          </md>
           is exact for all <m>i \gt 0</m>; the term on the end being zero,
           we have <m>H^i(G/H, M^H) \cong H^i(G,M) = 0</m> for <m>i=1, 2</m>.
           By periodicity again, <m>H^i_T(G/H, M^H) = 0</m> for all <m>i \in \ZZ</m>,
@@ -130,9 +130,9 @@
           For <m>i \gt 0</m>,
           as per <xref ref="exa-extended-functoriality"/> again,
           the composition 
-          <me>
+          <md>
             H^i(G, M) \stackrel{\Res}{\to} H^i(G_p, \Res^G_{G_p} M) \stackrel{\Cor}{\to} H^i(G, M)
-          </me>
+          </md>
           is multiplication by the integer <m>[G:G_p]</m> which is prime to <m>p</m>; consequently, <m>\Res</m> induces an injective map on
           <m>p</m>-primary components. Since <m>G_p</m> is solvable and the <m>G_p</m>-module <m>\Res^G_{G_p} M</m> satisfies the vanishing hypothesis,
           we can apply the previous paragraph to deduce that <m>H^i(G_p, \Res^G_{G_p} M) = 0</m>, and hence <m>H^i(G,M) = 0</m>.
@@ -144,9 +144,9 @@
           We proceed by induction: we will show that if the claim holds for all <m>i \geq -n</m> for some nonnegative integer <m>n</m>,
           then the claim also holds for all <m>i \geq -n-1</m>.
           To this end, make the exact sequence
-          <me>
+          <md>
             0 \to N \to \Ind^G_1 \Res^G_1 M \to M \to 0
-          </me>
+          </md>
           in which <m>m \otimes [g]</m> maps to <m>m^g</m> (from the proof of <xref ref="P_adjoint_property"/>).
           For any subgroup <m>H</m> of <m>G</m>, the term in the middle is acyclic with respect to <m>H</m>
           (see <xref ref="def-induced-module"/>).
@@ -168,9 +168,9 @@
           <m>H^1(H,\Res^G_H M)=0</m> and <m>H^2(H,\Res^G_H M)</m> is cyclic of order <m>\#H</m>.
           Then for any generator <m>\gamma</m> of <m>H^2(G,M) = H^2_T(G,M)</m> and any <m>i \in \ZZ</m>,
           the cup product map
-          <me>
+          <md>
             \gamma \cup \bullet \colon H^i_T(G, \ZZ) \to H^{i+2}_T(G, M)
-          </me>
+          </md>
           is an isomorphism.
         </p>
       </statement>
@@ -192,16 +192,16 @@
           This <m>\rho</m> must itself be <m>G</m>-invariant:
           <m>\rho(g_0, g_1)^g = \rho(g_0g, g_1g)</m>.
           Thus <m>\phi</m> is a coboundary if and only if
-          <me>
+          <md>
             \phi(e, g, hg) = \rho(e,h)^g - \rho(e,hg) + \rho(e,g)
-          </me>.
+          </md>.
         </p>
         <p>
           Let <m>M[\phi]</m> be the direct sum of <m>M</m> with the free abelian group with one generator <m>x_g</m> for each element <m>g</m> of
           <m>G - \{e\}</m>, with the <m>G</m>-action
-          <me>
+          <md>
             x_h^g = x_{hg} - x_g + \phi(e, g, hg)
-          </me>.
+          </md>.
           (The symbol <m>x_e</m> should be interpreted as the element
           <m>\phi(e,e,e)</m> of <m>M</m>.) Using the cocycle property of <m>\phi</m>,
           one may verify that this is indeed a <m>G</m>-action;
@@ -214,13 +214,13 @@
           The map <m>\alpha\colon M[\phi] \to \ZZ[G]</m> sending <m>M</m> to zero and <m>x_g</m> to <m>[g]-1</m> is a homomorphism of <m>G</m>-modules.
           Actually it maps into the augmentation ideal <m>I_G</m>,
           and the sequence
-          <me>
+          <md>
             0 \to M \to M[\phi] \to I_G \to 0
-          </me>
+          </md>
           is exact. Meanwhile, we also have the usual exact sequence
-          <me>
+          <md>
             0 \to I_G \to \ZZ[G] \to \ZZ \to 0
-          </me>.
+          </md>.
         </p>
         <p>
           For any subgroup <m>H</m> of <m>G</m>,
@@ -253,9 +253,9 @@
         <p>
           We may now apply <xref ref="L_tate_thm_lemma"/> to conclude that <m>H^i_T(G, M[\phi]) = 0</m> for all <m>i</m>.
           This allows us to use the four-term exact sequence
-          <me>
+          <md>
             0 \to M \to M[\phi] \to \ZZ[G] \to \ZZ \to 0
-          </me>
+          </md>
           (as in the proof of <xref ref="T_cyclic_group_periodicity"/>) to obtain the dimension-shifting isomorphism
           <m>H^i_T(G, \ZZ) \cong H^{i+2}_T(G, M)</m>.
         </p>
@@ -287,13 +287,13 @@
         <m>H^2(L/M)</m> is cyclic of order <m>[L:M]</m> (by <xref ref="P_local_h2"/>).
         We may thus apply <xref ref="T_tate_thm2"/> with <m>G = \Gal(L/K)</m>,
         <m>M = L^*</m> to obtain isomorphisms 
-        <me>
+        <md>
           H^i_T(\Gal(L/K), \ZZ) \to H^{i+2}_T(L/K)
-        </me>.
+        </md>.
         In particular, we get an isomorphism
-        <men xml:id="eq-reciprocity-isom-from-cohomology">
+        <md number="yes" xml:id="eq-reciprocity-isom-from-cohomology">
           K^*/\Norm_{L/K} L^* = H^0_T(L/K) \to H^{-2}_T(\Gal(L/K), \ZZ) = \Gal(L/K)^{\ab}
-        </men>.
+        </md>.
         This immediately yields the the norm limitation theorem
         (<xref ref="T_norm_limitation"/>): if <m>M/K</m> is the maximal abelian subextension of <m>L/K</m>, then
         <m>\Norm_{L/K} L^* \subseteq \Norm_{M/K} M^*</m> but both have the same finite index in <m>K^*</m>, and so must be equal.
@@ -342,16 +342,16 @@
           </mrow>
         </md>
         and the cup product pairing
-        <me>
+        <md>
           H^{-2}_T(G, \ZZ) \times H^2_T(G, \ZZ) \to H^0_T(G, \ZZ)
-        </me>
+        </md>
         is <term>nondegenerate</term>: any element in either group on the left that pairs to zero with everything is itself zero.
       </p>
       <p>
         This means that we can give an alternate description of the local reciprocity isomorphism: the cup product pairing
-        <me>
+        <md>
           H^0_T(L/K) \times H^2_T(\Gal(L/K), \ZZ) \to H^2_T(L/K) \stackrel{\inv_{L/K}}{\to} \QQ/\ZZ
-        </me>
+        </md>
         is also nondegenerate. If we precompose with the map <m>H^0(L/K) \to H^0_T(L/K)</m>, then everything is in terms of cohomology
         groups rather than Tate groups, so we can calculate more explicitly, as in <xref ref="L_local_recip_map_alt"/>.
         Even more importantly, we now have extended functoriality available (<xref ref="exa-extended-functoriality"/>):
@@ -377,9 +377,9 @@
           Let <m>\inv_{L/K}\colon H^2(L/K) \to \QQ/\ZZ</m> be the canonical inclusion (<xref ref="T_Brauer_group_identification"/>).
           Let <m>\delta\colon H^1(G, \QQ/\ZZ) \to H^2(G, \ZZ)</m> be the connecting homomorphism.
           Then for every <m>a \in H^0(L/K) = K^*</m> and every homomorphism <m>\chi\colon G \to \QQ/\ZZ</m>,
-          <me>
+          <md>
             \inv_{L/K}(a \cup \delta(\chi)) = \chi(\phi_{L/K}(a))
-          </me>.
+          </md>.
         </p>
       </statement>
       <proof>
@@ -509,9 +509,9 @@
         </p>
         <p>
           We first need to verify something which might seem obvious but isn't quite: for <m>L/K</m> a finite extension, 
-          <me>
+          <md>
             \Norm_{L/K} D_L = D_K
-          </me>.
+          </md>.
           This isn't obvious because for <m>x \in D_K</m>, for each 
           individual finite extension <m>M</m> of <m>K</m> we can write <m>x = \Norm_{M/K}(z)</m> for some <m>z \in M^*</m>, but it is not apparent that we can force the elements
           <m>y = \Norm_{M/L}(z)</m> to all be equal. 
@@ -553,9 +553,9 @@
           we may ensure that the image of
           <m>\Norm_{L/K} L^*</m> in <m>K^*/\gotho_K^*</m> is also contained in <m>m\ZZ</m>.
           It thus remains to further ensure that
-          <me>
+          <md>
             (\Norm_{L/K} L^*) \cap \gotho_K^* \subseteq U \cap \gotho_K^*
-          </me>.
+          </md>.
         </p>
         <p>
           Since <m>\gotho_K^*</m> is compact,
@@ -564,9 +564,9 @@
           as <m>L/K</m> runs over all finite extensions of <m>K</m>,
           the intersection of the groups <m>(\Norm_{L/K} L^*) \cap \gotho_K^*</m> is trivial;
           in particular, the intersection of the compact subsets
-          <me>
+          <md>
             ((\Norm_{L/K} L^*) \cap \gotho_K^*) \cap (\gotho_K^* \setminus U)
-          </me>
+          </md>
           of <m>\gotho_K^*</m> is empty.
           By the finite intersection property
           (and taking a compositum),

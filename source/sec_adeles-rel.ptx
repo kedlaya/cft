@@ -29,9 +29,9 @@
         More generally, if <m>g \in \Gal(\overline{K}/K)</m>,
         then <m>g</m> maps <m>L</m> to some other extension <m>L^g</m> of <m>K</m>,
         and <m>g</m> induces isomorphisms 
-        <me>
+        <md>
           \AA_L \cong \AA_{L^g}, \qquad I_L \cong I_{L^g}, \qquad C_L \cong C_{L^g}
-        </me>.
+        </md>.
         Explicitly, if <m>(\alpha_w)_w \in \AA_L</m> and <m>g \in G</m>,
         then <m>g</m> maps the completion <m>L_w</m> of <m>L</m> to a completion <m>L_{w^g}</m> of <m>L^g</m>.
         (Remember that a place <m>w</m> of <m>L</m> corresponds to an absolute value <m>|\cdot|_w</m> on <m>L</m>;
@@ -60,9 +60,9 @@
       <p>
         For <m>L/K</m> an extension of number fields, we define the <term>trace map</term> <m>\Trace_{L/K}\colon \AA_L \to \AA_K</m>
         and the <term>norm map</term> <m>\Norm_{L/K}\colon I_L \to I_K</m> by the formulas
-        <me>
+        <md>
           \Trace_{L/K}(x) = \sum_g x^g, \qquad \Norm_{L/K}(x) = \prod_g x^g
-        </me>
+        </md>
         where <m>g</m> runs over coset representatives of
         <m>\Gal(\overline{K}/L)</m> in <m>\Gal(\overline{K}/K)</m>.
         Here the sum and product take place in the ad&#xe8;le and id&#xe8;le rings of the Galois closure of <m>L</m> over <m>K</m>;
@@ -132,14 +132,14 @@
       <proof>
         <p>
           We start with an exact sequence
-          <me>
+          <md>
             1 \to L^* \to I_L \to C_L \to 1
-          </me>
+          </md>
           of <m>G</m>-modules.
           Taking <m>G</m>-invariants, we get a long exact sequence
-          <me>
+          <md>
             1 \to (L^*)^G = K^* \to (I_L)^G = I_K \to C_L^G \to H^1(G, L^*)
-          </me>,
+          </md>,
           and the last term is 1 by Theorem 90 (<xref ref="L_theorem_90"/>).
           So we again have a short exact sequence, and <m>C_L^G \cong I_K/K^* = C_K</m>.
         </p>

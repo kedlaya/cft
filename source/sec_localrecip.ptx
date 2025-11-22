@@ -61,22 +61,22 @@
         and <m>K_2 = \bigcup_n \QQ_p(\zeta_{p^n-1})</m>, and 
         <m>\Gal(K^{\ab}/K) \cong \Gal(K_1/K) \times \Gal(K_2/K)</m>.
         Since <m>p</m> is totally ramified in <m>K_1</m>, we have 
-        <me>
+        <md>
           \Gal(K_1/K) \cong \Gal(\QQ(\zeta_{p^\infty})/\QQ) \cong \ZZ_p^*
-        </me>.
+        </md>.
         Since <m>p</m> is unramified in <m>K_2</m>, we have
-        <me>
+        <md>
           \Gal(K_2/K) \cong \Gal(\overline{\FF}_p/\FF_p) \cong \widehat{\ZZ}
-        </me>.
+        </md>.
         However, it will be more convenient to think of the image as sitting inside
-        <me>
+        <md>
           \Gal\left(\bigcup_n \QQ(\zeta_{p^n-1})/\QQ\right) \cong \widehat{\ZZ}^*/\ZZ_p^* \cong \prod_{q \neq p} \ZZ_q^*
-        </me>
+        </md>
         (here using global Kronecker-Weber and Artin reciprocity).
         That is, we are looking for a map
-        <me>
+        <md>
           \phi_K\colon \ZZ_p^* \times p^{\ZZ} \cong \QQ_p^* \to \Gal(K_1/K) \times \Gal(K_2/K) \subset \ZZ_p^* \times \prod_{q \neq p} \ZZ_q^*
-        </me>
+        </md>
         which acts as <m>p \mapsto p</m> on the second factor.
         The correct choice is to take the map <m>a \mapsto a^{-1}</m> on the first factor;
         this can be verified using the Lubin-Tate construction (<xref ref="T_Lubin-Tate"/>).
@@ -150,9 +150,9 @@
     <remark>
       <p>
         In <xref ref="T_norm_limitation"/>, we have <m>\Norm_{L/K} L^* \subseteq \Norm_{M/K} M^*</m> because
-        <me>
+        <md>
           \Norm_{L/K} = \Norm_{M/K} \circ \Norm_{L/M}
-        </me>. 
+        </md>. 
         Since the group <m>\Norm_{L/K} L^*</m> can be shown directly to be an open subgroup of finite index 
         (see <xref ref="exer-norm-subgroup-is-open"/>), <xref ref="T_local_existence"/> implies that it has the form <m>\Norm_{N/K} N^*</m> for some finite abelian 
         extension <m>N</m> of <m>K</m>. <xref ref="T_local_reciprocity"/> then implies that <m>M \subseteq N</m>. The subtle point that remains to be proven is that
@@ -182,13 +182,13 @@
       <p>
         At this point, for <m>L/K</m> a finite extension of local fields, 
         we can combine the local reciprocity law with the norm limitation theorem to obtain an isomorphism
-        <me>
+        <md>
           K^*/\Norm_{L/K} L^* \to \Gal(L/K)^{\ab} = G^{\ab}
-        </me>;
+        </md>;
         this can be reinterpreted as an isomorphism
-        <me>
+        <md>
           H^0_T(G, L^*) \to H^{-2}_T(G, \ZZ)
-        </me>.
+        </md>.
         In fact we will run this backward: we will use cup products (<xref ref="prop-cup-product"/>)
         to construct an isomorphism of this form (<xref ref="T_cup_product_isomorphism"/>)
         and then deduce both the local reciprocity law and the norm limitation theorem.
@@ -217,13 +217,13 @@
       <statement>
         <p>
           For any local field <m>K</m>, there is a canonical isomorphism
-          <me>
+          <md>
             \inv_K\colon H^2(\Gal(\overline{K}/K), \overline{K}^*) \to \QQ/\ZZ
-          </me>.
+          </md>.
           Moreover, the inflation map
-          <me>
+          <md>
             H^2(\Gal(K^{\unr}/K), (K^{\unr})^*) \to H^2(\Gal(\overline{K}/K), \overline{K}^*)
-          </me>
+          </md>
           is an isomorphism.
         </p>
       </statement>
@@ -238,9 +238,9 @@
         In <xref ref="T_Brauer_group_identification"/>, the first map is an inflation homomorphism;
         the second map is called the <term>local invariant map</term>.
         More precisely, for <m>L/K</m> finite of degree <m>n</m>, we have an isomorphism
-        <me>
+        <md>
           \inv_{L/K}\colon H^2(\Gal(L/K), L^*) \to \frac{1}{n}\ZZ/\ZZ
-        </me>,
+        </md>,
         and these isomorphisms are compatible with inflation.
         (In particular, we don't need to prove the first isomorphism separately.
         But that can be done, by considerations involving the Brauer group; see <xref ref="def-Brauer-group"/>.)
@@ -285,9 +285,9 @@
         we will do it again a slightly different way in <xref ref="ch_abstract"/>.
         In the course of proving the above results,
         we will show (among other things) that if <m>L/K</m> is a cyclic extension of local fields,
-        <me>
+        <md>
           \#H^0_T(\Gal(L/K), L^*) = [L:K], \qquad \#H^{-1}_T(\Gal(L/K), L^*) = 1
-        </me>.
+        </md>.
       </p>
       <p>
         It turns out that this alone is enough number-theoretic input to prove local class field theory!
@@ -319,9 +319,9 @@
         <statement>
           <p>
             Show that for each <m>a \in \ZZ_p</m>, the power series
-            <me>
+            <md>
               [a] := (1+T)^{a} - 1 = \sum_{n=1}^\infty \frac{a(a-1) \cdots (a-n+1)}{n!} T^n
-            </me>
+            </md>
             has coefficients in <m>\ZZ_p</m>. 
             Then show that for <m>\pi \in \ZZ_p</m> a uniformizer and <m>e</m> a positive integer,
             <m>[\pi^e] = u_e P_e</m> where <m>P_e</m> is a monic polynomial of degree <m>p^e</m>
@@ -372,9 +372,9 @@
         <p>
           A <term>quaternion algebra</term> over a field <m>K</m> is a central simple algebra over <m>K</m> of dimension 4.
           If <m>K</m> is not of characteristic 2, any such algebra has the form
-          <me>
+          <md>
             K \oplus Ki \oplus Kj \oplus Kk, \qquad i^2 = a, j^2 = b, ij = -ji = k
-          </me>
+          </md>
           for some <m>a,b \in K^*</m>.
           (For example, the case <m>K = \RR</m>,
           <m>a=b=-1</m> gives the standard Hamilton quaternions.)

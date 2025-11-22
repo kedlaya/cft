@@ -23,9 +23,9 @@
         <m>M_G</m> is the quotient of <m>M</m> by the submodule spanned by <m>m^g-m</m> for all <m>m \in M</m> and <m>g \in G</m>.
         In yet other words, <m>M_G = M/M I_G</m>, where <m>I_G</m> is the <term>augmentation ideal</term>
         of the group algebra <m>\ZZ[G]</m>:
-        <me>
+        <md>
           I_G := \left\{\sum_{g \in G} z_g[g]\colon \sum_g z_g = 0\right\}
-        </me>.
+        </md>.
         Or if you like, <m>M_G = M \otimes_{\ZZ[G]} \ZZ</m>.
         Since <m>M^G</m> is the group of <m>G</m>-invariants, we call <m>M_G</m> the group of <term><m>G</m>-coinvariants</term>.
       </p>
@@ -54,15 +54,15 @@
         in which the <m>P_i</m> are projective.
         Given such a resolution,
         take coinvariants to get a complex
-        <me>
+        <md>
           \cdots \stackrel{d_2}{\to} P_2 \stackrel{d_1}{\to} P_1 \stackrel{d_0}{\to} P_0 \to 0
-        </me>,
+        </md>,
         then put <m>H_i(G, M) = \ker(d_{i-1})/\im(d_i)</m>.
         Again, this is canonically independent of the resolution and functorial,
         and there is a long exact sequence which starts out
-        <me>
+        <md>
           \cdots \to H_1(G, M'') \stackrel{\delta}{\to} H_0(G, M') \to H_0(G, M) \to H_0(G, M'') \to 0
-        </me>.
+        </md>.
       </p>
     </definition>
     <definition>
@@ -79,13 +79,13 @@
         but we won't need it for our purposes.
         Even without one, though,
         we can calculate <m>H_1(G, \ZZ)</m> using the exact sequence
-        <me>
+        <md>
           0 \to I_G \to \ZZ[G] \to \ZZ \to 0
-        </me>.
+        </md>.
         By the long exact sequence in homology,
-        <me>
+        <md>
           0 = H_1(G, \ZZ[G]) \to H_1(G, \ZZ) \to H_0(G, I_G) \to H_0(G, \ZZ[G])
-        </me>
+        </md>
         is exact, i.e.
         <m>0 \to H_1(G, \ZZ) \to I_G/I_G^2 \to \ZZ[G]/I_G</m> is exact.
         The last map is induced by
@@ -109,15 +109,15 @@
       <p>
         Let <m>M</m> be a <m>G</m>-module.
         Define the map <m>\Norm_G\colon M \to M</m> by
-        <me>
+        <md>
           \Norm_G(m) = \sum_{g \in G} m^g
-        </me>.
+        </md>.
       </p>
       <p>
         Then <m>\Norm_G</m> induces a homomorphism
-        <me>
+        <md>
           \Norm_G\colon H_0(G,M) = M_G \to M^G = H^0(G,M)
-        </me>.
+        </md>.
       </p>
     </definition>
     <remark>
@@ -130,9 +130,9 @@
     <definition>
       <p>
         We now define the <term>Tate cohomology groups</term> (or <term>Tate homology groups</term> if you prefer) as follows:
-        <me>
+        <md>
           H_T^i(G,M) := \begin{cases}H^i(G, M) \amp  i \gt 0 \\ M^G/\Norm_G M \amp  i=0 \\ \ker(\Norm_G)/MI_G \amp  i=-1 \\ H_{-i-1}(G,M) \amp  i\lt -1. \end{cases}
-        </me>
+        </md>
       </p>
       </definition>
     <lemma>
@@ -140,9 +140,9 @@
         <p>
           For any short exact sequence
           <m>0 \to M' \to M \to M'' \to 0</m> of <m>G</m>-modules, we have a canonical exact sequence
-          <me>
+          <md>
             \cdots \to H^{i-1}_T(G, M'') \to H^i_T(G, M') \to H^i_T(G, M) \to H^i_T(G, M'') \to H^{i+1}_T(G, M') \to \cdots
-          </me>
+          </md>
           which extends infinitely in both directions.
         </p>
       </statement>

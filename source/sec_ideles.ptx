@@ -62,9 +62,9 @@
     <definition xml:id="def-ideles-to-ideals-hom">
       <p>
         There is a homomorphism from <m>I_K</m> to the group of fractional ideals of <m>K</m>:
-        <me>
+        <md>
           (\alpha_\nu)_\nu \mapsto \prod_{\gothp} \gothp^{v_{\gothp}(\alpha_\gothp)}
-        </me>,
+        </md>,
         which is continuous for the discrete topology on the group of fractional ideals.
         (Note that we are ignoring the infinite places; that is, this map factors through <m>I_K^{\fin}</m> viewed as a quotient of <m>I_K</m>.)
         By unique factorization of fractional ideals, this homomorphism is surjective; its kernel is precisely <m>I_{K,S}</m> for <m>S</m> the set of infinite places.
@@ -161,9 +161,9 @@
       <statement>
         <p>
           There exists a finite set <m>S</m> of places of <m>K</m> such that
-          <me>
+          <md>
             I_K = I_{K,S} K^*
-          </me>.
+          </md>.
           In particular, for any such <m>S</m>, <m>C_K</m> is a quotient of <m>I_{K,S}</m>.
         </p>
       </statement>
@@ -179,16 +179,16 @@
       <statement>
         <p>
           The group of units of <m>\gotho_K</m> fits into an exact sequence
-          <me>
+          <md>
             0 \to \mu_K \to \gotho_K^* \to \ZZ^{r+s-1} \to 0
-          </me>
+          </md>
           in which <m>\mu_K</m> is the (finite cyclic) group of roots of unity of <m>K</m> and
           <m>r</m> and <m>s</m> are the number of real and complex places, respectively.
           More generally, for any finite set <m>S</m> of places containing all infinite places, the group of units of the ring 
           <m>\gotho_{K,S}</m> of <m>S</m>-integers fits into an exact sequence
-          <me>
+          <md>
             0 \to \mu_K \to \gotho_{K,S}^* \to \ZZ^{\#S-1} \to 0
-          </me>.
+          </md>.
         </p>
       </statement>
       <proof>
@@ -210,9 +210,9 @@
           it remains to check that <m>W = H</m>, as this will imply that <m>\gotho_{K,S}^*</m> is a lattice in <m>H</m>
           and hence has rank <m>\dim H = \#S - 1</m>.
           We may check this after enlarging <m>S</m>; by <xref ref="lem-generate-ideles-with-S-units"/>, we can assume that <m>I_{K,S} K^* = I_K</m> and hence
-          <me>
+          <md>
             C_K = I_K/K^* \cong I_{K,S} / \gotho_{K,S}^*
-          </me>.
+          </md>.
           Using this isomorphism, we obtain a continuous homomorphism <m>C_K^0 \to H/W</m> whose image generates <m>H/W</m>.
           Since <m>C_K^0</m> is compact (<xref ref="P_idele_group_compact"/>), so is its image; 
           this is a contradiction unless <m>H/W</m> is the zero vector space.
@@ -228,9 +228,9 @@
         This of course does not say anything in the case <m>K=\QQ</m>, and in this case one can give a more direct description of <m>C_K</m>.
         Namely, given an arbitrary id&#xe8;le in <m>I_\QQ</m>, there is a unique positive rational with the same norms at the finite places.
         Thus
-        <me>
+        <md>
           C_\QQ \cong \RR^+ \times \prod_p \ZZ_p^*
-        </me>.
+        </md>.
        </p>
        <p>
          Returning to the case of general <m>K</m>, there is a natural way to define a volume measure on <m>C_K</m> in such a way that the volume of the kernel of

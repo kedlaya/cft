@@ -26,9 +26,9 @@
     <definition>
       <p>
         Recall from <xref ref="def-Brauer-group"/> that we have defined the <term>Brauer group</term> of a field <m>K</m> as the group 
-        <me>
+        <md>
           \Br(K) := H^2(\overline{K}/K) = \varinjlim_{L/K} H^2(L/K)
-        </me>
+        </md>
         where <m>L</m> runs over finite Galois extensions of <m>K</m> and the transition maps in the direct limit are inflation maps.
         By <xref ref="L_theorem_90"/> and <xref ref="P_inflation_restriction"/>, these maps are all injective, so the direct limit is actually a union.
       </p>
@@ -186,18 +186,18 @@
         <p>
           To deduce that both rows of the diagram are exact, it now suffices to check for the top row.
           We get an exact sequence
-          <me>
+          <md>
             0 \to H^0_T(\Gal(L/K), L^*) \to H^0_T(\Gal(L/K), I_L) \to  H^0_T(\Gal(L/K), C_L) \to 0
-          </me>
+          </md>
           by noting that <m>H^{-1}_T(\Gal(L/K), C_L) = 0</m>
           by <xref ref="T_first_and_second_inequality"/>
           and <m>H^1_T(\Gal(L/K), L^*) = 0</m> by <xref ref="L_theorem_90"/>. 
           Since <m>L/K</m> is cyclic,
           we may also apply <xref ref="T_first_inequality"/> and <xref ref="T_first_and_second_inequality"/> to see that <m>\# H^0_T(\Gal(L/K),C_L) = n</m>.
           Since <m>L/K</m> is cyclotomic, we may apply <xref ref="prop-diagonal-cyclotomic"/> to obtain a surjective map
-          <me>
+          <md>
             C_K/\Norm_{L/K} C_L \to \Gal(L/K)
-          </me>
+          </md>
           between two groups of order <m>n</m>; it is thus an isomorphism and we are done.
         </p>
       </proof>
@@ -206,15 +206,15 @@
       <statement>
         <p>
           For any number field <m>K</m>, the group <m>\Br(K)</m> fits into an exact sequence of the form
-          <me>
+          <md>
             0 \to \Br(K) \to \Br(\AA_K) = \bigoplus_v \Br(K_v) \to \QQ/\ZZ \to 0
-          </me>
+          </md>
           in which 
-          <me>
+          <md>
             \Br(K_v) = \begin{cases} \QQ/\ZZ &amp; \text{for } v \text{ finite} \\
             \frac{1}{2} \ZZ/\ZZ &amp; \text{for } v \text{ real} \\
             0 &amp; \text{for } v \text{ complex} \end{cases}
-          </me>
+          </md>
           and the map on the right is summation.
         </p>
       </statement>
@@ -289,9 +289,9 @@
           for each place <m>v</m> of <m>K</m>, for some place <m>w</m> of <m>M</m> above <m>v</m>, the image of <m>x</m> in <m>\Br(K_v)</m> 
           belongs to <m>H^2(M_w/K_v)</m>; we will prove the claim for this choice of <m>M</m>.
           By inflation-restriction (<xref ref="P_inflation_restriction"/>),
-          <me>
+          <md>
             0 \to H^2(M/K) \stackrel{\Inf}{\to} H^2(ML/K) \stackrel{\Res}{\to} H^2(ML/M)
-          </me>
+          </md>
           is exact; it thus suffices to check that the image of <m>x</m> via <m>H^2(L/K) \stackrel{\Inf}{\to} H^2(ML/K)</m> maps to zero in <m>H^2(ML/M)</m>.
           By <xref ref="T_Albert-Brauer-Hasse-Noether"/> it suffices to check that we get the zero class in <m>\Br(M_w)</m> for each place <m>w</m> of <m>M</m>,
           but this follows from our choice of <m>M</m> as in the proof of <xref ref="P_H2_lower_bound"/>.
@@ -352,9 +352,9 @@
       <p>
         Note that for a cyclic extension <m>L/K</m> of number fields, <xref ref="rmk-local-global-via-brauer"/> establishes not just local-global compatbility,
         but the entire reciprocity isomorphism
-        <me>
+        <md>
           C_K/\Norm_{L/K} C_L \cong \Gal(L/K)^{\ab}
-        </me>
+        </md>
         without use of abstract class field theory.
       </p>
       <p>
@@ -392,13 +392,13 @@
           From the Second Inequality (<xref ref="T_first_and_second_inequality"/>) we have that <m>\#H^2(\Gal(L/K), C_L) \leq [L:K]</m>,
           so it suffices to produce a cyclic subgroup of order <m>[L:K]</m> with a canonical generator.
           For this, note that by taking cohomology of the exact sequence
-          <me>
+          <md>
             0 \to L^* \to I_L \to C_L \to 0
-          </me>
+          </md>
           and using the vanishing of <m>H^1(\Gal(L/K), C_L)</m> (<xref ref="T_first_and_second_inequality"/> again), we obtain an exact sequence
-          <me>
+          <md>
             0 \to H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L) \to  H^2(\Gal(L/K), C_L)
-          </me>.
+          </md>.
           Using <xref ref="def-fundamental-exact-sequence"/> we see that the cokernel of <m>H^2(\Gal(L/K), L^*) \to H^2(\Gal(L/K), I_L)</m> admits a canonical
           isomorphism with <m>\frac{1}{[L:K]}\ZZ/\ZZ</m>, proving the claim.
         </p>
@@ -407,9 +407,9 @@
     <remark xml:id="rmk-global-reciprocity-via-cup-product">
       <p>
         At this point, we can construct a new map
-        <me>
+        <md>
           \Gal(L/K)^{\ab} \cong H^{-2}_T(\Gal(L/K), \ZZ) \to H^0_T(\Gal(L/K), C_L) \cong C_K/\Norm_{L/K} C_L
-        </me>
+        </md>
         by taking the cup product with the canonical generator of <m>H^2(\Gal(L/K), C_L)</m> produced in <xref ref="prop-global-H2-cyclic"/>.
         Since the hypotheses of Tate's theorem (<xref ref="T_tate_thm2"/>) are satisfied (the vanishing of <m>H^1</m> by <xref ref="T_first_and_second_inequality"/>,
         the value of <m>H^2</m> by <xref ref="prop-global-H2-cyclic"/>) this map is an isomorphism.
@@ -557,9 +557,9 @@
         <p>
           Let <m>K</m> be a number field. For each place <m>v</m> of <m>K</m>, write <m>(x,y)_v</m> for the quadratic norm residue symbol <m>(x,y)_{K_v}</m>
           (<xref ref="exer-local-norm-residue-symbol"/>). Deduce from <xref ref="def-fundamental-exact-sequence"/> that for <m>x,y \in K^*</m>,
-          <me>
+          <md>
             \prod_v (x,y)_{v} = 1
-          </me>
+          </md>
           where the product runs over all places <m>v</m> of <m>K</m>.
         </p>
       </statement>

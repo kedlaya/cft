@@ -17,11 +17,11 @@
       <p>
         Under <xref ref="hypo-abstract-cft"/>, let <m>L/K</m> be a Galois extension of finite subextensions of <m>\kbar/k</m>.
         Let <m>H</m> be the semigroup of <m>g \in \Gal(L^{\unr}/K)</m> such that <m>d_K(g)</m> is a positive integer.
-        Define the map <me>r'\colon H \to A_K/\Norm_{L/K} A_{L}</me> as follows.
+        Define the map <md>r'\colon H \to A_K/\Norm_{L/K} A_{L}</md> as follows.
         For <m>g \in \Gal(L^{\unr}/K)</m>, let <m>M</m> be the fixed field of <m>g</m>, so that
-        <me>
+        <md>
           e(M/K) = e((M \cap L)/K), \qquad f(M/K) = d_K(g)
-        </me>.
+        </md>.
         We may set <m>r'(g) := \Norm_{M/K} (\pi_M)</m> for some uniformizer <m>\pi_M</m> for <m>M</m>,
         once we check that this doesn't depend on the choice of <m>\pi_M</m>.
         To wit, if <m>\pi'_M</m> is another uniformizer for <m>M</m>,
@@ -59,9 +59,9 @@
         <p>
           With notation as in <xref ref="def-abstract-recip-candidate"/>, put <m>n := d_K(g)</m> and choose <m>\phi \in H</m> with <m>d_K(\phi) = 1</m>.
           Then for <m>x \in A_M</m>,
-          <me>
+          <md>
             \Norm_{M/K}(x) = \Norm_{L^{\unr}/K^{\unr}}(x x^\phi \cdots x^{\phi^{n-1}})
-          </me>.
+          </md>.
         </p>
       </statement>
       <proof>
@@ -90,9 +90,9 @@
         <p>
           By hypothesis, <m>x</m> is the class of some <m>u \in U_M</m> for which there exist <m>u_1,\dots,u_r \in U_M</m> and <m>\tau_1,\dots,\tau_r \in G</m>
           such that 
-          <me>
+          <md>
             u^{\phi=1} = \prod_{i=1}^r u_i^{\tau_i - 1}
-          </me>.
+          </md>.
           Put <m>n := [M:K]</m> and <m>\sigma := \phi^n</m>, and let <m>\Sigma</m> be the fixed field of <m>\sigma</m>, which contains <m>M</m>.
           Let <m>\Sigma_n</m> be the unramified extension of <m>\Sigma</m> of degree <m>n</m>; it is the fixed field of <m>\sigma^n</m>.
           Since <m>H^0_T(\Gal(\Sigma_n/\Sigma), U_{\Sigma_n})</m> vanishes by <xref ref="P_abstract_H0H1"/>, we can find <m>\tilde{u}, \tilde{u}_i \in U_{\Sigma_n}</m> such that
@@ -105,25 +105,25 @@
             </mrow>
           </md>.
           Since <m>H^{-1}_T(\Gal(\Sigma_n/\Sigma), U_{\Sigma_n})</m> vanishes by <xref ref="P_abstract_H0H1"/> again, we can find <m>\tilde{y} \in U_{\Sigma_n}</m> with
-          <me>
+          <md>
             \tilde{u}^{\phi-1} / \prod_{i=1}^r \tilde{u}_i^{\tau_i-1} = \tilde{y}^{\sigma-1}
-          </me>,
+          </md>,
           and so (because <m>\sigma = \phi^n</m>)
-          <me>
+          <md>
             \tilde{u}^{\phi-1} = (\tilde{y} \tilde{y}^{\phi} \cdots \tilde{y}^{\phi^{n-1}})^{\phi-1} \prod_{i=1}^r \tilde{u}_i^{\tau_i-1}
-          </me>.
+          </md>.
           Applying <m>\Norm_G</m> yields
-          <me>
+          <md>
             \Norm_G(\tilde{u})^{\phi-1} = \Norm_G(\tilde{y} \tilde{y}^{\phi} \cdots \tilde{y}^{\phi^{n-1}})^{\phi-1}
-          </me>.
+          </md>.
           That is, if we set 
-          <me>
+          <md>
             z := \Norm_G(\tilde{u}) / \Norm_G(\tilde{y} \tilde{y}^{\phi} \cdots \tilde{y}^{\phi^{n-1}})
-          </me>,
+          </md>,
           we have <m>z^{\phi-1} = 1</m> and so <m>z \in U_K</m>. Put
-          <me>
+          <md>
             y := \tilde{y} \tilde{y}^\sigma \cdots \tilde{y}^{\sigma^n-1} = \Norm_{\Sigma_n/\Sigma}(\tilde{y}) \in U_\Sigma
-          </me>;
+          </md>;
           using <xref ref="prop_norm"/> we obtain
           <md>
             <mrow>
@@ -153,9 +153,9 @@
           Let <m>M_i</m> be the fixed field of <m>g_i</m>, let <m>\pi_i \in A_{M_i}</m> be a uniformizer of <m>M_i</m>,
           and put <m>\rho_i = r'(g_i) = \Norm_{M_i/K}(\pi_i) \in A_K</m>.
           Put <m>\rho := \rho_1 \rho_2/\rho_3</m>; note that
-          <me>
+          <md>
             v_K(\rho_i) = f(M_i/K) v_{M_i}(\pi_i) = f(M_i/K) = d_K(g_i),
-          </me>
+          </md>
           which implies that <m>v_K(\rho) = 0</m> and hence <m>\rho \in U_K</m>.
           Our goal is to check that <m>\rho \in \Norm_{L/K} A_{L}</m>;
           our plan is to rephrase this as a relation among units, to which <xref ref="lem-norm-fixed-by-phi"/> will apply.
@@ -164,13 +164,13 @@
           We first make an adjustment at the level of group elements.
           Put <m>G := \Gal(L^{\unr}/K^{\unr})</m>. Choose <m>\phi \in H</m> such that <m>d_K(\phi) = 1</m>.
           Put <m>d_i := d_K(g_i)</m> and <m>\tau_i := g_i^{-1} \phi^{d_i} \in G</m>; then
-          <me>
+          <md>
             \tau_3 = g_2^{-1} g_1^{-1} \phi^{d_1 + d_2} = g_2^{-1} \phi^{d_2} (\phi^{-d_2} g_1 \phi^{d_2})^{-1} \phi^{d_1}.
-          </me>
+          </md>
           It will be convenient to replace <m>g_1</m> and <m>\tau_1</m> with 
-          <me>
+          <md>
             g_1' := \phi^{-d_2} g_1 \phi^{d_2}, \qquad \tau_1' = (g_1')^{-1} \phi^{g_1},
-          </me>
+          </md>
           so that <m>\tau_1' \tau_2 = \tau_3</m>. We correspondingly define
           <m>M_1'</m> to be the fixed field of <m>g_1'</m> and set <m>\pi_1' := \pi_1^{\phi^{n_2}} \in A_{M_1'}</m>,
           noting that <m>\Norm_{M_1'/K}(\pi_1') = \Norm_{M_1/K}(\pi_1) = \rho_1</m>.
@@ -178,17 +178,17 @@
         <p>
           Let <m>N</m> be a finite subextension of <m>L^{\unr}/L</m> containing <m>M_1, M_2, M_3, M_1'</m>.
           Set
-          <me>
+          <md>
             \sigma_i := \pi_i \pi_i^\phi \cdots \pi_i^{\phi^{d_i-1}}, \qquad \sigma_1' := (\pi_1') (\pi_1')^\phi \cdots (\pi_1')^{\phi^{d_1-1}}
-          </me>
+          </md>
           and <m>u = \sigma_1' \sigma_2 / \sigma_3 \in U_N</m>; by <xref ref="prop_norm"/> we have <m>\rho = \Norm_G(u)</m>. By defining
-          <me>
+          <md>
             u_1 := (\pi_1')^{1-\tau_2}, u_2 := \pi_2/\pi_1', u_3 := \pi_3/\pi_1' \in U_N
-          </me>
+          </md>
           and using the equality <m>\tau_1' \tau_2 = \tau_3</m>, we compute that
-          <me>
+          <md>
              u^{\phi-1} = (\pi_1')^{\tau_1' - 1} \pi_2^{\tau_2 - 1} / \pi_3^{\tau_3 - 1} =  u_1^{\tau_1'-1} u_2^{\tau_2 - 1} / u_3^{\tau_3 - 1}
-          </me>
+          </md>
           vanishes in <m>H_0(G, U_N)</m>; by <xref ref="lem-norm-fixed-by-phi"/> we obtain <m>\Norm_G(u) \in \Norm_{N/K} U_N</m>, proving the claim.
         </p>
       </proof>
