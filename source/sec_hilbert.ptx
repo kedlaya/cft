@@ -225,5 +225,11 @@
         </p>
       </hint>
     </exercise>
+    <exercise xml:id="exer-cyclic-4-hilbert-over-quadratic">
+      <p>
+        Consider the polynomial <m>P(x) := x^4 + 2x^3 + 2x^2 + x + 1</m> and define the number fields <m>K := \QQ[x]/P(x)</m> and <m>M := \QQ(\sqrt{-39})</m>.
+        Prove that the compositum <m>KM</m> is an everywhere unramified extension of <m>M</m> which is cyclic of order <m>4</m>.
+      </p>
+    </exercise>
   </exercises>
 </section>
